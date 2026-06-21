@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Festivals of India — Static GK Series (Topic 2) | Topper Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Handlee&family=Gochi+Hand&family=Architects+Daughter&family=Annie+Use+Your+Telescope&family=Dancing+Script:wght@400;600;700&family=Satisfy&family=Homemade+Apple&family=Shadows+Into+Light+Two&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -210,24 +210,89 @@ body.dark .qr-t td:first-child{color:#82b1ff}
 body.dark .qr-t td:last-child{color:#a5d6a7}
 body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
 
+/* TOOLBAR EXTRA CONTROLS */
+.tb-group{display:flex;align-items:center;gap:6px;color:#cfd8e0;font-size:.82rem;font-family:'Kalam',cursive}
+.font-select{font-family:'Kalam',cursive;font-size:.82rem;border:none;border-radius:6px;
+  padding:6px 8px;background:#eceff1;color:#1c1c2e;cursor:pointer;max-width:185px}
+.btn-size{background:#2980b9;color:#fff;min-width:34px;justify-content:center;padding:8px 10px}
+.btn-reset{background:#607d8b;color:#fff;padding:8px 12px}
+.size-lbl{color:#ffd54f;font-weight:700;min-width:42px;text-align:center;font-family:'Kalam',cursive;font-size:.85rem}
+
+/* COVER CONTENTS PREVIEW */
+.cover-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(255,213,79,.6),transparent);margin:20px auto 0;max-width:440px}
+.toc{position:relative;z-index:2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;padding:16px 18px;margin:20px auto 4px;max-width:640px;text-align:left}
+.toc-title{font-family:'Caveat Brush',cursive;color:#ffd54f;font-size:1.2rem;text-align:center;margin-bottom:12px;letter-spacing:1px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+@media(max-width:520px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{font-family:'Kalam',cursive;font-size:.86rem;color:#e3f2fd;display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.toc-item .ic{font-size:.95rem;flex-shrink:0}
+.toc-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toc-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;
+  padding:5px 14px;font-family:'Kalam',cursive;font-size:.8rem;color:#e8f5e9}
+.toc-stat b{color:#ffd54f;font-size:1rem}
+
 /* PRINT */
 @media print{
   body{background:#fff!important;padding:0}
   body::before{display:none}
   .toolbar{display:none!important}
+  html{font-size:15px!important}
   .page{box-shadow:none;border-radius:0;max-width:100%}
-  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box,.num-b,.tl-item,.two-col,.three-col{break-inside:avoid;page-break-inside:avoid}
+  .hw-t tr,.qr-t tr{break-inside:avoid;page-break-inside:avoid}
+  thead{display:table-header-group}
+  .sec{break-after:avoid;page-break-after:avoid}
+  hr.div,.cb{break-before:avoid;page-break-before:avoid}
+  .cover{break-after:always;page-break-after:always}
   .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   @page{size:A4;margin:10mm 12mm}
 }
 </style>
+<style id="fontOverride"></style>
 </head>
 <body>
 
 <!-- TOOLBAR -->
 <div class="toolbar">
   <span class="toolbar-title">🎉 Festivals of India — Topper Notes</span>
+
+  <div class="tb-group">
+    <span>✒️ Font:</span>
+    <select class="font-select" onchange="setFont(this.value)">
+      <optgroup label="✏️ Neat Print (topper style)">
+        <option value="Patrick Hand">Patrick Hand – neat print</option>
+        <option value="Kalam" selected>Kalam – bold marker</option>
+        <option value="Indie Flower">Indie Flower – rounded cute</option>
+        <option value="Handlee">Handlee – soft casual</option>
+        <option value="Gochi Hand">Gochi Hand – playful</option>
+        <option value="Architects Daughter">Architects Daughter – sketchy</option>
+        <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+      </optgroup>
+      <optgroup label="🖋️ Cursive &amp; Pen Styles">
+        <option value="Caveat">Caveat – quick cursive</option>
+        <option value="Dancing Script">Dancing Script – elegant cursive</option>
+        <option value="Satisfy">Satisfy – smooth flowing</option>
+        <option value="Homemade Apple">Homemade Apple – real pen look</option>
+        <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+        <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+        <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+      </optgroup>
+      <optgroup label="🖍️ Bold Marker">
+        <option value="Permanent Marker">Permanent Marker – thick marker</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <div class="tb-group">
+    <span>🔠 Size:</span>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Smaller text">A−</button>
+    <span class="size-lbl" id="sizeLbl">100%</span>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="Larger text">A+</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="Reset size">↺</button>
+  </div>
+
   <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
   <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
 </div>
@@ -246,6 +311,32 @@ body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
     <div class="cover-sub">Topic 2 — Complete Structured Notes | All 147 Questions &amp; Options Covered</div>
     <div class="cover-badge">🪔 Festivals · 🥁 Dances · 🏔️ Tribes · 🎪 Fairs (Melas) · 🛕 Temples</div>
     <div class="stars">★ ★ ★ ★ ★</div>
+
+    <div class="cover-divider"></div>
+
+    <div class="toc">
+      <div class="toc-title">📑 Inside These Notes</div>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="ic">🦅</span> North-East — Nagaland, Manipur, Meghalaya, Assam, Tripura, Mizoram</div>
+        <div class="toc-item"><span class="ic">🌴</span> South — Tamil Nadu, Kerala, AP, Telangana, Karnataka</div>
+        <div class="toc-item"><span class="ic">🏔️</span> Himalayan — HP, Sikkim, Ladakh, Uttarakhand, Arunachal</div>
+        <div class="toc-item"><span class="ic">🌾</span> East — Odisha, West Bengal, Bihar, Jharkhand</div>
+        <div class="toc-item"><span class="ic">🏜️</span> West &amp; Central — Rajasthan, Gujarat, MP, Maharashtra, Goa, Chhattisgarh</div>
+        <div class="toc-item"><span class="ic">⚔️</span> Punjab &amp; Sikh — Baisakhi, Hola Mohalla, Gurpurab</div>
+        <div class="toc-item"><span class="ic">🕉️</span> Pan-India &amp; Religious — Diwali, Holi, Eid, Buddha Purnima, Navratri</div>
+        <div class="toc-item"><span class="ic">🎪</span> Fairs &amp; Melas — Pushkar, Kumbh, Nagaur, Ambubachi, Kolayat</div>
+        <div class="toc-item"><span class="ic">📰</span> Bonus — Recent-news festivals</div>
+        <div class="toc-item"><span class="ic">📋</span> Master Festival → State quick-reference table</div>
+        <div class="toc-item"><span class="ic">💡</span> Key exam tips &amp; memory tricks</div>
+        <div class="toc-item"><span class="ic">✅</span> Answers + options for every question</div>
+      </div>
+      <div class="toc-stats">
+        <span class="toc-stat"><b>147</b> Questions</span>
+        <span class="toc-stat"><b>29</b> States / UTs</span>
+        <span class="toc-stat"><b>22</b> Tables</span>
+        <span class="toc-stat"><b>+</b> Bonus &amp; Tips</span>
+      </div>
+    </div>
   </div>
 
   <div class="ruled">
@@ -2518,6 +2609,29 @@ function toggleDark(){
   document.body.classList.toggle('dark');
   document.getElementById('darkBtn').textContent =
     document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+
+/* Change the handwriting font across the notes */
+function setFont(font){
+  document.getElementById('fontOverride').textContent =
+    "body,p.hw,ul.hw li,.sticky,.mcq-h,.mcq-opt,.mcq-ans,.hw-t td,.qr-t td," +
+    ".tip-box,.imp,.trick,.key-box,.ca-box,.num-b .lbl,.cover-sub,.toc-item,.tl-item" +
+    "{font-family:'" + font + "',cursive!important}";
+}
+
+/* Font-size +/- controls (scales all rem-based text) */
+var fontScale = 1;
+function applyScale(){
+  document.documentElement.style.fontSize = (16 * fontScale) + 'px';
+  document.getElementById('sizeLbl').textContent = Math.round(fontScale * 100) + '%';
+}
+function changeSize(delta){
+  fontScale = Math.min(1.6, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  applyScale();
+}
+function resetSize(){
+  fontScale = 1;
+  applyScale();
 }
 </script>
 </body>
