@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture &amp; Indian Culture — Static GK Series (Topic 4) | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Handlee&family=Gochi+Hand&family=Architects+Daughter&family=Annie+Use+Your+Telescope&family=Dancing+Script:wght@400;600;700&family=Satisfy&family=Homemade+Apple&family=Shadows+Into+Light+Two&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.7rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.55rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 EXTRA / NEWS';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* TOOLBAR EXTRA CONTROLS */
+.tb-group{display:flex;align-items:center;gap:6px;color:#cfd8e0;font-size:.82rem;font-family:'Kalam',cursive}
+.font-select{font-family:'Kalam',cursive;font-size:.82rem;border:none;border-radius:6px;padding:6px 8px;background:#eceff1;color:#1c1c2e;cursor:pointer;max-width:185px}
+.btn-size{background:#2980b9;color:#fff;min-width:34px;justify-content:center;padding:8px 10px}
+.btn-reset{background:#607d8b;color:#fff;padding:8px 12px}
+.size-lbl{color:#ffd54f;font-weight:700;min-width:42px;text-align:center;font-family:'Kalam',cursive;font-size:.85rem}
+
+/* COVER CONTENTS PREVIEW */
+.cover-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(255,213,79,.6),transparent);margin:20px auto 0;max-width:440px}
+.toc{position:relative;z-index:2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;margin:20px auto 4px;max-width:640px;text-align:left}
+.toc-title{font-family:'Caveat Brush',cursive;color:#ffd54f;font-size:1.2rem;text-align:center;margin-bottom:12px;letter-spacing:1px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+@media(max-width:520px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{font-family:'Kalam',cursive;font-size:.86rem;color:#e3f2fd;display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.toc-item .ic{font-size:.95rem;flex-shrink:0}
+.toc-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toc-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:5px 14px;font-family:'Kalam',cursive;font-size:.8rem;color:#e8f5e9}
+.toc-stat b{color:#ffd54f;font-size:1rem}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  html{font-size:15px!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box,.two-col,.three-col{break-inside:avoid;page-break-inside:avoid}
+  .hw-t tr,.qr-t tr{break-inside:avoid;page-break-inside:avoid}
+  thead{display:table-header-group}
+  .sec{break-after:avoid;page-break-after:avoid}
+  hr.div,.cb{break-before:avoid;page-break-before:avoid}
+  .cover{break-after:always;page-break-after:always}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+<style id="fontOverride"></style>
+<style id="sizeOverride"></style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🏛️ Architecture &amp; Culture — Topper Notes</span>
+  <div class="tb-group">
+    <span>✒️ Font:</span>
+    <select class="font-select" onchange="setFont(this.value)">
+      <optgroup label="✏️ Neat Print (topper style)">
+        <option value="Patrick Hand">Patrick Hand – neat print</option>
+        <option value="Kalam" selected>Kalam – bold marker</option>
+        <option value="Indie Flower">Indie Flower – rounded cute</option>
+        <option value="Handlee">Handlee – soft casual</option>
+        <option value="Gochi Hand">Gochi Hand – playful</option>
+        <option value="Architects Daughter">Architects Daughter – sketchy</option>
+        <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+      </optgroup>
+      <optgroup label="🖋️ Cursive &amp; Pen Styles">
+        <option value="Caveat">Caveat – quick cursive</option>
+        <option value="Dancing Script">Dancing Script – elegant cursive</option>
+        <option value="Satisfy">Satisfy – smooth flowing</option>
+        <option value="Homemade Apple">Homemade Apple – real pen look</option>
+        <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+        <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+        <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+      </optgroup>
+      <optgroup label="🖍️ Bold Marker">
+        <option value="Permanent Marker">Permanent Marker – thick marker</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="tb-group">
+    <span>🔠 Size:</span>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Decrease font size">A−</button>
+    <span class="size-lbl" id="sizeLbl">100%</span>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="Increase font size">A+ Bigger</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="Reset font size">↺</button>
+  </div>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Static GK Series</div>
+    <div class="cover-title">🏛️ Architecture &amp; Indian Culture</div>
+    <div class="cover-sub">Topic 4 — Complete Structured Notes | All Questions &amp; Options Covered (2025 PYQs)</div>
+    <div class="cover-badge">🛕 Temples · 🏰 Forts · 🕌 Mughal · 🎨 Paintings · 🗿 Sculpture · 🏞️ UNESCO</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <div class="cover-divider"></div>
+    <div class="toc">
+      <div class="toc-title">📑 Inside These Notes</div>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="ic">🛕</span> Temple styles — Nagara, Dravidian, Vesara, Kalinga</div>
+        <div class="toc-item"><span class="ic">🏰</span> Rajput forts &amp; palaces — Chittorgarh, Mehrangarh, Amer, Hawa Mahal</div>
+        <div class="toc-item"><span class="ic">🕌</span> Mughal &amp; Indo-Islamic architecture</div>
+        <div class="toc-item"><span class="ic">🗿</span> Sculpture schools — Mathura, Gandhara, Amaravati</div>
+        <div class="toc-item"><span class="ic">🪨</span> Rock-cut caves — Ajanta, Ellora, Elephanta</div>
+        <div class="toc-item"><span class="ic">🎨</span> Paintings &amp; painters (M.F. Husain, Tyeb Mehta…)</div>
+        <div class="toc-item"><span class="ic">☸️</span> Buddhist &amp; Jain art (Stupas, Tirthankaras)</div>
+        <div class="toc-item"><span class="ic">⛪</span> Colonial — Gothic, Indo-Saracenic, Baroque</div>
+        <div class="toc-item"><span class="ic">🏞️</span> UNESCO World Heritage Sites</div>
+        <div class="toc-item"><span class="ic">📐</span> Temple parts — Shikhara, Vimana, Gopuram, Mandapa</div>
+        <div class="toc-item"><span class="ic">💡</span> Exam tips &amp; elimination tricks</div>
+        <div class="toc-item"><span class="ic">✅</span> Answers + options for every question</div>
+      </div>
+      <div class="toc-stats">
+        <span class="toc-stat"><b>108</b> Questions</span>
+        <span class="toc-stat"><b>4</b> Temple styles</span>
+        <span class="toc-stat"><b>3</b> Sculpture schools</span>
+        <span class="toc-stat"><b>+</b> Tables &amp; Tips</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ruled">
+<!-- ============ QUESTIONS APPENDED BELOW ============ -->
+
+
+    <!-- Q1 -->
+    <div class="sec orange">① Mauryan Period — Yaksha Statues 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> The ___ statues are an essential example of the Mauryan period's craftsmanship, known for their monumental size and detailed human figures.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Yakshas ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Buddha</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Lion</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Shiva</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Yakshas (&amp; Yakshinis) — monumental, detailed human figures</div>
+    </div>
+    <ul class="hw">
+      <li>Yakshas/Yakshinis = <span class="hl">divine spirits of nature</span></li>
+      <li><strong>Didarganj Yakshini</strong> — found at Didarganj, Patna (Bihar); large, polished statue depicting a woman</li>
+      <li><strong>Mudgarpani Yaksha</strong> — found at <span class="hl-g">Mathura</span> (trick: <strong>M</strong>udgarpani → <strong>M</strong>athura)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2 -->
+    <div class="sec blue">② Painting "Mahishasura" 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> The painting "Mahishasura", which blends mythology with expressionism, is the work of —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>S.H. Raza</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Jogen Chowdhury</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Tyeb Mehta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Anjolie Ela Menon</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tyeb Mehta — depicts Goddess Durga killing Mahishasura (recall: Dandiya = mock fight of Durga vs Mahishasura)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3 -->
+    <div class="sec purple">③ Painting "Engagement Ring" (1961) 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> The painting "Engagement Ring" (1961) by Roy Lichtenstein was based on a comic panel from which strip?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Peanuts</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Dilbert</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Winnie Winkle ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Blondie</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Winnie Winkle</div>
+    </div>
+    <div class="tip-box">
+      Some questions you simply <strong>know or don't</strong> — approach them with confidence (not guilt). Confidence comes from <span class="hl">revision</span>. If a direct repeat appears, you'll nail it.
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4 -->
+    <div class="sec red">④ Sheesh Mahal (Mirror Hall) 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which Rajput palace is known for its mirror hall called "Sheesh Mahal", displaying intricate mirror mosaics?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Amer Fort ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mehrangarh Fort</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Udaipur City Palace</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chittorgarh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Amer Fort — built by <strong>Maharaja Man Singh</strong></div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Fort</th><th>Key facts</th></tr>
+      <tr><td><strong>Mehrangarh</strong></td><td>Built by <strong>Rao Jodha</strong> (Rathore Rajput) in <span class="hl">1459</span>; Jodhpur = <strong>Blue City</strong> (Jaipur = Pink City)</td></tr>
+      <tr><td><strong>Chittorgarh</strong></td><td><strong>Sisodia Rajputs</strong> of Mewar (Maharana Pratap, Rana Sanga); has Vijay Stambh, Kirti Stambh, Rana Kumbha Palace, Padmini Palace, Kalika Mata Temple</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5 -->
+    <div class="sec green">⑤ Nagara vs Dravidian — Statements 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Statements on structural differences between Nagara &amp; Dravidian styles. (S1: Dravidian temples are enclosed within a compound wall, absent in Nagara. S2: The central tower shape in the Dravidian style is similar to the curving shikhara of Nagara.)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only Statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only S1 correct. S2 wrong — Dravidian central tower = <strong>Vimana</strong> (pyramidal), NOT a curving shikhara</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li><strong>Garbhagriha</strong> = sanctum sanctorum (deity's idol installed)</li>
+        <li><strong>Mandapa</strong> = pillared hall: Ardha Mandapa, Mandapa, Maha Mandapa</li>
+        <li><strong>Shikhara</strong> (Nagara, curvy) → on top: <span class="hl">Amalaka</span> (gooseberry-shaped) → <span class="hl">Kalasha</span></li>
+        <li><strong>Vimana</strong> = Dravidian main tower; <strong>Gopuram</strong> = tall entrance gateway (South India)</li>
+        <li><strong>Vallabhi</strong> = rectangular type; <strong>Jagati</strong> = raised platform</li>
+        <li>Nagara = North Indian style; Dravidian = South Indian style</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6 -->
+    <div class="sec orange">⑥ Kalinga Architecture — Lingaraja Temple 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which temple is a prime example of Kalinga architecture, featuring a tall shikhara (Rekha Deula) and elaborate carvings?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Konark Sun Temple</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Khajuraho temples</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Meenakshi Temple</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Lingaraja Temple ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lingaraja Temple (Bhubaneswar) — Kalinga architecture = Odisha temples</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Term / Temple</th><th>Detail</th></tr>
+      <tr><td><strong>Rekha Deula</strong></td><td>Main temple tower (vertical-type shikhara) — Odisha</td></tr>
+      <tr><td><strong>Pidha Deula</strong></td><td>Jagmohan / assembly hall (step-by-step type)</td></tr>
+      <tr><td><strong>Phamsana Deula</strong></td><td>Straight pyramidal type</td></tr>
+      <tr><td><strong>Lingaraja Temple</strong></td><td>Built by King Jajati Kesari (<span class="hl">Somavanshi Dynasty</span>)</td></tr>
+      <tr><td><strong>Konark Sun Temple</strong></td><td>"Black Pagoda"; Rekha Deula collapsed ~200 yrs ago, only Jagmohan remains; built by <strong>Narasimha Deva I</strong> (Eastern Ganga Dynasty)</td></tr>
+      <tr><td><strong>Jagannath Puri Temple</strong></td><td>"White Pagoda"</td></tr>
+    </table>
+    <div class="sticky blue">South India: Nandi <strong>outside</strong> + water tanks around temple. North India (Nagara): Nandi <strong>inside</strong>.</div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7 -->
+    <div class="sec blue">⑦ Earliest Temple Materials — Statements 🧱</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Statements on earliest temple construction materials. (S1: Oldest surviving structural Gupta-period temples were primarily built using sandstone. S2: Earliest known Ratha-style temples are found in Madhya Pradesh.)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only Statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only S1 correct. S2 wrong — Ratha-style temples are in <strong>Tamil Nadu</strong>, not MP</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Pancha Rathas</strong> (based on the Pandavas) at <span class="hl">Mamallapuram / Mahabalipuram</span>, Tamil Nadu — by Pallava kings</li>
+      <li>Pallava King <strong>Narasimha Varman I</strong> defeated <strong>Pulakeshin II</strong> → title <span class="hl-g">"Vatapi Kondan"</span> (Pulakeshin II had earlier defeated his father Mahendra Varman I)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8 -->
+    <div class="sec purple">⑧ Kailasanatha Temple — Mural Technique 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> The murals in the Kailasanatha Temple are painted using which technique?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Fresco-secco ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Fresco-secco — paint applied on a <strong>dry wall</strong></div>
+    </div>
+    <ul class="hw">
+      <li>Kailasanatha Temple = Tamil Nadu (Kanchipuram), built by <strong>Narasimha Varman II</strong> (≠ Kailash Temple, Ellora, Maharashtra)</li>
+      <li>Mainly Shaivite temples by Pallavas / Cholas (Great Living Chola = Chola architecture)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q9 -->
+    <div class="sec red">⑨ Picasso of India 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which famous Indian painter is known for bold strokes &amp; influence on modern Indian art — also called the "Picasso of India"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>S.H. Raza</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>M.F. Husain ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tyeb Mehta</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Nandalal Bose</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: M.F. Husain (Maqbool Fida Husain) — controversies over nude paintings; self-exile, took Qatari citizenship, died in London; big fan of Madhuri Dixit</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li><strong>Nandalal Bose</strong> decorated the Constitution / Preamble; student of the Oriental Art College founded by <span class="hl">Abanindranath Tagore</span></li>
+        <li>Abanindranath Tagore painted the <strong>Bharat Mata</strong> portrait (during Bengal partition)</li>
+        <li>Constitution calligraphy: <strong>Prem Bihari Narayan Raizada</strong> (English), <strong>Vasant Krishna Vaidya</strong> (Hindi); Nandalal Bose = decoration</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10 -->
+    <div class="sec green">⑩ Dashavatara Temple, Deogarh / Ellora — Statements 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Statements on the Dashavatara (10th incarnation of Vishnu) Temple, Deogarh. (S1: Deogarh is among the most important sites of early temple construction in North India. S2: Ellora's sculptures are exclusively dedicated to Shaivism.)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Only Statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: S1 correct (Deogarh, near Jhansi; Gupta architecture). S2 wrong — "exclusively/only" = extreme keyword</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Ellora = 34 caves total:</strong></p>
+      <ul class="hw chk">
+        <li>Caves <strong>1–12</strong> = Buddhist</li>
+        <li>Caves <strong>13–29</strong> = Hindu</li>
+        <li>Caves <strong>30–34</strong> = Jain</li>
+        <li>Cave <span class="hl">16 = Kailash Temple</span> (Lord Shiva) = largest rock-cut monolithic temple</li>
+      </ul>
+      <p class="hw"><strong>Ajanta</strong> = 29 + 1 unfinished = 30, <span class="hl-g">only Buddhist</span> caves</p>
+    </div>
+    <ul class="hw">
+      <li>Deogarh used <strong>sandstone</strong>; Gupta architecture also famous for <span class="hl">brick temples</span> (e.g., Bhitargaon, Kanpur = oldest brick temple)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11 -->
+    <div class="sec orange">⑪ Pulikali — Animal 🐯</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Pulikali, a folk art form, involves performers painting themselves as which animal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Tiger ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tiger — performers paint themselves as tigers (Pulikali = "tiger dance")</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12 -->
+    <div class="sec blue">⑫ Khajuraho Temples — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> The Khajuraho temples (MP) — known for ornate shikharas &amp; erotic sculptures — belong to which style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dravidian</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Nagara ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Vesara</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kalinga</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagara</div>
+    </div>
+    <ul class="hw">
+      <li>Khajuraho temples: <span class="hl">Kandariya Mahadev</span>, Lakshmana Temple, Matangeshwara Temple (worship still done at Matangeshwara)</li>
+      <li>UP-MP border, near <strong>Kalinjar Fort</strong>, Bundelkhand region; built by <strong>Chandela dynasty</strong></li>
+      <li><strong>Vesara</strong> = Nagara + Dravida, developed by the (later) <strong>Chalukyas</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q13 -->
+    <div class="sec purple">⑬ Rajput Cenotaph 🪦</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which Rajput monument serves as a cenotaph (cremation memorial), rather than a fort or palace, built in memory of a ruler?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jaswant Thada ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Amer Fort</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mehrangarh</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hawa Mahal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jaswant Thada. Mehrangarh has Sheesh Mahal &amp; Phool Mahal. Hawa Mahal = Jaipur, 953 windows, UNESCO 2019, built 1799 by Maharaja Sawai Pratap Singh</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14 -->
+    <div class="sec red">⑭ Indo-Saracenic Architecture ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which structure exemplifies Indo-Saracenic architecture (blending Gothic and Mughal features) in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Victoria Memorial ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lotus Temple</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hampi Temple Complex</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Golden Temple</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Victoria Memorial (West Bengal)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Gothic</strong> (origin Europe/Spain): ribbed vaults, glass windows, pointed arches — e.g., Chhatrapati Shivaji Terminus (Mumbai), Notre Dame Cathedral (Paris)</li>
+      <li><strong>Indo-Saracenic</strong> = Gothic + Mughal + Indian elements</li>
+      <li>Hampi = Karnataka, Vijayanagara (Hindu); Golden Temple = Amritsar (Sikh) → eliminate</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15 -->
+    <div class="sec green">⑮ Vesara Style — Region 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> The term "Vesara" refers to an architectural style developed in which Indian region (combining North &amp; South Indian temple designs)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Deccan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Deccan — mainly developed by the <strong>Chalukyas</strong></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q16 -->
+    <div class="sec orange">⑯ "Mountain Fort" of Jodhpur 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> A Rajput fort built atop a hill in Jodhpur is famously called the "Mountain Fort". Which is it?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Mehrangarh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">A</div>Chittorgarh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mehrangarh (Rao Jodha, Jodhpur = Blue City). Chittorgarh = Sisodia Rajputs of Mewar (Vijay Stambh, Kirti Stambh, Padmini Palace…). Amer = Sheesh Mahal (Man Singh)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17 -->
+    <div class="sec blue">⑰ Lingaraja Temple — City 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> The Lingaraja Temple is located in which city?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Puri</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Konark</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Bhubaneswar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Khajuraho</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bhubaneswar (Kalinga architecture, Odisha). Built by King Jajati Kesari (Somavanshi Dynasty)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q18 -->
+    <div class="sec purple">⑱ Chalukya Vesara Complex — Pattadakal 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Which temple complex represents the Chalukya Vesara style (combining Dravidian &amp; Nagara features)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Pattadakal Group of Temples (Karnataka) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pattadakal Group of Temples</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>Temple</th><th>Built by</th></tr>
+      <tr><td><strong>Virupaksha</strong> (Pattadakal)</td><td>Queen Lokamahadevi (for husband Vikramaditya II's victory) — Chalukya</td></tr>
+      <tr><td><strong>Virupaksha</strong> (Hampi)</td><td>Lakkana Dandesha (Vijayanagara court)</td></tr>
+      <tr><td><strong>Sangameshwara</strong></td><td>Vikramaditya himself</td></tr>
+      <tr><td><strong>Mallikarjuna</strong></td><td>Queen Trilokyamahadevi (another wife of Vikramaditya)</td></tr>
+    </table>
+    <div class="sticky">Also <strong>Aihole Group</strong>: Ravanphadi Caves, Durga Temple (used as a fort — dedicated to Shiva, no Durga). <strong>Badami caves</strong> also Chalukya.</div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19 -->
+    <div class="sec red">⑲ Jama Masjid, Delhi — Commissioned by 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which Mughal emperor commissioned the Jama Masjid in Delhi (red sandstone &amp; marble, domes, minarets)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Akbar</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Shah Jahan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Humayun</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jahangir</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Shah Jahan</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Mosque</th><th>Built by</th></tr>
+      <tr><td>Jama Masjid, Agra</td><td>Jahanara Begum (Shah Jahan's eldest daughter)</td></tr>
+      <tr><td>Moti Masjid — Lahore</td><td>Jahangir</td></tr>
+      <tr><td>Moti Masjid — Agra</td><td>Shah Jahan</td></tr>
+      <tr><td>Moti Masjid — Delhi</td><td>Aurangzeb</td></tr>
+      <tr><td>Jama Masjid, Fatehpur Sikri</td><td>Akbar</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20 -->
+    <div class="sec green">⑳ Statue of Unity — Sculptor 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which famous sculptor created the Statue of Unity?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ram V. Sutar ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ram V. Sutar — Statue of Unity (Sardar Patel), height <span class="hl">182 metres</span></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q21 -->
+    <div class="sec orange">21 · Charminar — Architectural Influences 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> The Charminar in Hyderabad incorporates a combination of which architectural influences (arched minarets, stucco decoration)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Persian + Hindu + Islamic ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: All three — Persian, Hindu &amp; Islamic. Built by <strong>Quli Qutub Shah</strong> in <span class="hl">1591</span></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22 -->
+    <div class="sec blue">22 · Prehistoric Paintings (UNESCO) 🏞️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Which site is known for prehistoric paintings and is a UNESCO World Heritage Site?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Bhimbetka, Madhya Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bhimbetka (MP) — discovered by <strong>V.S. Wakankar</strong> (spotted while on a Bhopal→Itarsi train). Prehistoric = Stone Age. Ajanta &amp; Ellora became UNESCO sites in <span class="hl">1983</span></div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">MAHARASHTRA UNESCO SITES</div>
+      Ajanta · Ellora · Elephanta Caves · Chhatrapati Shivaji Terminus · Victorian Gothic &amp; Art Deco Ensembles of Mumbai · <span class="hl">Maratha Military Landscapes</span> (most recent)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23 -->
+    <div class="sec purple">23 · Hawa Mahal Balconies 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> The intricate overhanging balconies in Hawa Mahal are known by which architectural term?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jharokha ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chhatri</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Iwan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mandap</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jharokha</div>
+    </div>
+    <ul class="hw">
+      <li>Hawa Mahal: <span class="hl">953 jharokhas</span>; 5 storeys; depicts the crown of Lord Krishna; UNESCO 2019; Jaipur; built <strong>1799</strong> by Maharaja Sawai Pratap Singh; designer <strong>Lalchand Ustad</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24 -->
+    <div class="sec red">24 · Mughal Forts (Agra Fort) — Feature 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Mughal forts such as Agra Fort are noted for which defining architectural feature (defensive strength + ceremonial grandeur)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Floating terraces</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Massive bastions and gates ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dravidian gopurams</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Curving shikhara</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Massive bastions and gates</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q25 -->
+    <div class="sec green">25 · Khwaja Moinuddin Chishti Dargah 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Where is the Dargah of the Sufi saint Khwaja Moinuddin Chishti located?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fatehpur Sikri</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ajmer ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ajmer. Fatehpur Sikri = <strong>Salim Chishti</strong> (blessed Akbar with a son → Jahangir/Salim); Akbar built Fatehpur Sikri city &amp; the Buland Darwaza (commemorating Gujarat victory)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26 -->
+    <div class="sec orange">26 · Ellora Caves — Religious Traditions 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> The Ellora Caves include temples representing religious traditions spanning the 6th–10th centuries. (Which is correct?)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Buddhist + Hindu + Jain (34 caves) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 34 caves — 1–12 Buddhist, 13–29 Hindu, 30–34 Jain. Cave 16 = Kailash Temple</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Ajanta Caves:</strong> carved 2nd–6th c. AD; carving started by the <span class="hl">Satavahanas</span>; rock-cut Buddhist architecture</li>
+      <li><strong>Ellora:</strong> main work by <span class="hl-g">Rashtrakutas</span>; Cave 16 Kailash Temple built by <strong>Krishna I</strong> (Rashtrakuta)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27 -->
+    <div class="sec blue">27 · "Palace of Wind" 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Which Rajput palace is popularly known as the "Palace of Wind"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Hawa Mahal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Hawa Mahal (jharokhas for ventilation)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28 -->
+    <div class="sec purple">28 · Rajput Forts — Defensive Features 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> Rajput forts such as Chittorgarh &amp; Mehrangarh are known for defensive features. Which characteristic primarily defines them?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lotus motifs</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Massive thick walls and bastions ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Stupa-shaped domes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mughal arches</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Massive thick walls &amp; bastions. (e.g., <strong>Kalinjar Fort</strong> — walls so thick that Sher Shah Suri died trying to climb it; held by Chandela dynasty)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29 -->
+    <div class="sec red">29 · Buddhist Architecture (2nd century BC) ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Which is the primary focus of Buddhist architecture &amp; sculpture during the 2nd century BC?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Development of Hindu temples</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Large-scale Jain sculptures</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Construction of stupas, chaitya halls &amp; caves ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Stupas, chaitya halls &amp; caves</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Bhaja, Karle &amp; Kanheri Caves</strong> — all in Maharashtra</li>
+      <li><strong>Chaitya</strong> = worship hall; <strong>Vihara</strong> = residence (for monks)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30 -->
+    <div class="sec green">30 · Pietra Dura — Mughal Structure 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Which Mughal structure is renowned for "Pietra dura" (semi-precious stones inlaid on white marble)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Taj Mahal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Taj Mahal. The technique was earlier seen at the <strong>Tomb of Itmad-ud-Daulah</strong> (Agra, the "Baby Taj"), built by <strong>Mehrunnisa (Nur Jahan)</strong> in memory of her father</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31 -->
+    <div class="sec orange">31 · Southern Temple Architecture 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Which term refers to architecture known for the Southern type of temple?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Dravidian architecture ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dravidian — Gopurams (gateways), walled premises, mandapa, garbhagriha, vimana, tank, Nandi outside</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Gaja-Prishta:</strong> elliptical plan resembling the back of an elephant</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32 -->
+    <div class="sec blue">32 · Rock-cut Caves (3 religions) 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> The rock-cut cave temples in Maharashtra that exemplify a combination of Buddhist, Hindu &amp; Jain architecture are at —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ellora ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ellora (1–12 Buddhist, 13–29 Hindu, 30–34 Jain). Ajanta = 29+1 Buddhist only</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q33 -->
+    <div class="sec purple">33 · Taj Mahal — Commissioned by 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> Which Mughal Emperor commissioned the Taj Mahal (mausoleum for Mumtaz Mahal)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Shah Jahan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Shah Jahan — designer <strong>Ustad Ahmad Lahori</strong></div>
+    </div>
+    <ul class="hw">
+      <li><strong>Ustad Hamid Lahori</strong> = chronicler; wrote the <span class="hl">Badshahnama</span> (biography of Shah Jahan)</li>
+      <li><strong>Shahnama</strong> written by <strong>Ferdowsi</strong> (came with Mahmud of Ghazni)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q34 -->
+    <div class="sec red">34 · Nagara Temple — Central Offset 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> In a Nagara temple, which element is the projecting central offset of the wall face?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Karna Shringa</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Pratiratha</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Anuratha</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Bhadra ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bhadra (don't confuse with Gopuram = Dravidian gateway)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q35 -->
+    <div class="sec green">35 · Modhera Sun Temple — Feature ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> What is a key architectural feature of the Sun Temple at Modhera?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Stepped tank ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Stepped tank (Gopurams/Vimana = South India). Built by <strong>Raja Bhimdev I</strong> (Solanki Dynasty)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q36 -->
+    <div class="sec orange">36 · Deogarh Temple — Which is True? 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> Which of the following is true about the Deogarh Temple?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Built ~6th c. AD near Jhansi (UP); follows Panchayatana layout, an early example of Nagara style ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Panchayatana layout, early Nagara style. (NOT rock-cut; built by Gupta rulers, not Chandela; it's the Dashavatara/Vishnu temple)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Panchayatana style:</strong> 4 subsidiary deity shrines + 1 main shrine; North Indian, first developed by the <span class="hl">Guptas</span></li>
+      <li>Dravidian architecture first developed by the <strong>Pallava Dynasty</strong> (South India)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q37 -->
+    <div class="sec blue">37 · Chittorgarh Fort — Statements 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Consider statements about Chittorgarh Fort (Vijay Stambh &amp; Kirti Stambh; 19 main temples; main entrance from 5th century).</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Statements 1, 2 &amp; 3 are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: All correct — has Vijay Stambh &amp; Kirti Stambh; 19 main temples (Kalika Mata most famous)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q38 -->
+    <div class="sec purple">38 · Mathura School of Art 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> Which best characterizes the Mathura School of Buddhist art &amp; architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Indigenous features (Yaksha influence); used red sandstone ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Indigenous; <span class="hl">red sandstone</span>. (Gandhara = Greek influence, grey schist; Mathura = smiling faces, masculinity, seated, inspired by early Hindu/Buddhist art)</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>Both Mathura &amp; Gandhara schools developed by the <strong>Kushanas</strong> (Greater Yuezhi tribe from Central Asia)</li>
+        <li>Kushana rulers: Kujula Kadphises → Vima Kadphises → <span class="hl">Kanishka</span> (Rabatak inscription suggests Kanishka was 4th)</li>
+        <li>Kushana capitals: 1st <strong>Purushapura</strong> (Peshawar), 2nd <strong>Mathura</strong></li>
+        <li><strong>Amaravati School</strong> → Satavahanas, then Ikshvakus</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q39 -->
+    <div class="sec red">39 · Gandhara Art — Statements 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> Statements on Gandhara art (stone sculptures). (S1: A gold reliquary with figures in an arch was found at Bimaran. S2: Intricately carved ivory plaques were discovered at Begram.)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both 1 and 2 are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both correct (Bimaran &amp; Begram, both in Afghanistan). Asked in CGL</div>
+    </div>
+    <ul class="hw">
+      <li>Gandhara region = Peshawar Valley, Mardan, Swat, Dir, Malakand, Bajaur (NWFP); Taxila (Punjab); up to Jalalabad (Afghanistan)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q40 -->
+    <div class="sec green">40 · Simplest Nagara Shikhara — Base 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> What is the typical base design of the simplest Nagara-style shikhara?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Circular base with domes</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Triangular base</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Square base with curving walls ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Square base with curving walls. (Shikhara → Amalaka → Kalasha. Jagati = raised platform: square in North, elliptical/Gaja-Prishta in South)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q41 -->
+    <div class="sec orange">41 · Churches of Old Goa — Style ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> Which architectural style predominantly defines the churches of Old Goa?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Indo-Saracenic</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mughal</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Baroque &amp; Manueline ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gothic Revival</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Baroque &amp; Manueline — blend of Gothic + Portuguese. (Portuguese = first to come, last to leave India)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q42 -->
+    <div class="sec blue">42 · Amalaka / Vimana — Statements (CGL 2025) 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> (S1: The Amalaka sits atop the spire in a Nagara-style temple. S2: In Dravidian-style temples, the vimana refers to the gateway tower.)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Statement 1 correct, Statement 2 incorrect ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: S1 correct. S2 wrong — Vimana = central/main shrine tower; <strong>Gopuram</strong> = gateway tower</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q43 -->
+    <div class="sec purple">43 · Gothic Revival — Statements (CGL) ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> Gothic Revival buildings in colonial India often used pointed arches &amp; ribbed vaults — "elements that were unknown in traditional European cathedrals."</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>The "unknown in European cathedrals" part is WRONG ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pointed arches/ribbed vaults are correct, but they were well known in European cathedrals (Gothic is European!) → that claim is false</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q44 -->
+    <div class="sec red">44 · Elephanta Caves — Distinguishing Feature 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> Which feature distinguishes the Elephanta Caves from other early rock-cut sites?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Focus on Shaivite themes; sculptural depth via light &amp; shadow ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Shaivite theme (Lord Shiva), depth through light &amp; shadow. Elephanta Island (Maharashtra); named by the Portuguese (elephant shape)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q45 -->
+    <div class="sec green">45 · Temple Style ↔ Region — Match 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> Which pairs of temple style &amp; region are correctly matched? (Vesara–Deccan; Rekha Deula–Orissa; Bhumija–Malwa; Kalinga–Tamil Nadu)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1, 2 &amp; 3 are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1, 2, 3 correct. Kalinga–Tamil Nadu is WRONG (Kalinga = Odisha)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Bhumija</strong> = Malwa region, developed by the <span class="hl">Paramaras</span>; star-shaped / square plan</li>
+      <li>Star-shaped temples → <strong>Hoysalas of Halebidu</strong>: Hoysaleswara Temple (Shiva), Chennakeshava Temple (Vishnu), Karnataka</li>
+      <li><strong>64 Yogini Temple</strong> (Morena, MP) inspired the design of the old Parliament building</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q46 -->
+    <div class="sec orange">46 · Kangra Fort — Structural Element 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> Which structural element enhances the visual grandeur of the Kangra Fort?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Wooden sculptures</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Colourful glass windows</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Arches, domes &amp; raw carvings ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Painted ceilings &amp; tile floors</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Arches, domes &amp; raw carvings. Kangra Fort = Himachal Pradesh (one of the oldest forts of India)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q47 -->
+    <div class="sec blue">47 · Dravidian Main Tower 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> What is the main tower of a Dravidian-style temple known as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Vimana ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Vimana (main tower). Shikhara = Nagara; Vihara = residence for monks; Gopuram = gateway</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q48 -->
+    <div class="sec purple">48 · Konark Chariot — No. of Wheels 🛞</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> How many decorative wheels are found on the Konark Sun Temple chariot?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>24 wheels (12 pairs) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 12 pairs = <span class="hl">24 wheels</span> (8 large + 8 small spokes; represent 24 hours). Pulled by <strong>7 horses</strong></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q49 -->
+    <div class="sec red">49 · Shore Temple, Mahabalipuram — Statements 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> Statements on the Shore Temple at Mahabalipuram (Dravidian, granite blocks, Pallavas; architectural continuity from rock-cave temples to structured stone).</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Both statements true; 2nd is the correct explanation ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both true. Pallavas developed Dravidian; Guptas developed Nagara</div>
+    </div>
+    <ul class="hw">
+      <li>Rock-cut monuments: Pancha Rathas, Varaha Cave (Vishnu's boar incarnation protecting Earth goddess — also at Vidisha, MP, by Chandragupta II Vikramaditya), Mahishasuramardini Cave (Durga panels), Trimurti Cave (Brahma-Vishnu-Shiva)</li>
+      <li>Structured temples: <strong>Shore Temple</strong> (Mahabalipuram), <strong>Kailasanathar Temple</strong> (Kanchipuram)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q50 -->
+    <div class="sec green">50 · Konark Chariot — No. of Horses 🐎</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> The Sun Temple at Konark looks like a big chariot. How many horses pull it?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Seven ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Seven horses</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q51 -->
+    <div class="sec orange">51 · Jagannath Temple, Puri — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> The Jagannath Temple in Puri is an example of which architectural style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dravidian</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Maratha</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nagara ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Vesara</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagara (Kalinga sub-style, Odisha) — "White Pagoda"; has Rekha Deula + Pidha Deula (stepped Mandapa)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q52 -->
+    <div class="sec blue">52 · Meenakshi Temple, Madurai — Feature 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> The famous Meenakshi Temple in Madurai is known for which architectural feature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>White marble walls</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Shikhara covered in gold</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Gigantic gopurams ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hidden underground</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gopurams (Madurai = South India → gopurams). Use elimination: white marble = Mughal; gold pinnacle = very rare</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q53 -->
+    <div class="sec purple">53 · Konark Wheels — Represent 🛞</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> What do the chariot wheels on the Konark temple represent?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Planets</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Time divisions ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Festivals</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Weapons</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Time divisions — 24 wheels = 24 hours of the day</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q54 -->
+    <div class="sec red">54 · French Colonnaded Architecture — City 🇫🇷</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Which Indian city is known for buildings featuring French colonnaded architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Pondicherry ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pondicherry (French). Goa = Portuguese influence</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q55 -->
+    <div class="sec green">55 · Uttarakhand Ancient Temples — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> The architectural style of ancient temples in Uttarakhand is primarily influenced by which style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Nagara ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagara (North Indian) — not Gothic / Deccan</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q56 -->
+    <div class="sec orange">56 · Kailash Temple, Ellora — No. of Rocks (CGL 2025) 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> The rock-cut Kailash Temple at Ellora was made out of how many rocks?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>One (single monolithic rock) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: One — largest rock-cut <strong>monolithic</strong> temple (mono = single stone)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q57 -->
+    <div class="sec blue">57 · Panch Mahal, Fatehpur Sikri — Pattern 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> The architectural pattern of the Panch Mahal in Fatehpur Sikri is based on —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Buddhist Vihara ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Buddhist Vihara shape. Built by <strong>Akbar</strong> in Fatehpur Sikri</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q58 -->
+    <div class="sec purple">58 · Ekattarso Mahadev Temple 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> The Ekattarso Mahadev Temple is also known as —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Chausath (64) Yogini Temple ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 64 Yogini Temple (Morena, MP) — its design inspired the old Parliament building</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q59 -->
+    <div class="sec red">59 · Dilwara &amp; Somnath Temples 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> Identify: the Jain temple at Mount Abu / the Gujarat temple looted by Mahmud Ghazni.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Dilwara (Jain, Mount Abu) · Somnath (Gujarat) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ <strong>Somnath</strong> (Gujarat) was looted by Mahmud Ghazni. <strong>Dilwara Jain Temple</strong> at Mount Abu — built by the Vastupala–Tejpala brothers</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q60 -->
+    <div class="sec green">60 · Hawa Mahal — Deity 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> Hawa Mahal is dedicated to / depicts which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Lord Krishna ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lord Krishna — its shape depicts the crown of Lord Krishna</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q61 -->
+    <div class="sec orange">61 · Dilwara Temple Complex — No. of Temples 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> How many distinct temples are there in the Dilwara Temple Complex?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Five ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Five — Vimal Vasahi, Luna Vasahi, Pittalhar, Parshvanath &amp; Mahavir Swami (based on 5 Tirthankaras)</div>
+    </div>
+    <ul class="hw">
+      <li>Jainism = 24 Tirthankaras (1st Rishabhdev, 23rd Parshvanath, 24th Mahavira)</li>
+      <li>Mount Abu (Rajasthan) = highest peak of the <span class="hl">Aravalli Hills</span></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q62 -->
+    <div class="sec blue">62 · Draupadi Ratha — Type 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> Draupadi Ratha is a ___ type of temple.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Chaitya</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Structured</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Elephant-back type</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Rock-cut (monolithic) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rock-cut monolithic. Pancha Rathas (Mahabalipuram, by Pallavas): Draupadi, Dharmaraja, Bhima, Arjuna, Nakula-Sahadeva (one combined)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q63 -->
+    <div class="sec purple">63 · Chandigarh — Architect 🏙️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> Chandigarh has buildings designed by which architect?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Le Corbusier ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Le Corbusier (French). Rashtrapati Bhavan / India Gate / Rajpath → <strong>Edwin Lutyens</strong> (England)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q64 -->
+    <div class="sec red">64 · Sanchi Stupa — Depicts Scenes From ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> The Sanchi Stupa is known for sculptures depicting scenes from —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Jataka stories ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jataka stories (previous-birth / childhood tales of Buddha). A stupa symbolizes <strong>Mahaparinirvana</strong> (death) of Buddha; relics kept inside</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Stupa parts:</strong></p>
+      <ul class="hw key">
+        <li><strong>Torana</strong> = gateway · <strong>Anda</strong> = dome (egg) · <strong>Harmika</strong> · <strong>Chhatra</strong> = umbrella (the 3 = Triratna: Buddha, Dhamma, Sangha)</li>
+        <li><strong>Vedika</strong> = railings · <strong>Medhi</strong> = circumambulation path</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q65 -->
+    <div class="sec green">65 · Greek + Indian Art → ? 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> The blending of Greek &amp; Indian art led to the development of which art?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Gandhara art ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gandhara art (Greek/Hellenistic + Indian)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Amaravati School:</strong> developed by Satavahanas; <span class="hl">white limestone (marble)</span>; Buddhist + secular; <em>narrative</em> art; 2nd c. BC–3rd c. AD; Andhra Pradesh region</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q66 -->
+    <div class="sec orange">66 · Jain Syadvada System — Aim 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> According to Jain philosophy, what is the main aim of the Syadvada system?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>It incorporates truths from multiple viewpoints ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Truth from multiple viewpoints. Related: <strong>Anekantavada</strong> (many sides to truth) — both are Jain philosophies</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q67 -->
+    <div class="sec blue">67 · Chennai's Architectural Character 🏙️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Which best describes Chennai's architectural character?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>British ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: British (not Mughal / Rajput / Buddhist)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q68 -->
+    <div class="sec purple">68 · "Samyak Charitra" in Jainism 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> The term "Samyak Charitra" in Jainism refers to —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Right Conduct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Right Conduct</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li><strong>Three Jewels (Triratna) of Jainism — "KFC":</strong> Right <span class="hl">K</span>nowledge (Samyak Jnana), Right <span class="hl">F</span>aith (Samyak Darshan), Right <span class="hl">C</span>onduct (Samyak Charitra)</li>
+        <li>Buddhism Triratna: Buddha, Dhamma, Sangha</li>
+        <li><strong>5 vows of Jainism:</strong> Ahimsa (non-violence), Aparigraha (non-possession), Asteya (non-stealing), Brahmacharya (celibacy), Satya (truth)</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q69 -->
+    <div class="sec red">69 · River Saraswati — First Mentioned In 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> In which Veda is the River Saraswati mentioned for the first time?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Samaveda</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Yajurveda</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Atharvaveda</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Rigveda ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rigveda</div>
+    </div>
+    <ul class="hw">
+      <li>Ganga mentioned <strong>once</strong>; Yamuna <strong>3 times</strong>; Krishna/Narmada/Periyar = 0 times</li>
+      <li><span class="hl">Saraswati</span> = most-praised river; <span class="hl-g">Sindhu (Indus)</span> = mentioned the most number of times</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q70 -->
+    <div class="sec green">70 · Largest Dome of India 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> Which is the largest dome of India / second largest dome of the world?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Gol Gumbaz ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gol Gumbaz (Bijapur) — built by <strong>Mohammed Adil Shah</strong> (Adil Shahi Dynasty); architect <strong>Yaqut of Dabul</strong>; has the "Whispering Gallery"</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Adhai Din Ka Jhonpra</strong> = by Qutbuddin Aibak (Ajmer); <strong>Quwwat-ul-Islam</strong> mosque (Delhi, near Qutub Minar) also by him</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q71 -->
+    <div class="sec orange">71 · Institution by Rabindranath Tagore (MTS 2025) 🏫</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> Which of the following institutions was established by Rabindranath Tagore?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Presidency College</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Shantiniketan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fort William College</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hindu College</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Shantiniketan (1901)</div>
+    </div>
+    <ul class="hw">
+      <li>Fort William College → Richard Wellesley; Hindu College → Raja Ram Mohan Roy + David Hare (1817)</li>
+      <li><strong>Jonathan Duncan</strong> → Sanskrit College, Banaras (1791)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q72 -->
+    <div class="sec blue">72 · Bhimakali Temple, Sarahan — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> The Bhimakali Temple in Sarahan is a fine example of which architectural style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Kath-Kuni (wooden corner) style ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kath-Kuni (Kath = wood, Kuni = corner). Sarahan, Himachal Pradesh</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q73 -->
+    <div class="sec purple">73 · Sidi Saiyyed Mosque, Gujarat — Famous For 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> For which architectural element is the Sidi Saiyyed Mosque in Gujarat famous?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Lattice (Jali) windows ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lattice/Jali windows (Gujarat). Trick: <strong>Sidi</strong> → <span class="hl">Sidi community</span> (came from Africa, "Sidi Dhamal" dance)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q74 -->
+    <div class="sec red">74 · Jain Temples — Known For 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> Which architectural feature are Jain temples known for?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Highly intricate marble carvings ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Enormous domes without pillars</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Bronze horse statues</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gothic vaults &amp; niches</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Highly intricate marble carvings</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q75 -->
+    <div class="sec green">75 · Features of Gothic Architecture ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> Which of the following features are associated with Gothic architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sloping tiled roofs</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Pointed arches &amp; stained-glass windows (ribbed vaults) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Flat roofs</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Domes with minarets</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pointed arches, ribbed vaults &amp; stained-glass windows</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q76 -->
+    <div class="sec orange">76 · Chaityas &amp; Viharas Carved into Rock 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Which ancient Indian site is famous for chaityas &amp; viharas carved into rock?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Hampi (Vijayanagara) — Hindu</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mahabalipuram Shore Temples — Pallava</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tanjore — Chola temples</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ellora ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ellora (chaityas/viharas + all three religions). Chaitya = worship; Vihara = residence</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q77 -->
+    <div class="sec blue">77 · Konark Sun Temple — Shape 🛞</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> The famous Sun Temple at Konark is built in the shape of —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>A huge chariot ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A chariot (24 wheels, 7 horses). Only the Jagmohan (Pidha Deula) survives — the main tower (Rekha Deula) collapsed</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q78 -->
+    <div class="sec purple">78 · Vijayanagara Style — UNESCO Town 🏞️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> Which temple town is a UNESCO World Heritage Site known for the Vijayanagara style of architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Pattadakal (Chalukya)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Aihole (Chalukya)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Hampi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tanjore (Chola)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Hampi (Vijayanagara). Aihole Pillar Inscription (Prashasti) of Pulakeshin II by <strong>Ravikirti</strong></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q79 -->
+    <div class="sec red">79 · Jagannath Temple — Height (CHSL) 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> The main temple of Shri Jagannath (Kalinga architecture, on an elevated platform) has a height of —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>65 metres ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 65 metres (factual; asked in CHSL)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q80 -->
+    <div class="sec green">80 · Bhitargaon Temple — Location 🧱</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> The Bhitargaon village temple (Gupta architecture) is located in —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Kanpur (UP) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kanpur — the oldest <strong>brick temple</strong> in India</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q81 -->
+    <div class="sec orange">81 · "Taj Mahal of the South" 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> Which of the following is known as the "Taj Mahal of the South"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Meenakshi Temple (Madurai) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Meenakshi Temple, Madurai. (NOTE: "Taj of the Deccan" = Bibi Ka Maqbara — different!)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q82 -->
+    <div class="sec blue">82 · Kailash Temple (8th c.) — State 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> The Kailash Temple was built in the 8th century in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Maharashtra ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Maharashtra (Ellora, Cave 16) — built by <strong>Krishna I</strong> (Rashtrakuta); largest monolithic temple, dedicated to Lord Shiva</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q83 -->
+    <div class="sec purple">83 · Beautiful Sculpted Gateways ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> Which monument is known for beautiful sculpted gateways (toranas)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Nalanda University (Kumaragupta)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Amaravati</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ajanta Caves</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Sanchi Stupa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sanchi Stupa — Ashoka built it with brick; later expanded with sandstone by the <strong>Sunga dynasty</strong>. (Nalanda built by Kumaragupta, burnt by Bakhtiyar Khilji)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q84 -->
+    <div class="sec red">84 · Greek + Indian Fusion Art 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> Which art form developed as a result of the fusion of Greek &amp; Indian artistic styles?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Gandhara ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gandhara (G for Greek/Hellenistic, G for Gandhara)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q85 -->
+    <div class="sec green">85 · Front Wall Central Entrance Gateway — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> In which architectural style does the front wall have an entrance gateway at its centre?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Dravidian (Gopuram) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dravidian — the central gateway = Gopuram</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q86 -->
+    <div class="sec orange">86 · Place with Main Deity Idol 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> In Hindu temple architecture, the place where the main idol of a deity is installed is called —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Garbhagriha (Sanctum Sanctorum) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Garbhagriha. (Shikhara = main tower in Nagara; Mandapa = pillared hall; Vahana = deity's vehicle e.g. Ganesha's mouse)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q87 -->
+    <div class="sec blue">87 · Jharokha — Type of Feature 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q87.</span> The Jharokha in Rajput architecture is which type of feature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Overhanging balcony ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Overhanging balcony (e.g., 953 jharokhas in Hawa Mahal — Palace of Winds)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q88 -->
+    <div class="sec purple">88 · Bibi Ka Maqbara — Statements 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q88.</span> By what name is Bibi Ka Maqbara known, and which statements about it are correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>"Taj Mahal of the Deccan"; built ~1660 during Aurangzeb's reign ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Taj Mahal of the Deccan (Chhatrapati Sambhaji Nagar / old Aurangabad). Built ~1660 (Aurangzeb's reign) — by Aurangzeb / Prince Azam Shah, in memory of Dilras Banu Begum. (NOT 1500s/Babur). "Baby Taj" = Itmad-ud-Daulah</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q89 -->
+    <div class="sec red">89 · Sanchi Stupa — Tradition ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q89.</span> The famous Sanchi Stupa is associated with which architectural tradition?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Buddhist ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Buddhist</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q90 -->
+    <div class="sec green">90 · Rajput Military Architecture — Fort 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q90.</span> Which fort is an example of Rajput military architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Red Fort (Mughal)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Agra Fort (Mughal, Akbar)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Chittorgarh Fort ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Golconda Fort</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Chittorgarh Fort</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q91 -->
+    <div class="sec orange">91 · Stupa Carvings — Statements (Selection Phase 13) ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q91.</span> Artists of 2nd c. BC – 3rd c. AD often carved nature-inspired scenes on stupas; the carvings were part of secular artistic expression blended with religious themes.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Both correct, 2nd is the correct explanation ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both correct (note "often" = generalist keyword, not extreme). e.g., Gajalakshmi (Lakshmi with elephants pouring water), trees, elephants on toranas</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q92 -->
+    <div class="sec blue">92 · Mathura School — Key Feature 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q92.</span> Which of the following is a key feature of the Mathura school of sculpture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Heavy Greek influence</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Highly polished (grey) stone</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Red sandstone ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Red sandstone. Mathura shows iconography of both Buddhism &amp; Hinduism; Greek influence belongs to Gandhara</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q93 -->
+    <div class="sec purple">93 · Gothic Architecture — Origin Continent ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q93.</span> The Gothic architecture style originated in which continent?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Europe ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Europe</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q94 -->
+    <div class="sec red">94 · Basic Layout of Early Temples 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q94.</span> The basic layout of early temples typically included —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Sanctum sanctorum (garbhagriha), pillars &amp; mandapa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Garbhagriha + pillars + mandapa (no stupa/veranda). (Lecturer noted this likely refers to a reading passage)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q95 -->
+    <div class="sec green">95 · Gandhara — Influenced by Which Culture 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q95.</span> Which ancient culture greatly influenced the development of Gandhara art?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Greek (Hellenistic) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Greek / Hellenistic</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q96 -->
+    <div class="sec orange">96 · Brihadeshwara Temple — Style 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q96.</span> The Brihadeshwara Temple is built in which architectural style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Vesara</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Dravidian ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Indo-Saracenic</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dravidian (Chola). Great Living Chola Architecture — UNESCO <span class="hl">1987</span></div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Temple</th><th>Built by</th></tr>
+      <tr><td><strong>Brihadeshwara, Thanjavur</strong></td><td>Rajaraja I (a.k.a. Rajarajeswara Temple)</td></tr>
+      <tr><td><strong>Gangaikonda Cholapuram</strong></td><td>Rajendra Chola I ("Napoleon of South India")</td></tr>
+      <tr><td><strong>Airavatesvara Temple</strong></td><td>Rajaraja II</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q97 -->
+    <div class="sec blue">97 · Art School with Hedonistic Features 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q97.</span> Which school of art had more hedonistic features?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Amaravati ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Amaravati — white limestone; Hinduism but secular &amp; narrative; developed by Satavahanas (later Ikshvakus)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q98 -->
+    <div class="sec purple">98 · Metal Casting Technique 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q98.</span> Which metal casting technique was mastered by ancient Indian sculptors (for bronze)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Lost-wax technique (Cire Perdue) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lost-wax (Cire Perdue / Madhuchhista Vidhana) — used for bronze sculptures</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q99 -->
+    <div class="sec red">99 · Gandhara Style — Religion 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q99.</span> The Gandhara style is typically primarily of which religion?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Buddhism ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Buddhism</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q100 -->
+    <div class="sec green">100 · Erotic Sculptures + UNESCO Temple 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q100.</span> Which temple is known for its erotic sculptures and is a UNESCO World Heritage Site?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Khajuraho temples ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Khajuraho (Chandela dynasty; Kandariya Mahadev, Lakshmana, Matangeshwara)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q101 -->
+    <div class="sec orange">101 · Indo-Portuguese UNESCO Structure ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q101.</span> Which Indo-French/Portuguese structure is a UNESCO World Heritage Site?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Basilica of Bom Jesus (Goa) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Basilica of Bom Jesus, Goa — holds the tomb of <strong>St. Francis Xavier</strong></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q102 -->
+    <div class="sec blue">102 · Mathura Style — Distinguished By 🗿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q102.</span> The Mathura style of sculpture is distinguished by —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>A slight Hellenistic influence (mainly indigenous) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mainly indigenous, with a small Hellenistic influence (per SSC). "No outside influence at all" = wrong</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q103 -->
+    <div class="sec purple">103 · Ribbed Vaults &amp; Pointed Arches ⛪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q103.</span> Which architectural style is best described by ribbed vaults &amp; pointed arches?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Gothic ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gothic</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q104 -->
+    <div class="sec red">104 · Chandela Temple (10th–11th c.) — Exquisite Sculptures 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q104.</span> Which temple built by the Chandela Dynasty (10th–11th c.) is known for its exquisite (erotic) sculptures?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Khajuraho ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Khajuraho (Chandela). Brihadeshwara = Cholas; Modhera = Solanki (Bhimdev I); Lingaraja = Eastern Ganga/Somavanshi</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q105 -->
+    <div class="sec green">105 · Monument ↔ Style Pair 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q105.</span> Which of the following correctly pairs a monument with its architectural style?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Qutub Minar — Indo-Islamic ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Qutub Minar = Indo-Islamic. Height <span class="hl">72.5 m</span>, 5 storeys; started by Qutbuddin Aibak, completed by Iltutmish, top rebuilt by Firoz Shah Tughlaq</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q106 -->
+    <div class="sec orange">106 · Gujarat Medieval Architecture — Statements 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q106.</span> Which is correct regarding the regional features of Gujarat medieval architecture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Statements 1 &amp; 2 are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1 &amp; 2 correct — structures (mosques, towers) "often" feature ornamental carvings like toranas &amp; bell motifs. Reject extreme: "strictly avoided indigenous decorative influence"</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q107 -->
+    <div class="sec blue">107 · Match — Site ↔ Architectural Feature 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q107.</span> Match the site (Column A) with its architectural feature (Column B): Udayagiri, Guntupalle, Khandagiri.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>All correctly matched ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: see table</div>
+    </div>
+    <table class="hw-t blue">
+      <tr><th>Site</th><th>State</th><th>Feature</th></tr>
+      <tr><td><strong>Udayagiri</strong></td><td>Madhya Pradesh (Vidisha)</td><td>Pillared verandas with cells at the back (Varaha/boar form of Vishnu protecting Earth goddess)</td></tr>
+      <tr><td><strong>Guntupalle</strong></td><td>Andhra Pradesh</td><td>Circular chaitya stupas &amp; arches</td></tr>
+      <tr><td><strong>Khandagiri</strong></td><td>Odisha</td><td>Animal-shaped single-rock excavations</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q108 -->
+    <div class="sec purple">108 · Provincial Architecture (Medieval) — Statements 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q108.</span> Consider statements on provincial architecture in medieval India &amp; choose the correct option.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Statements 1 &amp; 2 are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1 &amp; 2 correct — Bengal &amp; Jaunpur developed a distinct style (separate from Delhi Sultanate); regional styles "often" blended Islamic with other styles. Reject extreme: "provincial styles remained completely uniform across all regions"</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- TEMPLE STYLE TABLE -->
+    <div class="sec red">📋 Master Reference — Temple Styles</div>
+    <table class="qr-t">
+      <tr><th>Style</th><th>Region / Details</th></tr>
+      <tr><td>Nagara</td><td>North India; Shikhara (curving) + Amalaka + Kalasha; Panchayatana layout; developed by Guptas</td></tr>
+      <tr><td>Dravidian</td><td>South India; Vimana (main tower), Gopuram (gateway), walled premises, tank, Nandi outside; developed by Pallavas</td></tr>
+      <tr><td>Vesara</td><td>Deccan; Nagara + Dravida hybrid; Chalukyas (Pattadakal, Aihole, Badami)</td></tr>
+      <tr><td>Kalinga</td><td>Odisha; Rekha Deula (tower) + Pidha Deula (Jagmohan) + Phamsana Deula</td></tr>
+      <tr><td>Bhumija</td><td>Malwa; Paramaras; star-shaped / square plan</td></tr>
+      <tr><td>Hoysala</td><td>Karnataka (Halebidu); star-shaped (Hoysaleswara, Chennakeshava)</td></tr>
+      <tr><td>Kath-Kuni</td><td>Himachal; wooden corner style (Bhimakali, Sarahan)</td></tr>
+    </table>
+
+    <!-- SCULPTURE SCHOOLS -->
+    <div class="sec orange">📋 Master Reference — Sculpture Schools</div>
+    <table class="qr-t">
+      <tr><th>School</th><th>Details</th></tr>
+      <tr><td>Gandhara</td><td>Kushanas; Greek/Hellenistic; grey schist; Buddhism; Peshawar valley region</td></tr>
+      <tr><td>Mathura</td><td>Kushanas; indigenous; red sandstone; Buddhism + Hinduism iconography</td></tr>
+      <tr><td>Amaravati</td><td>Satavahanas (then Ikshvakus); white limestone; narrative, secular; Andhra (2nd c. BC–3rd c. AD)</td></tr>
+    </table>
+
+    <!-- FORTS/MONUMENTS -->
+    <div class="sec green">📋 Master Reference — Forts, Palaces &amp; Monuments</div>
+    <table class="qr-t">
+      <tr><th>Monument</th><th>Key fact</th></tr>
+      <tr><td>Amer Fort</td><td>Maharaja Man Singh; Sheesh Mahal</td></tr>
+      <tr><td>Mehrangarh (Jodhpur)</td><td>Rao Jodha, 1459; Blue City; Sheesh Mahal + Phool Mahal</td></tr>
+      <tr><td>Chittorgarh</td><td>Sisodia Rajputs (Mewar); Vijay Stambh, Kirti Stambh, Padmini Palace; 19 temples</td></tr>
+      <tr><td>Hawa Mahal (Jaipur)</td><td>953 jharokhas, 5 storeys, crown of Krishna; Maharaja Sawai Pratap Singh (1799); designer Lalchand Ustad; UNESCO 2019</td></tr>
+      <tr><td>Jaswant Thada</td><td>Cenotaph (Jodhpur)</td></tr>
+      <tr><td>Kangra Fort</td><td>Himachal; one of the oldest forts</td></tr>
+      <tr><td>Kalinjar Fort</td><td>Chandela; very thick walls (Sher Shah Suri died here)</td></tr>
+      <tr><td>Gol Gumbaz</td><td>Mohammed Adil Shah; architect Yaqut of Dabul; Whispering Gallery; largest dome of India</td></tr>
+      <tr><td>Qutub Minar</td><td>Indo-Islamic; 72.5 m; Qutbuddin Aibak → Iltutmish → Firoz Shah Tughlaq</td></tr>
+      <tr><td>Taj Mahal</td><td>Shah Jahan; designer Ustad Ahmad Lahori; pietra dura</td></tr>
+      <tr><td>Bibi Ka Maqbara</td><td>"Taj of the Deccan"; ~1660; Aurangzeb / Azam Shah</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Key Exam Tips — Yaad Rakho!</div>
+    <div class="tip-box">
+      <ul class="hw num">
+        <li><span class="hl"><strong>Shikhara</strong></span> = Nagara tower; <span class="hl"><strong>Vimana</strong></span> = Dravidian tower; <strong>Gopuram</strong> = gateway; <strong>Rekha Deula</strong> = Kalinga tower</li>
+        <li>Ellora = 34 caves (Buddhist 1–12, Hindu 13–29, Jain 30–34); Ajanta = Buddhist only</li>
+        <li>Gandhara = Greek influence (Buddhism); Mathura = indigenous, red sandstone; Amaravati = white limestone</li>
+        <li>Extreme keywords ("only," "exclusively," "strictly," "completely uniform") → usually <span class="hl-p"><strong>wrong</strong></span>; "often/generally" → usually correct</li>
+        <li>Konark = Black Pagoda; Jagannath Puri = White Pagoda; both Kalinga (Odisha)</li>
+        <li>Use <strong>elimination</strong> on tough papers — Mughals weren't in Goa, Europeans knew Gothic, etc.</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF ARCHITECTURE &amp; CULTURE NOTES (TOPIC 4)</div>
+      <strong>All questions + options covered ✅ | Revise multiple times, then top your exam! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+/* Change the handwriting font across the notes */
+function setFont(font){
+  document.getElementById('fontOverride').textContent =
+    "p.hw,ul.hw li,.sticky,.mcq-h,.mcq-opt,.mcq-ans,.hw-t td,.qr-t td," +
+    ".tip-box,.imp,.trick,.key-box,.ca-box,.cover-sub{font-family:'" + font + "',cursive}";
+}
+/* Font-size +/- controls: increases ONLY the text size (not page zoom) */
+var fontScale = 1;
+function applyScale(){
+  var s = fontScale;
+  document.getElementById('sizeOverride').textContent =
+    "p.hw{font-size:" + (0.94 * s) + "rem}" +
+    "ul.hw li{font-size:" + (0.92 * s) + "rem}" +
+    ".sticky{font-size:" + (0.93 * s) + "rem}" +
+    ".mcq-h{font-size:" + (0.93 * s) + "rem}" +
+    ".mcq-opt{font-size:" + (0.87 * s) + "rem}" +
+    ".mcq-ans{font-size:" + (0.82 * s) + "rem}" +
+    ".hw-t{font-size:" + (0.87 * s) + "rem}" +
+    ".qr-t{font-size:" + (0.84 * s) + "rem}" +
+    ".sub{font-size:" + (1.0 * s) + "rem}";
+  document.getElementById('sizeLbl').textContent = Math.round(s * 100) + '%';
+}
+function changeSize(delta){
+  fontScale = Math.min(2.0, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  applyScale();
+}
+function resetSize(){ fontScale = 1; applyScale(); }
+</script>
+</body>
+</html>
