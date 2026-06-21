@@ -287,10 +287,10 @@ body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
 
   <div class="tb-group">
     <span>🔠 Size:</span>
-    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Smaller text">A−</button>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Decrease font size">A−</button>
     <span class="size-lbl" id="sizeLbl">100%</span>
-    <button class="btn btn-size" onclick="changeSize(0.1)" title="Larger text">A+</button>
-    <button class="btn btn-reset" onclick="resetSize()" title="Reset size">↺</button>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="Increase font size">A+ Bigger</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="Reset font size">↺</button>
   </div>
 
   <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
@@ -2619,14 +2619,16 @@ function setFont(font){
     "{font-family:'" + font + "',cursive!important}";
 }
 
-/* Font-size +/- controls (scales all rem-based text) */
+/* Font-size +/- controls (scales all rem-based text + line spacing) */
 var fontScale = 1;
 function applyScale(){
   document.documentElement.style.fontSize = (16 * fontScale) + 'px';
+  /* scale ruled-line / line-height so bigger text stays readable */
+  document.documentElement.style.setProperty('--lh', (32 * fontScale) + 'px');
   document.getElementById('sizeLbl').textContent = Math.round(fontScale * 100) + '%';
 }
 function changeSize(delta){
-  fontScale = Math.min(1.6, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  fontScale = Math.min(2.0, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
   applyScale();
 }
 function resetSize(){
