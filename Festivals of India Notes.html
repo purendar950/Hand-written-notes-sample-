@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festivals of India — Static GK Series (Topic 2) | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 BONUS / NEWS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🎉 Festivals of India — Topper Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Static GK Series</div>
+    <div class="cover-title">🎉 Festivals of India</div>
+    <div class="cover-sub">Topic 2 — Complete Structured Notes | All 147 Questions &amp; Options Covered</div>
+    <div class="cover-badge">🪔 Festivals · 🥁 Dances · 🏔️ Tribes · 🎪 Fairs (Melas) · 🛕 Temples</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+<!-- ============ QUESTIONS START BELOW (appended) ============ -->
+
+
+    <!-- Q1: ODISHA — CHAITRA -->
+    <div class="sec orange">① Odisha — Chaitra Festival 🎉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Which festival in Odisha is associated with Dhimsa dances and drum performances?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Durga Puja</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Chaitra Festival ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rath Yatra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kalinga Mahotsav</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Chaitra Festival</div>
+    </div>
+    <ul class="hw">
+      <li>Region: <span class="hl"><strong>Koraput district, Odisha</strong></span></li>
+      <li>Timing: <span class="hl-b"><strong>February–March</strong></span></li>
+      <li>Type: <span class="hl-g"><strong>Communal dance</strong></span> — performed in a circle, both men &amp; women participate</li>
+    </ul>
+    <div class="trick">
+      <strong>All Odisha Festivals:</strong> "This king of Kalinga, sitting on the chariot, will tell" → remembers 6 festivals
+    </div>
+    <table class="hw-t org">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Chhau</strong></td><td>Also a martial dance</td></tr>
+      <tr><td><strong>Nuakhai</strong></td><td>Agricultural festival; newly harvested rice offered as Prasad; offered to <span class="hl">Maa Samaleshwari</span> at Sambalpur; dance = <strong>Dalkhai</strong></td></tr>
+      <tr><td><strong>Konark Dance Festival</strong></td><td>Held at Konark Sun Temple</td></tr>
+      <tr><td><strong>Bali Yatra</strong></td><td>—</td></tr>
+      <tr><td><strong>Kalinga Mahotsav</strong></td><td>Martial arts and dance festival</td></tr>
+      <tr><td><strong>Rath Yatra</strong></td><td>For Lord Jagannath; Jagannath + Balabhadra + Subhadra taken to Gundicha Temple</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2: MANIPUR — NINGOL CHAKOUBA -->
+    <div class="sec pink">② Manipur — Ningol Chakouba 👭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which festival in Manipur focuses on the role of women in society and involves inviting sisters for feasting and gifts?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ningol Chakouba ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ningol Chakouba — Timing: October–November; married brothers invite sisters for feasting &amp; gifts</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Yaoshang</strong></td><td>"Holi of Manipur"; lasts <span class="hl">5 days</span></td></tr>
+      <tr><td><strong>Lai Haraoba</strong></td><td>"Merry Making of Gods"; <strong>Meitei community</strong>; worship of <span class="hl-g">Umang Lai</span> (forest deity); priests = <strong>Maibaa</strong> (male), <strong>Maibi</strong> (female); dance = Lai Haraoba + Khamba Toibi</td></tr>
+      <tr><td><strong>Sajibu Cheiraoba</strong></td><td>New Year of Meitei community; <strong>Sajibu</strong> = first month; around March/April</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3: SIKKIM — PANG LHABSOL -->
+    <div class="sec blue">③ Sikkim — Worship of Mount Kanchenjunga ⛰️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> This festival in Sikkim involves worship of Mount Kanchenjunga and includes prayers, mask dances, and local fairs.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Pang Lhabsol ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pang Lhabsol</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><span class="hl"><strong>Pang Lhabsol (Pangtod Cham)</strong></span></td><td>Kanchenjunga worship; mask dance; <strong>August–September</strong></td></tr>
+      <tr><td><strong>Losar</strong></td><td>Tibetan New Year; main celebration <strong>3 days</strong>: Lama Losar, Gyalpo Losar, monastery visit day; lasts 15 days total</td></tr>
+      <tr><td><strong>Saga Dawa</strong></td><td>Most sacred; month-long; commemorates Buddha's <span class="hl-g">birth, enlightenment (nirvana), death (Mahaparinirvana)</span></td></tr>
+      <tr><td><strong>Tendong Lho Rum Faat</strong></td><td><strong>Lepcha community</strong>; 3 days; <strong>July–August</strong>; honors Mount Tendong</td></tr>
+      <tr><td><strong>Cham dance / masks</strong></td><td>Represent guardian / secret divine deities</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4: BIHAR — SALHESH -->
+    <div class="sec red">④ Bihar — Salhesh Festival 🎭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which best reflects a distinct cultural feature of the Salhesh festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Harvest ceremonies involving animal sacrifice by elders in Mithila</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Dramatic retelling of Salhesh legends by Bhagat and Manaria ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Buddhist chants or self-dance</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dramatic retelling of Salhesh legends by Bhagat and Manaria</div>
+    </div>
+    <ul class="hw">
+      <li>Region: <span class="hl"><strong>Mithila, Bihar</strong></span></li>
+      <li>Honors: <strong>Baba Salhesh</strong></li>
+      <li>Primarily celebrated by: <span class="hl-g">Second Dalit community</span></li>
+      <li>Storytellers called: <strong>Bhagat and Manaria</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5: PUNJAB — GURPURAB -->
+    <div class="sec orange">⑤ Punjab — Baisakhi / Gurpurab ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Which festival in Punjab celebrates the birth of Guru Gobind Singh and includes martial arts displayed by Sikhs?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Baisakhi</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hola Mohalla</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Maghi</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Gurpurab ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gurpurab (D)</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Baisakhi</strong></td><td><span class="hl">13 April 1699</span> — Khalsa Panth established by Guru Gobind Singh (10th Sikh Guru)</td></tr>
+      <tr><td><strong>Hola Mohalla</strong></td><td>Day after Holi; <strong>3 days</strong>; <strong>Anandpur Sahib</strong>; started by Guru Gobind Singh ~<strong>1701</strong> to train Khalsa in martial arts; linked to <span class="hl-g">Gatka</span></td></tr>
+      <tr><td><strong>Maghi</strong></td><td>Harvest festival; month of <strong>Magh</strong></td></tr>
+      <tr><td><strong>Lohri</strong></td><td>Night before Makar Sankranti (<strong>13 January</strong>)</td></tr>
+    </table>
+    <div class="imp">
+      Guru Tegh Bahadur (9th Guru) executed by <strong>Aurangzeb</strong>; Guru Arjan Dev (5th Guru) executed by <strong>Jahangir</strong>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6: NAGALAND — SEKRENYI -->
+    <div class="sec green">⑥ Nagaland — Sekrenyi (Angami Tribe) 🦅</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which festival in Nagaland is celebrated by the Angami tribe to invoke prosperity and ward off evil spirits before sowing season?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sekrenyi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Moatsu</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hornbill</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tuluni</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sekrenyi</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Festival</th><th>Tribe</th><th>Details</th></tr>
+      <tr><td><strong>Sekrenyi (Phousanyi)</strong></td><td><strong>Angami</strong></td><td>Purify body &amp; soul; ward off evil spirits before sowing</td></tr>
+      <tr><td><strong>Moatsu</strong></td><td><strong>Ao</strong></td><td>First week of May; ~3 days</td></tr>
+      <tr><td><strong>Tuluni</strong></td><td><strong>Sumi</strong></td><td>Harvest festival; mid-July</td></tr>
+      <tr><td><strong>Hornbill Festival</strong></td><td>All Naga tribes</td><td><span class="hl">1–10 December</span>; "Festival of Festivals"; Hornbill bird = symbol of strength &amp; cultural unity</td></tr>
+      <tr><td><strong>Aoling</strong></td><td><strong>Konyak</strong></td><td>—</td></tr>
+      <tr><td><strong>Lu Nagaini</strong></td><td>Naga tribes of Manipur</td><td>If Manipur not in options → Nagaland</td></tr>
+    </table>
+    <div class="trick">
+      "Snake calling female snake to eat sugar (Sacreni) and potatoes (Aoling) in burrow" + "Naga calling Come (Aoling)"
+    </div>
+    <div class="imp">
+      Mimkut also celebrated by Naga community in Mizoram → if Mizoram not in options but Mimkut present → answer Nagaland
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7: RIFF -->
+    <div class="sec purple">⑦ Rajasthan International Folk Festival (RIFF) 🎪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Consider statements about RIFF: <br>S1: Recognized by UNESCO for promoting creativity and sustainable development. <br>S2: Primary musical focus is exclusive showcasing of Manganiyars and Langas without international artistic involvement.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Only Statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only Statement 1 is correct</div>
+    </div>
+    <ul class="hw">
+      <li>Held at: <span class="hl"><strong>Mehrangarh Fort, Jodhpur</strong></span></li>
+      <li>Launched: <strong>2007</strong></li>
+      <li>Recognized by UNESCO as a <span class="hl-g">"people's platform"</span></li>
+      <li>Lasts: <strong>5 days</strong>; starts on <strong>Sharad Purnima</strong></li>
+    </ul>
+    <div class="imp">
+      S2 wrong: "without international artistic involvement" = extreme keyword; RIFF <strong>has</strong> international participation
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8: TAMIL NADU — KUTHU SAI DUSSEHRA -->
+    <div class="sec teal">⑧ Tamil Nadu — Kuthu Sai Dussehra 👹</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Festival famous for ferocious demon-themed makeup celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Andhra Pradesh</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Tamil Nadu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kerala</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Karnataka</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tamil Nadu</div>
+    </div>
+    <ul class="hw">
+      <li>Temple: <span class="hl"><strong>Arulmigu Mathuraman Temple</strong></span></li>
+      <li>Occasion: <strong>Navratri</strong> (September–October)</li>
+      <li>Duration: ~<strong>10 days</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q9: MEGHALAYA — WANGALA -->
+    <div class="sec red">⑨ Meghalaya — Wangala 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which festival of Meghalaya involves worship of the sun, earth, and agricultural tools to ensure a bountiful fall harvest?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Wangala ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bahdin Khlam</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Nongkrem</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Shad Sukh Mynsiem</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Wangala — Meghalaya has 3 tribes: Garo, Khasi, Jaintia</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Festival</th><th>Tribe</th><th>Details</th></tr>
+      <tr><td><strong>Wangala</strong></td><td><strong>Garo</strong></td><td>Called <span class="hl">"Festival of 100 Drums"</span></td></tr>
+      <tr><td><strong>Shad Sukh Mynsiem</strong></td><td>Khasi</td><td>"Dance of Peaceful Hearts"; 3 days; <strong>April (spring)</strong></td></tr>
+      <tr><td><strong>Bahdin Khlam</strong></td><td><strong>Jaintia (Pnar)</strong></td><td>3 days; monsoon (<strong>July</strong>); meaning: drive away (Bahdin) plague (Khlam)</td></tr>
+      <tr><td><strong>Nongkrem</strong></td><td>Khasi</td><td>5-day harvest festival; <strong>autumn / November</strong></td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10: TELANGANA — BONALU -->
+    <div class="sec blue">⑩ Telangana — Bonalu 🔥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> The Bonalu festival in Telangana is dedicated to which deity?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Goddess Mahakali ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goddess Mahakali</div>
+    </div>
+    <ul class="hw">
+      <li>First celebrated: <span class="hl"><strong>1813</strong></span> (to end plague — caused by <strong>Yersinia pestis</strong> bacteria)</li>
+      <li>Declared State Festival of Telangana: <strong>2014</strong></li>
+      <li>Offering = <span class="hl-g">Bonam</span> (rice, jaggery, milk)</li>
+      <li>Locations: <strong>Hyderabad &amp; Secunderabad</strong> (HQ of South Central Railway)</li>
+      <li>Mahakali's brother worshipped: <strong>Potharaju</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11: AO NAGA — MOATSU -->
+    <div class="sec green">⑪ Ao Naga — Pre-Harvest Festival 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which festival of the Ao Naga tribe serves as recreation after clearing fields and sowing seeds?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sungremong</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Moatsu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hornbill</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Moatsu (both Sungremong &amp; Moatsu are pre-harvest, Ao tribe; final answer = Moatsu)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Sungremong:</strong> pre-harvest, early August, 3 days, Ao tribe</li>
+      <li><strong>Moatsu:</strong> first week of May, Ao tribe, post-sowing relaxation</li>
+      <li><strong>Tsungrem Mong:</strong> Lotha tribe, post-harvest, 9 days</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12: MAKAR SANKRANTI -->
+    <div class="sec orange">⑫ Makar Sankranti — Statements ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> S1: Marks northward movement called Uttarayan. <br>S2: Vishu celebrated in Kerala as harvest festival.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Only Statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only Statement 1 is correct — Vishu = New Year festival (NOT harvest) in Kerala</div>
+    </div>
+    <ul class="hw">
+      <li>Sun moves between <span class="hl">Tropic of Cancer (21 June)</span> and <span class="hl">Tropic of Capricorn (22 December)</span></li>
+    </ul>
+    <div class="two-col">
+      <table class="hw-t org">
+        <tr><th>Region (Makar Sankranti)</th><th>Name</th></tr>
+        <tr><td>Tamil Nadu</td><td>Pongal</td></tr>
+        <tr><td>Assam</td><td>Magh Bihu</td></tr>
+        <tr><td>Punjab</td><td>Lohri</td></tr>
+      </table>
+      <table class="hw-t grn">
+        <tr><th>State (New Year)</th><th>Festival</th></tr>
+        <tr><td>Kerala</td><td>Vishu</td></tr>
+        <tr><td>Tamil Nadu</td><td>Puthandu</td></tr>
+        <tr><td>Karnataka/AP/Telangana</td><td>Ugadi</td></tr>
+        <tr><td>Maharashtra</td><td>Gudi Padwa</td></tr>
+        <tr><td>Odisha</td><td>Vishuba Sankranti</td></tr>
+        <tr><td>Chhattisgarh</td><td>Chaitra Navratri</td></tr>
+        <tr><td>West Bengal</td><td>Pohela Boishakh</td></tr>
+        <tr><td>Assam</td><td>Bohag / Rangali Bihu</td></tr>
+        <tr><td>Arunachal Pradesh</td><td>Sangken</td></tr>
+        <tr><td>Manipur</td><td>Sajibu Cheiraoba</td></tr>
+        <tr><td>Ladakh</td><td>Galdan Namchot / Losar</td></tr>
+        <tr><td>Punjab</td><td>Baisakhi</td></tr>
+        <tr><td>Rajasthan / North India</td><td>Chaitra Navratri</td></tr>
+        <tr><td>Gujarat</td><td>Bestu Varas</td></tr>
+        <tr><td>Parsi community</td><td>Pateti</td></tr>
+        <tr><td>Sindhi community</td><td>Cheti Chand</td></tr>
+      </table>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q13: PARYUSHANA -->
+    <div class="sec purple">⑬ Paryushana — Bhadrapad Month 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which festival involves fasting, prayer, self-reflection, observed during Bhadrapad month?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mahavir Jayanti</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Paryushana ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Karva Chauth</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Makar Sankranti</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Paryushana — Jain festival; August–September (Bhadrapad)</div>
+    </div>
+    <div class="sub">Kerala Festivals</div>
+    <table class="hw-t pur">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Onam</strong></td><td>Biggest festival; Bhadrapad; welcomes return of <span class="hl">King Mahabali</span></td></tr>
+      <tr><td><strong>Thrissur Pooram</strong></td><td>April–May; at Vadakkumnathan Temple; "Festival of Festivals"</td></tr>
+      <tr><td><strong>Attukal Pongal</strong></td><td>Largest gathering of women for religious purpose; <strong>Thiruvananthapuram</strong>; "Sabarimala of Women"</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14: GURU ARJAN DEV -->
+    <div class="sec red">⑭ Guru Arjan Dev — Martyrdom Day ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which Sikh festival commemorates the martyrdom of Guru Arjan Dev Ji?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Martyrdom Day of Guru Arjan Dev ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Martyrdom Day of Guru Arjan Dev</div>
+    </div>
+    <ul class="hw">
+      <li>Guru Arjan Dev (5th Sikh Guru) executed by <span class="hl">Jahangir</span> — sheltered Khusrau (Jahangir's rebellious son)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15: TAMIL NADU — THIRUVATHIRAI -->
+    <div class="sec teal">⑮ Tamil Nadu — Thiruvathirai 🌳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Which festival in Tamil Nadu celebrates womanhood and involves swinging on decorated swings under mango trees?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Pongal</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Karthigai Deepam</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Thiruvathirai ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Manjal Niratu Vizha</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Thiruvathirai (C)</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Pongal</strong></td><td>4 days: Bhogi (13 Jan), Surya Pongal (14 Jan), Mattu Pongal (15 Jan), Kanum Pongal; marks <span class="hl">Uttarayan</span></td></tr>
+      <tr><td><strong>Karthigai Deepam</strong></td><td>November–December; <strong>Arunachaleswara Temple</strong>; for Lord Shiva</td></tr>
+      <tr><td><strong>Manjal Niratu Vizha</strong></td><td>Turmeric bathing ceremony when girl reaches womanhood (first menstruation)</td></tr>
+      <tr><td><strong>Thiruvathirai</strong></td><td>Mango tree swings; honors Shiva-Parvati union</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q16: MAHARASHTRA — HARTALIKA TEEJ -->
+    <div class="sec pink">⑯ Maharashtra — Hartalika Teej 💍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Festival in Maharashtra involving worship of Goddess Parvati, considered festival of marital bliss.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Teej (Hartalika Teej) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Teej (Hartalika Teej) — fasting (without water) by married women for husband's long life</div>
+    </div>
+    <div class="sticky green">
+      <div class="slbl">GUDI PADWA</div>
+      Marathi New Year; <span class="hl"><strong>Gudi</strong></span> = victory flag (stick + red cloth / flag-like symbol)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17: ARUNACHAL — MYOKO -->
+    <div class="sec green">⑰ Arunachal Pradesh — Myoko Festival 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> In which state is the Myoko festival based on rotating village responsibility for rituals?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Arunachal Pradesh ✔ (Apatani tribe, Ziro Valley)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Arunachal Pradesh</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Festival</th><th>Tribe</th><th>Details</th></tr>
+      <tr><td><strong>Myoko</strong></td><td>Apatani</td><td>Ziro Valley</td></tr>
+      <tr><td><strong>Sangken</strong></td><td>Singpho</td><td>Water festival; bathing Buddha idols</td></tr>
+      <tr><td><strong>Dree</strong></td><td><strong>Apatani</strong></td><td>Harvest festival; July</td></tr>
+      <tr><td><strong>Mopin</strong></td><td><strong>Galo</strong></td><td>April</td></tr>
+      <tr><td><strong>Losar</strong></td><td>—</td><td>Tibetan New Year</td></tr>
+      <tr><td><strong>Nyokum</strong></td><td><strong>Nyishi</strong></td><td>February</td></tr>
+      <tr><td><strong>Boori Boot</strong></td><td>—</td><td>February; spring; good harvest</td></tr>
+      <tr><td><strong>Pangsau</strong></td><td>—</td><td>—</td></tr>
+      <tr><td><strong>Solung</strong></td><td><strong>Adi</strong></td><td>Dance = <strong>Ponung</strong>; drink = <strong>Apong</strong> (rice beer); Goddess of crops + God of domestic animals (Daadhi Bote, Kine Nane)</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q18: TODA TRIBE — MUND WITCH -->
+    <div class="sec blue">⑱ Toda Tribe — Mund Witch Festival 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> The Toda Tribe's Mund Witch Festival revolves around worship of which element?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fire</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Water</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Stone</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Sacred Buffalo ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sacred Buffalo</div>
+    </div>
+    <ul class="hw">
+      <li>Tribe: <span class="hl"><strong>Toda</strong></span> (Nilgiris, <strong>Tamil Nadu</strong>, where Western &amp; Eastern Ghats meet; near Doddabetta peak)</li>
+      <li>Buffalo huts built; buffaloes considered very sacred</li>
+      <li>Timing: <strong>December–January</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19: KERALA — THIRUVATHIRA -->
+    <div class="sec purple">⑲ Kerala — Thiruvathira Dedication 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Thiruvathira, celebrated mainly by women in Kerala, is dedicated to worship of:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Parvati ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lakshmi</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Durga</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Saraswati</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Parvati</div>
+    </div>
+    <ul class="hw">
+      <li>Celebrates day Shiva accepted Parvati as wife</li>
+      <li>Month: <span class="hl">Dhanu</span> (December–January in Malayalam calendar)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20: AP/TELANGANA — BATHUKAMMA -->
+    <div class="sec pink">⑳ AP / Telangana — Bathukamma 🌺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which festival in AP/Telangana is celebrated with special prayers to Goddess Kali?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bonalu ✔ (for Mahakali)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ugadi</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sankranti</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bathukamma (= floral festival)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bonalu (for Mahakali); Bathukamma = floral festival</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Bathukamma:</strong> floral festival; 9 days; mainly women; starts on <span class="hl">Mahalaya Amavasya</span>; worships <strong>Goddess Gauri</strong>; September–October</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21: MANJAL KULI -->
+    <div class="sec orange">㉑ Manjal Kuli — Kerala 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which region celebrates Manjal Kuli, a local name for Holi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Kerala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kerala — celebrated by Kudumbi and Konkani community</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22: PONGAL MEANING -->
+    <div class="sec teal">㉒ Pongal — Meaning 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Which festival celebrates the harvest and homecoming of Mahabali?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Onam ✔ (Kerala)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Onam (Kerala); Pongal = "to boil" (Tamil Nadu)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23: ASSAM — AMBUBACHI MELA -->
+    <div class="sec green">㉓ Assam — Ambubachi Mela 🌍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Ambubachi Mela symbolically represents which natural phenomenon?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Monsoon onset</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>River flooding</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Earth's renewal cycle</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Mother Earth's fertility ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Mother Earth's Fertility</div>
+    </div>
+    <ul class="hw">
+      <li>Location: <span class="hl"><strong>Kamakhya Devi Temple, Assam</strong></span></li>
+      <li>Timing: <strong>Mid-June</strong>; temple left closed 3 days (no digging / plowing / sowing)</li>
+      <li><strong>Ambubachi</strong> = "spoken with water"; signifies monsoon onset</li>
+    </ul>
+    <div class="trick">
+      <strong>Assam Festivals:</strong> "Daughter-in-law of Assam hit her bike (Bihu) → went with Ali's father (Ali-Ai-Ligang)"
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Festival</th><th>Community</th><th>Details</th></tr>
+      <tr><td><strong>Bihu</strong> (3 types)</td><td>—</td><td>Bohag/Rangali (Mar-Apr), Kati (Oct), Magh (Jan)</td></tr>
+      <tr><td><strong>Baishagu</strong></td><td><strong>Bodo-Kachari</strong></td><td>Mid-April; New Year; worship of <strong>Bathou</strong> (form of Shiva)</td></tr>
+      <tr><td><strong>Ali-Ai-Ligang</strong></td><td><strong>Mising tribe</strong></td><td>Sowing season; dance = <strong>Gumrag</strong>; Feb-Mar</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24: RAJASTHAN — KOLAYAT FAIR -->
+    <div class="sec blue">㉔ Rajasthan — Kolayat Fair 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Which Rajasthan festival named after a great sage includes ritual at a lake surrounded by banyan trees?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Surajkund</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Kolayat ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kumbh</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jaisalmer Desert Festival</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kolayat Fair — also called Kapil Muni Fair; Bikaner. Surajkund = Faridabad, Haryana (craft fair)</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>Fair</th><th>Location</th><th>Details</th></tr>
+      <tr><td><strong>Pushkar Camel Fair</strong></td><td>Pushkar</td><td>December</td></tr>
+      <tr><td><strong>Baneshwar Fair</strong></td><td>Dungarpur</td><td>"Kumbh of Tribals"; ~5 days</td></tr>
+      <tr><td><strong>Gangaur</strong></td><td>—</td><td>For Goddess Gauri (Parvati)</td></tr>
+      <tr><td><strong>Jaisalmer Desert Festival</strong></td><td>Jaisalmer</td><td>~3 days</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q25: PUSHKAR vs SURAJKUND -->
+    <div class="sec purple">㉕ Pushkar Fair vs Surajkund — Statements 🐘</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> S1: Pushkar Fair is a livestock fair with religious activities. <br>S2: Surajkund Fair focuses primarily on elephant trading.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Only Statement 1 correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only Statement 1 correct — Sonepur Fair, Bihar = elephant trading (Asia's largest)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26: ONAM -->
+    <div class="sec teal">㉖ Onam — King Mahabali 🛶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> Onam celebrates annual visit of which benevolent king with boat races, floral decorations?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>King Mahabali ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: King Mahabali</div>
+    </div>
+    <div class="trick">
+      <strong>Kerala Festival Trick:</strong> Pooram = Thrissur Pooram, Vasu = Vishu, R = Arattu, A = Attukal Pongal, boat race = Vallamkali
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27: TAMIL NADU — KARTHIGAI DEEPAM -->
+    <div class="sec orange">㉗ Tamil Nadu — Karthigai Deepam / Thaipusam 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Festival in Tamil Nadu lighting lamps marking victory of good over evil, coincides with Deepavali.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Karthigai Deepam ✔ (lamps = Agal Vilakku)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Karthigai Deepam (lamps = Agal Vilakku)</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Thai Pongal</strong></td><td>= Surya Pongal</td></tr>
+      <tr><td><strong>Puthandu</strong></td><td>New Year</td></tr>
+      <tr><td><strong>Thaipusam</strong></td><td>Lord Murugan's victory over <strong>Surapadman</strong>; Kavadi carried</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28: MEGHALAYA — BAHDIN KHLAM LOCATION -->
+    <div class="sec red">㉘ Meghalaya — Bahdin Khlam Location 🌧️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> In which Indian state is the Bahdin Khlam festival celebrated?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Meghalaya ✔ (Jaintia tribe)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Meghalaya (Jaintia tribe)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29: ODISHA — RAJA PARBA -->
+    <div class="sec green">㉙ Odisha — Raja Parba 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Festival in Odisha celebrating Earth's menstrual cycle, observed by young girls with swings and songs.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Raja Parba ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Raja Parba (also called <strong>Mithun Sankranti</strong>) — land left fallow 3 days</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30: LAHAUL SPITI — LOSAR -->
+    <div class="sec blue">㉚ Lahaul Spiti (Himachal) — Losar 🎭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Which festival in Himachal's Lahaul Spiti region marks Tibetan New Year with mask dances?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Losar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Minjar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kullu Dussehra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Halda</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Losar</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Losar</strong></td><td>Tibetan New Year; mask dance = <strong>Chham</strong>; Lahaul-Spiti</td></tr>
+      <tr><td><strong>Minjar</strong></td><td>Week-long; <strong>Chamba Valley</strong>; July-Aug; monsoon onset; dance = <strong>Chamman</strong></td></tr>
+      <tr><td><strong>Halda</strong></td><td><strong>Lahaul Valley</strong>; Magh Purnima (January); "Festival of Lights"; 2 days</td></tr>
+      <tr><td><strong>Kullu Dussehra</strong></td><td>—</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31: TAMIL NEW YEAR -->
+    <div class="sec purple">㉛ Tamil New Year — Puthandu 🌙</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Festival marking Tamil New Year with ritual feasts and temple visits.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Pongal</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Puthandu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Karthigai Deepam</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Thaipusam</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Puthandu</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32: EID AL-FITR -->
+    <div class="sec teal">㉜ Eid al-Fitr 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Eid al-Fitr marks the end of what?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Muharram</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Ramadan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hajj</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bakrid</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ramadan</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q33: TRIPURA — KHARCHI PUJA -->
+    <div class="sec orange">㉝ Tripura — Kharchi Puja 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> Festival in Tripura involving ritual bath in river and possession of deities to purify sins.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Kharchi Puja ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kharchi Puja — 14 deities procession; 7 days; July; Agartala</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">KARNATAKA — DOLL FESTIVAL</div>
+      <strong>Gombe Habba</strong> = Festival of Dolls (odd numbers, usually 9, Navratri)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q34: MAKAR SANKRANTI — GEO -->
+    <div class="sec green">㉞ Makar Sankranti — Geographical Significance ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> Geographical significance: marks sun's northward journey entering Capricorn zodiac during winter.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>True ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: True</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q35: BUDDHA PURNIMA vs NAVRATRI -->
+    <div class="sec blue">㉟ Buddha Purnima vs Navratri — Statements 🪷</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> S1: Buddha Purnima commemorates birth, enlightenment, death of Buddha. <br>S2: Navratri dedicated to Goddess Durga, celebrated with Garba and Dandiya.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Both correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both correct</div>
+    </div>
+    <ul class="hw">
+      <li>Buddha Purnima = <span class="hl">Vaishakh</span> month (April); called <strong>"Thrice Blessed Festival"</strong></li>
+      <li>Birth: <strong>Lumbini, Nepal</strong> (symbol: lotus)</li>
+      <li>Enlightenment: <strong>Bodh Gaya</strong> (symbol: Bodhi / Wisdom Tree)</li>
+      <li>Death / Mahaparinirvana: <strong>Kushinagar</strong> (symbol: stupa)</li>
+      <li><strong>Ambedkar</strong> first declared it a state holiday</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q36: BUDDHA PURNIMA — CORRECT -->
+    <div class="sec purple">㊱ Buddha Purnima — Correct Statement 🌑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> Which statement about Buddha Purnima is correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Celebrates birth, enlightenment, death of Buddha ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mainly NE India</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Associated with lunar eclipse only</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — celebrates birth, enlightenment, death of Buddha (associated with full moon; red moon when Earth-Moon-Sun align)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q37: GAURI HABBA -->
+    <div class="sec pink">㊲ Gauri Habba — Before Ganesh Chaturthi 🌺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Festival celebrated with worship of Goddess Gauri, one day before Ganesh Chaturthi.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Makar Sankranti</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Gauri Habba ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Durga Puja</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Holi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gauri Habba</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q38: JALLIKATTU -->
+    <div class="sec red">㊳ Jallikattu — Tamil Nadu 🐂</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> Where is the famous Jallikattu bull-taming event held every January?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Tamil Nadu ✔ (during Pongal)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tamil Nadu (during Pongal)</div>
+    </div>
+    <div class="sticky">
+      <strong>Natyanjali</strong> festival / dance held at <span class="hl">Nataraja Temple, Chidambaram</span> — showcases cosmic dance of Shiva
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q39: ODISHA — NUAKHAI -->
+    <div class="sec green">㊴ Odisha — Nabanna (Nuakhai) 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> Harvest Festival of Odisha celebrated with Nabanna (new rice)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bihu</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Makar Sankranti</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pongal</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Nuakhai ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nuakhai</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q40: EID AL-FITR vs ADHA -->
+    <div class="sec teal">㊵ Eid al-Fitr vs Eid al-Adha 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Which religious celebration signifies conclusion of Ramadan, observed by Muslims with fasting?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Eid al-Fitr ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Eid al-Fitr</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Eid al-Adha:</strong> sacrifice festival (Prophet Ibrahim's sacrifice)</li>
+      <li><strong>Zakat al-Fitr:</strong> charity given at this time</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q41: PONGAL + BAISAKHI -->
+    <div class="sec orange">㊶ Pongal + Baisakhi — Statements 🎉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> S1: Pongal celebrated in Tamil Nadu as harvest festival. <br>S2: Baisakhi celebrated in Punjab, marking Sikh New Year.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both correct (Option C)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">HEMIS FESTIVAL (LADAKH)</div>
+      Honors <span class="hl"><strong>Guru Padmasambhava's</strong></span> birth anniversary · Mask dance = <strong>Cham</strong> · Held: <strong>June–July</strong>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q42: KUMBH MELA -->
+    <div class="sec blue">㊷ Kumbh Mela — Four Sites 🏺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> According to legends, Kumbh Mela is held at four pilgrimage sites because:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Four drops of nectar fell during scuffle between gods and demons ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Vishnu performed miracles</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>First temples built</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mahabharata written</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Four drops of nectar fell during scuffle between gods and demons</div>
+    </div>
+    <ul class="hw">
+      <li>Sites: <span class="hl"><strong>Prayagraj, Haridwar, Nashik, Ujjain</strong></span></li>
+      <li>Related: Samudra Manthan, Halahal poison, Mohini avatar of Vishnu</li>
+      <li>Shiva drank Halahal poison → <strong>Neelkanth</strong> (blue throat)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q43: WEST BENGAL — DURGA PUJA -->
+    <div class="sec red">㊸ West Bengal — Durga Puja 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> Festival in WB celebrated with immersion of decorated clay idols of Goddess Durga.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Durga Puja ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Durga Puja</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q44: RAJASTHAN — PUSHKAR CAMEL FAIR -->
+    <div class="sec green">㊹ Rajasthan — Pushkar Camel Fair 🐪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> Which festival of Rajasthan involves decorated camels and folk performances coinciding with desert climate?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Gangaur</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Pushkar Camel Fair ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Teej</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Makar Sankranti</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pushkar Camel Fair</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q45: MAHARASHTRA — GUDI PADWA -->
+    <div class="sec orange">㊺ Maharashtra — Gudi Padwa 🚩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> Festival in Maharashtra celebrating victory of good over evil with hoisting of Gudi flag.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Gudi Padwa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gudi Padwa</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q46: BIHAR/UP — CHHATH -->
+    <div class="sec purple">㊻ Bihar / UP — Chhath Puja ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> Which festival in Bihar and UP involves fasting and prayers to Sun during Kartik month?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Chhath ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Diwali</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Holi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Makar Sankranti</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Chhath</div>
+    </div>
+    <ul class="hw">
+      <li>Worship: <span class="hl"><strong>Chhathi Maiya</strong></span></li>
+      <li>Starts: 6th day after Diwali; Duration: <strong>4 days</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q47: MAHASHIVRATRI -->
+    <div class="sec teal">㊼ Mahashivratri 🕉️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> Which festival celebrates devotion to Lord Shiva, falls on 14th day of dark half of Phalgun month?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Diwali</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Mahashivratri ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Holi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ganesh Chaturthi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mahashivratri</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q48: KARVA CHAUTH -->
+    <div class="sec pink">㊽ Karva Chauth — Fill in the Blank 💑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> _____ is observed with fasting by married women for husbands' well-being, typically in Kartik month.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Karva Chauth ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Karva Chauth</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q49: ARUNACHAL — CHALO LOKU -->
+    <div class="sec green">㊾ Arunachal Pradesh — Chalo Loku (Nocte Tribe) 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> Which best captures rituals and symbolism of Nocte Tribe's Chalo Loku festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Community dancing, fasting, omen reading by elders on Tangalakja day (NOT Farmlam) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B</div>
+    </div>
+    <ul class="hw">
+      <li>District: <span class="hl"><strong>Tirap, Arunachal Pradesh</strong></span></li>
+      <li>3-day harvest festival; October-November</li>
+      <li>Word origin: from "<strong>Loifa</strong>" (meaning "to drive out" — drives out old season)</li>
+      <li>3 phases: <strong>Farmlam</strong> (sacrifices) → <strong>Chamkaja</strong> (monastery prayers) → <strong>Thangalakja</strong> (dancing, fasting, omen readings)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q50: KARNATAKA — PUTHARI -->
+    <div class="sec blue">㊿ Karnataka — Kodava Festivals (Puthari) 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> Which Kodava harvest festival celebrated with stunts and Polipoli Deva, invoking Lord Igguthappa?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Puthari ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Puthari</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>Festival</th><th>Type</th><th>Month</th></tr>
+      <tr><td><strong>Puthari</strong></td><td>New rice / Harvest; dance = <strong>Ummatat</strong>; "Polipoli Deva" = increase, increase</td><td>December</td></tr>
+      <tr><td><strong>Kail Podh</strong></td><td>Weapon worship</td><td>September</td></tr>
+      <tr><td><strong>Kaveri Sankramana</strong></td><td>River worship</td><td>October</td></tr>
+    </table>
+    <div class="sticky">
+      <strong>Other Karnataka:</strong> Kambala (buffalo race), Mahamastakabhisheka (every 12 years, Shravanabelagola, for <span class="hl">Bahubali / Gomateshwara</span> statue, ~57 feet monolith, last held 2018)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q51: TRIPURA — GARIA CARNIVAL -->
+    <div class="sec purple">51 · Tripura — Garia Carnival 🎍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> Garia Carnival is conducted under the guidance of which figure?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ojha ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lama</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dolo</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ojha</div>
+    </div>
+    <ul class="hw">
+      <li>Worships <span class="hl"><strong>Baba Garia</strong></span> (bamboo pole)</li>
+      <li>Month: <strong>Chaitra</strong> (March-April); Duration: ~7 days</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q52: ARUNACHAL — PONGTU -->
+    <div class="sec green">52 · Arunachal — Pongtu Festival 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> Pongtu festival celebrated by Tutsa community seeks blessings from which deity before millet harvesting?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Donyi-Polo</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Rangkhotak ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rangfra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Negi Nyapa</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rangkhotak — Pongtu = "retreating wind"; pre-harvest, New Year festival</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q53: BASTAR — GONCHA -->
+    <div class="sec orange">53 · Bastar — Goncha Festival — Statements 🌿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> Statements: Tupki (bamboo pop-gun with Goncha fruit bullets) / Chariot procession started by Chalukya rulers / June-July timing.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>All three statements correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: All three statements correct</div>
+    </div>
+    <ul class="hw">
+      <li>Tribes: <span class="hl"><strong>Maria and Muria</strong></span></li>
+      <li>Marks start of <strong>Bastar Dussehra</strong> (75 days); Ashadha Shukla Dashami to Dwitiya</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q54: LADAKH — LOSAR DOUGH -->
+    <div class="sec blue">54 · Ladakh — Losar Dough Models 🌙</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Ladakh New Year (Losar) welcomed with dough models of sun, moon, and:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ibex ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Yak</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Snow Leopard</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Buddha</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ibex</div>
+    </div>
+    <div class="sticky green">
+      <div class="slbl">CHHATTISGARH DANCES RECAP</div>
+      Aksar, Sua (Parrot), Karma, Danda Nacha, Gadi, Panthi, Pandavani
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q55: HIMACHAL — PHAGGALI -->
+    <div class="sec purple">55 · Himachal — Phaggali (Patan Valley) 🌸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> Which best captures rituals of Phaggali (also Kus/Kun) festival in Patan Valley?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Symbolic ploughing indoors using willow sticks reflecting farming hopes during snow ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Baraza:</strong> bamboo stick with white cloth, symbolizes <span class="hl">angel</span> (not Shikhar Appa)</li>
+      <li><strong>Totu:</strong> dish made from <strong>barley flour + buttermilk</strong> (not wheat/honey)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q56: JHARKHAND — JAWA -->
+    <div class="sec green">56 · Jharkhand — Jawa Festival (with Karma) 🌱</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> Which festival is celebrated alongside Karma celebrations by unmarried tribal girls in Jharkhand?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Madai</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Karma</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sohrai</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Jawa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jawa</div>
+    </div>
+    <ul class="hw">
+      <li>Seeds sprouted = <span class="hl"><strong>Jawa</strong></span>; for fertility</li>
+      <li>Karma celebrations: <strong>Bhadrapad</strong> month (Aug-Sep); Karam tree worshipped</li>
+    </ul>
+    <div class="sticky">
+      <strong>Chhattisgarh:</strong> Hareli (monsoon, Sawan), Madai, Bastar Dussehra, Pola (bull worship)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q57: RAJASTHAN — BARAN DOL MELA -->
+    <div class="sec orange">57 · Rajasthan — Baran Dol Mela 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> Which best captures cultural essence of Baran Dol Mela?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Opens with Dev Viman stunts by Akhara artists; concludes with Amavasya night immersion; attracts traders from several states ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q58: SALHESH REPEATED -->
+    <div class="sec red">58 · Salhesh Festival — Repeated 🎭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> Distinct cultural feature of the Salhesh festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Dramatic retelling of Salhesh legends by Bhagat and Manaria ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dramatic retelling of Salhesh legends by Bhagat and Manaria</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q59: SOLUNG — APUNG -->
+    <div class="sec green">59 · Solung Festival — Apung 🍶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> During Solung Festival, which traditional drink is shared to promote social bonding?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Apung ✔ (rice beer)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Apung (rice beer)</div>
+    </div>
+    <ul class="hw">
+      <li>Dance: <span class="hl"><strong>Ponung</strong></span></li>
+      <li>Goddess of Crops + God of Domestic Animals: <strong>Daadhi Bote, Kine Nane</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q60: MP — POLA -->
+    <div class="sec blue">60 · MP — Pola Festival (Balaghat) 🐂</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> Pola Festival celebrated in Balaghat district of MP is dedicated to:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Bull / cattle worship ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bull / cattle worship</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q61: TRIPURA — KHARCHI DEITIES -->
+    <div class="sec purple">61 · Tripura — Kharchi Puja Deities 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> Kharchi Puja of Tripura is associated with worship of how many deities?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>14 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 14</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q62: MP — GANGAUR GUDLIYA -->
+    <div class="sec pink">62 · MP — Gangaur Gudliya 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> In MP, unmarried girls place lamps inside a decorated earthen pot called:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kalash</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Gudliya ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Matki</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Deepdan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gudliya</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q63: MOPIN — RITUAL DANCE -->
+    <div class="sec green">63 · Mopin Festival — Ritual Dance 🦋</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> Which ritual dance is performed during Mopin Festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bihu</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Popir / Ponung ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Na Sang Pangtu</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Popir (B)</div>
+    </div>
+    <ul class="hw">
+      <li>Na Sang Pangtu = ritual by <span class="hl"><strong>Ao tribe</strong></span> during <strong>Moatsu Mong</strong> (early May, seeds sown)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q64: NYOKUM — KUM -->
+    <div class="sec blue">64 · Nyokum — Meaning of "Kum" 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> Word "Kum" in Nyokum festival symbolizes:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Silence</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Purity</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Collectivity ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sacrifice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Collectivity</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Nyokum</strong> = land; <strong>Kum</strong> = togetherness; also called <span class="hl">Nyokum Yullo</span></li>
+      <li>Agricultural festival; honors <strong>Donyi-Polo</strong> (Sun-Moon God)</li>
+      <li><strong>Mithun</strong> (bovine, similar to cow) sacrificed</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q65: UTTARAKHAND — BISSU MELA -->
+    <div class="sec orange">65 · Uttarakhand — Bissu Mela 🎪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> Which captures cultural / historical essence of Bissu Mela?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Week-long Jaunsari tribal fair in Chakrata, thanking for harvest, honoring Santoura Devi (form of Durga) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B</div>
+    </div>
+    <ul class="hw">
+      <li>Location: <span class="hl"><strong>Chakrata, Dehradun</strong></span></li>
+      <li>Tribe: <strong>Jaunsari</strong>; celebrated during Vaisakhi</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q66: PONGAL — CORRECT -->
+    <div class="sec teal">66 · Pongal — Correct Statement 🎊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> Which is correct about Pongal? (Thai Pongal honors Sun God / Mattu Pongal honors cattle / Kanu Pongal = family reunion)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Mattu Pongal honors cattle; Jallikattu held on Mattu Pongal day ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mattu Pongal honors cattle; Jallikattu held on Mattu Pongal day (not Bhogi)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q67: JHARKHAND — JAWA SYMBOL -->
+    <div class="sec green">67 · Jharkhand — Jawa Festival Symbol 🌱</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Symbolism of the Jawa festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Fertility ritual where sprouted seeds symbolize fertility / offspring ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Fertility ritual where sprouted seeds symbolize fertility / offspring</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q68: ODISHA — NABANNA OFFERING -->
+    <div class="sec blue">68 · Odisha — Nabanna Offering 🍚</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> Nabanna (new rice) during Nuakhai in Sambalpur Odisha is first offered to which deity?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Maa Samaleshwari ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Maa Samaleshwari</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q69: MP — LORD DHAR NATH -->
+    <div class="sec purple">69 · MP — Lord Dhar Nath Procession 🚗</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> Procession of Lord Dhar Nath, locally referred to as:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jhanki</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Chhabina ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chariot</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ride</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Chhabina</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q70: BONALU — ORIGIN -->
+    <div class="sec red">70 · Bonalu — Origin 🦠</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> First recorded origin of Bonalu festival traced to disease outbreak in Hyderabad.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>True ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: True (plague, 1813; State Festival 2014)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q71: HOLA MOHALLA — CORRECT -->
+    <div class="sec orange">71 · Hola Mohalla — Correct Statement ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> Which is correct about Hola Mohalla?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Started by Guru Gobind Singh in 1701; martial arts (Langars, Nihang mock battles) at Anandpur Sahib ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Started by Guru Gobind Singh in 1701; showcases martial arts at Anandpur Sahib</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q72: TRIPURA — KHARCHI ASSOCIATION -->
+    <div class="sec purple">72 · Tripura — Kharchi Festival Association 🛐</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Kharchi festival is primarily associated with:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lord Jagannath</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Indigenous tribal deities ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tripura Statehood Day</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Yamuna</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Indigenous tribal deities</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q73: GARO — 100 DRUMS -->
+    <div class="sec green">73 · Garo — 100 Drums Festival 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> Festival of 100 Drums (Garo tribe)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Wangala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Wangala</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q74: MIZORAM — MIM KUT -->
+    <div class="sec blue">74 · Mizoram — Mim Kut Significance 🌽</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> What describes cultural significance of "Mim" in Mim Kut festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>The last harvest representing survival and love ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The last harvest representing survival and love</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>Festival</th><th>Crop Phase</th><th>Month</th></tr>
+      <tr><td><strong>Chapchar Kut</strong></td><td>Sowing of maize</td><td>March (spring)</td></tr>
+      <tr><td><strong>Mim Kut</strong></td><td>Harvesting of maize</td><td>August-September</td></tr>
+      <tr><td><strong>Pawl Kut</strong></td><td>Straw festival (post-harvest)</td><td>December</td></tr>
+    </table>
+    <div class="imp">
+      Mim Kut celebrated by <strong>Kuki-Chin (Mara)</strong> community
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q75: UTTARAKHAND — PHOOL DEI -->
+    <div class="sec pink">75 · Uttarakhand — Phool Dei 🌸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> Traditional folk festival Phool Dei marked by floral offerings, primarily observed in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Uttarakhand ✔ (Kumaon region)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uttarakhand (Kumaon region)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q76: KARNATAKA — KAMBALA -->
+    <div class="sec orange">76 · Karnataka — Kambala 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Kambala festival of coastal Karnataka primarily associated with:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Temple festivals</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Folk music</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Buffalo racing ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tribal rituals</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Buffalo racing</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Karaga:</strong> dedicated to Draupadi; <span class="hl">Tigala community</span></li>
+      <li><strong>Pattadakal Dance Festival:</strong> January</li>
+      <li><strong>Banashankari Devi Fair:</strong> held at Badami</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q77: AP/TELANGANA — BHOGI BONFIRE -->
+    <div class="sec teal">77 · AP / Telangana — Bhogi Bonfire 🔥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> Which Harvest Festival celebrated for 4 days with Bhogi bonfire?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Sankranti / Pongal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sankranti / Pongal (Bhogi bonfire — winter, January)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q78: MARA TRIBE — LEUWA KHUTLA -->
+    <div class="sec blue">78 · Mara Tribe — Leuwa Khutla 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> Which pair is correctly matched regarding Leuwa Khutla festival of Mara tribe?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Mizoram; after Zoom shifting cultivation / Chapchar Kut ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mizoram; celebrated after Zoom shifting cultivation / Chapchar Kut</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q79: MANIPUR — YAOSHANG -->
+    <div class="sec pink">79 · Manipur — Yaoshang 🌕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> Which is true about Yaoshang festival of Manipur?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Thabal Chongba is a moonlight circle dance ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Quiz competitions</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Thabal Chongba is a moonlight circle dance</div>
+    </div>
+    <ul class="hw">
+      <li>"Holi of Manipur"; 5 days; <span class="hl">Lamta</span> month full moon (Feb-March)</li>
+      <li>Sports competitions held (not quiz)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q80: LARUKAJ -->
+    <div class="sec red">80 · Larukaj Festival — Statements 🐷</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> S1: Celebrated by Naga tribe every 9-12 years. <br>S2: Features ceremonial pig wedding honoring Narayan Dev.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Only Statement 2 correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only Statement 2 correct — celebrated by Gond/Baiga tribe of MP/Chhattisgarh (NOT Naga)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q81: BIHU STATEMENTS -->
+    <div class="sec green">81 · Bihu — Statements (Repeated) 🎉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> Statements on Bihu (Goru Bihu / Manu Bihu).</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Statements 2 &amp; 3 correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goru Bihu is part of Rangali Bihu (not Kati Bihu); Manu Bihu involves gamucha gifting — Option A (2,3 correct)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q82: JHARKHAND — SOHRAI -->
+    <div class="sec blue">82 · Jharkhand — Sohrai Festival 🐄</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> Primary focus of Sohrai festival in Jharkhand?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Worship of cattle ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Worship of cattle</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q83: ANGAMI — SACRED PURPOSE -->
+    <div class="sec teal">83 · Angami — Sacred Festival Purpose 🧘</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> Primary objective of Angami Sacred Festival (Sekrenyi)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Purify body and mind / soul ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Purify body and mind / soul</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q84: TRIPURA — GARIA PUJA -->
+    <div class="sec green">84 · Tripura — Garia Puja (Jhum Cultivation) 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> Harvest festival in Tripura with traditional dances after Jhum cultivation.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Garia Puja ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Garia Puja</div>
+    </div>
+    <div class="sticky blue">
+      <strong>Other Tripura Festivals:</strong> Hojagiri (Bru Reang), Hangrai, Biju (Chakma community)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q85: UGADI — FIRST MONTH -->
+    <div class="sec orange">85 · Ugadi — First Month 🌅</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> Festival falling in first month of Hindu calendar — Chaitra.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ugadi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ugadi</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q86: AP/TELANGANA — UGADI -->
+    <div class="sec purple">86 · AP / Telangana — Ugadi (New Year) 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> Festival signifying start of harvest season and New Year in AP/Telangana.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ugadi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ugadi</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q87: BANDI CHHOR DIVAS -->
+    <div class="sec red">87 · Bandi Chhor Divas 🔓</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q87.</span> Which is true about Bandi Chhor Divas?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Marks release of Guru Hargobind, the 6th Sikh Guru, along with 52 kings ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Release of Guru Hargobind (6th Sikh Guru) along with 52 kings</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q88: KERALA — VALLAMKALI -->
+    <div class="sec teal">88 · Kerala — Vallamkali Boat Race 🛶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q88.</span> Harvest Festival known for Vallamkali boat race.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Onam ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Onam</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q89: NAVRATRI DEDICATION -->
+    <div class="sec pink">89 · Navratri Dedication 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q89.</span> To which goddess is Navratri dedicated?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Goddess Durga ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goddess Durga (C)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q90: ASSAM — BIHU -->
+    <div class="sec green">90 · Assam — Bihu Harvest Festival 🎍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q90.</span> Bihu harvest festival belongs to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Assam ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Assam</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q91: MAHARASHTRA — JIVATI PUJA -->
+    <div class="sec orange">91 · Maharashtra — Jivati Puja 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q91.</span> Jivati Puja performed by married women to worship Goddess Parvati, popular in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Assam</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Jharkhand</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Maharashtra ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Himachal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Maharashtra</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Jivati</strong> = form of Parvati; worshipped every Friday in <span class="hl">Shravan</span> month</li>
+      <li>Considered: life-giver, protector of children</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q92: MP — DHAMONI URS FAIR -->
+    <div class="sec blue">92 · MP — Dhamoni Urs Fair 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q92.</span> Dhamoni Urs Fair held in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Madhya Pradesh ✔ (Sagar)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Madhya Pradesh (Sagar)</div>
+    </div>
+    <ul class="hw">
+      <li>Shrine of Sufi saint <span class="hl"><strong>Mastan Shah Wali</strong></span></li>
+      <li>Timing: <strong>April-May</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q93: PUDUCHERRY — VEERAMPATTINAM -->
+    <div class="sec purple">93 · Puducherry — Veerampattinam Festival 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q93.</span> Veerampattinam Festival celebrated in which state/UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kerala</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Puducherry ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Telangana</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lakshadweep</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Puducherry</div>
+    </div>
+    <ul class="hw">
+      <li>Honors village goddess; <span class="hl">6 days</span>; August (Bhadrapad)</li>
+      <li>Car dragging ceremony; protects fishermen</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q94: PUNJAB — CHAPPAR MELA -->
+    <div class="sec green">94 · Punjab — Chappar Mela 🐍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q94.</span> Chappar Mela held in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Punjab ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Goa</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tamil Nadu</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jharkhand</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Punjab</div>
+    </div>
+    <ul class="hw">
+      <li>Village: <span class="hl"><strong>Chhapar, Ludhiana</strong></span>; Month: September</li>
+      <li>Honors: <strong>Gugga Peer</strong> (protection against snakes)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q95: UTTARAKHAND — KANDALI -->
+    <div class="sec orange">95 · Uttarakhand — Kandali Festival 🌸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q95.</span> Kandali celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Goa</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Maharashtra</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>West Bengal</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Uttarakhand ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uttarakhand</div>
+    </div>
+    <ul class="hw">
+      <li>Valley: <span class="hl"><strong>Chaudas Valley, Pithoragarh</strong></span>; Tribe: <strong>Rang tribe</strong></li>
+      <li>Every <strong>12 years</strong>; begins with blooming of <strong>Kandali plant</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q96: KERALA — GURUVAYUR -->
+    <div class="sec blue">96 · Kerala — Guruvayur Festival 🐘</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q96.</span> Guruvayur Festival native to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Kerala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kerala</div>
+    </div>
+    <ul class="hw">
+      <li>10-day annual festival; <span class="hl"><strong>Sri Krishna Temple</strong></span>; Feb-March</li>
+      <li>Starts with elephant race (<strong>Anayoottam</strong>), ends with holy dip (<strong>Aarattu</strong>)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q97: WB — DURGA PUJA START -->
+    <div class="sec red">97 · West Bengal — Durga Puja Start 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q97.</span> Durga Puja starts with which event?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Mahalaya ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mahalaya (Durga's journey from Kailash to Earth; <strong>Chokkhudaan</strong> — eye-giving ceremony)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q98: NAGALAND — NAJU -->
+    <div class="sec teal">98 · Nagaland — Naju Festival 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q98.</span> Naju Festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Assam</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Nagaland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>West Bengal</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Telangana</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagaland</div>
+    </div>
+    <ul class="hw">
+      <li>Tribe: <span class="hl"><strong>Pochury</strong></span>; <strong>10 days</strong>; February; dance = <strong>Khupi Leil</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q99: ODISHA — RAJA FESTIVAL -->
+    <div class="sec green">99 · Odisha — Raja Festival 🌍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q99.</span> Raja festival belongs to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Odisha ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Odisha (Raja Parba = Mithun Sankranti)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q100: KERALA — VETTUCAUD -->
+    <div class="sec purple">100 · Kerala — Vettucaud Feast ✝️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q100.</span> Vettucaud festival in Kerala associated with which religious community?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Christian community ✔ (Feast of Christ the King)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Christian community (Feast of Christ the King)</div>
+    </div>
+    <ul class="hw">
+      <li>Church: <span class="hl"><strong>Madre de Deus</strong></span>, Vettucaud, Thiruvananthapuram; Duration: 10 days</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q101: RAJASTHAN — NOT CELEBRATED -->
+    <div class="sec red">101 · Rajasthan — Festival NOT Celebrated 🚩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q101.</span> Which festival is NOT celebrated in Rajasthan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Teej</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gangaur</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Karaga ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Makar Sankranti</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Karaga (Tamil Nadu / Karnataka — Tigala community, honors Draupadi, 11 days)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q102: PUNJAB — BAISAKHI EVENT -->
+    <div class="sec orange">102 · Punjab — Baisakhi Event ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q102.</span> Important event celebrated during Baisakhi in Punjab?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Founding of Khalsa Panth ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Founding of Khalsa Panth</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q103: KERALA — ATTUKAL PONGAL -->
+    <div class="sec pink">103 · Kerala — Attukal Pongal (Guinness Record) 👩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q103.</span> Festival of Kerala entered Guinness World Record as single largest gathering of women?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Attukal Pongal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Attukal Pongal</div>
+    </div>
+    <div class="sticky green">
+      <div class="slbl">GOA FESTIVALS</div>
+      Shigmo, Sao João, Bondaram, Grape Escapade, Sunburn Festival, Maracaibo/Maoli Yatra · Shigmo = welcomes warriors; dance = Ghode Modni; Fugdi dance · Bondaram: Divar Island, August · St. Francis Xavier Feast: December
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q104: HIMACHAL — DUNGRI -->
+    <div class="sec blue">104 · Himachal — Dungri Festival 🏔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q104.</span> Which is correct about Dungri Festival of Himachal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Hadimba Devi Fair; honors Hidimba (Bhima's wife); 3 days; Manali / Kullu Valley; on Basant Panchami ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Hadimba Devi Fair, honors Hidimba (Bhima's wife); 3 days; Manali/Kullu Valley; organized on Basant Panchami</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q105: MANIPUR — GAAN-NGAI -->
+    <div class="sec green">105 · Manipur — Gaan-Ngai Festival 🐦</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q105.</span> Gaan-Ngai festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kerala</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Manipur ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Maharashtra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>AP</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Manipur</div>
+    </div>
+    <ul class="hw">
+      <li>Celebrated by: <span class="hl"><strong>Zeliangrong Naga</strong></span> community</li>
+      <li>Related: <strong>Lui-Ngai-Ni</strong> = seed sowing festival of Naga tribes in Manipur</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q106: MEGHALAYA — SHAD LAHO -->
+    <div class="sec orange">106 · Meghalaya — Shad Laho 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q106.</span> Shad Laho is a popular traditional dance festival in Meghalaya, celebrated as thanksgiving after harvest.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Garo / Khasi / Jaintia tribal celebration ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B (Garo/Khasi/Jaintia tribal celebration)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q107: PARSI — NAVROZ -->
+    <div class="sec purple">107 · Parsi — Navroz 🔥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q107.</span> Navroz festival celebrated by which religious community?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sikh</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Parsi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Muslim</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Buddhist</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Parsi</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q108: SRINAGAR — TULIP -->
+    <div class="sec pink">108 · Srinagar — Tulip Festival 🌷</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q108.</span> Tulip Festival celebrated in which city?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Srinagar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Delhi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Srinagar (Asia's largest)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q109: RAJASTHAN — NAGAUR FAIR -->
+    <div class="sec orange">109 · Rajasthan — Nagaur Fair 🐪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q109.</span> Nagaur Fair held in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Rajasthan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rajasthan — Shri Ramdev Cattle Fair; second largest livestock fair</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q110: TAMIL NADU — PONGAL -->
+    <div class="sec teal">110 · Tamil Nadu — Pongal 🎊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q110.</span> Pongal belongs to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Tamil Nadu ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tamil Nadu</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q111: DIWALI -->
+    <div class="sec red">111 · Diwali — Lord Ram's Return 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q111.</span> Which festival marks return of Lord Ram to Ayodhya?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Diwali ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Diwali</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q112: HOLI / DIWALI -->
+    <div class="sec purple">112 · Holi (Colors) &amp; Diwali (Lights) 🌈</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q112.</span> Holi is popularly known as festival of _____; Diwali is festival of _____.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Holi = Colors, Diwali = Lights ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Holi = Colors, Diwali = Lights (Option B)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q113: KASHMIRI PANDITS — NAVREH -->
+    <div class="sec blue">113 · Kashmiri Pandits — Navreh 🌰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q113.</span> Navreh primarily celebrated by which community?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dogras</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Kashmiri Pandits ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ladakhi Buddhists</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gujjars</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kashmiri Pandits</div>
+    </div>
+    <ul class="hw">
+      <li>First day of <span class="hl">Chaitra</span>; Kashmiri New Year; walnuts, almonds, raisins involved</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q114: PUNJAB — LOHRI -->
+    <div class="sec orange">114 · Punjab — Lohri Significance ❄️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q114.</span> Lohri is popular festival of North India, mainly associated with:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Winter solstice</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Harvesting of sugarcane ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mango season</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sugarcane harvesting</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q115: KERALA — CHANDANAKUDAM -->
+    <div class="sec green">115 · Kerala — Chandanakudam Festival 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q115.</span> Chandanakudam Festival celebrated in Kerala in:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Temple</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Church</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Mosque ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Buddhist monastery</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mosque</div>
+    </div>
+    <ul class="hw">
+      <li>Held at: <span class="hl"><strong>Beemapally Dargah Sharif, Thiruvananthapuram</strong></span>; 11 days; annual</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q116: GANGA DUSSEHRA -->
+    <div class="sec blue">116 · Ganga Dussehra 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q116.</span> Ganga Dussehra celebrated in which month?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>January</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>October</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>November</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>June ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: June — ~10 days; descent of Ganges from heaven</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q117: MANIPUR — KWAK TANBA -->
+    <div class="sec purple">117 · Manipur — Kwak Tanba 🐦</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q117.</span> Kwak Yatra of Manipur celebrated in which month?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>September-October ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: September-October (C)</div>
+    </div>
+    <ul class="hw">
+      <li>Also called: <span class="hl">Kwa Tamba</span>; Performed by <strong>Meitei community</strong></li>
+      <li>"Crow Fringe Festival" — King releases crow; marks end of monsoon, beginning of prosperity</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q118: KUMAON — MANGAL GEET -->
+    <div class="sec orange">118 · Kumaon — Mangal Geet 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q118.</span> Shakunakhar Mangal Geet are related to which region?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kumaon ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Vidarbha</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Saurashtra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Konkan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kumaon, Uttarakhand</div>
+    </div>
+    <ul class="hw">
+      <li>Sung exclusively by <span class="hl">women</span>; during childbirth, marriage, Ganesh Puja ceremonies</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q119: GUJARAT — SAPTAK -->
+    <div class="sec green">119 · Gujarat — Saptak Music Festival 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q119.</span> Saptak Music Festival celebrated in which city?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ahmedabad ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ahmedabad — 13 days; Indian classical music</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q120: GOA — CHIKAL KALO -->
+    <div class="sec blue">120 · Goa — Chikal Kalo 🟫</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q120.</span> Chikal Kalo Festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Goa ✔ (Mud Festival)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goa (Mud Festival)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q121: DELHI — MANGO FESTIVAL -->
+    <div class="sec orange">121 · Delhi — International Mango Festival 🥭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q121.</span> International Mango Festival primarily celebrated in:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Delhi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Shimla</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dispur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mysore</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Delhi (Janakpuri / Dilli Haat); started 1987; July; 1000+ mango varieties</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q122: MAHARASHTRA — KOJAGIRI -->
+    <div class="sec pink">122 · Maharashtra — Kojagiri Purnima 🌕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q122.</span> Kojagiri Purnima primarily celebrated in Maharashtra, honors which deity?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Shiva</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ganesha</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Durga</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Lakshmi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lakshmi</div>
+    </div>
+    <ul class="hw">
+      <li>Also called: <span class="hl">Sharad Purnima</span></li>
+      <li>"Kojagiri" (Bengali) = "one who is awake" — Lakshmi blesses those awake</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q123: SIKKIM — TIHAR -->
+    <div class="sec blue">123 · Sikkim — Tihar 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q123.</span> Which festival celebrated as Tihar in Sikkim?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Diwali ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Diwali (associated with Maruni dance)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q124: SIKKIM — INDRA JATRA -->
+    <div class="sec green">124 · Sikkim — Indra Jatra 🌧️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q124.</span> Indra Jatra festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sikkim ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sikkim — 8-day festival; dedicated to Lord Indra; celebrated by Newar community</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q125: HP — NALWARI FAIR -->
+    <div class="sec orange">125 · HP — Nalwari Fair 🐃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q125.</span> Newar Nalwari Fair celebrated in Himachal Pradesh?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Bilaspur, Himachal Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bilaspur, HP — also known as Cattle Fair; 4-5 days; held at Luhnu Ground</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q126: GOA — ST. FRANCIS XAVIER -->
+    <div class="sec purple">126 · Goa — St. Francis Xavier ✝️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q126.</span> Feast of St. Francis Xavier celebrated in:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>January</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>August</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>December ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>May</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: December — at San Francisco Xavier Church, Goa</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q127: UTTARAKHAND — SYALDEV BIKHAUTI -->
+    <div class="sec blue">127 · Uttarakhand — Syaldev Bikhauti Fair 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q127.</span> Syaldev Bikhauti Fair celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Goa</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gujarat</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Uttarakhand ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Andhra</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uttarakhand</div>
+    </div>
+    <ul class="hw">
+      <li>Location: <span class="hl"><strong>Dwarahat, Almora district</strong></span>; Temple: <strong>Vimeshwar Temple</strong></li>
+      <li>Month: <strong>Vaishakh</strong> (April-May); Ritual: <strong>Odha Bhetna</strong> (stone striking)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q128: GOA — CHRISTIAN FESTIVALS -->
+    <div class="sec green">128 · Goa — Christian Festivals 🎊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q128.</span> Three Kings Feast, St. Francis Xavier's, Grape Escapade — all celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Goa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goa</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q129: LADAKH — YURU KABGYAT -->
+    <div class="sec purple">129 · Ladakh — Yuru Kabgyat 🎭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q129.</span> Festival in UT of Ladakh — 2-day mask dance (Cham) at Lamayuru Monastery.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Yuru Kabgyat ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Yuru Kabgyat (Ladakh, July-August)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q130: UTTARAKHAND — BAITHAKI HOLI -->
+    <div class="sec orange">130 · Uttarakhand — Baithaki Holi 🪑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q130.</span> Baithaki Holi celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Uttarakhand ✔ (Kumaon region)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uttarakhand (Kumaon) — Holi played while sitting; Basant Panchami time (January)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q131: MEGHALAYA — MAK AGAMAKA -->
+    <div class="sec green">131 · Meghalaya — Mak Agamaka (Spring Festival) 🌸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q131.</span> Mak Agamaka celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kerala</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gujarat</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Meghalaya ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>AP</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Meghalaya — Garo tribe; Spring Festival; March; agricultural</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q132: NAGALAND — BUSHU -->
+    <div class="sec blue">132 · Nagaland / Assam — Bushu Festival 🐍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q132.</span> Bushu Festival traditionally celebrated in:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bihar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Punjab</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nagaland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Karnataka</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagaland</div>
+    </div>
+    <ul class="hw">
+      <li>Celebrated by: <span class="hl"><strong>Dimasa Kachari tribe</strong></span> (also in Assam, but if Assam not option → Nagaland)</li>
+      <li>Post-harvest festival; deity worshipped: <strong>Sibrai</strong>; month: January</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q133: KARNATAKA — MAHAMASTAKABHISHEKA -->
+    <div class="sec purple">133 · Karnataka — Mahamastakabhisheka 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q133.</span> Mahamastakabhisheka Festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Karnataka ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Karnataka — Shravanabelagola; for Bahubali; every 12 years (last 2018)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q134: HP — PHULAICH -->
+    <div class="sec orange">134 · HP — Phulaich Festival 🌸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q134.</span> Phulaich festival celebrated in which state/UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Himachal Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: HP — Kinnaur district; Bhadrapad month (full moon); "Festival of Flowers"</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q135: GARO — 100 DRUMS -->
+    <div class="sec green">135 · Garo — 100 Drums Festival 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q135.</span> Festival of 100 Drums (Garo tribe)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Wangala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Wangala</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Larukaj</strong></td><td>Bhil and Gond tribes (MP / Chhattisgarh)</td></tr>
+      <tr><td><strong>Hareli</strong></td><td>Monsoon agricultural festival</td></tr>
+      <tr><td><strong>Goncha</strong></td><td>9-day tribal chariot festival, Jagdalpur, Chhattisgarh</td></tr>
+      <tr><td><strong>Madai</strong></td><td>Gond / Baiga; February-March</td></tr>
+      <tr><td><strong>Lui-Ngai-Ni</strong></td><td>Naga tribe of Manipur, seed sowing festival</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q136: HIMACHAL — HALDA -->
+    <div class="sec blue">136 · Himachal — Halda 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q136.</span> Halda festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Himachal Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: HP — Lahaul Valley; January-February; Magh Purnima; "Festival of Lights"</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q137: NAGALAND — HORNBILL -->
+    <div class="sec green">137 · Nagaland — Hornbill Festival 🦅</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q137.</span> Famous Hornbill Festival, showcasing tribal culture, held in which state/UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Nagaland ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nagaland — symbolizes strength, beauty, grandeur</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q138: MEGHALAYA — BAHDIN KHLAM -->
+    <div class="sec red">138 · Meghalaya — Bahdin Khlam (Jaintia) 🌧️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q138.</span> Major religious celebration of the Jaintia community.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Bahdin Khlam ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bahdin Khlam — July (peak monsoon); driving away evil spirits and plague</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Festival</th><th>Details</th></tr>
+      <tr><td><strong>Kang</strong></td><td>Manipur, Hindu Rath Yatra (10 days)</td></tr>
+      <tr><td><strong>Bumchu</strong></td><td>Buddhist festival, <strong>Tashiding Monastery, West Sikkim</strong>; "pot of holy water"</td></tr>
+      <tr><td><strong>Chaitol</strong></td><td><strong>Sirmaur, Himachal Pradesh</strong>; March-April; "Festival of Pictures"; dish = <strong>Potlu</strong></td></tr>
+      <tr><td><strong>Dosmoche</strong></td><td><strong>Ladakh</strong>; 2-day Buddhist; mask dance; "Festival of Scapegoat"</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q139: MANIPUR — LAI HARAOBA -->
+    <div class="sec purple">139 · Manipur — Lai Haraoba (Umang Lai) 🌳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q139.</span> Aroba Festival celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Manipur ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Manipur — honors forest deity Umang Lai; Meitei community; Lai Haraoba dance</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q140: NOT ASSOCIATED WITH UTTARAKHAND -->
+    <div class="sec red">140 · NOT Associated with Uttarakhand 🏔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q140.</span> Which is NOT associated with Uttarakhand?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Thal</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Pushkar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jaljibi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Syaldev Bikhauti</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pushkar (Rajasthan)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Jaljibi:</strong> trade fair, confluence of Gori and Kali rivers, <span class="hl">Pithoragarh</span>, 13 days, November</li>
+      <li><strong>Thal:</strong> Pithoragarh, during Baisakhi</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q141: CHHATTISGARH — PHAGUN MADAI -->
+    <div class="sec orange">141 · Chhattisgarh — Phagun Madai 🔥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q141.</span> Phagun Madai Festival celebrated on eve of which major festival?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Holi ✔ (Phagun = Feb-March)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Holi (Phagun = Feb-March)</div>
+    </div>
+    <ul class="hw">
+      <li>Temple: <span class="hl"><strong>Maa Danteshwari Temple, Dantewada</strong></span>; called "Kumbh Mela of tribal culture"</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q142: RELIGION-FESTIVAL PAIRS -->
+    <div class="sec blue">142 · Religion-Festival Pairs 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q142.</span> Which pair of festival-religion is correctly matched?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>All matched correctly below ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: See table below</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>Festival</th><th>Religion / Note</th></tr>
+      <tr><td><strong>Mahavir Jayanti</strong></td><td>Jainism (24th Tirthankara)</td></tr>
+      <tr><td><strong>Guru Nanak Jayanti</strong></td><td>Sikhism</td></tr>
+      <tr><td><strong>12 Wafat (Eid Milad-un-Nabi)</strong></td><td>Islam (commemorates birth and death of Prophet Muhammad)</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q143: LADAKH — HEMIS -->
+    <div class="sec purple">143 · Ladakh — Hemis Festival 🎭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q143.</span> In which UT is Hemis Festival celebrated?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ladakh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ladakh</div>
+    </div>
+    <ul class="hw">
+      <li><strong>Spituk Gustor:</strong> 2-day winter festival</li>
+      <li><strong>Saga Dawa:</strong> called "Sagadawa" in Sikkim, "Buddha Purnima" in North India</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q144: CHHATTISGARH — HARELI -->
+    <div class="sec green">144 · Chhattisgarh — Hareli Celebrants 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q144.</span> Hareli festival mainly celebrated by which group?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Farmers ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Farmers</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q145: MAHARASHTRA — GUDI PADWA CORRECT -->
+    <div class="sec orange">145 · Maharashtra — Gudi Padwa Correct Statement 🚩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q145.</span> Which is true about Gudi Padwa?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Marks beginning of Hindu New Year based on lunisolar calendar (only) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Marks beginning of Hindu New Year based on lunisolar calendar (only)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q146: ASSAM — BIHU WINTER SOLSTICE -->
+    <div class="sec blue">146 · Assam — Bihu Winter Solstice ❄️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q146.</span> Is Bihu celebrated to mark winter solstice?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">1</div>False — Bihu = new harvest celebration ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: False — Bihu = new harvest celebration (Option 1)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q147: SANTHAL — EROK SIM -->
+    <div class="sec green">147 · Santhal — Erok Sim Festival 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q147.</span> Assertion: Erok Sim marks end of agricultural seasons. <br>Reason: Erok Sim expresses gratitude for harvest, prepares for new cycle.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>A is false, R is true ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A is false, R is true</div>
+    </div>
+    <ul class="hw">
+      <li>Santhal community: Jharkhand, Bihar, Odisha, West Bengal</li>
+      <li>Erok Sim = held <strong>BEFORE</strong> rice sowing (seed-sowing festival, not end of season); also called <span class="hl">Harhasim / Hariad</span></li>
+      <li>Priest: <strong>Naiki</strong> (village priest)</li>
+      <li>Sacrifice (rooster) offered at: <strong>Jaherthan</strong> (sacred grove); offered to <strong>Jaher Era, Marang Buru</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- BONUS FESTIVALS -->
+    <div class="sec orange">📰 Additional Festivals (Bonus — From Recent News)</div>
+    <div class="ca-box">
+      <table class="hw-t org">
+        <tr><th>Festival</th><th>Location</th><th>Details</th></tr>
+        <tr><td><strong>Perulem Beach Festival</strong></td><td>Mughaltoor, <strong>West Godavari, AP</strong></td><td>Started 2020; tourism + cultural; beach volleyball; dance = Burrakatha; 2 days</td></tr>
+        <tr><td><strong>Pongtu Festival</strong></td><td>Arunachal Pradesh (Tutsa tribe)</td><td>Before millet harvesting; honors <strong>Rangkhotak</strong></td></tr>
+        <tr><td><strong>Bamboo Dol Fair</strong></td><td><strong>Rajasthan</strong></td><td>For Lord Shri Ji and Raghunath Ji</td></tr>
+        <tr><td><strong>Kanuma Festival</strong></td><td><strong>Andhra Pradesh</strong></td><td>Celebrates victory of good over evil</td></tr>
+      </table>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MASTER QUICK REFERENCE -->
+    <div class="sec red">📋 Master Quick-Reference — Festival to State</div>
+    <table class="qr-t">
+      <tr><th>State / UT</th><th>Key Festivals</th></tr>
+      <tr><td>Odisha</td><td>Chaitra, Chhau, Nuakhai, Konark Dance, Bali Yatra, Kalinga Mahotsav, Rath Yatra, Raja Parba</td></tr>
+      <tr><td>Manipur</td><td>Yaoshang, Lai Haraoba, Ningol Chakouba, Sajibu Cheiraoba, Kwak Tanba, Gaan-Ngai</td></tr>
+      <tr><td>Sikkim</td><td>Pang Lhabsol, Losar, Saga Dawa, Tendong Lho Rum Faat, Bumchu, Indra Jatra</td></tr>
+      <tr><td>Bihar</td><td>Salhesh, Chhath, Jat-Jatin</td></tr>
+      <tr><td>Punjab</td><td>Baisakhi, Hola Mohalla, Maghi, Lohri, Bandi Chhor Divas, Chappar Mela</td></tr>
+      <tr><td>Nagaland</td><td>Sekrenyi, Moatsu, Tuluni, Hornbill, Aoling, Naju, Bushu</td></tr>
+      <tr><td>Rajasthan</td><td>RIFF, Kolayat, Pushkar, Baneshwar, Gangaur, Nagaur, Teej</td></tr>
+      <tr><td>Meghalaya</td><td>Wangala, Shad Sukh Mynsiem, Bahdin Khlam, Nongkrem, Mak Agamaka</td></tr>
+      <tr><td>Telangana</td><td>Bonalu, Bathukamma</td></tr>
+      <tr><td>Tamil Nadu</td><td>Kuthu Sai Dussehra, Pongal, Thiruvathirai, Karthigai Deepam, Manjal Niratu Vizha, Jallikattu, Thaipusam, Mund Witch (Toda)</td></tr>
+      <tr><td>Kerala</td><td>Onam, Thrissur Pooram, Attukal Pongal, Manjal Kuli, Guruvayur, Vettucaud</td></tr>
+      <tr><td>Maharashtra</td><td>Gudi Padwa, Jivati Puja, Kojagiri Purnima</td></tr>
+      <tr><td>Arunachal Pradesh</td><td>Myoko, Sangken, Dree, Mopin, Nyokum, Boori Boot, Solung</td></tr>
+      <tr><td>Tripura</td><td>Garia Puja, Kharchi Puja, Hojagiri</td></tr>
+      <tr><td>Himachal Pradesh</td><td>Losar, Minjar, Halda, Phaggali, Dungri, Chaitol, Phulaich, Nalwari</td></tr>
+      <tr><td>Assam</td><td>Ambubachi Mela, Bihu, Baishagu, Ali-Ai-Ligang</td></tr>
+      <tr><td>Karnataka</td><td>Karaga, Kambala, Mahamastakabhisheka, Pattadakal Dance Festival</td></tr>
+      <tr><td>Madhya Pradesh</td><td>Pola, Gangaur Gudliya, Dhamoni Urs, Phagun Madai</td></tr>
+      <tr><td>West Bengal</td><td>Durga Puja</td></tr>
+      <tr><td>Mizoram</td><td>Chapchar Kut, Mim Kut, Pawl Kut, Leuwa Khutla</td></tr>
+      <tr><td>Uttarakhand</td><td>Phool Dei, Bissu Mela, Syaldev Bikhauti, Baithaki Holi, Jaljibi, Thal</td></tr>
+      <tr><td>Jharkhand</td><td>Sohrai, Jawa, Karma, Erok Sim</td></tr>
+      <tr><td>Chhattisgarh</td><td>Goncha, Hareli, Madai, Bastar Dussehra, Phagun Madai</td></tr>
+      <tr><td>Ladakh</td><td>Hemis, Dosmoche, Yuru Kabgyat, Spituk Gustor, Losar</td></tr>
+      <tr><td>Goa</td><td>Chikal Kalo, Shigmo, Bondaram, St. Francis Xavier Feast</td></tr>
+      <tr><td>Puducherry</td><td>Veerampattinam Festival</td></tr>
+      <tr><td>Gujarat</td><td>Saptak Music Festival</td></tr>
+      <tr><td>Delhi</td><td>International Mango Festival</td></tr>
+      <tr><td>AP (West Godavari)</td><td>Perulem Beach Festival</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Key Exam Tips — Yaad Rakho!</div>
+    <div class="tip-box">
+      <ul class="hw num">
+        <li>"<span class="hl"><strong>Ngai</strong></span>" in festival name → <strong>Manipur</strong> (if not, then Nagaland)</li>
+        <li>"<span class="hl-g"><strong>Kut</strong></span>" in festival name → <strong>Mizoram</strong> (if not, then Nagaland)</li>
+        <li>Extreme keywords ("without any," "only," "exclusively") in statements → usually <span class="hl-p"><strong>wrong</strong></span></li>
+        <li>UT mentioned in options → suspect <strong>Ladakh / Lakshadweep</strong></li>
+        <li>Trading / livestock involved → it's a <strong>fair (mela)</strong>, not just a festival</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF FESTIVALS OF INDIA NOTES</div>
+      <strong>All 147 Questions + Options Covered ✅ | Revise daily, ace your exam! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
