@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भारतीय संगीत — स्टैटिक GK सीरीज़ (टॉपिक 3) | टॉपर नोट्स</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Baloo+2:wght@400;500;600;700;800&family=Indie+Flower&family=Handlee&family=Gochi+Hand&family=Architects+Daughter&family=Annie+Use+Your+Telescope&family=Dancing+Script:wght@400;600;700&family=Satisfy&family=Homemade+Apple&family=Shadows+Into+Light+Two&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{font-family:'Kalam','Baloo 2',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Baloo 2','Kalam',cursive;font-weight:700;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam','Baloo 2',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam','Baloo 2',cursive;font-size:.95rem;color:#80cbc4;letter-spacing:2px;margin-bottom:6px}
+.cover-title{font-family:'Baloo 2','Kalam',cursive;font-weight:800;font-size:2.7rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam','Baloo 2',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.9rem;color:#e8f5e9;font-family:'Kalam','Baloo 2',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Baloo 2','Kalam',cursive;font-weight:700;font-size:1.45rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Baloo 2','Kalam',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam','Baloo 2',cursive;font-size:.96rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam','Baloo 2',cursive;font-size:.94rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam','Baloo 2',cursive;font-size:.95rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Baloo 2','Kalam',cursive;font-weight:600;font-size:.8rem;letter-spacing:.5px;opacity:.65;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam','Baloo 2',cursive;font-size:.89rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Baloo 2','Kalam',cursive;font-weight:600;font-size:.92rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ परीक्षा ट्रैप!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Baloo 2',cursive;font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:4px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 याद रखने की ट्रिक';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Baloo 2',cursive;font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 मुख्य तथ्य';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Baloo 2',cursive;font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 परीक्षा टिप';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Baloo 2',cursive;font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 अतिरिक्त / न्यूज़';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Baloo 2',cursive;font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam','Baloo 2',cursive;font-size:.96rem;line-height:1.55}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Baloo 2',cursive;font-weight:600;font-size:.86rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam','Baloo 2',cursive;font-size:.9rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Baloo 2',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam','Baloo 2',cursive;font-size:.86rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Baloo 2','Kalam',cursive;font-size:.82rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam','Baloo 2',cursive;font-size:.86rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Baloo 2',cursive;font-weight:600;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* TOOLBAR EXTRA CONTROLS */
+.tb-group{display:flex;align-items:center;gap:6px;color:#cfd8e0;font-size:.84rem;font-family:'Kalam','Baloo 2',cursive}
+.font-select{font-family:'Kalam','Baloo 2',cursive;font-size:.82rem;border:none;border-radius:6px;padding:6px 8px;background:#eceff1;color:#1c1c2e;cursor:pointer;max-width:185px}
+.btn-size{background:#2980b9;color:#fff;min-width:34px;justify-content:center;padding:8px 10px}
+.btn-reset{background:#607d8b;color:#fff;padding:8px 12px}
+.size-lbl{color:#ffd54f;font-weight:700;min-width:42px;text-align:center;font-family:'Kalam','Baloo 2',cursive;font-size:.85rem}
+
+/* COVER CONTENTS PREVIEW */
+.cover-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(255,213,79,.6),transparent);margin:20px auto 0;max-width:440px}
+.toc{position:relative;z-index:2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;margin:20px auto 4px;max-width:640px;text-align:left}
+.toc-title{font-family:'Baloo 2','Kalam',cursive;font-weight:700;color:#ffd54f;font-size:1.2rem;text-align:center;margin-bottom:12px;letter-spacing:.5px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+@media(max-width:520px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{font-family:'Kalam','Baloo 2',cursive;font-size:.9rem;color:#e3f2fd;display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.toc-item .ic{font-size:.95rem;flex-shrink:0}
+.toc-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toc-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:5px 14px;font-family:'Kalam','Baloo 2',cursive;font-size:.82rem;color:#e8f5e9}
+.toc-stat b{color:#ffd54f;font-size:1rem}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  html{font-size:15px!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box,.two-col,.three-col{break-inside:avoid;page-break-inside:avoid}
+  .hw-t tr,.qr-t tr{break-inside:avoid;page-break-inside:avoid}
+  thead{display:table-header-group}
+  .sec{break-after:avoid;page-break-after:avoid}
+  hr.div,.cb{break-before:avoid;page-break-before:avoid}
+  .cover{break-after:always;page-break-after:always}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+<style id="fontOverride"></style>
+<style id="sizeOverride"></style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🎵 भारतीय संगीत — टॉपर नोट्स</span>
+  <div class="tb-group">
+    <span>✒️ फ़ॉन्ट:</span>
+    <select class="font-select" onchange="setFont(this.value)">
+      <optgroup label="✏️ नीट प्रिंट (टॉपर स्टाइल)">
+        <option value="Patrick Hand">Patrick Hand – neat print</option>
+        <option value="Kalam" selected>Kalam – bold marker</option>
+        <option value="Indie Flower">Indie Flower – rounded cute</option>
+        <option value="Handlee">Handlee – soft casual</option>
+        <option value="Gochi Hand">Gochi Hand – playful</option>
+        <option value="Architects Daughter">Architects Daughter – sketchy</option>
+        <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+      </optgroup>
+      <optgroup label="🖋️ कर्सिव और पेन स्टाइल">
+        <option value="Caveat">Caveat – quick cursive</option>
+        <option value="Dancing Script">Dancing Script – elegant cursive</option>
+        <option value="Satisfy">Satisfy – smooth flowing</option>
+        <option value="Homemade Apple">Homemade Apple – real pen look</option>
+        <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+        <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+        <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+      </optgroup>
+      <optgroup label="🖍️ बोल्ड मार्कर">
+        <option value="Permanent Marker">Permanent Marker – thick marker</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="tb-group">
+    <span>🔠 आकार:</span>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="फ़ॉन्ट छोटा करें">अ−</button>
+    <span class="size-lbl" id="sizeLbl">100%</span>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="फ़ॉन्ट बड़ा करें">अ+ बड़ा</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="रीसेट करें">↺</button>
+  </div>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 स्टैटिक GK सीरीज़</div>
+    <div class="cover-title">🎵 भारतीय संगीत</div>
+    <div class="cover-sub">टॉपिक 3 — पूर्ण संरचित नोट्स | सभी प्रश्न और विकल्प शामिल (2025 PYQs)</div>
+    <div class="cover-badge">🎶 राग और थाट · 🥁 ताल · 🎻 वाद्ययंत्र · 🎤 प्रवर्तक · 🏛️ घराने</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <div class="cover-divider"></div>
+    <div class="toc">
+      <div class="toc-title">📑 इन नोट्स में क्या है</div>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="ic">🎼</span> हिंदुस्तानी (उत्तर) बनाम कर्नाटक (दक्षिण) संगीत</div>
+        <div class="toc-item"><span class="ic">🎶</span> राग और उनके गायन का समय</div>
+        <div class="toc-item"><span class="ic">🗂️</span> 10 थाट (भातखंडे) और उनके राग</div>
+        <div class="toc-item"><span class="ic">🥁</span> ताल और लय — तीनताल, सप्त ताल</div>
+        <div class="toc-item"><span class="ic">🎻</span> वाद्ययंत्र और 4 श्रेणियाँ (तत/अवनद्ध/घन/सुषिर)</div>
+        <div class="toc-item"><span class="ic">🎤</span> प्रवर्तक और घराने</div>
+        <div class="toc-item"><span class="ic">📜</span> ग्रंथ — संगीत रत्नाकर, नाट्यशास्त्र…</div>
+        <div class="toc-item"><span class="ic">🪕</span> लोक संगीत → राज्य</div>
+        <div class="toc-item"><span class="ic">🙏</span> भक्ति (निर्गुण/सगुण) और सूफ़ी संगीत</div>
+        <div class="toc-item"><span class="ic">🏅</span> भारत रत्न और ग्रैमी संगीतकार</div>
+        <div class="toc-item"><span class="ic">💡</span> परीक्षा टिप्स और ट्रिक्स</div>
+        <div class="toc-item"><span class="ic">✅</span> हर प्रश्न के उत्तर + विकल्प</div>
+      </div>
+      <div class="toc-stats">
+        <span class="toc-stat"><b>136</b> प्रश्न</span>
+        <span class="toc-stat"><b>10</b> थाट</span>
+        <span class="toc-stat"><b>4</b> वाद्य श्रेणियाँ</span>
+        <span class="toc-stat"><b>+</b> टेबल और टिप्स</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ruled">
+<!-- ============ प्रश्न नीचे से शुरू ============ -->
+
+
+    <!-- INTRO -->
+    <div class="sec teal">🎼 सबसे पहले — भारतीय शास्त्रीय संगीत के 2 प्रकार</div>
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">हिंदुस्तानी संगीत</div>
+        <span class="hl"><strong>उत्तर भारतीय</strong></span> संगीत · पाकिस्तान, बांग्लादेश में भी<br>
+        4 रूप: <strong>ध्रुपद → ख्याल → ठुमरी → टप्पा</strong>
+      </div>
+      <div class="sticky green">
+        <div class="slbl">कर्नाटक संगीत</div>
+        <span class="hl-g"><strong>दक्षिण भारतीय</strong></span> संगीत<br>
+        राज्य: <strong>केरल, तमिलनाडु, कर्नाटक, आंध्र प्रदेश, तेलंगाना</strong>
+      </div>
+    </div>
+    <div class="tip-box">
+      <strong>पुराने TCS पैटर्न से क्या बदला?</strong> <span class="hl">कर्नाटक संगीत</span> पर ज़्यादा प्रश्न, और <span class="hl">राग व थाट</span> पर कई कठिन प्रश्न। प्रवर्तक (कलाकार) वाले प्रश्न अब आसान; राग/थाट वाले प्रश्न नया कठिन क्षेत्र हैं।
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q1 -->
+    <div class="sec orange">① राग शंकरा — गायन का समय 🌙</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.1</span> राग शंकरा एक हिंदुस्तानी शास्त्रीय राग है जो एक निश्चित समय पर गाया जाता है। यह परंपरागत रूप से दिन के किस भाग में (ध्यानमग्न व भक्तिमय भाव) प्रस्तुत किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रातः</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दोपहर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सायं</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>रात ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: रात — रात के <strong>दूसरे पहर</strong> में गाया जाता है (~9 बजे–12 बजे / 10 बजे–1 बजे)</div>
+    </div>
+    <ul class="hw">
+      <li><span class="hl"><strong>बिलावल थाट</strong></span> से संबंधित</li>
+      <li>भगवान <strong>शिव</strong> की ऊर्जा से जुड़ा</li>
+      <li>रात के पहर: पहला पहर ~<strong>शाम 7 बजे</strong> से; राग शंकरा = <strong>दूसरा पहर</strong></li>
+      <li>हर राग का निश्चित समय होता है (सुबह शांत/भक्तिमय संगीत सुनते हैं जो मन को तरोताज़ा करे — DJ/डिस्को नहीं!)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- THAATS INTRO -->
+    <div class="sec blue">🗂️ 10 थाट (मूल स्वर-समूह) — पंडित भातखंडे द्वारा</div>
+    <div class="key-box">
+      <p class="hw"><strong>थाट = एक परिवार / मूल स्केल। राग = उस परिवार के बच्चे।</strong> अधिकांश राग <span class="hl">10 थाटों</span> के अंतर्गत वर्गीकृत हैं, जिन्हें <strong>पंडित वि.ना. भातखंडे</strong> ने परिभाषित किया।</p>
+      <ul class="hw">
+        <li>10 थाट: <span class="hl-b">भैरव, भैरवी, आसावरी, बिलावल, काफ़ी, कल्याण, खमाज, मारवा, पूर्वी, तोड़ी</span></li>
+      </ul>
+    </div>
+    <table class="hw-t">
+      <tr><th>थाट</th><th>इसके अंतर्गत राग</th></tr>
+      <tr><td><strong>बिलावल</strong></td><td>अल्हैया बिलावल, यामिनी बिलावल, <span class="hl">शंकरा</span></td></tr>
+      <tr><td><strong>कल्याण</strong></td><td>यमन, भूपाली, हिंडोल, केदार, कामोद, श्याम कल्याण, बिहाग</td></tr>
+      <tr><td><strong>खमाज</strong></td><td>खमाज, देश, तिलक कामोद, रागेश्वरी, जयजयवंती, झिंझोटी</td></tr>
+      <tr><td><strong>काफ़ी</strong></td><td>बागेश्वरी, भीमपलासी, धानी, शिवरंजनी, पीलू</td></tr>
+      <tr><td><strong>भैरव</strong></td><td>भैरव, अहीर भैरव, जोगिया, नट भैरव, गौरी, विभास</td></tr>
+      <tr><td><strong>मारवा</strong></td><td>मारवा, पूरिया, भटियार, सहानी, विभास</td></tr>
+      <tr><td><strong>पूर्वी</strong></td><td>पूर्वी, श्री, पूरिया धनाश्री, बसंत, ललित</td></tr>
+      <tr><td><strong>आसावरी</strong></td><td>आसावरी, जौनपुरी, देसी, दरबारी कान्हड़ा, अडाना</td></tr>
+      <tr><td><strong>भैरवी</strong></td><td>भैरवी, मालकौंस, विलक्षिणी तोड़ी, कौंसी कान्हड़ा</td></tr>
+      <tr><td><strong>तोड़ी</strong></td><td>तोड़ी, गुजरी तोड़ी, मधुबंती, मुल्तानी</td></tr>
+    </table>
+    <div class="imp">
+      <strong>विलक्षिणी तोड़ी</strong> <span class="hl">भैरवी</span> थाट से संबंधित है — तोड़ी थाट से नहीं। क्लासिक ट्रैप!
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2 -->
+    <div class="sec green">② राग बागेश्वरी — गायन का समय 🌙</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.2</span> राग बागेश्वरी (विरह, भक्ति, शांति के भाव) परंपरागत रूप से किस समय गाया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रातः</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दोपहर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सायं</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>रात ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: रात — रात के <strong>दूसरे पहर</strong> में गाया जाता है; <span class="hl">काफ़ी थाट</span> से संबंधित</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3 -->
+    <div class="sec purple">③ सोपान संगीतम — मूल राज्य 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.3</span> सोपान संगीतम, मंदिर अनुष्ठानों से जुड़ी एक शास्त्रीय संगीत परंपरा, किस राज्य से उत्पन्न हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>केरल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर्नाटक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तमिलनाडु</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ओडिशा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: केरल — <strong>सोपान</strong> = सीढ़ियाँ; केरल के मंदिरों की सीढ़ियों पर गाया जाता है</div>
+    </div>
+    <ul class="hw">
+      <li>केरल के अन्य प्रसिद्ध संगीत रूप: <span class="hl-g">थुल्लल गीत, कथकली संगीत, चर्च कॉयर, मापिला गीत</span>, और कर्नाटक संगीत</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4 -->
+    <div class="sec red">④ राग जौनपुरी — किस थाट से? 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.4</span> हिंदुस्तानी शास्त्रीय संगीत में राग जौनपुरी किस थाट से उत्पन्न है (अक्सर देर सुबह गाया जाता है, कोमल भक्तिमय भाव)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बिलावल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>काफ़ी</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>आसावरी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भैरव</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: आसावरी थाट — देर सुबह; भावनात्मक गहराई, भक्ति</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5 -->
+    <div class="sec orange">⑤ राग यमन — किस थाट से? 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.5</span> राग यमन किस थाट से उत्पन्न है (रोमांटिक व भक्तिमय भाव, सायंकालीन कॉन्सर्ट में गाया जाता है)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>कल्याण थाट ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कल्याण थाट — रोमांटिक/भक्तिमय; रात के <strong>पहले पहर</strong> में गाया जाता है</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6 -->
+    <div class="sec blue">⑥ राग भैरव — क्या सही है? 🌅</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.6</span> राग भैरव के बारे में क्या सही है — सायं, रात, प्रातः या दूसरे पहर में गाया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सायं</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>रात</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रातः (early morning) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दूसरा पहर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: प्रातः — <strong>भैरव थाट</strong> से संबंधित; <span class="hl">"प्रातःकालीन रागों का राजा"</span> कहलाता है</div>
+    </div>
+    <ul class="hw">
+      <li>भाव: भक्तिमय, राजसी, गंभीर</li>
+      <li>भगवान <strong>शिव</strong> से जुड़ा</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7 -->
+    <div class="sec green">⑦ कर्नाटक संगीत शैली 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.7</span> कौन सी संगीत शैली कर्नाटक परंपरा से जुड़ी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ख्याल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ध्रुपद</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>कृति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>टप्पा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कृति (कर्नाटक)। ख्याल, ध्रुपद और टप्पा = हिंदुस्तानी</div>
+    </div>
+    <ul class="hw">
+      <li><strong>ख्याल:</strong> रोमांटिक व अत्यधिक अलंकृत; इसकी रचनाएँ <span class="hl">बंदिश</span> कहलाती हैं</li>
+      <li><strong>टप्पा:</strong> <strong>शोरी मियाँ</strong> द्वारा विकसित; उत्पत्ति पंजाबी लोकगीतों से</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8 -->
+    <div class="sec purple">⑧ कर्नाटक संगीत के महान सिद्धांतकार 🎼</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.8</span> कर्नाटक संगीत के महान सिद्धांतकार (Grand Theorist) किसे माना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मुथुस्वामी दीक्षितर</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>वेंकटमखिन (वेंकटमुखी स्वामी) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>त्यागराज</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>श्यामा शास्त्री</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: वेंकटमखिन — <strong>राग वर्गीकरण (मेलकर्ता) प्रणाली</strong> विकसित की; ग्रंथ: <em>चतुर्दंडी प्रकाशिका</em></div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li><strong>कर्नाटक संगीत की त्रिमूर्ति:</strong> <span class="hl">त्यागराज + मुथुस्वामी दीक्षितर + श्यामा शास्त्री</span></li>
+        <li><strong>कर्नाटक संगीत के जनक:</strong> पुरंदर दास</li>
+        <li><strong>कर्नाटक संगीत की रानी:</strong> एम.एस. सुब्बुलक्ष्मी</li>
+      </ul>
+    </div>
+    <div class="sticky pink">
+      <div class="slbl">एम.एस. सुब्बुलक्ष्मी</div>
+      भारत रत्न <span class="hl"><strong>1998</strong></span> — इसे पाने वाली <em>पहली संगीतकार/पहली भारतीय संगीतकार</em> · <strong>"रानी"</strong> की उपाधि <strong>जवाहरलाल नेहरू</strong> ने दी · <span class="hl-g">अस्थान विद्वान</span> (तिरुपति तिरुमला देवस्थानम की निवासी कलाकार) · <strong>रेमन मैग्सेसे पुरस्कार</strong> ("एशिया का नोबेल") भी मिला
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q9 -->
+    <div class="sec red">⑨ संगीत रत्नाकर के रचयिता 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.9</span> 13वीं शताब्दी में संगीत रत्नाकर की रचना किसने की (हिंदुस्तानी व कर्नाटक दोनों परंपराओं का प्रमुख ग्रंथ)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तानसेन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>स्वाति तिरुनाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>शारंगदेव ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जयदेव</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: शारंगदेव — राजा <strong>सिंघण द्वितीय</strong> (यादव वंश, राजधानी <strong>देवगिरि</strong>) के दरबारी विद्वान; <span class="hl">7 अध्यायों = सप्ताध्यायी</span> में विभाजित</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>व्यक्ति</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><strong>तानसेन</strong></td><td>मूल नाम <strong>रामतनु पांडे</strong>; ग्वालियर/रीवा घराना; पहले राजा रामचंद्र सिंह (ग्वालियर) के दरबार में, फिर अकबर के <span class="hl">नवरत्न</span>; कई ध्रुपद रचे</td></tr>
+      <tr><td><strong>स्वाति तिरुनाल</strong></td><td>त्रावणकोर के महाराजा; हिंदुस्तानी व कर्नाटक दोनों संगीत के संरक्षक; <strong>मोहिनीअट्टम</strong> नृत्य से जुड़े</td></tr>
+      <tr><td><strong>जयदेव</strong></td><td>रचना <strong>गीत गोविंद</strong>; <span class="hl-g">अष्टपदी</span> = 24 संस्कृत कविताएँ</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10 -->
+    <div class="sec teal">⑩ लय की मूल इकाई (हिंदुस्तानी) 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.10</span> हिंदुस्तानी शास्त्रीय संगीत में लय की मूल इकाई क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ताल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>स्वर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आलाप</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ताल</div>
+    </div>
+    <ul class="hw">
+      <li><strong>स्वर:</strong> संगीत के नोट्स — सा रे ग म प ध नि सा</li>
+      <li><strong>राग:</strong> स्वरों का संयोजन (आरोह / अवरोह क्रम में)</li>
+      <li><strong>आलाप:</strong> राग प्रस्तुति का प्रारंभिक भाग</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11 -->
+    <div class="sec orange">⑪ कर्नाटक संगीत में मुख्य ताल 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.11</span> कर्नाटक संगीत में कितने मुख्य ताल होते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पाँच</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सात ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>छह</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आठ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सात (सप्त ताल)</div>
+    </div>
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">7 सप्त ताल (कर्नाटक)</div>
+        ध्रुव, मठ्य (मध्य), रूपक, झंप, त्रिपुट, अट, एक
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">12 ताल (हिंदुस्तानी)</div>
+        कहरवा, दादरा, रूपक, धुमाली, मत्त ताल, झपताल, रुद्र ताल, एकताल, दीपचंदी, चौताल, तीनताल, तिलवाड़ा
+      </div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12 -->
+    <div class="sec blue">⑫ आफ़ताब-ए-मौसिक़ी → फ़ैयाज़ ख़ान का घराना 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.12</span> "आफ़ताब-ए-मौसिक़ी" की उपाधि फ़ैयाज़ ख़ान को दी गई। वे किस घराने से संबंधित हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ग्वालियर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>किराना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पटियाला</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>आगरा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: आगरा घराना — संस्थापक <strong>खुदा बख़्श</strong></div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>घराना</th><th>संस्थापक</th></tr>
+      <tr><td><strong>ग्वालियर</strong></td><td>उस्ताद नाथन पीर बख़्श</td></tr>
+      <tr><td><strong>किराना</strong></td><td>अब्दुल करीम ख़ान</td></tr>
+      <tr><td><strong>पटियाला</strong></td><td>उस्ताद अली बख़्श ख़ान (जनरल) व फ़तेह अली ख़ान (कर्नल) — मूलतः "मियाँ"</td></tr>
+      <tr><td><strong>आगरा</strong></td><td>खुदा बख़्श (फ़ैयाज़ ख़ान = आफ़ताब-ए-मौसिक़ी)</td></tr>
+    </table>
+    <div class="trick">
+      <strong>पटियाला ट्रिक:</strong> पटियाला में एक पेग के बाद आदमी सोचता है पूरी दुनिया जीत लेगा; उतरने पर → "माफ़ करो, गलती हो गई" 😄 (अली बख़्श = जनरल, फ़तेह अली = कर्नल)
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q13 -->
+    <div class="sec purple">⑬ ध्रुपद — किस परंपरा से? 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.13</span> ध्रुपद सबसे पुरानी गायन शैलियों में से एक है, जो रागों की प्रामाणिक व ध्यानमग्न प्रस्तुति पर ज़ोर देती है। यह किस परंपरा से जुड़ी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ख्याल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर्नाटक</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>हिंदुस्तानी संगीत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>लोक संगीत</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: हिंदुस्तानी संगीत</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14 -->
+    <div class="sec red">⑭ रवि शंकर — वैश्विक रूप से किस परंपरा का प्रतिनिधित्व 🌍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.14</span> रवि शंकर ने वैश्विक राजदूत के रूप में किस शास्त्रीय संगीत परंपरा का प्रतिनिधित्व किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कर्नाटक</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>हिंदुस्तानी शास्त्रीय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सूफ़ी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: हिंदुस्तानी शास्त्रीय संगीत</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>महानतम <strong>सितार</strong> वादक; <span class="hl">मैहर घराने</span> से (MP आधारित)</li>
+        <li>ग्रैमी पाने वाले पहले भारतीय (एल्बम <em>West Meets East</em>); कुल <strong>5 ग्रैमी</strong></li>
+        <li><strong>भारत रत्न 1999</strong> — दूसरे संगीतकार (एम.एस. सुब्बुलक्ष्मी 1998 के बाद)</li>
+        <li>आत्मकथा: <span class="hl-g">"My Music, My Life"</span>; सबसे छोटे शिष्य = ऋषभ रिक्रम शर्मा</li>
+      </ul>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">भारत रत्न — संगीतकारों का क्रम</div>
+      1) एम.एस. सुब्बुलक्ष्मी — <strong>1998</strong> &nbsp; 2) रवि शंकर — <strong>1999</strong> &nbsp; 3) उस्ताद बिस्मिल्लाह ख़ान (शहनाई) — <strong>2001</strong>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15 -->
+    <div class="sec green">⑮ 10 थाट किसने व्यवस्थित किए? 🗂️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.15</span> थाट प्रणाली मूल स्केलों को व्यवस्थित करती है। किस संगीतकार ने इसे औपचारिक रूप दिया, 10 थाट बनाए व 20वीं सदी की शुरुआत में शिक्षण को मानकीकृत किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तानसेन</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>विष्णु नारायण भातखंडे ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>रवि शंकर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अलाउद्दीन ख़ान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: विष्णु नारायण भातखंडे</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q16 -->
+    <div class="sec orange">⑯ हिंदुस्तानी संगीत का गायन रूप 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.16</span> कौन सा गायन रूप हिंदुस्तानी संगीत से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ख्याल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वर्णम</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कीर्तन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कृति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ख्याल (हिंदुस्तानी)। वर्णम, कीर्तन, कृति = कर्नाटक</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>हिंदुस्तानी संगीत के 4 प्रमुख रूप</strong> (मुख्यतः उत्तर भारत, पाकिस्तान, बांग्लादेश):</p>
+      <ul class="hw arr">
+        <li><strong>ध्रुपद</strong> — सबसे प्राचीन</li>
+        <li><strong>ख्याल</strong> — ध्रुपद से विकसित</li>
+        <li><strong>ठुमरी</strong> — ख्याल से विकसित</li>
+        <li><strong>टप्पा</strong></li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17 -->
+    <div class="sec blue">⑰ निर्गुण भक्ति संत — बीजक 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.17</span> वह भक्ति संत कौन थे जिन्होंने निर्गुण भक्ति (निराकार ईश्वर) का प्रचार किया, जिनके दोहे "बीजक" के नाम से जाने जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सूरदास</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तुलसीदास</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>कबीर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गुरु नानक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कबीर — दोहे = <span class="hl">बीजक</span>; उनके गुरु = <strong>रामानंद</strong></div>
+    </div>
+    <ul class="hw">
+      <li><strong>सगुण भक्ति:</strong> ईश्वर का रूप है (राम, शिव, विष्णु) — जैसे सूरदास (कृष्ण), तुलसीदास (राम)</li>
+      <li><strong>निर्गुण भक्ति:</strong> निराकार ईश्वर — कबीर दास, गुरु नानक</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q18 -->
+    <div class="sec purple">⑱ सरोद सम्राट 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.18</span> किस शास्त्रीय संगीतकार को "सरोद सम्राट" कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उस्ताद अमजद अली ख़ान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अली अकबर ख़ान</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अलाउद्दीन ख़ान</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बुद्धदेव दास गुप्ता</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: उस्ताद अमजद अली ख़ान (चारों सरोद वादक हैं, पर "सरोद सम्राट" = अमजद अली ख़ान)</div>
+    </div>
+    <ul class="hw">
+      <li>बड़े ग़ुलाम अली ख़ान = गायक, <span class="hl">पटियाला घराना</span></li>
+      <li><strong>घराना</strong> = गुरु-शिष्य परंपरा; स्वर समान, पर राग की एक विशिष्ट संयोजन/शैली गुरु → शिष्य आगे बढ़ती है</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19 -->
+    <div class="sec red">⑲ पंडित रवि शंकर — वाद्ययंत्र 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.19</span> पंडित रवि शंकर मुख्यतः किस भारतीय शास्त्रीय वाद्ययंत्र से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तबला</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सितार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सरोद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संतूर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सितार</div>
+    </div>
+    <div class="ca-box">
+      <p class="hw"><strong>ज़ाकिर हुसैन (तबला):</strong> <span class="hl">एक ही दिन में 3 ग्रैमी (2024)</span> जीतने वाले पहले भारतीय —</p>
+      <ul class="hw chk">
+        <li><em>This Moment</em> → Best Global Music Album</li>
+        <li><em>Pashto</em> → Best Global Music Performance</li>
+        <li><em>As We Speak</em> → Best Contemporary Instrumental</li>
+      </ul>
+      <p class="hw">पिता = उस्ताद अल्ला रक्खा। अन्य तबला नाम: पंडित किशन महाराज, विक्रम घोष। ज़ाकिर के कुल <strong>4 ग्रैमी</strong>; रवि शंकर के <span class="hl">5 ग्रैमी</span> (सर्वाधिक)।</p>
+    </div>
+    <div class="sticky">
+      <div class="slbl">संतूर</div>
+      पंडित <strong>शिव कुमार शर्मा</strong> (पुत्र <strong>राहुल शर्मा</strong>) · <strong>भजन सोपोरी</strong> — शिव के भजन गाते हैं
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20 -->
+    <div class="sec teal">⑳ चिश्ती सूफ़ी सिलसिले के संस्थापक 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.20</span> भारत में चिश्ती सूफ़ी सिलसिले के संस्थापक किसे माना जाता है (प्रेम, करुणा, आध्यात्मिक सद्भाव)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>निज़ामुद्दीन औलिया</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>मोइनुद्दीन चिश्ती ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>क़ुतुबुद्दीन बख़्तियार काकी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अमीर ख़ुसरो</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मोइनुद्दीन चिश्ती (बाकी सभी चिश्ती सिलसिले से हैं)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>अमीर ख़ुसरो</strong> — निज़ामुद्दीन औलिया के शिष्य; <span class="hl">अलाउद्दीन ख़िलजी</span> के दरबार में:</p>
+      <ul class="hw key">
+        <li><strong>क़व्वाली के जनक</strong>; <strong>सितार व तबला</strong> के आविष्कारक</li>
+        <li>पुस्तकें: <span class="hl-b">नूह सिपिहर, ख़ज़ाइन-उल-फ़ुतूह, तुग़लक़ नामा</span></li>
+        <li>अलाउद्दीन ख़िलजी से उपाधि: <span class="hl-g">"तूती-ए-हिंद"</span> (भारत का तोता)</li>
+      </ul>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21 -->
+    <div class="sec orange">21 · हिंदुस्तानी संगीत का क्षेत्र 🧭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.21</span> कौन सा क्षेत्र हिंदुस्तानी संगीत से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>उत्तर भारत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">A</div>दक्षिण भारत</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पूर्व भारत</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पश्चिम भारत</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: उत्तर भारत</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22 -->
+    <div class="sec blue">22 · सितार की वैश्विक लोकप्रियता 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.22</span> 20वीं सदी में अंतरराष्ट्रीय श्रोताओं तक भारतीय शास्त्रीय संगीत पहुँचाने वाले किस संगीतकार के प्रयासों से सितार को वैश्विक लोकप्रियता मिली?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>पंडित रवि शंकर ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: पंडित रवि शंकर</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>संगीतकार</th><th>वाद्ययंत्र / तथ्य</th></tr>
+      <tr><td><strong>उस्ताद बिस्मिल्लाह ख़ान</strong></td><td>शहनाई; भारत रत्न <span class="hl">2001</span>; स्वतंत्रता की पूर्व संध्या (1947) पर लाल किले पर शहनाई बजाई</td></tr>
+      <tr><td><strong>अली अकबर ख़ान</strong></td><td>सरोद</td></tr>
+      <tr><td><strong>एल. सुब्रमण्यम</strong></td><td>वायलिन</td></tr>
+    </table>
+    <div class="sticky blue">शहनाई = <strong>सुषिर (वायु) वाद्य</strong>; <span class="hl">मंगल वाद्य</span> भी कहलाता है (शुभ अवसरों जैसे विवाह में बजाया जाता है)</div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23 -->
+    <div class="sec purple">23 · देवियों की स्तुति में भक्ति गीत 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.23</span> देवियों की स्तुति में भक्ति गीतों से कौन सा लोक संगीत रूप जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>क़व्वाली</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>डांडिया ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: डांडिया — देवी दुर्गा व राक्षस महिषासुर के बीच नकली युद्ध दर्शाता है; नवरात्रि आरती के बाद किया जाता है (पहले गरबा, फिर भजन)। बाउल = पश्चिम बंगाल का लोक संगीत</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24 -->
+    <div class="sec red">24 · राग मेघ मल्हार 🌧️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.24</span> प्रसिद्ध राग मेघ मल्हार के बारे में माना जाता है कि यह —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>रोग ठीक करता है</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>वर्षा लाता है ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जानवरों को डराता है</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नींद लाता है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: वर्षा लाता है (मेघ = बादल → वर्षा)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q25 -->
+    <div class="sec green">25 · बंगाल क्षेत्र का लोक संगीत 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.25</span> बंगाल क्षेत्र से कौन सा लोक संगीत रूप जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>बाउल ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बाउल (पश्चिम बंगाल)। लावणी = महाराष्ट्र; भजन/डांडिया = गुजरात</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26 -->
+    <div class="sec orange">26 · सात मूल स्वर (सप्तक) 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.26</span> भारतीय शास्त्रीय संगीत के सात मूल स्वरों में से कौन सा नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>इनमें से कोई नहीं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: इनमें से कोई नहीं — सा, रे, ग, म, प, ध, नि सभी मौजूद हैं</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27 -->
+    <div class="sec blue">27 · लावणी — राज्य 💃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.27</span> लोक संगीत लावणी किस भारतीय राज्य में लोकप्रिय है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>महाराष्ट्र ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: महाराष्ट्र — प्रयुक्त वाद्य = <span class="hl">ढोलकी</span> (एक ढोलक; अवनद्ध / ताल वाद्य जिसमें खिंची हुई झिल्ली होती है)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28 -->
+    <div class="sec purple">28 · वंदे मातरम् किसने लिखा? 🇮🇳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.28</span> वंदे मातरम् किसने लिखा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>बंकिम चंद्र चट्टोपाध्याय ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बंकिम चंद्र चट्टोपाध्याय। राष्ट्रगान "जन गण मन" = रवींद्रनाथ टैगोर</div>
+    </div>
+    <ul class="hw">
+      <li>दोनों को संविधान सभा ने <span class="hl">24 जनवरी 1950</span> को अपनाया</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29 -->
+    <div class="sec red">29 · पंजाब का ऊर्जावान लोक संगीत 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.29</span> पंजाब की कौन सी लोक संगीत शैली ऊर्जावान नृत्य, तेज़ लय व फसल/उत्सव के अवसरों पर प्रस्तुति के लिए जानी जाती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बिहू</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लावणी</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भांगड़ा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बाउल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: भांगड़ा (बाउल=पश्चिम बंगाल, बिहू=असम, लावणी=महाराष्ट्र)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30 -->
+    <div class="sec green">30 · कर्नाटक — निश्चित लय वाली रचना 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.30</span> कर्नाटक संगीत में कॉन्सर्ट के दौरान सबसे अधिक प्रस्तुत की जाने वाली, निश्चित लय पर केंद्रित रचना कौन सी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>वर्णम</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कृति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राग आलापना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तिल्लाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कृति</div>
+    </div>
+    <ul class="hw">
+      <li>सामान्य कर्नाटक वाद्य: <span class="hl">वायलिन, मृदंगम, घटम</span></li>
+      <li><strong>घटम</strong> = ठोस वाद्य (कोई खिंची झिल्ली नहीं) → घन वाद्य</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31 -->
+    <div class="sec orange">31 · "गुर बिन कैसे गुण गाए" — ताल 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.31</span> "गुर बिन कैसे गुण गाए" रचना किस ताल पर आधारित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>झपताल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कहरवा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>तीनताल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रूपक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तीनताल — <span class="hl">16 मात्राएँ</span>, 4-4 के समूहों में</div>
+    </div>
+    <ul class="hw">
+      <li>ताली मात्रा <strong>1, 5, 13</strong> पर; <strong>9वीं मात्रा = खाली</strong></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32 -->
+    <div class="sec blue">32 · कश्मीरी संगीत — सही मिलान ❄️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.32</span> कश्मीरी संगीत का कौन सा रूप व उसका विवरण सही मिलान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>हाफ़िज़ नग्मा — सूफ़ियाना संगीत के स्वरों पर आधारित एक नृत्य ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — हाफ़िज़ नग्मा सूफ़ियाना संगीत के स्वरों पर आधारित नृत्य है</div>
+    </div>
+    <ul class="hw">
+      <li><strong>चकरी:</strong> जम्मू-कश्मीर का लोक संगीत (रऊफ़ में पदचाप को भी चकरी कहते हैं)</li>
+      <li><strong>रऊफ़:</strong> महिलाओं द्वारा (ईद, रमज़ान, उत्सव); जटिल पदचाप के लिए प्रसिद्ध</li>
+      <li><strong>धुमाल:</strong> जम्मू-कश्मीर की <span class="hl">वातल जनजाति</span> (पुरुष) द्वारा</li>
+      <li>रऊफ़ के साथ गाए जाने वाले गीत = <span class="hl-g">वानवुन (वनवाउन)</span></li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q33 -->
+    <div class="sec purple">33 · तीनताल — खाली की स्थिति 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.33</span> हिंदुस्तानी शास्त्रीय संगीत के तीनताल में खाली किस मात्रा पर अंकित होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>9 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>13</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 9 (खाली)। ताली (सम/ताली) 1, 5, 13 पर</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q34 -->
+    <div class="sec red">34 · राग विबोध — स्वर संरचना 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.34</span> राग विबोध में पंडित सोमनाथ ने राग को "देव माया स्वरूप" भाव के माध्यम से परिभाषित किया। तानल संरचना (tonal structure) को कौन दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>स्वर लक्षण (नाद माया स्वरूप) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: स्वर लक्षण = नाद माया स्वरूप। दो घटक: देवमाया स्वरूप व नादमाया स्वरूप (स्वर लक्षण)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q35 -->
+    <div class="sec green">35 · संरचनात्मक रचना (हिंदुस्तानी) 🎼</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.35</span> हिंदुस्तानी शास्त्रीय संगीत में संरचनात्मक संगीत रचना के लिए क्या शब्द है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कृति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>बंदिश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>गमक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रास</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बंदिश। कृति = कर्नाटक। गमक = अलंकरण/दोलन</div>
+    </div>
+    <ul class="hw">
+      <li><strong>गमक</strong> = किसी स्वर पर या स्वरों के बीच कोई सुंदर मोड़, वक्र या दोलन</li>
+      <li><strong>मींड</strong> (एक स्वर से दूसरे तक चिकनी फिसलन) <span class="hl-b">हिंदुस्तानी</span> में; <span class="hl-g">कर्नाटक</span> में गमक बहुत तेज़ दोलन करता है</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q36 -->
+    <div class="sec orange">36 · आधुनिक स्वरलिपि + क्रमिक पुस्तक मालिका 📝</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.36</span> हिंदुस्तानी शास्त्रीय संगीत के लिए आधुनिक स्वरलिपि प्रणाली विकसित की और "क्रमिक पुस्तक मालिका" में रचनाओं का दस्तावेज़ीकरण किसने किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>विष्णु नारायण भातखंडे ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: विष्णु नारायण भातखंडे (10 थाट भी दिए)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q37 -->
+    <div class="sec blue">37 · अचल और चल स्वर 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.37</span> भारतीय शास्त्रीय संगीत में अचल (स्थिर) व चल (चलायमान) स्वर को सबसे अच्छा कौन वर्णित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सा व प स्थिर हैं; बाकी में कोमल व तीव्र जैसे रूप होते हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>सा व प = अचल (स्थिर, शुद्ध)</strong>; रे, ग, म, ध, नि = चल (कोमल व तीव्र रूप)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q38 -->
+    <div class="sec purple">38 · भारतीय शास्त्रीय संगीत का विकास 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.38</span> भारतीय शास्त्रीय संगीत के विकास को कौन सा कथन सही दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>राग जाति से विकसित हुए ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — राग <strong>जाति</strong> से उत्पन्न हुए; <span class="hl">72-मेल प्रणाली वेंकटमखिन ने दी</span> (भरत ने नहीं)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q39 -->
+    <div class="sec red">39 · पाँच मात्रा वाला लघु — जाति 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.39</span> कर्नाटक संगीत में पाँच मात्रा वाला लघु कौन सी जाति है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तिस्र</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चतुरस्र</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>खंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मिश्र</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: खंड (5 मात्रा)</div>
+    </div>
+    <div class="two-col">
+      <table class="hw-t grn">
+        <tr><th>ताल में जाति</th><th>मात्रा</th></tr>
+        <tr><td>तिस्र</td><td>3</td></tr>
+        <tr><td>चतुरस्र</td><td>4</td></tr>
+        <tr><td>खंड</td><td>5</td></tr>
+        <tr><td>मिश्र</td><td>7</td></tr>
+        <tr><td>संकीर्ण</td><td>9</td></tr>
+      </table>
+      <table class="hw-t pur">
+        <tr><th>जाति (मधुर)</th><th>स्वर</th></tr>
+        <tr><td>औडव</td><td>5 स्वर</td></tr>
+        <tr><td>षाडव</td><td>6 स्वर</td></tr>
+        <tr><td>संपूर्ण</td><td>7 स्वर</td></tr>
+        <tr><td>मिश्रित</td><td>संयोजन (जैसे आरोह में 5, अवरोह में 7)</td></tr>
+      </table>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q40 -->
+    <div class="sec green">40 · सिक्किम का पहला वाद्ययंत्र 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.40</span> सिक्किम का कौन सा वाद्ययंत्र सबसे पहले बनाया गया माना जाता है ("तेतलारा लाहा डोंगना" के लिए) और पौराणिक उत्पत्ति से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सिक्ला कुम / बिनायो ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">A</div>न्यायरा का यम ढोल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हुंगसिंग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>येबा का नगाड़ा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सिक्ला कुम (बिनायो) — भाइयों <strong>सावाकेन्बा, समदांग खेवा व लिंग दांग खेवा</strong> द्वारा बनाया गया माना जाता है</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q41 -->
+    <div class="sec orange">41 · गंभीर वातावरण व लय पर ज़ोर 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.41</span> कौन सा संगीत रूप गंभीर (somber) वातावरण व लय पर ज़ोर देने वाला बताया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ख्याल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>ध्रुपद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ठुमरी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>टप्पा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ध्रुपद</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q42 -->
+    <div class="sec blue">42 · राग-आधारित प्रस्तुति नहीं 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.42</span> इनमें से कौन राग-आधारित प्रस्तुति नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ठुमरी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ध्रुपद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रबंध</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>सोनाटा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सोनाटा (पश्चिमी रूप)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q43 -->
+    <div class="sec purple">43 · घन वाद्य — परिभाषा 🪘</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.43</span> भारतीय पारंपरिक संगीत में घन वाद्य को सबसे अच्छा कौन परिभाषित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>ठोस, बिना-ट्यून वाले वाद्य जो मुख्यतः लोक संगीत में लय के लिए ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ठोस (घन) वाद्य — बिना ट्यून (कोई तार नहीं); लय के लिए। जैसे <span class="hl">घटम, मंजीरा</span></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q44 -->
+    <div class="sec red">44 · मार्गी संगीत की जड़ें 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.44</span> प्राचीन भारतीय संगीत में मार्गी संगीत की जड़ें किसमें थीं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>लोक संगीत</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>वैदिक परंपराएँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दरबारी मनोरंजन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पश्चिमी प्रभाव</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: वैदिक परंपराएँ</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q45 -->
+    <div class="sec green">45 · स्वर जाति — विवरण 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.45</span> "स्वर जाति" संगीत रूप को सही ढंग से कौन वर्णित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>यह एक गायन (vocal) रूप है ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: एक गायन रूप (स्वर = कंठ से उत्पन्न; नृत्य या फिल्मी आइटम नहीं)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q46 -->
+    <div class="sec orange">46 · छह स्वरों वाला राग — जाति 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.46</span> छह स्वरों वाला राग किस जाति के अंतर्गत वर्गीकृत होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>औडव (5)</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>षाडव (6) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संपूर्ण (7)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तिस्र (3)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: षाडव (6 स्वर)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q47 -->
+    <div class="sec blue">47 · स्वरावली — अर्थ 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.47</span> भारतीय शास्त्रीय संगीत में "स्वरावली (स्वर वालिस)" किसे संदर्भित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सात स्वरों का प्रयोग करके बनी एक धुन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — सात स्वरों से बनी धुन (कोई ताल/राग प्रकार नहीं)</div>
+    </div>
+    <ul class="hw">
+      <li>कर्नाटक ताल (मात्रा): <strong>आदि (8)</strong>, <strong>मिश्र चापु (7)</strong>, <strong>रूपक (3 या 6)</strong></li>
+      <li>अलंकरण = <span class="hl">गमक</span>; embellishment = दोलन</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q48 -->
+    <div class="sec purple">48 · हरियाणा का "रागिनी" लोकगीत 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.48</span> हरियाणा का कौन सा लोकगीत "रागिनी" के नाम से लोकप्रिय है (शास्त्रीय राग-रागिनी प्रणाली से कोई संबंध नहीं)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौसमी गीत</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विवाह अनुष्ठान गीत</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>लोकगीत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>लोरी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: लोकगीत (रागिनी = लोक संगीत)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q49 -->
+    <div class="sec red">49 · शारंगदेव का 13वीं सदी का ग्रंथ 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.49</span> शारंगदेव द्वारा महाराष्ट्र में रचित कौन सा शास्त्रीय संगीत ग्रंथ (13वीं सदी) भारतीय संगीतशास्त्र का आधारभूत ग्रंथ माना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नाट्यशास्त्र</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संगीत सुधा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>संगीत रत्नाकर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अभिनय दर्पण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: संगीत रत्नाकर ("संगीत का सागर")</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>ग्रंथ</th><th>रचयिता / टिप्पणी</th></tr>
+      <tr><td><strong>नाट्यशास्त्र</strong></td><td>भरत मुनि — "पाँचवाँ वेद"</td></tr>
+      <tr><td><strong>संगीत सुधा</strong></td><td>लावण्य कीर्ति (गोविंद दीक्षित की परंपरा)</td></tr>
+      <tr><td><strong>अभिनय दर्पण</strong></td><td>नंदिकेश्वर — "मिरर ऑफ़ जेस्चर" (नृत्त = शुद्ध नृत्य; नृत्य = भावपूर्ण)</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q50 -->
+    <div class="sec green">50 · अन्नमाचार्य का योगदान 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.50</span> भारतीय भक्ति संगीत में अन्नमाचार्य के योगदान को सबसे अच्छा कौन वर्णित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>32,000 से अधिक गीत (संकीर्तन) लिखे ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 32,000+ भक्ति गीत रचे। (चरम विकल्प हटाएँ: "केवल मीडिया, समाज सुधार नहीं", "गीत केवल मंदिरों/पुजारियों तक सीमित", "जाति अनुष्ठानों पर संस्कृत स्तोत्र")</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q51 -->
+    <div class="sec orange">51 · केरल की वाद्य विरासत 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.51</span> केरल की वाद्ययंत्र विरासत को सबसे अच्छा कौन दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>तिमिला व मद्दलम जैसे ढोल शिलप्पादिकारम में वर्णित हैं और आज भी प्रयुक्त ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तिमिला व मद्दलम शिलप्पादिकारम में, आज भी प्रयुक्त। (चरम हटाएँ: "रावणहत्था केरल से उत्पन्न होकर उत्तर फैला", "केवल वायु वाद्य", "हाल के व ज़्यादातर पश्चिमी")</div>
+    </div>
+    <ul class="hw">
+      <li><strong>शिलप्पादिकारम</strong> के रचयिता <span class="hl">इलांगो अडिगल</span>; कोवलन, कण्णगी व माधवी की प्रेम कथा</li>
+      <li>उनकी पुत्री = मणिमेखलै (एक अलग महाकाव्य)</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q52 -->
+    <div class="sec blue">52 · पारंपरिक राजस्थानी संगीत 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.52</span> पारंपरिक राजस्थानी संगीत को सबसे अच्छा कौन वर्णित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>प्रकृति, जीवन और कहानियों से जुड़ा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: प्रकृति, जीवन व कहानियों से जुड़ा (लोक संगीत)। चरम हटाएँ: "केवल मंदिर अनुष्ठान", "इलेक्ट्रिक ध्वनि", "केवल शास्त्रीय के लिए जाना जाता"</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q53 -->
+    <div class="sec purple">53 · बिहू गीत — राज्य 🎍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.53</span> बिहू गीत, एक लोकप्रिय लोक संगीत रूप, किस भारतीय राज्य का है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>असम ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: असम</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q54 -->
+    <div class="sec red">54 · बंगाल के जयदेव — रचना 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.54</span> बंगाल के जयदेव किस रचना के लिए प्रसिद्ध हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>गीत गोविंद ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गीत गोविंद (पाल वंश के समय)</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>रचना</th><th>रचयिता</th></tr>
+      <tr><td>महाभाष्य</td><td>पतंजलि</td></tr>
+      <tr><td>कीर्तन घोष</td><td>श्रीमंत शंकरदेव</td></tr>
+      <tr><td>सूर्य सिद्धांत</td><td>मय असुर (बाद में लाटदेव द्वारा संशोधित, आर्यभट के शिष्य)</td></tr>
+      <tr><td>गीत गोविंद</td><td>जयदेव</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q55 -->
+    <div class="sec green">55 · भोजपुर, बिहार के दुखद गीत (19वीं सदी) 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.55</span> 19वीं सदी में बिहार के भोजपुर क्षेत्र में लोकप्रिय दुखद गीत हैं —</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चैती</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>बिरहा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>टप्पा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>होरी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बिरहा। (होरी = ब्रज क्षेत्र UP; चैती = भोजपुर; टप्पा = पंजाब के खुशी के गीत)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q56 -->
+    <div class="sec orange">56 · ठुमरी — सही कथन 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.56</span> ठुमरी के बारे में कौन सा कथन सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>दोनों — यह संरचना/प्रस्तुति में बहुत गीतात्मक है और यह एक प्रेम गीत है ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दोनों (1 व 2)। मुख्यतः <span class="hl">राधा-कृष्ण</span> की कथाएँ बताई जाती हैं</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q57 -->
+    <div class="sec blue">57 · "यांग" ढोल के साथ मठ संगीत 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.57</span> कौन सा भारतीय क्षेत्र मठीय संगीत परंपरा के लिए जाना जाता है जिसमें "यांग" नामक ढोल की थाप के साथ पवित्र मंत्रोच्चार शामिल हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>तिब्बती बौद्ध क्षेत्र (लद्दाख / सिक्किम) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तिब्बती-बौद्ध मठीय क्षेत्र ("यांग" नाम तिब्बती लगता है)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q58 -->
+    <div class="sec purple">58 · गीतम — सही कथन 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.58</span> गीतम के बारे में क्या सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>दोनों — सबसे सरल प्रकार की रचना और संरचना में बहुत सरल, सहज मधुर प्रवाह ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दोनों (1 व 2)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q59 -->
+    <div class="sec red">59 · कौन सा तार वाद्य है? 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.59</span> इनमें से कौन एक तार वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नगारी (खिंची झिल्ली → अवनद्ध)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर्ना (वायु)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>एकतारा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: एकतारा (एक तार)। वीणा, तानपुरा, सारंगी = भी तार वाद्य</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q60 -->
+    <div class="sec green">60 · "न्यू" (New) गीत — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.60</span> "न्यू" गीत किस भारतीय राज्य में संगीत के साथ प्रस्तुत किए जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>असम</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नागालैंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कर्नाटक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उत्तराखंड</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: नागालैंड</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q61 -->
+    <div class="sec orange">61 · "गलिंग" वाला मठीय ऑर्केस्ट्रा 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.61</span> "गलिंग" वाद्य का उपयोग करने वाला मठीय ऑर्केस्ट्रा किससे जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>लद्दाख (बौद्ध मठ) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: लद्दाख। गलिंग = ओबो जैसा वायु (सुषिर) वाद्य</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q62 -->
+    <div class="sec blue">62 · वह राजधानी जहाँ दक्षिण भारतीय संगीत फला-फूला 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.62</span> आज ज्ञात दक्षिण भारतीय संगीत मध्यकाल में यादवों की राजधानी ___ में फला-फूला।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>देवगिरि ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: देवगिरि (यादव राजधानी)। हम्पी = विजयनगर राजधानी (तुंगभद्रा पर); कावेरीपट्टिनम/पुहार = चोल बंदरगाह</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q63 -->
+    <div class="sec purple">63 · दसकठिया — गाथा गायन राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.63</span> दसकठिया गाथा गायन का एक रूप है जो किस राज्य का है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पंजाब</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तमिलनाडु</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>महाराष्ट्र</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>ओडिशा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ओडिशा</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q64 -->
+    <div class="sec red">64 · बुर्राकथा — लोक कला राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.64</span> बुर्राकथा, पौराणिक कथाओं को सुनाने वाली पारंपरिक गाथा, किस भारतीय राज्य की लोक कला है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>आंध्र प्रदेश ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: आंध्र प्रदेश (व तेलंगाना)। <span class="hl">पेरुपलेम बीच महोत्सव</span> में प्रदर्शित (2-दिवसीय; मुगलतूर, पश्चिम गोदावरी ज़िला, आंध्र)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q65 -->
+    <div class="sec green">65 · UP के रसिया लोकगीतों में "बम" 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.65</span> उत्तर प्रदेश के रसिया लोकगीतों के संदर्भ में "बम" शब्द किसे संदर्भित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>बड़े ढोल ("बम") ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बड़े ढोल। (UP नृत्य रिकैप: नौटंकी, रासलीला, चरकुला = 108 दीपकों वाला दीप-धारक नृत्य)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q66 -->
+    <div class="sec orange">66 · छत्तीसगढ़ का पठोनी गीत — अवसर 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.66</span> छत्तीसगढ़ का पठोनी गीत परंपरागत रूप से किस अवसर पर गाया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बच्चे के जन्म पर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>होली पर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लक्ष्मी पूजा पर</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>नवविवाहिता की विदाई पर ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — नवविवाहिता दुल्हन की विदाई पर</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q67 -->
+    <div class="sec blue">67 · झूमती गीत — राज्य/UT 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.67</span> झूमती गीत किस भारतीय राज्य/UT से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>झारखंड ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: झारखंड (पूर्वी भारत के झुमैर नृत्य में गाया जाता है)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q68 -->
+    <div class="sec purple">68 · सांझा लोकगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.68</span> सांझा, युवा लड़कियों द्वारा समूह में गाया जाने वाला मधुर लोकगीत, किस भारतीय राज्य से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केरल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पंजाब</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तेलंगाना</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मध्य प्रदेश ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मध्य प्रदेश (मालवा क्षेत्र)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q69 -->
+    <div class="sec red">69 · पंखिड़ा — किसानों का खेत गीत 🌾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.69</span> पंखिड़ा, खेतों में काम करते समय किसानों द्वारा गाया जाने वाला, किस भारतीय राज्य का पारंपरिक गीत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>राजस्थान ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: राजस्थान</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q70 -->
+    <div class="sec green">70 · केसर बाई केरकर — घराना 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.70</span> प्रसिद्ध शास्त्रीय गायिका केसर बाई केरकर किस घराने से जुड़ी थीं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>जयपुर-अतरौली घराना ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: जयपुर-अतरौली घराना</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q71 -->
+    <div class="sec orange">71 · पदावली कीर्तन — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.71</span> भक्ति समारोहों में प्रस्तुत पदावली कीर्तन परंपरागत रूप से किस भारतीय राज्य से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हरियाणा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>पश्चिम बंगाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कर्नाटक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तेलंगाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: पश्चिम बंगाल</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q72 -->
+    <div class="sec blue">72 · जयपुर-अतरौली घराने के संस्थापक 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.72</span> जटिल व मधुर शैली के लिए प्रसिद्ध जयपुर-अतरौली घराने की स्थापना किसने की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उस्ताद अमीर ख़ान (इंदौर घराने के संस्थापक)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विलायत ख़ान (सितार वादक)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अल्लादिया ख़ान ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: अल्लादिया ख़ान। (पंडित भीमसेन जोशी = किराना घराना)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q73 -->
+    <div class="sec purple">73 · राग सोरठ / सोरठी — क्षेत्र 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.73</span> राग सोरठ (सोरठी) का नाम किस क्षेत्र से लिया गया है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पंजाब</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>त्रिपुरा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>गुजरात ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जम्मू-कश्मीर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गुजरात (सौराष्ट्र क्षेत्र)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q74 -->
+    <div class="sec red">74 · हरिपाल की संगीत सुधाकर — सदी 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.74</span> हरिपाल की पुस्तक "संगीत सुधाकर" — किस सदी (AD) में "कर्नाटक" व "हिंदुस्तानी" शब्द पहली बार दिखे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>14वीं शताब्दी AD ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 14वीं शताब्दी AD (1300–1400 AD; दिल्ली सल्तनत काल)। "हिंदुस्तानी" व "कर्नाटक" शब्दों का पहला प्रयोग</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q75 -->
+    <div class="sec green">75 · भवैया लोकगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.75</span> भवैया लोकगीत (एकल, समूह, कोरस) परंपरागत रूप से किस भारतीय राज्य से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>पश्चिम बंगाल ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: पश्चिम बंगाल</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q76 -->
+    <div class="sec orange">76 · श्रुति सदोलिकर — घराना 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.76</span> शास्त्रीय गायिका श्रुति सदोलिकर किस घराने से जुड़ी हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जयपुर-अतरौली ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भेंडी बाज़ार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आगरा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पटियाला</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: जयपुर-अतरौली (अल्लादिया ख़ान का घराना)। भेंडी बाज़ार घराना → लता मंगेशकर</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q77 -->
+    <div class="sec blue">77 · चौपती लोकगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.77</span> चौपती (छोपती) लोकगीत किस भारतीय राज्य में परंपरागत रूप से प्रस्तुत किए जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उत्तराखंड ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: उत्तराखंड</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q78 -->
+    <div class="sec purple">78 · कौन सा वायु वाद्य है? 🎺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.78</span> इनमें से कौन एक वायु (सुषिर) वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>डिमड़ी (ढोलक प्रकार → अवनद्ध)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संतूर (तार)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>झांझ (ताल → घन)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>गगन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गगन (वायु / एरोफ़ोन)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q79 -->
+    <div class="sec red">79 · कौन सा ढोल/ताल वाद्य है? 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.79</span> इनमें से कौन एक ढोल (drum) वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>दसकठी (ठोस → घन)</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जंतर (तार)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मगुड़ी (बीन → वायु)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: नाल (खिंची झिल्ली → अवनद्ध / ढोल)। दसकठी = घन; जंतर = तार; मगुड़ी = वायु</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q80 -->
+    <div class="sec green">80 · राग बिलावल — वीरवल पर नामित — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.80</span> राग बिलावल, वीरवल पर नामित, परंपरागत रूप से किस भारतीय राज्य से जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>गुजरात ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गुजरात</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q81 -->
+    <div class="sec orange">81 · शंकरदेव द्वारा प्रचारित भक्ति दर्शन 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.81</span> शंकरदेव द्वारा प्रचारित भक्ति दर्शन क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>द्वैत वेदांत</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अद्वैत वेदांत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अचिंत्य भेदाभेद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>एक शरण धर्म</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर (व्याख्यान अनुसार): अद्वैत वेदांत</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>दर्शन</th><th>प्रवर्तक</th></tr>
+      <tr><td>अद्वैत वेदांत</td><td>आदि शंकराचार्य</td></tr>
+      <tr><td>भेदाभेद</td><td>भास्कराचार्य</td></tr>
+      <tr><td>विशिष्टाद्वैत</td><td>रामानुजाचार्य</td></tr>
+      <tr><td>द्वैत</td><td>मध्वाचार्य</td></tr>
+      <tr><td>द्वैताद्वैत</td><td>निंबार्काचार्य</td></tr>
+      <tr><td>शुद्धाद्वैत</td><td>वल्लभाचार्य</td></tr>
+    </table>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q82 -->
+    <div class="sec blue">82 · पुरंदर दास का आविर्भाव — वर्ष 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.82</span> कर्नाटक संगीत के विकास में मील का पत्थर, पुरंदर दास का आविर्भाव किस वर्ष हुआ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>1484 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 1484। पुरंदर दास = कर्नाटक संगीत के जनक</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q83 -->
+    <div class="sec purple">83 · ध्रुपद की संरचना 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.83</span> संरचना: ध्रुपद के दो भाग होते हैं, और ध्रुपद प्रॉपर कितने भागों का गीत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2 और 4 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: ध्रुपद के 2 भाग; ध्रुपद प्रॉपर के <span class="hl">4 भाग</span>: स्थायी, अंतरा, संचारी, आभोग</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q84 -->
+    <div class="sec red">84 · बृहद्देशी के रचयिता 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.84</span> संगीत ग्रंथ "बृहद्देशी" के रचयिता कौन हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मतंग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>शारंगदेव</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हरिपाल (संगीत सुधारक)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रामामात्य</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मतंग</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q85 -->
+    <div class="sec green">85 · कौन सा वायु वाद्य है? 🎺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.85</span> इनमें से कौन एक वायु वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हाथी की घंटी (घन)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पेना (तार)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>बरगु ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>साना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बरगु (वायु)। पेना = तार; हाथी की घंटी = घन (ठोस)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q86 -->
+    <div class="sec orange">86 · छत्तीसगढ़ के सुआ गीत — अवसर 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.86</span> छत्तीसगढ़ के सुआ गीत किस अवसर पर गाए जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>विवाह</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>दिवाली ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अंत्येष्टि</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जन्म</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दिवाली। (पूर्वी भारत में दिवाली को <span class="hl">तिहार</span> कहते हैं)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q87 -->
+    <div class="sec blue">87 · उस्ताद ज़ाकिर हुसैन — वाद्ययंत्र 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.87</span> उस्ताद ज़ाकिर हुसैन किस वाद्ययंत्र से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>तबला ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तबला। पद्म विभूषण <span class="hl">2023</span>; पद्म भूषण <span class="hl">2002</span>; एक ही दिन 3 ग्रैमी (2024)। पिता = उस्ताद अल्ला रक्खा (तबला)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q88 -->
+    <div class="sec purple">88 · वाद्ययंत्र पहचानें (चित्र) 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.88</span> चित्र में कौन सा वाद्ययंत्र दिखाया गया है (तारों के साथ)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पखावज</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>जलतरंग</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>सिंधी सारंगी ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सिंधी सारंगी — तारों के साथ → तार वाद्य</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q89 -->
+    <div class="sec red">89 · गैर-एरोफ़ोन वाद्यों का समूह 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.89</span> इनमें से कौन सा वाद्य समूह गैर-एरोफ़ोन (non-aerophone) है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>कोई भी समूह जो वायु वाद्य नहीं (तार + ढोल + ठोस) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गैर-एरोफ़ोन = वायु वाद्य नहीं (अर्थात कॉर्डोफ़ोन / मेम्ब्रेनोफ़ोन / इडियोफ़ोन समूह)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>4 वाद्य श्रेणियाँ (बहुत महत्वपूर्ण!):</strong></p>
+      <table class="hw-t grn">
+        <tr><th>भारतीय नाम</th><th>अंग्रेज़ी नाम</th><th>प्रकार</th><th>उदाहरण</th></tr>
+        <tr><td>तत (तार)</td><td><span class="hl">कॉर्डोफ़ोन</span></td><td>तार</td><td>सितार, वीणा, सरोद, सारंगी, एकतारा, दिलरुबा, गिटार, वायलिन</td></tr>
+        <tr><td>अवनद्ध</td><td><span class="hl">मेम्ब्रेनोफ़ोन</span></td><td>खिंची झिल्ली</td><td>तबला, ढोलक, मृदंगम, नाल, ढोल</td></tr>
+        <tr><td>घन</td><td><span class="hl">इडियोफ़ोन</span></td><td>ठोस</td><td>घटम, मंजीरा, झांझ</td></tr>
+        <tr><td>सुषिर (वायु)</td><td><span class="hl">एरोफ़ोन</span></td><td>हवा फूँकना</td><td>शहनाई, बाँसुरी, सैक्सोफ़ोन, नरसिंघा</td></tr>
+      </table>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q90 -->
+    <div class="sec green">90 · बुर्राकथा — मुख्य गायक का वाद्य 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.90</span> बुर्राकथा में मुख्य गायक कौन सा प्रमुख वाद्य बजाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बाँसुरी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गिटार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>वीणा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>तंबूरा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तंबूरा। बुर्राकथा = आंध्र प्रदेश व तेलंगाना; पेरुलेम बीच महोत्सव में प्रदर्शित</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q91 -->
+    <div class="sec orange">91 · नागालैंड का असीम — श्रेणी 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.91</span> नागालैंड का पारंपरिक वाद्य असीम किस श्रेणी का है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>मेम्ब्रेनोफ़ोन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मेम्ब्रेनोफ़ोन (एक ढोल)। हारमोनियम = एरोफ़ोन</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q92 -->
+    <div class="sec blue">92 · यू. श्रीनिवास — वाद्ययंत्र 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.92</span> यू. श्रीनिवास किस वाद्ययंत्र से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सितार</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>मैंडोलिन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नादस्वरम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मैंडोलिन। सितार → रवि शंकर, विलायत ख़ान, अनुष्का शंकर, इमरत ख़ान। नादस्वरम → शेख चिन्ना मौलाना, टी.एन. राजरत्नम पिल्लई</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q93 -->
+    <div class="sec purple">93 · कौन सा तत (तार) वाद्य है? 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.93</span> इनमें से कौन एक तत (तार) वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बाँसुरी (एरोफ़ोन)</div>
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>दिलरुबा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दिलरुबा (तार / तत)। बाँसुरी = एरोफ़ोन</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q94 -->
+    <div class="sec red">94 · मेम्ब्रेनोफ़ोन वाद्यों का समूह 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.94</span> इनमें से कौन सा वाद्य समूह मेम्ब्रेनोफ़ोन कहलाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>अवनद्ध समूह (खिंची झिल्ली वाले) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: अवनद्ध वाद्य (झिल्ली)। घन=इडियोफ़ोन, तत=कॉर्डोफ़ोन, सुषिर=एरोफ़ोन</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q95 -->
+    <div class="sec green">95 · भनकोरा — राज्य 🎺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.95</span> भनकोरा वाद्य किस राज्य से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तमिलनाडु</div>
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>उत्तराखंड ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: उत्तराखंड (गढ़वाल क्षेत्र)। भनकोरा = वायु / एरोफ़ोन</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q96 -->
+    <div class="sec orange">96 · मांगणियार (राजस्थान) का तार वाद्य 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.96</span> राजस्थान की मांगणियार संगीत परंपरा का केंद्रीय तार वाद्य कौन सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सारंगी</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कमायचा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>रावणहत्था</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दोतारा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कमायचा (मांगणियार समुदाय)। रावणहत्था → भोपा समुदाय; सरिंदा → सिख परंपरा; दोतारा → बंगाली परंपरा (पश्चिम बंगाल/असम/बांग्लादेश)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q97 -->
+    <div class="sec blue">97 · हिंदुस्तानी संगीत का तार वाद्य 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.97</span> हिंदुस्तानी संगीत में प्रयुक्त कौन सा वाद्य एक तार वाद्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मृदंगम (झिल्ली)</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सितार ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सितार (तार)। मृदंगम = खिंची झिल्ली → मेम्ब्रेनोफ़ोन</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q98 -->
+    <div class="sec purple">98 · मिज़ो वाद्य — स्मारक शिला समारोह 🪵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.98</span> कौन सा मिज़ो वाद्य, घुमावदार लकड़ी के टुकड़ों से बना व लकड़ी के हथौड़े से बजाया जाने वाला, केवल स्मारक शिला समारोहों में प्रयुक्त होता है (घरों में नहीं ले जाया जाता)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>बेंगबोंग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दरबू (डमरू प्रकार → मेम्ब्रेनोफ़ोन)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ख्वांग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तलख्वांग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बेंगबोंग (लकड़ी से बना)। बेंगबोंग, ख्वांग व तलख्वांग सभी मिज़ोरम के मूल वाद्य हैं</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q99 -->
+    <div class="sec red">99 · हिमाचल का घुमावदार हॉर्न वायु वाद्य 🎺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.99</span> कौन सा पारंपरिक वायु वाद्य (अलंकृत घुमावदार हॉर्न-पाइप डिज़ाइन, हिमाचल प्रदेश के लोक संगीत में औपचारिक उपयोग)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भोपाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नरसिंघा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हुल्की</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कांगरिंग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: नरसिंघा (हिमाचल प्रदेश)। हुल्की व कांगरिंग = समान ढोल</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q100 -->
+    <div class="sec green">100 · बुर्राकथा का प्रमुख वाद्य 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.100</span> बुर्राकथा प्रस्तुति में प्रयुक्त प्रमुख वाद्य कौन सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>तंबूरा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तंबूरा। (लावणी का वाद्य = ढोलकी, एक मेम्ब्रेनोफ़ोन)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q101 -->
+    <div class="sec orange">101 · रूप/कलाकार/विशेषता — सही मिलान 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.101</span> इनमें से कौन सा संगीत रूप / कलाकार / विशेषता का जोड़ा सही मिलान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>रसूलन बाई — धीमी, भावपूर्ण, व्याकरण से अधिक भाव पर ज़ोर ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — रसूलन बाई (धीमी/भावपूर्ण, व्याकरण से अधिक भाव)</div>
+    </div>
+    <ul class="hw">
+      <li><strong>रामपुर सहसवान घराना:</strong> मध्यम-से-धीमी गति (तेज़ नहीं); संस्थापक <span class="hl">उस्ताद इनायत हुसैन ख़ान</span>; ग्वालियर घराने से जुड़ा; उत्तरी UP</li>
+      <li><strong>टप्पा:</strong> "भारतीय (हिंदुस्तानी) शास्त्रीय संगीत का रैप" — बहुत तेज़</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q102 -->
+    <div class="sec blue">102 · ललेश्वरी (लल देद) का योगदान 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.102</span> ललेश्वरी (लल देद) के योगदान को सही ढंग से कौन वर्णित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>कश्मीरी रहस्यवादी जिन्होंने "वाख" (छंद/वाणी) के माध्यम से दर्शन व्यक्त किया ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कश्मीरी रहस्यवादी; <span class="hl">वाख</span> के माध्यम से दर्शन; शैव मत से संबंधित</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q103 -->
+    <div class="sec purple">103 · भातखंडे व पलुस्कर — व्यवस्थित क्या? 📝</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.103</span> आधुनिक काल में पंडित विष्णु नारायण भातखंडे व पंडित विष्णु दिगंबर पलुस्कर ने व्यवस्थित ___ शुरू करके योगदान दिया।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>स्वरलिपि प्रणाली (थाट / राग-रागिनी स्वरलिपि) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: स्वरलिपि प्रणाली। भातखंडे ने थाट व स्वरलिपि शुरू की; <strong>विष्णु दिगंबर पलुस्कर</strong> ने <span class="hl">गंधर्व महाविद्यालय</span> की स्थापना की</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q104 -->
+    <div class="sec red">104 · स्वरलिपि: स्वर के ऊपर बिंदु 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.104</span> भारतीय शास्त्रीय संगीत स्वरलिपि में, अक्षर के ऊपर बिंदु वाला स्वर किस सप्तक को दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मध्य सप्तक</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मंद्र सप्तक</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>तार सप्तक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>शुद्ध सप्तक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तार सप्तक (ऊपर बिंदु)। नीचे बिंदु = मंद्र सप्तक; कोई बिंदु नहीं = मध्य सप्तक</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q105 -->
+    <div class="sec green">105 · प्रातःकालीन ध्यानमग्न राग 🌅</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.105</span> कौन सा राग परंपरागत रूप से प्रातःकाल से जुड़ा है और शांत, ध्यानमग्न भाव उत्पन्न करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बागेश्वरी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हंसध्वनि</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भैरव ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मारवा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: भैरव (प्रातः, भैरव थाट)। बागेश्वरी = रात का दूसरा पहर (काफ़ी थाट); मारवा = सूर्यास्त (मारवा थाट)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q106 -->
+    <div class="sec orange">106 · लोटिया लोक संगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.106</span> लोटिया का लोक संगीत किस राज्य में प्रस्तुत किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>महाराष्ट्र</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राजस्थान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उत्तर प्रदेश</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मणिपुर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: राजस्थान (महिलाएँ "लोटा" में पानी ले जाती हैं)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q107 -->
+    <div class="sec blue">107 · ठुमरी/ग़ज़ल जैसा राजस्थानी लोक संगीत 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.107</span> राजस्थान का कौन सा लोक संगीत परिष्कृत है और ठुमरी व ग़ज़ल के समान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>माँड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पनिहारी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>गरबा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बाउल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: माँड — ठुमरी व ग़ज़ल के समान परिष्कृत राजस्थानी शैली। (पनिहारी = राजस्थानी पानी भरने के गीत, इस पर भी चर्चा हुई)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q108 -->
+    <div class="sec purple">108 · मांडो (गोवा) का केंद्रीय विषय 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.108</span> गोवा के मांडो संगीत का केंद्रीय विषय क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>धार्मिक भक्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>युद्ध व वीरता</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रेम व ऐतिहासिक कथाएँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रकृति व दर्शन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: प्रेम व ऐतिहासिक कथाएँ (मांडो = गोवा)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q109 -->
+    <div class="sec red">109 · त्रिमूर्ति से जुड़ा संगीत प्रकार 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.109</span> यह संगीत प्रकार श्यामा शास्त्री, त्यागराज व एम. दीक्षितर की त्रिमूर्ति से जुड़ा है।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>कर्नाटक संगीत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कर्नाटक संगीत। जनक = पुरंदर दास; रानी = एम.एस. सुब्बुलक्ष्मी (भारत रत्न 1998, अस्थान विद्वान)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q110 -->
+    <div class="sec green">110 · मधुर ढाँचा (आरोह/अवरोह) 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.110</span> भारतीय शास्त्रीय संगीत में आरोही (आरोह) व अवरोही (अवरोह) स्वरों से बने मधुर ढाँचे को कौन सा शब्द संदर्भित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ताल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आलाप</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>राग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>स्वर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: राग</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q111 -->
+    <div class="sec orange">111 · पंडवानी (छत्तीसगढ़) में प्रॉप वाद्य 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.111</span> पंडवानी (छत्तीसगढ़) की प्रस्तुति के दौरान आमतौर पर किस वाद्य को प्रॉप के रूप में प्रयोग किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>तंबूरा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तबला</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हारमोनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मंजीरा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तंबूरा। पंडवानी (छत्तीसगढ़ का लोक नृत्य) → <span class="hl">तीजन बाई</span> (पद्म विभूषण); महाभारत की कथाएँ सुनाती हैं</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q112 -->
+    <div class="sec blue">112 · अल्लादिया ख़ान द्वारा स्थापित घराना 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.112</span> उस्ताद अल्लादिया ख़ान द्वारा कौन सा हिंदुस्तानी शास्त्रीय घराना स्थापित किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>जयपुर-अतरौली घराना ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: जयपुर-अतरौली घराना। किराना घराना → करीम ख़ान, पंडित भीमसेन जोशी, गंगूबाई हंगल</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q113 -->
+    <div class="sec purple">113 · पारंपरिक/अर्ध-शास्त्रीय रूप — सही? 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.113</span> पारंपरिक व अर्ध-शास्त्रीय भारतीय संगीत रूपों के बारे में कौन सा कथन सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कथन 1, 3 व 4 सही हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 1, 3, 4 सही। गलत कथन: "क़व्वाली केवल एकल गायन, बिना कोरस" — क़व्वाली समूह/कोरस रूप है</div>
+    </div>
+    <ul class="hw">
+      <li>कजरी — UP, मानसून, महिलाएँ, रात भर समूह नृत्य ✔</li>
+      <li>टप्पा — पंजाब, तेज़ उछलते स्वर, ऊँट सवारों के गीतों से प्रेरित ✔</li>
+      <li>गलत कथन में दावा था कि क़व्वाली (तुर्की सूफ़ियों द्वारा शुरू) "केवल एकल, बिना कोरस" — पर क़व्वाली <span class="hl">समूह/कोरस</span> में गाई जाती है</li>
+      <li>अमीर ख़ुसरो ने क़व्वाली, तबला, सितार दिए; उपाधि तूती-ए-हिंद; अलाउद्दीन ख़िलजी का दरबार</li>
+    </ul>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q114 -->
+    <div class="sec red">114 · संतूर को विश्व-प्रसिद्ध करने वाले वादक 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.114</span> कौन प्रसिद्ध संतूर वादक हैं जिन्हें इस वाद्य को विश्व भर में लोकप्रिय बनाने का श्रेय जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पंडित शिव कुमार शर्मा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: पंडित शिव कुमार शर्मा (पुत्र राहुल शर्मा; भजन सोपोरी भी संतूर)। ज़ाकिर हुसैन = तबला; हरिप्रसाद चौरसिया व पन्नालाल घोष = बाँसुरी; राकेश चौरसिया (भतीजे) = बाँसुरी</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q115 -->
+    <div class="sec green">115 · सितार को विश्व-प्रसिद्ध करने वाले संगीतकार 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.115</span> किस शास्त्रीय संगीतकार को वैश्विक संगीत में सितार को लोकप्रिय बनाने का श्रेय जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>पंडित रवि शंकर ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: रवि शंकर (विलायत ख़ान, निखिल बनर्जी भी सितार)। अलाउद्दीन ख़ान = सरोद; मैहर घराने के संस्थापक (MP); रवि शंकर के गुरु व ससुर (पुत्री अन्नपूर्णा देवी = रवि शंकर की पहली पत्नी)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q116 -->
+    <div class="sec orange">116 · कथक से जुड़ी विधा 🩰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.116</span> कथक से आमतौर पर कौन सी संगीत विधा जुड़ी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हिंदुस्तानी संगीत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लोक संगीत</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पश्चिमी शास्त्रीय</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: हिंदुस्तानी संगीत। कथक = UP का शास्त्रीय नृत्य (उत्तर भारत)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q117 -->
+    <div class="sec blue">117 · उत्तर भारत का औपचारिक वाद्य 🎺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.117</span> उत्तर भारत के औपचारिक संगीत (विवाह व मंदिर उत्सव) से कौन सा वाद्य जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>शहनाई ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: शहनाई (मंगल वाद्य)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q118 -->
+    <div class="sec purple">118 · असमिया लोरी गीत 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.118</span> कौन सा असमिया गीत एक लोरी (लालिबी) है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बिहू</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बाउन गीत</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बायनम</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>निचुकोनी गीत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: निचुकोनी गीत। बिहू = बिहू त्योहार के दौरान प्रस्तुत</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q119 -->
+    <div class="sec red">119 · MP के सिंहाजी — शैली 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.119</span> MP के संत-कवि सिंहाजी किस शैली में भक्ति रचनाओं के लिए याद किए जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ख्याल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तराना</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>निर्गुणी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ध्रुपद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: निर्गुणी। सिंहाजी को <span class="hl">"निमाड़ का कबीर"</span> कहा जाता है (निमाड़ क्षेत्र, MP)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q120 -->
+    <div class="sec green">120 · वंशी — क्या है? (तमिलनाडु) 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.120</span> वंशी, तमिलनाडु का पारंपरिक वाद्य, क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>बाँसुरी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ढोल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सरोद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मंजीरा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बाँसुरी (वंशी = बाँसुरी, दक्षिण भारत / तमिलनाडु)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q121 -->
+    <div class="sec orange">121 · अभंग वाणी — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.121</span> अभंग वाणी किस राज्य का लोकगीत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मणिपुर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पश्चिम बंगाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>महाराष्ट्र ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तमिलनाडु</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: महाराष्ट्र</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q122 -->
+    <div class="sec blue">122 · देवार गीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.122</span> देवार गीत (मनोरंजन गीत) कहाँ से उत्पन्न होते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">D</div>छत्तीसगढ़ ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: छत्तीसगढ़ (देवार जनजाति द्वारा गाए जाते हैं)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q123 -->
+    <div class="sec purple">123 · मंगल गीत — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.123</span> मंगल गीत परंपरागत रूप से किस भारतीय राज्य से जुड़े हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गोवा</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>महाराष्ट्र</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उत्तराखंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तेलंगाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: उत्तराखंड (जौनसारी जनजाति)। यदि उत्तराखंड विकल्प में न हो → बिहार (मिथिला क्षेत्र)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q124 -->
+    <div class="sec red">124 · अधरतिया लोकगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.124</span> अधरतिया किस भारतीय राज्य का पारंपरिक लोकगीत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तेलंगाना</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>झारखंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पंजाब</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>महाराष्ट्र</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: झारखंड</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q125 -->
+    <div class="sec green">125 · बाल गंधर्व (नारायण राव राजहंस) — राज्य 🎤</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.125</span> नारायण राव राजहंस, जिन्हें बाल गंधर्व भी कहा जाता है, किस राज्य की संगीत परंपरा के प्रसिद्ध प्रवर्तक थे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>महाराष्ट्र ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: महाराष्ट्र। "गंधर्व संगीत मंडली" बनाई; पद्म भूषण 1964; "गंधर्व" उपाधि <span class="hl">बाल गंगाधर तिलक</span> ने दी</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q126 -->
+    <div class="sec orange">126 · भोपा लोक संगीत — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.126</span> भोपा, एक लोक संगीत रूप, किस भारतीय राज्य की परंपरा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>राजस्थान ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: राजस्थान</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q127 -->
+    <div class="sec blue">127 · मांडो — छंद व टेक रचना — राज्य 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.127</span> मांडो — प्रेम, त्रासदी, सामाजिक अन्याय व राजनीतिक प्रतिरोध से जुड़ी धीमी छंद-व-टेक रचना — किस राज्य से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>गोवा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गोवा</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q128 -->
+    <div class="sec purple">128 · भारतीय शास्त्रीय संगीत का वाद्य 🎸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.128</span> कौन सा वाद्ययंत्र भारतीय शास्त्रीय संगीत से आमतौर पर जुड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गिटार (पश्चिमी)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पियानो (पश्चिमी)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>सितार ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: सितार (हिंदुस्तानी / उत्तर भारतीय)। गिटार व पियानो = पश्चिमी</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q129 -->
+    <div class="sec red">129 · कर्नाटक संगीत — क्षेत्र 🗺️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.129</span> कर्नाटक संगीत मुख्यतः भारत के किस भाग में प्रचलित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>दक्षिण भारत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दक्षिण भारत</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q130 -->
+    <div class="sec green">130 · भारतीय संगीत का शास्त्रीय रूप 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.130</span> इनमें से कौन भारतीय संगीत का शास्त्रीय रूप है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हिंदुस्तानी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भांगड़ा (पंजाब)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कुचिपुड़ी (आंध्र नृत्य)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गरबा (गुजरात)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: हिंदुस्तानी (उत्तर भारतीय शास्त्रीय संगीत)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q131 -->
+    <div class="sec orange">131 · बाउल संगीत परंपरा — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.131</span> बाउल संगीत परंपरा किस राज्य की है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>पश्चिम बंगाल ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: पश्चिम बंगाल</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q132 -->
+    <div class="sec blue">132 · राग मियाँ मल्हार — संगीतकार 🎶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.132</span> राग मियाँ मल्हार किस प्रसिद्ध संगीतकार के साथ जुड़ाव के लिए जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>तानसेन (मियाँ तानसेन) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तानसेन — अकबर के नवरत्नों में से एक; ग्वालियर के राजा रामचंद्र सिंह से; मूल नाम रामतनु पांडे; ध्रुपद रचे; गुरु = <span class="hl">स्वामी हरिदास</span></div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q133 -->
+    <div class="sec purple">133 · मूल स्वर कहलाते हैं? 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.133</span> भारतीय शास्त्रीय संगीत में मूल स्वर क्या कहलाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राग</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ताल</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>स्वर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अलंकार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: स्वर (सा रे ग म प ध नि सा)</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q134 -->
+    <div class="sec red">134 · कर्नाटक रचना संरचना — सही? 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.134</span> कर्नाटक संगीत रचनाओं की संरचना पर कथनों पर विचार करें और सही विकल्प चुनें।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>आलापना = बिना ताल के राग का अलंकरण; कृति = अत्यधिक संरचित कर्नाटक रचना ✔</div>
+      </div>
+      <div class="mcq-ans">✅ मुख्य तथ्य: कॉन्सर्ट की <strong>शुरुआत वर्णम से</strong> (अंत से नहीं); <strong>आलापना</strong> = बिना लय के राग; <strong>कृति</strong> = संरचित कर्नाटक रचना; कॉन्सर्ट का <strong>अंत तिल्लाना</strong> (या मंगलम) से</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q135 -->
+    <div class="sec green">135 · ज़िक्र लोक संगीत परंपरा — राज्य 🪕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.135</span> ज़िक्र की लोक संगीत परंपरा किस राज्य में लोकप्रिय है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>असम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गुजरात</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ओडिशा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राजस्थान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: असम</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q136 -->
+    <div class="sec blue">136 · कर्नाटक कॉन्सर्ट — शुरुआत व अंत 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">प्र.136</span> रिकैप — कर्नाटक कॉन्सर्ट की संरचना (शुरुआत… अंत…)।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>वर्णम से शुरुआत → आलापना → कृति → तिल्लाना से अंत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ शुरुआत <strong>वर्णम</strong> से; <strong>आलापना</strong> = बिना लय के राग का अलंकरण; अंत <strong>तिल्लाना</strong> से</div>
+    </div>
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- INSTRUMENT MASTER TABLE -->
+    <div class="sec red">📋 मास्टर संदर्भ — श्रेणी अनुसार वाद्ययंत्र</div>
+    <table class="qr-t">
+      <tr><th>श्रेणी</th><th>वाद्ययंत्र</th></tr>
+      <tr><td>तत / तार (कॉर्डोफ़ोन)</td><td>सितार, वीणा, सरोद, सारंगी, सिंधी सारंगी, तानपुरा/तंबूरा, एकतारा, दिलरुबा, जंतर, पेना, कमायचा, रावणहत्था, दोतारा, सरिंदा, मैंडोलिन, गिटार, वायलिन</td></tr>
+      <tr><td>अवनद्ध (मेम्ब्रेनोफ़ोन)</td><td>तबला, ढोलक, ढोलकी, मृदंगम, नाल, डिमड़ी, नगारी, पखावज, दरबू, ख्वांग, असीम</td></tr>
+      <tr><td>घन (इडियोफ़ोन, ठोस)</td><td>घटम, मंजीरा, झांझ, दसकठी, तलख्वांग, बेंगबोंग, हाथी की घंटी</td></tr>
+      <tr><td>सुषिर / वायु (एरोफ़ोन)</td><td>शहनाई, बाँसुरी/वंशी, कर्ना, गगन, मगुड़ी, बरगु, नरसिंघा, भनकोरा, गलिंग, नादस्वरम, हारमोनियम, सैक्सोफ़ोन</td></tr>
+    </table>
+
+    <!-- FOLK MUSIC MASTER TABLE -->
+    <div class="sec orange">📋 मास्टर संदर्भ — लोक संगीत → राज्य</div>
+    <table class="qr-t">
+      <tr><th>राज्य / क्षेत्र</th><th>लोक संगीत रूप</th></tr>
+      <tr><td>केरल</td><td>सोपान संगीतम, मापिला, थुल्लल, कथकली संगीत, चर्च कॉयर</td></tr>
+      <tr><td>पश्चिम बंगाल</td><td>बाउल, भवैया, पदावली कीर्तन</td></tr>
+      <tr><td>महाराष्ट्र</td><td>लावणी, अभंग वाणी, पोवाड़ा</td></tr>
+      <tr><td>पंजाब</td><td>भांगड़ा, टप्पा (उत्पत्ति)</td></tr>
+      <tr><td>असम</td><td>बिहू गीत, ज़िक्र, निचुकोनी गीत (लोरी)</td></tr>
+      <tr><td>आंध्र प्रदेश / तेलंगाना</td><td>बुर्राकथा (पेरुपलेम बीच महोत्सव)</td></tr>
+      <tr><td>छत्तीसगढ़</td><td>पंडवानी, सुआ, पठोनी, देवार गीत</td></tr>
+      <tr><td>राजस्थान</td><td>माँड, पनिहारी, लोटिया, पंखिड़ा, भोपा, मांगणियार (कमायचा)</td></tr>
+      <tr><td>गोवा</td><td>मांडो</td></tr>
+      <tr><td>मध्य प्रदेश</td><td>सांझा (मालवा), सिंहाजी (निर्गुणी — "निमाड़ का कबीर")</td></tr>
+      <tr><td>झारखंड</td><td>अधरतिया, झूमती (झुमैर नृत्य)</td></tr>
+      <tr><td>उत्तराखंड</td><td>चौपती, मंगल गीत, भनकोरा (गढ़वाल)</td></tr>
+      <tr><td>जम्मू-कश्मीर</td><td>चकरी, रऊफ़ (वानवुन), धुमाल, हाफ़िज़ नग्मा, सूफ़ियाना</td></tr>
+      <tr><td>नागालैंड</td><td>"न्यू" गीत, असीम (वाद्य)</td></tr>
+      <tr><td>ओडिशा</td><td>दसकठिया (गाथा गायन)</td></tr>
+      <tr><td>बिहार (भोजपुर)</td><td>बिरहा, चैती</td></tr>
+      <tr><td>उत्तर प्रदेश</td><td>होरी (ब्रज), रसिया (ढोल = "बम"), कजरी</td></tr>
+      <tr><td>तमिलनाडु</td><td>वंशी (बाँसुरी)</td></tr>
+      <tr><td>हरियाणा</td><td>रागिनी (लोकगीत)</td></tr>
+      <tr><td>मिज़ोरम</td><td>बेंगबोंग, ख्वांग, तलख्वांग (वाद्य)</td></tr>
+    </table>
+
+    <!-- TREATISES TABLE -->
+    <div class="sec purple">📋 मास्टर संदर्भ — ग्रंथ व रचयिता</div>
+    <table class="qr-t">
+      <tr><th>ग्रंथ</th><th>रचयिता / टिप्पणी</th></tr>
+      <tr><td>संगीत रत्नाकर</td><td>शारंगदेव (13वीं सदी, 7 अध्याय = सप्ताध्यायी; सिंघण द्वितीय का दरबार, यादव, देवगिरि)</td></tr>
+      <tr><td>नाट्यशास्त्र</td><td>भरत मुनि — "पाँचवाँ वेद"</td></tr>
+      <tr><td>बृहद्देशी</td><td>मतंग</td></tr>
+      <tr><td>संगीत सुधाकर</td><td>हरिपाल (14वीं सदी — "हिंदुस्तानी" व "कर्नाटक" का पहला प्रयोग)</td></tr>
+      <tr><td>संगीत सुधा</td><td>लावण्य कीर्ति</td></tr>
+      <tr><td>अभिनय दर्पण</td><td>नंदिकेश्वर — "मिरर ऑफ़ जेस्चर"</td></tr>
+      <tr><td>चतुर्दंडी प्रकाशिका</td><td>वेंकटमखिन (मेलकर्ता / 72-मेल प्रणाली)</td></tr>
+      <tr><td>क्रमिक पुस्तक मालिका</td><td>विष्णु नारायण भातखंडे (+ 10 थाट, स्वरलिपि)</td></tr>
+      <tr><td>गीत गोविंद</td><td>जयदेव (अष्टपदी = 24 संस्कृत कविताएँ; पाल वंश)</td></tr>
+      <tr><td>शिलप्पादिकारम</td><td>इलांगो अडिगल (तिमिला व मद्दलम ढोल)</td></tr>
+    </table>
+
+    <!-- GHARANAS TABLE -->
+    <div class="sec green">📋 मास्टर संदर्भ — घराने व संस्थापक</div>
+    <table class="qr-t">
+      <tr><th>घराना</th><th>संस्थापक / प्रसिद्ध नाम</th></tr>
+      <tr><td>ग्वालियर</td><td>उस्ताद नाथन पीर बख़्श</td></tr>
+      <tr><td>किराना</td><td>अब्दुल करीम ख़ान (भीमसेन जोशी, गंगूबाई हंगल)</td></tr>
+      <tr><td>पटियाला</td><td>अली बख़्श ख़ान (जनरल) व फ़तेह अली ख़ान (कर्नल); बड़े ग़ुलाम अली ख़ान</td></tr>
+      <tr><td>आगरा</td><td>खुदा बख़्श; फ़ैयाज़ ख़ान (आफ़ताब-ए-मौसिक़ी)</td></tr>
+      <tr><td>मैहर</td><td>अलाउद्दीन ख़ान (MP आधारित); रवि शंकर</td></tr>
+      <tr><td>जयपुर-अतरौली</td><td>अल्लादिया ख़ान; केसर बाई केरकर, किशोरी अमोनकर, श्रुति सदोलिकर</td></tr>
+      <tr><td>इंदौर</td><td>उस्ताद अमीर ख़ान</td></tr>
+      <tr><td>भेंडी बाज़ार</td><td>लता मंगेशकर</td></tr>
+      <tr><td>रामपुर सहसवान</td><td>उस्ताद इनायत हुसैन ख़ान (मध्यम-धीमी गति; उत्तरी UP)</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 मुख्य परीक्षा टिप्स — याद रखें!</div>
+    <div class="tip-box">
+      <ul class="hw num">
+        <li><span class="hl"><strong>4 वाद्य श्रेणियाँ:</strong></span> तत=तार (कॉर्डोफ़ोन), अवनद्ध=झिल्ली (मेम्ब्रेनोफ़ोन), घन=ठोस (इडियोफ़ोन), सुषिर=वायु (एरोफ़ोन)</li>
+        <li><span class="hl-g"><strong>राग जाति से विकसित हुए</strong></span>; 10 थाट व स्वरलिपि <strong>भातखंडे</strong> द्वारा; 72-मेलकर्ता <strong>वेंकटमखिन</strong> द्वारा</li>
+        <li>कथनों में चरम शब्द ("केवल," "विशेष रूप से," "बिना किसी") → आमतौर पर <span class="hl-p"><strong>गलत</strong></span></li>
+        <li>कर्नाटक = दक्षिण भारत (केरल, TN, कर्नाटक, आंध्र, तेलंगाना); हिंदुस्तानी = उत्तर भारत</li>
+        <li>भारत रत्न संगीतकार क्रम: <strong>एम.एस. सुब्बुलक्ष्मी (1998) → रवि शंकर (1999) → बिस्मिल्लाह ख़ान (2001)</strong></li>
+        <li>तीनताल = 16 मात्राएँ; ताली 1, 5, 13 पर; खाली 9 पर</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 संगीत नोट्स समाप्त (टॉपिक 3)</div>
+      <strong>सभी प्रश्न + विकल्प शामिल ✅ | कई बार दोहराएँ, फिर परीक्षा में टॉप करें! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ लाइट मोड' : '🌙 डार्क मोड';
+}
+/* नोट्स में हस्तलेखन फ़ॉन्ट बदलें (हिंदी हेतु Kalam/Baloo 2 fallback) */
+function setFont(font){
+  document.getElementById('fontOverride').textContent =
+    "p.hw,ul.hw li,.sticky,.mcq-h,.mcq-opt,.mcq-ans,.hw-t td,.qr-t td," +
+    ".tip-box,.imp,.trick,.key-box,.ca-box,.cover-sub{font-family:'" + font + "','Baloo 2',cursive}";
+}
+/* फ़ॉन्ट-आकार +/- नियंत्रण: केवल टेक्स्ट का आकार बढ़ाता है (पेज ज़ूम नहीं) */
+var fontScale = 1;
+function applyScale(){
+  var s = fontScale;
+  document.getElementById('sizeOverride').textContent =
+    "p.hw{font-size:" + (0.96 * s) + "rem}" +
+    "ul.hw li{font-size:" + (0.94 * s) + "rem}" +
+    ".sticky{font-size:" + (0.95 * s) + "rem}" +
+    ".mcq-h{font-size:" + (0.96 * s) + "rem}" +
+    ".mcq-opt{font-size:" + (0.90 * s) + "rem}" +
+    ".mcq-ans{font-size:" + (0.86 * s) + "rem}" +
+    ".hw-t{font-size:" + (0.89 * s) + "rem}" +
+    ".qr-t{font-size:" + (0.86 * s) + "rem}" +
+    ".sub{font-size:" + (1.0 * s) + "rem}";
+  document.getElementById('sizeLbl').textContent = Math.round(s * 100) + '%';
+}
+function changeSize(delta){
+  fontScale = Math.min(2.0, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  applyScale();
+}
+function resetSize(){ fontScale = 1; applyScale(); }
+</script>
+</body>
+</html>
