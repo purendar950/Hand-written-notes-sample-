@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Static GK — Lecture 13 | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Handlee&family=Gochi+Hand&family=Architects+Daughter&family=Annie+Use+Your+Telescope&family=Dancing+Script:wght@400;600;700&family=Satisfy&family=Homemade+Apple&family=Shadows+Into+Light+Two&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.8rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.55rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY CONCEPT';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 EXTRA / NEWS';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+
+/* TOOLBAR EXTRA CONTROLS */
+.tb-group{display:flex;align-items:center;gap:6px;color:#cfd8e0;font-size:.82rem;font-family:'Kalam',cursive}
+.font-select{font-family:'Kalam',cursive;font-size:.82rem;border:none;border-radius:6px;padding:6px 8px;background:#eceff1;color:#1c1c2e;cursor:pointer;max-width:185px}
+.btn-size{background:#2980b9;color:#fff;min-width:34px;justify-content:center;padding:8px 10px}
+.btn-reset{background:#607d8b;color:#fff;padding:8px 12px}
+.size-lbl{color:#ffd54f;font-weight:700;min-width:42px;text-align:center;font-family:'Kalam',cursive;font-size:.85rem}
+
+/* COVER CONTENTS PREVIEW */
+.cover-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(255,213,79,.6),transparent);margin:20px auto 0;max-width:440px}
+.toc{position:relative;z-index:2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;margin:20px auto 4px;max-width:640px;text-align:left}
+.toc-title{font-family:'Caveat Brush',cursive;color:#ffd54f;font-size:1.2rem;text-align:center;margin-bottom:12px;letter-spacing:1px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+@media(max-width:520px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{font-family:'Kalam',cursive;font-size:.86rem;color:#e3f2fd;display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.toc-item .ic{font-size:.95rem;flex-shrink:0}
+.toc-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toc-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:5px 14px;font-family:'Kalam',cursive;font-size:.8rem;color:#e8f5e9}
+.toc-stat b{color:#ffd54f;font-size:1rem}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  html{font-size:15px!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box,.two-col,.three-col{break-inside:avoid;page-break-inside:avoid}
+  .hw-t tr{break-inside:avoid;page-break-inside:avoid}
+  thead{display:table-header-group}
+  .sec{break-after:avoid;page-break-after:avoid}
+  hr.div,.cb{break-before:avoid;page-break-before:avoid}
+  .cover{break-after:always;page-break-after:always}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+<style id="fontOverride"></style>
+<style id="sizeOverride"></style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Daily Static GK — Lecture 13</span>
+  <div class="tb-group">
+    <span>✒️ Font:</span>
+    <select class="font-select" onchange="setFont(this.value)">
+      <optgroup label="✏️ Neat Print (topper style)">
+        <option value="Patrick Hand">Patrick Hand – neat print</option>
+        <option value="Kalam" selected>Kalam – bold marker</option>
+        <option value="Indie Flower">Indie Flower – rounded cute</option>
+        <option value="Handlee">Handlee – soft casual</option>
+        <option value="Gochi Hand">Gochi Hand – playful</option>
+        <option value="Architects Daughter">Architects Daughter – sketchy</option>
+        <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+      </optgroup>
+      <optgroup label="🖋️ Cursive &amp; Pen Styles">
+        <option value="Caveat">Caveat – quick cursive</option>
+        <option value="Dancing Script">Dancing Script – elegant cursive</option>
+        <option value="Satisfy">Satisfy – smooth flowing</option>
+        <option value="Homemade Apple">Homemade Apple – real pen look</option>
+        <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+        <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+        <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+      </optgroup>
+      <optgroup label="🖍️ Bold Marker">
+        <option value="Permanent Marker">Permanent Marker – thick marker</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="tb-group">
+    <span>🔠 Size:</span>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Decrease font size">A−</button>
+    <span class="size-lbl" id="sizeLbl">100%</span>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="Increase font size">A+ Bigger</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="Reset font size">↺</button>
+  </div>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📝 Static GK Series · Daily Class</div>
+    <div class="cover-title">📚 Daily GK — Lecture 13</div>
+    <div class="cover-sub">Mixed Static GK + Current Affairs | Full Class Notes — Every Question &amp; Detail Covered</div>
+    <div class="cover-badge">🧪 Science · 🏑 Sports · 🐯 Environment · 🌏 Geography · 💰 Economy · 🏛️ Polity · 🏰 History &amp; Culture</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <div class="cover-divider"></div>
+    <div class="toc">
+      <div class="toc-title">📑 Inside These Notes</div>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="ic">🧪</span> Biology — carbohydrates, sugars, proteins</div>
+        <div class="toc-item"><span class="ic">🏑</span> Sports — hockey goal post &amp; Olympic record</div>
+        <div class="toc-item"><span class="ic">🐯</span> Environment — Project Tiger, Kuno &amp; cheetah</div>
+        <div class="toc-item"><span class="ic">🏔️</span> Geomorphology — endogenic/exogenic forces</div>
+        <div class="toc-item"><span class="ic">🗻</span> Himalayan ranges, Duns &amp; Karewas</div>
+        <div class="toc-item"><span class="ic">🪨</span> Rock cycle &amp; Deccan Traps (flood basalt)</div>
+        <div class="toc-item"><span class="ic">🌲</span> Forest types &amp; plant adaptations</div>
+        <div class="toc-item"><span class="ic">💰</span> GHI, HDI/MPI, unemployment, money supply</div>
+        <div class="toc-item"><span class="ic">🏛️</span> Polity — Articles 73–85, writs, Governor</div>
+        <div class="toc-item"><span class="ic">📜</span> Constituent Assembly &amp; Preamble</div>
+        <div class="toc-item"><span class="ic">🏰</span> GoI Acts 1909/1919/1935, Bengal Partition</div>
+        <div class="toc-item"><span class="ic">📿</span> Sangam age, Tamil epics &amp; Bharat Mata</div>
+      </div>
+      <div class="toc-stats">
+        <span class="toc-stat"><b>23</b> Questions</span>
+        <span class="toc-stat"><b>7</b> Subjects</span>
+        <span class="toc-stat"><b>+</b> Reference tables</span>
+        <span class="toc-stat"><b>+</b> Tricks &amp; tips</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ruled">
+    <div class="tip-box">
+      <strong>About these notes:</strong> this is a <span class="hl">full mixed-bag daily class</span> — every question from the lecture is here with its answer, plus all the side-knowledge the teacher added (related facts, lists &amp; memory tricks). Attempt the question yourself first, then read the green answer strip and the notes below it. Subjects are grouped so revision is easy.
+    </div>
+<!-- ============ QUESTIONS APPENDED BELOW ============ -->
+
+
+    <div class="sec green">🧪 Science &amp; Biology</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q1.</span> What are oligosaccharides?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Carbohydrates that yield 1 monosaccharide unit on hydrolysis</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Carbohydrates that yield more than 10 monosaccharide units on hydrolysis</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Carbohydrates that yield 2 to 10 monosaccharide units on hydrolysis ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Carbohydrates that do not yield any monosaccharide units</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — yield <b>2 to 10</b> monosaccharide units.</div></div>
+
+    <div class="key-box"><div class="slbl">CARBOHYDRATES BY HYDROLYSIS</div>
+      <ul class="hw arr">
+        <li><b>Monosaccharide</b> → yields <b>1</b> unit (e.g., glucose, fructose).</li>
+        <li><b>Oligosaccharide</b> → yields <b>2 to 10</b> units.</li>
+        <li><b>Polysaccharide</b> → yields <b>more than 10</b> units (e.g., starch, cellulose).</li>
+      </ul>
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q2.</span> Match the natural source with its sugar — cereals/grains, milk, and fruits.</div>
+      <div class="mcq-opts"><div class="mcq-opt ok"><div class="opt-c">✓</div>Grains → Maltose · Milk → Lactose · Fruits → Fructose ✔</div></div>
+      <div class="mcq-ans">✅ Cereals/grains = <b>Maltose</b>; Milk = <b>Lactose</b> (many people are <i>lactose intolerant</i>); Fruits = <b>Fructose</b> (the fruit sugar).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q3.</span> Which protein is present in our hair and nails?</div>
+      <div class="mcq-opts"><div class="mcq-opt ok"><div class="opt-c">✓</div>Keratin ✔</div></div>
+      <div class="mcq-ans">✅ Answer: <b>Keratin</b> — the structural protein of hair and nails.</div></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec orange">🏑 Sports — Hockey</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q4.</span> Which statement about the goal post in hockey is correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Height = 2.14 m, Width = 3.66 m ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Goal post height <b>2.14 m</b>, width <b>3.66 m</b>.</div></div>
+
+    <div class="sticky green">
+      <div class="slbl">HOCKEY — KEY FACTS</div>
+      🏑 Players per side = <b>11</b>.<br>
+      🥇 The Indian hockey team is the <b>most successful in Olympic history</b>: <b>6 consecutive golds (1928–1956)</b>, gold again in <b>1964</b>, and the last Olympic gold in <b>1980</b>. In the two most recent Olympics, India won <b>back-to-back bronze</b> medals.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec teal">🐯 Environment &amp; Ecology</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q5.</span> Kuno National Park (linked to the Cheetah Reintroduction Programme &amp; Project Tiger) is located in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Madhya Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Madhya Pradesh</b> — Kuno NP is near Shivpuri &amp; Gwalior, on the banks of the <b>Kuno river</b>.</div></div>
+
+    <div class="key-box"><div class="slbl">PROJECT TIGER &amp; CHEETAH REINTRODUCTION</div>
+      <ul class="hw chk">
+        <li><b>Project Tiger</b> launched in <b>1973</b>; first at <b>Jim Corbett National Park</b> — India's first national park (est. <b>1936</b>).</li>
+        <li>Cheetah's IUCN status: <b>Vulnerable</b>. The cheetah was <b>extirpated (extinct) from India in 1952</b>.</li>
+        <li>Asiatic vs African cheetah differ; the <b>African cheetah</b> has a smaller mouth and is very fast.</li>
+        <li>Under the <b>Cheetah Reintroduction Programme</b>, African cheetahs were brought to <b>Kuno NP</b> from <b>South Africa &amp; Botswana</b>.</li>
+      </ul>
+    </div>
+
+    <div class="ca-box"><b>Why Madhav NP was in the news:</b> it became India's <b>58th Tiger Reserve</b> (and the <b>9th in Madhya Pradesh</b>).</div>
+
+    <div class="sticky blue">
+      <div class="slbl">NATIONAL PARKS — QUICK MAP</div>
+      <b>Madhya Pradesh:</b> Kuno, Madhav, Bandhavgarh, Kanha.<br>
+      <b>Uttar Pradesh:</b> Dudhwa (Lakhimpur Kheri).
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec blue">🏔️ Physical Geography — Geomorphology &amp; the Himalayas</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q6.</span> How does India's Peninsular Plateau differ from the Himalayan region in terms of geological stability?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Peninsular Plateau is ancient &amp; stable; the Himalayas are young &amp; still changing ✔</div>
+      </div>
+      <div class="mcq-ans">✅ The <b>Peninsular Plateau</b> is old &amp; stable (few earthquakes). The <b>Himalayas</b> are young &amp; actively changing (earthquake- &amp; landslide-prone).</div></div>
+
+    <div class="key-box"><div class="slbl">FORCES THAT SHAPE THE EARTH</div>
+      <p class="hw"><b>Two categories of geomorphic forces:</b></p>
+      <ul class="hw arr">
+        <li><b>Endogenic</b> (internal) → plate tectonics. Collective term = <b>Diastrophism</b>.</li>
+        <li><b>Exogenic</b> (external) → weathering, erosion, mass movement. Collective term = <b>Denudation</b>; primary energy comes from the <b>Sun</b>.</li>
+      </ul>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">EXOGENIC — DRIVING FORCES</div>
+      <b>Weathering</b> → driven by molecular stresses · <b>Erosion</b> → driven by <b>kinetic energy</b> · <b>Mass movement</b> → driven by <b>gravity</b>.<br>
+      ⚠ Weathering is <b>NOT</b> a prerequisite for mass movement — gravity is the real driver of mass movement.
+    </div>
+
+    <div class="sub">Plate Tectonics — who gave what</div>
+    <table class="hw-t alt">
+      <tr><th>Theory / Idea</th><th>Given by</th><th>Year / Note</th></tr>
+      <tr><td>Continental Drift Theory</td><td>Alfred Wegener</td><td>1912</td></tr>
+      <tr><td>Plate Tectonics Theory</td><td>McKenzie &amp; Parker (also Morgan)</td><td>Morgan mainly explained it</td></tr>
+      <tr><td>Convection Current Theory (why plates move)</td><td>Arthur Holmes</td><td>1930</td></tr>
+      <tr><td>Sea Floor Spreading Theory</td><td>Harry Hess</td><td>—</td></tr>
+    </table>
+
+    <div class="imp">Don't mix them up! The <b>plate tectonics theory</b> is credited to <b>McKenzie &amp; Parker / Morgan</b> — NOT Arthur Holmes. Arthur Holmes gave the <b>convection current</b> idea (why plates move).</div>
+
+    <div class="key-box"><div class="slbl">TYPES OF PLATE MOVEMENT</div>
+      <ul class="hw chk">
+        <li><b>Convergent</b> → destructive boundary.</li>
+        <li><b>Divergent</b> → constructive boundary.</li>
+        <li><b>Transform</b> → conservative (neither created nor destroyed).</li>
+      </ul>
+    </div>
+
+    <div class="key-box"><div class="slbl">DIASTROPHISM (ENDOGENIC) — BREAKDOWN</div>
+      <ul class="hw arr">
+        <li><b>Orogenic</b> → mountain-building processes (<i>oro</i> = mountain).</li>
+        <li><b>Epeirogenic</b> → upliftment/changes over very large parts of the crust.</li>
+        <li>Plus <b>volcanism</b> and <b>earthquakes</b>.</li>
+      </ul>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">WHY THE HIMALAYAS ARE EARTHQUAKE-PRONE</div>
+      The Himalayas sit on the <b>Indian Plate – Eurasian Plate convergent boundary</b>, which is <b>still active</b> — the two plates keep moving closer, so the Himalayas are still rising. This makes the region prone to <b>earthquakes &amp; landslides</b>. The ancient, stable Peninsular Plateau sees far fewer earthquakes.
+    </div>
+
+    <div class="sub">Structure of the Himalayas (North → South)</div>
+    <table class="hw-t grn">
+      <tr><th>Range</th><th>Also called</th><th>Avg. height</th></tr>
+      <tr><td>Great Himalaya</td><td>Himadri / Inner Himalaya</td><td>~6000 m</td></tr>
+      <tr><td>Lesser / Middle Himalaya</td><td>Himachal / Middle Himalaya</td><td>~4000 m</td></tr>
+      <tr><td>Shivalik</td><td>Outer Himalaya</td><td>~900–1000 m</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">TRANS-HIMALAYAS &amp; PEAKS</div>
+      <ul class="hw arr">
+        <li><b>Trans-Himalayas</b> = Karakoram + Ladakh + Zaskar ranges.</li>
+        <li><b>Karakoram</b> glaciers: Siachen, Baltoro, Biafo, Hispar. Contains <b>K2 (Godwin Austen)</b> — <b>8,611 m</b>, world's 2nd-highest &amp; India's highest peak, but in <b>PoK</b> (disputed).</li>
+        <li><b>Mount Everest</b> (8,848 m) and <b>Kanchenjunga</b> (8,598 m, in <b>Sikkim</b>) are in the Great Himalaya.</li>
+      </ul>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">DUNS &amp; KAREWAS</div>
+      <b>Duns</b> = longitudinal valleys between the Lesser Himalaya &amp; Shivalik (e.g., Patli Dun, Kotli Dun, <b>Dehradun</b> — the biggest).<br>
+      <b>Shivalik</b> disappears in the North-East, replaced by <b>Duars</b>.<br>
+      <b>Karewas</b> (Kashmir Valley) = lacustrine/glacial deposits — ideal for the local <b>saffron</b>.
+    </div>
+
+    <div class="sub">Lesser/Middle Himalaya — regional names</div>
+    <table class="hw-t pur">
+      <tr><th>Region</th><th>Local name of the range</th></tr>
+      <tr><td>Kashmir</td><td>Pir Panjal</td></tr>
+      <tr><td>Himachal</td><td>Dhauladhar</td></tr>
+      <tr><td>Uttarakhand</td><td>Nag Tibba</td></tr>
+      <tr><td>Nepal</td><td>Mahabharat Range</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec red">🪨 Physical Geography — Rocks &amp; the Deccan Traps</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q7.</span> The Deccan Traps region of India is primarily made up of which type of rock?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Basaltic (igneous) rock — flood basalt ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Basaltic rock</b> (a flood-basalt province). The study of rocks = <b>Petrology</b>.</div></div>
+
+    <div class="key-box"><div class="slbl">THE THREE ROCK TYPES</div>
+      <ul class="hw arr">
+        <li><b>Igneous</b> (primary) → from solidification of magma/lava. E.g., granite, basalt, gabbro, pumice.</li>
+        <li><b>Metamorphic</b> → from recrystallisation of existing rock under heat/pressure (PVT change). Shows <b>foliation/lineation/banding</b>.</li>
+        <li><b>Sedimentary</b> → eroded sediments deposited layer-by-layer. <b>Fossils are found here.</b> Types: organically, chemically &amp; mechanically (clastic) formed.</li>
+      </ul>
+    </div>
+
+    <div class="sub">Common metamorphic transformations</div>
+    <table class="hw-t org">
+      <tr><th>Parent rock</th><th>Becomes (metamorphic)</th></tr>
+      <tr><td>Limestone</td><td>Marble</td></tr>
+      <tr><td>Sandstone</td><td>Quartzite</td></tr>
+      <tr><td>Granite</td><td>Gneiss</td></tr>
+      <tr><td>Shale</td><td>Schist / Slate</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">DECCAN TRAPS &amp; HOTSPOT VOLCANISM</div>
+      <ul class="hw chk">
+        <li>Deccan Traps = <b>flood basalt province</b>; gives <b>black (regur) soil</b> — self-plowing &amp; impermeable, typical of volcanic regions.</li>
+        <li>Formed by the <b>Réunion hotspot</b>. A <b>hotspot</b> volcano forms in the <b>middle of a plate</b> (not at a boundary); lava is believed to come straight from the <b>outer core</b>. E.g., Mauna Loa &amp; Mauna Kea (shield volcanoes).</li>
+        <li>India's only volcanoes: <b>Barren Island</b> &amp; <b>Narcondam</b> (Andaman).</li>
+      </ul>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">VOLCANO TYPES &amp; CRUST</div>
+      <b>By lava fluidity:</b> Caldera (explosive) → Composite (thick) → Shield (less thick) → <b>Flood basalt (most fluid)</b>.<br>
+      <b>Crust:</b> Continental = <b>granitic</b> (thick &amp; light); Oceanic = <b>basaltic</b> (thin but denser).<br>
+      Igneous can be <b>intrusive/plutonic</b> (cools inside, e.g., granite) or <b>extrusive</b> (cools at surface, e.g., basalt). <b>Dynamic metamorphism</b> = metamorphism with no appreciable chemical change.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec green">🌲 Physical Geography — Forest Types</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q8.</span> Which tree is primarily found in the Tropical Thorn Forest?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Banyan &amp; Peepal</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Khejri &amp; Ber (Babul/Acacia) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mahua &amp; Amla</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Pine &amp; Juniper</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <b>Khejri, Ber, Babul/Acacia</b>. Thorn forests get rainfall <b>&lt; 50 cm</b> (up to ~70 cm); leaves are modified into thorns.</div></div>
+
+    <div class="sub">Forest types by rainfall</div>
+    <table class="hw-t">
+      <tr><th>Forest</th><th>Rainfall</th><th>Trees / note</th></tr>
+      <tr><td>Tropical Thorn</td><td>&lt; 50 cm</td><td>Khejri, Ber, Babul (xerophytic)</td></tr>
+      <tr><td>Tropical Deciduous (Monsoon) — largest area in India</td><td>70–200 cm</td><td>—</td></tr>
+      <tr><td>&nbsp;&nbsp;• Moist Deciduous</td><td>150–200 cm</td><td>—</td></tr>
+      <tr><td>&nbsp;&nbsp;• Dry Deciduous</td><td>70–150 cm</td><td>Palash, Amaltas, Tendu, Mahua, Amla; "parkland landscape"</td></tr>
+      <tr><td>Coniferous</td><td>—</td><td>Cone-shaped: Cedar, Pine, Juniper, Cherry (gymnosperms)</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">PLANT ADAPTATIONS (-PHYTES)</div>
+      <ul class="hw arr">
+        <li><b>Xerophytes</b> → adapted to dry conditions (thorn-forest plants).</li>
+        <li><b>Heliophytes</b> → sun-loving plants.</li>
+        <li><b>Halophytes</b> → salt-loving / salt-tolerant (mangroves, Sundarbans). "Halo" = salinity.</li>
+        <li><b>Neophytes</b> → non-native, introduced species (e.g., tobacco, potato — brought by the Portuguese).</li>
+      </ul>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">GYMNOSPERM vs ANGIOSPERM</div>
+      <b>Gymnosperms</b> (conifers) = <b>naked seeds</b>, non-flowering. <b>Angiosperms</b> = flowering plants. Tendu leaves are used to roll <b>bidi</b>.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec purple">💰 Indian Economy</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q9.</span> What is India's position / score in the Global Hunger Index (GHI) 2025?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Rank 102 of 123 countries; score 25.8 → "Serious" category ✔</div>
+      </div>
+      <div class="mcq-ans">✅ India ranks <b>102 out of 123</b> countries with a score of <b>25.8</b>, placing it in the <b>"Serious"</b> category.</div></div>
+
+    <div class="key-box"><div class="slbl">GLOBAL HUNGER INDEX (GHI)</div>
+      <ul class="hw arr">
+        <li>Compiled by <b>Concern Worldwide</b> &amp; <b>Welthungerhilfe</b>.</li>
+        <li>Four factors: <b>undernourishment, child stunting, child wasting, child mortality</b>.</li>
+        <li><b>Stunting</b> = low height-for-age; <b>Wasting</b> = low weight-for-height; <b>Mortality</b> = child deaths.</li>
+      </ul>
+    </div>
+
+    <div class="sub">HDI vs MPI vs National MPI</div>
+    <table class="hw-t alt">
+      <tr><th>Index</th><th>Released by</th><th>Dimensions</th><th>Indicators</th></tr>
+      <tr><td>Human Development Index (HDI)</td><td>UNDP</td><td>Long &amp; healthy life · Knowledge · Decent standard of living</td><td>—</td></tr>
+      <tr><td>Multidimensional Poverty Index (MPI)</td><td>UNDP</td><td>Standard of living · Health · Education ("SHE")</td><td>10</td></tr>
+      <tr><td>National MPI</td><td>NITI Aayog</td><td>Same 3 dimensions</td><td>12 (+ bank account, antenatal care)</td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="slbl">HDI INDICATORS</div>
+      <b>Long &amp; healthy life</b> → life expectancy at birth · <b>Knowledge</b> → expected years + mean years of schooling · <b>Decent standard of living</b> → <b>GNI per capita</b>.
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q10.</span> Unemployment caused by regular seasonal changes during the year is called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Seasonal unemployment ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Seasonal unemployment</b> — common in India's agriculture sector (work during sowing/harvesting, idle otherwise).</div></div>
+
+    <div class="key-box"><div class="slbl">TYPES OF UNEMPLOYMENT</div>
+      <ul class="hw arr">
+        <li><b>Frictional</b> → while switching from one job to another (a.k.a. search / voluntary unemployment).</li>
+        <li><b>Structural</b> → a <b>skills gap</b> (your skills don't match market demand).</li>
+        <li><b>Cyclical</b> → during a recession (jobs lost in downturn, regained in recovery).</li>
+        <li><b>Seasonal</b> → due to regular seasonal change (agriculture).</li>
+        <li><b>Disguised</b> → hidden; many work on a field but actual productivity ≈ 0 (agriculture).</li>
+        <li><b>Educated</b> → has a degree but no employment.</li>
+      </ul>
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q11.</span> Which of the following is known as <b>Narrow Money</b>? (M1 / M2 / M3 / M4)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>M1 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>M1 = Narrow Money</b>. If <b>Broad Money / monetary aggregate</b> is asked → <b>M3</b>.</div></div>
+
+    <div class="sub">Monetary aggregates (money supply)</div>
+    <table class="hw-t grn">
+      <tr><th>Aggregate</th><th>Composition</th><th>Name</th></tr>
+      <tr><td>M0</td><td>Currency in circulation + bankers' deposits with RBI + other deposits with RBI</td><td>High-powered / Base / Reserve money</td></tr>
+      <tr><td>M1</td><td>Currency with public + demand deposits with banks + other deposits with RBI</td><td><b>Narrow Money</b></td></tr>
+      <tr><td>M2</td><td>M1 + Post Office savings deposits</td><td>—</td></tr>
+      <tr><td>M3</td><td>M1 + Time/Term deposits with banks</td><td><b>Broad Money</b></td></tr>
+      <tr><td>M4</td><td>M3 + total Post Office deposits</td><td>—</td></tr>
+    </table>
+
+    <div class="sticky">
+      <div class="slbl">BANK DEPOSITS = LIABILITIES</div>
+      <b>Demand</b> deposits = savings + current. <b>Time/Term</b> deposits = FD + RD. Deposits are liabilities for the bank.
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q12.</span> Under the INSPIRE programme's "SHE" (Scholarship for Higher Education) component, what is the annual scholarship amount?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>₹80,000 per year (for up to 5 years) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>₹80,000 per year</b> for up to 5 years (+ mentorship). SHE is for UG &amp; PG students, ages ~17–22.</div></div>
+
+    <div class="key-box"><div class="slbl">INSPIRE — Innovation in Science Pursuit for Inspired Research</div>
+      <p class="hw">An initiative of the <b>Department of Science &amp; Technology (DST)</b>. Three components:</p>
+      <ul class="hw num">
+        <li><b>INSPIRE Awards – MANAK:</b> for class 6–10 students (age 10–15); ~<b>₹10,000</b> to promote creative thinking &amp; exhibition projects.</li>
+        <li><b>SHE (Scholarship for Higher Education):</b> UG/PG; <b>₹80,000/yr</b> up to 5 years + mentorship; ages 17–22.</li>
+        <li><b>AORC (Assured Opportunity for Research Careers):</b> for PhD / post-doc researchers, ages 22–32.</li>
+      </ul>
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q13.</span> What was a major goal of the land reforms policy introduced after 1947?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Selling land to foreign companies</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Abolishing the Zamindari system ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Abolishing the Zamindari system</b> (and "Land to the Tiller").</div></div>
+
+    <div class="sub">British land-revenue systems (recall)</div>
+    <table class="hw-t org">
+      <tr><th>System</th><th>Introduced by / year</th><th>Region</th></tr>
+      <tr><td>Permanent Settlement (Zamindari)</td><td>Cornwallis, 1793</td><td>Bengal, Bihar, Odisha</td></tr>
+      <tr><td>Ryotwari</td><td>Thomas Munro &amp; Reed, ~1820 (Ricardian rent theory)</td><td>Madras region</td></tr>
+      <tr><td>Mahalwari</td><td>Holt Mackenzie &amp; William Bentinck</td><td>Punjab &amp; NWFP region</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">LAND REFORMS &amp; THE 9th SCHEDULE</div>
+      <ul class="hw arr">
+        <li><b>"Land to the Tiller"</b> policy + <b>Land Ceiling Act (1976)</b> — cap on max land owned; surplus distributed.</li>
+        <li><b>Right to Property</b> removed from Fundamental Rights in <b>1978 (44th Amendment)</b>, moved to <b>Part XII as Article 300A</b> (now a legal/constitutional right). Part XII = finance, property &amp; contracts.</li>
+        <li><b>1st Amendment</b> added the <b>9th Schedule</b> + Articles <b>31A &amp; 31B</b> (laws here were meant to be immune from judicial review).</li>
+        <li><b>I.R. Coelho case (2007):</b> laws added to the 9th Schedule <b>after 24 April 1973</b> (Kesavananda Bharati) CAN be reviewed — the <b>Basic Structure Doctrine</b> came from the <b>Kesavananda Bharati case (1973)</b>.</li>
+      </ul>
+    </div>
+
+    <div class="ca-box"><b>SEBI &amp; SIDBI:</b> <b>SEBI</b> (Securities &amp; Exchange Board of India) — established <b>1988</b>, statutory status in <b>1992</b>; regulates securities, mutual funds &amp; stock markets; Chairman <b>Tuhin Kanta Pandey</b>. &nbsp;|&nbsp; <b>SIDBI</b> (Small Industries Development Bank of India) — established <b>1990</b>, HQ in <b>Lucknow</b>.</div>
+
+    <div class="ca-box"><b>Bonus — Washington Consensus:</b> a set of <b>free-market</b> economic prescriptions (by the IMF / World Bank), designed in <b>1989</b> by economist <b>John Williamson</b> to help developing nations overcome crisis &amp; hyperinflation.</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec teal">🌐 International Relations — Quad vs NATO</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q14.</span> What is unique about the institutional status of the Quad compared to NATO?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">C</div>The Quad is informal diplomacy, NOT a treaty-based formal alliance ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — The <b>Quad is informal</b> (no treaty, no permanent HQ). <b>NATO is fully treaty-based</b>.</div></div>
+
+    <div class="key-box"><div class="slbl">QUAD vs NATO</div>
+      <ul class="hw arr">
+        <li><b>Quad</b> = India, USA, Japan, Australia → for <b>Indo-Pacific</b> security; informal, no permanent HQ. Their naval exercise = <b>Malabar Exercise</b>.</li>
+        <li><b>NATO</b> = North Atlantic Treaty Organization; collective defence (<b>attack on one = attack on all</b>); HQ at <b>Brussels, Belgium</b>.</li>
+        <li>Russia–Ukraine link: Ukraine sought NATO membership, alarming Russia (NATO reaching its doorstep).</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec orange">🏛️ Polity — The Union Executive (Articles 73–85)</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q15.</span> Which Article deals with the <b>extent of the executive power of the Union</b>?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 73 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 74</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 75</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 77</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Article 73</b> — extent of the executive power of the Union.</div></div>
+
+    <div class="sub">Articles 74–85 at a glance</div>
+    <table class="hw-t alt">
+      <tr><th>Article</th><th>Subject</th></tr>
+      <tr><td>74</td><td>Council of Ministers headed by PM to <b>aid &amp; advise</b> the President (PM = de facto/real head; President = de jure/nominal/titular head)</td></tr>
+      <tr><td>75</td><td>Other provisions for Ministers (appointment, responsibility, oath, term, salary) — has 6 clauses</td></tr>
+      <tr><td>77</td><td>Conduct of business of Govt of India — <b>in the name of the President</b></td></tr>
+      <tr><td>78</td><td>Duties of the Prime Minister</td></tr>
+      <tr><td>79</td><td>Constitution of Parliament</td></tr>
+      <tr><td>80</td><td>Rajya Sabha</td></tr>
+      <tr><td>81</td><td>Lok Sabha</td></tr>
+      <tr><td>82</td><td>Re-adjustment / Delimitation</td></tr>
+      <tr><td>83</td><td>Duration of the Houses</td></tr>
+      <tr><td>84</td><td>Qualifications for membership of Parliament</td></tr>
+      <tr><td>85</td><td>Sessions, prorogation &amp; summoning of Parliament</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">ARTICLE 74 &amp; 75 — KEY POINTS</div>
+      <ul class="hw arr">
+        <li>Advice of the CoM was made <b>binding</b> by the <b>42nd Amendment</b>; the <b>44th Amendment</b> let the President <b>return advice once</b>, but reconsidered advice is binding.</li>
+        <li>Ministers hold office <b>during the pleasure of the President</b> → individual responsibility to the President; <b>collective responsibility to the Lok Sabha</b>.</li>
+        <li>A person can be a Minister for max <b>6 months</b> without being a member of either House.</li>
+        <li>Ministers' salaries are determined by Parliament.</li>
+      </ul>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">PRO-TEM SPEAKER &amp; THE +89 FORMULA</div>
+      <b>Pro-tem Speaker</b> = a temporary Speaker (usually the senior-most member), appointed by the President, who administers the oath to newly elected Lok Sabha members; the House then elects its permanent Speaker.<br>
+      <b>Formula:</b> Article (Union) + 89 = Article (State). So Art 77 (Union business) + 89 = <b>Art 166</b> (State business, in the Governor's name).
+    </div>
+
+    <div class="ca-box"><b>Delimitation Commission</b> has been set up <b>4 times</b>: <b>1952, 1962, 1972, and 2002</b>.</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec red">📜 Polity — Government of India Acts (Constitutional Development)</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q16.</span> Which Act proposed the creation of <b>Public Service Commissions for both the Federation and the individual provinces</b>?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>GoI Act 1919</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>GoI Act 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Indian Councils Act 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indian Independence Act 1947</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>GoI Act 1935</b> — proposed a <b>Federal Public Service Commission</b>.</div></div>
+
+    <div class="sub">Acts — what each did</div>
+    <table class="hw-t pur">
+      <tr><th>Act</th><th>Key features</th></tr>
+      <tr><td>1858 (Queen's Proclamation)</td><td>Created the office of <b>Secretary of State for India</b> with a 15-member council</td></tr>
+      <tr><td>1909 (Morley–Minto Reforms)</td><td>Supplementary questions on budget; first Indian (<b>S.P. Sinha</b>) in Executive Council; council strength 16→60; <b>separate electorate for Muslims</b> → Minto = "Father of Communal Electorate"</td></tr>
+      <tr><td>1919 (Montagu–Chelmsford)</td><td><b>Dyarchy in provinces</b> (reserved vs transferred subjects); bicameralism at the Centre; separate electorate extended to Anglo-Indians, Christians, etc.</td></tr>
+      <tr><td>1935</td><td>Abolished dyarchy in provinces → <b>provincial autonomy</b>; dyarchy at the Centre; bicameralism in 6 of 11 provinces; proposed <b>All-India Federation</b> (never formed); <b>Federal PSC</b></td></tr>
+      <tr><td>Indian Independence Act 1947</td><td>Based on the <b>Mountbatten Plan</b>; created two dominions — India &amp; Pakistan</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">DYARCHY 1919 — RESERVED vs TRANSFERRED</div>
+      <b>Reserved</b> = important subjects, Governor &amp; his council <b>not answerable</b> to the legislature.<br>
+      <b>Transferred</b> = health, education, local bodies — handled by ministers responsible to the legislature.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec blue">⚖️ Polity — The Five Writs</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q17.</span> Which writ examines the <b>legality of a person holding a public office</b>?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Quo Warranto ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Quo Warranto</b> ("by what authority") — issued when someone holds a public office they are not eligible for.</div></div>
+
+    <div class="sub">The five writs (borrowed from the UK)</div>
+    <table class="hw-t">
+      <tr><th>Writ</th><th>Meaning &amp; use</th></tr>
+      <tr><td>Habeas Corpus</td><td>"to have the body of" — against unlawful detention</td></tr>
+      <tr><td>Mandamus</td><td>"we command" — against an official not doing a mandatory duty; <b>not</b> against President/Governor or for discretionary work</td></tr>
+      <tr><td>Certiorari</td><td>Higher court <b>quashes</b> a lower court's order (jurisdiction exceeded); can lie against administrative authorities, not legislative</td></tr>
+      <tr><td>Prohibition</td><td>"to forbid" — higher court stops a lower court from exceeding its jurisdiction; not against legislative/administrative bodies</td></tr>
+      <tr><td>Quo Warranto</td><td>"by what authority" — against unlawful holding of a public office</td></tr>
+    </table>
+
+    <div class="key-box"><div class="slbl">WRITS — IMPORTANT CASES &amp; ARTICLES</div>
+      <ul class="hw arr">
+        <li>Borrowed from the <b>UK</b> (also: Rule of Law, CAG, bicameralism, parliamentary government).</li>
+        <li><b>ADM Jabalpur v. Shivkant Shukla (1976)</b> = the Habeas Corpus case; Justice <b>H.R. Khanna</b> dissented (right to life is a basic human right).</li>
+        <li><b>Maneka Gandhi case (1978):</b> wider interpretation; recognised <b>"due process of law"</b> (a US concept). Art 21 says "<b>procedure established by law</b>" — borrowed from <b>Japan</b>.</li>
+        <li>Writs issued by <b>SC under Art 32</b> (a Fundamental Right — cannot be refused) and <b>HC under Art 226</b> (not a FR, but wider — enforces fundamental + legal rights).</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec green">🏛️ Polity — The Governor</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q18.</span> What is the primary role of the Governor regarding most state universities?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Ex-officio Chancellor — appoints the Vice-Chancellor ✔</div>
+      </div>
+      <div class="mcq-ans">✅ The Governor is the <b>ex-officio Chancellor</b> of state universities and appoints the <b>Vice-Chancellor</b>.</div></div>
+
+    <div class="key-box"><div class="slbl">GOVERNOR — DISCRETIONARY / KEY POWERS</div>
+      <ul class="hw arr">
+        <li><b>Art 200</b> → reserve a state Bill for the <b>President's</b> consideration.</li>
+        <li><b>Art 213</b> → promulgate <b>ordinances</b> when the state legislature is not in session.</li>
+        <li><b>Art 161</b> → <b>pardoning power</b> (cf. Art 72 for the President). But the Governor <b>cannot pardon a death sentence</b> or a court-martial sentence; the President can.</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec purple">📜 Polity — Constituent Assembly &amp; Preamble</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q19.</span> The <b>Objectives Resolution</b> was moved in the Constituent Assembly by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Jawaharlal Nehru ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">·</div>Patel / Ambedkar / Rajendra Prasad</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Jawaharlal Nehru</b> — moved it on <b>13 Dec 1946</b>; it became the basis for the <b>Preamble</b> (adopted 22 Jan 1947).</div></div>
+
+    <div class="key-box"><div class="slbl">CONSTITUENT ASSEMBLY — FACTS</div>
+      <ul class="hw arr">
+        <li>Formed per the <b>Cabinet Mission Plan</b> (members: Pethick-Lawrence, Stafford Cripps, A.V. Alexander); came into being 1946.</li>
+        <li>Total <b>389</b> members (296 British India + 93 Princely States); partly elected (indirectly), partly nominated.</li>
+        <li>First meeting <b>9 Dec 1946</b>; Muslim League boycotted; after Partition, <b>299</b> seats. Temporary chairman <b>Sachchidananda Sinha</b>; permanent President <b>Rajendra Prasad</b>; Constitutional Advisor <b>B.N. Rau</b>.</li>
+        <li>As a legislative body it was headed by <b>G.V. Mavalankar</b>. National Flag adopted <b>22 July 1947</b>; Anthem &amp; Song adopted <b>24 Jan 1950</b>.</li>
+      </ul>
+    </div>
+
+    <div class="sub">Key committees of the Constituent Assembly</div>
+    <table class="hw-t grn">
+      <tr><th>Committee</th><th>Chairman</th></tr>
+      <tr><td>Union Powers Committee / Union Constitution Committee</td><td>Jawaharlal Nehru</td></tr>
+      <tr><td>Advisory Committee on Fundamental Rights, Minorities &amp; Tribals</td><td>Sardar Vallabhbhai Patel</td></tr>
+      <tr><td>Drafting Committee (7 members; formed 29 Aug 1947)</td><td>Dr. B.R. Ambedkar — "Father of the Constitution"</td></tr>
+      <tr><td>Steering / Rules of Procedure Committee</td><td>Dr. Rajendra Prasad</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="slbl">PREAMBLE — DECODED</div>
+      <b>Source:</b> "We, the People of India". <b>Nature:</b> Sovereign, Socialist, Secular, Democratic, Republic.<br>
+      <b>Objectives:</b> Justice (social, economic, political), Liberty (thought, expression, belief, faith, worship), Equality (status &amp; opportunity), Fraternity.<br>
+      <b>Borrowed:</b> Liberty-Equality-Fraternity → French Revolution; ideals of Justice → Russian Revolution.<br>
+      <b>Dates:</b> Constitution adopted <b>26 Nov 1949</b> (Constitution Day); came into force <b>26 Jan 1950</b>. Vallabhbhai Patel = "Bismarck of India".
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec pink">🎨 Modern History &amp; Art — The Swadeshi Era</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q20.</span> Who painted the iconic artwork <b>"Bharat Mata"</b>, symbolising India as a divine mother during the freedom movement?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Abanindranath Tagore ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nandalal Bose</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jamini Roy</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Asit Halder</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Abanindranath Tagore</b> — painted "Bharat Mata" in <b>1905</b> (during the Bengal Partition).</div></div>
+
+    <div class="key-box"><div class="slbl">BHARAT MATA &amp; THE CONSTITUTION'S ART</div>
+      <ul class="hw arr">
+        <li>In the painting, Bharat Mata has <b>four hands</b> holding: a <b>book</b>, <b>cloth</b>, <b>paddy/crops</b>, and a <b>garland (mala)</b>.</li>
+        <li>Abanindranath Tagore also founded the <b>Indian Society of Oriental Art</b>.</li>
+        <li><b>Nandalal Bose</b> (a student there) <b>decorated/illustrated</b> the Constitution.</li>
+        <li>Calligraphy of the Constitution: English by <b>Prem Bihari Narain Raizada</b>; Hindi by <b>Vasant Krishna Vaidya</b>.</li>
+      </ul>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">BENGAL PARTITION &amp; SWADESHI (1905)</div>
+      Announced under Viceroy <b>Curzon</b> (July 1905), enforced <b>16 Oct 1905</b>. Real aim: weaken Bengal (the nerve-centre of nationalism) on Hindu–Muslim lines; stated reason: "administrative".<br>
+      <b>1906 Calcutta Congress</b> (President <b>Dadabhai Naoroji</b>) adopted the <b>Swaraj, Boycott, National Education &amp; Swadeshi</b> resolutions. <b>V.O. Chidambaram Pillai</b> founded the Swadeshi Steam Navigation Company.
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">PARTITION ANNULLED &amp; THE THREE DELHI DURBARS</div>
+      Partition of Bengal was <b>annulled in 1911</b> at the <b>Third Delhi Durbar</b> (Viceroy <b>Hardinge II</b>); capital shifted from Calcutta to <b>Delhi</b> (announced 1911, shifted 1912).<br>
+      <b>Durbars:</b> 1877 (Lytton — Vernacular Press Act &amp; Arms Act, 1878) · 1903 (Curzon) · 1911 (Hardinge II).
+    </div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q21.</span> Who presided over the <b>1930 Allahabad session of the Muslim League</b> (which voiced the idea of a separate Muslim state)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">✓</div>Allama (Muhammad) Iqbal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Allama Iqbal</b>.</div></div>
+
+    <div class="key-box"><div class="slbl">MUSLIM LEAGUE &amp; "PAKISTAN"</div>
+      <ul class="hw arr">
+        <li>Muslim League formed in <b>1906 at Dhaka</b> by <b>Nawab Salimullah</b> &amp; the <b>Aga Khan</b>.</li>
+        <li>The term <b>"Pakistan"</b> was coined by <b>Choudhry Rahmat Ali</b> (P-Punjab, A-Afghania, K-Kashmir, S-Sindh, -stan/Balochistan).</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec orange">📿 Ancient History — The Sangam Age</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q22.</span> The famous Tamil grammar work <b>Tolkappiyam</b>, the oldest surviving work of the Sangam period, was written by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tholkappiyar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ilango Adigal</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Thiruvalluvar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sattanar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Tholkappiyar</b> — author of the <b>Tolkappiyam</b>, the oldest surviving Tamil text.</div></div>
+
+    <div class="key-box"><div class="slbl">SANGAM AGE — ESSENTIALS</div>
+      <ul class="hw arr">
+        <li>Period: <b>3rd century BC – 3rd century AD</b>. Three Sangams: 1st &amp; 3rd at <b>Madurai</b>, 2nd at <b>Kapatapuram</b>.</li>
+        <li>Texts split into <b>narrative</b> (Melkanakku — Ettuthokai, Pattuppattu) and <b>didactic</b> (Kilkanakku). Kilkanakku divides into <b>Aham</b> (love) &amp; <b>Puram</b> (war).</li>
+        <li><b>Silappadikaram</b> — by <b>Ilango Adigal</b> (Kovalan–Madhavi–Kannagi; Kannagi worshipped as goddess of chastity / the <b>Pattini cult</b>, started by Chera king <b>Senguttuvan</b>).</li>
+        <li><b>Manimekalai</b> — epic by <b>Sattanar</b>.</li>
+      </ul>
+    </div>
+
+    <div class="sub">Sangam kingdoms — capital, port &amp; emblem</div>
+    <table class="hw-t grn">
+      <tr><th>Kingdom</th><th>Capital</th><th>Port(s)</th><th>Emblem</th></tr>
+      <tr><td>Chera</td><td>Vanji (also Karur)</td><td>Muziris, Tondi</td><td>Bow &amp; Arrow</td></tr>
+      <tr><td>Pandya</td><td>Madurai</td><td>Korkai</td><td>Fish</td></tr>
+      <tr><td>Chola</td><td>Uraiyur (later Gangaikonda Cholapuram, Thanjavur)</td><td>—</td><td>Tiger</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="slbl">SANGAM SOCIETY — CLASSES</div>
+      <b>Vellalar</b> = rich landlords (top) · <b>Uzhavar</b> = ordinary plowmen/cultivators (middle) · <b>Adimai / Kadaisiyar</b> = slaves &amp; manual workers (bottom).
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec blue">🏙️ Static GK — City Nicknames &amp; Current Affairs</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q23.</span> Which city is known as the <b>"Brass City of India"</b> for its brass handicrafts industry?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jaipur</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Moradabad ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jodhpur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Aligarh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <b>Moradabad</b> — the Brass City of India.</div></div>
+
+    <div class="sub">City nicknames &amp; the famous fort</div>
+    <table class="hw-t org">
+      <tr><th>City</th><th>Known as / for</th></tr>
+      <tr><td>Jaipur</td><td>Pink City</td></tr>
+      <tr><td>Udaipur</td><td>City of Lakes</td></tr>
+      <tr><td>Moradabad</td><td>Brass City</td></tr>
+      <tr><td>Aligarh</td><td>Famous for locks</td></tr>
+      <tr><td>Mirzapur</td><td>Famous for carpets</td></tr>
+      <tr><td>Ahmedabad</td><td>Manchester of India (earlier Kanpur)</td></tr>
+      <tr><td>Jamshedpur</td><td>Steel City of India</td></tr>
+      <tr><td>Jodhpur</td><td>Mehrangarh Fort (built by Rao Jodha, a Rathore ruler)</td></tr>
+    </table>
+
+    <div class="ca-box"><b>Tangail saree</b> received a <b>GI tag in 2024</b> → it is a traditional handloom of <b>West Bengal</b>.</div>
+
+    <div class="ca-box"><b>BARC</b> (Bhabha Atomic Research Centre) is located at <b>Trombay, Mumbai (Maharashtra)</b>. India's first nuclear power plant: <b>Tarapur, Maharashtra (1969)</b>. Other plants: Kalpakkam &amp; Kudankulam (Tamil Nadu), Narora (UP), Kakrapar (Gujarat), Kaiga (Karnataka), Rawatbhata (Rajasthan).</div>
+
+    <div class="ca-box"><b>Puthandu</b> — celebrated on the first day of <b>Vaishakh</b>, is the <b>Tamil New Year</b> festival.</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec red">📋 Master Quick-Revision — One-Liners from This Class</div>
+    <table class="hw-t red-h">
+      <tr><th>Question</th><th>Answer</th></tr>
+      <tr><td>Carbohydrate yielding 2–10 units</td><td>Oligosaccharide</td></tr>
+      <tr><td>Sugar in grains / milk / fruits</td><td>Maltose / Lactose / Fructose</td></tr>
+      <tr><td>Protein in hair &amp; nails</td><td>Keratin</td></tr>
+      <tr><td>Hockey goal post (H × W)</td><td>2.14 m × 3.66 m</td></tr>
+      <tr><td>Kuno National Park</td><td>Madhya Pradesh</td></tr>
+      <tr><td>Project Tiger launched</td><td>1973 (Jim Corbett NP)</td></tr>
+      <tr><td>Cheetah extinct in India</td><td>1952</td></tr>
+      <tr><td>Continental Drift theory</td><td>Alfred Wegener (1912)</td></tr>
+      <tr><td>Convection current theory</td><td>Arthur Holmes (1930)</td></tr>
+      <tr><td>Sea-floor spreading</td><td>Harry Hess</td></tr>
+      <tr><td>Deccan Traps rock</td><td>Basalt (flood basalt)</td></tr>
+      <tr><td>Tropical thorn forest tree</td><td>Khejri / Babul</td></tr>
+      <tr><td>GHI 2025 — India</td><td>102/123, score 25.8 (Serious)</td></tr>
+      <tr><td>HDI / MPI released by</td><td>UNDP (National MPI → NITI Aayog)</td></tr>
+      <tr><td>Narrow Money / Broad Money</td><td>M1 / M3</td></tr>
+      <tr><td>INSPIRE-SHE scholarship</td><td>₹80,000 per year</td></tr>
+      <tr><td>Land reforms main goal</td><td>Abolish Zamindari system</td></tr>
+      <tr><td>Basic Structure Doctrine</td><td>Kesavananda Bharati case (1973)</td></tr>
+      <tr><td>Extent of Union executive power</td><td>Article 73</td></tr>
+      <tr><td>Federal PSC proposed by</td><td>GoI Act 1935</td></tr>
+      <tr><td>Writ for public office legality</td><td>Quo Warranto</td></tr>
+      <tr><td>Governor &amp; state universities</td><td>Ex-officio Chancellor</td></tr>
+      <tr><td>Objectives Resolution moved by</td><td>Jawaharlal Nehru (13 Dec 1946)</td></tr>
+      <tr><td>"Bharat Mata" painting</td><td>Abanindranath Tagore (1905)</td></tr>
+      <tr><td>1930 Allahabad Muslim League session</td><td>Allama Iqbal</td></tr>
+      <tr><td>Author of Tolkappiyam</td><td>Tholkappiyar</td></tr>
+      <tr><td>Brass City of India</td><td>Moradabad</td></tr>
+      <tr><td>Tangail saree (GI 2024)</td><td>West Bengal</td></tr>
+      <tr><td>Washington Consensus</td><td>1989, John Williamson (free market)</td></tr>
+    </table>
+
+    <div class="sec teal">💡 Exam Tips from This Class</div>
+    <div class="tip-box">
+      <ul class="hw num">
+        <li>Use the <b>+89 formula</b> to convert a Union Article to its State equivalent (e.g., Art 77 → Art 166).</li>
+        <li>For "theory → scientist" questions, don't confuse <b>plate tectonics</b> (McKenzie &amp; Parker / Morgan) with the <b>convection current</b> idea (Arthur Holmes).</li>
+        <li>Money supply: <b>M1 = Narrow</b>, <b>M3 = Broad</b> — the most-asked pair.</li>
+        <li>Watch the <b>state mapping</b> of national parks &amp; nuclear plants (Kuno→MP, Dudhwa→UP, BARC→Maharashtra).</li>
+        <li>Sangam emblems: <b>Chera</b>=Bow &amp; Arrow, <b>Pandya</b>=Fish, <b>Chola</b>=Tiger.</li>
+        <li>"Father of" tags: Minto → Communal Electorate; Ambedkar → the Constitution; Patel → "Bismarck of India".</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF DAILY GK — LECTURE 13</div>
+      <strong>Every question + all side-knowledge covered ✅ | Revise the one-liner table, then crush your next class! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+/* Change the handwriting font across the notes */
+function setFont(font){
+  document.getElementById('fontOverride').textContent =
+    "p.hw,ul.hw li,.sticky,.mcq-h,.mcq-opt,.mcq-ans,.hw-t td,.hw-t th," +
+    ".tip-box,.imp,.trick,.key-box,.ca-box,.cover-sub,.sub{font-family:'" + font + "',cursive}";
+}
+/* Font-size +/- controls: increases ONLY the text size (not page zoom) */
+var fontScale = 1;
+function applyScale(){
+  var s = fontScale;
+  document.getElementById('sizeOverride').textContent =
+    "p.hw{font-size:" + (0.94 * s) + "rem}" +
+    "ul.hw li{font-size:" + (0.92 * s) + "rem}" +
+    ".sticky{font-size:" + (0.93 * s) + "rem}" +
+    ".mcq-h{font-size:" + (0.93 * s) + "rem}" +
+    ".mcq-opt{font-size:" + (0.87 * s) + "rem}" +
+    ".mcq-ans{font-size:" + (0.82 * s) + "rem}" +
+    ".hw-t{font-size:" + (0.87 * s) + "rem}" +
+    ".key-box{font-size:" + (0.9 * s) + "rem}" +
+    ".tip-box{font-size:" + (0.9 * s) + "rem}" +
+    ".ca-box{font-size:" + (0.9 * s) + "rem}" +
+    ".sub{font-size:" + (1.0 * s) + "rem}";
+  document.getElementById('sizeLbl').textContent = Math.round(s * 100) + '%';
+}
+function changeSize(delta){
+  fontScale = Math.min(2.0, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  applyScale();
+}
+function resetSize(){ fontScale = 1; applyScale(); }
+</script>
+</body>
+</html>
