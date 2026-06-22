@@ -154,8 +154,22 @@ const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
 const BRANCH = 'main';
 const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
-const RAW_BASE = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/`;
-const GITHUB_PAGE_BASE = `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/${BRANCH}/`;
+const PAGES_BASE = `https://${REPO_OWNER}.github.io/${REPO_NAME}/`;
+
+// Detect if we're running on GitHub Pages or locally
+function getFileUrl(filename) {
+  const currentHost = window.location.hostname;
+  if (currentHost.includes('github.io')) {
+    // On GitHub Pages — use relative path
+    return './' + encodeURIComponent(filename).replace(/%20/g, '%20');
+  } else if (currentHost === 'localhost' || currentHost === '127.0.0.1' || currentHost === '') {
+    // Local file — use GitHub Pages URL
+    return PAGES_BASE + encodeURIComponent(filename).replace(/%20/g, '%20');
+  } else {
+    // Fallback — use GitHub Pages URL
+    return PAGES_BASE + encodeURIComponent(filename).replace(/%20/g, '%20');
+  }
+}
 
 // ============ STATE ============
 let allFiles = [];
@@ -212,9 +226,6 @@ async function fetchFiles() {
         displayName: formatName(file.name),
         ext: ext,
         size: file.size,
-        downloadUrl: file.download_url,
-        htmlUrl: file.html_url,
-        rawUrl: RAW_BASE + encodeURIComponent(file.name).replace(/%20/g, '%20'),
         icon: getFileIcon(ext, file.name)
       };
     });
@@ -284,12 +295,15 @@ function openFile(encodedName, ext, encodedDisplayName) {
   const file = allFiles.find(f => f.name === name);
   if (!file) return;
 
+  // Use GitHub Pages URL (renders HTML properly) instead of raw URL (shows source code)
+  const viewUrl = getFileUrl(file.name);
+
   if (ext === 'html') {
-    // Open HTML files directly in new tab
-    window.open(file.downloadUrl, '_blank');
+    // Open HTML files as rendered pages in new tab
+    window.open(viewUrl, '_blank');
   } else if (ext === 'pdf') {
     // Open PDF in modal viewer
-    openPdfModal(file.downloadUrl, displayName);
+    openPdfModal(viewUrl, displayName);
   }
 }
 
@@ -303,13 +317,16 @@ function openPdfModal(url, title) {
   modalTitle.textContent = title;
   modalDownload.href = url;
 
-  // Try embed first, with fallback
+  // Embed PDF with fallback
   modalBody.innerHTML = `
-    <iframe src="${url}" type="application/pdf" style="width:100%;height:100%;border:none;">
-    </iframe>
-    <div class="pdf-fallback" style="position:absolute;bottom:0;left:0;right:0;background:var(--surface2);padding:12px;font-size:.8rem;">
-      PDF not loading? <a href="${url}" target="_blank">Click here to open directly</a>
-    </div>
+    <object data="${url}" type="application/pdf" style="width:100%;height:100%;">
+      <iframe src="${url}" style="width:100%;height:100%;border:none;">
+        <div class="pdf-fallback">
+          <p>Your browser cannot display this PDF.</p>
+          <p><a href="${url}" target="_blank">Click here to open the PDF directly</a></p>
+        </div>
+      </iframe>
+    </object>
   `;
 
   modal.classList.add('open');
