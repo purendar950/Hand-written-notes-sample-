@@ -431,12 +431,13 @@ function renderFolderView() {
     const q = searchQuery.toLowerCase();
     files = files.filter(f => getDisplayName(f.name).toLowerCase().includes(q) || f.name.toLowerCase().includes(q));
   }
-  // Sort strictly by serial number (admin-assigned). Files without a serial
-  // number fall to the end, tie-broken by display name so order stays stable.
+  // Sort ONLY by serial number (admin-assigned). No alphabetical/any other
+  // ordering. Files without a serial number go to the end and keep their
+  // existing order (stable sort), never reordered by name.
   files = files.slice().sort((a, b) => {
     const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : Number.MAX_SAFE_INTEGER;
     const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : Number.MAX_SAFE_INTEGER;
-    return oA - oB || getDisplayName(a.name).localeCompare(getDisplayName(b.name));
+    return oA - oB;
   });
   const fileItems = files.map(f => {
     const icon = getFileIcon(f.name);

@@ -619,7 +619,7 @@ function sortFilesBy(criteria) {
 }
 function autoNumberFiles() {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
   files.forEach((f, i) => { fileOrder[f.name] = i + 1; });
   saveAndPublish(); toast('Numbered 1 to ' + files.length, 'success'); render();
 }
@@ -631,14 +631,14 @@ function setSerialNumber(filename) {
 }
 function moveFileUp(idx) {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
   if (idx <= 0) return;
   const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx-1].name]||idx; fileOrder[files[idx-1].name] = t;
   saveAndPublish(); render();
 }
 function moveFileDown(idx) {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
   if (idx >= files.length-1) return;
   const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx+1].name]||idx+2; fileOrder[files[idx+1].name] = t;
   saveAndPublish(); render();
@@ -832,7 +832,7 @@ function renderHomeView() {
 function renderFolderView() {
   if (!currentFolder) return renderHomeView();
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a, b) => { const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : 9999; const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : 9999; return oA - oB || a.name.localeCompare(b.name); });
+  files.sort((a, b) => { const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : 9999; const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : 9999; return oA - oB; });
   const hasSelected = selectedFiles.size > 0;
 
   let bulkBar = '';
