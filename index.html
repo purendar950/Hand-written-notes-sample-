@@ -105,10 +105,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 .search-box input{width:100%}
 .view-toggle{margin-left:0}
 }
+.pdf-loading{position:fixed;inset:0;background:rgba(13,17,23,.78);display:none;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:16px}
+.pdf-loading.show{display:flex}
+.pdf-loading .spinner{width:46px;height:46px;border:4px solid #30363d;border-top-color:#58a6ff;border-radius:50%;animation:spin 1s linear infinite}
+.pdf-loading .msg{color:#e6edf3;font-size:14px;font-weight:600}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <div id="app"></div>
+<div id="pdf-loading" class="pdf-loading"><div class="spinner"></div><div class="msg">Generating PDF…</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
@@ -264,12 +271,68 @@ function openFile(filename) {
   else { window.open(url, '_blank'); }
 }
 
-// Convert an HTML note to PDF using the browser's native print-to-PDF engine.
-// A hidden same-origin iframe is loaded with the note and printed; the user can
-// then "Save as PDF" from the print dialog. This preserves the note's exact
-// styling/fonts far better than a canvas-based rasteriser.
+// Directly download an HTML note as a .pdf file (no print dialog needed).
+// The note is rendered in a hidden same-origin iframe so its exact styling is
+// preserved, then html2pdf.js rasterises it and triggers a direct file
+// download. If the library is unavailable, we fall back to the browser's
+// print-to-PDF dialog.
 function downloadAsPdf(filename) {
   const url = getFileUrl(filename);
+  const baseName = getDisplayName(filename).replace(/\.(html?|pdf)$/i, '').trim() || 'note';
+  if (typeof html2pdf === 'undefined') { downloadViaPrint(url); return; }
+
+  showPdfLoading(true);
+  const frame = document.createElement('iframe');
+  frame.style.position = 'fixed';
+  frame.style.left = '-10000px';
+  frame.style.top = '0';
+  frame.style.width = '794px';   // ~A4 width at 96dpi for faithful layout
+  frame.style.height = '1123px';
+  frame.style.border = '0';
+  frame.setAttribute('aria-hidden', 'true');
+
+  let finished = false;
+  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 500); };
+  const finish = () => { if (finished) return; finished = true; showPdfLoading(false); cleanup(); };
+  const fallback = () => { if (finished) return; finished = true; showPdfLoading(false); downloadViaPrint(url); cleanup(); };
+
+  frame.onload = () => {
+    // Give the note a moment to apply fonts/images before rasterising.
+    setTimeout(() => {
+      let target;
+      try {
+        const doc = frame.contentDocument || frame.contentWindow.document;
+        target = doc.body || doc.documentElement;
+      } catch (e) { fallback(); return; }
+      if (!target) { fallback(); return; }
+      const opt = {
+        margin: [8, 8, 8, 8],
+        filename: baseName + '.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+      try {
+        html2pdf().set(opt).from(target).save().then(finish).catch(fallback);
+      } catch (e) { fallback(); }
+    }, 600);
+  };
+  frame.onerror = fallback;
+  frame.src = url;
+  document.body.appendChild(frame);
+  // Safety timeout in case rendering hangs.
+  setTimeout(() => { if (!finished) fallback(); }, 30000);
+}
+
+function showPdfLoading(show) {
+  const el = document.getElementById('pdf-loading');
+  if (el) el.classList.toggle('show', !!show);
+}
+
+// Fallback: open the note in a hidden iframe and invoke the browser's native
+// print dialog so the user can choose "Save as PDF".
+function downloadViaPrint(url) {
   const frame = document.createElement('iframe');
   frame.style.position = 'fixed';
   frame.style.right = '0';
@@ -285,14 +348,8 @@ function downloadAsPdf(filename) {
     if (done) return;
     done = true;
     setTimeout(() => {
-      try {
-        frame.contentWindow.focus();
-        frame.contentWindow.print();
-      } catch (e) {
-        // Cross-origin or print blocked — fall back to opening the note so the
-        // user can print/save it manually.
-        window.open(url, '_blank');
-      }
+      try { frame.contentWindow.focus(); frame.contentWindow.print(); }
+      catch (e) { window.open(url, '_blank'); }
       cleanup();
     }, 400);
   };
