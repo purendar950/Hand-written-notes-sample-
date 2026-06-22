@@ -60,6 +60,40 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 /* FOLDER LABEL */
 .folder-label{font-family:'Kalam',cursive;font-size:1.2rem;color:var(--accent);padding:16px 0 4px;border-bottom:2px solid var(--border);margin-bottom:4px}
 
+/* VIEW MODES */
+.view-btns{display:flex;gap:4px;margin-left:auto}
+.view-btn{width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .15s}
+.view-btn:hover{border-color:var(--accent);color:var(--accent)}
+.view-btn.active{background:var(--accent);color:#1a1a2e;border-color:var(--accent)}
+
+/* LIST VIEW */
+.grid.list-sm{grid-template-columns:1fr;gap:4px}
+.grid.list-sm .card{flex-direction:row;align-items:center;padding:8px 16px;border-radius:8px}
+.grid.list-sm .card-icon{padding:0;font-size:1.2rem;margin-right:10px}
+.grid.list-sm .card-body{padding:0;flex-direction:row;align-items:center;gap:12px}
+.grid.list-sm .card-title{font-size:.88rem;margin:0}
+.grid.list-sm .card-badge{position:static;margin-left:auto;order:2}
+.grid.list-sm .card-folder,.grid.list-sm .card-filename,.grid.list-sm .card-size{display:none}
+
+/* MEDIUM LIST VIEW */
+.grid.list-md{grid-template-columns:1fr;gap:8px}
+.grid.list-md .card{flex-direction:row;align-items:center;padding:12px 20px;border-radius:10px}
+.grid.list-md .card-icon{padding:0;font-size:1.5rem;margin-right:14px}
+.grid.list-md .card-body{padding:0;flex:1}
+.grid.list-md .card-title{font-size:.95rem;margin-bottom:2px}
+.grid.list-md .card-badge{position:static;margin-left:16px;order:2;flex-shrink:0}
+.grid.list-md .card-folder{font-size:.72rem;margin-bottom:0}
+.grid.list-md .card-filename,.grid.list-md .card-size{display:none}
+
+/* SMALL ICON VIEW */
+.grid.icon-sm{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.grid.icon-sm .card{text-align:center;padding:14px 10px}
+.grid.icon-sm .card-icon{padding:8px 0 6px;font-size:2rem}
+.grid.icon-sm .card-body{padding:0 6px 6px;align-items:center}
+.grid.icon-sm .card-title{font-size:.78rem;line-height:1.3;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.grid.icon-sm .card-badge{top:6px;right:6px;font-size:.6rem;padding:2px 6px}
+.grid.icon-sm .card-folder,.grid.icon-sm .card-filename,.grid.icon-sm .card-size{display:none}
+
 /* LOADING */
 .loading{text-align:center;padding:60px 20px}
 .loading-spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
@@ -121,6 +155,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <button class="filter-btn" data-filter="pdf" onclick="setFilter('pdf',this)">📕 PDF</button>
   </div>
   <span class="file-count" id="fileCount"></span>
+  <div class="view-btns">
+    <button class="view-btn" title="Small List" onclick="setView('list-sm',this)">☰</button>
+    <button class="view-btn" title="Medium List" onclick="setView('list-md',this)">≡</button>
+    <button class="view-btn active" title="Grid Cards" onclick="setView('grid-default',this)">▦</button>
+    <button class="view-btn" title="Small Icons" onclick="setView('icon-sm',this)">⊞</button>
+  </div>
 </div>
 <div class="toolbar" style="padding:10px 24px;border-top:none;gap:8px" id="folderFilter"></div>
 
@@ -222,7 +262,11 @@ async function fetchFiles() {
       const cfgRes = await fetch(configUrl);
       if (cfgRes.ok) {
         const cfgData = await cfgRes.json();
-        const decoded = atob(cfgData.content);
+        // Decode base64 with proper UTF-8 support (fixes emoji garbling)
+        const binaryStr = atob(cfgData.content);
+        const bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
+        const decoded = new TextDecoder('utf-8').decode(bytes);
         config = JSON.parse(decoded);
       }
     } catch(e) { /* config not found, use defaults */ }
@@ -435,6 +479,16 @@ function showError(message) {
       <div class="error-text">Failed to load files: ${message}<br><br>This might be due to GitHub API rate limits. Try refreshing in a minute.</div>
       <button class="retry-btn" onclick="location.reload()">🔄 Retry</button>
     </div>`;
+}
+
+// ============ VIEW MODES ============
+let currentView = 'grid-default';
+function setView(view, btn) {
+  currentView = view;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const grid = document.getElementById('fileGrid');
+  grid.className = 'grid' + (view !== 'grid-default' ? ' ' + view : '');
 }
 
 // ============ INIT ============
