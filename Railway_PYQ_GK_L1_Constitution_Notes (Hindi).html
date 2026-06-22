@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Railway PYQ GK L1 | संविधान एवं स्रोत | Topper Notes (हिंदी)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(139,109,56,.15) 35px,rgba(139,109,56,.15) 70px),
+    repeating-linear-gradient(-45deg,transparent,transparent 35px,rgba(100,80,40,.1) 35px,rgba(100,80,40,.1) 70px);
+  background-color:#8B6914;opacity:.40;z-index:-1;pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#1a1a2e 45%,#16213e 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.7rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.cover-train{font-size:2rem;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.sticky.orange{background:#fff3e0;border-color:#e65100}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.hw-t.navy th{background:#1a237e;color:#e8eaf6}
+.hw-t.maroon th{background:#880e4f;color:#fce4ec}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ परीक्षा जाल!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 याद रखने की ट्रिक';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 फॉर्मूला';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 मुख्य तथ्य';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 परीक्षा टिप';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'🚂 रेलवे कनेक्ट';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.source-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff8f0;position:relative}
+.source-box::before{content:'🌍 देश स्रोत';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-exam{font-size:.72rem;color:#b2dfdb;float:right;font-family:'Kalam',cursive;margin-top:2px}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .source-box{background:#1e1200}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🚂 Railway PYQ GK — लेक्चर 1 | संविधान एवं स्रोत</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">🚂 Parmar Academy — Railway PYQ Series</div>
+    <div class="cover-title">📝 GK लेक्चर 1 — Topper Notes</div>
+    <div class="cover-sub">संविधान का निर्माण एवं स्रोत | Constitution Making &amp; Sources</div>
+    <div class="cover-badge">⚖️ राजव्यवस्था | 33 PYQs शामिल | Railway NTPC / RPF / Group-D</div>
+    <div class="cover-train">🚂🚃🚃🚃🚃🚃</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- INTRO STATS -->
+    <div class="sub" style="margin-top:12px">सीरीज़ अवलोकन — मुख्य आँकड़े</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">33</div><div class="lbl">कुल PYQs<br>इस लेक्चर में</div></div>
+      <div class="num-b"><div class="big">100%</div><div class="lbl">अद्वितीय प्रश्न<br>कोई पुनरावृत्ति नहीं</div></div>
+      <div class="num-b"><div class="big">4 वर्ष</div><div class="lbl">रेलवे परीक्षाएँ<br>शामिल</div></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION A: CONSTITUTION MAKING -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec red">① संविधान निर्माण — जनक एवं प्रारूप समिति 🏛️</div>
+
+    <!-- Q1 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.1</span> भारतीय संविधान के जनक के रूप में किसे जाना जाता है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>डॉ. बी.आर. अंबेडकर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजेंद्र प्रसाद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सच्चिदानंद सिन्हा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जवाहरलाल नेहरू</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: डॉ. बी.आर. अंबेडकर — "भारतीय संविधान के जनक" | इन्हें यह भी कहते हैं: <strong>आधुनिक मनु</strong></div>
+    </div>
+
+    <div class="sub">अंबेडकर = जनक क्यों? — प्रारूप समिति</div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>अंबेडकर <span class="hl"><strong>प्रारूप समिति के अध्यक्ष</strong></span> थे — सबसे महत्वपूर्ण समिति</li>
+        <li>प्रारूप समिति में कुल <span class="hl-g"><strong>7 सदस्य</strong></span> थे</li>
+        <li>संविधान सभा के <span class="hl-b"><strong>मुख्य प्रारूपकार (Chief Draftsman)</strong></span> = <span class="hl"><strong>एस.एन. मुखर्जी</strong></span> (अंबेडकर नहीं)</li>
+        <li>गठन: <span class="hl-p"><strong>29 अगस्त 1947</strong></span> | पहली बैठक: <strong>30 अगस्त 1947</strong></li>
+        <li>प्रारूप समिति कुल <span class="hl"><strong>141 दिन</strong></span> बैठी</li>
+      </ul>
+    </div>
+
+    <div class="sub">प्रारूप समिति के 7 सदस्य</div>
+    <table class="hw-t navy">
+      <tr><th>#</th><th>सदस्य</th><th>टिप्पणी</th></tr>
+      <tr><td>1</td><td><span class="hl"><strong>डॉ. बी.आर. अंबेडकर</strong></span></td><td>अध्यक्ष</td></tr>
+      <tr><td>2</td><td>अल्लादी कृष्णस्वामी अय्यर</td><td>—</td></tr>
+      <tr><td>3</td><td>एन. गोपालस्वामी आयंगर</td><td>याद रखें: अय्यर + आयंगर (दो नाम)</td></tr>
+      <tr><td>4</td><td>मोहम्मद सादुल्ला</td><td>—</td></tr>
+      <tr><td>5</td><td>के.एम. मुंशी</td><td>—</td></tr>
+      <tr><td>6</td><td><span class="hl-p">बी.एल. मित्तर → स्थान पर एन. माधव राव</span></td><td>बीमारी के कारण इस्तीफा</td></tr>
+      <tr><td>7</td><td><span class="hl-p">डी.पी. खेतान → स्थान पर टी.टी. कृष्णमाचारी</span></td><td>निधन</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>मुख्य प्रारूपकार ≠ अध्यक्ष!</strong> संविधान सभा के मुख्य प्रारूपकार <span class="hl"><strong>एस.एन. मुखर्जी</strong></span> थे। अंबेडकर प्रारूप समिति के अध्यक्ष थे। यह बहुत बड़ा परीक्षा जाल है! 🚨</p>
+    </div>
+
+    <div class="sub">तीन प्रारूप प्रस्तुत किए गए</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">21 फरवरी 1948</span> पहला प्रारूप प्रकाशित — जनता को चर्चा एवं सुझाव हेतु <strong>8 महीने</strong> दिए गए</div>
+      <div class="tl-item"><span class="yr">21 अक्टूबर 1948</span> दूसरा प्रारूप प्रस्तुत</div>
+      <div class="tl-item"><span class="yr">4 नवंबर 1948</span> तीसरा / अंतिम प्रारूप प्रस्तुत → उसी दिन <strong>प्रथम वाचन प्रारंभ</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2 — THIRD READING -->
+    <div class="sec blue">② संविधान की तीन वाचन — Three Readings 📖</div>
+
+    <!-- Q2 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC CBT1</span>
+        <span class="qno">प्र.2</span> संविधान सभा ने संविधान का तृतीय वाचन किस तिथि को किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>14–26 नवंबर, 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>29 अगस्त, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>17 अक्टूबर, 1949</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>4 नवंबर, 1948</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — तृतीय वाचन: 14 नवंबर से 26 नवंबर 1949 | संविधान 26 नवंबर 1949 को अंगीकृत (ADOPTED)</div>
+    </div>
+
+    <div class="sub">तीन वाचन — पूर्ण समयरेखा</div>
+    <table class="hw-t alt">
+      <tr><th>वाचन</th><th>अवधि</th><th>मुख्य घटना</th></tr>
+      <tr><td><span class="hl"><strong>प्रथम वाचन</strong></span></td><td>4 नवंबर 1948 → 9 नवंबर 1948</td><td>अंतिम प्रारूप प्रस्तुत एवं पठित</td></tr>
+      <tr><td><span class="hl-g"><strong>द्वितीय वाचन</strong></span></td><td>9 नवंबर 1948 → 17 अक्टूबर 1949</td><td><strong>सबसे लंबा</strong> वाचन (~10 महीने)। अनुच्छेद-दर-अनुच्छेद चर्चा</td></tr>
+      <tr><td><span class="hl-p"><strong>तृतीय वाचन</strong></span></td><td><strong>14 नवंबर 1949 → 26 नवंबर 1949</strong></td><td>संविधान 26 नवंबर 1949 को <span class="hl"><strong>अंगीकृत</strong></span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">26 नवंबर 1949 — संविधान दिवस</div>
+        संविधान 26 नवंबर को <span class="hl"><strong>अंगीकृत</strong></span> हुआ<br>
+        अधिसूचित: <strong>सामाजिक न्याय एवं अधिकारिता मंत्रालय</strong> द्वारा<br>
+        अधिसूचना वर्ष: <span class="hl-g"><strong>2015</strong></span><br>
+        उद्देश्य: <strong>संवैधानिक मूल्यों</strong> का प्रचार
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">26 जनवरी 1950 — गणतंत्र दिवस</div>
+        संविधान <span class="hl"><strong>लागू / प्रवर्तित</strong></span> हुआ<br>
+        26 जनवरी क्यों? → पूर्ण स्वराज दिवस (<strong>1930</strong>)<br>
+        लाहौर अधिवेशन = <strong>1929</strong> (नेहरू ने पूर्ण स्वराज घोषित किया)<br>
+        तुरंत लागू: नागरिकता, चुनाव, संसद
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3 — FIRST PROPOSED CONSTITUENT ASSEMBLY -->
+    <div class="sec green">③ संविधान सभा — पहला प्रस्ताव एवं गठन 🗳️</div>
+
+    <!-- Q3 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.3</span> भारत के लिए संविधान सभा के गठन का सर्वप्रथम प्रस्ताव किसने रखा?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सच्चिदानंद सिन्हा</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>के.एम. मुंशी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बी.एन. राव</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>एम.एन. रॉय ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — एम.एन. रॉय ने सर्वप्रथम 1934 में प्रस्ताव रखा | कांग्रेस ने 1935 में मांग की | नेहरू ने 1938 में बिना बाहरी हस्तक्षेप की मांग की</div>
+    </div>
+
+    <div class="sub">मुख्य व्यक्ति एवं उनकी भूमिकाएँ</div>
+    <table class="hw-t grn">
+      <tr><th>व्यक्ति</th><th>भूमिका</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>एम.एन. रॉय</strong></span></td><td>संविधान सभा का प्रस्ताव रखने वाले पहले व्यक्ति</td><td>1920 में ताशकंद में CPI की स्थापना; 1925 कानपुर में औपचारिक रूप</td></tr>
+      <tr><td><strong>भारतीय राष्ट्रीय कांग्रेस</strong></td><td>संविधान सभा की आधिकारिक मांग करने वाली पहली</td><td><strong>1935</strong></td></tr>
+      <tr><td><strong>जवाहरलाल नेहरू</strong></td><td>बिना बाहरी हस्तक्षेप के संविधान सभा की मांग</td><td><strong>1938</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>बी.एन. राव</strong></span></td><td>संविधान सभा के संवैधानिक सलाहकार</td><td>संविधान सभा के विधि सलाहकार</td></tr>
+      <tr><td><span class="hl-p"><strong>सच्चिदानंद सिन्हा</strong></span></td><td>संविधान सभा के अस्थायी / अंतरिम अध्यक्ष</td><td>सबसे वरिष्ठ सदस्य → पहली अध्यक्षता</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4 — CHAIRMAN OF CA -->
+    <div class="sec orange">④ संविधान सभा के अध्यक्ष — Chairman of Constituent Assembly 👑</div>
+
+    <!-- Q4 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.4</span> भारत की संविधान सभा के अध्यक्ष (President) कौन थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>डॉ. बी.आर. अंबेडकर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गोपाल दास अंबिदास देसाई</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>डॉ. राजेंद्र प्रसाद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>के.एम. मुंशी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — डॉ. राजेंद्र प्रसाद = संविधान सभा के स्थायी अध्यक्ष / President</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw key">
+        <li>अस्थायी अध्यक्ष (अंतरिम): <span class="hl"><strong>सच्चिदानंद सिन्हा</strong></span> (सबसे वरिष्ठ सदस्य)</li>
+        <li>स्थायी अध्यक्ष / President: <span class="hl-g"><strong>डॉ. राजेंद्र प्रसाद</strong></span></li>
+        <li>संविधान सभा के उपाध्यक्ष: <span class="hl-b"><strong>एच.सी. मुखर्जी</strong></span> एवं <strong>वी.टी. कृष्णमाचारी</strong></li>
+        <li>जब संविधान सभा <strong>विधायी निकाय</strong> के रूप में बैठी → अध्यक्षता <span class="hl-p"><strong>जी.वी. मावलंकर</strong></span> ने की (प्रथम लोकसभा अध्यक्ष भी)</li>
+        <li>ध्यान दें: <strong>टी.टी. कृष्णमाचारी</strong> = प्रारूप समिति के सदस्य (वी.टी. नहीं)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5 — HOW MANY REPRESENTATIVES -->
+    <div class="sec purple">⑤ संविधान सभा की संरचना — 299 सदस्य 🔢</div>
+
+    <!-- Q5 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.5</span> संविधान का मसौदा कितने प्रतिनिधियों द्वारा तैयार किया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>299 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>222</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>159</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>389</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 299 — मूलतः 389 सीटें थीं, विभाजन + मुस्लिम लीग के बहिष्कार के बाद घट गईं</div>
+    </div>
+
+    <div class="sub">संविधान सभा की संरचना</div>
+    <div class="formula">
+      <p class="hw"><strong>मूल संविधान सभा (1946):</strong></p>
+      <p class="hw">कुल 389 = <span class="hl-g"><strong>296 ब्रिटिश भारत से</strong></span> + <span class="hl-p"><strong>93 देशी रियासतों से</strong></span></p>
+      <p class="hw" style="margin-top:8px"><strong>विभाजन के बाद:</strong></p>
+      <p class="hw">389 → <span class="hl"><strong>299 सीटें शेष</strong></span> (मुस्लिम लीग बहिष्कार + विभाजन)</p>
+      <p class="hw" style="margin-top:8px"><strong>296 कैसे चुने गए:</strong> <span class="hl-b">11 गवर्नर प्रांतों से 292 + मुख्य आयुक्त प्रांतों से 4</span></p>
+      <p class="hw"><strong>देशी रियासतें:</strong> राजाओं द्वारा नामांकन</p>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>ब्रिटिश भारत से चुनाव की विधि:</strong> <span class="hl"><strong>अप्रत्यक्ष चुनाव</strong></span> (सार्वभौमिक मताधिकार नहीं)</p>
+      <p class="hw">प्रांतीय विधानसभाओं ने सदस्य चुने → <span class="hl-g">आनुपातिक प्रतिनिधित्व + एकल संक्रमणीय मत</span></p>
+      <p class="hw">प्रति 10 लाख जनसंख्या पर 1 सीट</p>
+      <p class="hw" style="margin-top:6px"><strong>आज भी यही प्रणाली प्रयुक्त:</strong> राज्यसभा + राष्ट्रपति चुनाव</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6 — ELECTION OF MEMBERS -->
+    <!-- Q6 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.6</span> संविधान सभा के सदस्य किसके द्वारा चुने गए थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कांग्रेस पार्टी के प्रमुख नेताओं द्वारा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>प्रांतीय विधायकों (विधानसभाओं) द्वारा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सार्वभौमिक मताधिकार (प्रत्यक्ष चुनाव)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ब्रिटिश सरकार द्वारा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — प्रांतीय विधानसभाओं ने अप्रत्यक्ष चुनाव (आनुपातिक प्रतिनिधित्व + STV) द्वारा सदस्य चुने</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7 — CONSTITUTION DAY -->
+    <div class="sec teal">⑦ संविधान दिवस — Constitution Day 📅</div>
+
+    <!-- Q7 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.7</span> सामाजिक न्याय एवं अधिकारिता मंत्रालय ने 2015 में अधिसूचित किया कि प्रत्येक वर्ष _____ को संविधान दिवस मनाया जाएगा।
+      </div>
+
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>26 जनवरी</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>26 नवंबर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15 अगस्त</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>14 नवंबर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 26 नवंबर — इसी दिन 1949 में संविधान अंगीकृत हुआ | "संविधान दिवस" 2015 से मनाया जा रहा है</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>26 नवंबर 1949</strong> = संविधान <span class="hl">अंगीकृत</span> (संविधान दिवस)</p>
+      <p class="hw"><strong>26 जनवरी 1950</strong> = संविधान <span class="hl-g">लागू / प्रवर्तित</span> (गणतंत्र दिवस)</p>
+      <p class="hw">कुछ प्रावधान 26 नवंबर को ही लागू हुए: <span class="hl-b">नागरिकता, चुनाव, अस्थायी संसद</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8 — CONSTITUENT ASSEMBLY SESSIONS -->
+    <div class="sec blue">⑧ संविधान सभा के सत्र एवं आँकड़े — CA Statistics 📊</div>
+
+    <!-- Q8 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.8</span> संविधान सभा की चर्चाओं के मुद्रित अभिलेखों को कितने खंडों में संकलित किया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>12 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>10</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>11</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 12 खंड — संविधान सभा की कार्यवाही 12 खंडों में संकलित की गई</div>
+    </div>
+
+    <div class="sub">संविधान सभा के महत्वपूर्ण आँकड़े</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">11</div><div class="lbl">संविधान सभा<br>के कुल सत्र</div></div>
+      <div class="num-b"><div class="big">165</div><div class="lbl">कुल कितने दिन<br>सभा बैठी</div></div>
+      <div class="num-b"><div class="big">2वर्ष 11माह 18दिन</div><div class="lbl">संविधान बनाने<br>में लगा समय</div></div>
+    </div>
+    <div class="two-col" style="margin-top:8px">
+      <div class="num-b"><div class="big">284</div><div class="lbl">हस्ताक्षर करने वाले सदस्य<br>(जिनमें 15 महिलाएँ)</div></div>
+      <div class="num-b"><div class="big">12</div><div class="lbl">संकलित खंड<br>(सभा की कार्यवाही)</div></div>
+    </div>
+
+    <div class="sub">संविधान सभा का प्रथम एवं अंतिम सत्र</div>
+    <table class="hw-t org">
+      <tr><th>सत्र</th><th>तिथियाँ</th><th>मुख्य बिंदु</th></tr>
+      <tr><td><span class="hl"><strong>प्रथम सत्र</strong></span></td><td>9 दिसंबर 1946 → 23 दिसंबर 1946</td><td>पहले दिन: <strong>211 सदस्य</strong> उपस्थित</td></tr>
+      <tr><td><span class="hl-g"><strong>11वाँ सत्र (अंतिम)</strong></span></td><td>14 नवंबर 1949 → 26 नवंबर 1949</td><td>26 नवंबर 1949 को संविधान अंगीकृत</td></tr>
+    </table>
+
+    <div class="ca-box">
+      <p class="hw">जब संविधान सभा <strong>विधि-निर्माण निकाय (अस्थायी संसद)</strong> के रूप में बैठी → अध्यक्षता <span class="hl"><strong>जी.वी. मावलंकर</strong></span> ने की</p>
+      <p class="hw">जी.वी. मावलंकर = <span class="hl-g"><strong>लोकसभा के प्रथम अध्यक्ष</strong></span> भी</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q9 — WHEN ADOPTED -->
+    <div class="sec red">⑨ संविधान कब अपनाया गया — When Was Constitution Adopted 📜</div>
+
+    <!-- Q9 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.9</span> भारतीय संविधान कब अपनाया (अंगीकृत) गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>26 जनवरी, 1950</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>26 नवंबर, 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15 अगस्त, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>14 नवंबर, 1949</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 26 नवंबर 1949 — अंगीकृत (लागू नहीं)। 284 सदस्यों ने हस्ताक्षर किए। हस्ताक्षरकर्ताओं में 15 महिलाएँ।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10 — HIGHEST REPRESENTATION -->
+    <div class="sec green">⑩ उत्तर प्रदेश — संविधान सभा में सर्वाधिक प्रतिनिधित्व 🗺️</div>
+
+    <!-- Q10 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.10</span> 31 दिसंबर 1947 तक संविधान सभा में किस प्रांत का सर्वाधिक प्रतिनिधित्व था?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मद्रास</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बंबई</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उत्तर प्रदेश (संयुक्त प्रांत) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पश्चिम बंगाल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — उत्तर प्रदेश (संयुक्त प्रांत) = 55 सदस्य | मद्रास = 49 | बिहार = 36</div>
+    </div>
+
+    <div class="sticky orange">
+      <div class="slbl">अंबेडकर — निर्वाचन क्षेत्र तथ्य</div>
+      अंबेडकर मूलतः <span class="hl"><strong>बंगाल निर्वाचन क्षेत्र</strong></span> से थे<br>
+      विभाजन के बाद → <span class="hl-g"><strong>महाराष्ट्र निर्वाचन क्षेत्र</strong></span> से आए
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11 — OBJECTIVES RESOLUTION -->
+    <div class="sec purple">⑪ उद्देश्य प्रस्ताव — Objectives Resolution 🎯</div>
+
+    <!-- Q11 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC CBT1 2021</span>
+        <span class="qno">प्र.11</span> संविधान निर्माण से पूर्व 1946 में भारत का उद्देश्य प्रस्ताव किसके द्वारा प्रस्तुत किया गया था?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राजेंद्र प्रसाद</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>जवाहरलाल नेहरू ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>वल्लभभाई पटेल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बी.आर. अंबेडकर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — जवाहरलाल नेहरू ने 13 दिसंबर 1946 को उद्देश्य प्रस्ताव प्रस्तुत किया। अंगीकृत: 22 जनवरी 1947।</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">9 दिसंबर 1946</span> संविधान सभा की प्रथम बैठक</div>
+      <div class="tl-item"><span class="yr">13 दिसंबर 1946</span> <span class="hl"><strong>नेहरू</strong></span> ने उद्देश्य प्रस्ताव प्रस्तुत किया</div>
+      <div class="tl-item"><span class="yr">22 जनवरी 1947</span> उद्देश्य प्रस्ताव संविधान सभा द्वारा <span class="hl-g"><strong>अंगीकृत</strong></span></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12 — CONSTITUTION ENFORCED -->
+    <!-- Q12 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.12</span> भारत का संविधान कब लागू हुआ?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>26 नवंबर, 1949</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>26 जनवरी, 1950 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15 अगस्त, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>9 दिसंबर, 1946</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 26 जनवरी 1950 | भारत गणतंत्र बना</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">संविधान सभा ने और क्या अपनाया</div>
+        ✔ <span class="hl"><strong>राष्ट्रीय ध्वज</strong></span> — 22 जुलाई 1947<br>
+        अभिकल्पक: <span class="hl-g"><strong>पिंगली वेंकैया</strong></span><br>
+        ध्वज अनुपात (लंबाई:चौड़ाई) = <span class="hl-b"><strong>3:2</strong></span>
+      </div>
+      <div class="sticky green">
+        <div class="slbl">राष्ट्रगान एवं राष्ट्रगीत</div>
+        राष्ट्रगान अंगीकृत: <span class="hl"><strong>24 जनवरी 1950</strong></span><br>
+        जन गण मन → <strong>रवींद्रनाथ टैगोर</strong> द्वारा<br>
+        राष्ट्रगीत: वंदे मातरम् → <strong>बंकिम चंद्र चट्टोपाध्याय</strong><br>
+        उपन्यास से: <span class="hl-p"><strong>आनंद मठ</strong></span>
+      </div>
+    </div>
+
+    <div class="sticky teal" style="text-align:center">
+      <div class="slbl">संविधान सभा ने यह भी अनुमोदित किया</div>
+      राष्ट्रमंडल (Commonwealth) सदस्यता अनुमोदित: <span class="hl"><strong>मई 1949</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q13 — COMMITTEES -->
+    <div class="sec orange">⑬ संविधान सभा की समितियाँ — Committees of CA 📋</div>
+
+    <!-- Q13 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.13</span> संविधान सभा की वित्त एवं स्टाफ समिति के अध्यक्ष कौन थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बी.आर. अंबेडकर</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>डॉ. राजेंद्र प्रसाद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जवाहरलाल नेहरू</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सरदार वल्लभभाई पटेल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — वित्त एवं स्टाफ समिति = राजेंद्र प्रसाद (घर का मुखिया वित्त संभालता है!)</div>
+    </div>
+
+    <div class="sub">8 प्रमुख समितियाँ — अध्यक्ष (अवश्य याद करें)</div>
+    <table class="hw-t pur">
+      <tr><th>समिति</th><th>अध्यक्ष</th><th>ट्रिक</th></tr>
+      <tr><td><span class="hl"><strong>प्रारूप समिति</strong></span></td><td>डॉ. बी.आर. अंबेडकर</td><td>सबसे महत्वपूर्ण समिति</td></tr>
+      <tr><td>संघ शक्ति समिति</td><td rowspan="2"><span class="hl-g"><strong>जवाहरलाल नेहरू</strong></span></td><td rowspan="2">नाम में "संघ / राज्य" → <strong>नेहरू</strong></td></tr>
+      <tr><td>राज्य समिति</td></tr>
+      <tr><td>वित्त एवं स्टाफ समिति</td><td rowspan="3"><span class="hl-b"><strong>डॉ. राजेंद्र प्रसाद</strong></span></td><td rowspan="3">वित्त + प्रक्रिया + संचालन = <strong>घर का मुखिया = राजेंद्र प्रसाद</strong></td></tr>
+      <tr><td>प्रक्रिया नियम समिति</td></tr>
+      <tr><td>संचालन (Steering) समिति</td></tr>
+      <tr><td>प्रांतीय संविधान समिति</td><td rowspan="2"><span class="hl-p"><strong>सरदार वल्लभभाई पटेल</strong></span></td><td rowspan="2">राज्यों का एकीकरण → <strong>पटेल</strong> (लौह पुरुष / भारत के बिस्मार्क)</td></tr>
+      <tr><td>परामर्शदात्री समिति (मूल अधिकार, अल्पसंख्यक, जनजातीय क्षेत्र)</td></tr>
+    </table>
+
+    <div class="trick">
+      <p class="hw"><strong>नेहरू नियम:</strong> नाम में "संघ" या "राज्य" वाली कोई भी समिति → <span class="hl">नेहरू</span></p>
+      <p class="hw"><strong>पटेल नियम:</strong> प्रांतीय + अल्पसंख्यक/मूल अधिकार परामर्शदात्री → <span class="hl-g">पटेल</span> (राज्यों का एकीकरण)</p>
+      <p class="hw"><strong>राजेंद्र प्रसाद नियम:</strong> वित्त + प्रक्रिया + संचालन → <span class="hl-b">घर का मुखिया (राजेंद्र प्रसाद)</span></p>
+      <p class="hw"><strong>मावलंकर:</strong> संविधान सभा के कार्य संबंधी समिति (विधि-निर्माण) → <span class="hl-p">जी.वी. मावलंकर</span></p>
+      <p class="hw" style="margin-top:6px"><strong>कुल:</strong> 8 प्रमुख + 13 गौण समितियाँ</p>
+    </div>
+
+    <div class="sub">महत्वपूर्ण गौण समितियाँ</div>
+    <table class="hw-t teal-h">
+      <tr><th>गौण समिति</th><th>अध्यक्ष</th></tr>
+      <tr><td>सदन समिति (House Committee)</td><td><span class="hl-p"><strong>बी. पट्टाभि सीतारमैया</strong></span> (याद रखें: "House" = घरेलू मामले)</td></tr>
+      <tr><td>प्रत्यय-पत्र समिति (Credentials)</td><td><span class="hl"><strong>अल्लादी कृष्णस्वामी अय्यर</strong></span> (प्रारूप समिति में भी)</td></tr>
+      <tr><td>कार्य संबंधी समिति (विधि-निर्माण)</td><td><span class="hl-g"><strong>जी.वी. मावलंकर</strong></span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14 — FIRST FINANCE MINISTER -->
+    <div class="sec teal">⑭ पहली कैबिनेट — स्वतंत्र भारत का पहला मंत्रिमंडल 🇮🇳</div>
+
+    <!-- Q14 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.14</span> स्वतंत्र भारत के प्रथम केंद्रीय वित्त मंत्री कौन थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>आर.के. शनमुखम चेट्टी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सरदार बलदेव सिंह</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राजकुमारी अमृत कौर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जॉन मथाई</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — आर.के. शनमुखम चेट्टी = प्रथम वित्त मंत्री | प्रथम आम चुनाव: 1951-52</div>
+    </div>
+
+    <div class="sub">पहली कैबिनेट — प्रमुख मंत्री (अवश्य जानें)</div>
+    <table class="hw-t maroon">
+      <tr><th>विभाग</th><th>मंत्री</th><th>याद रखें?</th></tr>
+      <tr><td><strong>प्रधानमंत्री + विदेश मामले</strong></td><td>जवाहरलाल नेहरू</td><td>साथ ही: राष्ट्रमंडल संबंध + वैज्ञानिक अनुसंधान</td></tr>
+      <tr><td><strong>गृह मामले</strong></td><td>सरदार वल्लभभाई पटेल</td><td>—</td></tr>
+      <tr><td><span class="hl"><strong>वित्त</strong></span></td><td><span class="hl"><strong>आर.के. शनमुखम चेट्टी</strong></span></td><td>⭐ PYQ का पसंदीदा</td></tr>
+      <tr><td><strong>रक्षा</strong></td><td>सरदार बलदेव सिंह</td><td>"मजबूत नाम → रक्षा"</td></tr>
+      <tr><td><strong>खाद्य एवं कृषि</strong></td><td>डॉ. राजेंद्र प्रसाद</td><td>—</td></tr>
+      <tr><td><strong>शिक्षा</strong></td><td>मौलाना अबुल कलाम आज़ाद</td><td>प्रथम शिक्षा मंत्री</td></tr>
+      <tr><td><strong>रेलवे</strong></td><td>जॉन मथाई</td><td>—</td></tr>
+      <tr><td><strong>विधि</strong></td><td>डॉ. बी.आर. अंबेडकर</td><td>प्रथम विधि मंत्री</td></tr>
+      <tr><td><span class="hl-p"><strong>स्वास्थ्य</strong></span></td><td><span class="hl-p"><strong>राजकुमारी अमृत कौर</strong></span></td><td>पहली कैबिनेट की एकमात्र महिला</td></tr>
+      <tr><td><strong>श्रम</strong></td><td>जगजीवन राम</td><td>"जगजीवन = मेहनती = श्रम"</td></tr>
+      <tr><td><strong>वाणिज्य</strong></td><td>सी.एच. भाभा</td><td>—</td></tr>
+      <tr><td><strong>संचार</strong></td><td>रफ़ी अहमद किदवई</td><td>—</td></tr>
+    </table>
+
+    <div class="sticky red">
+      <div class="slbl">अंतरिम सरकार (2 सितंबर 1946 → 15 अगस्त 1947)</div>
+      कार्यकारी परिषद के अध्यक्ष: <span class="hl"><strong>माउंटबेटन</strong></span><br>
+      उपाध्यक्ष: <span class="hl-g"><strong>जवाहरलाल नेहरू</strong></span><br>
+      वित्त (अंतरिम): <span class="hl-b"><strong>लियाकत अली खान</strong></span> (मुस्लिम लीग) → पाकिस्तान के प्रथम प्रधानमंत्री बने<br>
+      वाणिज्य (अंतरिम): <strong>आई.आई. चुंदरीगर</strong> (मुस्लिम लीग)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15 — DEMOCRACY -->
+    <div class="sec blue">⑮ शासन प्रणाली — Forms of Government 🏛️</div>
+
+    <!-- Q15 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">RPF SI 2024</span>
+        <span class="qno">प्र.15</span> ___ शासन का वह रूप है जिसमें शासक जनता द्वारा चुने जाते हैं।
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अल्पाधिकार बाज़ार (Oligopoly)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>फासीवाद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>धर्मतंत्र (Theocracy)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>लोकतंत्र (Democracy) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — लोकतंत्र = जनता के निर्वाचित प्रतिनिधियों द्वारा शासन</div>
+    </div>
+
+    <div class="sub">शासन के रूप — व्याख्या</div>
+    <table class="hw-t alt">
+      <tr><th>शब्द</th><th>अर्थ</th><th>मुख्य बिंदु</th></tr>
+      <tr><td><span class="hl-g"><strong>लोकतंत्र</strong></span></td><td>निर्वाचित प्रतिनिधियों द्वारा शासन</td><td>भारत एक लोकतांत्रिक गणराज्य है</td></tr>
+      <tr><td><strong>धर्मतंत्र</strong></td><td>धर्म/ईश्वर के नाम पर शासन</td><td>उदा: ईरान; नागरिक कानून = धार्मिक कानून</td></tr>
+      <tr><td><strong>फासीवाद</strong></td><td>अति-राष्ट्रवाद (अति दक्षिणपंथी)</td><td>उदा: नाज़ी जर्मनी (हिटलर), मुसोलिनी</td></tr>
+      <tr><td><span class="hl-p"><strong>कुलीनतंत्र (Oligarchy)</strong></span></td><td>कुछ लोगों द्वारा शासन</td><td>ध्यान दें: Oligopoly = बाज़ार शब्द (कुछ कंपनियाँ)</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>ट्रिक:</strong> विकल्प में "Oligopoly" था, "Oligarchy" नहीं!</p>
+      <p class="hw">Oligopoly = कुछ प्रभावी कंपनियों वाला बाज़ार (उदा: Airtel, Jio, Vi = टेलीकॉम अल्पाधिकार)</p>
+      <p class="hw">Oligarchy = कुछ लोगों द्वारा शासन → परीक्षा में इसे भ्रमित कराया जाता है! ⚠️</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q16 — SALIENT FEATURES -->
+    <!-- Q16 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.16</span> निम्नलिखित में से कौन-सा भारतीय संविधान की प्रमुख विशेषता नहीं है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>संघवाद की स्थापना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मूल अधिकार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संसदीय शासन प्रणाली</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>सामंतवाद का प्रोत्साहन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — सामंतवाद (बड़े भूस्वामियों का प्रभुत्व) भारतीय संविधान की विशेषता नहीं है</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17 — FEDERALISM -->
+    <div class="sec red">⑰ संघवाद — Federalism एवं विद्वानों के मत 🗺️</div>
+
+    <!-- Q17 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.17</span> संविधान की एकात्मक (Unitary) विशेषताओं के संबंध में निम्नलिखित में से कौन-सा गलत है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अखिल भारतीय सेवाएँ (IAS, IPS, IFS)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केंद्र द्वारा राज्यपाल की नियुक्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एकल नागरिकता</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>संविधान का कठोर भाग ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — संविधान का कठोर भाग एक संघीय (Federal) विशेषता है (एकात्मक नहीं)। कठोर संशोधनों हेतु राज्यों से परामर्श आवश्यक है।</div>
+    </div>
+
+    <div class="two-col">
+      <div class="key-box">
+        <div class="slbl" style="font-family:'Caveat Brush',cursive;opacity:.7;margin-bottom:6px">एकात्मक विशेषताएँ (केंद्र के पास अधिक शक्ति)</div>
+        <ul class="hw chk">
+          <li>अखिल भारतीय सेवाएँ (IAS, IPS, IFS)</li>
+          <li>संविधान का लचीला भाग</li>
+          <li>केंद्र द्वारा राज्यपाल की नियुक्ति</li>
+          <li>एकल नागरिकता</li>
+          <li>एकल संविधान</li>
+          <li>आपातकालीन प्रावधान</li>
+          <li>संसद राज्यों का निर्माण/विघटन कर सकती है</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="slbl" style="font-family:'Caveat Brush',cursive;opacity:.7;margin-bottom:6px">संघीय विशेषताएँ (राज्यों के पास शक्ति)</div>
+        <ul class="hw arr">
+          <li>संविधान का कठोर भाग</li>
+          <li>द्विसदनीयता (लोकसभा + राज्यसभा)</li>
+          <li>दोहरी सरकार (केंद्र + राज्य)</li>
+          <li>स्वतंत्र न्यायपालिका</li>
+          <li>शक्तियों का विभाजन (3 सूचियाँ)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub">भारतीय संघवाद पर विद्वानों के मत</div>
+    <table class="hw-t grn">
+      <tr><th>विद्वान</th><th>दिया गया शब्द</th></tr>
+      <tr><td><span class="hl"><strong>आइवर जेनिंग्स</strong></span></td><td>भारत = <span class="hl-g">"केंद्रीकरण की प्रवृत्ति वाला संघ"</span></td></tr>
+      <tr><td><span class="hl-p"><strong>के.सी. व्हीयर</strong></span></td><td>भारत = <span class="hl-p">"अर्ध-संघीय (Quasi-Federal)"</span></td></tr>
+      <tr><td><span class="hl-b"><strong>ग्रैनविल ऑस्टिन</strong></span></td><td>भारत = <span class="hl-b">"सहकारी संघवाद"</span></td></tr>
+      <tr><td><span class="hl"><strong>मॉरिस जोन्स</strong></span></td><td>भारत = <span class="hl">"सौदेबाजी संघवाद"</span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q18 — PARLIAMENTARY vs PRESIDENTIAL -->
+    <div class="sec purple">⑱ संसदीय बनाम राष्ट्रपति शासन — Parliamentary vs Presidential 🏛️</div>
+
+    <!-- Q18 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.18</span> भारतीय राजनीतिक व्यवस्था के संबंध में निम्नलिखित में से कौन-सा कथन गलत है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारत एक धर्मनिरपेक्ष राज्य है</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>भारत में राष्ट्रपति शासन प्रणाली है ✔ (गलत कथन)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत में संसदीय प्रणाली है</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत में अर्ध-संघीय प्रणाली है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — भारत में संसदीय प्रणाली है (राष्ट्रपति प्रणाली नहीं)। इसे वेस्टमिंस्टर मॉडल कहते हैं।</div>
+    </div>
+
+    <div class="sub">संसदीय बनाम राष्ट्रपति — मुख्य अंतर</div>
+    <table class="hw-t alt">
+      <tr><th>विशेषता</th><th>संसदीय (भारत/UK)</th><th>राष्ट्रपति (USA)</th></tr>
+      <tr><td><strong>जवाबदेही</strong></td><td><span class="hl-g">मंत्रिपरिषद सामूहिक रूप से लोकसभा के प्रति उत्तरदायी (अनुच्छेद 75(3))</span></td><td>विधायिका के प्रति कोई जवाबदेही नहीं</td></tr>
+      <tr><td><strong>मंत्री</strong></td><td>सांसद होना आवश्यक (अनुच्छेद 75(5)) या 6 माह में बनना</td><td>विधायक होना आवश्यक नहीं</td></tr>
+      <tr><td><strong>कार्यपालिका प्रमुख</strong></td><td>दोहरा: PM (वास्तविक) + राष्ट्रपति (नाममात्र)</td><td>राष्ट्रपति = वास्तविक कार्यपालिका</td></tr>
+      <tr><td><strong>शक्तियों का पृथक्करण</strong></td><td>कठोर नहीं (न्यायिक सक्रियता संभव)</td><td><span class="hl-p">कठोर पृथक्करण / जलरोधी कक्ष</span></td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="slbl">वेस्टमिंस्टर मॉडल</div>
+      भारत ने संसदीय प्रणाली <span class="hl"><strong>UK (ब्रिटेन)</strong></span> से ली<br>
+      वेस्टमिंस्टर, लंदन (जहाँ UK संसद है) के नाम पर <strong>वेस्टमिंस्टर मॉडल</strong> कहलाती है<br>
+      अनुच्छेद 142 = न्यायिक सक्रियता का उदाहरण
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19 — FEDERALISM INCORRECT -->
+    <!-- Q19 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.19</span> संघवाद के संदर्भ में निम्नलिखित में से कौन-सा गलत है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>संघीय देशों में दोहरी नागरिकता की कोई गुंजाइश नहीं होती ✔ (गलत कथन)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संघवाद में दो स्तर की राजव्यवस्था होती है: क्षेत्रीय + राष्ट्रीय</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रत्येक सरकार अपने क्षेत्र में स्वायत्त होती है</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विवादों के निपटारे हेतु स्वतंत्र न्यायपालिका होती है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — USA जैसे संघीय देशों में दोहरी नागरिकता होती है (नागरिकों के पास राष्ट्रीय + राज्य नागरिकता)। भारत में एकल नागरिकता है (UK से ली गई एकात्मक विशेषता)।</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">स्वतंत्र न्यायपालिका — स्रोत</div>
+      लिया गया: <span class="hl"><strong>USA संविधान</strong></span> से<br>
+      USA से ही: <span class="hl-g"><strong>न्यायिक समीक्षा</strong></span> + मूल अधिकार
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SECTION B: SOURCES OF CONSTITUTION -->
+    <div class="sec orange" style="margin-top:20px">⑳ संविधान के स्रोत — Sources of the Constitution 🌍</div>
+
+    <!-- Q20 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.20</span> न्यायिक समीक्षा (Judicial Review) का सिद्धांत किस देश में उत्पन्न हुआ?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>USA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ऑस्ट्रेलिया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — USA | न्यायिक समीक्षा + स्वतंत्र न्यायपालिका + मूल अधिकार (Bill of Rights) + राष्ट्रपति एवं उपराष्ट्रपति का पद USA से लिया गया</div>
+    </div>
+
+    <div class="sub">USA — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>न्यायिक समीक्षा</strong></span></li>
+        <li><span class="hl-g"><strong>न्यायपालिका की स्वतंत्रता</strong></span></li>
+        <li>मूल अधिकार (मूलतः USA में Bill of Rights)</li>
+        <li>राष्ट्रपति एवं उपराष्ट्रपति का पद</li>
+        <li>राष्ट्रपति + उच्चतम/उच्च न्यायालय के न्यायाधीशों को हटाना</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21 — FUNDAMENTAL DUTIES -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.21</span> भारतीय संविधान में मूल कर्तव्य किस देश के संविधान से प्रेरित हैं?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>USSR (पूर्व सोवियत संघ / रूस) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जर्मनी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — USSR | USSR से ही: न्याय के सिद्धांत (सामाजिक, आर्थिक, राजनीतिक)</div>
+    </div>
+
+    <div class="sub">USSR — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>मूल कर्तव्य</strong></span> (भाग IVA, अनुच्छेद 51A)</li>
+        <li>प्रस्तावना में <span class="hl-g"><strong>न्याय के सिद्धांत</strong></span> — सामाजिक, आर्थिक, राजनीतिक</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22 — DPSP -->
+    <!-- Q22 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.22</span> भारतीय संविधान में राज्य के नीति-निर्देशक तत्व (DPSP) की अवधारणा कहाँ से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>फ्रांस</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>आयरलैंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ऑस्ट्रेलिया</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — आयरलैंड | DPSP = भाग IV, अनुच्छेद 36–51</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>आयरलैंड — RED ट्रिक 🍀</strong></p>
+      <p class="hw"><span class="hl"><strong>R</strong></span> = <strong>R</strong>ajya Sabha — राष्ट्रपति द्वारा 12 सदस्यों का नामांकन</p>
+      <p class="hw"><span class="hl-g"><strong>E</strong></span> = <strong>E</strong>lection — भारत के राष्ट्रपति के चुनाव की विधि</p>
+      <p class="hw"><span class="hl-p"><strong>D</strong></span> = <strong>D</strong>PSP — राज्य के नीति-निर्देशक तत्व</p>
+      <p class="hw" style="margin-top:4px;font-size:.82rem">IRElanD में से R, E, D हटा दें → आयरलैंड ने हमें यही दिया!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23 — JUSTICE IN PREAMBLE -->
+    <!-- Q23 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.23</span> संविधान की प्रस्तावना में न्याय की अवधारणा किस देश के संविधान से ली गई है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>फ्रांस</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USSR (सोवियत संघ) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — USSR | 3 प्रकार का न्याय: सामाजिक, आर्थिक, राजनीतिक न्याय → सोवियत संविधान से</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24 — HOW MANY COUNTRIES -->
+    <!-- Q24 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.24</span> भारतीय संविधान में कितने देशों से ली गई विशेषताएँ शामिल हैं?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>8</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>9</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>10 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>12</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — 10 देश | मूल अनुच्छेद = 395 | मूल अनुसूचियाँ = 8 | मूल भाग = 22</div>
+    </div>
+
+    <div class="sub">मूल बनाम वर्तमान संविधान</div>
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">मूल संविधान (1949)</div>
+        अनुच्छेद: <span class="hl"><strong>395</strong></span><br>
+        अनुसूचियाँ: <span class="hl-g"><strong>8</strong></span><br>
+        भाग: <span class="hl-b"><strong>22</strong></span>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">वर्तमान संविधान</div>
+        अनुच्छेद: <span class="hl"><strong>~448</strong></span> (लगभग)<br>
+        अनुसूचियाँ: <span class="hl-g"><strong>12</strong></span><br>
+        भाग: <span class="hl-b"><strong>~25</strong></span>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q25 — FREEDOM OF TRADE (AUSTRALIA) -->
+    <!-- Q25 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.25</span> भारतीय संविधान में व्यापार की स्वतंत्रता की विशेषता किस देश से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ऑस्ट्रेलिया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>जर्मनी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>USSR</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयरलैंड</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — ऑस्ट्रेलिया | व्यापार की स्वतंत्रता + वाणिज्य + संयुक्त बैठक + समवर्ती सूची</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>ऑस्ट्रेलिया — STL ट्रिक 🦘</strong></p>
+      <p class="hw"><span class="hl"><strong>S</strong></span> = <strong>S</strong>itting — संसद की संयुक्त बैठक (अनुच्छेद 108, साधारण विधेयक)</p>
+      <p class="hw"><span class="hl-g"><strong>Tr</strong></span> = <strong>Tr</strong>ade — व्यापार एवं वाणिज्य की स्वतंत्रता</p>
+      <p class="hw"><span class="hl-p"><strong>L</strong></span> = <strong>L</strong>ist — समवर्ती सूची (सूची III)</p>
+    </div>
+
+    <div class="sub">जर्मनी — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>आपातकाल के दौरान मूल अधिकारों का निलंबन</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26 — QUASI-FEDERAL (CANADA) -->
+    <!-- Q26 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.26</span> भारत के संविधान में अर्ध-संघीय / सशक्त केंद्र वाले संघ की विशेषता किस देश से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ऑस्ट्रेलिया</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>कनाडा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — कनाडा | सशक्त केंद्र वाला संघ + केंद्र द्वारा राज्यपाल की नियुक्ति + अवशिष्ट शक्तियाँ केंद्र के पास</div>
+    </div>
+
+    <div class="sub">कनाडा — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>सशक्त केंद्र वाला संघ</strong></span> (अर्ध-संघीय)</li>
+        <li><span class="hl-g"><strong>केंद्र द्वारा राज्यपाल की नियुक्ति</strong></span></li>
+        <li><span class="hl-p"><strong>अवशिष्ट शक्तियाँ केंद्र के पास</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">के.सी. व्हीयर ने भारत को "अर्ध-संघीय" कहा = स्वरूप में संघीय पर आत्मा में एकात्मक</p>
+      <p class="hw">जहाँ भी केंद्र के पास अधिक शक्ति → <span class="hl"><strong>कनाडा</strong></span> से ली गई</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27 — SOUTH AFRICA / CONSTITUTIONAL AMENDMENT -->
+    <!-- Q27 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.27</span> भारत की संविधान संशोधन प्रक्रिया किस देश से ली गई है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>दक्षिण अफ्रीका ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कनाडा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — दक्षिण अफ्रीका | संविधान संशोधन प्रक्रिया (अनुच्छेद 368)</div>
+    </div>
+
+    <div class="sub">दक्षिण अफ्रीका — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>संविधान संशोधन प्रक्रिया (अनुच्छेद 368)</strong></span></li>
+        <li><span class="hl-g"><strong>राज्यसभा सदस्यों का अप्रत्यक्ष चुनाव</strong></span> — यह भी दक्षिण अफ्रीका से!</li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>परीक्षा जाल:</strong> राज्यसभा का अप्रत्यक्ष चुनाव = <span class="hl"><strong>दक्षिण अफ्रीका</strong></span> से (आयरलैंड नहीं!)</p>
+      <p class="hw">कई विद्यार्थी भ्रमित होते हैं क्योंकि आयरलैंड राज्यसभा को <strong>नामांकन</strong> देता है (राष्ट्रपति 12 सदस्य नामित करते हैं)</p>
+      <p class="hw">आयरलैंड = नामांकन | दक्षिण अफ्रीका = <span class="hl-g">अप्रत्यक्ष चुनाव विधि</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28 — PARLIAMENTARY FORM (UK) -->
+    <!-- Q28 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.28</span> संसदीय शासन प्रणाली अपनाने की प्रेरणा किस देश से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>UK (ब्रिटेन) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>फ्रांस</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कनाडा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — UK | वेस्टमिंस्टर मॉडल | साथ ही: विधि का शासन, द्विसदनीयता, एकल नागरिकता, FPTP प्रणाली, मार्शल लॉ</div>
+    </div>
+
+    <div class="sub">UK — भारत ने क्या लिया</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>संसदीय / वेस्टमिंस्टर शासन प्रणाली</strong></span></li>
+        <li><span class="hl-g"><strong>विधि का शासन</strong></span> (ए.वी. डायसी द्वारा प्रतिपादित)</li>
+        <li><span class="hl-b"><strong>द्विसदनीयता</strong></span> (लोकसभा + राज्यसभा)</li>
+        <li><span class="hl-p"><strong>एकल नागरिकता</strong></span></li>
+        <li><strong>फर्स्ट-पास्ट-द-पोस्ट (FPTP) प्रणाली</strong></li>
+        <li><strong>मार्शल लॉ</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29 — JAPAN -->
+    <!-- Q29 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.29</span> अनुच्छेद 21 में "विधि द्वारा स्थापित प्रक्रिया" किस देश से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UK</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>जापान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>फ्रांस</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — जापान | विधि द्वारा स्थापित प्रक्रिया = अनुच्छेद 21 में लिखित (प्राण एवं दैहिक स्वतंत्रता का अधिकार)</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">जापान — भारत ने क्या लिया</div>
+      <span class="hl"><strong>विधि द्वारा स्थापित प्रक्रिया</strong></span> (अनुच्छेद 21)<br>
+      इसे "विधि की सम्यक प्रक्रिया" (Due Process of Law — USA अवधारणा, <strong>मेनका गांधी केस 1978</strong> द्वारा लाई गई) से भ्रमित न करें<br>
+      विधि का शासन प्रतिपादक: <span class="hl-g"><strong>ए.वी. डायसी</strong></span> (UK अवधारणा से)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30 — FIVE YEAR PLAN (USSR) -->
+    <!-- Q30 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.30</span> भारतीय संविधान ने पंचवर्षीय योजना की विशेषता किस देश से ली है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>फ्रांस</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USSR ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कनाडा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — USSR | पंचवर्षीय योजनाएँ + मूल कर्तव्य + न्याय के सिद्धांत (सामाजिक, आर्थिक, राजनीतिक) — सब USSR से</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31 — INDIRECT ELECTION OF RS (SOUTH AFRICA) -->
+    <!-- Q31 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.31</span> भारत में राज्यसभा सदस्यों के अप्रत्यक्ष चुनाव का संवैधानिक प्रावधान किस देश से लिया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>आयरलैंड</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>दक्षिण अफ्रीका ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कनाडा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — दक्षिण अफ्रीका | राज्यसभा हेतु अप्रत्यक्ष चुनाव विधि | (आयरलैंड = राष्ट्रपति द्वारा 12 सदस्यों का नामांकन)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32 — FPTP (UK) -->
+    <!-- Q32 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.32</span> भारत में फर्स्ट-पास्ट-द-पोस्ट प्रणाली (FPTP) किस देश से ली गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आयरलैंड</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>UK ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ऑस्ट्रेलिया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — UK | FPTP लोकसभा + राज्य विधानसभा चुनावों में प्रयुक्त</div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw"><strong>FPTP बनाम आनुपातिक प्रतिनिधित्व:</strong></p>
+      <p class="hw">FPTP = 1 वोट से भी जीत → <span class="hl">लोकसभा + विधानसभा</span> चुनावों में (UK से)</p>
+      <p class="hw">PR + STV = <span class="hl-g">राज्यसभा, राष्ट्रपति चुनाव, मूल संविधान सभा चुनाव</span> में प्रयुक्त</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q33 — LIBERTY EQUALITY FRATERNITY (FRANCE) -->
+    <!-- Q33 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">प्र.33</span> स्वतंत्रता, समानता एवं बंधुत्व — भारतीय संविधान में ये अवधारणाएँ किस देश से ली गईं?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>फ्रांस ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USSR</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — फ्रांस | फ्रांसीसी क्रांति (1789) से प्रेरित | Liberté, Égalité, Fraternité</div>
+    </div>
+
+    <div class="source-box">
+      <p class="hw" style="margin-bottom:4px"><strong>फ्रांस — भारत ने क्या लिया:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl"><strong>स्वतंत्रता, समानता, बंधुत्व</strong></span> (फ्रांसीसी क्रांति से)</li>
+        <li>गणराज्य / गणतांत्रिक आदर्श</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MASTER REVISION TABLE — ALL SOURCES -->
+    <div class="sec red">📋 मास्टर चार्ट — संविधान के स्रोत (10 देश) 🌍</div>
+    <table class="hw-t navy">
+      <tr><th>देश 🌍</th><th>भारत ने क्या लिया 📥</th></tr>
+      <tr>
+        <td><span class="hl"><strong>🇬🇧 UK (ब्रिटेन)</strong></span></td>
+        <td>संसदीय / वेस्टमिंस्टर मॉडल • विधि का शासन (ए.वी. डायसी) • द्विसदनीयता • एकल नागरिकता • FPTP प्रणाली • मार्शल लॉ • रिट क्षेत्राधिकार</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇺🇸 USA</strong></span></td>
+        <td>मूल अधिकार (Bill of Rights) • न्यायिक समीक्षा • स्वतंत्र न्यायपालिका • राष्ट्रपति एवं उपराष्ट्रपति का पद • राष्ट्रपति/न्यायाधीशों को हटाना • प्रस्तावना की अवधारणा</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>🇮🇪 आयरलैंड</strong></span></td>
+        <td><strong>RED:</strong> राज्यसभा (राष्ट्रपति द्वारा 12 नामित) • राष्ट्रपति का चुनाव (विधि) • DPSP</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>🇨🇦 कनाडा</strong></span></td>
+        <td>सशक्त केंद्र वाला संघ • केंद्र द्वारा राज्यपाल की नियुक्ति • अवशिष्ट शक्तियाँ केंद्र के पास</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>🇦🇺 ऑस्ट्रेलिया</strong></span></td>
+        <td><strong>STrL:</strong> संसद की संयुक्त बैठक (अनुच्छेद 108) • व्यापार एवं वाणिज्य की स्वतंत्रता • समवर्ती सूची</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇷🇺 USSR</strong></span></td>
+        <td>मूल कर्तव्य (अनुच्छेद 51A) • न्याय के सिद्धांत (सामाजिक, आर्थिक, राजनीतिक) • पंचवर्षीय योजनाएँ</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>🇩🇪 जर्मनी</strong></span></td>
+        <td>राष्ट्रीय आपातकाल के दौरान मूल अधिकारों का निलंबन</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>🇿🇦 दक्षिण अफ्रीका</strong></span></td>
+        <td>संविधान संशोधन प्रक्रिया (अनुच्छेद 368) • राज्यसभा का अप्रत्यक्ष चुनाव</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>🇯🇵 जापान</strong></span></td>
+        <td>विधि द्वारा स्थापित प्रक्रिया (अनुच्छेद 21)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇫🇷 फ्रांस</strong></span></td>
+        <td>स्वतंत्रता, समानता, बंधुत्व (फ्रांसीसी क्रांति) • गणराज्य आदर्श</td>
+      </tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION -->
+    <div class="sec teal">⚡ त्वरित पुनरावृत्ति — सभी मुख्य तिथियाँ एवं तथ्य</div>
+    <table class="qr-t">
+      <tr><th>तथ्य / घटना</th><th>तिथि / विवरण</th></tr>
+      <tr><td>संविधान सभा का गठन (कैबिनेट मिशन योजना)</td><td>1946</td></tr>
+      <tr><td>संविधान सभा का प्रथम सत्र</td><td>9 दिसंबर 1946</td></tr>
+      <tr><td>उद्देश्य प्रस्ताव प्रस्तुत (नेहरू)</td><td>13 दिसंबर 1946</td></tr>
+      <tr><td>उद्देश्य प्रस्ताव अंगीकृत</td><td>22 जनवरी 1947</td></tr>
+      <tr><td>प्रारूप समिति का गठन</td><td>29 अगस्त 1947</td></tr>
+      <tr><td>प्रारूप समिति — पहली बैठक</td><td>30 अगस्त 1947</td></tr>
+      <tr><td>राष्ट्रीय ध्वज अंगीकृत</td><td>22 जुलाई 1947</td></tr>
+      <tr><td>स्वतंत्रता दिवस</td><td>15 अगस्त 1947</td></tr>
+      <tr><td>पहला प्रारूप प्रस्तुत (जनता हेतु)</td><td>21 फरवरी 1948</td></tr>
+      <tr><td>दूसरा प्रारूप प्रस्तुत</td><td>21 अक्टूबर 1948</td></tr>
+      <tr><td>तीसरा / अंतिम प्रारूप + प्रथम वाचन प्रारंभ</td><td>4 नवंबर 1948</td></tr>
+      <tr><td>द्वितीय वाचन समाप्त</td><td>17 अक्टूबर 1949</td></tr>
+      <tr><td>तृतीय वाचन प्रारंभ</td><td>14 नवंबर 1949</td></tr>
+      <tr><td>संविधान अंगीकृत (संविधान दिवस)</td><td>26 नवंबर 1949</td></tr>
+      <tr><td>हस्ताक्षर करने वाले सदस्य</td><td>284 (15 महिलाएँ)</td></tr>
+      <tr><td>राष्ट्रगान + राष्ट्रगीत अंगीकृत</td><td>24 जनवरी 1950</td></tr>
+      <tr><td>संविधान लागू (गणतंत्र दिवस)</td><td>26 जनवरी 1950</td></tr>
+      <tr><td>संविधान दिवस अधिसूचना</td><td>2015</td></tr>
+      <tr><td>संविधान सभा के कुल सत्र</td><td>11 सत्र, 165 दिन</td></tr>
+      <tr><td>संविधान बनाने में लगा समय</td><td>2 वर्ष, 11 माह, 18 दिन</td></tr>
+      <tr><td>संविधान सभा की कार्यवाही के खंड</td><td>12 खंड</td></tr>
+      <tr><td>मूल अनुच्छेद / अनुसूचियाँ / भाग</td><td>395 / 8 / 22</td></tr>
+      <tr><td>वर्तमान अनुच्छेद / अनुसूचियाँ</td><td>~448 / 12</td></tr>
+      <tr><td>कितने देशों से लिया गया</td><td>10 देश</td></tr>
+      <tr><td>UP (अधिकतम) सीटें संविधान सभा में</td><td>55 सदस्य</td></tr>
+      <tr><td>एम.एन. रॉय (CPI स्थापना — ताशकंद)</td><td>1920; 1925 कानपुर में औपचारिक</td></tr>
+      <tr><td>अंतरिम सरकार का गठन</td><td>2 सितंबर 1946</td></tr>
+    </table>
+
+    <!-- EXAM TRAPS BOX -->
+    <div class="sec red" style="margin-top:20px">⚠️ शीर्ष परीक्षा जाल — Railway PYQ के पसंदीदा भ्रम</div>
+    <div class="two-col">
+      <div class="imp">
+        <ul class="hw dot">
+          <li>संविधान के जनक = <span class="hl">अंबेडकर</span> | मुख्य प्रारूपकार = <span class="hl-g">एस.एन. मुखर्जी</span></li>
+          <li>संविधान दिवस = <span class="hl">26 नवंबर</span> | गणतंत्र दिवस = <span class="hl-p">26 जनवरी</span></li>
+          <li>संविधान सभा के अध्यक्ष = <span class="hl">राजेंद्र प्रसाद</span> | प्रथम/अस्थायी अध्यक्ष = <span class="hl-g">सच्चिदानंद सिन्हा</span></li>
+          <li>राज्यसभा नामांकन (12) = <span class="hl">आयरलैंड</span> | राज्यसभा चुनाव विधि = <span class="hl-p">दक्षिण अफ्रीका</span></li>
+          <li>भारत में राष्ट्रपति प्रणाली नहीं → संसदीय (वेस्टमिंस्टर)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw dot">
+          <li>मूल कर्तव्य = <span class="hl">USSR</span> | मूल अधिकार = <span class="hl-g">USA</span></li>
+          <li>व्यापार की स्वतंत्रता = <span class="hl">ऑस्ट्रेलिया</span> | स्वतंत्रता, समानता, बंधुत्व = <span class="hl-p">फ्रांस</span></li>
+          <li>के.सी. व्हीयर = अर्ध-संघीय | ग्रैनविल ऑस्टिन = सहकारी | मॉरिस जोन्स = सौदेबाजी | आइवर जेनिंग्स = केंद्रीकरण प्रवृत्ति</li>
+          <li>FPTP = लोकसभा (UK) | PR+STV = राज्यसभा, राष्ट्रपति</li>
+          <li>Oligopoly ≠ Oligarchy! (परीक्षा ट्रिक!)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">🚂 लेक्चर 1 समाप्त — RAILWAY PYQ GK SERIES</div>
+      <strong>सभी 33 प्रश्न शामिल ✅ | संविधान एवं स्रोत पूर्ण ✅</strong><br>
+      <span style="font-size:.85rem">कल: ऐतिहासिक पृष्ठभूमि — अधिनियम एवं प्रस्तावना 🎯 | नियमित रहो, Selected बनो! 🚂</span>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ लाइट मोड' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
