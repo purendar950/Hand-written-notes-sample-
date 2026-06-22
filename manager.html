@@ -327,48 +327,6 @@ async function doPublish() {
     document.getElementById('publishStatus').style.color = 'var(--danger)';
   }
 }
-    folders: folders.filter(f => f.id !== 'root'),
-    fileAssignments,
-    hiddenFiles,
-    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
-    lastUpdated: new Date().toISOString().split('T')[0]
-  };
-
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
-
-  try {
-    const body = {
-      message: 'Update config.json from manager',
-      content: content,
-      branch: 'main'
-    };
-    if (configSha) body.sha = configSha;
-
-    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `token ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      configSha = data.content.sha;
-      document.getElementById('publishStatus').textContent = '✅ Published to site!';
-      document.getElementById('publishStatus').style.color = 'var(--success)';
-      setTimeout(() => { document.getElementById('publishStatus').textContent = ''; }, 3000);
-    } else {
-      const err = await res.json();
-      document.getElementById('publishStatus').textContent = '❌ Publish failed: ' + (err.message || res.status);
-      document.getElementById('publishStatus').style.color = 'var(--danger)';
-    }
-  } catch(e) {
-    document.getElementById('publishStatus').textContent = '❌ Error: ' + e.message;
-    document.getElementById('publishStatus').style.color = 'var(--danger)';
-  }
-}
 
 // ============ FETCH FILES ============
 async function fetchFiles() {
