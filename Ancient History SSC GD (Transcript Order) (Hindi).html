@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्राचीन इतिहास — SSC GD (ट्रांसक्रिप्ट क्रम) | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Tiro Devanagari Hindi',serif;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* HINDI TEXT BASE */
+p.hw,ul.hw li,.sticky,.mcq-h,.mcq-opt,.mcq-ans,.hw-t td,.qr-t td,.key-box,.imp,.trick,.tip-box{font-family:'Tiro Devanagari Hindi',serif}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Tiro Devanagari Hindi',serif;font-size:.9rem;color:#80cbc4;letter-spacing:1px;margin-bottom:6px}
+.cover-title{font-family:'Tiro Devanagari Hindi',serif;font-weight:700;font-size:2.1rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.3}
+.cover-sub{font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;color:#b3e5fc;margin-top:10px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.85rem;color:#e8f5e9;font-family:'Tiro Devanagari Hindi',serif}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Tiro Devanagari Hindi',serif;font-weight:700;font-size:1.25rem;margin:30px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Tiro Devanagari Hindi',serif;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'\2192';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-size:.95rem;line-height:1.9;margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-size:.93rem;line-height:1.9;padding-left:22px;position:relative}
+ul.hw li::before{content:'\2605';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:8px}
+ul.hw.arr li::before{content:'\27A4';color:var(--blue);font-size:.62rem;top:10px}
+ul.hw.chk li::before{content:'\2714';color:var(--green);font-size:.82rem;top:6px}
+ul.hw.dot li::before{content:'\25CF';color:var(--purple);font-size:.58rem;top:10px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.8}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-size:.88rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Tiro Devanagari Hindi',serif;font-size:.9rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.6}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'\26A0 परीक्षा ट्रैप!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Tiro Devanagari Hindi',serif;font-size:.74rem;padding:2px 10px;border-radius:4px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'\1F9E0 मेमोरी ट्रिक';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Tiro Devanagari Hindi',serif;font-size:.74rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'\1F511 मुख्य तथ्य';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Tiro Devanagari Hindi',serif;font-size:.74rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'\1F4A1 परीक्षा टिप';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Tiro Devanagari Hindi',serif;font-size:.74rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-size:.94rem;line-height:1.7}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-size:.9rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-size:.85rem;color:#1b5e20;line-height:1.8}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:480px){.two-col{grid-template-columns:1fr}}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:24px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 20px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Tiro Devanagari Hindi',serif;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.6}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 परमार अकादमी — प्राचीन इतिहास (SSC GD)</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 परमार अकादमी · GK 4.0 बैच</div>
+    <div class="cover-title">📝 प्राचीन इतिहास — SSC GD MCQs</div>
+    <div class="cover-sub">ट्रांसक्रिप्ट क्रम · सभी 40 प्रश्न विकल्पों एवं पूर्ण व्याख्या सहित</div>
+    <div class="cover-badge">🕉️ वेद · 🏛️ मौर्य · 👑 गुप्त · ⛵ चोल · 📜 संगम · 🏺 हड़प्पा</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- Q1 -->
+    <div class="sec orange">① महाकाव्य एवं भूगोल — उत्तरायण 🌞</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> किस महाकाव्य में उल्लेख है कि उत्तरायण के दौरान मृत्यु होने पर मोक्ष की प्राप्ति होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>रामायण</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>महाभारत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ऋग्वेद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पुराण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — महाभारत (रचयिता <strong>वेद व्यास</strong>)। उत्तरायण के दौरान मृत्यु से मोक्ष की प्राप्ति बताई गई है।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>उत्तरायण क्या है?</strong> सूर्य का <span class="hl">उत्तर दिशा की ओर गमन</span>।</p>
+      <ul class="hw arr">
+        <li><strong>भूमध्य रेखा</strong> पृथ्वी को उत्तरी व दक्षिणी गोलार्ध में बाँटती है।</li>
+        <li>सूर्य <span class="hl-b"><strong>कर्क रेखा (23½° उत्तर)</strong></span> और <span class="hl-b"><strong>मकर रेखा (23½° दक्षिण)</strong></span> के बीच गमन करता है — यह पट्टी = <span class="hl-g"><strong>उष्ण कटिबंध (Torrid Zone)</strong></span> (सीधी/लंबवत किरणें → अत्यधिक गर्मी)।</li>
+        <li><strong>शीत कटिबंध (Frigid Zone)</strong> (66½°) → 6 माह दिन, 6 माह रात।</li>
+        <li><span class="hl"><strong>21 जून</strong></span> = सूर्य कर्क रेखा पर (अधिकतम सीमा) = <strong>अंतर्राष्ट्रीय योग दिवस</strong>; इसके बाद <strong>दक्षिणायन</strong> आरंभ।</li>
+        <li><span class="hl"><strong>22 दिसंबर</strong></span> = सूर्य मकर रेखा पर = <strong>विश्व ध्यान दिवस</strong>।</li>
+        <li><strong>मकर संक्रांति</strong> (जनवरी) उत्तरायण के आरंभ का उत्सव है। उत्तरायण काल ≈ जनवरी से जून अंत / मध्य-जुलाई तक।</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2 -->
+    <div class="sec blue">② चोल वंश — राजराज प्रथम ⛵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> राजराज प्रथम किस वर्ष चोल साम्राज्य का राजा बना?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>985 ई. ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1014 ई.</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>850 ई.</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>907 ई.</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — राजराज प्रथम का शासनकाल <span class="hl">985–1014 ई.</span> था।</div>
+    </div>
+    <table class="hw-t">
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>दो चोल</td><td>प्रारंभिक चोल (जैसे <strong>करिकाल</strong>) व परवर्ती/शाही चोल — संस्थापक <span class="hl"><strong>विजयालय चोल</strong></span></td></tr>
+      <tr><td>राजधानी</td><td>तंजावुर / उरैयूर → बाद में <span class="hl-g"><strong>गंगईकोंड चोलपुरम</strong></span> (राजेंद्र चोल प्रथम द्वारा स्थानांतरित)</td></tr>
+      <tr><td>राजराज प्रथम</td><td>985–1014 ई.; तंजावुर में <span class="hl"><strong>बृहदेश्वर मंदिर</strong></span> (राजराजेश्वर मंदिर) बनवाया</td></tr>
+      <tr><td>राजेंद्र चोल प्रथम</td><td>1014–1044 ई.; <strong>महमूद ग़ज़नवी</strong> का समकालीन; गंगईकोंड चोलपुरम में दूसरा बृहदेश्वर मंदिर</td></tr>
+      <tr><td>यूनेस्को</td><td>बृहदेश्वर मंदिर = विश्व धरोहर <span class="hl-b"><strong>1987</strong></span></td></tr>
+    </table>
+    <div class="sticky blue">
+      <div class="slbl">राजेंद्र चोल प्रथम — "दक्षिण भारत का नेपोलियन"</div>
+      श्रीलंका (सीलोन) के उत्तरी भाग <strong>अनुराधापुर</strong> का कार्य राजराज प्रथम ने आरंभ कर इन्होंने पूर्ण किया।<br>
+      <span class="hl">श्रीविजय साम्राज्य</span> (शैलेंद्र वंश) का अधिग्रहण किया।<br>
+      चोल अपनी <span class="hl-g"><strong>नौसेना</strong></span> के लिए प्रसिद्ध थे। गंगा पार की → उपाधि <strong>गंगईकोंड चोल</strong>।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3 -->
+    <div class="sec green">③ वैदिक साहित्य — उपनिषद 🕉️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> 'उपनिषद' शब्द का शाब्दिक अर्थ क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ऊँचे स्वर में बोलना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सुंदर लेखन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>धीरे ध्यान करना</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>पास बैठना ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — "पास बैठना" → <strong>शिष्य गुरु के समीप बैठकर</strong> ध्यानपूर्वक सुनता है।</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>उपनिषद</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>बृहदारण्यक</strong></span></td><td>सबसे बड़ा उपनिषद; <strong>शुक्ल यजुर्वेद</strong> का भाग</td></tr>
+      <tr><td><span class="hl-g"><strong>मुंडक</strong></span></td><td><strong>"सत्यमेव जयते"</strong> का स्रोत; <strong>अथर्ववेद</strong> का भाग</td></tr>
+      <tr><td><span class="hl-b"><strong>कठ</strong></span></td><td><strong>नचिकेता व यम</strong> के बीच संवाद</td></tr>
+    </table>
+    <div class="sticky green">उपनिषद = <span class="hl"><strong>वेदांत</strong></span> (वेदों के अंत में दिए गए)।</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4 -->
+    <div class="sec red">④ मध्यकालीन रानियाँ — रुद्रमा देवी 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> किस रानी ने अपने अभिलेखों में अपना नाम बदलकर स्वयं को पुरुष के रूप में प्रस्तुत किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>रुद्रमा देवी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चाँद बीबी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दुर्गावती</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रभावती गुप्त</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — रुद्रमा देवी ने अपना नाम <span class="hl"><strong>रुद्रमा देव</strong></span> रखा (पुरुष-प्रधान समाज)। वारंगल के <strong>काकतीय वंश</strong> से; पिता का कोई पुत्र न होने के कारण उत्तराधिकारी बनाई गईं।</div>
+    </div>
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">काकतीय / वारंगल</div>
+        राजधानी = <span class="hl"><strong>वारंगल</strong></span><br>
+        <strong>गोलकुंडा किला</strong> (जहाँ कोहिनूर हीरा निकला) मूलतः काकतीयों ने बनवाया → बाद में <span class="hl-g">कुतुबशाही वंश</span>
+      </div>
+      <div class="sticky red">
+        <div class="slbl">मलिक काफ़ूर (हज़ारदीनारी)</div>
+        अलाउद्दीन खिलजी का सेनापति। आक्रमण क्रम:<br>
+        देवगिरि के यादव → द्वारसमुद्र के होयसल → वारंगल के काकतीय → मदुरै के पांड्य
+      </div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">अन्य विकल्प</div>
+      <strong>चाँद बीबी</strong> = बीजापुर सल्तनत (आदिलशाही वंश) की संरक्षिका, इब्राहीम आदिलशाह द्वितीय की संरक्षिका।<br>
+      <strong>दुर्गावती देवी (दुर्गा भाभी)</strong> = भगवती चरण वोहरा (जिन्होंने <em>Philosophy of Bomb</em> लिखी) की पत्नी; HSRA सदस्य; <span class="hl">भगत सिंह की पत्नी बनकर उन्हें भागने में मदद की</span>।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5 -->
+    <div class="sec purple">⑤ संगम युग — संरक्षण 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> संगम युग के संदर्भ में, तीनों संगम किसके संरक्षण में आयोजित हुए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गुप्त राजा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>पांड्य राजा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मौर्य राजा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सातवाहन राजा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — पांड्य राजा। संगम काल = <span class="hl">तीसरी शताब्दी ई.पू. से तीसरी शताब्दी ई.</span></div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>पहला व तीसरा संगम</strong> → <span class="hl"><strong>मदुरै</strong></span> (पांड्य राजधानी) में।</li>
+        <li><strong>दूसरा संगम</strong> → <strong>कपाटपुरम</strong> में, अध्यक्ष <span class="hl-g"><strong>तोलकाप्पियर</strong></span> → <strong>तोलकाप्पियम</strong> (सबसे प्राचीन तमिल ग्रंथ) की रचना।</li>
+        <li><strong>शिलप्पादिकारम</strong> इलंगो आडिगल द्वारा (त्रिकोणीय प्रेम कथा); <strong>मणिमेखलै</strong> सत्तनार द्वारा।</li>
+      </ul>
+    </div>
+    <div class="sticky">
+      <div class="slbl">सातवाहन — त्वरित स्मरण</div>
+      संस्थापक = <span class="hl">सिमुक</span> · सबसे महान = <strong>गौतमीपुत्र शातकर्णी</strong><br>
+      राजधानी = पैठण / प्रतिष्ठान · सिक्के = सीसा / पोटिन<br>
+      सर्वप्रथम <span class="hl-g">भूमि दान (ब्राह्मणों को)</span> · नासिक अभिलेख माता <strong>गौतमी बलश्री</strong> द्वारा · मातृसत्तात्मक समाज<br>
+      चेर शासक <strong>सेनगुट्टुवन</strong> ने <span class="hl-p">पत्तिनी पूजा</span> आरंभ की।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6 -->
+    <div class="sec teal">⑥ गुप्तोत्तर — पुष्यभूति वंश ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> गुप्त साम्राज्य के पतन के बाद उत्तर भारत में कौन-सी क्षेत्रीय शक्ति प्रमुखता से उभरी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चोल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वाकाटक</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>पुष्यभूति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चेर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — पुष्यभूति (वर्धन) वंश। (चोल = दक्षिण/तमिलनाडु; चेर = केरल; वाकाटक = महाराष्ट्र/दक्कन।)</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>अन्य नाम</td><td><span class="hl"><strong>वर्धन वंश</strong></span></td></tr>
+      <tr><td>राजधानी (प्रारंभिक)</td><td>थानेसर (हरियाणा)</td></tr>
+      <tr><td>प्रभाकरवर्धन के पुत्र</td><td>राज्यवर्धन व <span class="hl-g"><strong>हर्षवर्धन</strong></span></td></tr>
+      <tr><td>पुत्री राज्यश्री</td><td><strong>मौखरी वंश</strong> के ग्रहवर्मन से विवाह (राजधानी कन्नौज)</td></tr>
+      <tr><td>शशांक</td><td><strong>गौड़</strong> का शासक</td></tr>
+      <tr><td>हर्ष</td><td><span class="hl"><strong>कन्नौज</strong></span> को राजधानी बनाया (606–647 ई.); नर्मदा के युद्ध में पुलकेशिन द्वितीय से पराजित</td></tr>
+    </table>
+    <div class="sticky teal">
+      <div class="slbl">वाकाटक — अतिरिक्त</div>
+      संस्थापक = <span class="hl">विंध्यशक्ति</span> · कोई स्थायी राजधानी नहीं (नंदिवर्धन, प्रवरपुर)<br>
+      <strong>अजंता की गुफाएँ</strong> बनवाईं (तीसरी–छठी शताब्दी ई.); शासक <span class="hl-g"><strong>हरिषेण</strong></span><br>
+      अजंता = <strong>29 + 1</strong> गुफाएँ, सभी <strong>बौद्ध</strong> (एलोरा की तरह हिंदू/जैन गुफाएँ नहीं)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7 -->
+    <div class="sec blue">⑦ वंश — रुद्रसेन द्वितीय 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> रुद्रसेन द्वितीय किस वंश का शासक था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नंद</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मौर्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वाकाटक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गुर्जर प्रतिहार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — वाकाटक। रुद्रसेन द्वितीय का विवाह <span class="hl"><strong>प्रभावती गुप्त</strong></span> (चंद्रगुप्त द्वितीय की पुत्री) से हुआ।</div>
+    </div>
+    <div class="sticky blue">
+      हर्ष की पुत्री का विवाह <strong>ध्रुवसेन द्वितीय</strong> (मैत्रक) से हुआ।<br>
+      गुप्त + वाकाटक ने <span class="hl-g">गठबंधन</span> कर गुजरात क्षेत्र से <strong>शकों</strong> को हटाया।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8 -->
+    <div class="sec green">⑧ गुप्तोत्तर — वल्लभी राज्य 🗺️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> पश्चिम भारत में गुप्तों के उत्तराधिकारी वल्लभी राज्य की स्थापना वर्तमान किस क्षेत्र में हुई थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राजस्थान</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>गुजरात ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>महाराष्ट्र</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पंजाब</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — गुजरात। वल्लभी पर <span class="hl"><strong>मैत्रक वंश</strong></span> का शासन था (गुजरात में)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q9 -->
+    <div class="sec orange">⑨ गुर्जर प्रतिहार — हरिचंद्र 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> गुर्जर प्रतिहार हरिचंद्र किस क्षेत्र में राज्य स्थापित करने के लिए जाने जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तमिलनाडु</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राजस्थान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बंगाल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गुजरात</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — राजस्थान।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>कन्नौज के लिए त्रिपक्षीय संघर्ष</strong> (9वीं–11वीं शताब्दी ई.) के बीच:</p>
+      <ul class="hw arr">
+        <li><span class="hl">पाल</span> &nbsp;·&nbsp; <span class="hl-g">राष्ट्रकूट</span> &nbsp;·&nbsp; <span class="hl-b">गुर्जर प्रतिहार</span></li>
+        <li>संस्थापक = <strong>नागभट्ट प्रथम</strong> · वास्तविक/सबसे महान संस्थापक = <span class="hl"><strong>मिहिर भोज</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10 -->
+    <div class="sec red">⑩ विज्ञान — आयुर्वेद के जनक 🌿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> आयुर्वेद के जनक के रूप में किसे जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>चरक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वासुदेव</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सुश्रुत</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नागार्जुन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — चरक। <strong>चरक संहिता</strong> मूलतः <strong>अग्निवेश</strong> ने लिखी, बाद में चरक ने संपादित/विस्तारित की = <span class="hl">आयुर्वेद के जनक</span>।</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>व्यक्ति</th><th>उपाधि</th></tr>
+      <tr><td><strong>नागार्जुन</strong></td><td><span class="hl">द्वितीय बुद्ध</span> — महायान बौद्ध धर्म के <strong>माध्यमिक संप्रदाय</strong> के संस्थापक</td></tr>
+      <tr><td><strong>सुश्रुत</strong></td><td><span class="hl-g">शल्य चिकित्सा (सर्जरी) के जनक</span></td></tr>
+      <tr><td><strong>चरक</strong></td><td><span class="hl">आयुर्वेद के जनक</span></td></tr>
+    </table>
+    <div class="sticky red">
+      <div class="slbl">हीनयान बनाम महायान (चौथी बौद्ध संगीति में विभाजन)</div>
+      <strong>हीनयान</strong> = मूर्ति पूजा नहीं; बुद्ध मानव रूप में; श्रीलंका व दक्षिण-पूर्व एशिया<br>
+      <strong>महायान</strong> = मूर्ति पूजा; बुद्ध दिव्य रूप में; चीन, कोरिया, जापान
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11 -->
+    <div class="sec purple">⑪ संगम — पांड्य राजधानी 🐟</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> पांड्य राजाओं की राजधानी कौन-सा नगर था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उज्जैन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वैशाली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अमरावती</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मदुरै ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — मदुरै (मोतियों के लिए प्रसिद्ध)। मेगस्थनीज की पुस्तक <strong>इंडिका</strong> में उल्लेख है कि पांड्य साम्राज्य <span class="hl">मोती व्यापार</span> के लिए प्रसिद्ध था।</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">अन्य विकल्प</div>
+      उज्जैन / अवंति = <strong>अवंति</strong> महाजनपद · वैशाली = <strong>वज्जि</strong> की राजधानी · अमरावती = हाल ही में <strong>आंध्र प्रदेश</strong> की राजधानी
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12 -->
+    <div class="sec teal">⑫ गुप्त साम्राज्य — चंद्रगुप्त प्रथम 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> चंद्रगुप्त प्रथम से विवाहित लिच्छवि राजकुमारी का नाम क्या था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कदंब देवी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नयनिका</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>कुमार देवी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रभावती</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — कुमारदेवी (लिच्छवि राजकुमारी)। चंद्रगुप्त प्रथम ने <span class="hl"><strong>महाराजाधिराज</strong></span> उपाधि ली; शासनकाल 319–335 ई.</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>शासक</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><strong>चंद्रगुप्त प्रथम</strong> (319–335)</td><td>उपाधि महाराजाधिराज; लिच्छवि राजकुमारी कुमारदेवी से विवाह</td></tr>
+      <tr><td><span class="hl"><strong>समुद्रगुप्त</strong></span> (335–380)</td><td>"भारत का नेपोलियन"; सिक्कों पर <strong>वीणा</strong> बजाते दर्शाया; <strong>प्रयाग प्रशस्ति</strong> हरिषेण द्वारा</td></tr>
+      <tr><td><strong>चंद्रगुप्त द्वितीय</strong></td><td>उपाधि <span class="hl-g"><strong>विक्रमादित्य</strong></span>; पत्नियाँ ध्रुवदेवी (भाई रामगुप्त की पत्नी) व कुबेरनागा</td></tr>
+    </table>
+    <div class="sticky teal"><strong>देवीचंद्रगुप्तम्</strong> व <strong>मुद्राराक्षस</strong> की रचना <span class="hl"><strong>विशाखदत्त</strong></span> ने की (मुद्राराक्षस में मौर्यों को निम्न कुल का बताया गया)।</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q13 -->
+    <div class="sec blue">⑬ दर्शन — पुरुषार्थ ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> वैदिक ढाँचे में निम्न में से कौन-सा उद्देश्य नैतिक जीवन पर बल देता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अर्थ</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>काम</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>धर्म ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मोक्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — धर्म (हर कार्य सही/नैतिक ढंग से करना)।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>चार पुरुषार्थ (जीवन के लक्ष्य):</strong></p>
+      <ul class="hw" style="list-style:none;padding-left:22px">
+        <li><span class="hl"><strong>धर्म</strong></span> = नैतिक/उचित जीवन</li>
+        <li><span class="hl-g"><strong>अर्थ</strong></span> = भौतिकता / धन (निषिद्ध नहीं)</li>
+        <li><span class="hl-b"><strong>काम</strong></span> = इच्छाएँ</li>
+        <li><span class="hl-p"><strong>मोक्ष</strong></span> = मुक्ति (सब कुछ त्याग देना)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14 -->
+    <div class="sec green">⑭ साहित्य — कालिदास की रचनाएँ 📖</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> निम्नलिखित में से कौन-सी रचना कालिदास की नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मेघदूतम्</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कुमारसंभवम्</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>मृच्छकटिकम् ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अभिज्ञानशाकुंतलम्</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — मृच्छकटिकम् ("मिट्टी की छोटी गाड़ी") की रचना <span class="hl"><strong>शूद्रक</strong></span> ने की, कालिदास ने नहीं।</div>
+    </div>
+    <div class="sticky green">
+      <strong>कालिदास</strong> = "भारत का शेक्सपियर", चंद्रगुप्त द्वितीय के दरबार के <span class="hl">नवरत्न</span>।<br>
+      इन्होंने <strong>मालविकाग्निमित्रम्</strong> भी लिखी — मालविका व <strong>अग्निमित्र</strong> (पुष्यमित्र शुंग के पुत्र) की प्रेम कथा।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15 -->
+    <div class="sec red">⑮ मगध — वंश क्रम 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> मगध में शिशुनाग वंश के बाद कौन-सा वंश आया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गुप्त</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नंद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मौर्य</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>हर्यंक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — नंद वंश (क्रम: हर्यंक → शिशुनाग → नंद → मौर्य)।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>हर्यंक</strong> — प्रथम शासक <span class="hl">बिंबिसार</span> (अवंति के प्रद्योत ने वैद्य भेजा) → अजातशत्रु → उदायिन।</li>
+        <li><strong>शिशुनाग</strong> — प्रसिद्ध शासक <span class="hl-g">कालाशोक</span> (द्वितीय बौद्ध संगीति का संरक्षण, <strong>383 ई.पू.</strong>)।</li>
+        <li><strong>नंद</strong> — संस्थापक <span class="hl"><strong>महापद्म नंद</strong></span> ("सर्व क्षत्रियों का उन्मूलक"); अंतिम शासक <strong>धननंद</strong>।</li>
+      </ul>
+    </div>
+    <div class="sticky red">
+      <div class="slbl">सिकंदर का आक्रमण (धननंद के काल में)</div>
+      <strong>हाइडेस्पीज का युद्ध</strong> झेलम (हाइडेस्पीज) नदी पर <strong>पोरस</strong> के विरुद्ध; सिकंदर जीता पर उसका क्षेत्र लौटा दिया।<br>
+      <strong>सेल्यूकस निकेटर</strong> (सिकंदर का सेनापति) → चंद्रगुप्त मौर्य से पराजित, जिसने <span class="hl">हेलेना</span> से विवाह किया; <strong>मेगस्थनीज</strong> आया → <em>इंडिका</em> लिखी।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q16 -->
+    <div class="sec orange">⑯ संगम — तीन ताजधारी राजा ⛵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> संगम युग में तमिल क्षेत्र पर किन प्रमुख सरदारों का प्रभुत्व था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चालुक्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>चेर (चोल व पांड्य सहित) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मौर्य</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सातवाहन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — तीन ताजधारी राजा: <span class="hl">चेर, चोल, पांड्य</span>। चेर = अशोक के अभिलेखों में "केरलपुत्र"।</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>राज्य</th><th>राजधानी</th><th>राजचिह्न</th><th>बंदरगाह</th></tr>
+      <tr><td><span class="hl"><strong>चोल</strong></span></td><td>तंजावुर / उरैयूर</td><td>बाघ</td><td>पुहार / कावेरीपट्टिनम</td></tr>
+      <tr><td><span class="hl-g"><strong>चेर</strong></span></td><td>वंजी / करूर</td><td>धनुष-बाण</td><td>मुजिरिस व तोंडी</td></tr>
+      <tr><td><span class="hl-b"><strong>पांड्य</strong></span></td><td>मदुरै</td><td>मछली</td><td>कोरकई</td></tr>
+    </table>
+    <div class="sticky">विजयालय ने कावेरी डेल्टा में <strong>मुत्तरैयर</strong> को हराकर देवी <span class="hl">निशुंभसूदनी</span> का मंदिर बनवाया।</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q17 -->
+    <div class="sec purple">⑰ मौर्य — अशोक का धम्म ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> अशोक के धम्म का मुख्य उद्देश्य क्या था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बौद्ध धर्म को राजधर्म बनाना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रशासनिक केंद्रीकरण को बढ़ावा देना</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>नैतिक जीवन व सामाजिक सद्भाव को प्रोत्साहित करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विदेशी शासकों से गठबंधन करना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — नैतिक जीवन व सामाजिक सद्भाव को प्रोत्साहित करना। धम्म का प्रसार अभिलेखों द्वारा हुआ।</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>अभिलेख</th><th>विषय</th></tr>
+      <tr><td><strong>वृहत् शिलालेख 3</strong></td><td>धम्म नीति</td></tr>
+      <tr><td><strong>शिलालेख 4</strong></td><td><span class="hl">भेरीघोष के स्थान पर धम्मघोष</span></td></tr>
+      <tr><td><strong>वृहत् शिलालेख 8</strong></td><td>धम्म यात्रा / समारोह</td></tr>
+      <tr><td><span class="hl-g"><strong>शिलालेख 13</strong></span></td><td>कलिंग युद्ध (राज्याभिषेक के 8 वर्ष बाद) + धम्म का उल्लेख</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">अभिलेखों में नाम</div>
+      सामान्य नाम = <strong>देवानांप्रिय प्रियदर्शी</strong>। लघु शिलालेख (<span class="hl">नेत्तूर, मस्की, ब्रह्मगिरि, गुर्जरा</span>) में वास्तविक नाम <strong>अशोक</strong> मिलता है।<br>
+      गुर्जरा → MP · ब्रह्मगिरि व नेत्तूर → आंध्र/कर्नाटक क्षेत्र · मस्की → कर्नाटक।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q18 -->
+    <div class="sec blue">⑱ विदेशी यात्री — ह्वेनसांग 🧭</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> ह्वेनसांग का विवरण किसके शासनकाल/दरबार के अध्ययन के लिए विशेष रूप से मूल्यवान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चंद्रगुप्त द्वितीय</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>हर्षवर्धन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>समुद्रगुप्त</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पुलकेशिन द्वितीय</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — हर्षवर्धन। ह्वेनसांग = भारत आने वाला <span class="hl">द्वितीय चीनी यात्री</span>, हर्ष के दरबार में (पुलकेशिन द्वितीय व पल्लव नरसिंहवर्मन प्रथम के यहाँ भी गया)।</div>
+    </div>
+    <div class="sticky blue">प्रथम चीनी यात्री = <span class="hl"><strong>फाह्यान</strong></span> (चंद्रगुप्त द्वितीय के शासनकाल में)।</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19 -->
+    <div class="sec green">⑲ गुप्त साम्राज्य — कालिदास का दरबार 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> प्रसिद्ध संस्कृत कवि कालिदास किसके दरबार में फले-फूले माने जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>स्कंदगुप्त</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>समुद्रगुप्त</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>चंद्रगुप्त द्वितीय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कुमारगुप्त</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — चंद्रगुप्त द्वितीय (विक्रमादित्य)।</div>
+    </div>
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">विश्वविद्यालय निर्माता</div>
+        <strong>नालंदा</strong> = कुमारगुप्त<br>
+        <strong>विक्रमशिला</strong> = धर्मपाल<br>
+        <strong>उदंतपुरी</strong> = गोपाल<br>
+        स्कंदगुप्त = <span class="hl">हूणों</span> के आक्रमण रोके
+      </div>
+      <div class="sticky">
+        <div class="slbl">विक्रमादित्य के नवरत्न</div>
+        कालिदास (कवि), हरिषेण (कवि), अमरसिंह (कोशकार), धन्वंतरि (वैद्य), क्षपणक (ज्योतिषी), शंकु (वास्तुकार), वराहमिहिर (खगोलशास्त्री), वररुचि (व्याकरण), वेताल भट्ट (जादूगर)
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20 -->
+    <div class="sec red">⑳ हड़प्पा सभ्यता — मांडा 🏺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> जम्मू-कश्मीर में स्थित हड़प्पाई स्थल कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मांडा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कालीबंगा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लोथल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रोपड़</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — मांडा (J&K)। विस्तार: <span class="hl">मांडा (J&K, उत्तर) → दाइमाबाद (महाराष्ट्र, दक्षिण)</span>; आलमगीरपुर (UP, पूर्व); सुत्कागेंडोर (पश्चिम, पाक–ईरान सीमा)।</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>स्थल</th><th>स्थान / खोजकर्ता</th><th>मुख्य प्राप्तियाँ</th></tr>
+      <tr><td><span class="hl"><strong>कालीबंगा</strong></span></td><td>राजस्थान (घग्गर नदी)</td><td>अग्निकुंड, काली चूड़ियाँ, जुता हुआ खेत (दो खाँचे)</td></tr>
+      <tr><td><strong>बनावली</strong></td><td>हरियाणा (आर.एस. बिष्ट)</td><td>सर्वप्रथम जौ; ग्रिड पैटर्न नहीं; मिट्टी का हल मॉडल</td></tr>
+      <tr><td><span class="hl-g"><strong>लोथल</strong></span></td><td>गुजरात (एस.आर. राव)</td><td>बंदरगाह/गोदीवाड़ा; युगल समाधि; अग्निकुंड</td></tr>
+      <tr><td><strong>चन्हूदड़ो</strong></td><td>सिंध (सिंधु तट)</td><td>दुर्ग रहित नगर</td></tr>
+      <tr><td><strong>धौलावीरा</strong></td><td>गुजरात</td><td>तीन भाग; जल कुंड; ग्रिड पैटर्न (90° सड़कें)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21 -->
+    <div class="sec orange">㉑ चोल — भूमि की श्रेणियाँ ⛵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> चोल अभिलेखों में उल्लिखित भूमि की श्रेणियों के संबंध में कौन-सा युग्म सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>शालभोग — व्यापारी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पल्लिचंदम — ब्राह्मण</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>देवदान — मंदिर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ब्रह्मदेय — जैन भिक्षु</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — देवदान = मंदिरों के लिए भूमि।</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>भूमि प्रकार</th><th>किसके लिए दान</th></tr>
+      <tr><td><strong>शालभोग</strong></td><td>विद्यालय (रखरखाव)</td></tr>
+      <tr><td><span class="hl"><strong>देवदान</strong></span></td><td>मंदिर</td></tr>
+      <tr><td><strong>ब्रह्मदेय</strong></td><td>ब्राह्मण</td></tr>
+      <tr><td><strong>पल्लिचंदम</strong></td><td>जैन भिक्षु</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22 -->
+    <div class="sec purple">㉒ दर्शन — जीवन के आश्रम 🪔</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> प्रारंभिक हिंदू दर्शन में जीवन के विद्यार्थी चरण को किस शब्द से वर्णित किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>वानप्रस्थ</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>ब्रह्मचर्य ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संन्यास</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गृहस्थ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — ब्रह्मचर्य (विद्यार्थी जीवन)। चारों आश्रम <span class="hl"><strong>जाबाल उपनिषद</strong></span> में वर्णित हैं।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><span class="hl"><strong>ब्रह्मचर्य</strong></span> — विद्यार्थी (25 वर्ष तक)</li>
+        <li><span class="hl-g"><strong>गृहस्थ</strong></span> — गृहस्थी (25–50)</li>
+        <li><span class="hl-b"><strong>वानप्रस्थ</strong></span> — 50 के बाद</li>
+        <li><span class="hl-p"><strong>संन्यास</strong></span> — त्याग</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23 -->
+    <div class="sec teal">㉓ भूगोल — कावेरी व चोल कृषि 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> चोल काल की कृषि में कावेरी नदी की नहरों की मुख्य भूमिका क्या थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>फसलों हेतु उपजाऊ मिट्टी व नमी प्रदान करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आक्रमणों से सुरक्षा प्रदान करना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>व्यापार हेतु माल ढुलाई</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मछली पकड़ना व नौका परिवहन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — फसलों हेतु उपजाऊ मिट्टी व नमी। कावेरी डेल्टा = <span class="hl">"दक्षिण भारत का बगीचा"</span>।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>बारहमासी</strong> प्रायद्वीपीय नदी — <span class="hl">दक्षिण-पश्चिम व उत्तर-पूर्व दोनों मानसून</span> से जल (अधिकांश प्रायद्वीपीय नदियाँ मौसमी हैं)।</li>
+        <li>उद्गम: <strong>तालकावेरी</strong>, ब्रह्मगिरि श्रेणी, <span class="hl-g">कोडागु जिला, कर्नाटक</span> → तमिलनाडु की ओर।</li>
+        <li><strong>मेकेदातु बाँध परियोजना</strong> (जहाँ कावेरी, अर्कावती से मिलती है) = कर्नाटक–तमिलनाडु विवाद।</li>
+        <li>सहायक नदियाँ ('नी'/'ती' वाली): भवानी, काबिनी, हेमावती, अमरावती, अर्कावती।</li>
+        <li><strong>वैगई</strong> = सबसे दक्षिणी नदी; <strong>पेन्नार</strong> (आंध्र) पर सोमशिला बाँध।</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24 -->
+    <div class="sec blue">㉔ मगध — बिंबिसार का उत्तराधिकारी 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> बिंबिसार की कथित रूप से हत्या कर/आत्महत्या के लिए विवश कर उसका उत्तराधिकारी कौन बना?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अशोक</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बिंदुसार</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अजातशत्रु ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चंद्रगुप्त मौर्य</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अजातशत्रु ("कुणिक"/अपने वंश का शत्रु कहलाया)। उसका उत्तराधिकारी <span class="hl"><strong>उदायिन</strong></span> बना, जिसने राजधानी राजगृह से <strong>पाटलिपुत्र</strong> स्थानांतरित की।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q25 -->
+    <div class="sec green">㉕ मौर्य — अर्थशास्त्र 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> चाणक्य को पारंपरिक रूप से जिम्मेदार ठहराया जाने वाला अर्थशास्त्र मुख्यतः किससे संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>काव्य व साहित्य</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>धार्मिक अनुष्ठान</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>राजनीति व प्रशासन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>खगोल विज्ञान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — राजनीति व प्रशासन। रचयिता चाणक्य / विष्णुगुप्त / <span class="hl">कौटिल्य</span>; <strong>20 अधिकरणों</strong> में विभाजित।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>कौटिल्य का सप्तांग सिद्धांत (राज्य के 7 अंग):</strong></p>
+      <p class="hw"><span class="hl">स्वामी</span> (राजा) · <span class="hl-g">अमात्य</span> (मंत्री) · <span class="hl-b">जनपद</span> (जनता/क्षेत्र) · दुर्ग (किला) · कोश (खजाना) · दंड (सेना) · <span class="hl-p">मित्र</span> (सहयोगी)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26 -->
+    <div class="sec red">㉖ कुषाण — कनिष्क ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> कनिष्क इतिहास में किसके महान संरक्षक के रूप में प्रसिद्ध हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>जैन धर्म</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>बौद्ध धर्म ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ईसाई धर्म</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पारसी धर्म</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — बौद्ध धर्म। कुषाण वंश; <span class="hl"><strong>कुंडलवन, कश्मीर में चौथी बौद्ध संगीति</strong></span> का संरक्षण।</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>बिंदु</th><th>विवरण</th></tr>
+      <tr><td>प्रथम राजधानी</td><td><span class="hl">पुरुषपुर (पेशावर)</span>; बाद में मथुरा</td></tr>
+      <tr><td>मथुरा कला शैली</td><td>स्वदेशी; <strong>लाल बलुआ पत्थर</strong></td></tr>
+      <tr><td>गांधार / इंडो-ग्रीक कला</td><td><span class="hl-g">धूसर (grey schist) पत्थर</span>; यूनानी प्रभाव</td></tr>
+      <tr><td>सिक्के</td><td>उसके काल में सबसे शुद्ध <strong>स्वर्ण सिक्के</strong></td></tr>
+      <tr><td>तीसरा या चौथा शासक?</td><td>कुजुल कडफिसेस → विम कडफिसेस → कनिष्क। <strong>रबाटक अभिलेख</strong> (अफगानिस्तान) → चौथा; SSC CGL मेन्स में <strong>तीसरा</strong> माना गया</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27 -->
+    <div class="sec orange">㉗ कला — बादामी के चालुक्य 🛕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> बादामी के चालुक्य भारतीय कला में किस योगदान के लिए प्रसिद्ध हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नटराज की कांस्य प्रतिमा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>बादामी की शैलकृत (rock-cut) गुफा मंदिर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नागर शैली का विकास</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>एलोरा गुफाओं के चित्र</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — बादामी की शैलकृत गुफा मंदिर।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>एलोरा</strong> = 34 गुफाएँ (हिंदू+जैन+बौद्ध); गुफा 16 = <span class="hl">कैलाश मंदिर</span> (सबसे बड़ा एकाश्म, राष्ट्रकूट कृष्ण प्रथम द्वारा)।</li>
+        <li>मंदिर शैलियाँ: <strong>नागर</strong> = गुप्त · <strong>द्रविड़</strong> = पल्लव · <span class="hl-g"><strong>वेसर</strong></span> (नागर+द्रविड़) = चालुक्य।</li>
+        <li>चालुक्य स्थल: बादामी (शैलकृत गुफाएँ), <strong>ऐहोल</strong> ("मंदिर वास्तुकला का पालना" — लाडखान, दुर्गा, रावणफड़ी, गलगनाथ), <strong>पट्टदकल</strong> (विरूपाक्ष, रानी लोकमहादेवी द्वारा)।</li>
+        <li>कांस्य <strong>नटराज</strong> (लुप्त मोम विधि) = चोल।</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28 -->
+    <div class="sec purple">㉘ गुप्त साम्राज्य — चंद्रगुप्त प्रथम का उत्तराधिकारी 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> गुप्त साम्राज्य में चंद्रगुप्त प्रथम का उत्तराधिकारी कौन बना?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>समुद्रगुप्त ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>स्कंदगुप्त</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कुमारगुप्त</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चंद्रगुप्त द्वितीय</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — समुद्रगुप्त ("भारत का नेपोलियन"), चंद्रगुप्त प्रथम का पुत्र।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29 -->
+    <div class="sec teal">㉙ हड़प्पा — नर्तकी (Dancing Girl) 🏺</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> प्रसिद्ध कांस्य "नर्तकी" (Dancing Girl) प्रतिमा कहाँ से प्राप्त हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>लोथल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चन्हूदड़ो</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>मोहनजोदड़ो ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रोपड़</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — मोहनजोदड़ो (सिंध)। नर्तकी: <span class="hl">कांस्य, त्रिभंग मुद्रा, लुप्त मोम विधि</span>, ~10.5 सेमी; राष्ट्रीय संग्रहालय, दिल्ली में।</div>
+    </div>
+    <div class="two-col">
+      <div class="sticky teal">
+        <div class="slbl">मोहनजोदड़ो से अन्य</div>
+        पुरोहित राजा / दाढ़ी वाला व्यक्ति (सेलखड़ी, ~17.5 सेमी, अब पाकिस्तान में)<br>
+        विशाल अन्नागार · विशाल स्नानागार<br>
+        <span class="hl">प्रोटो-शिव / पशुपति मुहर</span> (सेलखड़ी — भैंस, हाथी, बाघ, गैंडा, हिरण)<br>
+        मातृदेवी की मृण्मूर्ति (उर्वरता)
+      </div>
+      <div class="sticky">
+        <div class="slbl">अन्य स्थल</div>
+        <strong>रोपड़</strong> = पंजाब (सतलुज तट) — कुत्ते की समाधि हेतु प्रसिद्ध<br>
+        <strong>चन्हूदड़ो</strong> = दुर्ग रहित नगर (सिंधु, सिंध)
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30 -->
+    <div class="sec blue">㉚ गुप्त साम्राज्य — सर्वश्रेष्ठ नवरत्न 💎</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> चंद्रगुप्त द्वितीय के दरबार के नवरत्नों में सर्वाधिक उल्लेखनीय किसे माना गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अमरसिंह</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कालिदास ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>वराहमिहिर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>धन्वंतरि</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — कालिदास।</div>
+    </div>
+    <div class="sticky blue">
+      <strong>बाणभट्ट</strong> ने <span class="hl">हर्षचरित</span> (हर्ष की जीवनी) व <strong>कादंबरी</strong> (उपन्यास) लिखी।<br>
+      <strong>हर्षवर्धन</strong> ने स्वयं 3 नाटक लिखे: <span class="hl-g">रत्नावली, प्रियदर्शिका, नागानंद</span>।<br>
+      <strong>तुलसीदास</strong> ने रामचरितमानस लिखी।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31 -->
+    <div class="sec red">㉛ पल्लव — पुलकेशिन द्वितीय का विजेता ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> किस पल्लव राजा ने पुलकेशिन द्वितीय को पराजित कर मार डाला?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>महेंद्रवर्मन प्रथम</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नरसिंहवर्मन प्रथम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नरसिंहवर्मन द्वितीय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नंदिवर्मन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — नरसिंहवर्मन प्रथम (महेंद्रवर्मन प्रथम का पुत्र); उपाधि <span class="hl"><strong>वातापिकोंड</strong></span> (वातापि का विजेता); <strong>ममल्ल</strong> भी कहलाया; महाबलीपुरम में पंचरथ पूर्ण किए।</div>
+    </div>
+    <div class="sticky red">
+      पुलकेशिन द्वितीय (बादामी/वातापि का चालुक्य) ने पहले हर्ष (<span class="hl">नर्मदा का युद्ध, ~618 ई.</span>) व महेंद्रवर्मन प्रथम को हराया था; दरबारी कवि <strong>रविकीर्ति</strong> ने <strong>ऐहोल अभिलेख</strong> रचा।<br>
+      परवर्ती चालुक्य = राजधानी कल्याणी · पूर्वी चालुक्य = राजधानी वेंगी।<br>
+      <strong>नरसिंहवर्मन द्वितीय (राजसिंह)</strong> ने महाबलीपुरम में तट मंदिर (Shore Temple) बनवाया।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32 -->
+    <div class="sec orange">㉜ चालुक्य — हर्ष का विजेता ⚔️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> किस चालुक्य शासक ने हर्षवर्धन को पराजित किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पुलकेशिन द्वितीय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विक्रमादित्य षष्ठ</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कीर्तिवर्मन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मंगलेश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — पुलकेशिन द्वितीय ने नर्मदा के युद्ध में हर्ष को पराजित किया।</div>
+    </div>
+    <div class="sticky">
+      <div class="slbl">संबंधित स्मरण</div>
+      कैलाश मंदिर (सबसे बड़ा एकाश्म) = राष्ट्रकूट <strong>कृष्ण प्रथम</strong>।<br>
+      चोल शासक (आदित्य/परांतक वंश) ने पांड्य शासक <span class="hl">राजसिंह द्वितीय</span> को हराया।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q33 -->
+    <div class="sec purple">㉝ वेद — अध्वर्यु पुरोहित 🕉️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> यजुर्वेद के अनुसार अध्वर्यु पुरोहित की क्या भूमिका थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नए राग रचना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नृत्य अनुष्ठान करना</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>यज्ञ संपन्न कराना व मंत्रों का धीमे स्वर में उच्चारण ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संगीत सिद्धांत पर ग्रंथ लिखना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अध्वर्यु यज्ञ संपन्न कराता था व मंत्रों का धीमे स्वर में उच्चारण करता था।</div>
+    </div>
+    <div class="sticky purple">
+      <strong>यजुर्वेद</strong> = प्रार्थना व अनुष्ठान → <span class="hl">शुक्ल यजुर्वेद</span> (श्वेत/शुद्ध) व <span class="hl-p">कृष्ण यजुर्वेद</span> (कृष्ण/मिश्रित) में विभाजित।<br>
+      बृहदारण्यक उपनिषद (सबसे बड़ा) शुक्ल यजुर्वेद का भाग।<br>
+      <strong>अथर्ववेद</strong> = जादू-टोना व मंत्र।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q34 -->
+    <div class="sec green">㉞ वेद — संगीतमय सामग्री 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> कौन-सा वेद मुख्यतः अपनी संगीतमय सामग्री के लिए जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ऋग्वेद</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यजुर्वेद</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>सामवेद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अथर्ववेद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — सामवेद (संगीत की सबसे प्राचीन पुस्तक)।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>ऋग्वेद</strong> = सबसे प्राचीन वेद (पूर्व/ऋग्वैदिक काल 1500–1000 ई.पू.; संपूर्ण वैदिक काल 1500–500 ई.पू.); <span class="hl">1028 सूक्त, 10 मंडल</span>।</p>
+      <ul class="hw arr">
+        <li><strong>मंडल 3</strong> → गायत्री मंत्र</li>
+        <li><strong>मंडल 7</strong> → दाशराज्ञ युद्ध: राजा <span class="hl">सुदास (भरत जनजाति)</span> बनाम 10 राजाओं का संघ, <strong>परुष्णी (रावी) नदी</strong> पर</li>
+        <li><strong>मंडल 9</strong> → सोम (वनस्पति का देवता)</li>
+        <li><strong>मंडल 10</strong> → <span class="hl-g">पुरुष सूक्त</span> (ब्राह्मण मुख से, क्षत्रिय भुजा से, वैश्य जाँघ से, शूद्र पैर से)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q35 -->
+    <div class="sec red">㉟ महाकाव्य — दशहरा 🏹</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> कौन-सा हिंदू महाकाव्य दशहरा से संबंधित कथा का वर्णन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>महाभारत</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>रामायण ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ऋग्वेद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पुराण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — रामायण।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q36 -->
+    <div class="sec teal">㊱ धर्म — बौद्ध व जैन धर्म का उदय ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> छठी शताब्दी ई.पू. में बौद्ध व जैन धर्म का उदय मुख्यतः किससे जोड़ा जा सकता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>विदेशी आक्रमण</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>वैदिक कर्मकांडों व जातिगत कठोरता की आलोचना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आर्थिक समृद्धि</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवल राजकीय संरक्षण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — वैदिक कर्मकांडों/यज्ञों व बढ़ते जातिगत भेदभाव की आलोचना।</div>
+    </div>
+    <div class="sticky teal">
+      बढ़ते वैदिक यज्ञों व जातिगत कठोरता ने ब्राह्मणों को श्रेष्ठता दी → निम्न जातियों को <span class="hl">समानता देने वाले वैकल्पिक धर्म</span> की आवश्यकता हुई।<br>
+      पूर्व वैदिक काल में जातिगत कठोरता कम व स्त्रियों की स्थिति अच्छी थी; <strong>उत्तर वैदिक काल (लौह युग)</strong> में जातिगत कठोरता बढ़ी व स्त्रियों की स्थिति बिगड़ी।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q37 -->
+    <div class="sec blue">㊲ करेंट/स्टैटिक — शिशु मृत्यु दर 📉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> भारत में शिशु मृत्यु दर (IMR) में गिरावट का मुख्य कारण क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बेहतर नवजात देखभाल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विस्तारित टीकाकरण (जैसे मिशन इंद्रधनुष)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बेहतर मातृ स्वास्थ्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>उपरोक्त सभी ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — उपरोक्त सभी। <strong>IMR</strong> = प्रति 1,000 जीवित जन्म पर शिशु मृत्यु; <span class="hl">2011 में ≈ 44</span>। गिरावट के कारण: बेहतर नवजात देखभाल, विस्तारित टीकाकरण (जैसे मिशन इंद्रधनुष) व बेहतर मातृ स्वास्थ्य।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q38 -->
+    <div class="sec purple">㊳ मौर्य — अशोक के जीवन का निर्णायक मोड़ ☸️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> कौन-सी घटना अशोक के जीवन का निर्णायक मोड़ मानी जाती है, जिसके बाद उन्होंने धम्म अपनाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उनका राज्याभिषेक</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कलिंग युद्ध ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तृतीय बौद्ध संगीति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बिंदुसार की मृत्यु</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <span class="hl"><strong>कलिंग युद्ध (261 ई.पू.)</strong></span>, राज्याभिषेक के 8 वर्ष बाद।</div>
+    </div>
+    <div class="sticky purple">
+      अशोक ने <strong>राधागुप्त</strong> (अपने पिता बिंदुसार के अधिकारी) की सहायता से सिंहासन प्राप्त किया; भाई <strong>सुसीम</strong> की हत्या की।<br>
+      बाद में पुत्र <span class="hl">महेंद्र</span> व पुत्री <span class="hl">संघमित्रा</span> को बौद्ध धर्म प्रचार हेतु श्रीलंका (सीलोन) भेजा।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q39 -->
+    <div class="sec green">㊴ महाजनपद — काशी 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> काशी महाजनपद वर्तमान किस नगर से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>जयपुर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मथुरा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वाराणसी (बनारस) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>इलाहाबाद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — वाराणसी / बनारस।</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>महाजनपद</th><th>राजधानी → वर्तमान क्षेत्र</th></tr>
+      <tr><td>अंग</td><td>चंपा → मुंगेर/भागलपुर</td></tr>
+      <tr><td>मगध</td><td>राजगीर → पाटलिपुत्र (पटना)</td></tr>
+      <tr><td><span class="hl"><strong>काशी</strong></span></td><td>वाराणसी / बनारस</td></tr>
+      <tr><td>वत्स</td><td>कौशांबी (इलाहाबाद)</td></tr>
+      <tr><td>कोसल</td><td>श्रावस्ती (पूर्वी UP)</td></tr>
+      <tr><td>शूरसेन</td><td>मथुरा</td></tr>
+      <tr><td>कुरु</td><td>इंद्रप्रस्थ (पश्चिमी UP/मेरठ/हरियाणा)</td></tr>
+      <tr><td>मत्स्य</td><td>विराटनगर (जयपुर)</td></tr>
+      <tr><td>अवंति</td><td>उज्जैन / महिष्मती (MP-मालवा)</td></tr>
+      <tr><td>गांधार</td><td>तक्षशिला (पाकिस्तान-रावलपिंडी)</td></tr>
+      <tr><td>वज्जि</td><td>वैशाली</td></tr>
+      <tr><td>मल्ल</td><td>कुशीनगर (जहाँ गौतम बुद्ध का निधन हुआ, UP)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q40 -->
+    <div class="sec orange">㊵ धर्म — जैन धर्म की भाषा 🗣️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> प्राचीन भारत में जैन धर्म ने अपनी पवित्र/गुप्त भाषा के रूप में किस भाषा को अपनाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>संस्कृत</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>प्राकृत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पालि</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तमिल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — प्राकृत। बौद्ध व जैन धर्म <span class="hl">स्थानीय भाषाओं</span> (पालि व प्राकृत) के प्रयोग से फले-फूले — बौद्ध ग्रंथ मुख्यतः <strong>पालि</strong> में, जैन ग्रंथ मुख्यतः <strong>प्राकृत</strong> में।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>त्रिपिटक (पालि बौद्ध ग्रंथ):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>विनय पिटक</strong></span> — भिक्षु-भिक्षुणियों के नियम व आचार संहिता</li>
+        <li><span class="hl-g"><strong>सुत्त पिटक</strong></span> — बुद्ध के उपदेश</li>
+        <li><span class="hl-b"><strong>अभिधम्म पिटक</strong></span> — दार्शनिक शिक्षाएँ</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — मुख्य तथ्य (सभी 40 प्रश्न)</div>
+    <table class="qr-t">
+      <tr><th>प्रश्न</th><th>उत्तर</th></tr>
+      <tr><td>उत्तरायण-मोक्ष वाला महाकाव्य</td><td>महाभारत</td></tr>
+      <tr><td>राजराज प्रथम राजा बना</td><td>985 ई.</td></tr>
+      <tr><td>"उपनिषद" का अर्थ</td><td>पास बैठना</td></tr>
+      <tr><td>पुरुष रूप धरने वाली रानी</td><td>रुद्रमा देवी</td></tr>
+      <tr><td>तीनों संगमों का संरक्षण</td><td>पांड्य राजा</td></tr>
+      <tr><td>गुप्तोत्तर उत्तर भारत की शक्ति</td><td>पुष्यभूति</td></tr>
+      <tr><td>रुद्रसेन द्वितीय का वंश</td><td>वाकाटक</td></tr>
+      <tr><td>वल्लभी राज्य का क्षेत्र</td><td>गुजरात (मैत्रक)</td></tr>
+      <tr><td>गुर्जर प्रतिहार हरिचंद्र क्षेत्र</td><td>राजस्थान</td></tr>
+      <tr><td>आयुर्वेद के जनक</td><td>चरक</td></tr>
+      <tr><td>पांड्य राजधानी</td><td>मदुरै</td></tr>
+      <tr><td>चंद्रगुप्त प्रथम की लिच्छवि रानी</td><td>कुमारदेवी</td></tr>
+      <tr><td>नैतिक जीवन (वैदिक)</td><td>धर्म</td></tr>
+      <tr><td>कालिदास की रचना नहीं</td><td>मृच्छकटिकम् (शूद्रक)</td></tr>
+      <tr><td>शिशुनाग के बाद वंश</td><td>नंद</td></tr>
+      <tr><td>संगम-कालीन तमिल सरदार</td><td>चेर, चोल, पांड्य</td></tr>
+      <tr><td>अशोक के धम्म का उद्देश्य</td><td>नैतिक जीवन व सद्भाव</td></tr>
+      <tr><td>ह्वेनसांग का विवरण → दरबार</td><td>हर्षवर्धन</td></tr>
+      <tr><td>कालिदास का दरबार</td><td>चंद्रगुप्त द्वितीय</td></tr>
+      <tr><td>J&K का हड़प्पाई स्थल</td><td>मांडा</td></tr>
+      <tr><td>मंदिरों हेतु चोल भूमि</td><td>देवदान</td></tr>
+      <tr><td>जीवन का विद्यार्थी चरण</td><td>ब्रह्मचर्य</td></tr>
+      <tr><td>कावेरी नहरों की भूमिका</td><td>उपजाऊ मिट्टी व नमी</td></tr>
+      <tr><td>बिंबिसार का उत्तराधिकारी</td><td>अजातशत्रु</td></tr>
+      <tr><td>अर्थशास्त्र संबंधित है</td><td>राजनीति व प्रशासन</td></tr>
+      <tr><td>कनिष्क का संरक्षण</td><td>बौद्ध धर्म</td></tr>
+      <tr><td>बादामी के चालुक्य प्रसिद्ध</td><td>शैलकृत गुफा मंदिर</td></tr>
+      <tr><td>चंद्रगुप्त प्रथम का उत्तराधिकारी</td><td>समुद्रगुप्त</td></tr>
+      <tr><td>"नर्तकी" प्राप्त हुई</td><td>मोहनजोदड़ो</td></tr>
+      <tr><td>सर्वश्रेष्ठ नवरत्न</td><td>कालिदास</td></tr>
+      <tr><td>पुलकेशिन द्वितीय को मारने वाला पल्लव</td><td>नरसिंहवर्मन प्रथम</td></tr>
+      <tr><td>हर्ष को हराने वाला चालुक्य</td><td>पुलकेशिन द्वितीय</td></tr>
+      <tr><td>अध्वर्यु पुरोहित की भूमिका</td><td>यज्ञ + धीमे स्वर मंत्र</td></tr>
+      <tr><td>संगीतमय वेद</td><td>सामवेद</td></tr>
+      <tr><td>दशहरा का महाकाव्य</td><td>रामायण</td></tr>
+      <tr><td>बौद्ध-जैन उदय का कारण</td><td>वैदिक कर्मकांडों की आलोचना</td></tr>
+      <tr><td>IMR में गिरावट का कारण</td><td>उपरोक्त सभी</td></tr>
+      <tr><td>अशोक के लिए निर्णायक मोड़</td><td>कलिंग युद्ध</td></tr>
+      <tr><td>काशी महाजनपद → नगर</td><td>वाराणसी</td></tr>
+      <tr><td>जैन धर्म की पवित्र भाषा</td><td>प्राकृत</td></tr>
+    </table>
+
+    <!-- TOPPER TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखो!</div>
+    <div class="tip-box">
+      <ul class="hw" style="list-style:none;padding-left:22px">
+        <li>शाही चोल: संस्थापक <span class="hl">विजयालय</span>; बृहदेश्वर मंदिर = यूनेस्को 1987।</li>
+        <li><span class="hl-g">सुश्रुत</span> = शल्य चिकित्सा के जनक; <span class="hl">चरक</span> = आयुर्वेद के जनक; <strong>नागार्जुन</strong> = द्वितीय बुद्ध।</li>
+        <li>तीनों संगम <strong>पांड्यों</strong> के अधीन; सबसे प्राचीन तमिल ग्रंथ = तोलकाप्पियम।</li>
+        <li><strong>मृच्छकटिकम्</strong> = शूद्रक (कालिदास के विरुद्ध सामान्य ट्रैप)।</li>
+        <li>मगध क्रम: हर्यंक → शिशुनाग → <span class="hl">नंद</span> → मौर्य।</li>
+        <li>"नर्तकी" = मोहनजोदड़ो (लुप्त मोम कांस्य); मांडा (J&K) = उत्तरी हड़प्पाई सीमा।</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 प्राचीन इतिहास — SSC GD नोट्स समाप्त</div>
+      <strong>सभी 40 प्रश्न कवर ✅ | Active Recall करो, Mock दो, Top करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ लाइट मोड' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
