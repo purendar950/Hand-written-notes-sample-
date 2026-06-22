@@ -243,27 +243,44 @@ async function loadConfigSha() {
     if (res.ok) {
       const data = await res.json();
       configSha = data.sha;
-      // Also load existing config to sync
-      const binaryStr = atob(data.content);
+      // Decode remote config (source of truth)
+      const binaryStr = atob(data.content.replace(/\n/g, ''));
       const bytes = new Uint8Array(binaryStr.length);
       for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
       const decoded = new TextDecoder('utf-8').decode(bytes);
       const remoteConfig = JSON.parse(decoded);
-      // Sync from remote if local is empty
-      if (folders.length <= 1 && remoteConfig.folders && remoteConfig.folders.length > 0) {
-        folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remoteConfig.folders];
-        localStorage.setItem('mgr_folders', JSON.stringify(folders));
-      }
-      if (Object.keys(fileAssignments).length === 0 && remoteConfig.fileAssignments) {
-        fileAssignments = remoteConfig.fileAssignments;
-        localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
-      }
-      if (hiddenFiles.length === 0 && remoteConfig.hiddenFiles && remoteConfig.hiddenFiles.length > 0) {
-        hiddenFiles = remoteConfig.hiddenFiles;
-        localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
-      }
+
+      // ALWAYS use remote config as base (source of truth)
+      const remoteFolders = remoteConfig.folders || [];
+      folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remoteFolders];
+
+      // Merge any NEW local folders not already in remote
+      const localFolders = JSON.parse(localStorage.getItem('mgr_folders') || '[]');
+      localFolders.forEach(lf => {
+        if (lf.id !== 'root' && !folders.find(f => f.id === lf.id)) {
+          folders.push(lf);
+        }
+      });
+
+      // ALWAYS use remote file assignments as base
+      fileAssignments = remoteConfig.fileAssignments || {};
+      // Merge any NEW local assignments (for files not in remote)
+      const localAssign = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
+      Object.keys(localAssign).forEach(k => {
+        if (!(k in fileAssignments)) fileAssignments[k] = localAssign[k];
+      });
+
+      // ALWAYS use remote hidden files as base
+      hiddenFiles = remoteConfig.hiddenFiles || [];
+      const localHidden = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
+      localHidden.forEach(h => { if (!hiddenFiles.includes(h)) hiddenFiles.push(h); });
+
+      // Save merged state back to localStorage
+      localStorage.setItem('mgr_folders', JSON.stringify(folders));
+      localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+      localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
     }
-  } catch(e) { /* first time, no config exists yet */ }
+  } catch(e) { /* first time, no config exists yet — defaults will be used */ }
 }
 
 function publishConfig() {
