@@ -44,6 +44,15 @@
       "desc": "",
       "parent": null,
       "order": 6
+    },
+    {
+      "id": "f_1782134835083",
+      "name": "Railway PYQs Series",
+      "icon": "📁",
+      "color": "#ffd54f",
+      "desc": "",
+      "parent": null,
+      "order": 7
     }
   ],
   "fileAssignments": {
