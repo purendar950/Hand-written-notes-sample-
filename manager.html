@@ -149,6 +149,7 @@ let selectedFiles = new Set();
 let configSha = null;
 let publishStatus = '';
 let uploadQueue = [];
+let fileOrder = {};
 
 // ==================== INIT ====================
 async function init() {
@@ -165,6 +166,7 @@ async function loadState() {
     fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
     hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
     displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
+    fileOrder = JSON.parse(localStorage.getItem('mgr_fileOrder') || '{}');
     const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
     if (s.siteName) settings.siteName = s.siteName;
     if (s.siteSubtitle) settings.siteSubtitle = s.siteSubtitle;
@@ -205,6 +207,7 @@ function saveLocal() {
   localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
   localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
   localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
+  localStorage.setItem('mgr_fileOrder', JSON.stringify(fileOrder));
   localStorage.setItem('mgr_settings', JSON.stringify(settings));
 }
 
@@ -229,7 +232,7 @@ async function doPublish() {
   try {
     const configData = {
       folders: folders.filter(f => f.id !== 'root' && f.id !== '__unassigned__'),
-      fileAssignments, displayNames, hiddenFiles,
+      fileAssignments, displayNames, hiddenFiles, fileOrder,
       telegramLink: settings.telegramLink || TELEGRAM_LINK,
       siteName: settings.siteName || 'Parmar Railway Notes',
       siteSubtitle: settings.siteSubtitle || 'Hand-Written Notes Library',
@@ -562,6 +565,42 @@ function previewFile(filename) {
   document.body.appendChild(el); el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
+// ==================== FILE SORTING & REORDER ====================
+function sortFilesBy(criteria) {
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  if (criteria === 'name') files.sort((a,b) => getDisplayName(a.name).localeCompare(getDisplayName(b.name)));
+  else if (criteria === 'size') files.sort((a,b) => (b.size||0) - (a.size||0));
+  else if (criteria === 'type') files.sort((a,b) => a.name.split('.').pop().localeCompare(b.name.split('.').pop()));
+  files.forEach((f, i) => { fileOrder[f.name] = i + 1; });
+  saveAndPublish(); toast('Sorted by ' + criteria, 'success'); render();
+}
+function autoNumberFiles() {
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  files.forEach((f, i) => { fileOrder[f.name] = i + 1; });
+  saveAndPublish(); toast('Numbered 1 to ' + files.length, 'success'); render();
+}
+function setSerialNumber(filename) {
+  promptInput('Set Serial #', 'Number for "' + getDisplayName(filename) + '":', (fileOrder[filename]||'').toString(), (val) => {
+    const num = parseInt(val); if (isNaN(num)) { toast('Enter a number', 'error'); return; }
+    fileOrder[filename] = num; saveAndPublish(); toast('Serial # set to ' + num, 'success'); render();
+  });
+}
+function moveFileUp(idx) {
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  if (idx <= 0) return;
+  const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx-1].name]||idx; fileOrder[files[idx-1].name] = t;
+  saveAndPublish(); render();
+}
+function moveFileDown(idx) {
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB||a.name.localeCompare(b.name); });
+  if (idx >= files.length-1) return;
+  const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx+1].name]||idx+2; fileOrder[files[idx+1].name] = t;
+  saveAndPublish(); render();
+}
+
 // ==================== UPLOAD ====================
 async function uploadFiles(files) {
   const token = localStorage.getItem('mgr_github_token');
@@ -759,7 +798,8 @@ function renderHomeView() {
 
 function renderFolderView() {
   if (!currentFolder) return renderHomeView();
-  const files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  files.sort((a, b) => { const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : 9999; const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : 9999; return oA - oB || a.name.localeCompare(b.name); });
   const hasSelected = selectedFiles.size > 0;
 
   let bulkBar = '';
@@ -781,7 +821,7 @@ function renderFolderView() {
     </div>`;
   }
 
-  let fileRows = files.map(f => {
+  let fileRows = files.map((f, idx) => {
     const icon = getFileIcon(f.name);
     const name = getDisplayName(f.name);
     const type = getFileType(f.name);
@@ -790,7 +830,9 @@ function renderFolderView() {
     const isHidden = hiddenFiles.includes(f.name);
     const isSelected = selectedFiles.has(f.name);
     const visIcon = isHidden ? '🙈' : '👁️';
+    const serial = fileOrder[f.name] !== undefined ? fileOrder[f.name] : idx + 1;
     return `<div class="file-row">
+      <span style="min-width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:700;color:var(--accent);flex-shrink:0">${serial}</span>
       <input type="checkbox" class="file-checkbox" ${isSelected ? 'checked' : ''} onchange="toggleSelectFile('${f.name.replace(/'/g,"\\'")}')">
       <div class="file-row-icon">${icon}</div>
       <div class="file-row-info">
@@ -799,10 +841,13 @@ function renderFolderView() {
       </div>
       <span class="type-badge ${typeClass}">${type}</span>
       <div class="file-admin-actions">
+        <button onclick="moveFileUp(${idx})" title="Move Up" ${idx===0?'style="opacity:.3"':''}>⬆️</button>
+        <button onclick="moveFileDown(${idx})" title="Move Down" ${idx===files.length-1?'style="opacity:.3"':''}>⬇️</button>
+        <button onclick="setSerialNumber('${f.name.replace(/'/g,"\\'")}')" title="Set #">🔢</button>
         <button onclick="moveFile('${f.name.replace(/'/g,"\\'")}')" title="Move to folder">📂</button>
         <button onclick="toggleFileVisibility('${f.name.replace(/'/g,"\\'")}')" title="${isHidden ? 'Show' : 'Hide'}">${visIcon}</button>
-        <button onclick="renameDisplayName('${f.name.replace(/'/g,"\\'")}')" title="Rename display">✏️</button>
-        <button class="del-btn" onclick="deleteFileFromRepo('${f.name.replace(/'/g,"\\'")}')" title="Delete from repo">🗑️</button>
+        <button onclick="renameDisplayName('${f.name.replace(/'/g,"\\'")}')" title="Rename">✏️</button>
+        <button class="del-btn" onclick="deleteFileFromRepo('${f.name.replace(/'/g,"\\'")}')" title="Delete">🗑️</button>
       </div>
     </div>`;
   }).join('');
@@ -819,6 +864,13 @@ function renderFolderView() {
       </div>
     </div>
     ${bulkBar}
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+      <span style="font-size:12px;color:var(--muted)">Sort:</span>
+      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('name')">A-Z</button>
+      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('size')">Size</button>
+      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('type')">Type</button>
+      <button class="btn btn-accent" style="padding:5px 10px;font-size:12px" onclick="autoNumberFiles()">🔢 Auto Number</button>
+    </div>
     ${selectAll}
     <div class="file-list">${fileRows}</div>
     <div class="drop-zone" id="folder-drop-zone" onclick="document.getElementById('folder-file-input').click()">
@@ -1003,6 +1055,7 @@ function importConfig(file) {
       if (data.folders) folders = data.folders;
       if (data.fileAssignments) fileAssignments = data.fileAssignments;
       if (data.displayNames) displayNames = data.displayNames;
+      if (data.fileOrder) fileOrder = data.fileOrder;
       if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
       if (data.siteName) settings.siteName = data.siteName;
       if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
