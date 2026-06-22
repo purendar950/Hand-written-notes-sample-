@@ -71,9 +71,12 @@
     "Exam_Zen_Folk_Dances_TopperNotes (1).pdf": "f_1782105578544",
     "Parmar_Folk_Dances_Handwritten_Notes.html": "f_1782105578544",
     "Parmar_Folk_Dances_Handwritten_Notes-1.html": "f_1782105578544",
-    "Ancient History Notes.html": "ancient_history"
+    "Ancient History Notes.html": "ancient_history",
+    "Ancient History SSC GD (Transcript Order).html": "ancient_history"
   },
-  "displayNames": {},
+  "displayNames": {
+    "Ancient History SSC GD (Transcript Order).html": "Ancient History — SSC GD (Lecture, Transcript Order)"
+  },
   "hiddenFiles": [],
   "fileOrder": {
     "Blitz lecture 8 hindi .PDF": 3,
