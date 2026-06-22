@@ -119,6 +119,7 @@ let displayNames = {};
 let allFiles = [];
 let currentFolder = null;
 let viewMode = 'list';
+let fileOrder = {};
 let siteName = 'Parmar Railway Notes';
 let siteSubtitle = 'Hand-Written Notes Library';
 let telegramLink = 'https://t.me/Exam_Zen_StudySync';
@@ -133,6 +134,7 @@ async function loadConfig() {
     fileAssignments = JSON.parse(localAssignments);
     hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
     displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
+    fileOrder = JSON.parse(localStorage.getItem('mgr_fileOrder') || '{}');
     const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
     if (s.siteName) siteName = s.siteName;
     if (s.siteSubtitle) siteSubtitle = s.siteSubtitle;
@@ -147,6 +149,7 @@ async function loadConfig() {
       fileAssignments = data.fileAssignments || {};
       hiddenFiles = data.hiddenFiles || [];
       displayNames = data.displayNames || {};
+      fileOrder = data.fileOrder || {};
       if (data.siteName) siteName = data.siteName;
       if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
       if (data.telegramLink) telegramLink = data.telegramLink;
@@ -204,7 +207,13 @@ function formatSize(bytes) {
 }
 
 function getFilesInFolder(folderId) {
-  return allFiles.filter(f => fileAssignments[f.name] === folderId);
+  const files = allFiles.filter(f => fileAssignments[f.name] === folderId);
+  files.sort((a,b) => {
+    const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : 9999;
+    const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : 9999;
+    return oA - oB || a.name.localeCompare(b.name);
+  });
+  return files;
 }
 
 function getUnassignedFiles() {
