@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Railway PYQ GK L1 | संविधान एवं स्रोत | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(139,109,56,.15) 35px,rgba(139,109,56,.15) 70px),
+    repeating-linear-gradient(-45deg,transparent,transparent 35px,rgba(100,80,40,.1) 35px,rgba(100,80,40,.1) 70px);
+  background-color:#8B6914;opacity:.40;z-index:-1;pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#1a1a2e 45%,#16213e 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.7rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.cover-train{font-size:2rem;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.sticky.orange{background:#fff3e0;border-color:#e65100}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.hw-t.navy th{background:#1a237e;color:#e8eaf6}
+.hw-t.maroon th{background:#880e4f;color:#fce4ec}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'🚂 RAILWAY CONNECT';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.source-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff8f0;position:relative}
+.source-box::before{content:'🌍 COUNTRY SOURCE';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-exam{font-size:.72rem;color:#b2dfdb;float:right;font-family:'Kalam',cursive;margin-top:2px}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .source-box{background:#1e1200}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🚂 Railway PYQ GK — Lecture 1 | संविधान एवं स्रोत</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">🚂 Parmar Academy — Railway PYQ Series</div>
+    <div class="cover-title">📝 GK Lecture 1 — Topper Notes</div>
+    <div class="cover-sub">संविधान का निर्माण एवं स्रोत | Constitution Making & Sources</div>
+    <div class="cover-badge">⚖️ Polity | 33 PYQs Covered | Railway NTPC / RPF / Group-D</div>
+    <div class="cover-train">🚂🚃🚃🚃🚃🚃</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- INTRO STATS -->
+    <div class="sub" style="margin-top:12px">Series Overview — Key Numbers</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">33</div><div class="lbl">Total PYQs<br>This Lecture</div></div>
+      <div class="num-b"><div class="big">100%</div><div class="lbl">Unique Questions<br>No Repetition</div></div>
+      <div class="num-b"><div class="big">4 yrs</div><div class="lbl">Railway Exams<br>Covered</div></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION A: CONSTITUTION MAKING -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec red">① संविधान निर्माण — Father & Drafting Committee 🏛️</div>
+
+    <!-- Q1 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q1.</span> Who is known as the Father of the Indian Constitution? / भारतीय संविधान के जनक के रूप में किसे जाना जाता है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bhimrao Ambedkar ✔ (correct but read below!)</div>
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dr. B.R. Ambedkar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajendra Prasad</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sachchidanand Sinha</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jawaharlal Nehru</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dr. B.R. Ambedkar — "Father of the Indian Constitution" | Also called: <strong>Modern Manu / Modern Man</strong></div>
+    </div>
+
+    <div class="sub">Why Ambedkar = Father? — Drafting Committee</div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>Ambedkar was <span class="hl"><strong>Chairman of the Drafting Committee</strong></span> — most important committee</li>
+        <li>Drafting Committee had <span class="hl-g"><strong>7 members</strong></span> total</li>
+        <li><span class="hl-b"><strong>Chief Draftsman</strong></span> of Constituent Assembly = <span class="hl"><strong>S.N. Mukherjee</strong></span> (NOT Ambedkar)</li>
+        <li>Formed on: <span class="hl-p"><strong>29 August 1947</strong></span> | First meeting: <strong>30 August 1947</strong></li>
+        <li>Drafting Committee sat for total: <span class="hl"><strong>141 days</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="sub">7 Members of Drafting Committee</div>
+    <table class="hw-t navy">
+      <tr><th>#</th><th>Member</th><th>Note</th></tr>
+      <tr><td>1</td><td><span class="hl"><strong>Dr. B.R. Ambedkar</strong></span></td><td>Chairman</td></tr>
+      <tr><td>2</td><td>Alladi Krishnaswamy Iyer</td><td>—</td></tr>
+      <tr><td>3</td><td>N. Gopalaswami Iyengar</td><td>Remember: Iyer + Iyengar (two names)</td></tr>
+      <tr><td>4</td><td>Mohammad Sadullah</td><td>—</td></tr>
+      <tr><td>5</td><td>K.M. Munshi</td><td>—</td></tr>
+      <tr><td>6</td><td><span class="hl-p">B.L. Mitter → replaced by N. Madhav Rao</span></td><td>Resigned due to illness</td></tr>
+      <tr><td>7</td><td><span class="hl-p">D.P. Khaitan → replaced by T.T. Krishnamachari</span></td><td>Died</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>Chief Draftsman ≠ Chairman!</strong> Chief Draftsman of Constituent Assembly was <span class="hl"><strong>S.N. Mukherjee</strong></span>. Ambedkar was Chairman of Drafting Committee. बहुत बड़ा EXAM TRAP है यह! 🚨</p>
+    </div>
+
+    <div class="sub">Three Drafts Submitted</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">21 Feb 1948</span> 1st Draft published — public given <strong>8 months</strong> to discuss &amp; suggest changes</div>
+      <div class="tl-item"><span class="yr">21 Oct 1948</span> 2nd Draft submitted</div>
+      <div class="tl-item"><span class="yr">4 Nov 1948</span> 3rd / Final Draft presented → <strong>First Reading began</strong> same day</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q2 — THIRD READING -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec blue">② संविधान की तीन वाचन — Three Readings 📖</div>
+
+    <!-- Q2 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC CBT1</span>
+        <span class="qno">Q2.</span> On what date did the Constituent Assembly give the Third Reading of the Constitution? / संविधान की तीसरी वाचन कब हुई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>November 14–26, 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>August 29, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>October 17, 1949</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>November 4, 1948</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Third Reading: 14 Nov to 26 Nov 1949 | Constitution ADOPTED on 26 Nov 1949</div>
+    </div>
+
+    <div class="sub">Three Readings — Complete Timeline</div>
+    <table class="hw-t alt">
+      <tr><th>Reading</th><th>Period</th><th>Key Event</th></tr>
+      <tr><td><span class="hl"><strong>1st Reading</strong></span></td><td>4 Nov 1948 → 9 Nov 1948</td><td>Final Draft presented &amp; read</td></tr>
+      <tr><td><span class="hl-g"><strong>2nd Reading</strong></span></td><td>9 Nov 1948 → 17 Oct 1949</td><td><strong>Longest</strong> reading (~10 months). Article-by-article discussion</td></tr>
+      <tr><td><span class="hl-p"><strong>3rd Reading</strong></span></td><td><strong>14 Nov 1949 → 26 Nov 1949</strong></td><td>Constitution <span class="hl"><strong>ADOPTED</strong></span> on 26 Nov 1949</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">26 NOV 1949 — CONSTITUTION DAY</div>
+        Constitution was <span class="hl"><strong>adopted</strong></span> on 26 Nov<br>
+        Notified by: <strong>Ministry of Social Justice &amp; Empowerment</strong><br>
+        Year notified: <span class="hl-g"><strong>2015</strong></span><br>
+        Celebration: Promote <strong>Constitutional Values</strong>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">26 JAN 1950 — REPUBLIC DAY</div>
+        Constitution <span class="hl"><strong>COMMENCED / ENFORCED</strong></span><br>
+        Why 26 Jan? → Purna Swaraj Day (<strong>1930</strong>)<br>
+        Lahore Session = <strong>1929</strong> (Nehru declared Purna Swaraj)<br>
+        Immediately enforced: Citizenship, Elections, Parliament
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q3 — FIRST PROPOSED CONSTITUENT ASSEMBLY -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec green">③ संविधान सभा — First Proposal & Formation 🗳️</div>
+
+    <!-- Q3 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q3.</span> Who among the following FIRST proposed the formation of a Constituent Assembly for India? / सर्वप्रथम संविधान सभा की मांग किसने की?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sachchidanand Sinha</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>K.M. Munshi</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>B.N. Rao</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>M.N. Roy ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — M.N. Roy first proposed in 1934 | Congress demanded in 1935 | Nehru demanded without outside interference in 1938</div>
+    </div>
+
+    <div class="sub">Key Persons &amp; Their Roles</div>
+    <table class="hw-t grn">
+      <tr><th>Person</th><th>Role</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>M.N. Roy</strong></span></td><td>First to propose Constituent Assembly</td><td>Founded CPI in <strong>1920</strong> at Tashkent; formalized Kanpur 1925</td></tr>
+      <tr><td><strong>Indian National Congress</strong></td><td>First to officially demand CA</td><td><strong>1935</strong></td></tr>
+      <tr><td><strong>Jawaharlal Nehru</strong></td><td>Demanded CA without outside interference</td><td><strong>1938</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>B.N. Rao</strong></span></td><td>Constitutional Advisor of CA</td><td>Legal Advisor of Constituent Assembly</td></tr>
+      <tr><td><span class="hl-p"><strong>Sachchidanand Sinha</strong></span></td><td>Temporary / Provisional Chairman of CA</td><td>Senior-most member → first presided</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q4 — CHAIRMAN OF CA -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec orange">④ संविधान सभा के अध्यक्ष — Chairman of Constituent Assembly 👑</div>
+
+    <!-- Q4 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q4.</span> Who was the Chairman (President) of the Constituent Assembly of India? / संविधान सभा के अध्यक्ष कौन थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dr. B.R. Ambedkar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gopal Das Ambidas Desai</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Dr. Rajendra Prasad ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>K.M. Munshi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Dr. Rajendra Prasad = Permanent President / Chairman of Constituent Assembly</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw key">
+        <li>Temporary Chairman (Provisional): <span class="hl"><strong>Sachchidanand Sinha</strong></span> (senior-most member)</li>
+        <li>Permanent Chairman / President: <span class="hl-g"><strong>Dr. Rajendra Prasad</strong></span></li>
+        <li>Vice Presidents of CA: <span class="hl-b"><strong>H.C. Mukherjee</strong></span> &amp; <strong>V.T. Krishnamachari</strong></li>
+        <li>When CA sat as <strong>Legislative Body</strong> → headed by <span class="hl-p"><strong>G.V. Mavalankar</strong></span> (also 1st Lok Sabha Speaker)</li>
+        <li>Note: <strong>T.T. Krishnamachari</strong> = member of Drafting Committee (not V.T.)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q5 — HOW MANY REPRESENTATIVES -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec purple">⑤ संविधान सभा की संरचना — 299 Members 🔢</div>
+
+    <!-- Q5 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q5.</span> The Constitution was drafted by how many representatives? / संविधान का मसौदा कितने प्रतिनिधियों द्वारा तैयार किया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>299 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>222</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>159</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>389</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 299 — Originally 389 seats, reduced after Partition + Muslim League boycott</div>
+    </div>
+
+    <div class="sub">Structure of Constituent Assembly</div>
+    <div class="formula">
+      <p class="hw"><strong>Original CA (1946):</strong></p>
+      <p class="hw">389 total = <span class="hl-g"><strong>296 from British India</strong></span> + <span class="hl-p"><strong>93 from Princely States</strong></span></p>
+      <p class="hw" style="margin-top:8px"><strong>After Partition:</strong></p>
+      <p class="hw">389 → <span class="hl"><strong>299 seats remaining</strong></span> (Muslim League boycott + partition)</p>
+      <p class="hw" style="margin-top:8px"><strong>How 296 chosen:</strong> <span class="hl-b">292 from 11 Governor's Provinces + 4 from Chief Commissioner's Provinces</span></p>
+      <p class="hw"><strong>Princely States:</strong> Nomination by kings</p>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>Election Method from British India:</strong> <span class="hl"><strong>Indirect Election</strong></span> (not universal franchise)</p>
+      <p class="hw">Provincial Legislative Assemblies elected members → <span class="hl-g">Proportional Representation + Single Transferable Vote</span></p>
+      <p class="hw">1 seat per 10 lakh (1 million) people</p>
+      <p class="hw" style="margin-top:6px"><strong>Same system used today for:</strong> Rajya Sabha + Presidential elections</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q6 — ELECTION OF MEMBERS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Q6 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q6.</span> The members of the Constituent Assembly were elected by ___. / संविधान सभा के सदस्य किसके द्वारा चुने गए थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Eminent leaders of the Congress Party</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Provincial Legislators (Legislative Assemblies) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Universal Franchise (Direct Election)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>British Government</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Provincial Legislative Assemblies elected members via Indirect Election (Proportional Representation + STV)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q7 — CONSTITUTION DAY -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec teal">⑦ संविधान दिवस — Constitution Day 📅</div>
+
+    <!-- Q7 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q7.</span> The Union Ministry of Social Justice and Empowerment notified in 2015 that every year _____ will be celebrated as Constitution Day. / संविधान दिवस कब मनाया जाता है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>January 26</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>November 26 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>August 15</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>November 14</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 26 November — Constitution ADOPTED on this day in 1949 | "Samvidhan Divas" celebrated since 2015</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>26 Nov 1949</strong> = Constitution <span class="hl">ADOPTED</span> (Constitution Day)</p>
+      <p class="hw"><strong>26 Jan 1950</strong> = Constitution <span class="hl-g">ENFORCED / COMMENCED</span> (Republic Day)</p>
+      <p class="hw">Some provisions enacted immediately on 26 Nov: <span class="hl-b">Citizenship, Elections, Provisional Parliament</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q8 — CONSTITUENT ASSEMBLY SESSIONS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec blue">⑧ संविधान सभा के सत्र एवं आंकड़े — CA Statistics 📊</div>
+
+    <!-- Q8 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q8.</span> The printed records of the Constituent Assembly discussions were compiled into how many volumes? / संविधान सभा की चर्चाओं को कितने खंडों में संकलित किया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>12 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>10</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>11</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 12 Volumes — Constituent Assembly proceedings compiled into 12 volumes</div>
+    </div>
+
+    <div class="sub">Important Numbers of Constituent Assembly</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">11</div><div class="lbl">Total Sessions<br>of CA</div></div>
+      <div class="num-b"><div class="big">165</div><div class="lbl">Days CA<br>Sat in Total</div></div>
+      <div class="num-b"><div class="big">2Y 11M 18D</div><div class="lbl">Time to Draft<br>Constitution</div></div>
+    </div>
+    <div class="two-col" style="margin-top:8px">
+      <div class="num-b"><div class="big">284</div><div class="lbl">Members who SIGNED<br>(of whom 15 women)</div></div>
+      <div class="num-b"><div class="big">12</div><div class="lbl">Volumes compiled<br>(CA Proceedings)</div></div>
+    </div>
+
+    <div class="sub">First &amp; Last Sessions of CA</div>
+    <table class="hw-t org">
+      <tr><th>Session</th><th>Dates</th><th>Key Point</th></tr>
+      <tr><td><span class="hl"><strong>1st Session</strong></span></td><td>9 Dec 1946 → 23 Dec 1946</td><td>First day: <strong>211 members</strong> attended</td></tr>
+      <tr><td><span class="hl-g"><strong>11th Session (Last)</strong></span></td><td>14 Nov 1949 → 26 Nov 1949</td><td>Constitution adopted on 26 Nov 1949</td></tr>
+    </table>
+
+    <div class="ca-box">
+      <p class="hw">When CA sat as <strong>law-making body (Provisional Parliament)</strong> → headed by <span class="hl"><strong>G.V. Mavalankar</strong></span></p>
+      <p class="hw">G.V. Mavalankar also = <span class="hl-g"><strong>1st Speaker of Lok Sabha</strong></span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q9 — WHEN ADOPTED -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec red">⑨ संविधान कब अपनाया गया — When Was Constitution Adopted 📜</div>
+
+    <!-- Q9 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q9.</span> When was the Indian Constitution adopted? / भारतीय संविधान कब अपनाया गया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>January 26, 1950</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>November 26, 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>August 15, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>November 14, 1949</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 26 November 1949 — ADOPTED (not enforced). 284 members signed it. 15 women among signatories.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q10 — HIGHEST REPRESENTATION -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec green">⑩ उत्तर प्रदेश — Highest Representation in CA 🗺️</div>
+
+    <!-- Q10 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q10.</span> Which province had maximum representation in the Constituent Assembly as on Dec 31, 1947?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Madras</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bombay</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Uttar Pradesh (United Provinces) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>West Bengal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — UP (United Provinces) = 55 members | Madras = 49 | Bihar = 36</div>
+    </div>
+
+    <div class="sticky orange">
+      <div class="slbl">AMBEDKAR — CONSTITUENCY FACT</div>
+      Ambedkar was originally from <span class="hl"><strong>Bengal Constituency</strong></span><br>
+      After Partition → came from <span class="hl-g"><strong>Maharashtra Constituency</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q11 — OBJECTIVES RESOLUTION -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec purple">⑪ उद्देश्य प्रस्ताव — Objectives Resolution 🎯</div>
+
+    <!-- Q11 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC CBT1 2021</span>
+        <span class="qno">Q11.</span> The Objectives Resolution of India was proposed by ___ in 1946, before the framing of the Constitution.
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rajendra Prasad</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Jawaharlal Nehru ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Vallabhbhai Patel</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>B.R. Ambedkar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Jawaharlal Nehru presented Objectives Resolution on 13 Dec 1946. Adopted: 22 Jan 1947.</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">9 Dec 1946</span> First meeting of Constituent Assembly</div>
+      <div class="tl-item"><span class="yr">13 Dec 1946</span> <span class="hl"><strong>Nehru</strong></span> presented Objectives Resolution</div>
+      <div class="tl-item"><span class="yr">22 Jan 1947</span> Objectives Resolution <span class="hl-g"><strong>adopted</strong></span> by CA</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q12 — CONSTITUTION ENFORCED -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Q12 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q12.</span> The Constitution of India came into force on? / भारतीय संविधान लागू कब हुआ?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>November 26, 1949</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>January 26, 1950 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>August 15, 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>December 9, 1946</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 26 January 1950 | India became a Republic</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">WHAT CA ALSO ADOPTED</div>
+        ✔ <span class="hl"><strong>National Flag</strong></span> — 22 July 1947<br>
+        Designer: <span class="hl-g"><strong>Pingali Venkayya</strong></span><br>
+        Flag Ratio (Length:Width) = <span class="hl-b"><strong>3:2</strong></span>
+      </div>
+      <div class="sticky green">
+        <div class="slbl">ANTHEM &amp; SONG</div>
+        National Anthem adopted: <span class="hl"><strong>24 Jan 1950</strong></span><br>
+        Jana Gana Mana → by <strong>Rabindranath Tagore</strong><br>
+        National Song: Vande Mataram → <strong>Bankim Chandra Chatterjee</strong><br>
+        From novel: <span class="hl-p"><strong>Anand Math</strong></span>
+      </div>
+    </div>
+
+    <div class="sticky teal" style="text-align:center">
+      <div class="slbl">CA ALSO RATIFIED</div>
+      Commonwealth membership ratified: <span class="hl"><strong>May 1949</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q13 — COMMITTEES -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec orange">⑬ संविधान सभा की समितियाँ — Committees of CA 📋</div>
+
+    <!-- Q13 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q13.</span> Who was the Chairman of the Finance and Staff Committee of the Constituent Assembly?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>B.R. Ambedkar</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Dr. Rajendra Prasad ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jawaharlal Nehru</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sardar Vallabhbhai Patel</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Finance &amp; Staff Committee = Rajendra Prasad (head of household controls finances!)</div>
+    </div>
+
+    <div class="sub">8 Major Committees — Chairmen (MUST LEARN)</div>
+    <table class="hw-t pur">
+      <tr><th>Committee</th><th>Chairman</th><th>Trick</th></tr>
+      <tr><td><span class="hl"><strong>Drafting Committee</strong></span></td><td>Dr. B.R. Ambedkar</td><td>Most important committee</td></tr>
+      <tr><td>Union Powers Committee</td><td rowspan="2"><span class="hl-g"><strong>Jawaharlal Nehru</strong></span></td><td rowspan="2">"Union / State" in name → <strong>Nehru</strong></td></tr>
+      <tr><td>States Committee</td></tr>
+      <tr><td>Finance &amp; Staff Committee</td><td rowspan="3"><span class="hl-b"><strong>Dr. Rajendra Prasad</strong></span></td><td rowspan="3">Finance + Procedure + Steering = <strong>Head of House = Rajendra Prasad</strong></td></tr>
+      <tr><td>Rules of Procedure Committee</td></tr>
+      <tr><td>Steering Committee</td></tr>
+      <tr><td>Provincial Constitution Committee</td><td rowspan="2"><span class="hl-p"><strong>Sardar Vallabhbhai Patel</strong></span></td><td rowspan="2">Integration of states → <strong>Patel</strong> (Iron Man / Bismarck of India)</td></tr>
+      <tr><td>Advisory Committee (FR, Minorities, Tribal Areas)</td></tr>
+    </table>
+
+    <div class="trick">
+      <p class="hw"><strong>NEHRU RULE:</strong> Any committee with "Union" or "State" in name → <span class="hl">Nehru</span></p>
+      <p class="hw"><strong>PATEL RULE:</strong> Provincial + Minorities/FR Advisory → <span class="hl-g">Patel</span> (integrated states)</p>
+      <p class="hw"><strong>RAJENDRA PRASAD RULE:</strong> Finance + Procedures + Steering → <span class="hl-b">Head of house (Rajendra Prasad)</span></p>
+      <p class="hw"><strong>MAVALANKAR:</strong> Committee on Functions of CA (law-making) → <span class="hl-p">G.V. Mavalankar</span></p>
+      <p class="hw" style="margin-top:6px"><strong>Total:</strong> 8 Major + 13 Minor Committees</p>
+    </div>
+
+    <div class="sub">Important Minor Committees</div>
+    <table class="hw-t teal-h">
+      <tr><th>Minor Committee</th><th>Chairman</th></tr>
+      <tr><td>House Committee</td><td><span class="hl-p"><strong>B. Pattabhi Sitaramayya</strong></span> (remember: "House" = Home matters)</td></tr>
+      <tr><td>Credentials Committee</td><td><span class="hl"><strong>Alladi Krishnaswami Iyer</strong></span> (also in Drafting Committee)</td></tr>
+      <tr><td>Committee on Functions (law-making)</td><td><span class="hl-g"><strong>G.V. Mavalankar</strong></span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q14 — FIRST FINANCE MINISTER -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec teal">⑭ पहली कैबिनेट — First Cabinet of Independent India 🇮🇳</div>
+
+    <!-- Q14 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q14.</span> Who was the first Union Finance Minister of Independent India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>R.K. Shanmukham Chetty ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sardar Baldev Singh</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rajkumari Amrit Kaur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>John Mathai</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — R.K. Shanmukham Chetty = 1st Finance Minister | First General Elections: 1951-52</div>
+    </div>
+
+    <div class="sub">First Cabinet — Key Ministers (MUST KNOW)</div>
+    <table class="hw-t maroon">
+      <tr><th>Portfolio</th><th>Minister</th><th>Remember?</th></tr>
+      <tr><td><strong>Prime Minister + External Affairs</strong></td><td>Jawaharlal Nehru</td><td>Also: Commonwealth Relations + Scientific Research</td></tr>
+      <tr><td><strong>Home Affairs</strong></td><td>Sardar Vallabhbhai Patel</td><td>—</td></tr>
+      <tr><td><span class="hl"><strong>Finance</strong></span></td><td><span class="hl"><strong>R.K. Shanmukham Chetty</strong></span></td><td>⭐ PYQ Favourite</td></tr>
+      <tr><td><strong>Defence</strong></td><td>Sardar Baldev Singh</td><td>"Strong name → Defence"</td></tr>
+      <tr><td><strong>Food &amp; Agriculture</strong></td><td>Dr. Rajendra Prasad</td><td>—</td></tr>
+      <tr><td><strong>Education</strong></td><td>Maulana Abul Kalam Azad</td><td>1st Education Minister</td></tr>
+      <tr><td><strong>Railways</strong></td><td>John Mathai</td><td>—</td></tr>
+      <tr><td><strong>Law</strong></td><td>Dr. B.R. Ambedkar</td><td>1st Law Minister</td></tr>
+      <tr><td><span class="hl-p"><strong>Health</strong></span></td><td><span class="hl-p"><strong>Rajkumari Amrit Kaur</strong></span></td><td>ONLY woman in 1st Cabinet</td></tr>
+      <tr><td><strong>Labour</strong></td><td>Jagjivan Ram</td><td>"Jagjivan = hardworking = Labour"</td></tr>
+      <tr><td><strong>Commerce</strong></td><td>C.H. Bhabha</td><td>—</td></tr>
+      <tr><td><strong>Communications</strong></td><td>Rafi Ahmed Kidwai</td><td>—</td></tr>
+    </table>
+
+    <div class="sticky red">
+      <div class="slbl">INTERIM GOVERNMENT (2 Sep 1946 → 15 Aug 1947)</div>
+      President of Executive Council: <span class="hl"><strong>Mountbatten</strong></span><br>
+      Vice President: <span class="hl-g"><strong>Jawaharlal Nehru</strong></span><br>
+      Finance (Interim): <span class="hl-b"><strong>Liaquat Ali Khan</strong></span> (Muslim League) → became 1st PM of Pakistan<br>
+      Commerce (Interim): <strong>I.I. Chundrigar</strong> (Muslim League)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q15 — DEMOCRACY -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec blue">⑮ शासन प्रणाली — Forms of Government 🏛️</div>
+
+    <!-- Q15 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">RPF SI 2024</span>
+        <span class="qno">Q15.</span> ___ is a form of government in which the rulers are elected by the people.
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Oligopoly</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Fascism</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Theocracy</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Democracy ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Democracy = rule by elected representatives of the people</div>
+    </div>
+
+    <div class="sub">Forms of Government — Explained</div>
+    <table class="hw-t alt">
+      <tr><th>Term</th><th>Meaning</th><th>Key Point</th></tr>
+      <tr><td><span class="hl-g"><strong>Democracy</strong></span></td><td>Rule by elected representatives</td><td>India is a democratic republic</td></tr>
+      <tr><td><strong>Theocracy</strong></td><td>Rule in name of religion/god</td><td>Eg: Iran; civil laws = religious laws</td></tr>
+      <tr><td><strong>Fascism</strong></td><td>Ultra-nationalism (extreme right wing)</td><td>Eg: Nazi Germany (Hitler), Mussolini</td></tr>
+      <tr><td><span class="hl-p"><strong>Oligarchy</strong></span></td><td>Government by a few people</td><td>NOTE: Oligopoly = market term (few firms)</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>TRICK:</strong> Option said "Oligopoly" not "Oligarchy"!</p>
+      <p class="hw">Oligopoly = Market with few dominant firms (Eg: Airtel, Jio, Vi = telecom oligopoly)</p>
+      <p class="hw">Oligarchy = Government by few → इसे exam में confuse कराया जाता है! ⚠️</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q16 — SALIENT FEATURES -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Q16 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q16.</span> Which of the following is NOT a salient feature of the Indian Constitution?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Establishment of Federalism</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Fundamental Rights</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Parliamentary Form of Government</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Promotion of Feudalism ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Feudalism (large landowner dominance) is NOT a feature of Indian Constitution</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q17 — FEDERALISM -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec red">⑰ संघवाद — Federalism & Scholars' Views 🗺️</div>
+
+    <!-- Q17 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q17.</span> Which of the following is INCORRECT regarding the UNITARY features of the Constitution?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>All India Services (IAS, IPS, IFS)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Appointment of Governor by Centre</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Single Citizenship</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Rigid part of the Constitution ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Rigid part of Constitution is a FEDERAL feature (not unitary). States need to be consulted for rigid amendments.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="key-box">
+        <div class="slbl" style="font-family:'Caveat Brush',cursive;opacity:.7;margin-bottom:6px">UNITARY FEATURES (Centre has more power)</div>
+        <ul class="hw chk">
+          <li>All India Services (IAS, IPS, IFS)</li>
+          <li>Flexible part of Constitution</li>
+          <li>Appointment of Governor by Centre</li>
+          <li>Single Citizenship</li>
+          <li>Single Constitution</li>
+          <li>Emergency Provisions</li>
+          <li>Parliament can create/destroy states</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="slbl" style="font-family:'Caveat Brush',cursive;opacity:.7;margin-bottom:6px">FEDERAL FEATURES (States have power)</div>
+        <ul class="hw arr">
+          <li>Rigid part of Constitution</li>
+          <li>Bicameralism (Lok Sabha + Rajya Sabha)</li>
+          <li>Dual Government (Centre + State)</li>
+          <li>Independent Judiciary</li>
+          <li>Division of Powers (3 lists)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub">Scholars' Views on Indian Federalism</div>
+    <table class="hw-t grn">
+      <tr><th>Scholar</th><th>Coined Term</th></tr>
+      <tr><td><span class="hl"><strong>Ivor Jennings</strong></span></td><td>India = <span class="hl-g">"Federation with a centralizing tendency"</span></td></tr>
+      <tr><td><span class="hl-p"><strong>K.C. Wheare</strong></span></td><td>India = <span class="hl-p">"Quasi-Federal"</span></td></tr>
+      <tr><td><span class="hl-b"><strong>Granville Austin</strong></span></td><td>India = <span class="hl-b">"Cooperative Federalism"</span></td></tr>
+      <tr><td><span class="hl"><strong>Morris Jones</strong></span></td><td>India = <span class="hl">"Bargaining Federalism"</span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q18 — PARLIAMENTARY vs PRESIDENTIAL -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec purple">⑱ संसदीय बनाम राष्ट्रपति शासन — Parliamentary vs Presidential 🏛️</div>
+
+    <!-- Q18 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q18.</span> Which of the following statements about the Indian political system is INCORRECT?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>India is a secular state</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>India has a presidential system of government ✔ (INCORRECT STATEMENT)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>India has a parliamentary system</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>India has a quasi-federal system</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — India has PARLIAMENTARY system (NOT presidential). Called: Westminster Model of Government.</div>
+    </div>
+
+    <div class="sub">Parliamentary vs Presidential — Key Differences</div>
+    <table class="hw-t alt">
+      <tr><th>Feature</th><th>Parliamentary (India/UK)</th><th>Presidential (USA)</th></tr>
+      <tr><td><strong>Accountability</strong></td><td><span class="hl-g">Council of Ministers collectively responsible to Lok Sabha (Art 75(3))</span></td><td>No accountability to legislature</td></tr>
+      <tr><td><strong>Ministers</strong></td><td>Must be MPs (Art 75(5)) or become one within 6 months</td><td>Need not be legislators</td></tr>
+      <tr><td><strong>Executive Head</strong></td><td>Dual: PM (real/de facto) + President (nominal/titular)</td><td>President = real executive</td></tr>
+      <tr><td><strong>Separation of Powers</strong></td><td>Not strict (judicial activism possible)</td><td><span class="hl-p">Strict separation / watertight compartments</span></td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="slbl">WESTMINSTER MODEL</div>
+      India borrowed parliamentary system from <span class="hl"><strong>UK (Britain)</strong></span><br>
+      Called <strong>Westminster Model</strong> after Westminster, London (where UK Parliament is)<br>
+      Art 142 = Judicial Activism example (judiciary acting as executive)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Q19 — FEDERALISM INCORRECT -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Q19 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q19.</span> Which of the following is INCORRECT in the context of Federalism?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>There is no scope for dual citizenship in federal countries ✔ (INCORRECT statement)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Federalism accommodates two levels of polity: regional + national</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Each government is autonomous in its own sphere</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>There is an independent judiciary to settle disputes</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Dual citizenship EXISTS in federal countries like USA (citizens have national + state citizenship). India has single citizenship (unitary feature borrowed from UK).</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">INDEPENDENT JUDICIARY — SOURCE</div>
+      Borrowed from: <span class="hl"><strong>USA Constitution</strong></span><br>
+      Also from USA: <span class="hl-g"><strong>Judicial Review</strong></span> + Fundamental Rights
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SECTION B: SOURCES OF CONSTITUTION -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec orange" style="margin-top:20px">⑳ संविधान के स्रोत — Sources of the Constitution 🌍</div>
+
+    <!-- Q20 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q20.</span> The Doctrine of Judicial Review originated in which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>USA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ireland</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Australia</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — USA | Judicial Review + Independent Judiciary + Fundamental Rights (Bill of Rights) + Office of President &amp; VP borrowed from USA</div>
+    </div>
+
+    <div class="sub">USA — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Judicial Review</strong></span></li>
+        <li><span class="hl-g"><strong>Independence of Judiciary</strong></span></li>
+        <li>Fundamental Rights (originally Bill of Rights in USA)</li>
+        <li>Office of President and Vice President</li>
+        <li>Removal of President + Judges of SC and HC</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21 — FUNDAMENTAL DUTIES -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q21.</span> The Fundamental Duties in the Indian Constitution have been inspired by the constitution of which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>USSR (Former Soviet Union / Russia) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ireland</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Germany</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — USSR | Also from USSR: Principles of Justice (Social, Economic, Political)</div>
+    </div>
+
+    <div class="sub">USSR — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Fundamental Duties</strong></span> (Part IVA, Art 51A)</li>
+        <li><span class="hl-g"><strong>Principles of Justice</strong></span> in Preamble — Social, Economic, Political</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22 — DPSP -->
+    <!-- Q22 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q22.</span> From where was the concept of Directive Principles of State Policy (DPSP) borrowed in the Constitution of India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>France</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Ireland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Australia</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Ireland | DPSP = Part IV, Articles 36–51</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>IRELAND — RED Trick 🍀</strong></p>
+      <p class="hw"><span class="hl"><strong>R</strong></span> = <strong>R</strong>ajya Sabha — Nomination of 12 members by President</p>
+      <p class="hw"><span class="hl-g"><strong>E</strong></span> = <strong>E</strong>lection — Method of election of President of India</p>
+      <p class="hw"><span class="hl-p"><strong>D</strong></span> = <strong>D</strong>PSP — Directive Principles of State Policy</p>
+      <p class="hw" style="margin-top:4px;font-size:.82rem">Just remove R, E, D from IRElanD → that's what Ireland gave us!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23 — JUSTICE IN PREAMBLE -->
+    <!-- Q23 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q23.</span> The ideas of Justice in the Preamble of the Constitution have been taken from the Constitution of ___
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>France</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USSR (Soviet Union) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ireland</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USA</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — USSR | 3 types of justice: Social, Economic, Political justice → from Soviet Constitution</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q24 — HOW MANY COUNTRIES -->
+    <!-- Q24 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q24.</span> The Indian Constitution includes borrowed features from how many countries?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>8</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>9</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>10 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>12</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — 10 countries | Original Articles = 395 | Original Schedules = 8 | Original Parts = 22</div>
+    </div>
+
+    <div class="sub">Original vs Current Constitution</div>
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">ORIGINAL CONSTITUTION (1949)</div>
+        Articles: <span class="hl"><strong>395</strong></span><br>
+        Schedules: <span class="hl-g"><strong>8</strong></span><br>
+        Parts: <span class="hl-b"><strong>22</strong></span>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">CURRENT CONSTITUTION</div>
+        Articles: <span class="hl"><strong>~448</strong></span> (approx)<br>
+        Schedules: <span class="hl-g"><strong>12</strong></span><br>
+        Parts: <span class="hl-b"><strong>~25</strong></span>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q25 — FREEDOM OF TRADE (AUSTRALIA) -->
+    <!-- Q25 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q25.</span> The freedom of trade feature in the Indian Constitution was borrowed from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Australia ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Germany</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>USSR</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ireland</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Australia | Freedom of Trade + Commerce + Joint Sitting + Concurrent List</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>AUSTRALIA — STL Trick 🦘</strong></p>
+      <p class="hw"><span class="hl"><strong>S</strong></span> = <strong>S</strong>itting — Joint Sitting of Parliament (Art 108, Ordinary Bills)</p>
+      <p class="hw"><span class="hl-g"><strong>Tr</strong></span> = <strong>Tr</strong>ade — Freedom of Trade and Commerce</p>
+      <p class="hw"><span class="hl-p"><strong>L</strong></span> = <strong>L</strong>ist — Concurrent List (List III)</p>
+    </div>
+
+    <div class="sub">GERMANY — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Suspension of Fundamental Rights during Emergency</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q26 — QUASI-FEDERAL (CANADA) -->
+    <!-- Q26 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q26.</span> The feature of quasi-federal / federation with strong centre in India's Constitution was borrowed from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Australia</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ireland</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Canada ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Canada | Federation with Strong Centre + Appointment of Governor by Centre + Residual Powers with Centre</div>
+    </div>
+
+    <div class="sub">CANADA — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Federation with Strong Centre</strong></span> (Quasi-Federal)</li>
+        <li><span class="hl-g"><strong>Appointment of Governor by Centre</strong></span></li>
+        <li><span class="hl-p"><strong>Residual Powers with Centre</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">K.C. Wheare called India "Quasi-Federal" = federal in form but unitary in spirit</p>
+      <p class="hw">Wherever Centre has more power → borrowed from <span class="hl"><strong>Canada</strong></span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q27 — SOUTH AFRICA / CONSTITUTIONAL AMENDMENT -->
+    <!-- Q27 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q27.</span> India's constitutional amendment procedure has been adopted from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>South Africa ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Canada</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — South Africa | Constitutional Amendment Procedure (Art 368)</div>
+    </div>
+
+    <div class="sub">SOUTH AFRICA — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Constitutional Amendment Process (Art 368)</strong></span></li>
+        <li><span class="hl-g"><strong>Indirect Election of Rajya Sabha members</strong></span> — also from South Africa!</li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>EXAM TRAP:</strong> Indirect election of Rajya Sabha = from <span class="hl"><strong>SOUTH AFRICA</strong></span> (NOT Ireland!)</p>
+      <p class="hw">Many students confuse this because Ireland gives <strong>Nomination</strong> to Rajya Sabha (President nominates 12 members)</p>
+      <p class="hw">Ireland = Nomination | South Africa = <span class="hl-g">Indirect Election method</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q28 — PARLIAMENTARY FORM (UK) -->
+    <!-- Q28 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q28.</span> The inspiration for the adoption of the parliamentary form of government was drawn from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>UK (Britain) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>France</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Canada</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — UK | Westminster Model of Government | Also: Rule of Law, Bicameralism, Single Citizenship, First-Past-The-Post system, Martial Law</div>
+    </div>
+
+    <div class="sub">UK — What India Borrowed</div>
+    <div class="source-box">
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Parliamentary / Westminster Form of Government</strong></span></li>
+        <li><span class="hl-g"><strong>Rule of Law</strong></span> (coined by A.V. Dicey)</li>
+        <li><span class="hl-b"><strong>Bicameralism</strong></span> (Lok Sabha + Rajya Sabha)</li>
+        <li><span class="hl-p"><strong>Single Citizenship</strong></span></li>
+        <li><strong>First-Past-The-Post (FPTP) System</strong></li>
+        <li><strong>Martial Law</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q29 — JAPAN (PROCEDURE ESTABLISHED BY LAW) -->
+    <!-- Q29 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q29.</span> "Procedure Established by Law" in Article 21 was borrowed from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UK</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Japan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>France</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Japan | Procedure Established by Law = written in Art 21 (Right to Life &amp; Personal Liberty)</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">JAPAN — What India Borrowed</div>
+      <span class="hl"><strong>Procedure Established by Law</strong></span> (Art 21)<br>
+      Not to be confused with "Due Process of Law" (USA concept introduced via <strong>Maneka Gandhi Case 1978</strong>)<br>
+      Rule of Law coined by: <span class="hl-g"><strong>A.V. Dicey</strong></span> (from UK concept)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q30 — FIVE YEAR PLAN (USSR) -->
+    <!-- Q30 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q30.</span> From which country has the Indian Constitution derived the feature of a Five Year Plan?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>France</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USSR ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Canada</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — USSR | Five Year Plans + Fundamental Duties + Principles of Justice (Social, Economic, Political) — all from USSR</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q31 — INDIRECT ELECTION OF RS (SOUTH AFRICA) -->
+    <!-- Q31 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q31.</span> India's constitutional provision of INDIRECT ELECTION of Rajya Sabha members was adopted from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Ireland</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>South Africa ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Canada</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — South Africa | Indirect Election METHOD for Rajya Sabha | (Ireland = NOMINATION of 12 members by President)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q32 — FPTP (UK) -->
+    <!-- Q32 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q32.</span> First-Past-The-Post System (FPTP) in India was borrowed from?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ireland</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>UK ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Australia</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — UK | FPTP used in Lok Sabha + State Assembly elections</div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw"><strong>FPTP vs Proportional Representation:</strong></p>
+      <p class="hw">FPTP = Win by even 1 vote → used in <span class="hl">Lok Sabha + Vidhan Sabha</span> elections (from UK)</p>
+      <p class="hw">PR + STV = used in <span class="hl-g">Rajya Sabha, Presidential elections, original CA elections</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q33 — LIBERTY EQUALITY FRATERNITY (FRANCE) -->
+    <!-- Q33 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q33.</span> Liberty, Equality, and Fraternity — these concepts in the Indian Constitution were borrowed from which country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>France ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ireland</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USSR</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — France | Inspired by French Revolution (1789) | Liberté, Égalité, Fraternité</div>
+    </div>
+
+    <div class="source-box">
+      <p class="hw" style="margin-bottom:4px"><strong>FRANCE — What India Borrowed:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Liberty, Equality, Fraternity</strong></span> (from French Revolution)</li>
+        <li>Republic / Republican ideals</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- MASTER REVISION TABLE — ALL SOURCES -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="sec red">📋 MASTER CHART — संविधान के स्रोत (10 Countries) 🌍</div>
+    <table class="hw-t navy">
+      <tr><th>Country 🌍</th><th>What India Borrowed 📥</th></tr>
+      <tr>
+        <td><span class="hl"><strong>🇬🇧 UK (Britain)</strong></span></td>
+        <td>Parliamentary / Westminster Model • Rule of Law (A.V. Dicey) • Bicameralism • Single Citizenship • FPTP System • Martial Law • Writ Jurisdiction</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇺🇸 USA</strong></span></td>
+        <td>Fundamental Rights (Bill of Rights) • Judicial Review • Independent Judiciary • Office of President &amp; VP • Removal of President/Judges • Preamble Concept</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>🇮🇪 Ireland</strong></span></td>
+        <td><strong>RED:</strong> Rajya Sabha (12 nominated by President) • Election of President (Method) • DPSP</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>🇨🇦 Canada</strong></span></td>
+        <td>Federation with Strong Centre • Appointment of Governor by Centre • Residual Powers with Centre</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>🇦🇺 Australia</strong></span></td>
+        <td><strong>STrL:</strong> Joint Sitting of Parliament (Art 108) • Freedom of Trade &amp; Commerce • Concurrent List</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇷🇺 USSR</strong></span></td>
+        <td>Fundamental Duties (Art 51A) • Principles of Justice (Social, Economic, Political) • Five Year Plans</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>🇩🇪 Germany</strong></span></td>
+        <td>Suspension of Fundamental Rights during National Emergency</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>🇿🇦 South Africa</strong></span></td>
+        <td>Constitutional Amendment Process (Art 368) • Indirect Election method of Rajya Sabha</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>🇯🇵 Japan</strong></span></td>
+        <td>Procedure Established by Law (Art 21)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🇫🇷 France</strong></span></td>
+        <td>Liberty, Equality, Fraternity (French Revolution) • Republic ideals</td>
+      </tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION -->
+    <div class="sec teal">⚡ Quick Revision — सभी Key Dates एवं तथ्य</div>
+    <table class="qr-t">
+      <tr><th>Fact / Event</th><th>Date / Detail</th></tr>
+      <tr><td>CA formed (Cabinet Mission Plan)</td><td>1946</td></tr>
+      <tr><td>First Session of CA</td><td>9 Dec 1946</td></tr>
+      <tr><td>Objectives Resolution presented (Nehru)</td><td>13 Dec 1946</td></tr>
+      <tr><td>Objectives Resolution adopted</td><td>22 Jan 1947</td></tr>
+      <tr><td>Drafting Committee formed</td><td>29 Aug 1947</td></tr>
+      <tr><td>Drafting Committee — first meeting</td><td>30 Aug 1947</td></tr>
+      <tr><td>National Flag adopted</td><td>22 Jul 1947</td></tr>
+      <tr><td>Independence Day</td><td>15 Aug 1947</td></tr>
+      <tr><td>1st Draft submitted (public)</td><td>21 Feb 1948</td></tr>
+      <tr><td>2nd Draft submitted</td><td>21 Oct 1948</td></tr>
+      <tr><td>3rd / Final Draft + 1st Reading begins</td><td>4 Nov 1948</td></tr>
+      <tr><td>2nd Reading ends</td><td>17 Oct 1949</td></tr>
+      <tr><td>3rd Reading begins</td><td>14 Nov 1949</td></tr>
+      <tr><td>Constitution ADOPTED (Constitution Day)</td><td>26 Nov 1949</td></tr>
+      <tr><td>Members who signed</td><td>284 (15 women)</td></tr>
+      <tr><td>National Anthem + Song adopted</td><td>24 Jan 1950</td></tr>
+      <tr><td>Constitution ENFORCED (Republic Day)</td><td>26 Jan 1950</td></tr>
+      <tr><td>Constitution Day notification</td><td>2015</td></tr>
+      <tr><td>CA total sessions</td><td>11 sessions, 165 days</td></tr>
+      <tr><td>Time to draft constitution</td><td>2 years, 11 months, 18 days</td></tr>
+      <tr><td>CA proceedings volumes</td><td>12 volumes</td></tr>
+      <tr><td>Original Articles / Schedules / Parts</td><td>395 / 8 / 22</td></tr>
+      <tr><td>Current Articles / Schedules</td><td>~448 / 12</td></tr>
+      <tr><td>Countries borrowed from</td><td>10 countries</td></tr>
+      <tr><td>UP (max) seats in CA</td><td>55 members</td></tr>
+      <tr><td>M.N. Roy (CPI founded — Tashkent)</td><td>1920; formalized Kanpur 1925</td></tr>
+      <tr><td>Interim Government formed</td><td>2 Sep 1946</td></tr>
+    </table>
+
+    <!-- EXAM TRAPS BOX -->
+    <div class="sec red" style="margin-top:20px">⚠️ TOP EXAM TRAPS — Railway PYQ Favourite Confusions</div>
+    <div class="two-col">
+      <div class="imp">
+        <ul class="hw dot">
+          <li>Father of Constitution = <span class="hl">Ambedkar</span> | Chief Draftsman = <span class="hl-g">S.N. Mukherjee</span></li>
+          <li>Constitution Day = <span class="hl">26 Nov</span> | Republic Day = <span class="hl-p">26 Jan</span></li>
+          <li>CA Chairman = <span class="hl">Rajendra Prasad</span> | First/Temp Chairman = <span class="hl-g">Sachchidanand Sinha</span></li>
+          <li>Rajya Sabha NOMINATION (12) = <span class="hl">Ireland</span> | Rajya Sabha ELECTION method = <span class="hl-p">South Africa</span></li>
+          <li>India does NOT have presidential system → Parliamentary (Westminster)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw dot">
+          <li>Fundamental DUTIES = <span class="hl">USSR</span> | Fundamental RIGHTS = <span class="hl-g">USA</span></li>
+          <li>Freedom of Trade = <span class="hl">Australia</span> | Liberty, Equality, Fraternity = <span class="hl-p">France</span></li>
+          <li>K.C. Wheare = Quasi-Federal | Granville Austin = Cooperative | Morris Jones = Bargaining | Ivor Jennings = Centralizing tendency</li>
+          <li>FPTP = Lok Sabha (UK) | PR+STV = Rajya Sabha, President</li>
+          <li>Oligopoly ≠ Oligarchy! (Exam trick!)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">🚂 END OF LECTURE 1 — RAILWAY PYQ GK SERIES</div>
+      <strong>All 33 Questions Covered ✅ | Constitution &amp; Sources Complete ✅</strong><br>
+      <span style="font-size:.85rem">Kal: Historical Background — Acts &amp; Preamble 🎯 | Regular raho, Selected bano! 🚂</span>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
