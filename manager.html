@@ -411,9 +411,10 @@ function renderSettings(title, actions, content) {
         <button class="btn btn-danger" onclick="resetAllData()">Reset All Manager Data</button>
       </div>
       <div style="margin-top:20px;padding:14px;background:var(--surface2);border-radius:8px">
-        <div style="font-weight:600;font-size:.88rem;margin-bottom:8px">📤 Export Configuration</div>
-        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">Download your folder structure and file assignments as JSON.</p>
-        <button class="btn" onclick="exportConfig()">Download Config</button>
+        <div style="font-weight:600;font-size:.88rem;margin-bottom:8px">📤 Publish Changes to User Page</div>
+        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">Download <b>config.json</b> and commit it to your repository. The public user page will then display folders, categories, and hidden files exactly as you configured here.</p>
+        <button class="btn btn-primary" onclick="exportConfig()">⬇️ Download config.json</button>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:8px">After downloading → upload/replace <code>config.json</code> in your GitHub repo → changes go live!</p>
       </div>
     </div>`;
 }
@@ -503,11 +504,17 @@ function resetAllData() {
 }
 
 function exportConfig() {
-  const config = { folders, fileAssignments, hiddenFiles, settings, exportDate: new Date().toISOString() };
+  const config = {
+    folders: folders.filter(f => f.id !== 'root'),
+    fileAssignments,
+    hiddenFiles,
+    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
   const blob = new Blob([JSON.stringify(config, null, 2)], {type:'application/json'});
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-  a.download = 'manager-config.json'; a.click();
-  toast('Config exported!');
+  a.download = 'config.json'; a.click();
+  toast('config.json downloaded! Commit it to your repo to update the public user page.');
 }
 
 // ============ UTILITIES ============

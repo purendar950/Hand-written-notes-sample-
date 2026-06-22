@@ -55,6 +55,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .card-title{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--text);font-weight:700;line-height:1.4;margin-bottom:6px}
 .card-filename{font-size:.75rem;color:var(--text-muted);word-break:break-all;margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)}
 .card-size{font-size:.72rem;color:var(--text-muted);margin-top:4px}
+.card-folder{font-size:.75rem;color:var(--accent2);margin-bottom:6px}
+
+/* FOLDER LABEL */
+.folder-label{font-family:'Kalam',cursive;font-size:1.2rem;color:var(--accent);padding:16px 0 4px;border-bottom:2px solid var(--border);margin-bottom:4px}
 
 /* LOADING */
 .loading{text-align:center;padding:60px 20px}
@@ -118,6 +122,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   </div>
   <span class="file-count" id="fileCount"></span>
 </div>
+<div class="toolbar" style="padding:10px 24px;border-top:none;gap:8px" id="folderFilter"></div>
 
 <!-- FILE GRID -->
 <div class="grid-container">
@@ -175,6 +180,8 @@ function getFileUrl(filename) {
 // ============ STATE ============
 let allFiles = [];
 let currentFilter = 'all';
+let config = { folders: [], fileAssignments: {}, hiddenFiles: [], telegramLink: '' };
+let currentFolder = 'all';
 
 // ============ FILE ICONS ============
 function getFileIcon(ext, name) {
@@ -209,32 +216,51 @@ function formatSize(bytes) {
 // ============ FETCH FILES FROM GITHUB API ============
 async function fetchFiles() {
   try {
+    // Fetch config.json first (folder structure from admin)
+    try {
+      const configUrl = API_URL.replace('/contents/', '/contents/config.json');
+      const cfgRes = await fetch(configUrl);
+      if (cfgRes.ok) {
+        const cfgData = await cfgRes.json();
+        const decoded = atob(cfgData.content);
+        config = JSON.parse(decoded);
+      }
+    } catch(e) { /* config not found, use defaults */ }
+
     const response = await fetch(API_URL);
     if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
     const data = await response.json();
 
-    // Filter for HTML and PDF files only (exclude index.html itself, .git, etc.)
+    // Filter for HTML and PDF files only
     allFiles = data.filter(file => {
       if (file.type !== 'file') return false;
       const ext = file.name.split('.').pop().toLowerCase();
       if (!['html', 'pdf'].includes(ext)) return false;
       if (file.name.toLowerCase() === 'index.html') return false;
+      if (file.name.toLowerCase() === 'manager.html') return false;
+      if (file.name.toLowerCase() === 'config.json') return false;
+      // Respect hidden files from config
+      if (config.hiddenFiles && config.hiddenFiles.includes(file.name)) return false;
       return true;
     }).map(file => {
       const ext = file.name.split('.').pop().toLowerCase();
+      const folderId = config.fileAssignments ? config.fileAssignments[file.name] : null;
+      const folder = folderId ? (config.folders || []).find(f => f.id === folderId) : null;
       return {
         name: file.name,
         displayName: formatName(file.name),
         ext: ext,
         size: file.size,
-        icon: getFileIcon(ext, file.name)
+        icon: getFileIcon(ext, file.name),
+        folderId: folderId || 'uncategorized',
+        folderName: folder ? folder.name : 'Uncategorized',
+        folderIcon: folder ? folder.icon : '📂'
       };
     });
 
-    // Sort alphabetically
     allFiles.sort((a, b) => a.displayName.localeCompare(b.displayName));
-
     updateStats();
+    renderFolderFilter();
     renderFiles();
   } catch (error) {
     showError(error.message);
@@ -253,6 +279,25 @@ function updateStats() {
   `;
 }
 
+// ============ RENDER FOLDER FILTER BUTTONS ============
+function renderFolderFilter() {
+  if (!config.folders || config.folders.length === 0) return;
+  const container = document.getElementById('folderFilter');
+  if (!container) return;
+  container.innerHTML = `
+    <button class="filter-btn active" onclick="setFolder('all',this)">All</button>
+    ${config.folders.map(f => `<button class="filter-btn" onclick="setFolder('${f.id}',this)">${f.icon} ${f.name}</button>`).join('')}
+    <button class="filter-btn" onclick="setFolder('uncategorized',this)">📂 Other</button>
+  `;
+}
+
+function setFolder(folder, btn) {
+  currentFolder = folder;
+  document.querySelectorAll('#folderFilter .filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderFiles();
+}
+
 // ============ RENDER FILE CARDS ============
 function renderFiles() {
   const grid = document.getElementById('fileGrid');
@@ -260,11 +305,11 @@ function renderFiles() {
 
   let filtered = allFiles.filter(file => {
     if (currentFilter !== 'all' && file.ext !== currentFilter) return false;
+    if (currentFolder !== 'all' && file.folderId !== currentFolder) return false;
     if (search && !file.displayName.toLowerCase().includes(search)) return false;
     return true;
   });
 
-  // Update count
   document.getElementById('fileCount').textContent = `${filtered.length} of ${allFiles.length} files`;
 
   if (filtered.length === 0) {
@@ -276,17 +321,34 @@ function renderFiles() {
     return;
   }
 
-  grid.innerHTML = filtered.map(file => `
+  // Group by folder if not filtering a specific folder
+  if (currentFolder === 'all' && !search && config.folders && config.folders.length > 0) {
+    let html = '';
+    const folderOrder = [...config.folders, {id:'uncategorized', name:'Other Notes', icon:'📂'}];
+    folderOrder.forEach(folder => {
+      const folderFiles = filtered.filter(f => f.folderId === folder.id);
+      if (folderFiles.length === 0) return;
+      html += `<div class="folder-label" style="grid-column:1/-1">${folder.icon} ${folder.name}</div>`;
+      html += folderFiles.map(file => renderCard(file)).join('');
+    });
+    grid.innerHTML = html;
+  } else {
+    grid.innerHTML = filtered.map(file => renderCard(file)).join('');
+  }
+}
+
+function renderCard(file) {
+  return `
     <div class="card" onclick="openFile('${encodeURIComponent(file.name)}','${file.ext}','${encodeURIComponent(file.displayName)}')">
       <div class="card-badge ${file.ext}">${file.ext.toUpperCase()}</div>
       <div class="card-icon">${file.icon}</div>
       <div class="card-body">
         <div class="card-title">${file.displayName}</div>
+        <div class="card-folder">${file.folderIcon} ${file.folderName}</div>
         <div class="card-filename">${file.name}</div>
         ${file.size ? `<div class="card-size">${formatSize(file.size)}</div>` : ''}
       </div>
-    </div>
-  `).join('');
+    </div>`;
 }
 
 // ============ OPEN FILE ============
