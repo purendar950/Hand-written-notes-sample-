@@ -13,12 +13,6 @@
       "desc": "Architecture, festivals, music"
     },
     {
-      "id": "books",
-      "name": "Books & Authors",
-      "icon": "📚",
-      "desc": "Literature related notes"
-    },
-    {
       "id": "sample",
       "name": "Sample Notes",
       "icon": "✍️",
