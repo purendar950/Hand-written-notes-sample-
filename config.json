@@ -37,10 +37,13 @@
       "desc": ""
     },
     {
-      "id": "ancient_history",
-      "name": "SSC GD Ancient History",
-      "icon": "🏛️",
-      "desc": "Ancient history MCQ notes for SSC GD preparation"
+      "id": "f_1782127991061",
+      "name": "SSC GD 2026",
+      "icon": "📁",
+      "color": "#ffd54f",
+      "desc": "",
+      "parent": null,
+      "order": 6
     }
   ],
   "fileAssignments": {
@@ -70,15 +73,12 @@
     "Exam_Zen_Folk_Dances_TopperNotes_Hindi.pdf": "f_1782105578544",
     "Exam_Zen_Folk_Dances_TopperNotes (1).pdf": "f_1782105578544",
     "Parmar_Folk_Dances_Handwritten_Notes.html": "f_1782105578544",
-    "Parmar_Folk_Dances_Handwritten_Notes-1.html": "f_1782105578544",
-    "Ancient History SSC GD (Transcript Order).html": "ancient_history",
-    "Ancient History SSC GD (Transcript Order) (Hindi).html": "ancient_history"
+    "Parmar_Folk_Dances_Handwritten_Notes-1.html": "f_1782105578544"
   },
-  "displayNames": {
-    "Ancient History SSC GD (Transcript Order).html": "Ancient History — SSC GD (Lecture, Transcript Order)",
-    "Ancient History SSC GD (Transcript Order) (Hindi).html": "प्राचीन इतिहास — SSC GD (ट्रांसक्रिप्ट क्रम)"
-  },
-  "hiddenFiles": [],
+  "displayNames": {},
+  "hiddenFiles": [
+    "Sample note.html"
+  ],
   "fileOrder": {
     "Blitz lecture 8 hindi .PDF": 3,
     "Blitz Lecture 9 hindi.PDF": 2,
