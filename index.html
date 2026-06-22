@@ -126,6 +126,31 @@ let searchQuery = '';
 const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
 
 async function loadConfig() {
+  // Always fetch the published config.json first (cache-busted) so every
+  // visitor sees the latest admin changes. localStorage is only an offline
+  // fallback, never the primary source.
+  try {
+    const res = await fetch(CONFIG_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (res.ok) {
+      const data = await res.json();
+      folders = data.folders || [];
+      fileAssignments = data.fileAssignments || {};
+      hiddenFiles = data.hiddenFiles || [];
+      displayNames = data.displayNames || {};
+      if (data.siteName) siteName = data.siteName;
+      if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
+      if (data.telegramLink) telegramLink = data.telegramLink;
+      // Mirror to localStorage for offline fallback only.
+      localStorage.setItem('mgr_folders', JSON.stringify(folders));
+      localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+      localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+      localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
+      localStorage.setItem('mgr_settings', JSON.stringify({ siteName, siteSubtitle, telegramLink }));
+      return;
+    }
+  } catch(e) { console.error('Config load failed, using offline fallback:', e); }
+
+  // Network failed — fall back to last known config from localStorage.
   const localFolders = localStorage.getItem('mgr_folders');
   const localAssignments = localStorage.getItem('mgr_assignments');
   if (localFolders && localAssignments) {
@@ -137,21 +162,7 @@ async function loadConfig() {
     if (s.siteName) siteName = s.siteName;
     if (s.siteSubtitle) siteSubtitle = s.siteSubtitle;
     if (s.telegramLink) telegramLink = s.telegramLink;
-    return;
   }
-  try {
-    const res = await fetch(CONFIG_URL);
-    if (res.ok) {
-      const data = await res.json();
-      folders = data.folders || [];
-      fileAssignments = data.fileAssignments || {};
-      hiddenFiles = data.hiddenFiles || [];
-      displayNames = data.displayNames || {};
-      if (data.siteName) siteName = data.siteName;
-      if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
-      if (data.telegramLink) telegramLink = data.telegramLink;
-    }
-  } catch(e) { console.error('Config load failed:', e); }
 }
 
 async function loadFiles() {

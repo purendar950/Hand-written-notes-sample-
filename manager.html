@@ -160,6 +160,27 @@ async function init() {
 }
 
 async function loadState() {
+  // Always load the published config.json first (cache-busted) so the admin
+  // sees the true published state on any device/browser. localStorage is only
+  // an offline fallback.
+  try {
+    const res = await fetch(CONFIG_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (res.ok) {
+      const data = await res.json();
+      folders = data.folders || [];
+      fileAssignments = data.fileAssignments || {};
+      hiddenFiles = data.hiddenFiles || [];
+      displayNames = data.displayNames || {};
+      fileOrder = data.fileOrder || {};
+      if (data.siteName) settings.siteName = data.siteName;
+      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
+      if (data.telegramLink) settings.telegramLink = data.telegramLink;
+      saveLocal();
+      return;
+    }
+  } catch(e) { console.error('Config load error, using offline fallback:', e); }
+
+  // Network failed — fall back to last known state from localStorage.
   const localFolders = localStorage.getItem('mgr_folders');
   if (localFolders) {
     folders = JSON.parse(localFolders);
@@ -171,22 +192,7 @@ async function loadState() {
     if (s.siteName) settings.siteName = s.siteName;
     if (s.siteSubtitle) settings.siteSubtitle = s.siteSubtitle;
     if (s.telegramLink) settings.telegramLink = s.telegramLink;
-    return;
   }
-  try {
-    const res = await fetch(CONFIG_URL + '?t=' + Date.now());
-    if (res.ok) {
-      const data = await res.json();
-      folders = data.folders || [];
-      fileAssignments = data.fileAssignments || {};
-      hiddenFiles = data.hiddenFiles || [];
-      displayNames = data.displayNames || {};
-      if (data.siteName) settings.siteName = data.siteName;
-      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
-      if (data.telegramLink) settings.telegramLink = data.telegramLink;
-      saveLocal();
-    }
-  } catch(e) { console.error('Config load error:', e); }
 }
 
 async function loadFiles() {
