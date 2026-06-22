@@ -139,6 +139,7 @@ a:hover{text-decoration:underline}
     <div class="sb-item" onclick="window.open('https://github.com/purendar950/Hand-written-notes-sample-','_blank')"><span class="ico">🐙</span>GitHub Repo</div>
   </nav>
   <!-- TELEGRAM -->
+  <div style="padding:4px 12px"><span id="publishStatus" style="font-size:.72rem;font-weight:500"></span></div>
   <div class="tg-box">
     <div class="tg-icon">✈️</div>
     <div class="tg-title">Exam Zen StudySync</div>
@@ -227,10 +228,102 @@ if (folders.length === 0) {
   saveFolders();
 }
 
-function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); }
-function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); }
-function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); }
+function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); publishConfig(); }
+function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); publishConfig(); }
+function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); publishConfig(); }
 function saveSettings(){ localStorage.setItem('mgr_settings', JSON.stringify(settings)); }
+
+// ============ AUTO-PUBLISH config.json TO REPO ============
+let configSha = null; // SHA of existing config.json (needed for updates)
+let publishTimer = null;
+
+async function loadConfigSha() {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`);
+    if (res.ok) {
+      const data = await res.json();
+      configSha = data.sha;
+      // Also load existing config to sync
+      const binaryStr = atob(data.content);
+      const bytes = new Uint8Array(binaryStr.length);
+      for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
+      const decoded = new TextDecoder('utf-8').decode(bytes);
+      const remoteConfig = JSON.parse(decoded);
+      // Sync from remote if local is empty
+      if (folders.length <= 1 && remoteConfig.folders && remoteConfig.folders.length > 0) {
+        folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remoteConfig.folders];
+        localStorage.setItem('mgr_folders', JSON.stringify(folders));
+      }
+      if (Object.keys(fileAssignments).length === 0 && remoteConfig.fileAssignments) {
+        fileAssignments = remoteConfig.fileAssignments;
+        localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+      }
+      if (hiddenFiles.length === 0 && remoteConfig.hiddenFiles && remoteConfig.hiddenFiles.length > 0) {
+        hiddenFiles = remoteConfig.hiddenFiles;
+        localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+      }
+    }
+  } catch(e) { /* first time, no config exists yet */ }
+}
+
+function publishConfig() {
+  // Debounce: wait 1.5s after last change before publishing
+  clearTimeout(publishTimer);
+  publishTimer = setTimeout(doPublish, 1500);
+}
+
+async function doPublish() {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) {
+    // Show a subtle indicator that changes are local-only
+    document.getElementById('publishStatus').textContent = '⚠️ No token — changes saved locally only';
+    document.getElementById('publishStatus').style.color = 'var(--warn)';
+    return;
+  }
+
+  const configData = {
+    folders: folders.filter(f => f.id !== 'root'),
+    fileAssignments,
+    hiddenFiles,
+    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
+
+  try {
+    const body = {
+      message: 'Update config.json from manager',
+      content: content,
+      branch: 'main'
+    };
+    if (configSha) body.sha = configSha;
+
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      configSha = data.content.sha;
+      document.getElementById('publishStatus').textContent = '✅ Published to site!';
+      document.getElementById('publishStatus').style.color = 'var(--success)';
+      setTimeout(() => { document.getElementById('publishStatus').textContent = ''; }, 3000);
+    } else {
+      const err = await res.json();
+      document.getElementById('publishStatus').textContent = '❌ Publish failed: ' + (err.message || res.status);
+      document.getElementById('publishStatus').style.color = 'var(--danger)';
+    }
+  } catch(e) {
+    document.getElementById('publishStatus').textContent = '❌ Error: ' + e.message;
+    document.getElementById('publishStatus').style.color = 'var(--danger)';
+  }
+}
 
 // ============ FETCH FILES ============
 async function fetchFiles() {
@@ -402,9 +495,19 @@ function renderSettings(title, actions, content) {
   title.textContent = '⚙️ Settings';
   content.innerHTML = `
     <div style="max-width:500px">
+      <div style="margin-bottom:20px;padding:16px;background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(16,185,129,.05));border:1px solid rgba(16,185,129,.3);border-radius:8px">
+        <div style="font-weight:600;font-size:.92rem;margin-bottom:8px;color:var(--success)">🔑 GitHub Token (Auto-Publish)</div>
+        <p style="font-size:.8rem;color:var(--dim);margin-bottom:10px">Enter your GitHub Personal Access Token to auto-publish changes. Every folder/file/visibility change will instantly update the user page.</p>
+        <input type="password" id="tokenInput" value="${localStorage.getItem('mgr_github_token')||''}" placeholder="ghp_xxxxxxxxxxxx" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.85rem;font-family:monospace">
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn btn-success" onclick="saveToken()">Save Token</button>
+          <button class="btn btn-danger" onclick="clearToken()">Clear Token</button>
+        </div>
+        <p style="font-size:.7rem;color:var(--muted);margin-top:8px">Need token? GitHub → Settings → Developer Settings → Personal Access Tokens → Generate (repo scope)</p>
+      </div>
       <div class="form-group"><label>Repository Owner</label><input value="${REPO_OWNER}" readonly style="opacity:.6"></div>
       <div class="form-group"><label>Repository Name</label><input value="${REPO_NAME}" readonly style="opacity:.6"></div>
-      <div class="form-group"><label>Telegram Channel</label><input value="${settings.telegramLink}" onchange="settings.telegramLink=this.value;saveSettings();toast('Telegram link updated!')"></div>
+      <div class="form-group"><label>Telegram Channel</label><input value="${settings.telegramLink}" onchange="settings.telegramLink=this.value;saveSettings();publishConfig();toast('Telegram link updated!')"></div>
       <div style="margin-top:20px;padding:14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px">
         <div style="font-weight:600;color:var(--danger);font-size:.88rem;margin-bottom:8px">⚠️ Reset Data</div>
         <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">This will clear all folder assignments, hidden files, and custom folders. Repository files won't be affected.</p>
@@ -517,6 +620,20 @@ function exportConfig() {
   toast('config.json downloaded! Commit it to your repo to update the public user page.');
 }
 
+// ============ TOKEN MANAGEMENT ============
+function saveToken() {
+  const token = document.getElementById('tokenInput').value.trim();
+  if (!token) return toast('Please enter a token', 'warn');
+  localStorage.setItem('mgr_github_token', token);
+  toast('Token saved! Changes will auto-publish now.');
+  doPublish(); // Publish current state immediately
+}
+function clearToken() {
+  localStorage.removeItem('mgr_github_token');
+  document.getElementById('tokenInput').value = '';
+  toast('Token cleared. Changes will only save locally.');
+}
+
 // ============ UTILITIES ============
 function formatSize(b){if(!b)return'—';if(b<1024)return b+'B';if(b<1048576)return(b/1024).toFixed(1)+'KB';return(b/1048576).toFixed(1)+'MB'}
 function openModal(id){document.getElementById(id).classList.add('show')}
@@ -528,7 +645,7 @@ function toast(msg, type){const t=document.getElementById('toast');t.textContent
 document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('show'); }));
 
 // ============ INIT ============
-fetchFiles();
+loadConfigSha().then(() => fetchFiles());
 </script>
 </body>
 </html>
