@@ -308,20 +308,43 @@ async function init() {
 
 <script>
 async function loadConfig() {
-  const res = await fetch(CONFIG_URL);
-  if (!res.ok) throw new Error('Config fetch failed');
-  config = await res.json();
-  folders = config.folders || [];
-  fileAssignments = config.fileAssignments || {};
-  hiddenFiles = config.hiddenFiles || [];
-  displayNames = config.displayNames || {};
+  // PRIORITY 1: Read from localStorage (same device as manager = always up to date)
+  const localFolders = localStorage.getItem('mgr_folders');
+  const localAssignments = localStorage.getItem('mgr_assignments');
   
-  // Update site branding
-  const title = config.siteName || 'Parmar Railway Notes';
-  const subtitle = config.siteSubtitle || 'Hand-Written Notes Library';
-  document.getElementById('siteTitle').textContent = '📚 ' + title;
-  document.getElementById('siteSubtitle').textContent = subtitle;
-  document.title = title + ' | ' + subtitle;
+  if (localFolders && localAssignments) {
+    // Manager data exists on this device — use it (always latest)
+    folders = JSON.parse(localFolders);
+    fileAssignments = JSON.parse(localAssignments);
+    hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
+    displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
+    const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
+    const title = s.siteName || 'Parmar Railway Notes';
+    const subtitle = s.siteSubtitle || 'Hand-Written Notes Library';
+    document.getElementById('siteTitle').textContent = '📚 ' + title;
+    document.getElementById('siteSubtitle').textContent = subtitle;
+    document.title = title + ' | ' + subtitle;
+    return;
+  }
+  
+  // PRIORITY 2: Fetch from config.json in repo (for other visitors)
+  try {
+    const res = await fetch(CONFIG_URL);
+    if (!res.ok) throw new Error('Config fetch failed');
+    config = await res.json();
+    folders = config.folders || [];
+    fileAssignments = config.fileAssignments || {};
+    hiddenFiles = config.hiddenFiles || [];
+    displayNames = config.displayNames || {};
+    const title = config.siteName || 'Parmar Railway Notes';
+    const subtitle = config.siteSubtitle || 'Hand-Written Notes Library';
+    document.getElementById('siteTitle').textContent = '📚 ' + title;
+    document.getElementById('siteSubtitle').textContent = subtitle;
+    document.title = title + ' | ' + subtitle;
+  } catch(e) {
+    // No config available — continue with empty folders (flat view)
+    console.warn('Config load failed:', e);
+  }
 }
 
 async function loadFiles() {
