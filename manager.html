@@ -3,538 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Manager | Parmar Railway Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<title>File Manager - Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0a0a14;--surface:#12121f;--card:#1e2a3a;--card2:#162030;
---accent:#ffd54f;--accent2:#80cbc4;--accent3:#f39c12;
---text:#e8e8f0;--text-dim:#9ca3af;--text-muted:#6b7280;
---border:#2d3748;--success:#10b981;--danger:#ef4444;--info:#3b82f6;
---radius:12px;--shadow:0 4px 20px rgba(0,0,0,.3);
-}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;display:flex;flex-direction:column}
+:root{--bg:#0d1117;--surface:#161b22;--card:#21262d;--accent:#ffd54f;--blue:#58a6ff;--text:#e6edf3;--muted:#8b949e;--border:#30363d;--danger:#f85149;--success:#3fb950;--radius:12px}
+.top-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;position:sticky;top:0;z-index:100}
+.top-bar-left{display:flex;flex-direction:column;gap:4px}
+.site-title{font-size:16px;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:8px}
+.breadcrumb{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.bc-link{cursor:pointer;color:var(--blue);transition:color .2s}
+.bc-link:hover{color:#79c0ff}
+.bc-sep{color:#484f58}
+.bc-current{color:var(--text)}
+.top-bar-right{display:flex;align-items:center;gap:12px}
+.publish-status{font-size:12px;padding:4px 10px;border-radius:16px;background:var(--card);border:1px solid var(--border);color:var(--muted);white-space:nowrap}
+.publish-status.ok{color:var(--success);border-color:var(--success)}
+.publish-status.err{color:var(--danger);border-color:var(--danger)}
+.icon-btn{background:var(--card);border:1px solid var(--border);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;color:var(--text)}
+.icon-btn:hover{border-color:var(--blue);background:var(--surface)}
+.main-content{flex:1;padding:24px;max-width:1200px;margin:0 auto;width:100%}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.section-header h2{font-size:22px;font-weight:600}
+.section-count{color:var(--muted);font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+.btn:hover{border-color:var(--blue);background:var(--surface)}
+.btn-primary{background:var(--blue);border-color:var(--blue);color:#0d1117;font-weight:600}
+.btn-primary:hover{background:#79c0ff}
+.btn-danger{border-color:var(--danger);color:var(--danger)}
+.btn-danger:hover{background:var(--danger);color:#fff}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#0d1117;font-weight:600}
+.btn-accent:hover{background:#ffe082}
+.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-bottom:24px}
+.folder-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 14px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.folder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--folder-color,var(--accent));opacity:.8}
+.folder-card:hover{transform:translateY(-4px);border-color:var(--folder-color,var(--accent));box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.folder-card:hover .folder-actions{opacity:1}
+.folder-icon{font-size:48px;margin-bottom:10px}
+.folder-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;word-break:break-word}
+.folder-count{font-size:11px;color:var(--muted)}
+.folder-actions{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s}
+.folder-actions button{background:var(--card);border:1px solid var(--border);border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s}
+.folder-actions button:hover{border-color:var(--blue)}
+.folder-actions button.del-btn:hover{border-color:var(--danger);color:var(--danger)}
+.quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;padding-top:20px;border-top:1px solid var(--border)}
+.back-btn{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text);font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
+.back-btn:hover{background:var(--border);border-color:var(--blue)}
+.folder-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.folder-title{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:600}
+.folder-title-icon{font-size:24px}
+.file-count-badge{font-size:12px;font-weight:500;color:var(--muted);background:var(--card);border-radius:12px;padding:3px 10px}
+.file-list{display:flex;flex-direction:column;gap:4px}
+.file-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:all .2s}
+.file-row:hover{background:var(--card);border-color:#484f58}
+.file-row:hover .file-admin-actions{opacity:1}
+.file-row-icon{font-size:28px;flex-shrink:0}
+.file-row-info{flex:1;min-width:0}
+.file-row-name{font-size:14px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-row-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.type-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.badge-html{background:#1a3a2a;color:var(--success)}
+.badge-pdf{background:#3d1a1a;color:var(--danger)}
+.file-admin-actions{display:flex;gap:4px;opacity:0;transition:opacity .2s;flex-shrink:0}
+.file-admin-actions button{background:var(--card);border:1px solid var(--border);border-radius:6px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s}
+.file-admin-actions button:hover{border-color:var(--blue)}
+.file-admin-actions button.del-btn:hover{border-color:var(--danger);color:var(--danger)}
+.file-checkbox{width:18px;height:18px;accent-color:var(--blue);cursor:pointer;flex-shrink:0}
+.bulk-bar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fadeIn .2s}
+.bulk-bar .bulk-count{font-size:13px;color:var(--muted)}
+.drop-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:32px;text-align:center;color:var(--muted);transition:all .2s;margin-top:16px;cursor:pointer}
+.drop-zone:hover,.drop-zone.dragover{border-color:var(--blue);color:var(--blue);background:rgba(88,166,255,.05)}
+.settings-panel{animation:fadeIn .3s}
+.settings-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.settings-section h3{font-size:15px;font-weight:600;margin-bottom:12px;color:var(--accent)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.form-group input,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--blue)}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:6px}
+.toggle-row span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:12px}
+.toggle-switch{position:relative;width:40px;height:22px;flex-shrink:0}
+.toggle-switch input{opacity:0;width:0;height:0}
+.toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--border);border-radius:22px;transition:.2s}
+.toggle-slider::before{content:'';position:absolute;height:16px;width:16px;left:3px;bottom:3px;background:var(--text);border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.toggle-slider{background:var(--blue)}
+.toggle-switch input:checked+.toggle-slider::before{transform:translateX(18px)}
+.upload-panel{animation:fadeIn .3s}
+.upload-progress{margin-top:12px}
+.upload-item{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:6px}
+.upload-item .name{flex:1;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.upload-item .prog-bar{width:80px;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.upload-item .prog-fill{height:100%;background:var(--blue);border-radius:3px;transition:width .3s}
+.upload-item .status-icon{font-size:14px;width:24px;text-align:center}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:420px;width:100%}
+.modal-box h3{font-size:16px;font-weight:600;margin-bottom:12px}
+.modal-box p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.modal-box .modal-actions{display:flex;gap:10px;justify-content:flex-end}
+.empty-state{text-align:center;padding:48px;color:var(--muted);font-size:15px}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 20px;font-size:13px;color:var(--text);box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:2000;animation:slideUp .3s;max-width:320px}
+.toast.success{border-color:var(--success);color:var(--success)}
+.toast.error{border-color:var(--danger);color:var(--danger)}
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:16px 24px;text-align:center}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.footer-link{color:var(--blue);text-decoration:none;font-size:13px}
+.footer-link:hover{text-decoration:underline}
+.footer-sep{color:var(--border)}
+.footer-copy{font-size:12px;color:#484f58}
+.select-folder-list{max-height:200px;overflow-y:auto}
+.select-folder-item{padding:10px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;font-size:14px}
+.select-folder-item:hover{border-color:var(--blue);background:var(--card)}
+.color-picker-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.color-dot{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.color-dot:hover,.color-dot.selected{border-color:var(--text);transform:scale(1.2)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.top-bar{padding:10px 16px}.main-content{padding:16px}.folder-grid{grid-template-columns:repeat(2,1fr);gap:12px}.folder-icon{font-size:36px}.folder-card{padding:16px 10px}.file-admin-actions{opacity:1}.folder-actions{opacity:1}.quick-actions{flex-direction:column}}
+@media(max-width:480px){.folder-grid{grid-template-columns:repeat(2,1fr);gap:10px}.folder-icon{font-size:32px}.folder-name{font-size:12px}.top-bar{flex-direction:column;align-items:flex-start}.bulk-bar{flex-direction:column;align-items:flex-start}}
 </style>
-
-<style>
-/* LAYOUT */
-.app{display:flex;min-height:100vh}
-.sidebar{width:260px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:200;transition:transform .3s ease}
-.sidebar-header{padding:20px;border-bottom:1px solid var(--border);text-align:center}
-.sidebar-brand{font-family:'Kalam',cursive;font-size:1.3rem;color:var(--accent)}
-.sidebar-sub{font-size:.75rem;color:var(--text-dim);margin-top:4px}
-.sidebar-nav{flex:1;overflow-y:auto;padding:12px 0}
-.nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;cursor:pointer;transition:all .15s;border-left:3px solid transparent;color:var(--text-dim);font-size:.9rem;font-weight:500}
-.nav-item:hover{background:rgba(255,213,79,.05);color:var(--text)}
-.nav-item.active{background:rgba(255,213,79,.08);color:var(--accent);border-left-color:var(--accent)}
-.nav-item .icon{font-size:1.1rem;width:24px;text-align:center}
-.sidebar-footer{padding:16px;border-top:1px solid var(--border)}
-.tg-box{background:linear-gradient(135deg,#1a237e,#0d47a1);border-radius:var(--radius);padding:14px;text-align:center;margin-bottom:10px}
-.tg-box a{color:#5bc8f5;font-size:.8rem;text-decoration:none;font-weight:500}
-.tg-box .tg-label{font-size:.7rem;color:rgba(255,255,255,.7);margin-bottom:4px}
-.quick-links{display:flex;gap:8px;justify-content:center}
-.quick-links a{font-size:.72rem;color:var(--accent2);text-decoration:none;padding:4px 8px;border:1px solid var(--border);border-radius:6px;transition:all .15s}
-.quick-links a:hover{border-color:var(--accent2);background:rgba(128,203,196,.1)}
-
-/* MAIN */
-.main{margin-left:260px;flex:1;min-height:100vh;padding:24px;max-width:100%}
-.main-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
-.main-title{font-family:'Kalam',cursive;font-size:1.6rem;color:var(--accent)}
-.publish-status{margin-left:auto;font-size:.8rem;padding:6px 14px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--text-dim)}
-.publish-status.success{border-color:var(--success);color:var(--success)}
-.publish-status.error{border-color:var(--danger);color:var(--danger)}
-.publish-status.publishing{border-color:var(--accent);color:var(--accent)}
-.hamburger{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:1.3rem;cursor:pointer;align-items:center;justify-content:center;position:fixed;top:12px;left:12px;z-index:300}
-
-/* PANELS */
-.panel{display:none}
-.panel.active{display:block}
-
-/* CARDS */
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:24px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:transform .15s}
-.stat-card:hover{transform:translateY(-2px)}
-.stat-card .sc-icon{font-size:2rem;margin-bottom:8px}
-.stat-card .sc-value{font-size:1.8rem;font-weight:700;color:var(--accent)}
-.stat-card .sc-label{font-size:.8rem;color:var(--text-dim);margin-top:4px}
-
-/* TABLE */
-.table-wrap{overflow-x:auto;background:var(--card);border-radius:var(--radius);border:1px solid var(--border)}
-table{width:100%;border-collapse:collapse;font-size:.85rem}
-th{background:var(--surface);padding:12px 14px;text-align:left;font-weight:600;color:var(--text-dim);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);cursor:pointer;white-space:nowrap;user-select:none}
-th:hover{color:var(--accent)}
-td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle}
-tr:hover td{background:rgba(255,213,79,.02)}
-.type-badge{padding:3px 8px;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase}
-.type-badge.html{background:rgba(16,185,129,.15);color:#10b981}
-.type-badge.pdf{background:rgba(239,68,68,.15);color:#ef4444}
-.action-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.75rem;cursor:pointer;transition:all .15s;margin:2px}
-.action-btn:hover{border-color:var(--accent);color:var(--accent)}
-.action-btn.danger:hover{border-color:var(--danger);color:var(--danger)}
-
-/* BULK BAR */
-.bulk-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border-radius:var(--radius);margin-bottom:16px;border:1px solid var(--border);flex-wrap:wrap}
-.bulk-bar .count{font-size:.85rem;color:var(--accent);font-weight:600}
-.bulk-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.8rem;cursor:pointer;transition:all .15s}
-.bulk-btn:hover{border-color:var(--accent);color:var(--accent)}
-.bulk-btn.danger{border-color:rgba(239,68,68,.3)}
-.bulk-btn.danger:hover{border-color:var(--danger);color:var(--danger)}
-
-/* SEARCH */
-.search-bar{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
-.search-input{flex:1;min-width:200px;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.9rem;outline:none;font-family:'Inter',sans-serif}
-.search-input:focus{border-color:var(--accent)}
-.sort-select{padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.85rem;outline:none;cursor:pointer}
-
-/* FOLDER CARDS */
-.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
-.folder-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px;position:relative;transition:all .15s;cursor:grab}
-.folder-card:hover{border-color:var(--accent)}
-.folder-card.dragging{opacity:.5;border-style:dashed}
-.folder-card .fc-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.folder-card .fc-icon{font-size:1.6rem}
-.folder-card .fc-name{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--text);flex:1}
-.folder-card .fc-count{font-size:.75rem;color:var(--text-muted);background:var(--surface);padding:3px 8px;border-radius:10px}
-.folder-card .fc-desc{font-size:.8rem;color:var(--text-dim);margin-bottom:10px}
-.folder-card .fc-actions{display:flex;gap:6px}
-.folder-color-bar{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--radius) 0 0 var(--radius)}
-
-/* FORM ELEMENTS */
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:6px;font-weight:500}
-.form-input{width:100%;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.9rem;outline:none;font-family:'Inter',sans-serif}
-.form-input:focus{border-color:var(--accent)}
-textarea.form-input{min-height:80px;resize:vertical}
-.form-row{display:flex;gap:12px;flex-wrap:wrap}
-.form-row .form-group{flex:1;min-width:150px}
-.btn{padding:10px 20px;border-radius:var(--radius);border:none;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
-.btn-primary{background:var(--accent);color:#1a1a2e}
-.btn-primary:hover{background:#ffe082;transform:translateY(-1px)}
-.btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border)}
-.btn-secondary:hover{border-color:var(--accent)}
-.btn-danger{background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3)}
-.btn-danger:hover{background:rgba(239,68,68,.25)}
-.btn-sm{padding:6px 14px;font-size:.8rem}
-
-/* ORGANIZE DND */
-.dnd-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.dnd-section{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden}
-.dnd-section-header{padding:14px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-family:'Kalam',cursive;font-size:1rem;color:var(--accent2);display:flex;align-items:center;gap:8px}
-.dnd-section-body{min-height:60px;padding:8px}
-.dnd-item{padding:10px 14px;margin:4px 0;background:var(--surface);border-radius:8px;border:1px solid var(--border);cursor:grab;font-size:.83rem;display:flex;align-items:center;gap:8px;transition:all .15s}
-.dnd-item:hover{border-color:var(--accent)}
-.dnd-item.dragging{opacity:.4;border-style:dashed}
-.dnd-section-body.drag-over{background:rgba(255,213,79,.05);border:2px dashed var(--accent)}
-
-/* VISIBILITY */
-.vis-list{display:grid;gap:8px}
-.vis-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);transition:opacity .2s}
-.vis-item.hidden{opacity:.4}
-.vis-item .vi-name{flex:1;font-size:.85rem}
-.vis-item .vi-badge{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(239,68,68,.15);color:var(--danger)}
-.toggle{width:44px;height:24px;border-radius:12px;background:var(--border);position:relative;cursor:pointer;transition:background .2s}
-.toggle.on{background:var(--success)}
-.toggle::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:transform .2s}
-.toggle.on::after{transform:translateX(20px)}
-
-/* UPLOAD */
-.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:40px;text-align:center;cursor:pointer;transition:all .2s;background:var(--card)}
-.upload-zone:hover,.upload-zone.drag-over{border-color:var(--accent);background:rgba(255,213,79,.03)}
-.upload-zone .uz-icon{font-size:3rem;margin-bottom:12px}
-.upload-zone .uz-text{color:var(--text-dim);font-size:.9rem}
-.upload-preview{margin-top:16px;padding:16px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border)}
-.upload-progress{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:12px}
-.upload-progress-bar{height:100%;background:var(--accent);border-radius:2px;transition:width .3s;width:0}
-
-/* SETTINGS */
-.settings-section{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;margin-bottom:16px}
-.settings-section h3{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--accent2);margin-bottom:16px}
-.token-field{display:flex;gap:8px}
-.token-field input{flex:1}
-
-/* TOAST */
-.toast-container{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}
-.toast{padding:12px 20px;border-radius:var(--radius);font-size:.85rem;font-weight:500;animation:slideIn .3s ease;box-shadow:var(--shadow);max-width:360px}
-.toast.success{background:#065f46;color:#a7f3d0;border:1px solid #10b981}
-.toast.error{background:#7f1d1d;color:#fca5a5;border:1px solid #ef4444}
-.toast.info{background:#1e3a5f;color:#93c5fd;border:1px solid #3b82f6}
-.toast.warn{background:#78350f;color:#fde68a;border:1px solid #f59e0b}
-@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
-
-/* MODAL DIALOG */
-.dialog-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px}
-.dialog-overlay.open{display:flex}
-.dialog{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.dialog h3{font-family:'Kalam',cursive;color:var(--accent);margin-bottom:12px;font-size:1.2rem}
-.dialog p{color:var(--text-dim);font-size:.9rem;margin-bottom:20px}
-.dialog-actions{display:flex;gap:10px;justify-content:flex-end}
-
-/* ACTIVITY LOG */
-.activity-log{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);max-height:300px;overflow-y:auto;padding:12px}
-.activity-item{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.8rem;color:var(--text-dim);display:flex;gap:8px;align-items:center}
-.activity-item:last-child{border:none}
-.activity-item .ai-time{color:var(--text-muted);font-size:.7rem;white-space:nowrap}
-
-/* MOBILE */
-@media(max-width:768px){
-.sidebar{transform:translateX(-100%)}
-.sidebar.open{transform:translateX(0)}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;display:none}
-.sidebar-overlay.open{display:block}
-.main{margin-left:0;padding:16px;padding-top:60px}
-.hamburger{display:flex}
-.stat-grid{grid-template-columns:repeat(2,1fr)}
-.folder-grid{grid-template-columns:1fr}
-.dnd-container{grid-template-columns:1fr}
-.table-wrap{font-size:.78rem}
-table th,table td{padding:8px 10px}
-.form-row{flex-direction:column}
-.search-bar{flex-direction:column}
-.main-header{padding-left:48px}
-}
-@media(max-width:480px){
-.stat-grid{grid-template-columns:1fr}
-.bulk-bar{flex-direction:column;align-items:stretch;text-align:center}
-}
-/* MOBILE TABLE CARD */
-@media(max-width:600px){
-.table-wrap table,.table-wrap thead,.table-wrap tbody,.table-wrap th,.table-wrap td,.table-wrap tr{display:block}
-.table-wrap thead{display:none}
-.table-wrap tr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;padding:12px;position:relative}
-.table-wrap td{padding:4px 0;border:none;font-size:.82rem}
-.table-wrap td::before{content:attr(data-label);font-weight:600;color:var(--text-dim);font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px}
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:#4a5568}
-</style>
-
 </head>
 <body>
-<div class="app">
-
-<!-- HAMBURGER -->
-<button class="hamburger" onclick="toggleSidebar()">☰</button>
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
-
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<div class="sidebar-brand">📋 File Manager</div>
-<div class="sidebar-sub">Admin Panel</div>
-</div>
-<nav class="sidebar-nav">
-<div class="nav-item active" data-panel="dashboard" onclick="switchPanel('dashboard',this)"><span class="icon">📊</span>Dashboard</div>
-<div class="nav-item" data-panel="files" onclick="switchPanel('files',this)"><span class="icon">📁</span>All Files</div>
-<div class="nav-item" data-panel="folders" onclick="switchPanel('folders',this)"><span class="icon">📂</span>Folders</div>
-<div class="nav-item" data-panel="organize" onclick="switchPanel('organize',this)"><span class="icon">🔀</span>Organize</div>
-<div class="nav-item" data-panel="visibility" onclick="switchPanel('visibility',this)"><span class="icon">👁️</span>Visibility</div>
-<div class="nav-item" data-panel="upload" onclick="switchPanel('upload',this)"><span class="icon">⬆️</span>Upload</div>
-<div class="nav-item" data-panel="settings" onclick="switchPanel('settings',this)"><span class="icon">⚙️</span>Settings</div>
-</nav>
-<div class="sidebar-footer">
-<div class="tg-box">
-<div class="tg-label">Join our Telegram</div>
-<a href="https://t.me/Exam_Zen_StudySync" target="_blank" id="tgLink">✈️ Exam Zen StudySync</a>
-</div>
-<div class="quick-links">
-<a href="index.html" target="_blank">📚 View Library</a>
-<a href="https://github.com/purendar950/Hand-written-notes-sample-" target="_blank">🐙 GitHub</a>
-</div>
-</div>
-</aside>
-
-<!-- MAIN CONTENT -->
-<main class="main">
-<div class="main-header">
-<h1 class="main-title" id="panelTitle">📊 Dashboard</h1>
-<div class="publish-status" id="publishStatus">Ready</div>
-</div>
-
-<!-- DASHBOARD PANEL -->
-<div class="panel active" id="panel-dashboard">
-<div class="stat-grid" id="statsGrid"></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
-<div>
-<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px;font-size:1rem">📝 Recent Activity</h3>
-<div class="activity-log" id="activityLog"><div class="activity-item"><span>No activity yet.</span></div></div>
-</div>
-<div>
-<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px;font-size:1rem">💾 Storage Breakdown</h3>
-<div id="storageBreakdown" style="background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px"></div>
-</div>
-</div>
-<div class="tg-box" style="max-width:400px;padding:20px">
-<div class="tg-label" style="font-size:.85rem;margin-bottom:8px">📢 Share with students</div>
-<a href="https://t.me/Exam_Zen_StudySync" target="_blank" style="color:#5bc8f5;font-size:1rem" id="tgPromoLink">✈️ Join Exam Zen StudySync on Telegram</a>
-</div>
-</div>
-
-<!-- ALL FILES PANEL -->
-<div class="panel" id="panel-files">
-<div class="search-bar">
-<input type="text" class="search-input" id="fileSearch" placeholder="🔍 Search files..." oninput="renderFilesTable()">
-<select class="sort-select" id="fileSort" onchange="renderFilesTable()">
-<option value="name">Sort: Name</option>
-<option value="size">Sort: Size</option>
-<option value="type">Sort: Type</option>
-</select>
-</div>
-<div class="bulk-bar" id="bulkBar" style="display:none">
-<span class="count" id="bulkCount">0 selected</span>
-<button class="bulk-btn" onclick="bulkMove()">📂 Move</button>
-<button class="bulk-btn" onclick="bulkHide()">👁️ Toggle Visibility</button>
-<button class="bulk-btn danger" onclick="bulkDelete()">🗑️ Delete</button>
-</div>
-<div class="table-wrap">
-<table id="filesTable">
-<thead><tr>
-<th style="width:30px"><input type="checkbox" id="selectAll" onchange="toggleSelectAll()"></th>
-<th style="width:30px"></th>
-<th onclick="sortTable('name')">Name ↕</th>
-<th onclick="sortTable('type')">Type ↕</th>
-<th onclick="sortTable('size')">Size ↕</th>
-<th>Folder</th>
-<th>Actions</th>
-</tr></thead>
-<tbody id="filesBody"></tbody>
-</table>
-</div>
-</div>
-
-<!-- FOLDERS PANEL -->
-<div class="panel" id="panel-folders">
-<div style="margin-bottom:20px">
-<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:16px">➕ Create New Folder</h3>
-<div class="form-row">
-<div class="form-group"><label>Folder Name</label><input type="text" class="form-input" id="newFolderName" placeholder="e.g. Geography"></div>
-<div class="form-group"><label>Emoji Icon</label><input type="text" class="form-input" id="newFolderIcon" placeholder="📁" maxlength="4" style="width:80px"></div>
-<div class="form-group"><label>Color</label><input type="color" class="form-input" id="newFolderColor" value="#f59e0b" style="width:60px;height:38px;padding:2px"></div>
-</div>
-<div class="form-row">
-<div class="form-group"><label>Description</label><input type="text" class="form-input" id="newFolderDesc" placeholder="Brief description"></div>
-<div class="form-group"><label>Parent Folder</label><select class="form-input" id="newFolderParent"><option value="">None (root)</option></select></div>
-</div>
-<button class="btn btn-primary" onclick="createFolder()">➕ Create Folder</button>
-</div>
-<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px">📂 Existing Folders</h3>
-<div class="folder-grid" id="folderGrid"></div>
-</div>
-
-<!-- ORGANIZE PANEL -->
-<div class="panel" id="panel-organize">
-<p style="color:var(--text-dim);font-size:.85rem;margin-bottom:16px">Drag files between folder sections to reorganize them.</p>
-<div class="dnd-container" id="dndContainer"></div>
-</div>
-
-<!-- VISIBILITY PANEL -->
-<div class="panel" id="panel-visibility">
-<div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-<button class="btn btn-sm btn-secondary" onclick="showAllFiles()">👁️ Show All</button>
-<button class="btn btn-sm btn-secondary" onclick="hideAllFiles()">🙈 Hide All</button>
-</div>
-<div class="vis-list" id="visList"></div>
-</div>
-
-<!-- UPLOAD PANEL -->
-<div class="panel" id="panel-upload">
-<div class="upload-zone" id="uploadZone" onclick="document.getElementById('uploadInput').click()">
-<div class="uz-icon">📤</div>
-<div class="uz-text">Click or drag files here to upload<br><small style="color:var(--text-muted)">Accepts .html and .pdf files</small></div>
-</div>
-<input type="file" id="uploadInput" style="display:none" accept=".html,.pdf" multiple onchange="handleUploadFiles(this.files)">
-<div id="uploadPreview"></div>
-</div>
-
-<!-- SETTINGS PANEL -->
-<div class="panel" id="panel-settings">
-<div class="settings-section">
-<h3>🔑 GitHub Token</h3>
-<p style="color:var(--text-dim);font-size:.8rem;margin-bottom:12px">Required for publishing config and uploading/deleting files. Needs 'repo' scope.</p>
-<div class="token-field">
-<input type="password" class="form-input" id="tokenInput" placeholder="ghp_xxxxxxxxxxxx">
-<button class="btn btn-primary btn-sm" onclick="saveToken()">Save</button>
-<button class="btn btn-danger btn-sm" onclick="clearToken()">Clear</button>
-</div>
-<div id="tokenStatus" style="margin-top:8px;font-size:.8rem;color:var(--text-muted)"></div>
-</div>
-<div class="settings-section">
-<h3>🌐 Site Settings</h3>
-<div class="form-group"><label>Telegram Link</label><input type="text" class="form-input" id="settingTelegram" placeholder="https://t.me/..."></div>
-<div class="form-row">
-<div class="form-group"><label>Site Name</label><input type="text" class="form-input" id="settingSiteName" placeholder="Parmar Railway Notes"></div>
-<div class="form-group"><label>Site Subtitle</label><input type="text" class="form-input" id="settingSiteSubtitle" placeholder="Hand-Written Notes Library"></div>
-</div>
-<button class="btn btn-primary btn-sm" onclick="saveSettings()">💾 Save Settings</button>
-</div>
-
-<div class="settings-section">
-<h3>📦 Import / Export</h3>
-<div style="display:flex;gap:10px;flex-wrap:wrap">
-<button class="btn btn-secondary btn-sm" onclick="importConfig()">📥 Import config.json</button>
-<input type="file" id="importInput" style="display:none" accept=".json" onchange="handleImport(this.files[0])">
-<button class="btn btn-secondary btn-sm" onclick="exportConfig()">📤 Export config.json</button>
-<button class="btn btn-danger btn-sm" onclick="resetAllData()">🗑️ Reset All Data</button>
-</div>
-</div>
-</div>
-
-</main>
-</div>
-
-<!-- TOAST CONTAINER -->
-<div class="toast-container" id="toastContainer"></div>
-
-<!-- DIALOG -->
-<div class="dialog-overlay" id="dialogOverlay">
-<div class="dialog" id="dialogBox">
-<h3 id="dialogTitle">Confirm</h3>
-<p id="dialogMsg">Are you sure?</p>
-<div class="dialog-actions">
-<button class="btn btn-secondary btn-sm" onclick="closeDialog()">Cancel</button>
-<button class="btn btn-danger btn-sm" id="dialogConfirmBtn" onclick="dialogConfirm()">Delete</button>
-</div>
-</div>
-</div>
-
+<div id="app"></div>
+<div id="toast-container"></div>
 <script>
-// ============ CONFIG ============
+// ==================== CONFIG ====================
 const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
 const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
+const CONFIG_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
 const TELEGRAM_LINK = 'https://t.me/Exam_Zen_StudySync';
-const CONFIG_RAW_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
+const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
+const FOLDER_COLORS = ['#ffd54f','#58a6ff','#3fb950','#f85149','#bc8cff','#ff7b72','#79c0ff','#d2a8ff','#7ee787','#ffa657'];
 
-// ============ STATE ============
-let folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Files not assigned to any folder'}];
+// ==================== STATE ====================
+let folders = [];
 let fileAssignments = {};
 let hiddenFiles = [];
 let displayNames = {};
-let settings = { telegramLink: TELEGRAM_LINK, siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library' };
-let repoFiles = [];
-let configSha = null;
+let settings = { siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library', telegramLink: TELEGRAM_LINK };
+let allFiles = [];
+let currentView = 'home'; // home, folder, settings, upload, visibility
+let currentFolder = null;
 let selectedFiles = new Set();
-let activityLog = [];
-let publishTimeout = null;
-let currentDialogCallback = null;
+let configSha = null;
+let publishStatus = '';
+let uploadQueue = [];
 
-// ============ LOCAL STORAGE KEYS ============
-const LS = {
-  folders: 'mgr_folders',
-  assignments: 'mgr_assignments',
-  hidden: 'mgr_hidden',
-  settings: 'mgr_settings',
-  displayNames: 'mgr_displayNames',
-  token: 'mgr_github_token'
-};
-
-// ============ INIT ============
+// ==================== INIT ====================
 async function init() {
-  const hasLocal = localStorage.getItem(LS.folders);
-  if (hasLocal) {
-    loadFromLocalStorage();
-  } else {
-    await loadFromRemoteConfig();
+  await loadState();
+  await loadFiles();
+  render();
+}
+
+async function loadState() {
+  const localFolders = localStorage.getItem('mgr_folders');
+  if (localFolders) {
+    folders = JSON.parse(localFolders);
+    fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
+    hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
+    displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
+    const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
+    if (s.siteName) settings.siteName = s.siteName;
+    if (s.siteSubtitle) settings.siteSubtitle = s.siteSubtitle;
+    if (s.telegramLink) settings.telegramLink = s.telegramLink;
+    return;
   }
-  await fetchRepoFiles();
-  await fetchConfigSha();
-  renderAll();
-  updateTokenStatus();
-}
-
-function loadFromLocalStorage() {
   try {
-    const f = localStorage.getItem(LS.folders);
-    if (f) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...JSON.parse(f)];
-    const a = localStorage.getItem(LS.assignments);
-    if (a) fileAssignments = JSON.parse(a);
-    const h = localStorage.getItem(LS.hidden);
-    if (h) hiddenFiles = JSON.parse(h);
-    const s = localStorage.getItem(LS.settings);
-    if (s) settings = {...settings, ...JSON.parse(s)};
-    const d = localStorage.getItem(LS.displayNames);
-    if (d) displayNames = JSON.parse(d);
-  } catch(e) { console.error('LocalStorage parse error:', e); }
-}
-
-async function loadFromRemoteConfig() {
-  try {
-    const res = await fetch(CONFIG_RAW_URL);
-    if (!res.ok) return;
-    const data = await res.json();
-    if (data.folders) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...data.folders];
-    if (data.fileAssignments) fileAssignments = data.fileAssignments;
-    if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
-    if (data.displayNames) displayNames = data.displayNames;
-    if (data.telegramLink) settings.telegramLink = data.telegramLink;
-    if (data.siteName) settings.siteName = data.siteName;
-    if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
-    saveToLocalStorage();
-  } catch(e) { console.warn('Could not fetch remote config:', e); }
-}
-
-async function fetchRepoFiles() {
-  try {
-    const res = await fetch(API_URL);
-    if (!res.ok) throw new Error('API error ' + res.status);
-    const data = await res.json();
-    repoFiles = data.filter(f => f.type === 'file' && /\.(html|pdf)$/i.test(f.name) && f.name.toLowerCase() !== 'index.html' && f.name.toLowerCase() !== 'manager.html');
-  } catch(e) {
-    showToast('Failed to load repo files: ' + e.message, 'error');
-    repoFiles = [];
-  }
-}
-
-async function fetchConfigSha() {
-  try {
-    const token = localStorage.getItem(LS.token);
-    const headers = token ? { 'Authorization': `token ${token}` } : {};
-    const res = await fetch(API_URL + 'config.json', { headers });
+    const res = await fetch(CONFIG_URL + '?t=' + Date.now());
     if (res.ok) {
       const data = await res.json();
-      configSha = data.sha;
+      folders = data.folders || [];
+      fileAssignments = data.fileAssignments || {};
+      hiddenFiles = data.hiddenFiles || [];
+      displayNames = data.displayNames || {};
+      if (data.siteName) settings.siteName = data.siteName;
+      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
+      if (data.telegramLink) settings.telegramLink = data.telegramLink;
+      saveLocal();
     }
-  } catch(e) { /* ignore */ }
+  } catch(e) { console.error('Config load error:', e); }
 }
 
-// ============ SAVE & PUBLISH ============
-function saveToLocalStorage() {
-  localStorage.setItem(LS.folders, JSON.stringify(folders.filter(f => f.id !== 'root')));
-  localStorage.setItem(LS.assignments, JSON.stringify(fileAssignments));
-  localStorage.setItem(LS.hidden, JSON.stringify(hiddenFiles));
-  localStorage.setItem(LS.settings, JSON.stringify(settings));
-  localStorage.setItem(LS.displayNames, JSON.stringify(displayNames));
+async function loadFiles() {
+  try {
+    const token = localStorage.getItem('mgr_github_token');
+    const headers = token ? { 'Authorization': `token ${token}` } : {};
+    const res = await fetch(API_URL, { headers });
+    if (res.ok) {
+      const data = await res.json();
+      allFiles = data.filter(f => f.type === 'file' && !EXCLUDED_FILES.includes(f.name) && !f.name.startsWith('.'));
+    }
+  } catch(e) { console.error('Files load error:', e); allFiles = []; }
+}
+
+// ==================== PERSISTENCE ====================
+function saveLocal() {
+  localStorage.setItem('mgr_folders', JSON.stringify(folders));
+  localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+  localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+  localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
+  localStorage.setItem('mgr_settings', JSON.stringify(settings));
 }
 
 function saveAndPublish() {
-  saveToLocalStorage();
-  if (publishTimeout) clearTimeout(publishTimeout);
-  publishTimeout = setTimeout(doPublish, 1000);
+  saveLocal();
+  doPublish();
+}
+
+function setStatus(msg) {
+  publishStatus = msg;
+  const el = document.getElementById('publish-status');
+  if (el) {
+    el.textContent = msg;
+    el.className = 'publish-status' + (msg.includes('✅') ? ' ok' : msg.includes('❌') || msg.includes('⚠️') ? ' err' : '');
+  }
 }
 
 async function doPublish() {
-  const token = localStorage.getItem(LS.token);
-  if (!token) {
-    setPublishStatus('⚠️ No token', 'error');
-    return;
-  }
-  setPublishStatus('Publishing...', 'publishing');
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) { setStatus('⚠️ No token'); return; }
+  setStatus('⏳ Publishing...');
   try {
     const configData = {
-      folders: folders.filter(f => f.id !== 'root'),
-      fileAssignments,
-      displayNames,
-      hiddenFiles,
-      telegramLink: settings.telegramLink,
-      siteName: settings.siteName,
-      siteSubtitle: settings.siteSubtitle,
+      folders: folders.filter(f => f.id !== 'root' && f.id !== '__unassigned__'),
+      fileAssignments, displayNames, hiddenFiles,
+      telegramLink: settings.telegramLink || TELEGRAM_LINK,
+      siteName: settings.siteName || 'Parmar Railway Notes',
+      siteSubtitle: settings.siteSubtitle || 'Hand-Written Notes Library',
       lastUpdated: new Date().toISOString().split('T')[0]
     };
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
+    // Get current SHA if needed
+    if (!configSha) {
+      const shaRes = await fetch(API_URL + 'config.json', { headers: { 'Authorization': `token ${token}` } });
+      if (shaRes.ok) { const d = await shaRes.json(); configSha = d.sha; }
+    }
     const body = { message: 'Update config from manager', content, branch: 'main' };
     if (configSha) body.sha = configSha;
     const res = await fetch(API_URL + 'config.json', {
@@ -542,664 +247,821 @@ async function doPublish() {
       headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || res.status);
-    }
-    const result = await res.json();
-    configSha = result.content.sha;
-    setPublishStatus('✅ Published', 'success');
-    showToast('Config published to GitHub!', 'success');
-    logActivity('Published config.json to repository');
-  } catch(e) {
-    setPublishStatus('❌ Failed', 'error');
-    showToast('Publish failed: ' + e.message, 'error');
-  }
+    if (res.ok) { const d = await res.json(); configSha = d.content.sha; setStatus('✅ Published'); }
+    else { const err = await res.json(); setStatus('❌ Failed'); console.error(err); }
+  } catch(e) { setStatus('❌ Error'); console.error(e); }
 }
 
-function setPublishStatus(text, cls) {
-  const el = document.getElementById('publishStatus');
-  el.textContent = text;
-  el.className = 'publish-status ' + (cls || '');
-  if (cls === 'success') setTimeout(() => { el.textContent = 'Ready'; el.className = 'publish-status'; }, 3000);
+// ==================== HELPERS ====================
+function toast(msg, type = '') {
+  const container = document.getElementById('toast-container');
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.textContent = msg;
+  container.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 3000);
 }
 
-// ============ UI HELPERS ============
-function showToast(msg, type='info') {
-  const container = document.getElementById('toastContainer');
-  const toast = document.createElement('div');
-  toast.className = 'toast ' + type;
-  toast.textContent = msg;
-  container.appendChild(toast);
-  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3500);
+function confirm(title, message, onConfirm) {
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  el.innerHTML = `<div class="modal-box"><h3>${title}</h3><p>${message}</p><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button><button class="btn btn-danger" id="confirm-ok">Confirm</button></div></div>`;
+  document.body.appendChild(el);
+  el.querySelector('#confirm-ok').onclick = () => { el.remove(); onConfirm(); };
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
-function logActivity(msg) {
-  activityLog.unshift({ msg, time: new Date().toLocaleTimeString() });
-  if (activityLog.length > 50) activityLog.pop();
-  renderActivityLog();
+function promptInput(title, label, defaultVal, onSubmit) {
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  el.innerHTML = `<div class="modal-box"><h3>${title}</h3><div class="form-group"><label>${label}</label><input type="text" id="prompt-input" value="${defaultVal || ''}"></div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button><button class="btn btn-primary" id="prompt-ok">OK</button></div></div>`;
+  document.body.appendChild(el);
+  const input = el.querySelector('#prompt-input');
+  input.focus();
+  input.select();
+  el.querySelector('#prompt-ok').onclick = () => { const v = input.value.trim(); if(v) { el.remove(); onSubmit(v); } };
+  input.onkeydown = (e) => { if(e.key === 'Enter') { const v = input.value.trim(); if(v) { el.remove(); onSubmit(v); } } };
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
-function renderActivityLog() {
-  const el = document.getElementById('activityLog');
-  if (!el) return;
-  if (activityLog.length === 0) { el.innerHTML = '<div class="activity-item"><span>No activity yet.</span></div>'; return; }
-  el.innerHTML = activityLog.slice(0, 20).map(a => `<div class="activity-item"><span class="ai-time">${a.time}</span><span>${a.msg}</span></div>`).join('');
-}
-
-function showDialog(title, msg, confirmText, callback) {
-  document.getElementById('dialogTitle').textContent = title;
-  document.getElementById('dialogMsg').textContent = msg;
-  document.getElementById('dialogConfirmBtn').textContent = confirmText;
-  document.getElementById('dialogOverlay').classList.add('open');
-  currentDialogCallback = callback;
-}
-
-function closeDialog() { document.getElementById('dialogOverlay').classList.remove('open'); currentDialogCallback = null; }
-function dialogConfirm() { if (currentDialogCallback) currentDialogCallback(); closeDialog(); }
-
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebarOverlay').classList.toggle('open');
-}
-
-function switchPanel(panel, btn) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('panel-' + panel).classList.add('active');
-  if (btn) btn.classList.add('active');
-  const titles = { dashboard:'📊 Dashboard', files:'📁 All Files', folders:'📂 Folders', organize:'🔀 Organize', visibility:'👁️ Visibility', upload:'⬆️ Upload', settings:'⚙️ Settings' };
-  document.getElementById('panelTitle').textContent = titles[panel] || panel;
-  if (window.innerWidth <= 768) toggleSidebar();
-  if (panel === 'files') renderFilesTable();
-  if (panel === 'folders') renderFolders();
-  if (panel === 'organize') renderOrganize();
-  if (panel === 'visibility') renderVisibility();
-}
-
-// ============ RENDER ALL ============
-function renderAll() {
-  renderDashboard();
-  renderFilesTable();
-  renderFolders();
-  renderOrganize();
-  renderVisibility();
-  renderSettingsFields();
-}
-
-// ============ DASHBOARD ============
-function renderDashboard() {
-  const total = repoFiles.length;
-  const html = repoFiles.filter(f => f.name.endsWith('.html')).length;
-  const pdf = repoFiles.filter(f => f.name.endsWith('.pdf')).length;
-  const folderCount = folders.filter(f => f.id !== 'root').length;
-  const hiddenCount = hiddenFiles.length;
-  document.getElementById('statsGrid').innerHTML = `
-    <div class="stat-card"><div class="sc-icon">📄</div><div class="sc-value">${total}</div><div class="sc-label">Total Files</div></div>
-    <div class="stat-card"><div class="sc-icon">🌐</div><div class="sc-value">${html}</div><div class="sc-label">HTML Files</div></div>
-    <div class="stat-card"><div class="sc-icon">📕</div><div class="sc-value">${pdf}</div><div class="sc-label">PDF Files</div></div>
-    <div class="stat-card"><div class="sc-icon">📂</div><div class="sc-value">${folderCount}</div><div class="sc-label">Folders</div></div>
-    <div class="stat-card"><div class="sc-icon">🙈</div><div class="sc-value">${hiddenCount}</div><div class="sc-label">Hidden Files</div></div>
-  `;
-  // Storage breakdown
-  const totalSize = repoFiles.reduce((s, f) => s + (f.size || 0), 0);
-  const htmlSize = repoFiles.filter(f => f.name.endsWith('.html')).reduce((s, f) => s + (f.size || 0), 0);
-  const pdfSize = repoFiles.filter(f => f.name.endsWith('.pdf')).reduce((s, f) => s + (f.size || 0), 0);
-  document.getElementById('storageBreakdown').innerHTML = `
-    <div style="margin-bottom:12px;font-size:.85rem;color:var(--text)">Total: <b style="color:var(--accent)">${formatSize(totalSize)}</b></div>
-    <div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-dim);margin-bottom:4px"><span>HTML (${formatSize(htmlSize)})</span><span>${totalSize?Math.round(htmlSize/totalSize*100):0}%</span></div><div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div style="height:100%;background:#10b981;width:${totalSize?htmlSize/totalSize*100:0}%"></div></div></div>
-    <div><div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-dim);margin-bottom:4px"><span>PDF (${formatSize(pdfSize)})</span><span>${totalSize?Math.round(pdfSize/totalSize*100):0}%</span></div><div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div style="height:100%;background:#ef4444;width:${totalSize?pdfSize/totalSize*100:0}%"></div></div></div>
-  `;
-  renderActivityLog();
-}
-
-function formatSize(bytes) {
-  if (!bytes) return '0 B';
-  if (bytes < 1024) return bytes + ' B';
-  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-  return (bytes / 1048576).toFixed(1) + ' MB';
-}
-
-// ============ FILES TABLE ============
-function renderFilesTable() {
-  const search = (document.getElementById('fileSearch')?.value || '').toLowerCase();
-  const sortBy = document.getElementById('fileSort')?.value || 'name';
-  let files = [...repoFiles];
-  if (search) files = files.filter(f => f.name.toLowerCase().includes(search));
-  files.sort((a, b) => {
-    if (sortBy === 'name') return a.name.localeCompare(b.name);
-    if (sortBy === 'size') return (b.size || 0) - (a.size || 0);
-    if (sortBy === 'type') return a.name.split('.').pop().localeCompare(b.name.split('.').pop());
-    return 0;
-  });
-  const tbody = document.getElementById('filesBody');
-  if (!tbody) return;
-  tbody.innerHTML = files.map(f => {
-    const ext = f.name.split('.').pop().toLowerCase();
-    const folderId = fileAssignments[f.name] || 'root';
-    const folder = folders.find(fo => fo.id === folderId);
-    const isHidden = hiddenFiles.includes(f.name);
-    const dName = displayNames[f.name] || f.name.replace(/\.(html|pdf)$/i, '');
-    const checked = selectedFiles.has(f.name) ? 'checked' : '';
-    return `<tr style="${isHidden ? 'opacity:.5' : ''}" data-file="${encodeURIComponent(f.name)}">
-      <td data-label="Select"><input type="checkbox" ${checked} onchange="toggleFileSelect('${encodeURIComponent(f.name)}')"></td>
-      <td data-label="Icon">${getIcon(f.name)}</td>
-      <td data-label="Name"><span style="font-weight:500">${dName}</span><br><small style="color:var(--text-muted);font-size:.7rem">${f.name}</small></td>
-      <td data-label="Type"><span class="type-badge ${ext}">${ext}</span></td>
-      <td data-label="Size">${formatSize(f.size)}</td>
-      <td data-label="Folder"><span style="font-size:.8rem">${folder ? folder.icon + ' ' + folder.name : '📂 Uncategorized'}</span></td>
-      <td data-label="Actions">
-        <button class="action-btn" onclick="moveFile('${encodeURIComponent(f.name)}')" title="Move">📂</button>
-        <button class="action-btn" onclick="renameFile('${encodeURIComponent(f.name)}')" title="Rename">✏️</button>
-        <button class="action-btn" onclick="toggleHide('${encodeURIComponent(f.name)}')" title="Toggle visibility">${isHidden?'👁️':'🙈'}</button>
-        <button class="action-btn danger" onclick="deleteFile('${encodeURIComponent(f.name)}')" title="Delete">🗑️</button>
-      </td>
-    </tr>`;
-  }).join('');
-  updateBulkBar();
-}
-
-function getIcon(name) {
+function getFileIcon(name) {
   const n = name.toLowerCase();
   if (n.includes('music')) return '🎵';
   if (n.includes('festival')) return '🎉';
-  if (n.includes('architecture') || n.includes('culture')) return '🏛️';
+  if (n.includes('culture') || n.includes('architecture')) return '🏛️';
   if (n.includes('book') || n.includes('author')) return '📚';
-  if (n.includes('current') || n.includes('gk') || n.includes('daily')) return '📰';
-  if (n.includes('sample') || n.includes('hand')) return '✍️';
+  if (n.includes('current') || n.includes('affairs') || n.includes('gk')) return '📰';
   if (n.endsWith('.pdf')) return '📕';
   return '📄';
 }
 
-function toggleFileSelect(enc) {
-  const name = decodeURIComponent(enc);
-  if (selectedFiles.has(name)) selectedFiles.delete(name); else selectedFiles.add(name);
-  updateBulkBar();
+function getFileType(name) {
+  if (name.endsWith('.pdf')) return 'PDF';
+  if (name.endsWith('.html') || name.endsWith('.htm')) return 'HTML';
+  return 'FILE';
 }
 
-function toggleSelectAll() {
-  const all = document.getElementById('selectAll').checked;
-  if (all) repoFiles.forEach(f => selectedFiles.add(f.name)); else selectedFiles.clear();
-  renderFilesTable();
+function getDisplayName(filename) {
+  if (displayNames[filename]) return displayNames[filename];
+  return filename.replace(/\.(html|htm|pdf)$/i, '');
 }
 
-function updateBulkBar() {
-  const bar = document.getElementById('bulkBar');
-  if (selectedFiles.size > 0) { bar.style.display = 'flex'; document.getElementById('bulkCount').textContent = selectedFiles.size + ' selected'; }
-  else { bar.style.display = 'none'; }
+function formatSize(bytes) {
+  if (!bytes) return '';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1048576).toFixed(1) + ' MB';
 }
 
-// ============ FILE ACTIONS ============
-function moveFile(enc) {
-  const name = decodeURIComponent(enc);
-  const options = folders.map(f => `<option value="${f.id}" ${fileAssignments[name]===f.id?'selected':''}>${f.icon} ${f.name}</option>`).join('');
-  const sel = prompt('Move "' + name + '" to folder:\n\n' + folders.map((f,i) => `${i}: ${f.icon} ${f.name}`).join('\n') + '\n\nEnter folder number:');
-  if (sel === null) return;
-  const idx = parseInt(sel);
-  if (isNaN(idx) || idx < 0 || idx >= folders.length) { showToast('Invalid folder selection', 'error'); return; }
-  fileAssignments[name] = folders[idx].id;
-  saveAndPublish();
-  renderFilesTable();
-  logActivity(`Moved "${name}" to ${folders[idx].icon} ${folders[idx].name}`);
-  showToast(`Moved to ${folders[idx].name}`, 'success');
+function getFilesInFolder(folderId) {
+  return allFiles.filter(f => fileAssignments[f.name] === folderId);
 }
 
-function renameFile(enc) {
-  const name = decodeURIComponent(enc);
-  const current = displayNames[name] || name.replace(/\.(html|pdf)$/i, '');
-  const newName = prompt('Display name for "' + name + '":', current);
-  if (!newName || newName === current) return;
-  displayNames[name] = newName;
-  saveAndPublish();
-  renderFilesTable();
-  logActivity(`Renamed display: "${name}" → "${newName}"`);
-  showToast('Display name updated', 'success');
+function getUnassignedFiles() {
+  const assigned = Object.keys(fileAssignments);
+  return allFiles.filter(f => !assigned.includes(f.name));
 }
 
-function toggleHide(enc) {
-  const name = decodeURIComponent(enc);
-  const idx = hiddenFiles.indexOf(name);
-  if (idx >= 0) { hiddenFiles.splice(idx, 1); showToast(name + ' is now visible', 'success'); }
-  else { hiddenFiles.push(name); showToast(name + ' is now hidden', 'info'); }
-  saveAndPublish();
-  renderFilesTable();
-  renderVisibility();
-  logActivity(`Toggled visibility: "${name}"`);
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function deleteFile(enc) {
-  const name = decodeURIComponent(enc);
-  showDialog('Delete File', `Delete "${name}" from repository? This cannot be undone.`, '🗑️ Delete', async () => {
-    const token = localStorage.getItem(LS.token);
-    if (!token) { showToast('GitHub token required to delete files', 'error'); return; }
-    try {
-      // Get file SHA
-      const res = await fetch(API_URL + encodeURIComponent(name), { headers: { 'Authorization': `token ${token}` } });
-      if (!res.ok) throw new Error('Could not get file info');
-      const data = await res.json();
-      // Delete
-      const delRes = await fetch(API_URL + encodeURIComponent(name), {
-        method: 'DELETE',
-        headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: `Delete ${name}`, sha: data.sha, branch: 'main' })
-      });
-      if (!delRes.ok) throw new Error('Delete failed');
-      // Remove from local state
-      repoFiles = repoFiles.filter(f => f.name !== name);
-      delete fileAssignments[name];
-      delete displayNames[name];
-      hiddenFiles = hiddenFiles.filter(f => f !== name);
-      selectedFiles.delete(name);
-      saveAndPublish();
-      renderAll();
-      logActivity(`Deleted file: "${name}"`);
-      showToast('File deleted from repository', 'success');
-    } catch(e) { showToast('Delete failed: ' + e.message, 'error'); }
+// ==================== FOLDER ACTIONS ====================
+function createFolder() {
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  let parentOptions = '<option value="">None (root level)</option>';
+  folders.forEach(f => { parentOptions += `<option value="${f.id}">${f.icon} ${escapeHtml(f.name)}</option>`; });
+  el.innerHTML = `<div class="modal-box">
+    <h3>📂 Create New Folder</h3>
+    <div class="form-group"><label>Folder Name</label><input type="text" id="cf-name" placeholder="e.g. History Notes"></div>
+    <div class="form-group"><label>Icon Emoji</label><input type="text" id="cf-icon" value="📁" style="width:60px"></div>
+    <div class="form-group"><label>Color</label><div class="color-picker-row" id="cf-colors"></div></div>
+    <div class="form-group"><label>Parent Folder (for subfolder)</label><select id="cf-parent" style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px">${parentOptions}</select></div>
+    <div class="form-group"><label>Description (optional)</label><input type="text" id="cf-desc" placeholder="Brief description"></div>
+    <div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button><button class="btn btn-primary" id="cf-ok">Create</button></div>
+  </div>`;
+  document.body.appendChild(el);
+  const colorsDiv = el.querySelector('#cf-colors');
+  let selectedColor = FOLDER_COLORS[0];
+  FOLDER_COLORS.forEach(c => {
+    const dot = document.createElement('div');
+    dot.className = 'color-dot' + (c === selectedColor ? ' selected' : '');
+    dot.style.background = c;
+    dot.onclick = () => { colorsDiv.querySelectorAll('.color-dot').forEach(d => d.classList.remove('selected')); dot.classList.add('selected'); selectedColor = c; };
+    colorsDiv.appendChild(dot);
+  });
+  el.querySelector('#cf-name').focus();
+  el.querySelector('#cf-ok').onclick = () => {
+    const name = el.querySelector('#cf-name').value.trim();
+    if (!name) return;
+    const parent = el.querySelector('#cf-parent').value || null;
+    const folder = { id: 'f_' + Date.now(), name, icon: el.querySelector('#cf-icon').value || '📁', color: selectedColor, desc: el.querySelector('#cf-desc').value || '', parent: parent, order: folders.length };
+    folders.push(folder);
+    el.remove();
+    saveAndPublish();
+    toast('Folder "' + name + '" created', 'success');
+    render();
+  };
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
+}
+
+function renameFolder(folderId) {
+  const folder = folders.find(f => f.id === folderId);
+  if (!folder) return;
+  promptInput('Rename Folder', 'New name:', folder.name, (newName) => {
+    folder.name = newName;
+    saveAndPublish();
+    toast('Folder renamed', 'success');
+    render();
   });
 }
 
-// ============ BULK ACTIONS ============
+function deleteFolder(folderId) {
+  const folder = folders.find(f => f.id === folderId);
+  if (!folder) return;
+  confirm('Delete Folder', `Are you sure you want to delete "${folder.name}"? Files will be moved to unassigned.`, () => {
+    // Move files to unassigned
+    Object.keys(fileAssignments).forEach(fname => {
+      if (fileAssignments[fname] === folderId) delete fileAssignments[fname];
+    });
+    folders = folders.filter(f => f.id !== folderId);
+    saveAndPublish();
+    toast('Folder deleted', 'success');
+    if (currentFolder && currentFolder.id === folderId) { currentView = 'home'; currentFolder = null; }
+    render();
+  });
+}
+
+// ==================== FILE ACTIONS ====================
+function moveFile(filename) {
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Unassigned</div>';
+  folders.forEach(f => {
+    listHtml += `<div class="select-folder-item" data-id="${f.id}">${f.icon || '📁'} ${escapeHtml(f.name)}</div>`;
+  });
+  el.innerHTML = `<div class="modal-box"><h3>📂 Move File</h3><p>Select destination folder for "${escapeHtml(getDisplayName(filename))}"</p><div class="select-folder-list">${listHtml}</div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button></div></div>`;
+  document.body.appendChild(el);
+  el.querySelectorAll('.select-folder-item').forEach(item => {
+    item.onclick = () => {
+      const fid = item.dataset.id;
+      if (fid === '__unassigned__') delete fileAssignments[filename];
+      else fileAssignments[filename] = fid;
+      el.remove();
+      saveAndPublish();
+      toast('File moved', 'success');
+      render();
+    };
+  });
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
+}
+
+function renameDisplayName(filename) {
+  promptInput('Rename Display Name', 'Display name:', getDisplayName(filename), (newName) => {
+    displayNames[filename] = newName;
+    saveAndPublish();
+    toast('Display name updated', 'success');
+    render();
+  });
+}
+
+function toggleFileVisibility(filename) {
+  const idx = hiddenFiles.indexOf(filename);
+  if (idx >= 0) { hiddenFiles.splice(idx, 1); toast('File shown', 'success'); }
+  else { hiddenFiles.push(filename); toast('File hidden', 'success'); }
+  saveAndPublish();
+  render();
+}
+
+async function deleteFileFromRepo(filename) {
+  confirm('Delete File', `Permanently delete "${escapeHtml(filename)}" from the repository? This cannot be undone.`, async () => {
+    const token = localStorage.getItem('mgr_github_token');
+    if (!token) { toast('No GitHub token set', 'error'); return; }
+    try {
+      const res = await fetch(API_URL + encodeURIComponent(filename), { headers: { 'Authorization': `token ${token}` } });
+      if (!res.ok) { toast('Failed to get file info', 'error'); return; }
+      const fileData = await res.json();
+      const delRes = await fetch(API_URL + encodeURIComponent(filename), {
+        method: 'DELETE',
+        headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `Delete ${filename}`, sha: fileData.sha, branch: 'main' })
+      });
+      if (delRes.ok) {
+        allFiles = allFiles.filter(f => f.name !== filename);
+        delete fileAssignments[filename];
+        delete displayNames[filename];
+        hiddenFiles = hiddenFiles.filter(f => f !== filename);
+        saveAndPublish();
+        toast('File deleted from repo', 'success');
+        render();
+      } else { toast('Delete failed', 'error'); }
+    } catch(e) { toast('Error: ' + e.message, 'error'); }
+  });
+}
+
+// ==================== BULK ACTIONS ====================
+function toggleSelectFile(filename) {
+  if (selectedFiles.has(filename)) selectedFiles.delete(filename);
+  else selectedFiles.add(filename);
+  render();
+}
+
+function selectAllFiles(fileObjs) {
+  const names = fileObjs.map(f => f.name);
+  if (names.every(n => selectedFiles.has(n))) { selectedFiles.clear(); }
+  else { names.forEach(n => selectedFiles.add(n)); }
+  render();
+}
+
 function bulkMove() {
   if (selectedFiles.size === 0) return;
-  const sel = prompt('Move ' + selectedFiles.size + ' files to folder:\n\n' + folders.map((f,i) => `${i}: ${f.icon} ${f.name}`).join('\n') + '\n\nEnter folder number:');
-  if (sel === null) return;
-  const idx = parseInt(sel);
-  if (isNaN(idx) || idx < 0 || idx >= folders.length) { showToast('Invalid selection', 'error'); return; }
-  selectedFiles.forEach(name => { fileAssignments[name] = folders[idx].id; });
-  saveAndPublish();
-  logActivity(`Bulk moved ${selectedFiles.size} files to ${folders[idx].name}`);
-  showToast(`Moved ${selectedFiles.size} files to ${folders[idx].name}`, 'success');
-  selectedFiles.clear();
-  renderFilesTable();
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Unassigned</div>';
+  folders.forEach(f => { listHtml += `<div class="select-folder-item" data-id="${f.id}">${f.icon || '📁'} ${escapeHtml(f.name)}</div>`; });
+  el.innerHTML = `<div class="modal-box"><h3>📂 Move ${selectedFiles.size} File(s)</h3><div class="select-folder-list">${listHtml}</div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button></div></div>`;
+  document.body.appendChild(el);
+  el.querySelectorAll('.select-folder-item').forEach(item => {
+    item.onclick = () => {
+      const fid = item.dataset.id;
+      selectedFiles.forEach(fname => { if (fid === '__unassigned__') delete fileAssignments[fname]; else fileAssignments[fname] = fid; });
+      el.remove();
+      selectedFiles.clear();
+      saveAndPublish();
+      toast('Files moved', 'success');
+      render();
+    };
+  });
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
 function bulkHide() {
-  if (selectedFiles.size === 0) return;
-  selectedFiles.forEach(name => {
-    const idx = hiddenFiles.indexOf(name);
-    if (idx >= 0) hiddenFiles.splice(idx, 1); else hiddenFiles.push(name);
-  });
-  saveAndPublish();
-  logActivity(`Bulk toggled visibility for ${selectedFiles.size} files`);
-  showToast('Visibility toggled', 'success');
+  selectedFiles.forEach(fname => { if (!hiddenFiles.includes(fname)) hiddenFiles.push(fname); });
   selectedFiles.clear();
-  renderFilesTable();
+  saveAndPublish();
+  toast('Files hidden', 'success');
+  render();
 }
 
 function bulkDelete() {
-  if (selectedFiles.size === 0) return;
-  showDialog('Bulk Delete', `Delete ${selectedFiles.size} files from repository?`, '🗑️ Delete All', async () => {
-    const token = localStorage.getItem(LS.token);
-    if (!token) { showToast('Token required', 'error'); return; }
-    let deleted = 0;
-    for (const name of selectedFiles) {
+  confirm('Delete Files', `Delete ${selectedFiles.size} file(s) from the repository? This cannot be undone.`, async () => {
+    const token = localStorage.getItem('mgr_github_token');
+    if (!token) { toast('No token', 'error'); return; }
+    for (const fname of selectedFiles) {
       try {
-        const res = await fetch(API_URL + encodeURIComponent(name), { headers: { 'Authorization': `token ${token}` } });
+        const res = await fetch(API_URL + encodeURIComponent(fname), { headers: { 'Authorization': `token ${token}` } });
         if (!res.ok) continue;
-        const data = await res.json();
-        await fetch(API_URL + encodeURIComponent(name), {
+        const d = await res.json();
+        await fetch(API_URL + encodeURIComponent(fname), {
           method: 'DELETE',
           headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: `Delete ${name}`, sha: data.sha, branch: 'main' })
+          body: JSON.stringify({ message: `Delete ${fname}`, sha: d.sha, branch: 'main' })
         });
-        repoFiles = repoFiles.filter(f => f.name !== name);
-        delete fileAssignments[name];
-        delete displayNames[name];
-        hiddenFiles = hiddenFiles.filter(f => f !== name);
-        deleted++;
-      } catch(e) { /* skip */ }
+        allFiles = allFiles.filter(f => f.name !== fname);
+        delete fileAssignments[fname];
+        delete displayNames[fname];
+        hiddenFiles = hiddenFiles.filter(f => f !== fname);
+      } catch(e) {}
     }
     selectedFiles.clear();
     saveAndPublish();
-    renderAll();
-    logActivity(`Bulk deleted ${deleted} files`);
-    showToast(`Deleted ${deleted} files`, 'success');
+    toast('Files deleted', 'success');
+    render();
   });
 }
 
-function sortTable(by) {
-  document.getElementById('fileSort').value = by;
-  renderFilesTable();
+// ==================== DRAG & DROP FILES BETWEEN FOLDERS ====================
+let draggedFileName = null;
+
+function fileDragStart(e, filename) {
+  draggedFileName = filename;
+  e.dataTransfer.effectAllowed = 'move';
+  e.target.style.opacity = '0.4';
 }
 
-// ============ FOLDERS ============
-function renderFolders() {
-  // Update parent select
-  const parentSel = document.getElementById('newFolderParent');
-  if (parentSel) {
-    parentSel.innerHTML = '<option value="">None (root)</option>' + folders.filter(f => f.id !== 'root').map(f => `<option value="${f.id}">${f.icon} ${f.name}</option>`).join('');
-  }
-  const grid = document.getElementById('folderGrid');
-  if (!grid) return;
-  grid.innerHTML = folders.filter(f => f.id !== 'root').map(f => {
-    const count = repoFiles.filter(rf => fileAssignments[rf.name] === f.id).length;
-    const children = folders.filter(c => c.parent === f.id);
-    return `<div class="folder-card" draggable="true" ondragstart="dragFolder(event,'${f.id}')" ondragover="event.preventDefault()" ondrop="dropFolder(event,'${f.id}')">
-      <div class="folder-color-bar" style="background:${f.color}"></div>
-      <div class="fc-header">
-        <span class="fc-icon">${f.icon}</span>
-        <span class="fc-name">${f.name}</span>
-        <span class="fc-count">${count} files</span>
-      </div>
-      ${f.desc ? `<div class="fc-desc">${f.desc}</div>` : ''}
-      ${children.length ? `<div style="font-size:.75rem;color:var(--accent2);margin-bottom:8px">↳ Subfolders: ${children.map(c=>c.icon+' '+c.name).join(', ')}</div>` : ''}
-      <div class="fc-actions">
-        <button class="action-btn" onclick="renameFolder('${f.id}')">✏️ Rename</button>
-        <button class="action-btn danger" onclick="deleteFolder('${f.id}')">🗑️ Delete</button>
-      </div>
-    </div>`;
-  }).join('');
+function fileDragEnd(e) {
+  e.target.style.opacity = '1';
+  draggedFileName = null;
 }
 
-function createFolder() {
-  const name = document.getElementById('newFolderName').value.trim();
-  if (!name) { showToast('Folder name is required', 'error'); return; }
-  const icon = document.getElementById('newFolderIcon').value.trim() || '📁';
-  const color = document.getElementById('newFolderColor').value;
-  const desc = document.getElementById('newFolderDesc').value.trim();
-  const parent = document.getElementById('newFolderParent').value || null;
-  const id = name.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Date.now().toString(36);
-  const order = folders.length;
-  folders.push({ id, name, icon, color, order, parent, desc });
-  saveAndPublish();
-  renderFolders();
-  renderAll();
-  logActivity(`Created folder: ${icon} ${name}`);
-  showToast(`Folder "${name}" created!`, 'success');
-  document.getElementById('newFolderName').value = '';
-  document.getElementById('newFolderDesc').value = '';
-}
-
-function renameFolder(id) {
-  const f = folders.find(fo => fo.id === id);
-  if (!f) return;
-  const newName = prompt('Rename folder "' + f.name + '":', f.name);
-  if (!newName || newName === f.name) return;
-  f.name = newName;
-  saveAndPublish();
-  renderFolders();
-  logActivity(`Renamed folder to "${newName}"`);
-  showToast('Folder renamed', 'success');
-}
-
-function deleteFolder(id) {
-  const f = folders.find(fo => fo.id === id);
-  if (!f) return;
-  showDialog('Delete Folder', `Delete folder "${f.name}"? Files will be moved to Uncategorized.`, '🗑️ Delete', () => {
-    folders = folders.filter(fo => fo.id !== id);
-    // Move files to root
-    Object.keys(fileAssignments).forEach(fname => { if (fileAssignments[fname] === id) fileAssignments[fname] = 'root'; });
-    // Move subfolders to root
-    folders.forEach(fo => { if (fo.parent === id) fo.parent = null; });
-    saveAndPublish();
-    renderAll();
-    logActivity(`Deleted folder: ${f.icon} ${f.name}`);
-    showToast('Folder deleted', 'success');
-  });
-}
-
-let draggedFolderId = null;
-function dragFolder(e, id) { draggedFolderId = id; e.dataTransfer.effectAllowed = 'move'; }
-function dropFolder(e, targetId) {
+function folderDragOver(e) {
   e.preventDefault();
-  if (!draggedFolderId || draggedFolderId === targetId) return;
-  const dragIdx = folders.findIndex(f => f.id === draggedFolderId);
-  const targetIdx = folders.findIndex(f => f.id === targetId);
-  if (dragIdx < 0 || targetIdx < 0) return;
-  const [moved] = folders.splice(dragIdx, 1);
+  e.currentTarget.style.borderColor = 'var(--blue)';
+  e.currentTarget.style.background = 'rgba(88,166,255,.08)';
+}
+
+function folderDragLeave(e) {
+  e.currentTarget.style.borderColor = '';
+  e.currentTarget.style.background = '';
+}
+
+function folderDrop(e, folderId) {
+  e.preventDefault();
+  e.currentTarget.style.borderColor = '';
+  e.currentTarget.style.background = '';
+  if (!draggedFileName) return;
+  if (folderId === '__unassigned__') delete fileAssignments[draggedFileName];
+  else fileAssignments[draggedFileName] = folderId;
+  draggedFileName = null;
+  saveAndPublish();
+  toast('File moved!', 'success');
+  render();
+}
+
+// ==================== DRAG FOLDER TO REORDER ====================
+let draggedFolderIdx = null;
+
+function folderReorderDragStart(e, idx) {
+  draggedFolderIdx = idx;
+  e.dataTransfer.effectAllowed = 'move';
+  e.target.style.opacity = '0.4';
+}
+
+function folderReorderDragEnd(e) {
+  e.target.style.opacity = '1';
+  draggedFolderIdx = null;
+}
+
+function folderReorderDragOver(e) {
+  e.preventDefault();
+}
+
+function folderReorderDrop(e, targetIdx) {
+  e.preventDefault();
+  if (draggedFolderIdx === null || draggedFolderIdx === targetIdx) return;
+  const [moved] = folders.splice(draggedFolderIdx, 1);
   folders.splice(targetIdx, 0, moved);
   folders.forEach((f, i) => f.order = i);
+  draggedFolderIdx = null;
   saveAndPublish();
-  renderFolders();
-  logActivity('Reordered folders');
-  showToast('Folders reordered', 'success');
-  draggedFolderId = null;
+  toast('Folders reordered', 'success');
+  render();
 }
 
-// ============ ORGANIZE (DND) ============
-function renderOrganize() {
-  const container = document.getElementById('dndContainer');
-  if (!container) return;
-  container.innerHTML = folders.map(f => {
-    const files = repoFiles.filter(rf => (fileAssignments[rf.name] || 'root') === f.id);
-    return `<div class="dnd-section">
-      <div class="dnd-section-header"><span>${f.icon}</span> ${f.name} <span style="margin-left:auto;font-size:.75rem;color:var(--text-muted)">(${files.length})</span></div>
-      <div class="dnd-section-body" data-folder="${f.id}" ondragover="dndDragOver(event)" ondragleave="dndDragLeave(event)" ondrop="dndDrop(event,'${f.id}')">
-        ${files.map(fi => `<div class="dnd-item" draggable="true" ondragstart="dndDragStart(event,'${encodeURIComponent(fi.name)}')">${getIcon(fi.name)} <span style="flex:1">${displayNames[fi.name] || fi.name.replace(/\.(html|pdf)$/i,'')}</span><small style="color:var(--text-muted)">${fi.name.split('.').pop()}</small></div>`).join('')}
-        ${files.length === 0 ? '<div style="padding:16px;text-align:center;color:var(--text-muted);font-size:.8rem">Drop files here</div>' : ''}
+// ==================== FILE PREVIEW ====================
+function previewFile(filename) {
+  const url = 'https://' + REPO_OWNER + '.github.io/' + REPO_NAME + '/' + encodeURIComponent(filename);
+  const el = document.createElement('div');
+  el.className = 'modal-overlay';
+  el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);width:100%;max-width:900px;height:80vh;display:flex;flex-direction:column;overflow:hidden">
+    <div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:14px;font-weight:600">${escapeHtml(getDisplayName(filename))}</span>
+      <div style="display:flex;gap:8px">
+        <a href="${url}" target="_blank" style="color:var(--blue);font-size:13px;text-decoration:none">Open ↗</a>
+        <button class="btn" style="padding:4px 10px;font-size:12px" onclick="this.closest('.modal-overlay').remove()">✕ Close</button>
+      </div>
+    </div>
+    <iframe src="${url}" style="flex:1;border:none;width:100%;background:#fff"></iframe>
+  </div>`;
+  document.body.appendChild(el);
+  el.onclick = (e) => { if (e.target === el) el.remove(); };
+}
+
+// ==================== UPLOAD ====================
+async function uploadFiles(files) {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) { toast('Set GitHub token first', 'error'); return; }
+  uploadQueue = Array.from(files).filter(f => /\.(html|pdf)$/i.test(f.name)).map(f => ({ file: f, name: f.name, progress: 0, status: 'pending' }));
+  if (uploadQueue.length === 0) { toast('Only .html and .pdf files allowed', 'error'); return; }
+  currentView = 'upload';
+  render();
+  for (const item of uploadQueue) {
+    item.status = 'uploading';
+    render();
+    try {
+      const reader = new FileReader();
+      const base64 = await new Promise((resolve, reject) => {
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(item.file);
+      });
+      // Check if file exists
+      let sha = null;
+      const checkRes = await fetch(API_URL + encodeURIComponent(item.name), { headers: { 'Authorization': `token ${token}` } });
+      if (checkRes.ok) { const d = await checkRes.json(); sha = d.sha; }
+      const body = { message: `Upload ${item.name}`, content: base64, branch: 'main' };
+      if (sha) body.sha = sha;
+      item.progress = 50;
+      render();
+      const res = await fetch(API_URL + encodeURIComponent(item.name), {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        item.progress = 100;
+        item.status = 'done';
+        const d = await res.json();
+        if (!allFiles.find(f => f.name === item.name)) {
+          allFiles.push({ name: item.name, size: item.file.size, type: 'file', sha: d.content.sha });
+        }
+        // Assign to current folder if inside one
+        if (currentFolder && currentFolder.id !== '__unassigned__') {
+          fileAssignments[item.name] = currentFolder.id;
+        }
+      } else { item.status = 'error'; item.progress = 0; }
+    } catch(e) { item.status = 'error'; item.progress = 0; }
+    render();
+  }
+  saveAndPublish();
+  toast('Upload complete', 'success');
+}
+
+// ==================== RENDER ====================
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = renderTopBar() + '<main class="main-content">' + renderCurrentView() + '</main>' + renderFooter();
+  attachGlobalEvents();
+}
+
+function renderTopBar() {
+  let breadcrumb = '<span class="bc-link" onclick="goHome()">Home</span>';
+  if (currentView === 'folder' && currentFolder) {
+    breadcrumb += `<span class="bc-sep">›</span><span class="bc-current">${currentFolder.icon || '📁'} ${escapeHtml(currentFolder.name)}</span>`;
+  } else if (currentView === 'settings') {
+    breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">⚙️ Settings</span>';
+  } else if (currentView === 'upload') {
+    breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">⬆️ Upload</span>';
+  } else if (currentView === 'visibility') {
+    breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">👁️ Visibility</span>';
+  }
+  return `<header class="top-bar">
+    <div class="top-bar-left">
+      <div class="site-title">📋 File Manager</div>
+      <div class="breadcrumb">${breadcrumb}</div>
+    </div>
+    <div class="top-bar-right">
+      <span class="publish-status" id="publish-status">${publishStatus || '—'}</span>
+      <button class="icon-btn" onclick="currentView='settings';render();" title="Settings">⚙️</button>
+    </div>
+  </header>`;
+}
+
+function renderCurrentView() {
+  switch(currentView) {
+    case 'home': return renderHomeView();
+    case 'folder': return renderFolderView();
+    case 'settings': return renderSettingsView();
+    case 'upload': return renderUploadView();
+    case 'visibility': return renderVisibilityView();
+    default: return renderHomeView();
+  }
+}
+
+function renderHomeView() {
+  let folderCards = '';
+  folders.forEach((folder, idx) => {
+    const count = getFilesInFolder(folder.id).length;
+    const subfolders = folders.filter(f => f.parent === folder.id);
+    const subLabel = subfolders.length > 0 ? `<div style="font-size:10px;color:var(--blue);margin-top:4px">↳ ${subfolders.length} subfolder${subfolders.length>1?'s':''}</div>` : '';
+    folderCards += `<div class="folder-card" style="--folder-color:${folder.color || '#ffd54f'}" 
+      onclick="openFolder('${folder.id}')"
+      draggable="true" ondragstart="folderReorderDragStart(event,${idx})" ondragend="folderReorderDragEnd(event)" ondragover="folderDragOver(event)" ondragleave="folderDragLeave(event)" ondrop="event.stopPropagation();folderDrop(event,'${folder.id}');folderReorderDrop(event,${idx})"
+      >
+      <div class="folder-actions">
+        <button onclick="event.stopPropagation();renameFolder('${folder.id}')" title="Rename">✏️</button>
+        <button class="del-btn" onclick="event.stopPropagation();deleteFolder('${folder.id}')" title="Delete">🗑️</button>
+      </div>
+      <div class="folder-icon">${folder.icon || '📁'}</div>
+      <div class="folder-name">${escapeHtml(folder.name)}</div>
+      <div class="folder-count">${count} file${count !== 1 ? 's' : ''}</div>
+      ${subLabel}
+    </div>`;
+  });
+  // Unassigned folder
+  const unassigned = getUnassignedFiles();
+  if (unassigned.length > 0) {
+    folderCards += `<div class="folder-card" style="--folder-color:#8b949e" onclick="openFolder('__unassigned__')">
+      <div class="folder-icon">📂</div>
+      <div class="folder-name">Unassigned</div>
+      <div class="folder-count">${unassigned.length} file${unassigned.length !== 1 ? 's' : ''}</div>
+    </div>`;
+  }
+  return `<div class="home-view" style="animation:fadeIn .3s">
+    <div class="section-header">
+      <h2>📂 Folders</h2>
+      <span class="section-count">${folders.length} folder${folders.length !== 1 ? 's' : ''}</span>
+      <button class="btn btn-primary" onclick="createFolder()" style="margin-left:auto">+ New Folder</button>
+    </div>
+    <div class="folder-grid">${folderCards || '<div class="empty-state">No folders yet. Create one!</div>'}</div>
+    <div class="quick-actions">
+      <button class="btn" onclick="currentView='upload';render()">⬆️ Upload Files</button>
+      <button class="btn" onclick="currentView='settings';render()">⚙️ Settings</button>
+      <button class="btn" onclick="currentView='visibility';render()">👁️ Show/Hide Files</button>
+    </div>
+  </div>`;
+}
+
+function renderFolderView() {
+  if (!currentFolder) return renderHomeView();
+  const files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  const hasSelected = selectedFiles.size > 0;
+
+  let bulkBar = '';
+  if (hasSelected) {
+    bulkBar = `<div class="bulk-bar">
+      <span class="bulk-count">${selectedFiles.size} selected</span>
+      <button class="btn" onclick="bulkMove()">📂 Move to...</button>
+      <button class="btn" onclick="bulkHide()">🙈 Hide</button>
+      <button class="btn btn-danger" onclick="bulkDelete()">🗑️ Delete</button>
+    </div>`;
+  }
+
+  let selectAll = '';
+  if (files.length > 0) {
+    const allSel = files.every(f => selectedFiles.has(f.name));
+    selectAll = `<div style="margin-bottom:12px;display:flex;align-items:center;gap:8px">
+      <input type="checkbox" class="file-checkbox" ${allSel ? 'checked' : ''} onchange="selectAllFiles(${JSON.stringify(files.map(f=>({name:f.name}))).replace(/"/g,'&quot;')})">
+      <span style="font-size:13px;color:var(--muted)">Select All</span>
+    </div>`;
+  }
+
+  let fileRows = files.map(f => {
+    const icon = getFileIcon(f.name);
+    const name = getDisplayName(f.name);
+    const type = getFileType(f.name);
+    const size = formatSize(f.size);
+    const typeClass = type === 'PDF' ? 'badge-pdf' : 'badge-html';
+    const isHidden = hiddenFiles.includes(f.name);
+    const isSelected = selectedFiles.has(f.name);
+    const visIcon = isHidden ? '🙈' : '👁️';
+    return `<div class="file-row" draggable="true" ondragstart="fileDragStart(event,'${f.name.replace(/'/g,"\\'")}');" ondragend="fileDragEnd(event)">
+      <input type="checkbox" class="file-checkbox" ${isSelected ? 'checked' : ''} onchange="toggleSelectFile('${f.name.replace(/'/g,"\\'")}')">
+      <div class="file-row-icon">${icon}</div>
+      <div class="file-row-info">
+        <div class="file-row-name">${escapeHtml(name)}${isHidden ? ' <span style="color:var(--muted);font-size:11px">(hidden)</span>' : ''}</div>
+        <div class="file-row-meta">${f.name} ${size ? '• ' + size : ''}</div>
+      </div>
+      <span class="type-badge ${typeClass}">${type}</span>
+      <div class="file-admin-actions">
+        <button onclick="previewFile('${f.name.replace(/'/g,"\\'")}')" title="Preview">👀</button>
+        <button onclick="moveFile('${f.name.replace(/'/g,"\\'")}')" title="Move to folder">📂</button>
+        <button onclick="toggleFileVisibility('${f.name.replace(/'/g,"\\'")}')" title="${isHidden ? 'Show' : 'Hide'}">${visIcon}</button>
+        <button onclick="renameDisplayName('${f.name.replace(/'/g,"\\'")}')" title="Rename display">✏️</button>
+        <button class="del-btn" onclick="deleteFileFromRepo('${f.name.replace(/'/g,"\\'")}')" title="Delete from repo">🗑️</button>
       </div>
     </div>`;
   }).join('');
+
+  if (files.length === 0) fileRows = '<div class="empty-state">No files in this folder</div>';
+
+  return `<div class="folder-view" style="animation:fadeIn .3s">
+    <div class="folder-header">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <div class="folder-title">
+        <span class="folder-title-icon">${currentFolder.icon || '📁'}</span>
+        <span>${escapeHtml(currentFolder.name)}</span>
+        <span class="file-count-badge">${files.length} file${files.length !== 1 ? 's' : ''}</span>
+      </div>
+    </div>
+    ${bulkBar}
+    ${selectAll}
+    <div class="file-list">${fileRows}</div>
+    <div class="drop-zone" id="folder-drop-zone" onclick="document.getElementById('folder-file-input').click()">
+      <p style="font-size:24px;margin-bottom:8px">📁</p>
+      <p>Drop files here to add to this folder</p>
+      <p style="font-size:12px;margin-top:4px">or click to browse (.html, .pdf)</p>
+    </div>
+    <input type="file" id="folder-file-input" accept=".html,.htm,.pdf,.HTML,.PDF" multiple style="display:none" onchange="uploadFiles(this.files)">
+  </div>`;
 }
 
-let dndDraggedFile = null;
-function dndDragStart(e, enc) { dndDraggedFile = decodeURIComponent(enc); e.dataTransfer.effectAllowed = 'move'; e.target.classList.add('dragging'); }
-function dndDragOver(e) { e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
-function dndDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
-function dndDrop(e, folderId) {
-  e.preventDefault();
-  e.currentTarget.classList.remove('drag-over');
-  if (!dndDraggedFile) return;
-  fileAssignments[dndDraggedFile] = folderId;
-  saveAndPublish();
-  renderOrganize();
-  renderFilesTable();
-  const folder = folders.find(f => f.id === folderId);
-  logActivity(`Moved "${dndDraggedFile}" to ${folder ? folder.name : 'Uncategorized'}`);
-  showToast(`Moved to ${folder ? folder.name : 'Uncategorized'}`, 'success');
-  dndDraggedFile = null;
+function renderSettingsView() {
+  const token = localStorage.getItem('mgr_github_token') || '';
+  const hasToken = token.length > 0;
+  return `<div class="settings-panel">
+    <div class="folder-header">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <div class="folder-title"><span class="folder-title-icon">⚙️</span><span>Settings</span></div>
+    </div>
+    <div class="settings-section">
+      <h3>🔑 GitHub Token</h3>
+      <div class="form-group">
+        <label>Personal Access Token (required for publishing)</label>
+        <input type="password" id="settings-token" value="${token}" placeholder="ghp_xxxxxxxxxxxx">
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-primary" onclick="saveToken()">Save Token</button>
+        <button class="btn btn-danger" onclick="clearToken()">Clear</button>
+        <span style="font-size:12px;color:var(--muted)">${hasToken ? '✅ Token set' : '⚠️ No token'}</span>
+      </div>
+    </div>
+    <div class="settings-section">
+      <h3>🌐 Site Settings</h3>
+      <div class="form-group"><label>Site Name</label><input type="text" id="settings-sitename" value="${escapeHtml(settings.siteName)}"></div>
+      <div class="form-group"><label>Subtitle</label><input type="text" id="settings-subtitle" value="${escapeHtml(settings.siteSubtitle)}"></div>
+      <div class="form-group"><label>Telegram Link</label><input type="text" id="settings-telegram" value="${escapeHtml(settings.telegramLink)}"></div>
+      <button class="btn btn-primary" onclick="saveSiteSettings()">Save Settings</button>
+    </div>
+    <div class="settings-section">
+      <h3>📦 Import / Export</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="exportConfig()">⬇️ Export config.json</button>
+        <button class="btn" onclick="document.getElementById('import-input').click()">⬆️ Import config.json</button>
+        <input type="file" id="import-input" accept=".json" style="display:none" onchange="importConfig(this.files[0])">
+      </div>
+    </div>
+    <div class="settings-section">
+      <h3>⚠️ Danger Zone</h3>
+      <button class="btn btn-danger" onclick="resetAllData()">🗑️ Reset All Local Data</button>
+    </div>
+  </div>`;
 }
 
-// ============ VISIBILITY ============
-function renderVisibility() {
-  const el = document.getElementById('visList');
-  if (!el) return;
-  el.innerHTML = repoFiles.map(f => {
-    const isHidden = hiddenFiles.includes(f.name);
-    return `<div class="vis-item ${isHidden?'hidden':''}">
-      <span style="font-size:1.1rem">${getIcon(f.name)}</span>
-      <span class="vi-name">${displayNames[f.name] || f.name.replace(/\.(html|pdf)$/i,'')}</span>
-      ${isHidden ? '<span class="vi-badge">HIDDEN</span>' : ''}
-      <div class="toggle ${isHidden?'':'on'}" onclick="toggleHide('${encodeURIComponent(f.name)}')"></div>
+function renderUploadView() {
+  let queueHtml = '';
+  if (uploadQueue.length > 0) {
+    queueHtml = '<div class="upload-progress">' + uploadQueue.map(item => {
+      const statusIcon = item.status === 'done' ? '✅' : item.status === 'error' ? '❌' : item.status === 'uploading' ? '⏳' : '⏸️';
+      return `<div class="upload-item">
+        <span class="status-icon">${statusIcon}</span>
+        <span class="name">${escapeHtml(item.name)}</span>
+        <div class="prog-bar"><div class="prog-fill" style="width:${item.progress}%"></div></div>
+      </div>`;
+    }).join('') + '</div>';
+  }
+  return `<div class="upload-panel">
+    <div class="folder-header">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <div class="folder-title"><span class="folder-title-icon">⬆️</span><span>Upload Files</span></div>
+    </div>
+    <div class="drop-zone" id="upload-drop-zone" onclick="document.getElementById('upload-file-input').click()">
+      <p style="font-size:36px;margin-bottom:12px">📁</p>
+      <p style="font-size:16px;font-weight:500">Drag & drop files here</p>
+      <p style="font-size:13px;margin-top:6px;color:var(--muted)">or click to browse • Accepts .html and .pdf files</p>
+    </div>
+    <input type="file" id="upload-file-input" accept=".html,.htm,.pdf,.HTML,.PDF" multiple style="display:none" onchange="uploadFiles(this.files)">
+    ${queueHtml}
+  </div>`;
+}
+
+function renderVisibilityView() {
+  let rows = allFiles.map(f => {
+    const isVisible = !hiddenFiles.includes(f.name);
+    return `<div class="toggle-row">
+      <span>${getFileIcon(f.name)} ${escapeHtml(getDisplayName(f.name))}</span>
+      <label class="toggle-switch">
+        <input type="checkbox" ${isVisible ? 'checked' : ''} onchange="toggleFileVisibility('${f.name.replace(/'/g,"\\'")}')">
+        <span class="toggle-slider"></span>
+      </label>
     </div>`;
   }).join('');
+  return `<div class="settings-panel">
+    <div class="folder-header">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <div class="folder-title"><span class="folder-title-icon">👁️</span><span>Show/Hide Files</span></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:16px">
+      <button class="btn" onclick="showAllFiles()">👁️ Show All</button>
+      <button class="btn" onclick="hideAllFiles()">🙈 Hide All</button>
+    </div>
+    ${rows || '<div class="empty-state">No files found</div>'}
+  </div>`;
+}
+
+function renderFooter() {
+  return `<footer class="footer">
+    <div class="footer-links">
+      <a href="index.html" class="footer-link">📚 View Library</a>
+      <span class="footer-sep">•</span>
+      <a href="${settings.telegramLink}" target="_blank" class="footer-link">📱 Telegram</a>
+      <span class="footer-sep">•</span>
+      <a href="https://github.com/${REPO_OWNER}/${REPO_NAME}" target="_blank" class="footer-link">⭐ GitHub</a>
+    </div>
+    <div class="footer-copy">© 2026 ${escapeHtml(settings.siteName)} — Admin Panel</div>
+  </footer>`;
+}
+
+// ==================== NAVIGATION ====================
+function goHome() {
+  currentView = 'home';
+  currentFolder = null;
+  selectedFiles.clear();
+  render();
+}
+
+function openFolder(folderId) {
+  if (folderId === '__unassigned__') {
+    currentFolder = { id: '__unassigned__', name: 'Unassigned', icon: '📂', color: '#8b949e' };
+  } else {
+    currentFolder = folders.find(f => f.id === folderId);
+  }
+  if (currentFolder) {
+    currentView = 'folder';
+    selectedFiles.clear();
+    render();
+  }
+}
+
+// ==================== SETTINGS ACTIONS ====================
+function saveToken() {
+  const val = document.getElementById('settings-token').value.trim();
+  if (val) { localStorage.setItem('mgr_github_token', val); toast('Token saved', 'success'); }
+  else { toast('Enter a token', 'error'); }
+  render();
+}
+
+function clearToken() {
+  localStorage.removeItem('mgr_github_token');
+  toast('Token cleared', 'success');
+  render();
+}
+
+function saveSiteSettings() {
+  settings.siteName = document.getElementById('settings-sitename').value.trim() || 'Parmar Railway Notes';
+  settings.siteSubtitle = document.getElementById('settings-subtitle').value.trim() || 'Hand-Written Notes Library';
+  settings.telegramLink = document.getElementById('settings-telegram').value.trim() || TELEGRAM_LINK;
+  saveAndPublish();
+  toast('Settings saved', 'success');
+  render();
+}
+
+function exportConfig() {
+  const configData = {
+    folders, fileAssignments, displayNames, hiddenFiles,
+    telegramLink: settings.telegramLink, siteName: settings.siteName, siteSubtitle: settings.siteSubtitle,
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
+  const blob = new Blob([JSON.stringify(configData, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'config.json';
+  a.click();
+  toast('Config exported', 'success');
+}
+
+function importConfig(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.folders) folders = data.folders;
+      if (data.fileAssignments) fileAssignments = data.fileAssignments;
+      if (data.displayNames) displayNames = data.displayNames;
+      if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
+      if (data.siteName) settings.siteName = data.siteName;
+      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
+      if (data.telegramLink) settings.telegramLink = data.telegramLink;
+      saveAndPublish();
+      toast('Config imported', 'success');
+      render();
+    } catch(err) { toast('Invalid JSON file', 'error'); }
+  };
+  reader.readAsText(file);
+}
+
+function resetAllData() {
+  confirm('Reset All Data', 'This will clear all local data (folders, assignments, settings). Are you sure?', () => {
+    localStorage.removeItem('mgr_folders');
+    localStorage.removeItem('mgr_assignments');
+    localStorage.removeItem('mgr_hidden');
+    localStorage.removeItem('mgr_displayNames');
+    localStorage.removeItem('mgr_settings');
+    folders = [];
+    fileAssignments = {};
+    hiddenFiles = [];
+    displayNames = {};
+    settings = { siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library', telegramLink: TELEGRAM_LINK };
+    toast('All data reset', 'success');
+    render();
+  });
 }
 
 function showAllFiles() {
   hiddenFiles = [];
   saveAndPublish();
-  renderVisibility();
-  renderFilesTable();
-  logActivity('Showed all files');
-  showToast('All files are now visible', 'success');
+  toast('All files visible', 'success');
+  render();
 }
 
 function hideAllFiles() {
-  hiddenFiles = repoFiles.map(f => f.name);
+  hiddenFiles = allFiles.map(f => f.name);
   saveAndPublish();
-  renderVisibility();
-  renderFilesTable();
-  logActivity('Hid all files');
-  showToast('All files are now hidden', 'info');
+  toast('All files hidden', 'success');
+  render();
 }
 
-// ============ UPLOAD ============
-const uploadZone = document.getElementById('uploadZone');
-if (uploadZone) {
-  uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
-  uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
-  uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); handleUploadFiles(e.dataTransfer.files); });
-}
-
-function handleUploadFiles(fileList) {
-  if (!fileList || fileList.length === 0) return;
-  const preview = document.getElementById('uploadPreview');
-  preview.innerHTML = '';
-  Array.from(fileList).forEach(file => {
-    if (!file.name.match(/\.(html|pdf)$/i)) { showToast(`${file.name} is not .html or .pdf`, 'error'); return; }
-    const div = document.createElement('div');
-    div.className = 'upload-preview';
-    div.innerHTML = `
-      <div style="display:flex;align-items:center;gap:12px">
-        <span style="font-size:1.5rem">${file.name.endsWith('.pdf')?'📕':'📄'}</span>
-        <div style="flex:1"><div style="font-weight:500;font-size:.9rem">${file.name}</div><div style="font-size:.8rem;color:var(--text-muted)">${formatSize(file.size)}</div></div>
-        <button class="btn btn-primary btn-sm" onclick="uploadFile(this,'${encodeURIComponent(file.name)}')">⬆️ Upload</button>
-      </div>
-      <div class="upload-progress"><div class="upload-progress-bar"></div></div>
-    `;
-    div._file = file;
-    preview.appendChild(div);
-  });
-}
-
-async function uploadFile(btn, enc) {
-  const name = decodeURIComponent(enc);
-  const token = localStorage.getItem(LS.token);
-  if (!token) { showToast('GitHub token required for upload', 'error'); return; }
-  const previewDiv = btn.closest('.upload-preview');
-  const file = previewDiv._file;
-  if (!file) return;
-  const progressBar = previewDiv.querySelector('.upload-progress-bar');
-  btn.disabled = true;
-  btn.textContent = '⏳ Uploading...';
-  progressBar.style.width = '30%';
-  try {
-    const reader = new FileReader();
-    const base64 = await new Promise((resolve, reject) => {
-      reader.onload = () => resolve(reader.result.split(',')[1]);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-    progressBar.style.width = '60%';
-    // Check if file already exists
-    let sha = null;
-    try {
-      const check = await fetch(API_URL + encodeURIComponent(file.name), { headers: { 'Authorization': `token ${token}` } });
-      if (check.ok) { const d = await check.json(); sha = d.sha; }
-    } catch(e) {}
-    const body = { message: `Upload ${file.name}`, content: base64, branch: 'main' };
-    if (sha) body.sha = sha;
-    const res = await fetch(API_URL + encodeURIComponent(file.name), {
-      method: 'PUT',
-      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
-    progressBar.style.width = '90%';
-    if (!res.ok) { const err = await res.json(); throw new Error(err.message || 'Upload failed'); }
-    const result = await res.json();
-    progressBar.style.width = '100%';
-    btn.textContent = '✅ Done';
-    // Add to local files list
-    repoFiles.push({ name: file.name, size: file.size, type: 'file', sha: result.content.sha });
-    renderAll();
-    logActivity(`Uploaded file: ${file.name}`);
-    showToast(`${file.name} uploaded successfully!`, 'success');
-  } catch(e) {
-    progressBar.style.width = '0';
-    btn.textContent = '❌ Failed';
-    btn.disabled = false;
-    showToast('Upload failed: ' + e.message, 'error');
+// ==================== EVENTS ====================
+function attachGlobalEvents() {
+  // Drag & drop for upload zone
+  const uploadZone = document.getElementById('upload-drop-zone');
+  if (uploadZone) {
+    uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+    uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('dragover'); });
+    uploadZone.addEventListener('drop', (e) => { e.preventDefault(); uploadZone.classList.remove('dragover'); uploadFiles(e.dataTransfer.files); });
+  }
+  // Drag & drop for folder drop zone
+  const folderZone = document.getElementById('folder-drop-zone');
+  if (folderZone) {
+    folderZone.addEventListener('dragover', (e) => { e.preventDefault(); folderZone.classList.add('dragover'); });
+    folderZone.addEventListener('dragleave', () => { folderZone.classList.remove('dragover'); });
+    folderZone.addEventListener('drop', (e) => { e.preventDefault(); folderZone.classList.remove('dragover'); uploadFiles(e.dataTransfer.files); });
   }
 }
 
-// ============ SETTINGS ============
-function renderSettingsFields() {
-  const tg = document.getElementById('settingTelegram');
-  const sn = document.getElementById('settingSiteName');
-  const ss = document.getElementById('settingSiteSubtitle');
-  if (tg) tg.value = settings.telegramLink || '';
-  if (sn) sn.value = settings.siteName || '';
-  if (ss) ss.value = settings.siteSubtitle || '';
-}
-
-function saveToken() {
-  const token = document.getElementById('tokenInput').value.trim();
-  if (!token) { showToast('Enter a token first', 'error'); return; }
-  localStorage.setItem(LS.token, token);
-  document.getElementById('tokenInput').value = '';
-  updateTokenStatus();
-  showToast('Token saved!', 'success');
-  logActivity('GitHub token saved');
-  fetchConfigSha();
-}
-
-function clearToken() {
-  localStorage.removeItem(LS.token);
-  updateTokenStatus();
-  showToast('Token cleared', 'info');
-  logActivity('GitHub token cleared');
-}
-
-function updateTokenStatus() {
-  const token = localStorage.getItem(LS.token);
-  const el = document.getElementById('tokenStatus');
-  if (token) el.innerHTML = '<span style="color:var(--success)">✅ Token is set (ghp_...'+token.slice(-4)+')</span>';
-  else el.innerHTML = '<span style="color:var(--danger)">❌ No token set — publishing disabled</span>';
-}
-
-function saveSettings() {
-  settings.telegramLink = document.getElementById('settingTelegram').value.trim() || TELEGRAM_LINK;
-  settings.siteName = document.getElementById('settingSiteName').value.trim() || 'Parmar Railway Notes';
-  settings.siteSubtitle = document.getElementById('settingSiteSubtitle').value.trim() || 'Hand-Written Notes Library';
-  saveAndPublish();
-  // Update TG links
-  const tgLink = document.getElementById('tgLink');
-  if (tgLink) tgLink.href = settings.telegramLink;
-  const tgPromo = document.getElementById('tgPromoLink');
-  if (tgPromo) tgPromo.href = settings.telegramLink;
-  showToast('Settings saved!', 'success');
-  logActivity('Updated site settings');
-}
-
-function importConfig() { document.getElementById('importInput').click(); }
-function handleImport(file) {
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const data = JSON.parse(reader.result);
-      if (data.folders) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...data.folders];
-      if (data.fileAssignments) fileAssignments = data.fileAssignments;
-      if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
-      if (data.displayNames) displayNames = data.displayNames;
-      if (data.telegramLink) settings.telegramLink = data.telegramLink;
-      if (data.siteName) settings.siteName = data.siteName;
-      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
-      saveAndPublish();
-      renderAll();
-      showToast('Config imported successfully!', 'success');
-      logActivity('Imported config.json');
-    } catch(e) { showToast('Invalid JSON file', 'error'); }
-  };
-  reader.readAsText(file);
-}
-
-function exportConfig() {
-  const configData = {
-    folders: folders.filter(f => f.id !== 'root'),
-    fileAssignments, displayNames, hiddenFiles,
-    telegramLink: settings.telegramLink,
-    siteName: settings.siteName,
-    siteSubtitle: settings.siteSubtitle,
-    lastUpdated: new Date().toISOString().split('T')[0]
-  };
-  const blob = new Blob([JSON.stringify(configData, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'config.json'; a.click();
-  URL.revokeObjectURL(url);
-  showToast('Config exported!', 'success');
-  logActivity('Exported config.json');
-}
-
-function resetAllData() {
-  showDialog('Reset All Data', 'This will clear all local data (folders, assignments, settings). Are you sure?', '🗑️ Reset', () => {
-    Object.values(LS).forEach(key => localStorage.removeItem(key));
-    location.reload();
-  });
-}
-
-// ============ INIT ============
+// ==================== START ====================
 init();
 </script>
 </body>
