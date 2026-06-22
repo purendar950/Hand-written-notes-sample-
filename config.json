@@ -1,19 +1,51 @@
 {
   "folders": [
-    {"id": "ca", "name": "Current Affairs", "icon": "📰", "desc": "Monthly current affairs & GK notes"},
-    {"id": "culture", "name": "Culture & Heritage", "icon": "🏛️", "desc": "Architecture, festivals, music"},
-    {"id": "books", "name": "Books & Authors", "icon": "📚", "desc": "Literature related notes"},
-    {"id": "sample", "name": "Sample Notes", "icon": "✍️", "desc": "Hand-written sample formats"}
+    {
+      "id": "ca",
+      "name": "Current Affairs",
+      "icon": "📰",
+      "desc": "Monthly current affairs & GK notes"
+    },
+    {
+      "id": "culture",
+      "name": "Culture & Heritage",
+      "icon": "🏛️",
+      "desc": "Architecture, festivals, music"
+    },
+    {
+      "id": "books",
+      "name": "Books & Authors",
+      "icon": "📚",
+      "desc": "Literature related notes"
+    },
+    {
+      "id": "sample",
+      "name": "Sample Notes",
+      "icon": "✍️",
+      "desc": "Hand-written sample formats"
+    },
+    {
+      "id": "f_1782105578544",
+      "name": "Statics Gk",
+      "icon": "📁",
+      "desc": ""
+    },
+    {
+      "id": "f_1782105643158",
+      "name": "BLITZ SERIES",
+      "icon": "📁",
+      "desc": ""
+    }
   ],
   "fileAssignments": {
     "Current Affairs Top 150 (Jan-May 2026) NTPC CBT 2.html": "ca",
     "Daily GK Notes (Lecture 13).html": "ca",
-    "Architecture & Culture Notes.html": "culture",
-    "Architecture & Culture Notes (Hindi).html": "culture",
-    "Festivals of India Notes.html": "culture",
-    "Festivals of India Notes (Hindi).html": "culture",
-    "Music Notes.html": "culture",
-    "Music Notes (Hindi).html": "culture",
+    "Architecture & Culture Notes.html": "f_1782105578544",
+    "Architecture & Culture Notes (Hindi).html": "f_1782105578544",
+    "Festivals of India Notes.html": "f_1782105578544",
+    "Festivals of India Notes (Hindi).html": "f_1782105578544",
+    "Music Notes.html": "f_1782105578544",
+    "Music Notes (Hindi).html": "f_1782105578544",
     "Books & Authors Notes.html": "books",
     "Hand written sample.html": "sample"
   },
