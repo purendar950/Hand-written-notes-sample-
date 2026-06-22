@@ -154,6 +154,7 @@ let uploadQueue = [];
 async function init() {
   await loadState();
   await loadFiles();
+  await fetchTrafficStats();
   render();
 }
 
@@ -611,6 +612,71 @@ async function uploadFiles(files) {
   toast('Upload complete', 'success');
 }
 
+// ==================== TRAFFIC STATS ====================
+let trafficData = { views: 0, uniques: 0, daily: [] };
+
+async function fetchTrafficStats() {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) return;
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/traffic/views`, {
+      headers: { 'Authorization': `token ${token}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      trafficData.views = data.count || 0;
+      trafficData.uniques = data.uniques || 0;
+      trafficData.daily = data.views || [];
+    }
+  } catch(e) { console.warn('Traffic fetch failed:', e); }
+}
+
+function renderTrafficStats() {
+  const today = new Date().toISOString().split('T')[0];
+  const todayViews = trafficData.daily.find(d => d.timestamp && d.timestamp.startsWith(today));
+  const todayCount = todayViews ? todayViews.count : 0;
+  const todayUniques = todayViews ? todayViews.uniques : 0;
+
+  // Last 7 days chart
+  const last7 = trafficData.daily.slice(-7);
+  const maxViews = Math.max(...last7.map(d => d.count || 0), 1);
+  const bars = last7.map(d => {
+    const height = Math.max(((d.count || 0) / maxViews) * 100, 4);
+    const day = new Date(d.timestamp).toLocaleDateString('en', { weekday: 'short' });
+    return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1">
+      <span style="font-size:10px;color:var(--muted)">${d.count || 0}</span>
+      <div style="width:100%;max-width:32px;height:${height}px;background:var(--blue);border-radius:4px;min-height:4px"></div>
+      <span style="font-size:10px;color:var(--muted)">${day}</span>
+    </div>`;
+  }).join('');
+
+  return `<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+      <span style="font-size:18px">📊</span>
+      <span style="font-size:15px;font-weight:600;color:var(--text)">Page Views (Last 14 days)</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:16px">
+      <div style="background:var(--card);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:24px;font-weight:700;color:var(--accent)">${todayCount}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Today Views</div>
+      </div>
+      <div style="background:var(--card);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:24px;font-weight:700;color:var(--blue)">${todayUniques}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Today Unique</div>
+      </div>
+      <div style="background:var(--card);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:24px;font-weight:700;color:var(--success)">${trafficData.views}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Total Views (14d)</div>
+      </div>
+      <div style="background:var(--card);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-size:24px;font-weight:700;color:#bc8cff">${trafficData.uniques}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Unique Visitors</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:4px;height:80px;padding:0 4px">${bars || '<span style="color:var(--muted);font-size:12px">No data yet. Token required for traffic stats.</span>'}</div>
+  </div>`;
+}
+
 // ==================== RENDER ====================
 function render() {
   const app = document.getElementById('app');
@@ -676,6 +742,7 @@ function renderHomeView() {
     </div>`;
   }
   return `<div class="home-view" style="animation:fadeIn .3s">
+    ${renderTrafficStats()}
     <div class="section-header">
       <h2>📂 Folders</h2>
       <span class="section-count">${folders.length} folder${folders.length !== 1 ? 's' : ''}</span>
