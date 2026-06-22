@@ -166,16 +166,38 @@ async function loadConfig() {
 }
 
 async function loadFiles() {
+  // 1) Try the live GitHub listing (cache-busted) — this gives real file sizes.
+  let apiFiles = [];
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL + '?t=' + Date.now(), { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
-      allFiles = data.filter(f => f.type === 'file')
+      apiFiles = data.filter(f => f.type === 'file')
         .filter(f => !EXCLUDED_FILES.includes(f.name))
-        .filter(f => !hiddenFiles.includes(f.name))
         .filter(f => !f.name.startsWith('.'));
+    } else {
+      console.warn('GitHub file listing unavailable (status ' + res.status + '), using config.json as source.');
     }
-  } catch(e) { console.error('Files load failed:', e); allFiles = []; }
+  } catch(e) { console.error('Files load failed, using config.json as source:', e); }
+
+  // 2) Merge with files the published config.json already knows about. This makes
+  //    newly uploaded/assigned files appear immediately even when the GitHub API
+  //    listing is cached or rate-limited, and keeps the page working as a fallback
+  //    when the API call fails entirely.
+  const fileMap = {};
+  apiFiles.forEach(f => { fileMap[f.name] = { name: f.name, size: f.size, type: 'file' }; });
+  const knownFromConfig = new Set([
+    ...Object.keys(fileAssignments || {}),
+    ...Object.keys(displayNames || {})
+  ]);
+  knownFromConfig.forEach(name => {
+    if (!fileMap[name] && !EXCLUDED_FILES.includes(name) && !name.startsWith('.')) {
+      fileMap[name] = { name, size: 0, type: 'file' };
+    }
+  });
+
+  // 3) Drop hidden files.
+  allFiles = Object.values(fileMap).filter(f => !hiddenFiles.includes(f.name));
 }
 
 function getFileIcon(name) {
@@ -219,8 +241,13 @@ function getFilesInFolder(folderId) {
 }
 
 function getUnassignedFiles() {
-  const assigned = Object.keys(fileAssignments);
-  return allFiles.filter(f => !assigned.includes(f.name));
+  // Treat a file as unassigned if it has no folder OR its folder no longer
+  // exists, so files never vanish because of a stale/deleted assignment.
+  const folderIds = new Set(folders.map(f => f.id));
+  return allFiles.filter(f => {
+    const assigned = fileAssignments[f.name];
+    return !assigned || !folderIds.has(assigned);
+  });
 }
 
 function openFile(filename) {
