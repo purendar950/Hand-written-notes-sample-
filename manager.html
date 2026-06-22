@@ -3,204 +3,403 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Manager | Notes Library Control Panel</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kalam:wght@400;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<title>File Manager | Parmar Railway Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a14;--surface:#12121f;--surface2:#1a1a2e;--card:#1e2a3a;--accent:#ffd54f;--accent2:#80cbc4;--danger:#ef4444;--success:#10b981;--info:#3b82f6;--warn:#f59e0b;--text:#e8e8f0;--dim:#9ca3af;--muted:#6b7280;--border:#2d3748;--radius:12px}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-a{color:var(--accent2);text-decoration:none}
-a:hover{text-decoration:underline}
+:root{
+--bg:#0a0a14;--surface:#12121f;--card:#1e2a3a;--card2:#162030;
+--accent:#ffd54f;--accent2:#80cbc4;--accent3:#f39c12;
+--text:#e8e8f0;--text-dim:#9ca3af;--text-muted:#6b7280;
+--border:#2d3748;--success:#10b981;--danger:#ef4444;--info:#3b82f6;
+--radius:12px;--shadow:0 4px 20px rgba(0,0,0,.3);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+</style>
 
+<style>
 /* LAYOUT */
-.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
-@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;left:-280px;z-index:500;transition:left .3s}.sidebar.open{left:0}.mob-toggle{display:flex!important}}
-
-/* SIDEBAR */
-.sidebar{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto}
-.sb-header{padding:20px;border-bottom:1px solid var(--border);text-align:center}
-.sb-logo{font-family:'Caveat Brush',cursive;font-size:1.4rem;color:var(--accent)}
-.sb-sub{font-size:.72rem;color:var(--dim);margin-top:2px}
-.sb-nav{padding:12px;flex:1}
-.sb-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:.88rem;color:var(--dim);transition:all .15s;margin-bottom:2px}
-.sb-item:hover{background:rgba(255,255,255,.05);color:var(--text)}
-.sb-item.active{background:rgba(255,213,79,.1);color:var(--accent);font-weight:600}
-.sb-item .ico{font-size:1.1rem;width:24px;text-align:center}
-.sb-divider{height:1px;background:var(--border);margin:12px 0}
-.sb-section{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;padding:8px 14px;font-weight:600}
-
-/* TELEGRAM BOX */
-.tg-box{margin:12px;padding:14px;background:linear-gradient(135deg,#0088cc22,#0088cc11);border:1px solid #0088cc44;border-radius:10px;text-align:center}
-.tg-box .tg-icon{font-size:1.8rem;margin-bottom:6px}
-.tg-box .tg-title{font-size:.82rem;font-weight:600;color:#5bc8f5}
-.tg-box .tg-desc{font-size:.7rem;color:var(--dim);margin:4px 0 8px}
-.tg-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#0088cc;color:#fff;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
-.tg-btn:hover{background:#006fa3;text-decoration:none}
+.app{display:flex;min-height:100vh}
+.sidebar{width:260px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:200;transition:transform .3s ease}
+.sidebar-header{padding:20px;border-bottom:1px solid var(--border);text-align:center}
+.sidebar-brand{font-family:'Kalam',cursive;font-size:1.3rem;color:var(--accent)}
+.sidebar-sub{font-size:.75rem;color:var(--text-dim);margin-top:4px}
+.sidebar-nav{flex:1;overflow-y:auto;padding:12px 0}
+.nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;cursor:pointer;transition:all .15s;border-left:3px solid transparent;color:var(--text-dim);font-size:.9rem;font-weight:500}
+.nav-item:hover{background:rgba(255,213,79,.05);color:var(--text)}
+.nav-item.active{background:rgba(255,213,79,.08);color:var(--accent);border-left-color:var(--accent)}
+.nav-item .icon{font-size:1.1rem;width:24px;text-align:center}
+.sidebar-footer{padding:16px;border-top:1px solid var(--border)}
+.tg-box{background:linear-gradient(135deg,#1a237e,#0d47a1);border-radius:var(--radius);padding:14px;text-align:center;margin-bottom:10px}
+.tg-box a{color:#5bc8f5;font-size:.8rem;text-decoration:none;font-weight:500}
+.tg-box .tg-label{font-size:.7rem;color:rgba(255,255,255,.7);margin-bottom:4px}
+.quick-links{display:flex;gap:8px;justify-content:center}
+.quick-links a{font-size:.72rem;color:var(--accent2);text-decoration:none;padding:4px 8px;border:1px solid var(--border);border-radius:6px;transition:all .15s}
+.quick-links a:hover{border-color:var(--accent2);background:rgba(128,203,196,.1)}
 
 /* MAIN */
-.main{display:flex;flex-direction:column;overflow-y:auto;max-height:100vh}
-.main-header{padding:20px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;background:var(--surface)}
-.mob-toggle{display:none;width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center}
-.main-title{font-family:'Kalam',cursive;font-size:1.4rem;color:var(--accent);flex:1}
-.main-actions{display:flex;gap:8px}
-.btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:6px}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
-.btn-primary{background:var(--accent);color:#1a1a2e;border-color:var(--accent);font-weight:600}
-.btn-primary:hover{background:#ffca28;color:#0a0a14}
-.btn-danger{border-color:var(--danger);color:var(--danger)}
-.btn-danger:hover{background:var(--danger);color:#fff}
-.btn-success{border-color:var(--success);color:var(--success)}
-.btn-success:hover{background:var(--success);color:#fff}
+.main{margin-left:260px;flex:1;min-height:100vh;padding:24px;max-width:100%}
+.main-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.main-title{font-family:'Kalam',cursive;font-size:1.6rem;color:var(--accent)}
+.publish-status{margin-left:auto;font-size:.8rem;padding:6px 14px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--text-dim)}
+.publish-status.success{border-color:var(--success);color:var(--success)}
+.publish-status.error{border-color:var(--danger);color:var(--danger)}
+.publish-status.publishing{border-color:var(--accent);color:var(--accent)}
+.hamburger{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:1.3rem;cursor:pointer;align-items:center;justify-content:center;position:fixed;top:12px;left:12px;z-index:300}
 
-/* CONTENT */
-.content{flex:1;padding:24px 28px;overflow-y:auto}
+/* PANELS */
+.panel{display:none}
+.panel.active{display:block}
 
-/* FOLDER TREE */
-.folder-section{margin-bottom:24px}
-.folder-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.folder-header h3{font-size:1rem;font-weight:600;color:var(--text)}
-.folder-tree{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.folder-row{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .1s;cursor:pointer}
-.folder-row:last-child{border-bottom:none}
-.folder-row:hover{background:rgba(255,255,255,.03)}
-.folder-row.selected{background:rgba(255,213,79,.08);border-left:3px solid var(--accent)}
-.folder-row .f-icon{font-size:1.1rem;width:24px;text-align:center}
-.folder-row .f-name{flex:1;font-size:.88rem;font-weight:500}
-.folder-row .f-count{font-size:.75rem;color:var(--muted);background:rgba(255,255,255,.05);padding:2px 8px;border-radius:10px}
-.folder-row .f-actions{display:flex;gap:4px;opacity:0;transition:opacity .15s}
-.folder-row:hover .f-actions{opacity:1}
-.f-actions button{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center}
-.f-actions button:hover{color:var(--accent);border-color:var(--accent)}
+/* CARDS */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:transform .15s}
+.stat-card:hover{transform:translateY(-2px)}
+.stat-card .sc-icon{font-size:2rem;margin-bottom:8px}
+.stat-card .sc-value{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-card .sc-label{font-size:.8rem;color:var(--text-dim);margin-top:4px}
 
-/* FILE LIST TABLE */
-.file-table{width:100%;border-collapse:collapse;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.file-table th{text-align:left;padding:12px 16px;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:rgba(0,0,0,.2);font-weight:600;border-bottom:1px solid var(--border)}
-.file-table td{padding:10px 16px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle}
-.file-table tr:hover td{background:rgba(255,255,255,.02)}
-.file-table .fname{display:flex;align-items:center;gap:10px;font-weight:500}
-.file-table .fname .ico{font-size:1.1rem}
-.file-table .fbadge{padding:2px 8px;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase}
-.fbadge.html{background:rgba(16,185,129,.15);color:#10b981}
-.fbadge.pdf{background:rgba(239,68,68,.15);color:#ef4444}
-.file-table .fsize{color:var(--muted);font-size:.8rem}
-.file-table .ffolder{color:var(--dim);font-size:.8rem}
-.file-table .fact{display:flex;gap:4px}
-.fact button{width:30px;height:30px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.fact button:hover{color:var(--accent);border-color:var(--accent)}
-.fact button.del:hover{color:var(--danger);border-color:var(--danger)}
-.checkbox{width:18px;height:18px;border-radius:4px;border:2px solid var(--border);cursor:pointer;appearance:none;-webkit-appearance:none;background:transparent;transition:all .15s;display:flex;align-items:center;justify-content:center}
-.checkbox:checked{background:var(--accent);border-color:var(--accent)}
-.checkbox:checked::after{content:'✓';color:#1a1a2e;font-size:.7rem;font-weight:700}
+/* TABLE */
+.table-wrap{overflow-x:auto;background:var(--card);border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:var(--surface);padding:12px 14px;text-align:left;font-weight:600;color:var(--text-dim);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);cursor:pointer;white-space:nowrap;user-select:none}
+th:hover{color:var(--accent)}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle}
+tr:hover td{background:rgba(255,213,79,.02)}
+.type-badge{padding:3px 8px;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.type-badge.html{background:rgba(16,185,129,.15);color:#10b981}
+.type-badge.pdf{background:rgba(239,68,68,.15);color:#ef4444}
+.action-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.75rem;cursor:pointer;transition:all .15s;margin:2px}
+.action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.action-btn.danger:hover{border-color:var(--danger);color:var(--danger)}
 
-/* MODALS */
-.modal-bg{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:900;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-bg.show{display:flex}
-.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;width:100%;max-width:460px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.modal-box h3{font-family:'Kalam',cursive;color:var(--accent);margin-bottom:16px;font-size:1.2rem}
-.form-group{margin-bottom:14px}
-.form-group label{display:block;font-size:.8rem;color:var(--dim);margin-bottom:6px;font-weight:500}
-.form-group input,.form-group select{width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.88rem;font-family:'Inter',sans-serif;outline:none}
-.form-group input:focus,.form-group select:focus{border-color:var(--accent)}
-.modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+/* BULK BAR */
+.bulk-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border-radius:var(--radius);margin-bottom:16px;border:1px solid var(--border);flex-wrap:wrap}
+.bulk-bar .count{font-size:.85rem;color:var(--accent);font-weight:600}
+.bulk-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.8rem;cursor:pointer;transition:all .15s}
+.bulk-btn:hover{border-color:var(--accent);color:var(--accent)}
+.bulk-btn.danger{border-color:rgba(239,68,68,.3)}
+.bulk-btn.danger:hover{border-color:var(--danger);color:var(--danger)}
 
-/* STATS CARDS */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
-.stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
-.stat-card .s-value{font-size:1.8rem;font-weight:700;color:var(--accent)}
-.stat-card .s-label{font-size:.75rem;color:var(--dim);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+/* SEARCH */
+.search-bar{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.search-input{flex:1;min-width:200px;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.9rem;outline:none;font-family:'Inter',sans-serif}
+.search-input:focus{border-color:var(--accent)}
+.sort-select{padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.85rem;outline:none;cursor:pointer}
+
+/* FOLDER CARDS */
+.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.folder-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px;position:relative;transition:all .15s;cursor:grab}
+.folder-card:hover{border-color:var(--accent)}
+.folder-card.dragging{opacity:.5;border-style:dashed}
+.folder-card .fc-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.folder-card .fc-icon{font-size:1.6rem}
+.folder-card .fc-name{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--text);flex:1}
+.folder-card .fc-count{font-size:.75rem;color:var(--text-muted);background:var(--surface);padding:3px 8px;border-radius:10px}
+.folder-card .fc-desc{font-size:.8rem;color:var(--text-dim);margin-bottom:10px}
+.folder-card .fc-actions{display:flex;gap:6px}
+.folder-color-bar{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--radius) 0 0 var(--radius)}
+
+/* FORM ELEMENTS */
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:6px;font-weight:500}
+.form-input{width:100%;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.9rem;outline:none;font-family:'Inter',sans-serif}
+.form-input:focus{border-color:var(--accent)}
+textarea.form-input{min-height:80px;resize:vertical}
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.form-row .form-group{flex:1;min-width:150px}
+.btn{padding:10px 20px;border-radius:var(--radius);border:none;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--accent);color:#1a1a2e}
+.btn-primary:hover{background:#ffe082;transform:translateY(-1px)}
+.btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent)}
+.btn-danger{background:rgba(239,68,68,.15);color:var(--danger);border:1px solid rgba(239,68,68,.3)}
+.btn-danger:hover{background:rgba(239,68,68,.25)}
+.btn-sm{padding:6px 14px;font-size:.8rem}
+
+/* ORGANIZE DND */
+.dnd-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.dnd-section{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden}
+.dnd-section-header{padding:14px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-family:'Kalam',cursive;font-size:1rem;color:var(--accent2);display:flex;align-items:center;gap:8px}
+.dnd-section-body{min-height:60px;padding:8px}
+.dnd-item{padding:10px 14px;margin:4px 0;background:var(--surface);border-radius:8px;border:1px solid var(--border);cursor:grab;font-size:.83rem;display:flex;align-items:center;gap:8px;transition:all .15s}
+.dnd-item:hover{border-color:var(--accent)}
+.dnd-item.dragging{opacity:.4;border-style:dashed}
+.dnd-section-body.drag-over{background:rgba(255,213,79,.05);border:2px dashed var(--accent)}
+
+/* VISIBILITY */
+.vis-list{display:grid;gap:8px}
+.vis-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);transition:opacity .2s}
+.vis-item.hidden{opacity:.4}
+.vis-item .vi-name{flex:1;font-size:.85rem}
+.vis-item .vi-badge{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(239,68,68,.15);color:var(--danger)}
+.toggle{width:44px;height:24px;border-radius:12px;background:var(--border);position:relative;cursor:pointer;transition:background .2s}
+.toggle.on{background:var(--success)}
+.toggle::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:transform .2s}
+.toggle.on::after{transform:translateX(20px)}
+
+/* UPLOAD */
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:40px;text-align:center;cursor:pointer;transition:all .2s;background:var(--card)}
+.upload-zone:hover,.upload-zone.drag-over{border-color:var(--accent);background:rgba(255,213,79,.03)}
+.upload-zone .uz-icon{font-size:3rem;margin-bottom:12px}
+.upload-zone .uz-text{color:var(--text-dim);font-size:.9rem}
+.upload-preview{margin-top:16px;padding:16px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border)}
+.upload-progress{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:12px}
+.upload-progress-bar{height:100%;background:var(--accent);border-radius:2px;transition:width .3s;width:0}
+
+/* SETTINGS */
+.settings-section{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.settings-section h3{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--accent2);margin-bottom:16px}
+.token-field{display:flex;gap:8px}
+.token-field input{flex:1}
 
 /* TOAST */
-.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:10px;background:var(--success);color:#fff;font-size:.85rem;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:999;display:none;animation:slideIn .3s ease}
-@keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.toast-container{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast{padding:12px 20px;border-radius:var(--radius);font-size:.85rem;font-weight:500;animation:slideIn .3s ease;box-shadow:var(--shadow);max-width:360px}
+.toast.success{background:#065f46;color:#a7f3d0;border:1px solid #10b981}
+.toast.error{background:#7f1d1d;color:#fca5a5;border:1px solid #ef4444}
+.toast.info{background:#1e3a5f;color:#93c5fd;border:1px solid #3b82f6}
+.toast.warn{background:#78350f;color:#fde68a;border:1px solid #f59e0b}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+
+/* MODAL DIALOG */
+.dialog-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px}
+.dialog-overlay.open{display:flex}
+.dialog{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.dialog h3{font-family:'Kalam',cursive;color:var(--accent);margin-bottom:12px;font-size:1.2rem}
+.dialog p{color:var(--text-dim);font-size:.9rem;margin-bottom:20px}
+.dialog-actions{display:flex;gap:10px;justify-content:flex-end}
+
+/* ACTIVITY LOG */
+.activity-log{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);max-height:300px;overflow-y:auto;padding:12px}
+.activity-item{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.8rem;color:var(--text-dim);display:flex;gap:8px;align-items:center}
+.activity-item:last-child{border:none}
+.activity-item .ai-time{color:var(--text-muted);font-size:.7rem;white-space:nowrap}
+
+/* MOBILE */
+@media(max-width:768px){
+.sidebar{transform:translateX(-100%)}
+.sidebar.open{transform:translateX(0)}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;display:none}
+.sidebar-overlay.open{display:block}
+.main{margin-left:0;padding:16px;padding-top:60px}
+.hamburger{display:flex}
+.stat-grid{grid-template-columns:repeat(2,1fr)}
+.folder-grid{grid-template-columns:1fr}
+.dnd-container{grid-template-columns:1fr}
+.table-wrap{font-size:.78rem}
+table th,table td{padding:8px 10px}
+.form-row{flex-direction:column}
+.search-bar{flex-direction:column}
+.main-header{padding-left:48px}
+}
+@media(max-width:480px){
+.stat-grid{grid-template-columns:1fr}
+.bulk-bar{flex-direction:column;align-items:stretch;text-align:center}
+}
+/* MOBILE TABLE CARD */
+@media(max-width:600px){
+.table-wrap table,.table-wrap thead,.table-wrap tbody,.table-wrap th,.table-wrap td,.table-wrap tr{display:block}
+.table-wrap thead{display:none}
+.table-wrap tr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;padding:12px;position:relative}
+.table-wrap td{padding:4px 0;border:none;font-size:.82rem}
+.table-wrap td::before{content:attr(data-label);font-weight:600;color:var(--text-dim);font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:2px}
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#4a5568}
 </style>
+
 </head>
 <body>
+<div class="app">
 
+<!-- HAMBURGER -->
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<div class="layout">
 <!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-  <div class="sb-header">
-    <div class="sb-logo">📂 File Manager</div>
-    <div class="sb-sub">Notes Library Control Panel</div>
-  </div>
-  <nav class="sb-nav">
-    <div class="sb-item active" onclick="showPanel('dashboard',this)"><span class="ico">📊</span>Dashboard</div>
-    <div class="sb-item" onclick="showPanel('files',this)"><span class="ico">📄</span>All Files</div>
-    <div class="sb-item" onclick="showPanel('folders',this)"><span class="ico">📁</span>Folders</div>
-    <div class="sb-item" onclick="showPanel('organize',this)"><span class="ico">🗂️</span>Organize Files</div>
-    <div class="sb-divider"></div>
-    <div class="sb-section">Display Control</div>
-    <div class="sb-item" onclick="showPanel('display',this)"><span class="ico">👁️</span>Visibility</div>
-    <div class="sb-item" onclick="showPanel('settings',this)"><span class="ico">⚙️</span>Settings</div>
-    <div class="sb-divider"></div>
-    <div class="sb-section">Quick Links</div>
-    <div class="sb-item" onclick="window.open('index.html','_blank')"><span class="ico">🌐</span>View Library</div>
-    <div class="sb-item" onclick="window.open('https://github.com/purendar950/Hand-written-notes-sample-','_blank')"><span class="ico">🐙</span>GitHub Repo</div>
-  </nav>
-  <!-- TELEGRAM -->
-  <div style="padding:4px 12px"><span id="publishStatus" style="font-size:.72rem;font-weight:500"></span></div>
-  <div class="tg-box">
-    <div class="tg-icon">✈️</div>
-    <div class="tg-title">Exam Zen StudySync</div>
-    <div class="tg-desc">Join our Telegram for updates, PDFs & daily notes</div>
-    <a href="https://t.me/Exam_Zen_StudySync" target="_blank" class="tg-btn">✈️ Join Channel</a>
-  </div>
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-brand">📋 File Manager</div>
+<div class="sidebar-sub">Admin Panel</div>
 </div>
+<nav class="sidebar-nav">
+<div class="nav-item active" data-panel="dashboard" onclick="switchPanel('dashboard',this)"><span class="icon">📊</span>Dashboard</div>
+<div class="nav-item" data-panel="files" onclick="switchPanel('files',this)"><span class="icon">📁</span>All Files</div>
+<div class="nav-item" data-panel="folders" onclick="switchPanel('folders',this)"><span class="icon">📂</span>Folders</div>
+<div class="nav-item" data-panel="organize" onclick="switchPanel('organize',this)"><span class="icon">🔀</span>Organize</div>
+<div class="nav-item" data-panel="visibility" onclick="switchPanel('visibility',this)"><span class="icon">👁️</span>Visibility</div>
+<div class="nav-item" data-panel="upload" onclick="switchPanel('upload',this)"><span class="icon">⬆️</span>Upload</div>
+<div class="nav-item" data-panel="settings" onclick="switchPanel('settings',this)"><span class="icon">⚙️</span>Settings</div>
+</nav>
+<div class="sidebar-footer">
+<div class="tg-box">
+<div class="tg-label">Join our Telegram</div>
+<a href="https://t.me/Exam_Zen_StudySync" target="_blank" id="tgLink">✈️ Exam Zen StudySync</a>
+</div>
+<div class="quick-links">
+<a href="index.html" target="_blank">📚 View Library</a>
+<a href="https://github.com/purendar950/Hand-written-notes-sample-" target="_blank">🐙 GitHub</a>
+</div>
+</div>
+</aside>
 
 <!-- MAIN CONTENT -->
-<div class="main">
-  <div class="main-header">
-    <button class="mob-toggle" onclick="toggleSidebar()">☰</button>
-    <div class="main-title" id="panelTitle">📊 Dashboard</div>
-    <div class="main-actions" id="panelActions"></div>
-  </div>
-  <div class="content" id="panelContent"></div>
+<main class="main">
+<div class="main-header">
+<h1 class="main-title" id="panelTitle">📊 Dashboard</h1>
+<div class="publish-status" id="publishStatus">Ready</div>
+</div>
+
+<!-- DASHBOARD PANEL -->
+<div class="panel active" id="panel-dashboard">
+<div class="stat-grid" id="statsGrid"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+<div>
+<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px;font-size:1rem">📝 Recent Activity</h3>
+<div class="activity-log" id="activityLog"><div class="activity-item"><span>No activity yet.</span></div></div>
+</div>
+<div>
+<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px;font-size:1rem">💾 Storage Breakdown</h3>
+<div id="storageBreakdown" style="background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px"></div>
+</div>
+</div>
+<div class="tg-box" style="max-width:400px;padding:20px">
+<div class="tg-label" style="font-size:.85rem;margin-bottom:8px">📢 Share with students</div>
+<a href="https://t.me/Exam_Zen_StudySync" target="_blank" style="color:#5bc8f5;font-size:1rem" id="tgPromoLink">✈️ Join Exam Zen StudySync on Telegram</a>
 </div>
 </div>
 
-<!-- CREATE FOLDER MODAL -->
-<div class="modal-bg" id="modalCreateFolder">
-  <div class="modal-box">
-    <h3>📁 Create New Folder</h3>
-    <div class="form-group"><label>Folder Name</label><input type="text" id="newFolderName" placeholder="e.g. Current Affairs, Polity, Science..."></div>
-    <div class="form-group"><label>Icon (emoji)</label><input type="text" id="newFolderIcon" placeholder="📚" maxlength="4" style="width:80px"></div>
-    <div class="form-group"><label>Description (optional)</label><input type="text" id="newFolderDesc" placeholder="Short description..."></div>
-    <div class="modal-btns">
-      <button class="btn" onclick="closeModal('modalCreateFolder')">Cancel</button>
-      <button class="btn btn-primary" onclick="createFolder()">Create Folder</button>
-    </div>
-  </div>
+<!-- ALL FILES PANEL -->
+<div class="panel" id="panel-files">
+<div class="search-bar">
+<input type="text" class="search-input" id="fileSearch" placeholder="🔍 Search files..." oninput="renderFilesTable()">
+<select class="sort-select" id="fileSort" onchange="renderFilesTable()">
+<option value="name">Sort: Name</option>
+<option value="size">Sort: Size</option>
+<option value="type">Sort: Type</option>
+</select>
+</div>
+<div class="bulk-bar" id="bulkBar" style="display:none">
+<span class="count" id="bulkCount">0 selected</span>
+<button class="bulk-btn" onclick="bulkMove()">📂 Move</button>
+<button class="bulk-btn" onclick="bulkHide()">👁️ Toggle Visibility</button>
+<button class="bulk-btn danger" onclick="bulkDelete()">🗑️ Delete</button>
+</div>
+<div class="table-wrap">
+<table id="filesTable">
+<thead><tr>
+<th style="width:30px"><input type="checkbox" id="selectAll" onchange="toggleSelectAll()"></th>
+<th style="width:30px"></th>
+<th onclick="sortTable('name')">Name ↕</th>
+<th onclick="sortTable('type')">Type ↕</th>
+<th onclick="sortTable('size')">Size ↕</th>
+<th>Folder</th>
+<th>Actions</th>
+</tr></thead>
+<tbody id="filesBody"></tbody>
+</table>
+</div>
 </div>
 
-<!-- MOVE FILE MODAL -->
-<div class="modal-bg" id="modalMoveFile">
-  <div class="modal-box">
-    <h3>🗂️ Move File to Folder</h3>
-    <div class="form-group"><label>File</label><input type="text" id="moveFileName" readonly style="opacity:.7"></div>
-    <div class="form-group"><label>Move to Folder</label><select id="moveFolderSelect"></select></div>
-    <div class="modal-btns">
-      <button class="btn" onclick="closeModal('modalMoveFile')">Cancel</button>
-      <button class="btn btn-primary" onclick="moveFileToFolder()">Move</button>
-    </div>
-  </div>
+<!-- FOLDERS PANEL -->
+<div class="panel" id="panel-folders">
+<div style="margin-bottom:20px">
+<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:16px">➕ Create New Folder</h3>
+<div class="form-row">
+<div class="form-group"><label>Folder Name</label><input type="text" class="form-input" id="newFolderName" placeholder="e.g. Geography"></div>
+<div class="form-group"><label>Emoji Icon</label><input type="text" class="form-input" id="newFolderIcon" placeholder="📁" maxlength="4" style="width:80px"></div>
+<div class="form-group"><label>Color</label><input type="color" class="form-input" id="newFolderColor" value="#f59e0b" style="width:60px;height:38px;padding:2px"></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>Description</label><input type="text" class="form-input" id="newFolderDesc" placeholder="Brief description"></div>
+<div class="form-group"><label>Parent Folder</label><select class="form-input" id="newFolderParent"><option value="">None (root)</option></select></div>
+</div>
+<button class="btn btn-primary" onclick="createFolder()">➕ Create Folder</button>
+</div>
+<h3 style="font-family:'Kalam',cursive;color:var(--accent2);margin-bottom:12px">📂 Existing Folders</h3>
+<div class="folder-grid" id="folderGrid"></div>
 </div>
 
-<!-- RENAME FOLDER MODAL -->
-<div class="modal-bg" id="modalRenameFolder">
-  <div class="modal-box">
-    <h3>✏️ Rename Folder</h3>
-    <div class="form-group"><label>New Name</label><input type="text" id="renameFolderName"></div>
-    <div class="modal-btns">
-      <button class="btn" onclick="closeModal('modalRenameFolder')">Cancel</button>
-      <button class="btn btn-primary" onclick="renameFolder()">Rename</button>
-    </div>
-  </div>
+<!-- ORGANIZE PANEL -->
+<div class="panel" id="panel-organize">
+<p style="color:var(--text-dim);font-size:.85rem;margin-bottom:16px">Drag files between folder sections to reorganize them.</p>
+<div class="dnd-container" id="dndContainer"></div>
 </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
+<!-- VISIBILITY PANEL -->
+<div class="panel" id="panel-visibility">
+<div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+<button class="btn btn-sm btn-secondary" onclick="showAllFiles()">👁️ Show All</button>
+<button class="btn btn-sm btn-secondary" onclick="hideAllFiles()">🙈 Hide All</button>
+</div>
+<div class="vis-list" id="visList"></div>
+</div>
 
+<!-- UPLOAD PANEL -->
+<div class="panel" id="panel-upload">
+<div class="upload-zone" id="uploadZone" onclick="document.getElementById('uploadInput').click()">
+<div class="uz-icon">📤</div>
+<div class="uz-text">Click or drag files here to upload<br><small style="color:var(--text-muted)">Accepts .html and .pdf files</small></div>
+</div>
+<input type="file" id="uploadInput" style="display:none" accept=".html,.pdf" multiple onchange="handleUploadFiles(this.files)">
+<div id="uploadPreview"></div>
+</div>
+
+<!-- SETTINGS PANEL -->
+<div class="panel" id="panel-settings">
+<div class="settings-section">
+<h3>🔑 GitHub Token</h3>
+<p style="color:var(--text-dim);font-size:.8rem;margin-bottom:12px">Required for publishing config and uploading/deleting files. Needs 'repo' scope.</p>
+<div class="token-field">
+<input type="password" class="form-input" id="tokenInput" placeholder="ghp_xxxxxxxxxxxx">
+<button class="btn btn-primary btn-sm" onclick="saveToken()">Save</button>
+<button class="btn btn-danger btn-sm" onclick="clearToken()">Clear</button>
+</div>
+<div id="tokenStatus" style="margin-top:8px;font-size:.8rem;color:var(--text-muted)"></div>
+</div>
+<div class="settings-section">
+<h3>🌐 Site Settings</h3>
+<div class="form-group"><label>Telegram Link</label><input type="text" class="form-input" id="settingTelegram" placeholder="https://t.me/..."></div>
+<div class="form-row">
+<div class="form-group"><label>Site Name</label><input type="text" class="form-input" id="settingSiteName" placeholder="Parmar Railway Notes"></div>
+<div class="form-group"><label>Site Subtitle</label><input type="text" class="form-input" id="settingSiteSubtitle" placeholder="Hand-Written Notes Library"></div>
+</div>
+<button class="btn btn-primary btn-sm" onclick="saveSettings()">💾 Save Settings</button>
+</div>
+
+<div class="settings-section">
+<h3>📦 Import / Export</h3>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn btn-secondary btn-sm" onclick="importConfig()">📥 Import config.json</button>
+<input type="file" id="importInput" style="display:none" accept=".json" onchange="handleImport(this.files[0])">
+<button class="btn btn-secondary btn-sm" onclick="exportConfig()">📤 Export config.json</button>
+<button class="btn btn-danger btn-sm" onclick="resetAllData()">🗑️ Reset All Data</button>
+</div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- DIALOG -->
+<div class="dialog-overlay" id="dialogOverlay">
+<div class="dialog" id="dialogBox">
+<h3 id="dialogTitle">Confirm</h3>
+<p id="dialogMsg">Are you sure?</p>
+<div class="dialog-actions">
+<button class="btn btn-secondary btn-sm" onclick="closeDialog()">Cancel</button>
+<button class="btn btn-danger btn-sm" id="dialogConfirmBtn" onclick="dialogConfirm()">Delete</button>
+</div>
+</div>
+</div>
 
 <script>
 // ============ CONFIG ============
@@ -208,447 +407,800 @@ const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
 const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
 const TELEGRAM_LINK = 'https://t.me/Exam_Zen_StudySync';
+const CONFIG_RAW_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
 
 // ============ STATE ============
-let allFiles = [];
-let folders = JSON.parse(localStorage.getItem('mgr_folders') || '[]');
-let fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
-let hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
-let settings = JSON.parse(localStorage.getItem('mgr_settings') || '{"repoName":"Hand-written-notes-sample-","telegramLink":"https://t.me/Exam_Zen_StudySync"}');
+let folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Files not assigned to any folder'}];
+let fileAssignments = {};
+let hiddenFiles = [];
+let displayNames = {};
+let settings = { telegramLink: TELEGRAM_LINK, siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library' };
+let repoFiles = [];
+let configSha = null;
+let selectedFiles = new Set();
+let activityLog = [];
+let publishTimeout = null;
+let currentDialogCallback = null;
 
-// Default folders if first time (localStorage empty)
-if (folders.length === 0) {
-  folders = [
-    {id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'},
-    {id:'ca',name:'Current Affairs',icon:'📰',desc:'Monthly current affairs notes'},
-    {id:'culture',name:'Culture & Heritage',icon:'🏛️',desc:'Architecture, festivals, music'},
-    {id:'books',name:'Books & Authors',icon:'📚',desc:'Literature related notes'},
-    {id:'sample',name:'Sample Notes',icon:'✍️',desc:'Hand-written sample formats'}
-  ];
-  localStorage.setItem('mgr_folders', JSON.stringify(folders));
+// ============ LOCAL STORAGE KEYS ============
+const LS = {
+  folders: 'mgr_folders',
+  assignments: 'mgr_assignments',
+  hidden: 'mgr_hidden',
+  settings: 'mgr_settings',
+  displayNames: 'mgr_displayNames',
+  token: 'mgr_github_token'
+};
+
+// ============ INIT ============
+async function init() {
+  const hasLocal = localStorage.getItem(LS.folders);
+  if (hasLocal) {
+    loadFromLocalStorage();
+  } else {
+    await loadFromRemoteConfig();
+  }
+  await fetchRepoFiles();
+  await fetchConfigSha();
+  renderAll();
+  updateTokenStatus();
 }
 
-function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); autoPublish(); }
-function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); autoPublish(); }
-function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); autoPublish(); }
-function saveSettings(){ localStorage.setItem('mgr_settings', JSON.stringify(settings)); }
-
-// ============ AUTO-PUBLISH config.json TO REPO ============
-let configSha = null;
-let publishTimer = null;
-
-// On first-ever load: seed localStorage from remote config.json
-async function initFromRemote() {
-  // Only seed if localStorage has NO file assignments (truly first visit)
-  const hasLocalAssignments = Object.keys(JSON.parse(localStorage.getItem('mgr_assignments') || '{}')).length > 0;
-  
+function loadFromLocalStorage() {
   try {
-    // Always get SHA (needed for publish/update)
-    const shaRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`);
-    if (shaRes.ok) {
-      const shaData = await shaRes.json();
-      configSha = shaData.sha;
-    }
-  } catch(e) {}
+    const f = localStorage.getItem(LS.folders);
+    if (f) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...JSON.parse(f)];
+    const a = localStorage.getItem(LS.assignments);
+    if (a) fileAssignments = JSON.parse(a);
+    const h = localStorage.getItem(LS.hidden);
+    if (h) hiddenFiles = JSON.parse(h);
+    const s = localStorage.getItem(LS.settings);
+    if (s) settings = {...settings, ...JSON.parse(s)};
+    const d = localStorage.getItem(LS.displayNames);
+    if (d) displayNames = JSON.parse(d);
+  } catch(e) { console.error('LocalStorage parse error:', e); }
+}
 
-  // Only import remote config if this is truly a FIRST visit (no local data)
-  if (!hasLocalAssignments) {
-    try {
-      const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
-      const res = await fetch(rawUrl);
-      if (res.ok) {
-        const remote = await res.json();
-        if (remote.folders && remote.folders.length > 0) {
-          folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remote.folders];
-          localStorage.setItem('mgr_folders', JSON.stringify(folders));
-        }
-        if (remote.fileAssignments && Object.keys(remote.fileAssignments).length > 0) {
-          fileAssignments = remote.fileAssignments;
-          localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
-        }
-        if (remote.hiddenFiles && remote.hiddenFiles.length > 0) {
-          hiddenFiles = remote.hiddenFiles;
-          localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
-        }
-      }
-    } catch(e) {}
+async function loadFromRemoteConfig() {
+  try {
+    const res = await fetch(CONFIG_RAW_URL);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.folders) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...data.folders];
+    if (data.fileAssignments) fileAssignments = data.fileAssignments;
+    if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
+    if (data.displayNames) displayNames = data.displayNames;
+    if (data.telegramLink) settings.telegramLink = data.telegramLink;
+    if (data.siteName) settings.siteName = data.siteName;
+    if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
+    saveToLocalStorage();
+  } catch(e) { console.warn('Could not fetch remote config:', e); }
+}
+
+async function fetchRepoFiles() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error('API error ' + res.status);
+    const data = await res.json();
+    repoFiles = data.filter(f => f.type === 'file' && /\.(html|pdf)$/i.test(f.name) && f.name.toLowerCase() !== 'index.html' && f.name.toLowerCase() !== 'manager.html');
+  } catch(e) {
+    showToast('Failed to load repo files: ' + e.message, 'error');
+    repoFiles = [];
   }
 }
 
-function autoPublish() {
-  clearTimeout(publishTimer);
-  publishTimer = setTimeout(doPublish, 1000);
+async function fetchConfigSha() {
+  try {
+    const token = localStorage.getItem(LS.token);
+    const headers = token ? { 'Authorization': `token ${token}` } : {};
+    const res = await fetch(API_URL + 'config.json', { headers });
+    if (res.ok) {
+      const data = await res.json();
+      configSha = data.sha;
+    }
+  } catch(e) { /* ignore */ }
+}
+
+// ============ SAVE & PUBLISH ============
+function saveToLocalStorage() {
+  localStorage.setItem(LS.folders, JSON.stringify(folders.filter(f => f.id !== 'root')));
+  localStorage.setItem(LS.assignments, JSON.stringify(fileAssignments));
+  localStorage.setItem(LS.hidden, JSON.stringify(hiddenFiles));
+  localStorage.setItem(LS.settings, JSON.stringify(settings));
+  localStorage.setItem(LS.displayNames, JSON.stringify(displayNames));
+}
+
+function saveAndPublish() {
+  saveToLocalStorage();
+  if (publishTimeout) clearTimeout(publishTimeout);
+  publishTimeout = setTimeout(doPublish, 1000);
 }
 
 async function doPublish() {
-  const token = localStorage.getItem('mgr_github_token');
+  const token = localStorage.getItem(LS.token);
   if (!token) {
-    document.getElementById('publishStatus').textContent = '⚠️ Add token in Settings to publish changes';
-    document.getElementById('publishStatus').style.color = 'var(--warn)';
+    setPublishStatus('⚠️ No token', 'error');
     return;
   }
-
-  document.getElementById('publishStatus').textContent = '⏳ Publishing...';
-  document.getElementById('publishStatus').style.color = 'var(--accent)';
-
-  const configData = {
-    folders: folders.filter(f => f.id !== 'root'),
-    fileAssignments,
-    hiddenFiles,
-    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
-    lastUpdated: new Date().toISOString().split('T')[0]
-  };
-
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
-
+  setPublishStatus('Publishing...', 'publishing');
   try {
+    const configData = {
+      folders: folders.filter(f => f.id !== 'root'),
+      fileAssignments,
+      displayNames,
+      hiddenFiles,
+      telegramLink: settings.telegramLink,
+      siteName: settings.siteName,
+      siteSubtitle: settings.siteSubtitle,
+      lastUpdated: new Date().toISOString().split('T')[0]
+    };
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
     const body = { message: 'Update config from manager', content, branch: 'main' };
     if (configSha) body.sha = configSha;
-
-    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`, {
+    const res = await fetch(API_URL + 'config.json', {
       method: 'PUT',
       headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     });
-
-    if (res.ok) {
-      const data = await res.json();
-      configSha = data.content.sha;
-      document.getElementById('publishStatus').textContent = '✅ Published! User page updated.';
-      document.getElementById('publishStatus').style.color = 'var(--success)';
-      setTimeout(() => { document.getElementById('publishStatus').textContent = ''; }, 4000);
-    } else {
+    if (!res.ok) {
       const err = await res.json();
-      document.getElementById('publishStatus').textContent = '❌ Failed: ' + (err.message || res.status);
-      document.getElementById('publishStatus').style.color = 'var(--danger)';
+      throw new Error(err.message || res.status);
     }
+    const result = await res.json();
+    configSha = result.content.sha;
+    setPublishStatus('✅ Published', 'success');
+    showToast('Config published to GitHub!', 'success');
+    logActivity('Published config.json to repository');
   } catch(e) {
-    document.getElementById('publishStatus').textContent = '❌ ' + e.message;
-    document.getElementById('publishStatus').style.color = 'var(--danger)';
+    setPublishStatus('❌ Failed', 'error');
+    showToast('Publish failed: ' + e.message, 'error');
   }
 }
 
-// ============ FETCH FILES ============
-async function fetchFiles() {
-  try {
-    const res = await fetch(API_URL);
-    if (!res.ok) throw new Error(`API ${res.status}`);
-    const data = await res.json();
-    allFiles = data.filter(f => {
-      if (f.type !== 'file') return false;
-      const ext = f.name.split('.').pop().toLowerCase();
-      return ['html','pdf'].includes(ext) && f.name.toLowerCase() !== 'index.html' && f.name.toLowerCase() !== 'manager.html';
-    }).map(f => ({
-      name: f.name,
-      ext: f.name.split('.').pop().toLowerCase(),
-      size: f.size,
-      displayName: f.name.replace(/\.(html|pdf)$/i,'')
-    }));
-    allFiles.sort((a,b) => a.displayName.localeCompare(b.displayName));
-    showPanel('dashboard', document.querySelector('.sb-item.active'));
-  } catch(e) {
-    document.getElementById('panelContent').innerHTML = `<div style="text-align:center;padding:60px;color:var(--dim)"><p>⚠️ Failed to load: ${e.message}</p><button class="btn" onclick="fetchFiles()" style="margin-top:12px">Retry</button></div>`;
-  }
+function setPublishStatus(text, cls) {
+  const el = document.getElementById('publishStatus');
+  el.textContent = text;
+  el.className = 'publish-status ' + (cls || '');
+  if (cls === 'success') setTimeout(() => { el.textContent = 'Ready'; el.className = 'publish-status'; }, 3000);
 }
 
-// ============ PANELS ============
-function showPanel(panel, el) {
-  document.querySelectorAll('.sb-item').forEach(i => i.classList.remove('active'));
-  if (el) el.classList.add('active');
-  const title = document.getElementById('panelTitle');
-  const actions = document.getElementById('panelActions');
-  const content = document.getElementById('panelContent');
-  actions.innerHTML = '';
+// ============ UI HELPERS ============
+function showToast(msg, type='info') {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3500);
+}
 
-  switch(panel) {
-    case 'dashboard': renderDashboard(title, actions, content); break;
-    case 'files': renderFiles(title, actions, content); break;
-    case 'folders': renderFolders(title, actions, content); break;
-    case 'organize': renderOrganize(title, actions, content); break;
-    case 'display': renderDisplay(title, actions, content); break;
-    case 'settings': renderSettings(title, actions, content); break;
-  }
-  // Close mobile sidebar
-  document.getElementById('sidebar').classList.remove('open');
+function logActivity(msg) {
+  activityLog.unshift({ msg, time: new Date().toLocaleTimeString() });
+  if (activityLog.length > 50) activityLog.pop();
+  renderActivityLog();
+}
+
+function renderActivityLog() {
+  const el = document.getElementById('activityLog');
+  if (!el) return;
+  if (activityLog.length === 0) { el.innerHTML = '<div class="activity-item"><span>No activity yet.</span></div>'; return; }
+  el.innerHTML = activityLog.slice(0, 20).map(a => `<div class="activity-item"><span class="ai-time">${a.time}</span><span>${a.msg}</span></div>`).join('');
+}
+
+function showDialog(title, msg, confirmText, callback) {
+  document.getElementById('dialogTitle').textContent = title;
+  document.getElementById('dialogMsg').textContent = msg;
+  document.getElementById('dialogConfirmBtn').textContent = confirmText;
+  document.getElementById('dialogOverlay').classList.add('open');
+  currentDialogCallback = callback;
+}
+
+function closeDialog() { document.getElementById('dialogOverlay').classList.remove('open'); currentDialogCallback = null; }
+function dialogConfirm() { if (currentDialogCallback) currentDialogCallback(); closeDialog(); }
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+}
+
+function switchPanel(panel, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('panel-' + panel).classList.add('active');
+  if (btn) btn.classList.add('active');
+  const titles = { dashboard:'📊 Dashboard', files:'📁 All Files', folders:'📂 Folders', organize:'🔀 Organize', visibility:'👁️ Visibility', upload:'⬆️ Upload', settings:'⚙️ Settings' };
+  document.getElementById('panelTitle').textContent = titles[panel] || panel;
+  if (window.innerWidth <= 768) toggleSidebar();
+  if (panel === 'files') renderFilesTable();
+  if (panel === 'folders') renderFolders();
+  if (panel === 'organize') renderOrganize();
+  if (panel === 'visibility') renderVisibility();
+}
+
+// ============ RENDER ALL ============
+function renderAll() {
+  renderDashboard();
+  renderFilesTable();
+  renderFolders();
+  renderOrganize();
+  renderVisibility();
+  renderSettingsFields();
 }
 
 // ============ DASHBOARD ============
-function renderDashboard(title, actions, content) {
-  title.textContent = '📊 Dashboard';
-  const htmlCount = allFiles.filter(f=>f.ext==='html').length;
-  const pdfCount = allFiles.filter(f=>f.ext==='pdf').length;
-  const hidCount = hiddenFiles.length;
-  const folderCount = folders.length;
-  content.innerHTML = `
-    <div class="stats-row">
-      <div class="stat-card"><div class="s-value">${allFiles.length}</div><div class="s-label">Total Files</div></div>
-      <div class="stat-card"><div class="s-value">${htmlCount}</div><div class="s-label">HTML Notes</div></div>
-      <div class="stat-card"><div class="s-value">${pdfCount}</div><div class="s-label">PDF Files</div></div>
-      <div class="stat-card"><div class="s-value">${folderCount}</div><div class="s-label">Folders</div></div>
-      <div class="stat-card"><div class="s-value">${hidCount}</div><div class="s-label">Hidden</div></div>
-    </div>
-    <div class="folder-section">
-      <div class="folder-header"><h3>📁 Folder Summary</h3></div>
-      <div class="folder-tree">${folders.map(f => {
-        const count = Object.values(fileAssignments).filter(v=>v===f.id).length + (f.id==='root' ? allFiles.filter(fi=>!fileAssignments[fi.name]).length : 0);
-        return `<div class="folder-row"><span class="f-icon">${f.icon}</span><span class="f-name">${f.name}</span><span class="f-count">${count} files</span></div>`;
-      }).join('')}</div>
-    </div>
-    <div style="margin-top:20px;padding:16px;background:linear-gradient(135deg,#0088cc15,#0088cc08);border:1px solid #0088cc33;border-radius:var(--radius);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <div style="font-size:2rem">✈️</div>
-      <div style="flex:1;min-width:200px"><div style="font-weight:600;color:#5bc8f5">Telegram: Exam Zen StudySync</div><div style="font-size:.8rem;color:var(--dim);margin-top:2px">Get daily notes, PDFs, and exam updates</div></div>
-      <a href="${TELEGRAM_LINK}" target="_blank" class="btn btn-primary" style="background:#0088cc;border-color:#0088cc">✈️ Join Channel</a>
-    </div>`;
+function renderDashboard() {
+  const total = repoFiles.length;
+  const html = repoFiles.filter(f => f.name.endsWith('.html')).length;
+  const pdf = repoFiles.filter(f => f.name.endsWith('.pdf')).length;
+  const folderCount = folders.filter(f => f.id !== 'root').length;
+  const hiddenCount = hiddenFiles.length;
+  document.getElementById('statsGrid').innerHTML = `
+    <div class="stat-card"><div class="sc-icon">📄</div><div class="sc-value">${total}</div><div class="sc-label">Total Files</div></div>
+    <div class="stat-card"><div class="sc-icon">🌐</div><div class="sc-value">${html}</div><div class="sc-label">HTML Files</div></div>
+    <div class="stat-card"><div class="sc-icon">📕</div><div class="sc-value">${pdf}</div><div class="sc-label">PDF Files</div></div>
+    <div class="stat-card"><div class="sc-icon">📂</div><div class="sc-value">${folderCount}</div><div class="sc-label">Folders</div></div>
+    <div class="stat-card"><div class="sc-icon">🙈</div><div class="sc-value">${hiddenCount}</div><div class="sc-label">Hidden Files</div></div>
+  `;
+  // Storage breakdown
+  const totalSize = repoFiles.reduce((s, f) => s + (f.size || 0), 0);
+  const htmlSize = repoFiles.filter(f => f.name.endsWith('.html')).reduce((s, f) => s + (f.size || 0), 0);
+  const pdfSize = repoFiles.filter(f => f.name.endsWith('.pdf')).reduce((s, f) => s + (f.size || 0), 0);
+  document.getElementById('storageBreakdown').innerHTML = `
+    <div style="margin-bottom:12px;font-size:.85rem;color:var(--text)">Total: <b style="color:var(--accent)">${formatSize(totalSize)}</b></div>
+    <div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-dim);margin-bottom:4px"><span>HTML (${formatSize(htmlSize)})</span><span>${totalSize?Math.round(htmlSize/totalSize*100):0}%</span></div><div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div style="height:100%;background:#10b981;width:${totalSize?htmlSize/totalSize*100:0}%"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-dim);margin-bottom:4px"><span>PDF (${formatSize(pdfSize)})</span><span>${totalSize?Math.round(pdfSize/totalSize*100):0}%</span></div><div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden"><div style="height:100%;background:#ef4444;width:${totalSize?pdfSize/totalSize*100:0}%"></div></div></div>
+  `;
+  renderActivityLog();
 }
 
-// ============ FILES PANEL ============
-function renderFiles(title, actions, content) {
-  title.textContent = '📄 All Files';
-  actions.innerHTML = `<span style="font-size:.8rem;color:var(--dim)">${allFiles.length} files detected</span>`;
-  content.innerHTML = `
-    <table class="file-table">
-      <thead><tr><th style="width:30px"></th><th>File Name</th><th>Type</th><th>Size</th><th>Folder</th><th>Actions</th></tr></thead>
-      <tbody>${allFiles.map(f => {
-        const folder = fileAssignments[f.name] ? folders.find(fo=>fo.id===fileAssignments[f.name]) : folders[0];
-        const isHidden = hiddenFiles.includes(f.name);
-        return `<tr style="${isHidden?'opacity:.4':''}">
-          <td><input type="checkbox" class="checkbox" data-file="${f.name}"></td>
-          <td><div class="fname"><span class="ico">${f.ext==='pdf'?'📕':'📄'}</span>${f.displayName}</div></td>
-          <td><span class="fbadge ${f.ext}">${f.ext}</span></td>
-          <td class="fsize">${formatSize(f.size)}</td>
-          <td class="ffolder">${folder?folder.icon+' '+folder.name:'—'}</td>
-          <td><div class="fact">
-            <button title="Move to folder" onclick="openMoveModal('${encodeURIComponent(f.name)}')">📁</button>
-            <button title="${isHidden?'Show':'Hide'}" onclick="toggleHide('${encodeURIComponent(f.name)}')">${isHidden?'👁️':'🙈'}</button>
-          </div></td>
-        </tr>`;
-      }).join('')}</tbody>
-    </table>`;
+function formatSize(bytes) {
+  if (!bytes) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
 }
 
-// ============ FOLDERS PANEL ============
-function renderFolders(title, actions, content) {
-  title.textContent = '📁 Manage Folders';
-  actions.innerHTML = `<button class="btn btn-primary" onclick="openModal('modalCreateFolder')">+ New Folder</button>`;
-  content.innerHTML = `
-    <div class="folder-tree">${folders.map((f,i) => {
-      const count = Object.values(fileAssignments).filter(v=>v===f.id).length + (f.id==='root' ? allFiles.filter(fi=>!fileAssignments[fi.name]).length : 0);
-      return `<div class="folder-row">
-        <span class="f-icon">${f.icon}</span>
-        <span class="f-name">${f.name}</span>
-        <span class="f-count">${count} files</span>
-        <span style="font-size:.7rem;color:var(--muted);margin-left:8px">${f.desc||''}</span>
-        <div class="f-actions">
-          <button title="Rename" onclick="openRenameModal(${i})">✏️</button>
-          ${f.id!=='root'?`<button title="Delete" onclick="deleteFolder(${i})" style="color:var(--danger)">🗑️</button>`:''}
-        </div>
-      </div>`;
-    }).join('')}</div>
-    <div style="margin-top:16px;padding:14px;background:var(--surface2);border-radius:8px;font-size:.8rem;color:var(--dim)">
-      💡 <b>Tip:</b> Folders help organize how files appear on the main library page. Files in "Uncategorized" will show without a folder label. Create subject-wise folders for better organization.
-    </div>`;
-}
-
-// ============ ORGANIZE PANEL ============
-function renderOrganize(title, actions, content) {
-  title.textContent = '🗂️ Organize Files into Folders';
-  let html = '';
-  folders.forEach(folder => {
-    const files = folder.id === 'root'
-      ? allFiles.filter(f => !fileAssignments[f.name])
-      : allFiles.filter(f => fileAssignments[f.name] === folder.id);
-    html += `<div class="folder-section">
-      <div class="folder-header"><h3>${folder.icon} ${folder.name} (${files.length})</h3></div>
-      ${files.length ? `<div class="folder-tree">${files.map(f => `
-        <div class="folder-row">
-          <span class="f-icon">${f.ext==='pdf'?'📕':'📄'}</span>
-          <span class="f-name" style="font-size:.84rem">${f.displayName}</span>
-          <span class="fbadge ${f.ext}" style="margin-left:auto">${f.ext}</span>
-          <div class="f-actions" style="opacity:1;margin-left:8px">
-            <button title="Move" onclick="openMoveModal('${encodeURIComponent(f.name)}')">📁</button>
-          </div>
-        </div>`).join('')}</div>` : `<div style="padding:12px 16px;color:var(--muted);font-size:.82rem;background:var(--surface2);border-radius:8px">No files in this folder</div>`}
-    </div>`;
+// ============ FILES TABLE ============
+function renderFilesTable() {
+  const search = (document.getElementById('fileSearch')?.value || '').toLowerCase();
+  const sortBy = document.getElementById('fileSort')?.value || 'name';
+  let files = [...repoFiles];
+  if (search) files = files.filter(f => f.name.toLowerCase().includes(search));
+  files.sort((a, b) => {
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    if (sortBy === 'size') return (b.size || 0) - (a.size || 0);
+    if (sortBy === 'type') return a.name.split('.').pop().localeCompare(b.name.split('.').pop());
+    return 0;
   });
-  content.innerHTML = html;
+  const tbody = document.getElementById('filesBody');
+  if (!tbody) return;
+  tbody.innerHTML = files.map(f => {
+    const ext = f.name.split('.').pop().toLowerCase();
+    const folderId = fileAssignments[f.name] || 'root';
+    const folder = folders.find(fo => fo.id === folderId);
+    const isHidden = hiddenFiles.includes(f.name);
+    const dName = displayNames[f.name] || f.name.replace(/\.(html|pdf)$/i, '');
+    const checked = selectedFiles.has(f.name) ? 'checked' : '';
+    return `<tr style="${isHidden ? 'opacity:.5' : ''}" data-file="${encodeURIComponent(f.name)}">
+      <td data-label="Select"><input type="checkbox" ${checked} onchange="toggleFileSelect('${encodeURIComponent(f.name)}')"></td>
+      <td data-label="Icon">${getIcon(f.name)}</td>
+      <td data-label="Name"><span style="font-weight:500">${dName}</span><br><small style="color:var(--text-muted);font-size:.7rem">${f.name}</small></td>
+      <td data-label="Type"><span class="type-badge ${ext}">${ext}</span></td>
+      <td data-label="Size">${formatSize(f.size)}</td>
+      <td data-label="Folder"><span style="font-size:.8rem">${folder ? folder.icon + ' ' + folder.name : '📂 Uncategorized'}</span></td>
+      <td data-label="Actions">
+        <button class="action-btn" onclick="moveFile('${encodeURIComponent(f.name)}')" title="Move">📂</button>
+        <button class="action-btn" onclick="renameFile('${encodeURIComponent(f.name)}')" title="Rename">✏️</button>
+        <button class="action-btn" onclick="toggleHide('${encodeURIComponent(f.name)}')" title="Toggle visibility">${isHidden?'👁️':'🙈'}</button>
+        <button class="action-btn danger" onclick="deleteFile('${encodeURIComponent(f.name)}')" title="Delete">🗑️</button>
+      </td>
+    </tr>`;
+  }).join('');
+  updateBulkBar();
 }
 
-// ============ DISPLAY/VISIBILITY PANEL ============
-function renderDisplay(title, actions, content) {
-  title.textContent = '👁️ Display & Visibility Control';
-  actions.innerHTML = `<button class="btn btn-success" onclick="showAllFiles()">Show All</button><button class="btn btn-danger" onclick="hideAllFiles()">Hide All</button>`;
-  content.innerHTML = `
-    <p style="font-size:.85rem;color:var(--dim);margin-bottom:16px">Control which files are visible on the public library page. Hidden files won't appear on the index page for viewers.</p>
-    <table class="file-table">
-      <thead><tr><th>File</th><th>Type</th><th>Status</th><th>Toggle</th></tr></thead>
-      <tbody>${allFiles.map(f => {
-        const isHidden = hiddenFiles.includes(f.name);
-        return `<tr>
-          <td><div class="fname"><span class="ico">${f.ext==='pdf'?'📕':'📄'}</span>${f.displayName}</div></td>
-          <td><span class="fbadge ${f.ext}">${f.ext}</span></td>
-          <td><span style="color:${isHidden?'var(--danger)':'var(--success)'};font-size:.8rem;font-weight:600">${isHidden?'🙈 Hidden':'👁️ Visible'}</span></td>
-          <td><button class="btn ${isHidden?'btn-success':'btn-danger'}" style="padding:5px 12px;font-size:.75rem" onclick="toggleHide('${encodeURIComponent(f.name)}')">${isHidden?'Show':'Hide'}</button></td>
-        </tr>`;
-      }).join('')}</tbody>
-    </table>`;
+function getIcon(name) {
+  const n = name.toLowerCase();
+  if (n.includes('music')) return '🎵';
+  if (n.includes('festival')) return '🎉';
+  if (n.includes('architecture') || n.includes('culture')) return '🏛️';
+  if (n.includes('book') || n.includes('author')) return '📚';
+  if (n.includes('current') || n.includes('gk') || n.includes('daily')) return '📰';
+  if (n.includes('sample') || n.includes('hand')) return '✍️';
+  if (n.endsWith('.pdf')) return '📕';
+  return '📄';
 }
 
-// ============ SETTINGS PANEL ============
-function renderSettings(title, actions, content) {
-  title.textContent = '⚙️ Settings';
-  content.innerHTML = `
-    <div style="max-width:500px">
-      <div style="margin-bottom:20px;padding:16px;background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(16,185,129,.05));border:1px solid rgba(16,185,129,.3);border-radius:8px">
-        <div style="font-weight:600;font-size:.92rem;margin-bottom:8px;color:var(--success)">🔑 GitHub Token (Auto-Publish)</div>
-        <p style="font-size:.8rem;color:var(--dim);margin-bottom:10px">Enter your GitHub Personal Access Token to auto-publish changes. Every folder/file/visibility change will instantly update the user page.</p>
-        <input type="password" id="tokenInput" value="${localStorage.getItem('mgr_github_token')||''}" placeholder="ghp_xxxxxxxxxxxx" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.85rem;font-family:monospace">
-        <div style="display:flex;gap:8px;margin-top:10px">
-          <button class="btn btn-success" onclick="saveToken()">Save Token</button>
-          <button class="btn btn-danger" onclick="clearToken()">Clear Token</button>
-        </div>
-        <p style="font-size:.7rem;color:var(--muted);margin-top:8px">Need token? GitHub → Settings → Developer Settings → Personal Access Tokens → Generate (repo scope)</p>
+function toggleFileSelect(enc) {
+  const name = decodeURIComponent(enc);
+  if (selectedFiles.has(name)) selectedFiles.delete(name); else selectedFiles.add(name);
+  updateBulkBar();
+}
+
+function toggleSelectAll() {
+  const all = document.getElementById('selectAll').checked;
+  if (all) repoFiles.forEach(f => selectedFiles.add(f.name)); else selectedFiles.clear();
+  renderFilesTable();
+}
+
+function updateBulkBar() {
+  const bar = document.getElementById('bulkBar');
+  if (selectedFiles.size > 0) { bar.style.display = 'flex'; document.getElementById('bulkCount').textContent = selectedFiles.size + ' selected'; }
+  else { bar.style.display = 'none'; }
+}
+
+// ============ FILE ACTIONS ============
+function moveFile(enc) {
+  const name = decodeURIComponent(enc);
+  const options = folders.map(f => `<option value="${f.id}" ${fileAssignments[name]===f.id?'selected':''}>${f.icon} ${f.name}</option>`).join('');
+  const sel = prompt('Move "' + name + '" to folder:\n\n' + folders.map((f,i) => `${i}: ${f.icon} ${f.name}`).join('\n') + '\n\nEnter folder number:');
+  if (sel === null) return;
+  const idx = parseInt(sel);
+  if (isNaN(idx) || idx < 0 || idx >= folders.length) { showToast('Invalid folder selection', 'error'); return; }
+  fileAssignments[name] = folders[idx].id;
+  saveAndPublish();
+  renderFilesTable();
+  logActivity(`Moved "${name}" to ${folders[idx].icon} ${folders[idx].name}`);
+  showToast(`Moved to ${folders[idx].name}`, 'success');
+}
+
+function renameFile(enc) {
+  const name = decodeURIComponent(enc);
+  const current = displayNames[name] || name.replace(/\.(html|pdf)$/i, '');
+  const newName = prompt('Display name for "' + name + '":', current);
+  if (!newName || newName === current) return;
+  displayNames[name] = newName;
+  saveAndPublish();
+  renderFilesTable();
+  logActivity(`Renamed display: "${name}" → "${newName}"`);
+  showToast('Display name updated', 'success');
+}
+
+function toggleHide(enc) {
+  const name = decodeURIComponent(enc);
+  const idx = hiddenFiles.indexOf(name);
+  if (idx >= 0) { hiddenFiles.splice(idx, 1); showToast(name + ' is now visible', 'success'); }
+  else { hiddenFiles.push(name); showToast(name + ' is now hidden', 'info'); }
+  saveAndPublish();
+  renderFilesTable();
+  renderVisibility();
+  logActivity(`Toggled visibility: "${name}"`);
+}
+
+function deleteFile(enc) {
+  const name = decodeURIComponent(enc);
+  showDialog('Delete File', `Delete "${name}" from repository? This cannot be undone.`, '🗑️ Delete', async () => {
+    const token = localStorage.getItem(LS.token);
+    if (!token) { showToast('GitHub token required to delete files', 'error'); return; }
+    try {
+      // Get file SHA
+      const res = await fetch(API_URL + encodeURIComponent(name), { headers: { 'Authorization': `token ${token}` } });
+      if (!res.ok) throw new Error('Could not get file info');
+      const data = await res.json();
+      // Delete
+      const delRes = await fetch(API_URL + encodeURIComponent(name), {
+        method: 'DELETE',
+        headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `Delete ${name}`, sha: data.sha, branch: 'main' })
+      });
+      if (!delRes.ok) throw new Error('Delete failed');
+      // Remove from local state
+      repoFiles = repoFiles.filter(f => f.name !== name);
+      delete fileAssignments[name];
+      delete displayNames[name];
+      hiddenFiles = hiddenFiles.filter(f => f !== name);
+      selectedFiles.delete(name);
+      saveAndPublish();
+      renderAll();
+      logActivity(`Deleted file: "${name}"`);
+      showToast('File deleted from repository', 'success');
+    } catch(e) { showToast('Delete failed: ' + e.message, 'error'); }
+  });
+}
+
+// ============ BULK ACTIONS ============
+function bulkMove() {
+  if (selectedFiles.size === 0) return;
+  const sel = prompt('Move ' + selectedFiles.size + ' files to folder:\n\n' + folders.map((f,i) => `${i}: ${f.icon} ${f.name}`).join('\n') + '\n\nEnter folder number:');
+  if (sel === null) return;
+  const idx = parseInt(sel);
+  if (isNaN(idx) || idx < 0 || idx >= folders.length) { showToast('Invalid selection', 'error'); return; }
+  selectedFiles.forEach(name => { fileAssignments[name] = folders[idx].id; });
+  saveAndPublish();
+  logActivity(`Bulk moved ${selectedFiles.size} files to ${folders[idx].name}`);
+  showToast(`Moved ${selectedFiles.size} files to ${folders[idx].name}`, 'success');
+  selectedFiles.clear();
+  renderFilesTable();
+}
+
+function bulkHide() {
+  if (selectedFiles.size === 0) return;
+  selectedFiles.forEach(name => {
+    const idx = hiddenFiles.indexOf(name);
+    if (idx >= 0) hiddenFiles.splice(idx, 1); else hiddenFiles.push(name);
+  });
+  saveAndPublish();
+  logActivity(`Bulk toggled visibility for ${selectedFiles.size} files`);
+  showToast('Visibility toggled', 'success');
+  selectedFiles.clear();
+  renderFilesTable();
+}
+
+function bulkDelete() {
+  if (selectedFiles.size === 0) return;
+  showDialog('Bulk Delete', `Delete ${selectedFiles.size} files from repository?`, '🗑️ Delete All', async () => {
+    const token = localStorage.getItem(LS.token);
+    if (!token) { showToast('Token required', 'error'); return; }
+    let deleted = 0;
+    for (const name of selectedFiles) {
+      try {
+        const res = await fetch(API_URL + encodeURIComponent(name), { headers: { 'Authorization': `token ${token}` } });
+        if (!res.ok) continue;
+        const data = await res.json();
+        await fetch(API_URL + encodeURIComponent(name), {
+          method: 'DELETE',
+          headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: `Delete ${name}`, sha: data.sha, branch: 'main' })
+        });
+        repoFiles = repoFiles.filter(f => f.name !== name);
+        delete fileAssignments[name];
+        delete displayNames[name];
+        hiddenFiles = hiddenFiles.filter(f => f !== name);
+        deleted++;
+      } catch(e) { /* skip */ }
+    }
+    selectedFiles.clear();
+    saveAndPublish();
+    renderAll();
+    logActivity(`Bulk deleted ${deleted} files`);
+    showToast(`Deleted ${deleted} files`, 'success');
+  });
+}
+
+function sortTable(by) {
+  document.getElementById('fileSort').value = by;
+  renderFilesTable();
+}
+
+// ============ FOLDERS ============
+function renderFolders() {
+  // Update parent select
+  const parentSel = document.getElementById('newFolderParent');
+  if (parentSel) {
+    parentSel.innerHTML = '<option value="">None (root)</option>' + folders.filter(f => f.id !== 'root').map(f => `<option value="${f.id}">${f.icon} ${f.name}</option>`).join('');
+  }
+  const grid = document.getElementById('folderGrid');
+  if (!grid) return;
+  grid.innerHTML = folders.filter(f => f.id !== 'root').map(f => {
+    const count = repoFiles.filter(rf => fileAssignments[rf.name] === f.id).length;
+    const children = folders.filter(c => c.parent === f.id);
+    return `<div class="folder-card" draggable="true" ondragstart="dragFolder(event,'${f.id}')" ondragover="event.preventDefault()" ondrop="dropFolder(event,'${f.id}')">
+      <div class="folder-color-bar" style="background:${f.color}"></div>
+      <div class="fc-header">
+        <span class="fc-icon">${f.icon}</span>
+        <span class="fc-name">${f.name}</span>
+        <span class="fc-count">${count} files</span>
       </div>
-      <div class="form-group"><label>Repository Owner</label><input value="${REPO_OWNER}" readonly style="opacity:.6"></div>
-      <div class="form-group"><label>Repository Name</label><input value="${REPO_NAME}" readonly style="opacity:.6"></div>
-      <div class="form-group"><label>Telegram Channel</label><input value="${settings.telegramLink}" onchange="settings.telegramLink=this.value;saveSettings();publishConfig();toast('Telegram link updated!')"></div>
-      <div style="margin-top:20px;padding:14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px">
-        <div style="font-weight:600;color:var(--danger);font-size:.88rem;margin-bottom:8px">⚠️ Reset Data</div>
-        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">This will clear all folder assignments, hidden files, and custom folders. Repository files won't be affected.</p>
-        <button class="btn btn-danger" onclick="resetAllData()">Reset All Manager Data</button>
-      </div>
-      <div style="margin-top:20px;padding:14px;background:var(--surface2);border-radius:8px">
-        <div style="font-weight:600;font-size:.88rem;margin-bottom:8px">📤 Publish Changes to User Page</div>
-        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">Download <b>config.json</b> and commit it to your repository. The public user page will then display folders, categories, and hidden files exactly as you configured here.</p>
-        <button class="btn btn-primary" onclick="exportConfig()">⬇️ Download config.json</button>
-        <p style="font-size:.72rem;color:var(--muted);margin-top:8px">After downloading → upload/replace <code>config.json</code> in your GitHub repo → changes go live!</p>
+      ${f.desc ? `<div class="fc-desc">${f.desc}</div>` : ''}
+      ${children.length ? `<div style="font-size:.75rem;color:var(--accent2);margin-bottom:8px">↳ Subfolders: ${children.map(c=>c.icon+' '+c.name).join(', ')}</div>` : ''}
+      <div class="fc-actions">
+        <button class="action-btn" onclick="renameFolder('${f.id}')">✏️ Rename</button>
+        <button class="action-btn danger" onclick="deleteFolder('${f.id}')">🗑️ Delete</button>
       </div>
     </div>`;
+  }).join('');
 }
 
-// ============ ACTIONS ============
 function createFolder() {
   const name = document.getElementById('newFolderName').value.trim();
+  if (!name) { showToast('Folder name is required', 'error'); return; }
   const icon = document.getElementById('newFolderIcon').value.trim() || '📁';
+  const color = document.getElementById('newFolderColor').value;
   const desc = document.getElementById('newFolderDesc').value.trim();
-  if (!name) return toast('Please enter a folder name','warn');
-  const id = 'f_' + Date.now();
-  folders.push({id, name, icon, desc});
-  saveFolders();
-  closeModal('modalCreateFolder');
-  toast(`Folder "${name}" created!`);
-  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
+  const parent = document.getElementById('newFolderParent').value || null;
+  const id = name.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Date.now().toString(36);
+  const order = folders.length;
+  folders.push({ id, name, icon, color, order, parent, desc });
+  saveAndPublish();
+  renderFolders();
+  renderAll();
+  logActivity(`Created folder: ${icon} ${name}`);
+  showToast(`Folder "${name}" created!`, 'success');
+  document.getElementById('newFolderName').value = '';
+  document.getElementById('newFolderDesc').value = '';
 }
 
-function deleteFolder(idx) {
-  if (folders[idx].id === 'root') return;
-  const name = folders[idx].name;
-  if (!confirm(`Delete folder "${name}"? Files will move to Uncategorized.`)) return;
-  const folderId = folders[idx].id;
-  // Move files back to uncategorized
-  Object.keys(fileAssignments).forEach(k => { if(fileAssignments[k]===folderId) delete fileAssignments[k]; });
-  folders.splice(idx, 1);
-  saveFolders(); saveAssignments();
-  toast(`Folder "${name}" deleted`);
-  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
+function renameFolder(id) {
+  const f = folders.find(fo => fo.id === id);
+  if (!f) return;
+  const newName = prompt('Rename folder "' + f.name + '":', f.name);
+  if (!newName || newName === f.name) return;
+  f.name = newName;
+  saveAndPublish();
+  renderFolders();
+  logActivity(`Renamed folder to "${newName}"`);
+  showToast('Folder renamed', 'success');
 }
 
-let renamingIdx = -1;
-function openRenameModal(idx) {
-  renamingIdx = idx;
-  document.getElementById('renameFolderName').value = folders[idx].name;
-  openModal('modalRenameFolder');
-}
-function renameFolder() {
-  const name = document.getElementById('renameFolderName').value.trim();
-  if (!name) return;
-  folders[renamingIdx].name = name;
-  saveFolders();
-  closeModal('modalRenameFolder');
-  toast('Folder renamed!');
-  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
-}
-
-let movingFile = '';
-function openMoveModal(encodedName) {
-  movingFile = decodeURIComponent(encodedName);
-  document.getElementById('moveFileName').value = movingFile;
-  const sel = document.getElementById('moveFolderSelect');
-  sel.innerHTML = folders.map(f => `<option value="${f.id}"${fileAssignments[movingFile]===f.id?' selected':''}>${f.icon} ${f.name}</option>`).join('');
-  openModal('modalMoveFile');
-}
-function moveFileToFolder() {
-  const folderId = document.getElementById('moveFolderSelect').value;
-  if (folderId === 'root') { delete fileAssignments[movingFile]; }
-  else { fileAssignments[movingFile] = folderId; }
-  saveAssignments();
-  closeModal('modalMoveFile');
-  toast('File moved!');
-  // Refresh current panel
-  const active = document.querySelector('.sb-item.active');
-  if (active) active.click();
+function deleteFolder(id) {
+  const f = folders.find(fo => fo.id === id);
+  if (!f) return;
+  showDialog('Delete Folder', `Delete folder "${f.name}"? Files will be moved to Uncategorized.`, '🗑️ Delete', () => {
+    folders = folders.filter(fo => fo.id !== id);
+    // Move files to root
+    Object.keys(fileAssignments).forEach(fname => { if (fileAssignments[fname] === id) fileAssignments[fname] = 'root'; });
+    // Move subfolders to root
+    folders.forEach(fo => { if (fo.parent === id) fo.parent = null; });
+    saveAndPublish();
+    renderAll();
+    logActivity(`Deleted folder: ${f.icon} ${f.name}`);
+    showToast('Folder deleted', 'success');
+  });
 }
 
-function toggleHide(encodedName) {
-  const name = decodeURIComponent(encodedName);
-  const idx = hiddenFiles.indexOf(name);
-  if (idx >= 0) hiddenFiles.splice(idx, 1);
-  else hiddenFiles.push(name);
-  saveHidden();
-  const active = document.querySelector('.sb-item.active');
-  if (active) active.click();
-  toast(idx >= 0 ? 'File is now visible' : 'File hidden');
+let draggedFolderId = null;
+function dragFolder(e, id) { draggedFolderId = id; e.dataTransfer.effectAllowed = 'move'; }
+function dropFolder(e, targetId) {
+  e.preventDefault();
+  if (!draggedFolderId || draggedFolderId === targetId) return;
+  const dragIdx = folders.findIndex(f => f.id === draggedFolderId);
+  const targetIdx = folders.findIndex(f => f.id === targetId);
+  if (dragIdx < 0 || targetIdx < 0) return;
+  const [moved] = folders.splice(dragIdx, 1);
+  folders.splice(targetIdx, 0, moved);
+  folders.forEach((f, i) => f.order = i);
+  saveAndPublish();
+  renderFolders();
+  logActivity('Reordered folders');
+  showToast('Folders reordered', 'success');
+  draggedFolderId = null;
 }
 
-function showAllFiles() { hiddenFiles = []; saveHidden(); showPanel('display', document.querySelector('.sb-item.active')); toast('All files visible'); }
-function hideAllFiles() { hiddenFiles = allFiles.map(f=>f.name); saveHidden(); showPanel('display', document.querySelector('.sb-item.active')); toast('All files hidden'); }
+// ============ ORGANIZE (DND) ============
+function renderOrganize() {
+  const container = document.getElementById('dndContainer');
+  if (!container) return;
+  container.innerHTML = folders.map(f => {
+    const files = repoFiles.filter(rf => (fileAssignments[rf.name] || 'root') === f.id);
+    return `<div class="dnd-section">
+      <div class="dnd-section-header"><span>${f.icon}</span> ${f.name} <span style="margin-left:auto;font-size:.75rem;color:var(--text-muted)">(${files.length})</span></div>
+      <div class="dnd-section-body" data-folder="${f.id}" ondragover="dndDragOver(event)" ondragleave="dndDragLeave(event)" ondrop="dndDrop(event,'${f.id}')">
+        ${files.map(fi => `<div class="dnd-item" draggable="true" ondragstart="dndDragStart(event,'${encodeURIComponent(fi.name)}')">${getIcon(fi.name)} <span style="flex:1">${displayNames[fi.name] || fi.name.replace(/\.(html|pdf)$/i,'')}</span><small style="color:var(--text-muted)">${fi.name.split('.').pop()}</small></div>`).join('')}
+        ${files.length === 0 ? '<div style="padding:16px;text-align:center;color:var(--text-muted);font-size:.8rem">Drop files here</div>' : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
 
-function resetAllData() {
-  if (!confirm('Are you sure? This will clear all folder structures and assignments.')) return;
-  localStorage.removeItem('mgr_folders'); localStorage.removeItem('mgr_assignments');
-  localStorage.removeItem('mgr_hidden'); localStorage.removeItem('mgr_settings');
-  location.reload();
+let dndDraggedFile = null;
+function dndDragStart(e, enc) { dndDraggedFile = decodeURIComponent(enc); e.dataTransfer.effectAllowed = 'move'; e.target.classList.add('dragging'); }
+function dndDragOver(e) { e.preventDefault(); e.currentTarget.classList.add('drag-over'); }
+function dndDragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
+function dndDrop(e, folderId) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  if (!dndDraggedFile) return;
+  fileAssignments[dndDraggedFile] = folderId;
+  saveAndPublish();
+  renderOrganize();
+  renderFilesTable();
+  const folder = folders.find(f => f.id === folderId);
+  logActivity(`Moved "${dndDraggedFile}" to ${folder ? folder.name : 'Uncategorized'}`);
+  showToast(`Moved to ${folder ? folder.name : 'Uncategorized'}`, 'success');
+  dndDraggedFile = null;
+}
+
+// ============ VISIBILITY ============
+function renderVisibility() {
+  const el = document.getElementById('visList');
+  if (!el) return;
+  el.innerHTML = repoFiles.map(f => {
+    const isHidden = hiddenFiles.includes(f.name);
+    return `<div class="vis-item ${isHidden?'hidden':''}">
+      <span style="font-size:1.1rem">${getIcon(f.name)}</span>
+      <span class="vi-name">${displayNames[f.name] || f.name.replace(/\.(html|pdf)$/i,'')}</span>
+      ${isHidden ? '<span class="vi-badge">HIDDEN</span>' : ''}
+      <div class="toggle ${isHidden?'':'on'}" onclick="toggleHide('${encodeURIComponent(f.name)}')"></div>
+    </div>`;
+  }).join('');
+}
+
+function showAllFiles() {
+  hiddenFiles = [];
+  saveAndPublish();
+  renderVisibility();
+  renderFilesTable();
+  logActivity('Showed all files');
+  showToast('All files are now visible', 'success');
+}
+
+function hideAllFiles() {
+  hiddenFiles = repoFiles.map(f => f.name);
+  saveAndPublish();
+  renderVisibility();
+  renderFilesTable();
+  logActivity('Hid all files');
+  showToast('All files are now hidden', 'info');
+}
+
+// ============ UPLOAD ============
+const uploadZone = document.getElementById('uploadZone');
+if (uploadZone) {
+  uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+  uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+  uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); handleUploadFiles(e.dataTransfer.files); });
+}
+
+function handleUploadFiles(fileList) {
+  if (!fileList || fileList.length === 0) return;
+  const preview = document.getElementById('uploadPreview');
+  preview.innerHTML = '';
+  Array.from(fileList).forEach(file => {
+    if (!file.name.match(/\.(html|pdf)$/i)) { showToast(`${file.name} is not .html or .pdf`, 'error'); return; }
+    const div = document.createElement('div');
+    div.className = 'upload-preview';
+    div.innerHTML = `
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.5rem">${file.name.endsWith('.pdf')?'📕':'📄'}</span>
+        <div style="flex:1"><div style="font-weight:500;font-size:.9rem">${file.name}</div><div style="font-size:.8rem;color:var(--text-muted)">${formatSize(file.size)}</div></div>
+        <button class="btn btn-primary btn-sm" onclick="uploadFile(this,'${encodeURIComponent(file.name)}')">⬆️ Upload</button>
+      </div>
+      <div class="upload-progress"><div class="upload-progress-bar"></div></div>
+    `;
+    div._file = file;
+    preview.appendChild(div);
+  });
+}
+
+async function uploadFile(btn, enc) {
+  const name = decodeURIComponent(enc);
+  const token = localStorage.getItem(LS.token);
+  if (!token) { showToast('GitHub token required for upload', 'error'); return; }
+  const previewDiv = btn.closest('.upload-preview');
+  const file = previewDiv._file;
+  if (!file) return;
+  const progressBar = previewDiv.querySelector('.upload-progress-bar');
+  btn.disabled = true;
+  btn.textContent = '⏳ Uploading...';
+  progressBar.style.width = '30%';
+  try {
+    const reader = new FileReader();
+    const base64 = await new Promise((resolve, reject) => {
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+    progressBar.style.width = '60%';
+    // Check if file already exists
+    let sha = null;
+    try {
+      const check = await fetch(API_URL + encodeURIComponent(file.name), { headers: { 'Authorization': `token ${token}` } });
+      if (check.ok) { const d = await check.json(); sha = d.sha; }
+    } catch(e) {}
+    const body = { message: `Upload ${file.name}`, content: base64, branch: 'main' };
+    if (sha) body.sha = sha;
+    const res = await fetch(API_URL + encodeURIComponent(file.name), {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    progressBar.style.width = '90%';
+    if (!res.ok) { const err = await res.json(); throw new Error(err.message || 'Upload failed'); }
+    const result = await res.json();
+    progressBar.style.width = '100%';
+    btn.textContent = '✅ Done';
+    // Add to local files list
+    repoFiles.push({ name: file.name, size: file.size, type: 'file', sha: result.content.sha });
+    renderAll();
+    logActivity(`Uploaded file: ${file.name}`);
+    showToast(`${file.name} uploaded successfully!`, 'success');
+  } catch(e) {
+    progressBar.style.width = '0';
+    btn.textContent = '❌ Failed';
+    btn.disabled = false;
+    showToast('Upload failed: ' + e.message, 'error');
+  }
+}
+
+// ============ SETTINGS ============
+function renderSettingsFields() {
+  const tg = document.getElementById('settingTelegram');
+  const sn = document.getElementById('settingSiteName');
+  const ss = document.getElementById('settingSiteSubtitle');
+  if (tg) tg.value = settings.telegramLink || '';
+  if (sn) sn.value = settings.siteName || '';
+  if (ss) ss.value = settings.siteSubtitle || '';
+}
+
+function saveToken() {
+  const token = document.getElementById('tokenInput').value.trim();
+  if (!token) { showToast('Enter a token first', 'error'); return; }
+  localStorage.setItem(LS.token, token);
+  document.getElementById('tokenInput').value = '';
+  updateTokenStatus();
+  showToast('Token saved!', 'success');
+  logActivity('GitHub token saved');
+  fetchConfigSha();
+}
+
+function clearToken() {
+  localStorage.removeItem(LS.token);
+  updateTokenStatus();
+  showToast('Token cleared', 'info');
+  logActivity('GitHub token cleared');
+}
+
+function updateTokenStatus() {
+  const token = localStorage.getItem(LS.token);
+  const el = document.getElementById('tokenStatus');
+  if (token) el.innerHTML = '<span style="color:var(--success)">✅ Token is set (ghp_...'+token.slice(-4)+')</span>';
+  else el.innerHTML = '<span style="color:var(--danger)">❌ No token set — publishing disabled</span>';
+}
+
+function saveSettings() {
+  settings.telegramLink = document.getElementById('settingTelegram').value.trim() || TELEGRAM_LINK;
+  settings.siteName = document.getElementById('settingSiteName').value.trim() || 'Parmar Railway Notes';
+  settings.siteSubtitle = document.getElementById('settingSiteSubtitle').value.trim() || 'Hand-Written Notes Library';
+  saveAndPublish();
+  // Update TG links
+  const tgLink = document.getElementById('tgLink');
+  if (tgLink) tgLink.href = settings.telegramLink;
+  const tgPromo = document.getElementById('tgPromoLink');
+  if (tgPromo) tgPromo.href = settings.telegramLink;
+  showToast('Settings saved!', 'success');
+  logActivity('Updated site settings');
+}
+
+function importConfig() { document.getElementById('importInput').click(); }
+function handleImport(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (data.folders) folders = [{id:'root',name:'Uncategorized',icon:'📂',color:'#6b7280',order:0,parent:null,desc:'Unassigned'}, ...data.folders];
+      if (data.fileAssignments) fileAssignments = data.fileAssignments;
+      if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
+      if (data.displayNames) displayNames = data.displayNames;
+      if (data.telegramLink) settings.telegramLink = data.telegramLink;
+      if (data.siteName) settings.siteName = data.siteName;
+      if (data.siteSubtitle) settings.siteSubtitle = data.siteSubtitle;
+      saveAndPublish();
+      renderAll();
+      showToast('Config imported successfully!', 'success');
+      logActivity('Imported config.json');
+    } catch(e) { showToast('Invalid JSON file', 'error'); }
+  };
+  reader.readAsText(file);
 }
 
 function exportConfig() {
-  const config = {
+  const configData = {
     folders: folders.filter(f => f.id !== 'root'),
-    fileAssignments,
-    hiddenFiles,
-    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
+    fileAssignments, displayNames, hiddenFiles,
+    telegramLink: settings.telegramLink,
+    siteName: settings.siteName,
+    siteSubtitle: settings.siteSubtitle,
     lastUpdated: new Date().toISOString().split('T')[0]
   };
-  const blob = new Blob([JSON.stringify(config, null, 2)], {type:'application/json'});
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-  a.download = 'config.json'; a.click();
-  toast('config.json downloaded! Commit it to your repo to update the public user page.');
+  const blob = new Blob([JSON.stringify(configData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'config.json'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('Config exported!', 'success');
+  logActivity('Exported config.json');
 }
 
-// ============ TOKEN MANAGEMENT ============
-function saveToken() {
-  const token = document.getElementById('tokenInput').value.trim();
-  if (!token) return toast('Please enter a token', 'warn');
-  localStorage.setItem('mgr_github_token', token);
-  toast('Token saved! Changes will auto-publish now.');
-  doPublish(); // Publish current state immediately
+function resetAllData() {
+  showDialog('Reset All Data', 'This will clear all local data (folders, assignments, settings). Are you sure?', '🗑️ Reset', () => {
+    Object.values(LS).forEach(key => localStorage.removeItem(key));
+    location.reload();
+  });
 }
-function clearToken() {
-  localStorage.removeItem('mgr_github_token');
-  document.getElementById('tokenInput').value = '';
-  toast('Token cleared. Changes will only save locally.');
-}
-
-// ============ UTILITIES ============
-function formatSize(b){if(!b)return'—';if(b<1024)return b+'B';if(b<1048576)return(b/1024).toFixed(1)+'KB';return(b/1048576).toFixed(1)+'MB'}
-function openModal(id){document.getElementById(id).classList.add('show')}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
-function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open')}
-function toast(msg, type){const t=document.getElementById('toast');t.textContent=msg;t.style.background=type==='warn'?'var(--warn)':'var(--success)';t.style.display='block';setTimeout(()=>t.style.display='none',2500)}
-
-// Close modals on bg click
-document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('show'); }));
 
 // ============ INIT ============
-initFromRemote().then(() => fetchFiles());
+init();
 </script>
 </body>
 </html>
