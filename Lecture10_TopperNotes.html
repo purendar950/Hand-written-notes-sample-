@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Lecture 10 | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Lecture 10 Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">📝 Lecture 10 — Topper Notes</div>
+    <div class="cover-sub">Complete Structured Notes | All 23 Questions & Options Covered</div>
+    <div class="cover-badge">🎵 Music · 🏛️ History · ⚖️ Polity · 🌊 Geography · 💰 Economy · 🧬 Biology · 🏏 Sports</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- Q1: DHRUPAD -->
+    <div class="sec orange">① Art & Culture — Classical Music 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Dhrupad is a style of singing. Where is Dhrupad a style of singing?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rabindra Sangeet</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Hindustani Classical Music ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Western Classical Music</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Carnatic Music</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Dhrupad = Hindustani Classical | Agra Gharana famous for Dhrupad-Dhamar style</div>
+    </div>
+
+    <div class="sub">Carnatic Music — Key Facts</div>
+    <table class="hw-t org">
+      <tr><th>Title</th><th>Person</th><th>Key Detail</th></tr>
+      <tr><td><strong>Father of Carnatic Music</strong></td><td><span class="hl"><strong>Purandaradasa</strong></span></td><td>—</td></tr>
+      <tr><td><strong>Queen of Carnatic Music</strong></td><td><span class="hl"><strong>MS Subbulakshmi</strong></span></td><td>Bharat Ratna 1998 — <em>First musician</em></td></tr>
+      <tr><td><strong>Ramon Magsaysay Award</strong></td><td>MS Subbulakshmi</td><td><span class="hl-b">1974</span> — "Nobel of Asia"</td></tr>
+      <tr><td><strong>Special Title</strong></td><td>MS Subbulakshmi</td><td><span class="hl-g">Asthana Vidwan</span> — Resident Artist, Tirupati Tirumala</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="slbl">TRINITY OF CARNATIC MUSIC</div>
+      <span class="hl"><strong>Tyagaraja</strong></span> + <span class="hl-g"><strong>Muthuswami Dikshitar</strong></span> + <span class="hl-p"><strong>Syama Sastri</strong></span>
+    </div>
+
+    <div class="sub">Classical Dance Forms</div>
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">ODISSI</div>
+        Father: <span class="hl"><strong>Guru Kelucharan Mahapatra</strong></span><br>
+        Origin: Maharis, Devadasis, Gotipua traditions<br>
+        <span class="hl-g">Gotipua</span> = Boys who perform Odissi<br>
+        Padma Vibhushan: <strong>2000</strong>
+      </div>
+      <div class="sticky green">
+        <div class="slbl">SATRIYA</div>
+        Propounded by: <span class="hl"><strong>Guru Shankardev</strong></span><br>
+        Type: <span class="hl-g">Vaishnavite</span> dance form<br>
+        State: <strong>Assam</strong><br>
+        Classical status: <span class="hl-p"><strong>Year 2000</strong></span> ← Latest<br>
+        Exponent: <strong>Guru Ghanakantha Bora</strong><br>
+        Performed via: Mati Akhora, Bhavna, Ankiya Naat
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2: GUPTA TEMPLES -->
+    <div class="sec blue">② Art & Culture — Gupta Period Temples 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> S1: Oldest surviving structural Gupta temples were primarily built using sandstone. S2: Earliest known Rath style temples are found in Madhya Pradesh.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Both statements correct</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Statement 1 correct, Statement 2 incorrect ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Statement 1 incorrect, Statement 2 correct</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Both incorrect</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — S1 correct (sandstone used). S2 WRONG — Rath temples in Tamil Nadu (Mahabalipuram), NOT MP!</div>
+    </div>
+
+    <div class="sub">Gupta Dynasty — Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Founder</span> <strong>Shrigupta</strong> → Ghatotkacha → <span class="hl"><strong>Chandragupta I</strong></span> (first major ruler)</div>
+      <div class="tl-item"><span class="yr">319–335 AD</span> Chandragupta I — Title: <span class="hl-g"><strong>Maharajadhiraja</strong></span></div>
+      <div class="tl-item"><span class="yr">335–375 AD</span> <strong>Samudragupta</strong> — <span class="hl-p">"Napoleon of India"</span> (by V.A. Smith) | Prayag Prashasti by <strong>Harisena</strong></div>
+      <div class="tl-item"><span class="yr">375–415 AD</span> <strong>Chandragupta II</strong> — Title: <span class="hl"><strong>Vikramaditya</strong></span> | Daughter Prabhavati Gupta married Rudrasena II (Vakataka)</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Temple</th><th>Material</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Dashavatara Temple, Lalitpur</strong></span></td><td>Sandstone</td><td>Gupta period</td></tr>
+      <tr><td><span class="hl-g"><strong>Bhitargaon, Kanpur</strong></span></td><td>Brick</td><td>Oldest brick temple in India (Lord Vishnu/Krishna)</td></tr>
+      <tr><td>Nagar Style</td><td>—</td><td>Introduced by Guptas in North India</td></tr>
+    </table>
+
+    <div class="sub">Pancharatha / Rath Temples — Mahabalipuram</div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>Built by: <span class="hl"><strong>Narasimha Varman I</strong></span> at <strong>Mahabalipuram, Tamil Nadu</strong></li>
+        <li>Five Rathas: <span class="hl-b">Draupadi, Arjuna, Bhima, Dharmaraja, Nakula-Sahadeva</span></li>
+        <li>Also called: <span class="hl-g"><strong>Seven Pagodas</strong></span></li>
+        <li>Each carved from <strong>single granite rock</strong></li>
+        <li><strong>Shore Temple</strong> = Built by <span class="hl"><strong>Narasimha Varman II</strong></span> (also titled Rajasimha)</li>
+        <li>UNESCO Heritage Site = <span class="hl-p"><strong>1984</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">ELLORA CAVES</div>
+        Total = <span class="hl"><strong>34 caves</strong></span> (Hindu + Jain + Buddhist)<br>
+        Cave 16 = <span class="hl-g"><strong>Kailash Temple</strong></span><br>
+        ← Largest rock-cut monolithic temple
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">AJANTA & ELEPHANTA</div>
+        Ajanta: Solely Buddhist = <span class="hl"><strong>29 + 1 unfinished cave</strong></span><br>
+        Elephanta: Associated with <span class="hl-p"><strong>Lord Shiva</strong></span>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3: RIGHT TO PRIVACY -->
+    <div class="sec red">③ Polity — Fundamental Rights & Supreme Court Cases ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> The Right to Privacy was recognized in which case?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Minerva Mills Case</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>K.S. Puttaswamy Case ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ADM Jabalpur Case</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Maneka Gandhi Case</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — K.S. Puttaswamy Case 2017 | Right to Privacy recognized as fundamental right (linked to Aadhaar)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Case</th><th>Year</th><th>Key Point</th></tr>
+      <tr><td><strong>AK Gopalan Case</strong></td><td>1951</td><td>Narrow view of Article 21 — procedure established by law only</td></tr>
+      <tr><td><span class="hl"><strong>Maneka Gandhi Case</strong></span></td><td>1978</td><td>Due Process introduced — <em>intent</em> of law also matters</td></tr>
+      <tr><td><strong>ADM Jabalpur vs Shivkant Shukla</strong></td><td>1975</td><td>Habeas Corpus Case — Art 21 can be suspended during Emergency (4:1)</td></tr>
+      <tr><td><span class="hl-g"><strong>K.S. Puttaswamy Case</strong></span></td><td>2017</td><td>Right to Privacy recognized as FR</td></tr>
+      <tr><td><span class="hl-b"><strong>Minerva Mills Case</strong></span></td><td>1980</td><td>Balance between Fundamental Rights and DPSP</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">ADM JABALPUR EXTRA</div>
+        Emergency = <span class="hl"><strong>June 25, 1975</strong></span> by Indira Gandhi<br>
+        President then = <strong>Fakruddin Ali Ahmed</strong><br>
+        Dissenting Judge = <span class="hl-g"><strong>H.R. Khanna</strong></span><br>
+        ("Right to Life is inherent, cannot be taken away")<br>
+        H.R. Khanna never became CJI — superseded
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">44th AMENDMENT 1978</div>
+        Added word <span class="hl">"Cabinet"</span> to Article 352<br>
+        PM cannot recommend Emergency<br>
+        without Cabinet consultation<br>
+        <strong>Habeas Corpus</strong> = "To Have the Body"
+      </div>
+    </div>
+
+    <div class="sub">Constitutional Amendments — Fundamental Rights Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1967</span> <strong>Golaknath Case</strong> — Parliament CANNOT amend Fundamental Rights</div>
+      <div class="tl-item"><span class="yr">1971</span> <span class="hl"><strong>24th Amendment</strong></span> — Parliament CAN amend Fundamental Rights</div>
+      <div class="tl-item"><span class="yr">—</span> <strong>25th Amendment</strong> — Article 31C added; Articles 39B & C (DPSP) given superiority over FR</div>
+      <div class="tl-item"><span class="yr">1976</span> <span class="hl-p"><strong>42nd Amendment</strong></span> (Mini Constitution) — ALL DPSPs superior to FRs</div>
+      <div class="tl-item"><span class="yr">1980</span> <span class="hl-g"><strong>Minerva Mills</strong></span> — FRs and DPSPs operate in BALANCE; neither is superior</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4: GOLDEN QUADRILATERAL -->
+    <div class="sec green">④ Geography — Transport Networks 🛣️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which four metro cities are connected by India's Golden Quadrilateral Highway Network?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Delhi, Mumbai, Chennai, Kolkata ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Delhi → Mumbai → Chennai → Kolkata → Delhi | Total: 5846 km</div>
+    </div>
+
+    <div class="two-col">
+      <table class="hw-t grn">
+        <tr><th colspan="2">Golden Quadrilateral Stats</th></tr>
+        <tr><td>Conceived</td><td><span class="hl"><strong>1999</strong></span></td></tr>
+        <tr><td>Completed</td><td><strong>2007</strong></td></tr>
+        <tr><td>Operational</td><td><strong>2012</strong></td></tr>
+        <tr><td>Total Length</td><td><span class="hl-g"><strong>5846 km</strong></span></td></tr>
+        <tr><td>Longest Section</td><td>Kolkata → Chennai = <strong>1684 km</strong></td></tr>
+        <tr><td>Shortest Section</td><td>Mumbai → Chennai ≈ <strong>1290 km</strong></td></tr>
+      </table>
+      <div>
+        <div class="sticky">
+          <div class="slbl">N-S & E-W CORRIDORS</div>
+          N-S = Srinagar → Kanyakumari = <span class="hl"><strong>NH 44</strong></span> (longest NH)<br>
+          N-S length = <strong>3214 km</strong><br>
+          E-W = Porbandar → Silchar<br>
+          E-W length = <strong>2933 km</strong><br>
+          Both meet at = <span class="hl-g"><strong>Jhansi</strong></span>
+        </div>
+        <div class="sticky blue">
+          <div class="slbl">GT ROAD (SHER SHAH SURI)</div>
+          Runs from <span class="hl"><strong>Chittagong → Kabul</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q5: WHITE TIGER -->
+    <div class="sec purple">⑤ Literature — Man Booker Prize 📖</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> "The White Tiger" won the Man Booker Prize in which year? Who is the author?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Year 2009, Author: Arvind Adiga ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Arvind Adiga | Booker Prize 2009</div>
+    </div>
+
+    <div class="three-col">
+      <div class="sticky purple">
+        <div class="slbl">ARVIND ADIGA'S WORKS</div>
+        • The White Tiger<br>
+        • Selection Day<br>
+        • Amnesty<br>
+        • Last Man in Tower<br>
+        • Between the Assassinations
+      </div>
+      <div class="sticky">
+        <div class="slbl">CHETAN BHAGAT (with numbers!)</div>
+        • <span class="hl"><strong>2</strong></span> States<br>
+        • <span class="hl"><strong>1</strong></span> Night at Call Center<br>
+        • <span class="hl"><strong>3</strong></span> Mistakes of My Life<br>
+        • <span class="hl"><strong>5</strong></span> Point Someone (5.7)<br>
+        • <span class="hl"><strong>Half</strong></span> Girlfriend<br>
+        • <span class="hl"><strong>400</strong></span> Days
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">VIKRAM CHANDRA</div>
+        • <span class="hl-g"><strong>Sacred Games</strong></span> ← Most Imp (Netflix!)<br>
+        • Red Earth & Pouring Rain<br>
+        • Love and Longing in Bombay<br>
+        • Geek Sublime<br><br>
+        <div class="slbl">RUSKIN BOND</div>
+        • The Blue Umbrella<br>
+        • The Room on the Roof
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q6: ARTICLE 163 -->
+    <div class="sec red">⑥ Polity — Governor's Powers (State Executive) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which article outlines the Governor's discretionary powers where the Governor may act independently without advice of Council of Ministers?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 153</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 154</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 163 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 167</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Article 163 = Governor's discretionary powers</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Article</th><th>Content</th></tr>
+      <tr><td><strong>153</strong></td><td>There shall be a Governor in each state</td></tr>
+      <tr><td><strong>154</strong></td><td>Governor is Head of State Executive</td></tr>
+      <tr><td><span class="hl"><strong>163</strong></span></td><td><span class="hl"><strong>Governor's discretionary powers ✅</strong></span></td></tr>
+      <tr><td><strong>167</strong></td><td>Duties of Chief Minister (link between Governor & Council of Ministers)</td></tr>
+      <tr><td><span class="hl-b"><strong>78</strong></span></td><td>Duties of Prime Minister (at Union level)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>When Governor uses discretion:</strong></p>
+      <ul class="hw arr">
+        <li>When no party has majority → <strong>Hung Assembly</strong></li>
+        <li>Appointing Chief Minister</li>
+        <li>Recommending President's Rule → <span class="hl"><strong>Article 356</strong></span></li>
+        <li>Reserving Bills for President → <span class="hl-g"><strong>Article 200</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">COUNCIL OF MINISTERS CAP</div>
+        Max strength = <span class="hl"><strong>15% of Legislative Assembly</strong></span><br>
+        By <span class="hl-g"><strong>91st Amendment, 2003</strong></span><br>
+        Delhi's limit = <strong>10%</strong> (under 69th Amendment)
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">69th AMENDMENT</div>
+        Created <span class="hl"><strong>National Capital Territory of Delhi</strong></span><br>
+        Delhi CoM cap = <strong>10%</strong> of Assembly strength
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q7: WULAR LAKE -->
+    <div class="sec teal">⑦ Geography — Lakes of India 🏞️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Statements about Wular Lake: S1: Formed by tectonic activity. S2: Largest freshwater lake in India. S3: Has one of the largest deposits of rare earth minerals.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only 1 and 2 correct ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>All three correct</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Only 1 correct</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Only 2 and 3 correct</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — S1 ✔ Tectonic origin | S2 ✔ Largest freshwater | S3 ✗ NOT rare earth minerals (extreme/false fact)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Lake</th><th>Location</th><th>Type</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Wular Lake</strong></span></td><td>J&K</td><td>Freshwater, Tectonic</td><td>Largest freshwater; fed by Jhelum</td></tr>
+      <tr><td><strong>Pangong Tso</strong></td><td>Ladakh</td><td>Saltwater</td><td>Shared with China</td></tr>
+      <tr><td><strong>Chandratal</strong></td><td>HP</td><td>Glacier lake</td><td>Chandra River originates here</td></tr>
+      <tr><td><strong>Suryatal</strong></td><td>HP</td><td>—</td><td>Bhaga River originates; Chandra + Bhaga = Chenab at Tandi</td></tr>
+      <tr><td><span class="hl-g"><strong>Gurudongmar Lake</strong></span></td><td>Sikkim</td><td>—</td><td>India's highest lake</td></tr>
+      <tr><td><span class="hl-b"><strong>Loktak Lake</strong></span></td><td>Manipur</td><td>—</td><td>Floating NP = Keibul Lamjao; Floating islands = Phumdis</td></tr>
+      <tr><td><span class="hl"><strong>Chilika Lake</strong></span></td><td>Odisha</td><td>Brackish/Lagoon</td><td>Largest lake overall + largest brackish; First Ramsar site 1981</td></tr>
+      <tr><td><strong>Pushkar Lake</strong></td><td>Rajasthan</td><td>Saltwater</td><td>Largest inland saltwater lake</td></tr>
+      <tr><td><span class="hl-g"><strong>Vembanad Lake</strong></span></td><td>Kerala</td><td>Backwater</td><td>India's longest lake; Pamba River flows here</td></tr>
+      <tr><td><span class="hl-p"><strong>Lonar Lake</strong></span></td><td>Buldhana, Maharashtra</td><td>Crater Lake</td><td>Formed by meteor crater</td></tr>
+      <tr><td><strong>Govind Ballabh Pant Sagar</strong></td><td>UP (on Rihand River)</td><td>Artificial</td><td>India's largest artificial lake</td></tr>
+      <tr><td><strong>Titicaca</strong></td><td>South America</td><td>—</td><td>World's highest lake</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">RARE EARTH MINERALS</div>
+        Total = <span class="hl"><strong>17</strong></span><br>
+        (15 Lanthanides + Scandium + Yttrium)<br>
+        Wular = NO rare earth minerals ✗
+      </div>
+      <div class="sticky green">
+        <div class="slbl">FIRST RAMSAR SITES INDIA (1981)</div>
+        1. <span class="hl"><strong>Chilika Lake</strong></span> (Odisha)<br>
+        2. <span class="hl-g"><strong>Keoladeo National Park</strong></span> (Rajasthan)<br>
+        Backwaters of Kerala = <strong>Kayals</strong>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8: ELASTICITY OF SUPPLY -->
+    <div class="sec orange">⑧ Economics — Elasticity 💰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> What is the full form/formula for Elasticity of Supply?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>% Change in Quantity Supplied ÷ % Change in Price ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Es = % ΔQs ÷ % ΔP</div>
+    </div>
+
+    <div class="formula">
+      <p class="hw" style="margin-top:10px;font-size:1rem;text-align:center">
+        <strong>Elasticity of Supply (Es) = % Change in Quantity Supplied / % Change in Price</strong>
+      </p>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Type</th><th>Curve</th><th>Where Seen</th></tr>
+      <tr><td><span class="hl"><strong>Perfectly Inelastic</strong></span></td><td>Vertical demand curve</td><td>Monopoly goods (demand fixed regardless of price)</td></tr>
+      <tr><td><span class="hl-g"><strong>Perfectly Elastic</strong></span></td><td>Horizontal curve</td><td>Perfect Competition (tiny price change kills demand)</td></tr>
+      <tr><td><strong>Relatively Inelastic</strong></td><td>—</td><td>Monopoly</td></tr>
+      <tr><td><strong>Relatively Elastic</strong></td><td>—</td><td>Perfect Competition</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q9: PALA DYNASTY -->
+    <div class="sec blue">⑨ History — Pala Dynasty 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Who was the founder of the Pala Dynasty which ruled Bengal and Bihar?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gopal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gopal — Founder of Pala Dynasty | Religion: Buddhism (Mahayana)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Ruler</th><th>Period</th><th>Key Contribution</th></tr>
+      <tr><td><span class="hl"><strong>Gopal (Founder)</strong></span></td><td>—</td><td>Established <strong>Odantapuri University</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>Dharmapala</strong></span></td><td>770–810 AD</td><td>Established <strong>Vikramshila University</strong>; defeated Indrayudh; captured Kannauj</td></tr>
+      <tr><td><strong>Devapala</strong></td><td>—</td><td>Gave permission to Shailendra Dynasty king Balaputradeva to build monastery at Nalanda</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="slbl">AFTER PALAS</div>
+      Pala Dynasty (Buddhism/Mahayana) → succeeded by <span class="hl"><strong>Sena Dynasty</strong></span> in Bengal
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10: PAKISTAN NAME -->
+    <div class="sec red">⑩ Modern History — Pakistan Movement 🇵🇰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Who coined the term "Pakistan" in 1933, envisioning a separate homeland for Muslims?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jinnah</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ahmed Ali</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Iqbal</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Rahmat Ali ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Rahmat Ali coined "Pakistan" in 1933 | MA Jinnah = Founding Father | Liaquat Ali Khan = 1st PM</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw" style="margin-top:10px;"><strong>Pakistan Acronym (by Rahmat Ali):</strong></p>
+      <ul class="hw dot" style="margin-top:8px">
+        <li><span class="hl"><strong>P</strong></span> = Punjab</li>
+        <li><span class="hl-g"><strong>A</strong></span> = Afghanistan</li>
+        <li><span class="hl-b"><strong>K</strong></span> = Kashmir</li>
+        <li><span class="hl-p"><strong>S</strong></span> = Sindh</li>
+        <li><span class="hl"><strong>TAN</strong></span> = Balochistan</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q11: SWARAJ PARTY -->
+    <div class="sec orange">⑪ Modern History — Non-Cooperation Movement 🚩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> After Gandhi withdrew the Non-Cooperation Movement, which party was formed by CR Das and Motilal Nehru to enter the Legislative Council?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Swaraj Party ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ghadar Party</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Justice Party</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Congress Socialist Party</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Swaraj Party (1923) | CR Das = President | Motilal Nehru = Secretary</div>
+    </div>
+
+    <div class="sub">Non-Cooperation Movement Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1920</span> NCM started at <span class="hl"><strong>Nagpur Congress session</strong></span> | Merged with Khilafat Movement (1919) — Ali Brothers (Maulana Mohammad Ali + Shaukat Ali)</div>
+      <div class="tl-item"><span class="yr">Key Person</span> <span class="hl-g"><strong>Hasrat Mohani</strong></span> = Coined "Inquilab Zindabad"</div>
+      <div class="tl-item"><span class="yr">1922</span> Withdrawn due to <span class="hl-p"><strong>Chauri Chaura massacre</strong></span> — Gorakhpur village; 22 policemen burned</div>
+      <div class="tl-item"><span class="yr">1923</span> Congress split: <strong>No-Changers</strong> (boycott + constructive work) vs <strong>Pro-Changers</strong> → formed <span class="hl"><strong>Swaraj Party</strong></span></div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">SWARAJ PARTY DETAILS</div>
+      Full name: <span class="hl"><strong>All India Khilafat Swaraj Party</strong></span><br>
+      President: <strong>CR Das</strong> | Secretary: <strong>Motilal Nehru</strong><br>
+      Achievement: Defeated <span class="hl-g">Public Safety Bill</span> and <span class="hl-g">Trade Disputes Bill</span> of 1928
+    </div>
+
+    <table class="hw-t">
+      <tr><th>Party</th><th>Year</th><th>Founded By</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Ghadar Party</strong></span></td><td>1913</td><td>Lala Hardayal, Sohan Singh Bhagna, Bhai Parmanand</td><td>San Francisco; linked to Komagata Maru incident 1914</td></tr>
+      <tr><td><span class="hl-b"><strong>Justice Party</strong></span></td><td>1916</td><td>CN Mudaliar, PT Chetty, TM Nair</td><td>South India</td></tr>
+      <tr><td><strong>Justice Party (Periyar)</strong></td><td>1937</td><td>EV Ramaswami Nayyar (Periyar)</td><td>Assumed presidency 1937</td></tr>
+      <tr><td><span class="hl-g"><strong>Congress Socialist Party</strong></span></td><td>1934</td><td>Jayaprakash Narayan, Acharya Narayan Dev, Minoo Masani</td><td>—</td></tr>
+      <tr><td><span class="hl-p"><strong>CPI</strong></span></td><td>1920 (Tashkent) / 1925 (Kanpur)</td><td>MN Roy (Mahendranath Roy)</td><td>Formalized 1925; Kanpur Bolshevik Conspiracy Case 1924</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q12: COPPER -->
+    <div class="sec green">⑫ Economy + Science — Copper & Metal Extraction 🔬</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> India has turned into a net importer of refined copper. Consider these statements: S1: Net importer of copper recently. S2: Rajasthan, MP, Jharkhand are the ONLY states involved in copper production. S3: During copper smelting, SO₂ and Particulate Matter are predominantly released.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only 1 and 3 correct ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only 2 and 3</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>All three</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Only 1 and 2</div>
+      </div>
+      <div class="mcq-ans">✅ S1 ✔ true | S2 ✗ "only" = extreme keyword = LIKELY FALSE | S3 ✔ no extreme keyword = positive vibes</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Extreme Keyword Trick:</strong> Statement 2 uses word <span class="hl"><strong>"ONLY"</strong></span> — if ANY 4th state produces copper, statement is FALSE. Always be suspicious of "only", "always", "never", "solely" in exam statements!</p>
+    </div>
+
+    <div class="sub">Metal Extraction / Smelting Process</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Step 1</span> <strong>Concentration of Ore</strong> — remove gangue particles (Hydraulic washing / Froth Flotation / Magnetic Separation / Leaching)</div>
+      <div class="tl-item"><span class="yr">Step 2</span> <strong>Convert to Oxide:</strong> High reactivity → Electrolysis | Carbonate (medium) → <span class="hl"><strong>Calcination</strong></span> (no air) | Sulfide (medium) → <span class="hl-g"><strong>Roasting</strong></span> (with air)</div>
+      <div class="tl-item"><span class="yr">Step 3</span> <strong>Reduction</strong> → Purification</div>
+      <div class="tl-item"><span class="yr">Step 4</span> <span class="hl-p"><strong>Electrolytic Refining</strong></span> — Anode = impure metal (oxidation) | Cathode = pure metal deposited (reduction) | Anode Mud = impurities | Electrolyte = salt of metal</div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">FUN FACT</div>
+      First metal discovered by humans = <span class="hl"><strong>Copper</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q13: KANTAKA SHODHANA -->
+    <div class="sec purple">⑬ Ancient History — Mauryan Empire 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> What was the primary function of the Kantaka Shodhana Courts during the Mauryan Empire?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Address criminal offenses and application of state laws ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Criminal offenses + State law application | Dharmasthiya Court = Personal/property disputes</div>
+    </div>
+
+    <div class="sub">Mauryan Empire — Provincial Capitals</div>
+    <table class="hw-t pur">
+      <tr><th>Province</th><th>Capital</th></tr>
+      <tr><td>Uttarapath (North)</td><td><span class="hl"><strong>Takshashila</strong></span></td></tr>
+      <tr><td>Dakshinapath (South)</td><td><strong>Swarngiri</strong></td></tr>
+      <tr><td>Prashapath (East)</td><td><strong>Tausali</strong></td></tr>
+      <tr><td>Avantipath (West)</td><td><span class="hl-g"><strong>Ujjain</strong></span></td></tr>
+      <tr><td>Central (Prachi)</td><td><span class="hl-b"><strong>Pataliputra</strong></span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">COURT TYPES</div>
+        <strong>Dharmasthiya Court</strong> = Personal/property disputes; headed by <span class="hl">Vyavaharika</span><br>
+        <strong>Kantaka Shodhana</strong> = Criminal offenses + State law
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">IMPORTANT OFFICERS</div>
+        Sannidhata = Chief Treasury Officer<br>
+        Samahartr = Collector General of Revenue<br>
+        Sita Adhyaksha = President of Agriculture<br>
+        Akshapatala = Accountant General<br>
+        Panya Adhyaksha = Market Superintendent<br>
+        Shulka Adhyaksha = Toll Tax Officer<br>
+        Nava Adhyaksha = Boat/Shipping Officer<br>
+        <span class="hl-p"><strong>Dhamma Mahamatta</strong></span> = Appointed by Ashoka
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q14: LOKPAL -->
+    <div class="sec teal">⑭ Polity — Lokpal ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> What is the main function of the Lokpal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Constitutional review</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Investigate corruption against high public officials including PM ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tax collection oversight</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Election supervision</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Lokpal = Statutory body to investigate corruption | First Lokpal: Pinaki Chandra Ghosh</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td><strong>Act Passed</strong></td><td><span class="hl"><strong>2013</strong></span> (after Anna Hazare movement)</td></tr>
+      <tr><td><strong>Full Name</strong></td><td>Lokpal and Lokayukta Act, 2013</td></tr>
+      <tr><td><strong>Nature</strong></td><td><span class="hl-g"><strong>Statutory body</strong></span></td></tr>
+      <tr><td><strong>Members</strong></td><td>1 Chairperson + max 8 members</td></tr>
+      <tr><td><strong>Reservation</strong></td><td>50% from SC/ST/Women/Minorities</td></tr>
+      <tr><td><strong>First Lokpal</strong></td><td><span class="hl">Pinaki Chandra Ghosh</span></td></tr>
+      <tr><td><strong>Chairperson Eligibility</strong></td><td>Retired CJI or retired Supreme Court judge</td></tr>
+      <tr><td><strong>Tenure</strong></td><td>5 years OR till age 70</td></tr>
+      <tr><td><strong>Inspired by</strong></td><td>Ombudsman system of <span class="hl-b"><strong>Sweden</strong></span></td></tr>
+      <tr><td><strong>Term coined by</strong></td><td><span class="hl-p"><strong>L.M. Singhvi</strong></span> in 1963</td></tr>
+      <tr><td><strong>Lokayukta</strong></td><td>State-level equivalent; First in <span class="hl-g"><strong>Maharashtra</strong></span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q15: INSPIRE MANAK -->
+    <div class="sec green">⑮ Science & Technology — Vigyan Dhara 🔬</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> The 2025 update on Vigyan Dhara — which component promotes innovation among students aged 10–15?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mentorship Program</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Scholarship Fund</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>INSPIRE MANAK ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Fellowship Program</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — INSPIRE MANAK for students aged 10–15 | By DST + National Innovation Foundation</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw" style="margin-top:8px;"><strong>INSPIRE MANAK Full Form:</strong></p>
+      <p class="hw"><span class="hl"><strong>M</strong></span>illion <span class="hl"><strong>M</strong></span>inds <span class="hl"><strong>A</strong></span>ugmenting <span class="hl"><strong>N</strong></span>ational <span class="hl"><strong>A</strong></span>spiration and <span class="hl"><strong>K</strong></span>nowledge</p>
+      <ul class="hw arr">
+        <li>By = <strong>Department of Science & Technology + National Innovation Foundation</strong></li>
+        <li>For = School students aged <span class="hl-g"><strong>10–15</strong></span> interested in science & innovation</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q16: URACIL -->
+    <div class="sec pink">⑯ Biology — DNA vs RNA 🧬</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which nitrogenous base is found in RNA but replaces Thymine in DNA?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Uracil ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uracil replaces Thymine in RNA | DNA replication = Semi-conservative</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">DNA BASES</div>
+        <span class="hl"><strong>A</strong></span>denine + <span class="hl"><strong>T</strong></span>hymine + <span class="hl"><strong>G</strong></span>uanine + <span class="hl"><strong>C</strong></span>ytosine<br>
+        DNA replication = <span class="hl-g"><strong>Semi-conservative</strong></span>
+      </div>
+      <div class="sticky pink">
+        <div class="slbl">RNA BASES</div>
+        <span class="hl"><strong>A</strong></span>denine + <span class="hl-p"><strong>U</strong></span>racil + <span class="hl"><strong>G</strong></span>uanine + <span class="hl"><strong>C</strong></span>ytosine<br>
+        <strong>U replaces T</strong> in RNA!
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">DNA</span> Transcription → <span class="hl"><strong>RNA</strong></span></div>
+      <div class="tl-item"><span class="yr">RNA</span> Translation → <span class="hl-g"><strong>Protein</strong></span></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17: HDI -->
+    <div class="sec blue">⑰ Economy — Human Development Index 🌍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which country ranked 1st in the 2025 Human Development Index (HDI)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Iceland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Switzerland</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Norway</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Denmark</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Iceland (1st) | Switzerland (2nd) | India = 130/193 | Score 0.685 = Medium Development</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td><strong>Compiled by</strong></td><td><span class="hl"><strong>UNDP</strong></span></td></tr>
+      <tr><td><strong>Concept Introduced</strong></td><td>1990</td></tr>
+      <tr><td><strong>Introduced by</strong></td><td><span class="hl-g">Mahbub ul Haq (Pakistan)</span> + <span class="hl-g">Amartya Sen (India)</span></td></tr>
+      <tr><td><strong>India's Rank</strong></td><td><span class="hl-p"><strong>130 out of 193</strong></span></td></tr>
+      <tr><td><strong>India's Score</strong></td><td><span class="hl"><strong>0.685</strong></span></td></tr>
+      <tr><td><strong>India's Category</strong></td><td>Medium Development</td></tr>
+      <tr><td><strong>1st Place</strong></td><td><span class="hl-g"><strong>Iceland</strong></span> (~0.972)</td></tr>
+    </table>
+
+    <div class="sub">Three Dimensions of HDI</div>
+    <div class="three-col">
+      <div class="num-b">
+        <div class="big">1</div>
+        <div class="lbl">Long & Healthy Life<br><strong>Life Expectancy at Birth</strong></div>
+      </div>
+      <div class="num-b">
+        <div class="big">2</div>
+        <div class="lbl">Knowledge<br><strong>Expected + Mean Years of Schooling</strong></div>
+      </div>
+      <div class="num-b">
+        <div class="big">3</div>
+        <div class="lbl">Standard of Living<br><strong>GNI per Capita</strong></div>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q18: QUOTA / TARIFF -->
+    <div class="sec orange">⑱ Economy — International Trade 💹</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> In context of International Trade, what is the definition of a Quota?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Tax on imports (= Tariff)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tax on exports</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>A physical limit on quantity of a good that can be imported ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Quality standard for goods</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Quota = Physical quantity limit | Tariff = Tax on imports</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">TRADE TERMS — REMEMBER</div>
+        <strong>Tariff</strong> = Tax on imports (Trump!)<br>
+        <strong>Quota</strong> = Physical limit on quantity imported<br>
+        <span class="hl-g"><strong>Anti-Dumping Duty (ADD)</strong></span> = When foreign country sells below market price to destroy local market
+      </div>
+      <div>
+        <table class="hw-t org">
+          <tr><th>WTO Box</th><th>Description</th><th>Limit</th></tr>
+          <tr><td><span class="hl-g"><strong>Green Box</strong></span></td><td>Do not distort trade</td><td>No limit</td></tr>
+          <tr><td><span class="hl"><strong>Amber Box</strong></span></td><td>Broad subsidies</td><td>5% cap of agri production</td></tr>
+          <tr><td><span class="hl-b"><strong>Blue Box</strong></span></td><td>Allowed but limited</td><td>No limit (if restricted)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19: EASTERN COASTAL PLAINS -->
+    <div class="sec teal">⑲ Geography — Coastal Plains of India 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Eastern Coastal Plains are wider and flatter than Western Coastal Plains because large rivers have created extensive deltas — Assertion & Reason?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Both A and R true; R is correct explanation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Both true; R not correct explanation</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>A true; R false</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>A false; R true</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Plateau tilts eastward → rivers flow east → alluvial deposition → deltas → wider plains. R correctly explains A.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">WHY EASTERN IS WIDER</div>
+        Peninsular Plateau tilts <span class="hl"><strong>eastward/southeastward</strong></span><br>
+        Rivers flow east → deposit alluvial soil → form deltas<br>
+        <span class="hl-g"><strong>Emerging coast</strong></span> = depositional features dominant<br>
+        Delta rivers: Mahanadi, Godavari, Krishna, Kaveri
+      </div>
+      <div class="sticky red">
+        <div class="slbl">WHY WESTERN IS NARROWER</div>
+        Rivers form <span class="hl"><strong>estuaries NOT deltas</strong></span><br>
+        <span class="hl-p"><strong>Submerging coast</strong></span> = erosional features dominant<br>
+        Ria coastline = more ports (deeper)<br>
+        Western = <strong>Dumbbell shape</strong> (thick top/bottom, thin middle)
+      </div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>West-flowing rivers (exception — through RIFT VALLEYS):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Narmada</strong></span> — originates from <strong>Amarkantak Plateau</strong></li>
+        <li><span class="hl-g"><strong>Tapti</strong></span> — originates from <strong>Betul Plateau</strong></li>
+        <li><strong>Son</strong> — also from Amarkantak → joins Ganga</li>
+        <li>Amarkantak = <span class="hl-b"><strong>Radial drainage pattern</strong></span></li>
+        <li><strong>Centripetal drainage</strong> = seen in lakes/basins (e.g., Loktak Lake)</li>
+      </ul>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Coast Name</th><th>State</th></tr>
+      <tr><td><strong>Kutch/Kathiawar Coast</strong></td><td>Gujarat</td></tr>
+      <tr><td><span class="hl"><strong>Konkan Coast</strong></span></td><td>Maharashtra + Goa</td></tr>
+      <tr><td><strong>Karnataka/Kannada Coast</strong></td><td>Karnataka</td></tr>
+      <tr><td><span class="hl-g"><strong>Malabar Coast</strong></span></td><td>Kerala</td></tr>
+      <tr><td><span class="hl-b"><strong>Coromandel/Kurmandal Coast</strong></span></td><td>Tamil Nadu</td></tr>
+      <tr><td><strong>Northern Circars</strong></td><td>Andhra Pradesh</td></tr>
+      <tr><td><strong>Utkal Coast</strong></td><td>Odisha</td></tr>
+      <tr><td><strong>Baigal Coast</strong></td><td>West Bengal</td></tr>
+    </table>
+
+    <div class="sticky">
+      <div class="slbl">MAJOR PORTS</div>
+      Total = <span class="hl"><strong>13 ports</strong></span> (12 public + 1 private)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20: UCC -->
+    <div class="sec red">⑳ Polity — Uniform Civil Code (UCC) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> UCC aims to bring which laws under a single framework for all citizens?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Corporate laws</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Educational laws</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Agricultural laws</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Personal laws ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — UCC brings all personal laws under single framework | Article 44 (DPSP) | 1st state: Uttarakhand</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td><strong>Article</strong></td><td><span class="hl"><strong>Article 44</strong></span> (DPSP — Liberal Intellectual)</td></tr>
+      <tr><td><strong>1st State</strong></td><td><span class="hl-g"><strong>Uttarakhand</strong></span></td></tr>
+      <tr><td><strong>2nd State</strong></td><td><strong>Gujarat</strong></td></tr>
+      <tr><td><strong>3rd State</strong></td><td><span class="hl-p"><strong>Assam</strong></span> (May 2026)</td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="slbl">OTHER LIBERAL INTELLECTUAL DPSPs</div>
+      Art 48A = Protect environment<br>
+      Art 49 = Protect monuments<br>
+      Art 50 = Separation of Judiciary & Executive<br>
+      Art 51 = International peace & security
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21: KABADDI -->
+    <div class="sec purple">㉑ Sports — Kabaddi Rules 🏏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which of the following is true about the Lobby Area in Kabaddi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The lobby area becomes active only when the raider touches a defender ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Lobby activates ONLY after raider contacts a defender. Raider in lobby without touching = disqualified.</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Kabaddi Rules:</strong></p>
+      <ul class="hw arr">
+        <li>1 raider vs multiple defenders</li>
+        <li>Raider enters lobby without touching anyone = <span class="hl-p"><strong>automatically disqualified</strong></span></li>
+        <li>Full squad = <span class="hl"><strong>12 players</strong></span></li>
+        <li>Playing at one time = maximum <span class="hl-g"><strong>7 players</strong></span></li>
+        <li>Lobby activates <strong>ONLY</strong> after raider contacts a defender</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22: MONEY MULTIPLIER -->
+    <div class="sec orange">㉒ Economics — Money Multiplier & Banking 💰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Statement A: Cash held by individuals acts as leakage and reduces money multiplier. Statement B: Higher reserves held by banks with RBI increase money multiplier. Statement C: A higher CRR reduces banking system's capacity to create money.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A and C are correct ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>B and C are correct</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>All three correct</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Only A is correct</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Statement A ✔ Statement B ✗ (higher reserves = LESS money to lend = LOWER multiplier) Statement C ✔</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">MONEY MULTIPLIER — RULES</div>
+        Cash held by individuals = <span class="hl-p"><strong>leakage = ↓ multiplier</strong></span><br>
+        Higher reserves = less money to lend = <span class="hl-p"><strong>↓ multiplier</strong></span><br>
+        CRR ↑ = Multiplier ↓ (inverse relation)<br>
+        <span class="hl-g"><strong>NDTL</strong></span> = Net Demand and Time Liabilities
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">CRR vs SLR</div>
+        <strong>CRR</strong> = % of NDTL deposited with RBI<br>
+        = <span class="hl-p">No interest/returns earned</span><br>
+        <strong>SLR</strong> = Must hold % of NDTL as govt securities / gold<br>
+        = <span class="hl-g">Earns returns (unlike CRR)</span>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23: ABHAYA MUDRA -->
+    <div class="sec blue">㉓ Art & Culture — Buddhist Art & Mudras 🙏</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> The Abhaya Mudra is a defining feature of which category of Buddha images during Gupta and post-Gupta era?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Seated Buddha images from Sarnath</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bodhisattvas</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Standing Buddha images from UP and Bihar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Seated Buddha from Mathura/Kaushambi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Abhaya Mudra = Fearlessness = Standing Buddha images from UP & Bihar</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Mudra</th><th>Meaning</th><th>Significance</th></tr>
+      <tr><td><span class="hl"><strong>Abhaya Mudra</strong></span></td><td>Fearlessness</td><td>Standing Buddha images, UP & Bihar</td></tr>
+      <tr><td><span class="hl-g"><strong>Dharmachakra Mudra</strong></span></td><td>Turning Wheel of Law</td><td>First sermon at Sarnath (Deer Park, Varanasi)</td></tr>
+      <tr><td><span class="hl-b"><strong>Bhumisparsha Mudra</strong></span></td><td>Touching earth</td><td>Moving toward enlightenment (Mara's disturbance)</td></tr>
+      <tr><td><strong>Vitarka Mudra</strong></td><td>Reason & Discussion</td><td>—</td></tr>
+      <tr><td><strong>Varada Mudra</strong></td><td>Generosity</td><td>—</td></tr>
+      <tr><td><strong>Dhyana Mudra</strong></td><td>Meditation</td><td>—</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky purple">
+        <div class="slbl">BODHISATTVAS (MAHAYANA)</div>
+        People who could achieve nirvana but<br>chose to delay for others' sake<br>
+        <span class="hl"><strong>Padmapani Avalokiteshvara</strong></span> = Compassion<br>
+        <span class="hl-g"><strong>Amitabha</strong></span> = Bodhisattva of Light
+      </div>
+      <div class="sticky">
+        <div class="slbl">HINAYANA vs MAHAYANA</div>
+        Hinayana = No image worship; Buddha = Human; Sri Lanka, SE Asia<br>
+        Mahayana = Image worship; Buddha = Divine; Korea, China, Japan<br>
+        <span class="hl-p"><strong>4th Buddhist Council</strong></span> = Kundalvan, Kashmir<br>
+        Patronized by = <span class="hl"><strong>Kanishka</strong></span> (Kushan Empire)<br>
+        → Led to Hinayana-Mahayana split
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — All Important Years (Lecture 10)</div>
+    <table class="qr-t">
+      <tr><th>Event</th><th>Year</th></tr>
+      <tr><td>Non-Cooperation Movement starts</td><td>1920</td></tr>
+      <tr><td>Chauri Chaura incident</td><td>1922</td></tr>
+      <tr><td>Swaraj Party formed</td><td>1923</td></tr>
+      <tr><td>Ghadar Party formed</td><td>1913</td></tr>
+      <tr><td>Komagata Maru Incident</td><td>1914</td></tr>
+      <tr><td>Justice Party formed</td><td>1916</td></tr>
+      <tr><td>Congress Socialist Party</td><td>1934</td></tr>
+      <tr><td>CPI formed (Tashkent)</td><td>1920</td></tr>
+      <tr><td>CPI formalized (Kanpur)</td><td>1925</td></tr>
+      <tr><td>Emergency imposed</td><td>June 25, 1975</td></tr>
+      <tr><td>Maneka Gandhi Case</td><td>1978</td></tr>
+      <tr><td>44th Amendment</td><td>1978</td></tr>
+      <tr><td>KS Puttaswamy Case</td><td>2017</td></tr>
+      <tr><td>Satriya gets Classical status</td><td>2000</td></tr>
+      <tr><td>HDI concept introduced</td><td>1990</td></tr>
+      <tr><td>Golden Quadrilateral started</td><td>1999</td></tr>
+      <tr><td>Golden Quadrilateral completed</td><td>2007</td></tr>
+      <tr><td>Lokpal Act passed</td><td>2013</td></tr>
+      <tr><td>First Ramsar sites India</td><td>1981</td></tr>
+      <tr><td>Mahabalipuram UNESCO</td><td>1984</td></tr>
+      <tr><td>91st Amendment (CoM cap 15%)</td><td>2003</td></tr>
+      <tr><td>UCC — Assam (3rd state)</td><td>May 2026</td></tr>
+    </table>
+
+    <!-- EXAM TIP -->
+    <div class="sec teal">💡 Topper Tips — Exam Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>ONLY / ALWAYS / NEVER / SOLELY</strong></span> = Extreme keywords = Usually <strong>FALSE</strong> statements in MCQs</li>
+          <li><span class="hl-g"><strong>Rath temples</strong></span> = Tamil Nadu (Mahabalipuram), NOT Madhya Pradesh!</li>
+          <li><span class="hl-p"><strong>Wular Lake</strong></span> = Tectonic origin + Largest freshwater. NOT rare earth minerals.</li>
+          <li>CRR ↑ = Money Multiplier ↓ (always inverse relationship)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Lokpal = <span class="hl"><strong>Statutory</strong></span> (not constitutional) body</li>
+          <li>Right to Privacy = <span class="hl-g"><strong>K.S. Puttaswamy 2017</strong></span> (not Maneka Gandhi!)</li>
+          <li>Rahmat Ali coined "Pakistan" in <span class="hl-b"><strong>1933</strong></span> (not Jinnah)</li>
+          <li>Uracil replaces <span class="hl-p"><strong>Thymine</strong></span> in RNA (not Adenine!)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF LECTURE 10 NOTES</div>
+      <strong>All 23 Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
