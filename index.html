@@ -256,18 +256,12 @@ function formatSize(bytes) {
 // ============ FETCH FILES FROM GITHUB API ============
 async function fetchFiles() {
   try {
-    // Fetch config.json first (folder structure from admin)
+    // Fetch config.json directly (folder structure from admin)
     try {
-      const configUrl = API_URL.replace('/contents/', '/contents/config.json');
-      const cfgRes = await fetch(configUrl);
+      const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/config.json`;
+      const cfgRes = await fetch(rawUrl);
       if (cfgRes.ok) {
-        const cfgData = await cfgRes.json();
-        // Decode base64 with proper UTF-8 support (fixes emoji garbling)
-        const binaryStr = atob(cfgData.content);
-        const bytes = new Uint8Array(binaryStr.length);
-        for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
-        const decoded = new TextDecoder('utf-8').decode(bytes);
-        config = JSON.parse(decoded);
+        config = await cfgRes.json();
       }
     } catch(e) { /* config not found, use defaults */ }
 
