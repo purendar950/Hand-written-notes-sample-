@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ancient History — SSC GD MCQs | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Handlee&family=Gochi+Hand&family=Architects+Daughter&family=Annie+Use+Your+Telescope&family=Dancing+Script:wght@400;600;700&family=Satisfy&family=Homemade+Apple&family=Shadows+Into+Light+Two&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.8rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.55rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'✍️ AUTHOR FOCUS';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 EXTRA / NEWS';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* TOOLBAR EXTRA CONTROLS */
+.tb-group{display:flex;align-items:center;gap:6px;color:#cfd8e0;font-size:.82rem;font-family:'Kalam',cursive}
+.font-select{font-family:'Kalam',cursive;font-size:.82rem;border:none;border-radius:6px;padding:6px 8px;background:#eceff1;color:#1c1c2e;cursor:pointer;max-width:185px}
+.btn-size{background:#2980b9;color:#fff;min-width:34px;justify-content:center;padding:8px 10px}
+.btn-reset{background:#607d8b;color:#fff;padding:8px 12px}
+.size-lbl{color:#ffd54f;font-weight:700;min-width:42px;text-align:center;font-family:'Kalam',cursive;font-size:.85rem}
+
+/* COVER CONTENTS PREVIEW */
+.cover-divider{height:2px;background:linear-gradient(90deg,transparent,rgba(255,213,79,.6),transparent);margin:20px auto 0;max-width:440px}
+.toc{position:relative;z-index:2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;margin:20px auto 4px;max-width:640px;text-align:left}
+.toc-title{font-family:'Caveat Brush',cursive;color:#ffd54f;font-size:1.2rem;text-align:center;margin-bottom:12px;letter-spacing:1px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+@media(max-width:520px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{font-family:'Kalam',cursive;font-size:.86rem;color:#e3f2fd;display:flex;align-items:baseline;gap:7px;line-height:1.5}
+.toc-item .ic{font-size:.95rem;flex-shrink:0}
+.toc-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toc-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:5px 14px;font-family:'Kalam',cursive;font-size:.8rem;color:#e8f5e9}
+.toc-stat b{color:#ffd54f;font-size:1rem}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  html{font-size:15px!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box,.ca-box,.two-col,.three-col{break-inside:avoid;page-break-inside:avoid}
+  .hw-t tr,.qr-t tr{break-inside:avoid;page-break-inside:avoid}
+  thead{display:table-header-group}
+  .sec{break-after:avoid;page-break-after:avoid}
+  hr.div,.cb{break-before:avoid;page-break-before:avoid}
+  .cover{break-after:always;page-break-after:always}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+<style id="fontOverride"></style>
+<style id="sizeOverride"></style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📜 Ancient History — Topper Notes</span>
+  <div class="tb-group">
+    <span>✒️ Font:</span>
+    <select class="font-select" onchange="setFont(this.value)">
+      <optgroup label="✏️ Neat Print (topper style)">
+        <option value="Patrick Hand">Patrick Hand – neat print</option>
+        <option value="Kalam" selected>Kalam – bold marker</option>
+        <option value="Indie Flower">Indie Flower – rounded cute</option>
+        <option value="Handlee">Handlee – soft casual</option>
+        <option value="Gochi Hand">Gochi Hand – playful</option>
+        <option value="Architects Daughter">Architects Daughter – sketchy</option>
+        <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+      </optgroup>
+      <optgroup label="🖋️ Cursive &amp; Pen Styles">
+        <option value="Caveat">Caveat – quick cursive</option>
+        <option value="Dancing Script">Dancing Script – elegant cursive</option>
+        <option value="Satisfy">Satisfy – smooth flowing</option>
+        <option value="Homemade Apple">Homemade Apple – real pen look</option>
+        <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+        <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+        <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+      </optgroup>
+      <optgroup label="🖍️ Bold Marker">
+        <option value="Permanent Marker">Permanent Marker – thick marker</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="tb-group">
+    <span>🔠 Size:</span>
+    <button class="btn btn-size" onclick="changeSize(-0.1)" title="Decrease font size">A−</button>
+    <span class="size-lbl" id="sizeLbl">100%</span>
+    <button class="btn btn-size" onclick="changeSize(0.1)" title="Increase font size">A+ Bigger</button>
+    <button class="btn btn-reset" onclick="resetSize()" title="Reset font size">↺</button>
+  </div>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📜 SSC GD Ancient History</div>
+    <div class="cover-title">🏛️ Ancient History MCQs</div>
+    <div class="cover-sub">40 Questions — Complete Notes | Vedic · Mauryan · Gupta · Chola · Sangam</div>
+    <div class="cover-badge">🏆 SSC GD · 📝 40 MCQs · 🏛️ Ancient India · 🎯 Exam Ready</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <div class="cover-divider"></div>
+    <div class="toc">
+      <div class="toc-title">📑 Inside These Notes</div>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="ic">🕉️</span> Vedic Period &amp; Upanishads</div>
+        <div class="toc-item"><span class="ic">🏛️</span> Mauryan Empire &amp; Ashoka</div>
+        <div class="toc-item"><span class="ic">👑</span> Gupta Empire &amp; Golden Age</div>
+        <div class="toc-item"><span class="ic">⛵</span> Chola Dynasty &amp; Naval Power</div>
+        <div class="toc-item"><span class="ic">📜</span> Sangam Age &amp; Tamil Literature</div>
+        <div class="toc-item"><span class="ic">⚔️</span> Post-Gupta Kingdoms</div>
+        <div class="toc-item"><span class="ic">🏺</span> Harappan Civilization</div>
+        <div class="toc-item"><span class="ic">☸️</span> Buddhism &amp; Jainism</div>
+      </div>
+      <div class="toc-stats">
+        <span class="toc-stat"><b>40</b> MCQs</span>
+        <span class="toc-stat"><b>8+</b> Topics</span>
+        <span class="toc-stat"><b>+</b> Memory Tricks</span>
+        <span class="toc-stat"><b>+</b> Tables</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ruled">
+<!-- ============ QUESTIONS WILL BE APPENDED BELOW IN SUBSEQUENT TASKS ============ -->
+
+    <div class="sec red">🕉️ Section 1 — Vedic Period &amp; Upanishads</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q1.</span> In which epic is it mentioned that dying during Uttarayan leads to salvation?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Ramayana</div><div class="mcq-opt ok"><div class="opt-c">B</div>Mahabharata ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Vedas</div><div class="mcq-opt no"><div class="opt-c">D</div>Upanishads</div></div>
+      <div class="mcq-ans">✅ Answer: B — Mahabharata. Uttarayan is the northward movement of the sun (from Tropic of Capricorn to Tropic of Cancer). The Bhagavad Gita (part of Mahabharata) states that dying during Uttarayan leads to moksha. The sun moves between Tropic of Cancer (23½° N) and Tropic of Capricorn (23½° S). Uttarayan period: January to June/mid-July. Makar Sankranti celebrates the beginning of Uttarayan. June 21 = International Yoga Day (sun on Tropic of Cancer). December 22 = World Meditation Day (sun on Tropic of Capricorn). Author of Mahabharata: Ved Vyas.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q2.</span> What does the term 'Upanishad' literally mean?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Speak loudly</div><div class="mcq-opt no"><div class="opt-c">B</div>Write in good handwriting</div><div class="mcq-opt no"><div class="opt-c">C</div>Meditate quietly</div><div class="mcq-opt ok"><div class="opt-c">D</div>Sit close together ✔</div></div>
+      <div class="mcq-ans">✅ Answer: D — Sit close together. The student sits near the teacher to attentively receive secret/sacred knowledge. Upanishads are also called Vedanta (given at the end of each Veda). Largest Upanishad: Brihadaranyaka (part of Shukla Yajurveda). Satyameva Jayate comes from: Mundaka Upanishad (part of Atharvaveda). Dialogue between Nachiketa and Yama: Katha Upanishad. Four Ashramas mentioned in: Jabala Upanishad.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q3.</span> Which of the following objectives emphasizes ethical living in the Vedic framework?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Artha</div><div class="mcq-opt no"><div class="opt-c">B</div>Kama</div><div class="mcq-opt ok"><div class="opt-c">C</div>Dharma ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Moksha</div></div>
+      <div class="mcq-ans">✅ Answer: C — Dharma (ethical/righteous living). The four Purusharthas: Dharma (righteousness/duty), Artha (materialism/wealth — not forbidden), Kama (desires/pleasures), Moksha (liberation/giving up everything). Dharma comes first because ethical living is the foundation.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q4.</span> What term was used to describe the student stage of life in early Hindu philosophy?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Vanaprastha</div><div class="mcq-opt ok"><div class="opt-c">B</div>Brahmacharya ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Sanyasin</div><div class="mcq-opt no"><div class="opt-c">D</div>Grihastha</div></div>
+      <div class="mcq-ans">✅ Answer: B — Brahmacharya (student life, up to age 25). The Four Ashramas: Brahmacharya (0–25, student), Grihastha (25–50, householder), Vanaprastha (50–75, retired/forest-dweller), Sannyasa (75+, renunciation). Written in the Jabala Upanishad.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q5.</span> What was the role of the Adhvaryu priest according to the Yajurveda?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Composed new ragas</div><div class="mcq-opt no"><div class="opt-c">B</div>Performed dance rituals</div><div class="mcq-opt ok"><div class="opt-c">C</div>Conducted yagnas and chanted mantras in low tones ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Wrote scriptures based on music theory</div></div>
+      <div class="mcq-ans">✅ Answer: C — The Adhvaryu conducted yagnas and chanted mantras in low tones. Yajurveda tells us about prayers and rituals. It is divided into: Shukla Yajurveda (pure/white) and Krishna Yajurveda (mixed/black). Brihadaranyaka Upanishad (largest) belongs to Shukla Yajurveda. Atharvaveda contains magical spells and charms.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q6.</span> Which Veda is primarily known for its musical content?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Rigveda</div><div class="mcq-opt ok"><div class="opt-c">B</div>Samaveda ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Yajurveda</div><div class="mcq-opt no"><div class="opt-c">D</div>Atharvaveda</div></div>
+      <div class="mcq-ans">✅ Answer: B — Samaveda is the oldest book on music. Rigveda: oldest Veda, 1028 hymns, 10 Mandalas (3rd = Gayatri Mantra, 7th = Battle of Ten Kings on Purushani/Ravi River, 9th = Lord Soma/God of Plants, 10th = Purusha Sukta hymn on caste origin). Compiled in Early Vedic Age (1500–1000 BC). Yajurveda = prayers/rituals. Atharvaveda = magical spells/charms.</div></div>
+
+    <div class="trick"><p class="hw"><strong>Remember the Four Vedas — "RiSaYaA":</strong> <span class="hl">Ri</span>gveda (oldest, hymns) → <span class="hl">Sa</span>maveda (music/songs) → <span class="hl">Ya</span>jurveda (rituals) → <span class="hl">A</span>tharvaveda (magic spells)</p></div>
+
+    <div class="key-box"><div class="slbl">FOUR ASHRAMAS (from Jabala Upanishad)</div><ul class="hw chk">
+      <li><b>Brahmacharya</b> (0–25 yrs) — Student life, celibacy, learning</li>
+      <li><b>Grihastha</b> (25–50 yrs) — Householder, family, earning</li>
+      <li><b>Vanaprastha</b> (50–75 yrs) — Retired, forest-dwelling, detachment</li>
+      <li><b>Sannyasa</b> (75+ yrs) — Complete renunciation, seeking moksha</li>
+    </ul></div>
+
+    <div class="sticky green"><div class="slbl">PURUSHARTHA (Four Aims of Life)</div>Dharma (duty/ethics) → Artha (wealth/prosperity) → Kama (desires/pleasure) → Moksha (liberation). Dharma is the foundation — earn wealth ethically, enjoy pleasures righteously, then attain liberation.</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec blue">🏛️ Section 2 — Mauryan Empire &amp; Magadha</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q7.</span> Ashoka's Dhamma was primarily aimed at —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Expanding Buddhism as the state religion</div><div class="mcq-opt no"><div class="opt-c">B</div>Promoting administrative centralization</div><div class="mcq-opt ok"><div class="opt-c">C</div>Encouraging ethical living and social harmony ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Establishing alliances with foreign rulers</div></div>
+      <div class="mcq-ans">✅ Answer: C — Encouraging ethical living and social harmony. Ashoka's Dhamma was propagated through rock edicts and pillar edicts. Major Rock Edict 3 reveals the Dhamma policy. Major Rock Edict 4: Dhammaghosh replaced Beryghosh. Major Rock Edict 8: Dhamma Yatra ceremonies. Rock Edict 13: Kalinga War (fought 8 years after coronation). His actual name "Devanampriya Piyadasi Ashoka" found in minor rock edicts at Maski, Nettur, Brahmagiri (Andhra Pradesh) and Gurjara (MP).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q8.</span> Which event is considered the turning point in Ashoka's life, leading him to embrace Dhamma?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>His coronation ceremony</div><div class="mcq-opt ok"><div class="opt-c">B</div>The Kalinga War ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Meeting with Buddhist monks</div><div class="mcq-opt no"><div class="opt-c">D</div>Death of his father Bindusara</div></div>
+      <div class="mcq-ans">✅ Answer: B — Kalinga War (261 BC), fought 8 years after coronation. Ashoka took the throne with help of Radha Gupta (officer in Bindusara's court). He murdered his brother Sushima. After witnessing the destruction of Kalinga War, he embraced Buddhism. He sent his son Mahendra and daughter Sanghamitra to Sri Lanka (then Ceylon) to spread Buddhism.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q9.</span> Who succeeded Bimbisara after allegedly killing and forcing him to commit suicide?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Ashoka</div><div class="mcq-opt no"><div class="opt-c">B</div>Bindusara</div><div class="mcq-opt ok"><div class="opt-c">C</div>Ajatashatru ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Chandragupta Maurya</div></div>
+      <div class="mcq-ans">✅ Answer: C — Ajatashatru (meaning "enemy of his own clan"). He imprisoned/killed his father Bimbisara to seize power. After Ajatashatru came Udayin, who shifted the capital from Rajgriha to Pataliputra. Bimbisara had sent his physician Jivaka to cure Pradyota (king of Avanti/Ujjain).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q10.</span> Which dynasty came after the Shishunagar dynasty in Magadha?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Gupta</div><div class="mcq-opt ok"><div class="opt-c">B</div>Nanda ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Maurya</div><div class="mcq-opt no"><div class="opt-c">D</div>Haryanka</div></div>
+      <div class="mcq-ans">✅ Answer: B — Nanda Dynasty. Magadha dynasty succession: Haryanka → Shishunaga → Nanda → Maurya. Haryanka founder: Bimbisara. Shishunaga's famous ruler: Kalashoka (patronized the 2nd Buddhist Council, 383 BC). Nanda founder: Mahapadmananda ("uprooter of all Kshatriyas"). Last Nanda ruler: Dhanananda (during Alexander's invasion). Alexander defeated Porus at Battle of Hydaspes (on Jhelum River). Later, Chandragupta Maurya defeated Seleucus Nicator and married his daughter Helena. Seleucus sent Megasthenes (wrote book "Indica" about Mauryan Empire).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q11.</span> The Arthashastra, traditionally attributed to Chanakya, mainly deals with —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Poetry and literature</div><div class="mcq-opt no"><div class="opt-c">B</div>Religious rituals</div><div class="mcq-opt ok"><div class="opt-c">C</div>Statecraft and administration ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Astronomy</div></div>
+      <div class="mcq-ans">✅ Answer: C — Statecraft and administration. Written by Chanakya/Vishnugupta/Kautilya. Divided into 20 sections. Contains the Saptanga Theory (7 elements of state): Swami (king), Amatya (ministers), Janapada (territory/people), Durga (fort), Kosha (treasury), Danda (army), Mitra (ally).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q12.</span> Who is known as the Father of Ayurveda?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Sushruta</div><div class="mcq-opt ok"><div class="opt-c">B</div>Charaka ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Nagarjuna</div><div class="mcq-opt no"><div class="opt-c">D</div>Vasudeva</div></div>
+      <div class="mcq-ans">✅ Answer: B — Charaka. He edited the Charaka Samhita (originally written by Agnivesh). Sushruta = Father of Surgery. Nagarjuna = "Second Buddha" (founder of Madhyamika school in Mahayana Buddhism). Mahayana Buddhism: considers Buddha divine, found in China/Korea/Japan. Hinayana: sees Buddha in human form, found in Sri Lanka/Southeast Asia.</div></div>
+
+    <div class="trick"><p class="hw"><strong>Magadha Dynasty Order — "HaShi NaMa Gup":</strong> <span class="hl">Ha</span>ryanka → <span class="hl">Shi</span>shunaga → <span class="hl">Na</span>nda → <span class="hl">Ma</span>urya → <span class="hl">Gup</span>ta (later period)</p></div>
+
+    <div class="tip-box"><p class="hw"><strong>Ashoka's Edicts — Key Facts for Exams:</strong> Major Rock Edicts: 14 total. Rock Edict 3 = Dhamma policy. Rock Edict 13 = Kalinga War. Minor rock edicts at Maski, Nettur, Brahmagiri (Andhra Pradesh) & Gurjara (MP) reveal his real name: Devanampriya Piyadasi Ashoka.</p></div>
+
+    <div class="imp"><p class="hw"><strong>Don't confuse:</strong> Charaka = Father of <span class="hl">Ayurveda</span> | Sushruta = Father of <span class="hl">Surgery</span> | Nagarjuna = "Second Buddha" (Madhyamika school founder)</p></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec green">👑 Section 3 — Gupta Empire &amp; Golden Age</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q13.</span> What is the name of the Licchavi princess married to Chandragupta I?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Kadamba Devi</div><div class="mcq-opt no"><div class="opt-c">B</div>Nayanika</div><div class="mcq-opt ok"><div class="opt-c">C</div>Kumar Devi ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Prabhavati</div></div>
+      <div class="mcq-ans">✅ Answer: C — Kumar Devi. Chandragupta I (319–335 AD) assumed the title Maharajadhiraja. This Licchavi marriage alliance strengthened Gupta power. Note: Prabhavati Gupta was Chandragupta II's daughter (married to Vakataka ruler Rudrasena II).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q14.</span> Who succeeded Chandragupta I as the ruler of the Gupta Empire?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Chandragupta II</div><div class="mcq-opt ok"><div class="opt-c">B</div>Samudragupta ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Skandagupta</div><div class="mcq-opt no"><div class="opt-c">D</div>Kumaragupta</div></div>
+      <div class="mcq-ans">✅ Answer: B — Samudragupta (335–380 AD), called the "Napoleon of India." He is depicted playing the Veena on coins. The Prayag Prashasti was composed for him by his court poet Harisena. After him came Chandragupta II (380+ AD) who took the title Vikramaditya.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q15.</span> Which of the following is NOT a work by Kalidasa?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Meghadutam</div><div class="mcq-opt no"><div class="opt-c">B</div>Kumar Shambhava</div><div class="mcq-opt ok"><div class="opt-c">C</div>Mricchakatikam ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Abhigyan Shakuntalam</div></div>
+      <div class="mcq-ans">✅ Answer: C — Mricchakatikam ("The Little Clay Cart") was written by Shudraka, not Kalidasa. Kalidasa (Shakespeare of India) was a Navaratna in Chandragupta II's court. Other Kalidasa works: Malavikagnimitram (love story of Malavika and Agnimitra, son of Pushyamitra Shunga).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q16.</span> In whose court is the celebrated Sanskrit poet Kalidasa believed to have flourished?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Skandagupta</div><div class="mcq-opt no"><div class="opt-c">B</div>Samudragupta</div><div class="mcq-opt ok"><div class="opt-c">C</div>Chandragupta II ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Kumaragupta</div></div>
+      <div class="mcq-ans">✅ Answer: C — Chandragupta II (Vikramaditya). The Navaratnas in his court: Kalidasa (Sanskrit poet), Harisena (poet, composed Prayag Prashasti), Amarsimha (lexicographer), Dhanvantari (physician), Kahapanaka (astrologer), Sanku (architect), Varahamihira (astronomer), Vararuchi (grammarian), Vetala Bhatta (magician). Kumaragupta built Nalanda University. Vikramshila was built by Dharmapala. Udantpuri was built by Gopala (Pala dynasty founder).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q17.</span> Who was considered the most notable of the Nine Luminaries in Chandragupta II's court?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Varahamihira</div><div class="mcq-opt ok"><div class="opt-c">B</div>Kalidasa ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Dhanvantari</div><div class="mcq-opt no"><div class="opt-c">D</div>Amarsimha</div></div>
+      <div class="mcq-ans">✅ Answer: B — Kalidasa. Known as the "Shakespeare of India." Banabhatta wrote Harshavardhana's biography "Harsha Charita" and the novel "Kadambari." Harshavardhana himself wrote three books: Ratnavali, Priyadarshika, and Nagananda.</div></div>
+
+    <table class="hw-t grn">
+      <thead><tr><th>Gupta Ruler</th><th>Period</th><th>Title/Achievement</th></tr></thead>
+      <tbody>
+        <tr><td>Chandragupta I</td><td>319–335 AD</td><td>Maharajadhiraja; married Kumar Devi (Licchavi)</td></tr>
+        <tr><td>Samudragupta</td><td>335–380 AD</td><td>"Napoleon of India"; Prayag Prashasti by Harisena; Veena on coins</td></tr>
+        <tr><td>Chandragupta II</td><td>380–415 AD</td><td>Vikramaditya; Navaratnas; defeated Shakas</td></tr>
+        <tr><td>Kumaragupta</td><td>415–455 AD</td><td>Built Nalanda University</td></tr>
+        <tr><td>Skandagupta</td><td>455–467 AD</td><td>Defeated Huns; last great Gupta ruler</td></tr>
+      </tbody>
+    </table>
+
+    <div class="key-box"><div class="slbl">CHANDRAGUPTA II — KEY FACTS</div><ul class="hw chk">
+      <li><b>Two wives:</b> Dhruva Devi (1st, originally wife of brother Ramgupta) & Kubera Naga (Naga princess)</li>
+      <li><b>Daughter:</b> Prabhavati Gupta (married Vakataka ruler Rudrasena II)</li>
+      <li>Story told in: <span class="hl">Devi Chandraguptam</span> by Vishakhadatta (who also wrote Mudra Rakshasa)</li>
+      <li>Mudra Rakshasa reveals Mauryas belonged to lower clans</li>
+    </ul></div>
+
+    <div class="trick"><p class="hw"><strong>Navaratnas of Chandragupta II:</strong> "KHA-D-K-S-V-V-V-A-H" — <span class="hl">K</span>alidasa, <span class="hl">H</span>arisena, <span class="hl">A</span>marsimha, <span class="hl">D</span>hanvantari, <span class="hl">K</span>ahapanaka, <span class="hl">S</span>anku, <span class="hl">V</span>arahamihira, <span class="hl">V</span>araruchi, <span class="hl">V</span>etala Bhatta</p></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec orange">⛵ Section 4 — Chola Dynasty &amp; Administration</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q18.</span> In which year did Raja Raja I become the king of the Chola Empire?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>1001 AD</div><div class="mcq-opt ok"><div class="opt-c">B</div>985 AD ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>1070 AD</div><div class="mcq-opt no"><div class="opt-c">D</div>947 AD</div></div>
+      <div class="mcq-ans">✅ Answer: B — 985 AD. Raja Raja I ruled 985–1014 AD. Chola dynasty belonged to the Sangam Age. Two phases: Early Chola and Later/Imperial Chola (founded by Vijayalaya Chola). Capital: Thanjavur or Uraiyur. Raja Raja I built the Brihadeshwara Temple (also called Rajarajeshwara Temple) at Thanjavur. Rajendra Chola I built another Brihadeshwara Temple at Gangaikondacholapuram. Both are UNESCO World Heritage Sites (1987). Rajendra Chola I = "Napoleon of South India." He conquered northern Sri Lanka (Anuradhapura), annexed the Sri Vijaya Empire (Shailendra Dynasty), and crossed the Ganges taking the title "Gangaikonda Chola."</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q19.</span> Which of the following pairs is correct regarding the land categories mentioned in Chola inscriptions?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Shalabhoga — for Brahmins</div><div class="mcq-opt ok"><div class="opt-c">B</div>Devadana — for temples ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Brahmadeya — for Jain monks</div><div class="mcq-opt no"><div class="opt-c">D</div>Pallichchhandam — for schools</div></div>
+      <div class="mcq-ans">✅ Answer: B — Devadana = land for temples. Shalabhoga = land for schools. Brahmadeya = land for Brahmins. Pallichchhandam = land for Jain monks/institutions.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q20.</span> What main role did the Cauvery River channels play in Chola period agriculture?</div>
+      <div class="mcq-opts"><div class="mcq-opt ok"><div class="opt-c">A</div>They provided fertile soil and moisture for crops ✔</div><div class="mcq-opt no"><div class="opt-c">B</div>They provided protection from invasions</div><div class="mcq-opt no"><div class="opt-c">C</div>They transported goods for trade</div><div class="mcq-opt no"><div class="opt-c">D</div>They were used for fishing and boat transportation</div></div>
+      <div class="mcq-ans">✅ Answer: A — Cauvery delta is called the "Garden of South India." The Cauvery River is perennial (receives both SW & NE monsoon rainfall). Originates in Brahmagiri Ranges, Kodagu district, Karnataka (place: Talakaveri). Tributaries (have 'ni'/'ti' endings): Bhavani, Kabini, Hemavati, Amaravati, Arkavati. Mekedatu Dam project: where Kaveri meets Arkavati (Karnataka-TN dispute). Vijayalaya Chola defeated Mutrayar in the Cauvery Delta and built a temple for Goddess Nishumbasudani.</div></div>
+
+    <div class="key-box"><div class="slbl">CHOLA LAND CLASSIFICATION</div><ul class="hw arr">
+      <li><b>Vellanvagai:</b> Land of non-Brahmin peasant proprietors</li>
+      <li><b>Brahmadeya:</b> Land gifted to Brahmins</li>
+      <li><b>Shalabhoga:</b> Land for maintenance of schools</li>
+      <li><b>Devadana:</b> Land gifted to temples</li>
+      <li><b>Pallichchhandam:</b> Land donated to Jain institutions</li>
+    </ul></div>
+
+    <div class="tip-box"><p class="hw"><strong>Chola Naval Power:</strong> Cholas were famous for their efficient naval system. Rajendra Chola I conquered the Sri Vijaya Empire (modern Malaysia/Indonesia) and Ceylon (northern Sri Lanka — Anuradhapura).</p></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec purple">📜 Section 5 — Sangam Age &amp; Tamil Literature</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q21.</span> In the context of the Sangam era, all three Sangams were held under the patronage of —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Gupta Kings</div><div class="mcq-opt ok"><div class="opt-c">B</div>Pandya Kings ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Maurya Kings</div><div class="mcq-opt no"><div class="opt-c">D</div>Satavahana Kings</div></div>
+      <div class="mcq-ans">✅ Answer: B — Pandya Kings. Sangam period: 3rd century BC to 3rd century AD. Three Sangams: 1st and 3rd held at Madurai (Pandya capital), 2nd at Kapadapuram. The 2nd Sangam was presided over by Tolkappiyar who composed "Tolkappiyam" (oldest Tamil text). Other texts: Silappadikaram by Ilango Adigal (triangular love story), Manimekalai by Sattanar.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q22.</span> Which city served as the capital of the Pandya Kings?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Ujjain</div><div class="mcq-opt no"><div class="opt-c">B</div>Vaishali</div><div class="mcq-opt no"><div class="opt-c">C</div>Amaravati</div><div class="mcq-opt ok"><div class="opt-c">D</div>Madurai ✔</div></div>
+      <div class="mcq-ans">✅ Answer: D — Madurai. Madurai was famous for pearls (mentioned in Megasthenes' book "Indica"). Ujjain = capital of Avanti (Mahajanapada). Vaishali = capital of Vajji. Amaravati = new capital of Andhra Pradesh. Pandya emblem: Fish. Port: Korkai.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q23.</span> Which important chieftains dominated the Tamil region during the Sangam Age?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Chalukya, Chera, Maurya</div><div class="mcq-opt ok"><div class="opt-c">B</div>Chera, Chola, Pandya ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Maurya, Chola, Pandya</div><div class="mcq-opt no"><div class="opt-c">D</div>Satavahana, Chola, Chera</div></div>
+      <div class="mcq-ans">✅ Answer: B — Chera, Chola, Pandya. The three Tamil kingdoms. Chera = also written as Keralaputra in Ashoka's inscriptions. Satavahana dynasty: founder Simuka, greatest ruler Gautamiputra Satakarni, capital Paithan/Pratishthan. They introduced lead/potin coins and were first to make land donations to Brahmins. Nasik Inscription composed by Gautami Balasri. Matrilineal society. Which Chera ruler started the Pattini Cult? Senguttuvan.</div></div>
+
+    <table class="hw-t pur">
+      <thead><tr><th>Kingdom</th><th>Capital</th><th>Emblem</th><th>Port</th></tr></thead>
+      <tbody>
+        <tr><td>Chola</td><td>Thanjavur / Uraiyur</td><td>Tiger</td><td>Puhar (Kaveripattinam)</td></tr>
+        <tr><td>Chera</td><td>Vanji / Karur</td><td>Bow &amp; Arrow</td><td>Muzris &amp; Tondi</td></tr>
+        <tr><td>Pandya</td><td>Madurai</td><td>Fish</td><td>Korkai</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sticky blue"><div class="slbl">SATAVAHANA QUICK NOTES</div>Founder: Simuka. Greatest ruler: Gautamiputra Satakarni. Capital: Paithan/Pratishthan. Coins: Lead/Potin. First to donate land to Brahmins. Nasik Inscription by Gautami Balasri (matrilineal society — took mother's name). Followed Brahmanism but also patronized Buddhism.</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <div class="sec pink">⚔️ Section 6 — Post-Gupta &amp; Regional Kingdoms</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q24.</span> Which regional power rose to prominence in Northern India after the decline of the Gupta Empire?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Cholas</div><div class="mcq-opt no"><div class="opt-c">B</div>Vakatakas</div><div class="mcq-opt ok"><div class="opt-c">C</div>Pushyabhutis ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Cheras</div></div>
+      <div class="mcq-ans">✅ Answer: C — Pushyabhuti Dynasty (also called Vardhana Dynasty). Harshavardhana belonged to this dynasty. Initial capital: Thanesar (Haryana). Father: Prabhakarvardhan. Sons: Harshavardhana & Rajyavardhan. Sister: Rajyashri (married to Grihavarman of Maukhari dynasty, capital Kannauj). Harsha made Kannauj his capital. Rule: 606–647 AD. Defeated by Pulakeshin II at Battle of Narmada (618 AD). After Harsha's death: Tripartite Struggle for Kannauj (Palas vs Rashtrakutas vs Gurjar Pratiharas, 9th–11th century AD).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q25.</span> Rudrasena II was a ruler belonging to which dynasty?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Nanda</div><div class="mcq-opt no"><div class="opt-c">B</div>Maurya</div><div class="mcq-opt ok"><div class="opt-c">C</div>Vakataka ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Gurjar Pratihara</div></div>
+      <div class="mcq-ans">✅ Answer: C — Vakataka Dynasty (Maharashtra/Deccan region). Rudrasena II married Prabhavati Gupta (Chandragupta II's daughter). Vakataka founder: Vindhyashakti (V for Vakataka, V for Vindhyashakti). Capitals: Nandivardhana, Pravarapura (not fixed). Rule: 3rd–6th century AD. Built the Ajanta Caves (29+1 caves, all Buddhist). Key ruler for Ajanta: Harisena. Note: This is NOT the same Harisena who wrote Prayag Prashasti for Samudragupta. Gupta-Vakataka alliance removed Shakas from Gujarat.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q26.</span> The Vallabhi Kingdom, which succeeded the Guptas in Western India, was established in present-day —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Rajasthan</div><div class="mcq-opt ok"><div class="opt-c">B</div>Gujarat ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Maharashtra</div><div class="mcq-opt no"><div class="opt-c">D</div>Madhya Pradesh</div></div>
+      <div class="mcq-ans">✅ Answer: B — Gujarat. The Maitraka Dynasty ruled Vallabhi in Gujarat. Harsha's daughter was married to Dhruvasena II (Maitraka ruler).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q27.</span> Gurjar Pratihara Harichandra is known for establishing a kingdom in which region?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Tamil Nadu</div><div class="mcq-opt ok"><div class="opt-c">B</div>Rajasthan ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Bengal</div><div class="mcq-opt no"><div class="opt-c">D</div>Gujarat</div></div>
+      <div class="mcq-ans">✅ Answer: B — Rajasthan. Gurjar Pratihara dynasty: Founder = Nagabhatta I. Real founder/greatest ruler = Mihir Bhoj. Tripartite Struggle for Kannauj: Palas (East) vs Rashtrakutas (Deccan) vs Gurjar Pratiharas (West/Rajasthan). Lasted 9th–11th century AD.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q28.</span> Which of the following queens changed her name on inscriptions and pretended to be a man?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Rani Durgavati</div><div class="mcq-opt ok"><div class="opt-c">B</div>Rudrama Devi ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Chand Bibi</div><div class="mcq-opt no"><div class="opt-c">D</div>Durgavati Devi</div></div>
+      <div class="mcq-ans">✅ Answer: B — Rudrama Devi of the Kakatiya Dynasty (capital: Warangal). Changed her name to "Rudradeva" because it was male-dominated society. Her father had no sons, so he appointed her as successor. Kakatiyas initially built Golconda Fort (where Kohinoor diamond was mined). Malik Kafur (Alauddin Khilji's commander, "Hazar Dinari") defeated: Yadavas of Devagiri → Hoysalas of Dwarasamudra → Kakatiyas of Warangal → Pandyas of Madurai. Chand Bibi: Regent of Bijapur Sultanate (Adil Shahi Dynasty) for Ibrahim Adil Shah II. Durgavati Devi (Durga Bhabhi): wife of Bhagwati Charan Vohra (wrote "Philosophy of Bomb"), helped Bhagat Singh escape by posing as his wife.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q29.</span> The Chalukyas of Badami are noted for which contribution to Indian art?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Bronze sculpture of Nataraja</div><div class="mcq-opt ok"><div class="opt-c">B</div>Rock-cut cave temples at Badami ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Development of Nagara style temple</div><div class="mcq-opt no"><div class="opt-c">D</div>Paintings at Ellora Caves</div></div>
+      <div class="mcq-ans">✅ Answer: B — Rock-cut cave temples at Badami. Chalukyas developed Vesara style (Nagara + Dravidian). Temples: Badami caves, Aihole (Cradle of Temple Architecture — Ladkhan, Durga, Ravanapadi, Galaganatha temples), Pattadakal (Virupaksha Temple by Queen Lokamahadevi). Two Virupaksha temples: one in Hampi (by Lakundi/Hakka-Bukka), one in Pattadakal. Bronze Nataraja = Chola Empire (lost-wax technique). Ellora: 34 caves (Hindu + Jain + Buddhist), Cave 16 = Kailash Temple (largest monolithic, by Krishna I of Rashtrakutas). Nagara style = Guptas. Dravidian style = Pallavas.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q30.</span> Which Pallava king defeated and killed Pulakeshin II?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Mahendravarman I</div><div class="mcq-opt ok"><div class="opt-c">B</div>Narasimha Varman I ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Narasimha Varman II</div><div class="mcq-opt no"><div class="opt-c">D</div>Simhavishnu</div></div>
+      <div class="mcq-ans">✅ Answer: B — Narasimha Varman I (known as "Mamalla," title: "Vatapikonda" = Conqueror of Vatapi). Pulakeshin II defeated both Harsha (Battle of Narmada, 618 AD — took title Dakshinapatheshvara) and Mahendravarman I (Pallava). His court poet Ravikirtti composed the Aihole Inscription. Chalukya capitals: Badami/Vatapi (Early), Kalyani (Later), Vengi (Eastern). Narasimha Varman I completed the Pancharatha at Mahabalipuram. Narasimha Varman II (Rajasimha) built the Shore Temple at Mahabalipuram.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q31.</span> Which Chalukya ruler defeated Harsha?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Vikramaditya I</div><div class="mcq-opt ok"><div class="opt-c">B</div>Pulakeshin II ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Kirtivarman</div><div class="mcq-opt no"><div class="opt-c">D</div>Mangalesha</div></div>
+      <div class="mcq-ans">✅ Answer: B — Pulakeshin II defeated Harshavardhana at the Battle of Narmada (618 AD) and assumed the title "Dakshinapatheshvara" (Lord of the South).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q32.</span> Xuanzang's account is particularly valuable for the study of —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Ashoka's reign</div><div class="mcq-opt ok"><div class="opt-c">B</div>Harshavardhana's reign ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Chandragupta II's reign</div><div class="mcq-opt no"><div class="opt-c">D</div>Kanishka's reign</div></div>
+      <div class="mcq-ans">✅ Answer: B — Harshavardhana. Xuanzang (Hiuen Tsang) was the 2nd Chinese traveler to India. He visited courts of Harsha, Pulakeshin II, and Narasimha Varman I (Pallava). First Chinese traveler: Fa Hien (during Chandragupta II's reign).</div></div>
+
+    <div class="imp"><p class="hw"><strong>Don't confuse Chalukya branches:</strong> Badami/Vatapi Chalukyas (Early) | Kalyani Chalukyas (Later/Western) | Vengi Chalukyas (Eastern). Kailash Temple (Ellora Cave 16) = Krishna I of <span class="hl">Rashtrakutas</span>, NOT Chalukyas!</p></div>
+
+    <table class="hw-t">
+      <thead><tr><th>Dynasty</th><th>Region</th><th>Capital</th><th>Key Fact</th></tr></thead>
+      <tbody>
+        <tr><td>Pushyabhuti/Vardhana</td><td>North India</td><td>Thanesar → Kannauj</td><td>Harshavardhana (606–647 AD)</td></tr>
+        <tr><td>Vakataka</td><td>Maharashtra/Deccan</td><td>Nandivardhana</td><td>Built Ajanta Caves (all Buddhist)</td></tr>
+        <tr><td>Maitraka</td><td>Gujarat</td><td>Vallabhi</td><td>Succeeded Guptas in West India</td></tr>
+        <tr><td>Gurjar Pratihara</td><td>Rajasthan</td><td>Kannauj (later)</td><td>Greatest: Mihir Bhoj</td></tr>
+        <tr><td>Kakatiya</td><td>Telangana</td><td>Warangal</td><td>Built Golconda Fort; Rudrama Devi</td></tr>
+        <tr><td>Chalukya (Badami)</td><td>Karnataka</td><td>Badami/Vatapi</td><td>Vesara style; Rock-cut caves</td></tr>
+        <tr><td>Pallava</td><td>Tamil Nadu</td><td>Kanchipuram</td><td>Dravidian style; Mahabalipuram</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec teal">☸️ Section 7 — Buddhism, Jainism &amp; Kushan Dynasty</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q33.</span> Kanishka is famous in history as a great patron of —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Jainism</div><div class="mcq-opt ok"><div class="opt-c">B</div>Buddhism ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Christianity</div><div class="mcq-opt no"><div class="opt-c">D</div>Zoroastrianism</div></div>
+      <div class="mcq-ans">✅ Answer: B — Buddhism. Kanishka belonged to the Kushan Dynasty. First capital: Purushapura (modern Peshawar), later Mathura. Developed the Mathura School of Art (indigenous, red sandstone). Gandhara School = Indo-Greek art (grey schist stone, Greek influence). Kanishka = greatest Kushan ruler. Purest gold coins minted during his reign. Patronized the 4th Buddhist Council at Kundalvan, Kashmir. He is considered the 3rd or 4th ruler (Rabataka Inscription in Afghanistan says 4th).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q34.</span> The emergence of Buddhism and Jainism in the 6th century BC can be linked to —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Foreign invasions</div><div class="mcq-opt no"><div class="opt-c">B</div>Economic prosperity</div><div class="mcq-opt ok"><div class="opt-c">C</div>Criticism of Vedic rituals and caste rigidity ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Natural disasters</div></div>
+      <div class="mcq-ans">✅ Answer: C — Criticism of Vedic rituals and caste rigidity. In the Later Vedic Age, caste became rigid and women's status declined. Vedic rituals gave Brahmins a sense of superiority. Lower castes needed an alternative religion where all were equal. Both Buddhism and Jainism preached in local languages (Pali & Prakrit) instead of Sanskrit, making them accessible to common people.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q35.</span> Which Hindu epic narrates the story associated with Dussehra?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Mahabharata</div><div class="mcq-opt ok"><div class="opt-c">B</div>Ramayana ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Bhagavata Purana</div><div class="mcq-opt no"><div class="opt-c">D</div>Vishnu Purana</div></div>
+      <div class="mcq-ans">✅ Answer: B — Ramayana. Dussehra celebrates Lord Rama's victory over Ravana.</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q36.</span> Which language was adopted by Jainism as its sacred language in ancient India?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Sanskrit</div><div class="mcq-opt ok"><div class="opt-c">B</div>Prakrit ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Pali</div><div class="mcq-opt no"><div class="opt-c">D</div>Tamil</div></div>
+      <div class="mcq-ans">✅ Answer: B — Prakrit (specifically Ardhamagadhi Prakrit). Buddhism used Pali. Both avoided Sanskrit to connect with common people. Buddhist Tripitaka (Three Baskets) in Pali: Sutta Pitaka (sermons), Vinaya Pitaka (rules for monks/nuns), Abhidhamma Pitaka (philosophical teachings). Jain texts are in Prakrit.</div></div>
+
+    <div class="key-box"><div class="slbl">BUDDHISM vs JAINISM — COMPARISON</div>
+    <table class="hw-t teal-h">
+      <thead><tr><th>Feature</th><th>Buddhism</th><th>Jainism</th></tr></thead>
+      <tbody>
+        <tr><td>Founder</td><td>Gautama Buddha</td><td>Mahavira (24th Tirthankara)</td></tr>
+        <tr><td>Language</td><td>Pali</td><td>Prakrit (Ardhamagadhi)</td></tr>
+        <tr><td>Key Texts</td><td>Tripitaka</td><td>Agamas</td></tr>
+        <tr><td>Councils</td><td>4 (Rajgriha, Vaishali, Pataliputra, Kashmir)</td><td>2 (Pataliputra, Vallabhi)</td></tr>
+        <tr><td>Split into</td><td>Hinayana & Mahayana</td><td>Digambara & Shvetambara</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="sticky teal"><div class="slbl">BUDDHIST COUNCILS</div>1st: Rajgriha (Ajatashatru) | 2nd: Vaishali (Kalashoka) → split into Sthaviravadins & Mahasanghikas | 3rd: Pataliputra (Ashoka) | 4th: Kundalvan, Kashmir (Kanishka) → split into Hinayana & Mahayana</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <div class="sec red">🏺 Section 8 — Harappan Civilization &amp; Mahajanapadas</div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q37.</span> Which Harappan site is located in Jammu and Kashmir?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Kalibangan</div><div class="mcq-opt ok"><div class="opt-c">B</div>Manda ✔</div><div class="mcq-opt no"><div class="opt-c">C</div>Lothal</div><div class="mcq-opt no"><div class="opt-c">D</div>Ropar</div></div>
+      <div class="mcq-ans">✅ Answer: B — Manda (J&K). Harappan extent: Manda (J&K, north) to Daimabad (Maharashtra, south), Alamgirpur (UP, east) to Sutkagen-dor (Pakistan-Iran border, west). Key sites: Kalibangan (Rajasthan, Ghaggar River — fire altars, plowed fields, black bangles). Banawali (Haryana — first barley evidence, no grid pattern, terracotta plow model). Lothal (Gujarat — ancient dockyard, double/joint burial, fire altars, discovered by SR Rao). Ropar (Punjab, Sutlej River — pit burial). Chanhudaro (Sindh — city without citadel, on Indus River). Dholavira (Gujarat — divided into 3 parts, Jand water reservoir).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q38.</span> The famous bronze dancing girl figurine was discovered at —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Lothal</div><div class="mcq-opt no"><div class="opt-c">B</div>Chanhudaro</div><div class="mcq-opt ok"><div class="opt-c">C</div>Mohenjo-daro ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Ropar</div></div>
+      <div class="mcq-ans">✅ Answer: C — Mohenjo-daro (Sindh, Pakistan). The Dancing Girl: bronze, Tribhanga posture, lost-wax technique, 10.5 cm / 4 inches, now in National Museum, Delhi. Other Mohenjo-daro finds: Priest King / Bearded Man (17.5 cm, in Pakistan), Great Granary, Great Bath, Proto-Shiva seal (steatite — buffalo, elephant, tiger, rhino, deer), terracotta Mother Earth/Goddess of Fertility statue. Harappa is in Punjab province (Pakistan).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q39.</span> The Mahajanapada of Kashi is related to which present-day city?</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Jaipur</div><div class="mcq-opt no"><div class="opt-c">B</div>Mathura</div><div class="mcq-opt ok"><div class="opt-c">C</div>Banaras (Varanasi) ✔</div><div class="mcq-opt no"><div class="opt-c">D</div>Allahabad</div></div>
+      <div class="mcq-ans">✅ Answer: C — Banaras/Varanasi. The 16 Mahajanapadas include: Anga (Champa — Munger/Bhagalpur), Magadha (Rajgriha → Pataliputra), Kashi (Banaras), Vatsa (Kaushambi — Allahabad), Kosala (Shravasti — Eastern UP), Surasena (Mathura), Panchala (Ahichhatra/Kampil — Kuru region), Kuru (Indraprastha — W.UP/Haryana), Matsya (Viratnagar — Jaipur), Chedi (Shuktimati — Bundelkhand), Avanti (Ujjain — MP/Malwa), Gandhara (Taxila — Rawalpindi, Pakistan), Kamboja (Kashmir region), Assaka (Pratishthan — Maharashtra, Godavari banks), Vajji (Vaishali), Malla (Kushinagar — where Buddha died, UP).</div></div>
+
+    <div class="mcq"><div class="mcq-h"><span class="qno">Q40.</span> The decline of the infant mortality rate in India can be primarily attributed to —</div>
+      <div class="mcq-opts"><div class="mcq-opt no"><div class="opt-c">A</div>Better neonatal care</div><div class="mcq-opt no"><div class="opt-c">B</div>Expansion of immunization programs</div><div class="mcq-opt no"><div class="opt-c">C</div>Improved maternal health</div><div class="mcq-opt ok"><div class="opt-c">D</div>All of the above ✔</div></div>
+      <div class="mcq-ans">✅ Answer: D — All of the above. IMR in 2011 was approximately 44 per 1000 live births. Decline due to: better neonatal care, expansion of immunization (Indradhanush scheme), and improved maternal health. This is a general awareness question, not strictly ancient history.</div></div>
+
+    <table class="hw-t red-h">
+      <thead><tr><th>Harappan Site</th><th>State/Region</th><th>River</th><th>Key Finding</th></tr></thead>
+      <tbody>
+        <tr><td>Manda</td><td>J&K</td><td>Chenab</td><td>Northernmost site</td></tr>
+        <tr><td>Mohenjo-daro</td><td>Sindh (Pakistan)</td><td>Indus</td><td>Dancing Girl, Great Bath, Priest King</td></tr>
+        <tr><td>Harappa</td><td>Punjab (Pakistan)</td><td>Ravi</td><td>First discovered site, granaries</td></tr>
+        <tr><td>Kalibangan</td><td>Rajasthan</td><td>Ghaggar</td><td>Fire altars, plowed fields, black bangles</td></tr>
+        <tr><td>Lothal</td><td>Gujarat</td><td>Bhogava</td><td>Dockyard, double burial, fire altars</td></tr>
+        <tr><td>Dholavira</td><td>Gujarat</td><td>Luni</td><td>3 divisions, water reservoir</td></tr>
+        <tr><td>Banawali</td><td>Haryana</td><td>Ghaggar</td><td>First barley, terracotta plow, no grid</td></tr>
+        <tr><td>Ropar</td><td>Punjab (India)</td><td>Sutlej</td><td>Pit burial</td></tr>
+        <tr><td>Chanhudaro</td><td>Sindh (Pakistan)</td><td>Indus</td><td>No citadel</td></tr>
+      </tbody>
+    </table>
+
+    <div class="trick"><p class="hw"><strong>16 Mahajanapadas — Key ones to remember:</strong> Magadha (most powerful, Pataliputra), Vajji (first republic, Vaishali), Kashi (Varanasi), Kosala (Shravasti), Avanti (Ujjain), Gandhara (Taxila)</p></div>
+
+    <div class="tip-box"><p class="hw"><strong>Exam Tip — Magadha Dynasty Order:</strong> Haryanka (Bimbisara) → Shishunaga (Kalashoka, 2nd Buddhist Council) → Nanda (Mahapadmananda) → Maurya (Chandragupta). Remember: "HaShi NaMa"</p></div>
+
+  </div><!-- end ruled -->
+</div><!-- end page -->
+
+<script>
+function setFont(f){document.getElementById('fontOverride').textContent='body,p.hw,ul.hw li,.mcq-opt,.mcq-ans,.sticky,.hw-t td,.qr-t td{font-family:"'+f+'",cursive !important}';}
+let scale=1;
+function changeSize(d){scale=Math.max(0.6,Math.min(1.8,scale+d));document.getElementById('sizeOverride').textContent='html{font-size:'+scale*100+'% !important}';document.getElementById('sizeLbl').textContent=Math.round(scale*100)+'%';}
+function resetSize(){scale=1;document.getElementById('sizeOverride').textContent='';document.getElementById('sizeLbl').textContent='100%';}
+function toggleDark(){document.body.classList.toggle('dark');var b=document.getElementById('darkBtn');b.textContent=document.body.classList.contains('dark')?'☀️ Light Mode':'🌙 Dark Mode';}
+</script>
+</body>
+</html>
