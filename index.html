@@ -3,810 +3,328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parmar Railway Notes | Hand-Written Notes Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<title>Parmar Railway Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0a0a14;--surface:#12121f;--card:#1e2a3a;--card2:#162030;
---accent:#ffd54f;--accent2:#80cbc4;--accent3:#f39c12;
---text:#e8e8f0;--text-dim:#9ca3af;--text-muted:#6b7280;
---border:#2d3748;--success:#10b981;--danger:#ef4444;--info:#3b82f6;
---radius:12px;--shadow:0 4px 20px rgba(0,0,0,.3);
-}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
-a{color:var(--accent2);text-decoration:none}
-a:hover{text-decoration:underline}
-</style>
-<style>
-/* HEADER */
-.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:20px 24px;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
-.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.header-brand{display:flex;align-items:center;gap:12px}
-.header-title{font-family:'Kalam',cursive;font-size:1.5rem;color:var(--accent)}
-.header-subtitle{font-size:.8rem;color:var(--text-dim)}
-.header-stats{display:flex;gap:16px}
-.stat-pill{font-size:.8rem;color:var(--text-dim);background:var(--card);padding:6px 12px;border-radius:20px;border:1px solid var(--border)}
-.stat-pill strong{color:var(--accent2);margin-right:4px}
-</style>
-
-<style>
-/* TOOLBAR */
-.toolbar{max-width:1400px;margin:20px auto;padding:0 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.search-box{flex:1;min-width:200px;position:relative}
-.search-box input{width:100%;padding:10px 14px 10px 38px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.9rem;outline:none;font-family:'Inter',sans-serif}
-.search-box input:focus{border-color:var(--accent)}
-.search-box::before{content:'🔍';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.85rem}
-.filter-select{padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.85rem;outline:none;cursor:pointer}
-.filter-select:focus{border-color:var(--accent)}
-.view-modes{display:flex;gap:4px}
-.view-btn{width:38px;height:38px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.view-btn:hover{border-color:var(--accent);color:var(--accent)}
-.view-btn.active{background:var(--accent);color:#1a1a2e;border-color:var(--accent)}
-</style>
-
-<style>
-/* FOLDER TABS */
-.folder-tabs{max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;gap:8px;flex-wrap:wrap}
-.folder-tab{padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);font-size:.82rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;font-weight:500}
-.folder-tab:hover{border-color:var(--accent);color:var(--text)}
-.folder-tab.active{background:var(--accent);color:#1a1a2e;border-color:var(--accent);font-weight:600}
-.folder-tab .tab-icon{font-size:1rem}
-.folder-tab .tab-count{font-size:.7rem;opacity:.7;margin-left:2px}
-</style>
-<style>
-/* BREADCRUMB */
-.breadcrumb{max-width:1400px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-muted)}
-.breadcrumb a{color:var(--accent2);cursor:pointer}
-.breadcrumb a:hover{text-decoration:underline}
-.breadcrumb .sep{color:var(--text-muted)}
-.breadcrumb .current{color:var(--text)}
-</style>
-
-<style>
-/* MAIN CONTENT AREA */
-.content-area{max-width:1400px;margin:0 auto;padding:20px 24px}
-
-/* GRID VIEW */
-.grid-view{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.file-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;transition:all .2s;cursor:pointer;overflow:hidden}
-.file-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.file-card .card-accent{position:absolute;top:0;left:0;right:0;height:4px}
-.file-card .card-icon{font-size:2.2rem;margin-bottom:12px}
-.file-card .card-title{font-family:'Kalam',cursive;font-size:1.05rem;color:var(--text);margin-bottom:8px;line-height:1.3}
-.file-card .card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.file-card .type-badge{padding:3px 8px;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase}
-.type-badge.html{background:rgba(16,185,129,.15);color:#10b981}
-.type-badge.pdf{background:rgba(239,68,68,.15);color:#ef4444}
-.file-card .card-size{font-size:.75rem;color:var(--text-muted)}
-.file-card .card-folder{font-size:.72rem;padding:3px 8px;border-radius:10px;border:1px solid;display:inline-flex;align-items:center;gap:4px}
-</style>
-
-<style>
-/* CARD VIEW */
-.card-view{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-.card-view .file-card{padding:14px;display:flex;align-items:center;gap:14px}
-.card-view .file-card .card-icon{font-size:1.6rem;margin-bottom:0;flex-shrink:0}
-.card-view .file-card .card-info{flex:1;min-width:0}
-.card-view .file-card .card-title{font-size:.9rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-view .file-card .card-accent{height:3px}
-
-/* LIST VIEW */
-.list-view{display:flex;flex-direction:column;gap:4px}
-.list-item{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s}
-.list-item:hover{border-color:var(--accent);background:var(--card2)}
-.list-item .li-icon{font-size:1.2rem;flex-shrink:0}
-.list-item .li-name{flex:1;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.list-item .li-type{flex-shrink:0}
-.list-item .li-size{font-size:.75rem;color:var(--text-muted);width:60px;text-align:right;flex-shrink:0}
-.list-item .li-folder{font-size:.7rem;padding:2px 8px;border-radius:8px;border:1px solid;flex-shrink:0}
-</style>
-
-<style>
-/* EXPLORER VIEW */
-.explorer-view{display:flex;flex-direction:column;gap:16px}
-.explorer-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.explorer-section-header{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--surface);border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;user-select:none}
-.explorer-section-header:hover{background:rgba(255,213,79,.03)}
-.explorer-section-header .esh-icon{font-size:1.2rem}
-.explorer-section-header .esh-name{font-family:'Kalam',cursive;font-size:1rem;flex:1}
-.explorer-section-header .esh-count{font-size:.75rem;color:var(--text-muted);background:var(--card);padding:3px 10px;border-radius:10px}
-.explorer-section-header .esh-chevron{font-size:.8rem;color:var(--text-muted);transition:transform .2s}
-.explorer-section-header.collapsed .esh-chevron{transform:rotate(-90deg)}
-.explorer-section-body{padding:8px}
-.explorer-section-body.collapsed{display:none}
-.explorer-file{display:flex;align-items:center;gap:12px;padding:8px 14px;border-radius:8px;cursor:pointer;transition:background .15s}
-.explorer-file:hover{background:rgba(255,213,79,.05)}
-.explorer-file .ef-icon{font-size:1rem}
-.explorer-file .ef-name{flex:1;font-size:.85rem}
-.explorer-file .ef-badge{flex-shrink:0}
-.explorer-file .ef-size{font-size:.73rem;color:var(--text-muted);flex-shrink:0}
-/* Section color accent */
-.explorer-section .section-accent{width:4px;height:100%;position:absolute;left:0;top:0}
-</style>
-
-<style>
-/* FOLDER SECTION HEADERS (for "All" view) */
-.folder-section-header{display:flex;align-items:center;gap:10px;padding:12px 0 8px;margin-top:16px;border-bottom:1px solid var(--border)}
-.folder-section-header:first-child{margin-top:0}
-.folder-section-header .fsh-icon{font-size:1.2rem}
-.folder-section-header .fsh-name{font-family:'Kalam',cursive;font-size:1.1rem;color:var(--accent2)}
-.folder-section-header .fsh-count{font-size:.75rem;color:var(--text-muted);margin-left:auto}
-.folder-section-header .fsh-bar{width:4px;height:24px;border-radius:2px;flex-shrink:0}
-
-/* PDF MODAL */
-.pdf-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column}
-.pdf-modal-overlay.open{display:flex}
-.pdf-modal-header{display:flex;align-items:center;gap:12px;padding:12px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius) var(--radius) 0 0;width:100%;max-width:1000px}
-.pdf-modal-header .pm-title{flex:1;font-size:.9rem;color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pdf-modal-header .pm-btn{padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.8rem;cursor:pointer;transition:all .15s}
-.pdf-modal-header .pm-btn:hover{border-color:var(--accent);color:var(--accent)}
-.pdf-modal-body{flex:1;width:100%;max-width:1000px;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);overflow:hidden;min-height:0}
-.pdf-modal-body object,.pdf-modal-body iframe{width:100%;height:100%;border:none}
-</style>
-
-<style>
-/* FOOTER */
-.site-footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;margin-top:40px;text-align:center}
-.footer-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-.footer-link{font-size:.82rem;color:var(--text-dim);display:flex;align-items:center;gap:6px;transition:color .15s}
-.footer-link:hover{color:var(--accent2)}
-.footer-powered{font-size:.75rem;color:var(--text-muted)}
-
-/* EMPTY STATE */
-.empty-state{text-align:center;padding:60px 20px;color:var(--text-dim)}
-.empty-state .es-icon{font-size:3rem;margin-bottom:12px}
-.empty-state .es-text{font-size:1rem}
-
-/* LOADING */
-.loading-spinner{display:flex;align-items:center;justify-content:center;padding:60px;flex-direction:column;gap:16px}
-.loading-spinner .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-spinner .load-text{font-size:.9rem;color:var(--text-dim)}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:#4a5568}
-</style>
-
-<style>
-/* RESPONSIVE */
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;display:flex;flex-direction:column}
+.top-bar{background:#161b22;border-bottom:1px solid #30363d;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;position:sticky;top:0;z-index:100}
+.top-bar-left{display:flex;flex-direction:column;gap:4px}
+.site-name{font-size:16px;font-weight:700;color:#ffd54f}
+.breadcrumb{font-size:13px;color:#8b949e;display:flex;align-items:center;gap:6px}
+.bc-link{cursor:pointer;color:#58a6ff;transition:color .2s}
+.bc-link:hover{color:#79c0ff}
+.bc-sep{color:#484f58}
+.bc-current{color:#e6edf3}
+.top-bar-right{display:flex;align-items:center}
+.search-box{display:flex;align-items:center;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:6px 12px;gap:8px;transition:border-color .2s}
+.search-box:focus-within{border-color:#58a6ff}
+.search-icon{color:#8b949e;flex-shrink:0}
+.search-box input{background:none;border:none;color:#e6edf3;font-size:14px;outline:none;width:180px;font-family:inherit}
+.search-box input::placeholder{color:#484f58}
+.main-content{flex:1;padding:24px;max-width:1200px;margin:0 auto;width:100%}
+.home-view{animation:fadeIn .3s ease}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.section-header h2{font-size:22px;font-weight:600}
+.folder-total{color:#8b949e;font-size:14px}
+.folder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px}
+.folder-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px 12px;text-align:center;cursor:pointer;transition:all .2s ease;position:relative;overflow:hidden}
+.folder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--folder-color);opacity:0.8}
+.folder-card:hover{transform:translateY(-4px);border-color:var(--folder-color);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.folder-icon{font-size:48px;margin-bottom:10px}
+.folder-name{font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:4px;word-break:break-word}
+.folder-count{font-size:11px;color:#8b949e}
+.folder-view{animation:fadeIn .3s ease}
+.folder-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.back-btn{display:flex;align-items:center;gap:4px;background:#21262d;border:1px solid #30363d;border-radius:8px;padding:8px 14px;color:#e6edf3;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
+.back-btn:hover{background:#30363d;border-color:#58a6ff}
+.folder-title{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:600}
+.folder-title-icon{font-size:24px}
+.file-count-badge{font-size:12px;font-weight:500;color:#8b949e;background:#21262d;border-radius:12px;padding:3px 10px}
+.view-toggle{margin-left:auto;display:flex;gap:4px}
+.toggle-btn{background:#21262d;border:1px solid #30363d;border-radius:6px;padding:6px 8px;cursor:pointer;color:#8b949e;transition:all .2s}
+.toggle-btn.active{color:#e6edf3;border-color:#58a6ff;background:#161b22}
+.toggle-btn:hover{color:#e6edf3}
+.file-list{display:flex;flex-direction:column;gap:4px}
+.file-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#161b22;border:1px solid #30363d;border-radius:10px;cursor:pointer;transition:all .2s}
+.file-row:hover{background:#21262d;border-color:#484f58;transform:translateX(4px)}
+.file-row-icon{font-size:28px;flex-shrink:0}
+.file-row-info{flex:1;min-width:0}
+.file-row-name{font-size:14px;font-weight:500;color:#e6edf3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-row-meta{font-size:12px;color:#8b949e;margin-top:2px}
+.type-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0}
+.badge-html{background:#1a3a2a;color:#3fb950}
+.badge-pdf{background:#3d1a1a;color:#f85149}
+.file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.file-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all .2s}
+.file-card:hover{background:#21262d;border-color:#484f58;transform:translateY(-2px)}
+.file-card-icon{font-size:36px;margin-bottom:8px}
+.file-card-name{font-size:12px;font-weight:500;color:#e6edf3;margin-bottom:6px;word-break:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.file-card-meta{font-size:11px;color:#8b949e}
+.empty-state{text-align:center;padding:48px;color:#8b949e;font-size:15px}
+.pdf-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.pdf-modal.active{display:flex}
+.pdf-container{background:#161b22;border:1px solid #30363d;border-radius:12px;width:100%;max-width:900px;height:85vh;display:flex;flex-direction:column;overflow:hidden}
+.pdf-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #30363d;gap:12px}
+.pdf-title{font-size:15px;font-weight:600;color:#e6edf3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pdf-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.pdf-newtab-btn{color:#58a6ff;font-size:13px;text-decoration:none}
+.pdf-newtab-btn:hover{text-decoration:underline}
+.pdf-close-btn{background:#21262d;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:18px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pdf-close-btn:hover{background:#f85149;border-color:#f85149}
+.pdf-frame{flex:1;border:none;width:100%}
+.footer{background:#161b22;border-top:1px solid #30363d;padding:16px 24px;text-align:center}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.footer-link{color:#58a6ff;text-decoration:none;font-size:13px}
+.footer-link:hover{text-decoration:underline}
+.footer-sep{color:#30363d}
+.footer-copy{font-size:12px;color:#484f58}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
-  .site-header{padding:14px 16px}
-  .header-title{font-size:1.2rem}
-  .header-stats{display:none}
-  .toolbar{padding:0 16px;gap:8px}
-  .search-box{min-width:140px}
-  .folder-tabs{padding:8px 16px;gap:6px}
-  .folder-tab{padding:6px 12px;font-size:.78rem}
-  .content-area{padding:16px}
-  .grid-view{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-  .breadcrumb{padding:6px 16px}
-  .footer-inner{flex-direction:column;gap:10px}
-  .pdf-modal-header{border-radius:0}
-  .pdf-modal-body{border-radius:0}
+.top-bar{padding:10px 16px}
+.main-content{padding:16px}
+.folder-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.folder-icon{font-size:36px}
+.folder-card{padding:16px 10px}
+.search-box input{width:120px}
+.folder-header{gap:10px}
+.folder-title{font-size:16px}
+.file-grid{grid-template-columns:repeat(2,1fr)}
+.file-row{padding:10px 12px;gap:10px}
+.pdf-container{height:90vh;border-radius:8px}
 }
 @media(max-width:480px){
-  .toolbar{flex-direction:column;align-items:stretch}
-  .view-modes{justify-content:center}
-  .grid-view{grid-template-columns:1fr}
-  .card-view{grid-template-columns:1fr}
-  .header-inner{justify-content:center;text-align:center}
-  .folder-tabs{justify-content:center}
+.folder-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.folder-icon{font-size:32px}
+.folder-name{font-size:12px}
+.top-bar{flex-direction:column;align-items:flex-start}
+.search-box{width:100%}
+.search-box input{width:100%}
+.view-toggle{margin-left:0}
 }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <div>
-        <div class="header-title" id="siteTitle">📚 Parmar Railway Notes</div>
-        <div class="header-subtitle" id="siteSubtitle">Hand-Written Notes Library</div>
-      </div>
-    </div>
-    <div class="header-stats">
-      <span class="stat-pill"><strong id="totalFiles">0</strong> Files</span>
-      <span class="stat-pill"><strong id="totalFolders">0</strong> Folders</span>
-    </div>
-  </div>
-</header>
-
-<!-- TOOLBAR -->
-<div class="toolbar">
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search files..." oninput="applyFilters()">
-  </div>
-  <select class="filter-select" id="typeFilter" onchange="applyFilters()">
-    <option value="all">All Types</option>
-    <option value="html">HTML</option>
-    <option value="pdf">PDF</option>
-  </select>
-  <div class="view-modes">
-    <button class="view-btn" data-view="list" onclick="setView('list')" title="List View">📋</button>
-    <button class="view-btn" data-view="card" onclick="setView('card')" title="Card View">🗂️</button>
-    <button class="view-btn active" data-view="grid" onclick="setView('grid')" title="Grid View">🔲</button>
-    <button class="view-btn" data-view="explorer" onclick="setView('explorer')" title="Explorer View">📁</button>
-  </div>
-</div>
-
-<!-- FOLDER TABS -->
-<div class="folder-tabs" id="folderTabs"></div>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb" id="breadcrumb">
-  <a onclick="selectFolder('all')">Home</a>
-  <span class="sep">›</span>
-  <span class="current">All Files</span>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="content-area" id="contentArea">
-  <div class="loading-spinner" id="loadingState">
-    <div class="spinner"></div>
-    <div class="load-text">Loading notes library...</div>
-  </div>
-</div>
-
-<!-- PDF MODAL -->
-<div class="pdf-modal-overlay" id="pdfModal">
-  <div class="pdf-modal-header">
-    <span class="pm-title" id="pdfModalTitle">Document</span>
-    <button class="pm-btn" id="pdfNewTabBtn" onclick="openPdfNewTab()">↗ Open in New Tab</button>
-    <button class="pm-btn" onclick="closePdfModal()">✕ Close</button>
-  </div>
-  <div class="pdf-modal-body" id="pdfModalBody"></div>
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <a href="https://t.me/Exam_Zen_StudySync" target="_blank" class="footer-link" id="footerTelegram">✈️ Join Telegram Channel</a>
-    <a href="https://github.com/purendar950/Hand-written-notes-sample-" target="_blank" class="footer-link">🐙 GitHub Repository</a>
-    <span class="footer-powered">Powered by GitHub Pages</span>
-  </div>
-</footer>
-
+<div id="app"></div>
 <script>
-// ============ CONFIG ============
 const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
 const CONFIG_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
 const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
 
-// ============ STATE ============
-let config = {};
 let folders = [];
 let fileAssignments = {};
 let hiddenFiles = [];
 let displayNames = {};
-let repoFiles = [];
-let currentFolder = 'all';
-let currentView = 'grid';
-let currentPdfUrl = '';
+let allFiles = [];
+let currentFolder = null;
+let viewMode = 'list';
+let siteName = 'Parmar Railway Notes';
+let siteSubtitle = 'Hand-Written Notes Library';
+let telegramLink = 'https://t.me/Exam_Zen_StudySync';
+let searchQuery = '';
+const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
 
-// ============ INIT ============
-async function init() {
-  try {
-    await loadConfig();
-    await loadFiles();
-    renderAll();
-  } catch(e) {
-    console.error('Init error:', e);
-    document.getElementById('loadingState').innerHTML = `
-      <div class="empty-state">
-        <div class="es-icon">⚠️</div>
-        <div class="es-text">Failed to load library. Please refresh.</div>
-      </div>`;
-  }
-}
-</script>
-
-<script>
 async function loadConfig() {
-  // PRIORITY 1: Read from localStorage (same device as manager = always up to date)
   const localFolders = localStorage.getItem('mgr_folders');
   const localAssignments = localStorage.getItem('mgr_assignments');
-  
   if (localFolders && localAssignments) {
-    // Manager data exists on this device — use it (always latest)
     folders = JSON.parse(localFolders);
     fileAssignments = JSON.parse(localAssignments);
     hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
     displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
     const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
-    const title = s.siteName || 'Parmar Railway Notes';
-    const subtitle = s.siteSubtitle || 'Hand-Written Notes Library';
-    document.getElementById('siteTitle').textContent = '📚 ' + title;
-    document.getElementById('siteSubtitle').textContent = subtitle;
-    document.title = title + ' | ' + subtitle;
+    if (s.siteName) siteName = s.siteName;
+    if (s.siteSubtitle) siteSubtitle = s.siteSubtitle;
+    if (s.telegramLink) telegramLink = s.telegramLink;
     return;
   }
-  
-  // PRIORITY 2: Fetch from config.json in repo (for other visitors)
   try {
     const res = await fetch(CONFIG_URL);
-    if (!res.ok) throw new Error('Config fetch failed');
-    config = await res.json();
-    folders = config.folders || [];
-    fileAssignments = config.fileAssignments || {};
-    hiddenFiles = config.hiddenFiles || [];
-    displayNames = config.displayNames || {};
-    const title = config.siteName || 'Parmar Railway Notes';
-    const subtitle = config.siteSubtitle || 'Hand-Written Notes Library';
-    document.getElementById('siteTitle').textContent = '📚 ' + title;
-    document.getElementById('siteSubtitle').textContent = subtitle;
-    document.title = title + ' | ' + subtitle;
-  } catch(e) {
-    // No config available — continue with empty folders (flat view)
-    console.warn('Config load failed:', e);
-  }
+    if (res.ok) {
+      const data = await res.json();
+      folders = data.folders || [];
+      fileAssignments = data.fileAssignments || {};
+      hiddenFiles = data.hiddenFiles || [];
+      displayNames = data.displayNames || {};
+      if (data.siteName) siteName = data.siteName;
+      if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
+      if (data.telegramLink) telegramLink = data.telegramLink;
+    }
+  } catch(e) { console.error('Config load failed:', e); }
 }
 
 async function loadFiles() {
-  const res = await fetch(API_URL);
-  if (!res.ok) throw new Error('API fetch failed');
-  const data = await res.json();
-  const excluded = ['index.html', 'manager.html', 'config.json'];
-  repoFiles = data.filter(f => 
-    f.type === 'file' && 
-    /\.(html|pdf)$/i.test(f.name) && 
-    !excluded.includes(f.name.toLowerCase()) &&
-    !hiddenFiles.includes(f.name)
-  );
+  try {
+    const res = await fetch(API_URL);
+    if (res.ok) {
+      const data = await res.json();
+      allFiles = data.filter(f => f.type === 'file')
+        .filter(f => !EXCLUDED_FILES.includes(f.name))
+        .filter(f => !hiddenFiles.includes(f.name))
+        .filter(f => !f.name.startsWith('.'));
+    }
+  } catch(e) { console.error('Files load failed:', e); allFiles = []; }
 }
-</script>
 
-<script>
-// ============ HELPERS ============
+function getFileIcon(name) {
+  const n = name.toLowerCase();
+  if (n.includes('music')) return '\u{1F3B5}';
+  if (n.includes('festival')) return '\u{1F389}';
+  if (n.includes('culture') || n.includes('architecture')) return '\u{1F3DB}\uFE0F';
+  if (n.includes('book') || n.includes('author')) return '\u{1F4DA}';
+  if (n.includes('current') || n.includes('affairs') || n.includes('gk')) return '\u{1F4F0}';
+  if (n.includes('sample') || n.includes('hand')) return '\u270D\uFE0F';
+  if (n.endsWith('.pdf')) return '\u{1F4D5}';
+  return '\u{1F4C4}';
+}
+
+function getFileType(name) {
+  if (name.endsWith('.pdf')) return 'PDF';
+  if (name.endsWith('.html') || name.endsWith('.htm')) return 'HTML';
+  return 'FILE';
+}
+
+function getDisplayName(filename) {
+  if (displayNames[filename]) return displayNames[filename];
+  return filename.replace(/\.(html|htm|pdf)$/i, '');
+}
+
 function getFileUrl(filename) {
   const host = window.location.hostname;
   if (host.includes('github.io')) return './' + encodeURIComponent(filename);
   return `https://${REPO_OWNER}.github.io/${REPO_NAME}/` + encodeURIComponent(filename);
 }
 
-function getFileType(name) {
-  return name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'html';
-}
-
-function getFileIcon(name) {
-  const lower = name.toLowerCase();
-  if (lower.includes('music')) return '🎵';
-  if (lower.includes('festival')) return '🎉';
-  if (lower.includes('culture') || lower.includes('architecture') || lower.includes('heritage')) return '🏛️';
-  if (lower.includes('book') || lower.includes('author')) return '📚';
-  if (lower.includes('current') || lower.includes('affairs') || lower.includes('gk')) return '📰';
-  if (lower.includes('geography') || lower.includes('map')) return '🗺️';
-  if (lower.includes('history')) return '📜';
-  if (lower.includes('science')) return '🔬';
-  if (lower.includes('math')) return '📐';
-  if (lower.includes('polity') || lower.includes('constitution')) return '⚖️';
-  if (lower.includes('economy') || lower.includes('economic')) return '💰';
-  if (lower.includes('sample') || lower.includes('hand')) return '✍️';
-  if (lower.endsWith('.pdf')) return '📄';
-  return '📝';
-}
-
-function getDisplayName(filename) {
-  if (displayNames[filename]) return displayNames[filename];
-  return filename.replace(/\.(html|pdf)$/i, '');
-}
-
 function formatSize(bytes) {
-  if (!bytes) return '—';
+  if (!bytes) return '';
   if (bytes < 1024) return bytes + ' B';
-  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
-}
-
-function getFolderForFile(filename) {
-  const folderId = fileAssignments[filename];
-  if (!folderId) return null;
-  return folders.find(f => f.id === folderId) || null;
+  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1048576).toFixed(1) + ' MB';
 }
 
 function getFilesInFolder(folderId) {
-  return repoFiles.filter(f => {
-    const assigned = fileAssignments[f.name];
-    if (folderId === 'unassigned') return !assigned;
-    return assigned === folderId;
-  });
-}
-</script>
-
-<script>
-// ============ RENDER ============
-function renderAll() {
-  document.getElementById('loadingState').style.display = 'none';
-  document.getElementById('totalFiles').textContent = repoFiles.length;
-  document.getElementById('totalFolders').textContent = folders.length;
-  renderFolderTabs();
-  renderContent();
+  return allFiles.filter(f => fileAssignments[f.name] === folderId);
 }
 
-function renderFolderTabs() {
-  const container = document.getElementById('folderTabs');
-  let html = `<button class="folder-tab ${currentFolder === 'all' ? 'active' : ''}" onclick="selectFolder('all')">
-    <span class="tab-icon">📂</span> All <span class="tab-count">(${repoFiles.length})</span>
-  </button>`;
-  
-  folders.forEach(folder => {
-    const count = getFilesInFolder(folder.id).length;
-    if (count === 0) return;
-    html += `<button class="folder-tab ${currentFolder === folder.id ? 'active' : ''}" onclick="selectFolder('${folder.id}')" style="--folder-color:${folder.color}">
-      <span class="tab-icon">${folder.icon}</span> ${folder.name} <span class="tab-count">(${count})</span>
-    </button>`;
-  });
-  
-  // Unassigned
-  const unassigned = getFilesInFolder('unassigned');
-  if (unassigned.length > 0) {
-    html += `<button class="folder-tab ${currentFolder === 'unassigned' ? 'active' : ''}" onclick="selectFolder('unassigned')">
-      <span class="tab-icon">📂</span> Other <span class="tab-count">(${unassigned.length})</span>
-    </button>`;
-  }
-  
-  container.innerHTML = html;
-}
-
-function updateBreadcrumb() {
-  const bc = document.getElementById('breadcrumb');
-  let html = `<a onclick="selectFolder('all')">Home</a><span class="sep">›</span>`;
-  if (currentFolder === 'all') {
-    html += `<span class="current">All Files</span>`;
-  } else if (currentFolder === 'unassigned') {
-    html += `<span class="current">Other Files</span>`;
-  } else {
-    const folder = folders.find(f => f.id === currentFolder);
-    if (folder) {
-      html += `<span class="current">${folder.icon} ${folder.name}</span>`;
-    }
-  }
-  bc.innerHTML = html;
-}
-</script>
-
-<script>
-function getFilteredFiles() {
-  const search = document.getElementById('searchInput').value.toLowerCase().trim();
-  const typeFilter = document.getElementById('typeFilter').value;
-  
-  let files = [...repoFiles];
-  
-  // Folder filter
-  if (currentFolder !== 'all') {
-    files = getFilesInFolder(currentFolder);
-  }
-  
-  // Search filter
-  if (search) {
-    files = files.filter(f => {
-      const name = getDisplayName(f.name).toLowerCase();
-      return name.includes(search) || f.name.toLowerCase().includes(search);
-    });
-  }
-  
-  // Type filter
-  if (typeFilter !== 'all') {
-    files = files.filter(f => getFileType(f.name) === typeFilter);
-  }
-  
-  return files;
-}
-
-function renderContent() {
-  updateBreadcrumb();
-  const container = document.getElementById('contentArea');
-  const files = getFilteredFiles();
-  
-  if (files.length === 0) {
-    container.innerHTML = `<div class="empty-state"><div class="es-icon">📭</div><div class="es-text">No files found</div></div>`;
-    return;
-  }
-  
-  switch(currentView) {
-    case 'list': renderListView(container, files); break;
-    case 'card': renderCardView(container, files); break;
-    case 'grid': renderGridView(container, files); break;
-    case 'explorer': renderExplorerView(container, files); break;
-    default: renderGridView(container, files);
-  }
-}
-</script>
-
-<script>
-function renderGridView(container, files) {
-  if (currentFolder === 'all') {
-    container.innerHTML = renderGroupedGrid(files);
-  } else {
-    let html = '<div class="grid-view">';
-    files.forEach(f => { html += renderGridCard(f); });
-    html += '</div>';
-    container.innerHTML = html;
-  }
-}
-
-function renderGroupedGrid(files) {
-  let html = '';
-  // Group by folder
-  const groups = {};
-  folders.forEach(folder => {
-    const folderFiles = files.filter(f => fileAssignments[f.name] === folder.id);
-    if (folderFiles.length > 0) groups[folder.id] = { folder, files: folderFiles };
-  });
-  // Unassigned
-  const unassigned = files.filter(f => !fileAssignments[f.name]);
-  if (unassigned.length > 0) groups['unassigned'] = { folder: { id: 'unassigned', name: 'Other', icon: '📂', color: '#6b7280' }, files: unassigned };
-  
-  Object.values(groups).forEach(group => {
-    html += `<div class="folder-section-header">
-      <div class="fsh-bar" style="background:${group.folder.color}"></div>
-      <span class="fsh-icon">${group.folder.icon}</span>
-      <span class="fsh-name">${group.folder.name}</span>
-      <span class="fsh-count">${group.files.length} files</span>
-    </div>`;
-    html += '<div class="grid-view" style="margin-bottom:24px">';
-    group.files.forEach(f => { html += renderGridCard(f); });
-    html += '</div>';
-  });
-  return html;
-}
-
-function renderGridCard(file) {
-  const type = getFileType(file.name);
-  const icon = getFileIcon(file.name);
-  const name = getDisplayName(file.name);
-  const folder = getFolderForFile(file.name);
-  const folderColor = folder ? folder.color : '#6b7280';
-  
-  return `<div class="file-card" onclick="openFile('${escapeAttr(file.name)}')">
-    <div class="card-accent" style="background:${folderColor}"></div>
-    <div class="card-icon">${icon}</div>
-    <div class="card-title">${escapeHtml(name)}</div>
-    <div class="card-meta">
-      <span class="type-badge ${type}">${type}</span>
-      <span class="card-size">${formatSize(file.size)}</span>
-      ${folder ? `<span class="card-folder" style="border-color:${folder.color};color:${folder.color}">${folder.icon} ${folder.name}</span>` : ''}
-    </div>
-  </div>`;
-}
-</script>
-
-<script>
-function renderCardView(container, files) {
-  if (currentFolder === 'all') {
-    let html = '';
-    const groups = getGroupedFiles(files);
-    Object.values(groups).forEach(group => {
-      html += `<div class="folder-section-header">
-        <div class="fsh-bar" style="background:${group.folder.color}"></div>
-        <span class="fsh-icon">${group.folder.icon}</span>
-        <span class="fsh-name">${group.folder.name}</span>
-        <span class="fsh-count">${group.files.length} files</span>
-      </div>`;
-      html += '<div class="card-view" style="margin-bottom:20px">';
-      group.files.forEach(f => { html += renderMediumCard(f); });
-      html += '</div>';
-    });
-    container.innerHTML = html;
-  } else {
-    let html = '<div class="card-view">';
-    files.forEach(f => { html += renderMediumCard(f); });
-    html += '</div>';
-    container.innerHTML = html;
-  }
-}
-
-function renderMediumCard(file) {
-  const type = getFileType(file.name);
-  const icon = getFileIcon(file.name);
-  const name = getDisplayName(file.name);
-  const folder = getFolderForFile(file.name);
-  const folderColor = folder ? folder.color : '#6b7280';
-  
-  return `<div class="file-card" onclick="openFile('${escapeAttr(file.name)}')">
-    <div class="card-accent" style="background:${folderColor}"></div>
-    <div class="card-icon">${icon}</div>
-    <div class="card-info">
-      <div class="card-title">${escapeHtml(name)}</div>
-      <div class="card-meta">
-        <span class="type-badge ${type}">${type}</span>
-        <span class="card-size">${formatSize(file.size)}</span>
-        ${folder ? `<span class="card-folder" style="border-color:${folder.color};color:${folder.color}">${folder.icon} ${folder.name}</span>` : ''}
-      </div>
-    </div>
-  </div>`;
-}
-</script>
-
-<script>
-function renderListView(container, files) {
-  if (currentFolder === 'all') {
-    let html = '';
-    const groups = getGroupedFiles(files);
-    Object.values(groups).forEach(group => {
-      html += `<div class="folder-section-header">
-        <div class="fsh-bar" style="background:${group.folder.color}"></div>
-        <span class="fsh-icon">${group.folder.icon}</span>
-        <span class="fsh-name">${group.folder.name}</span>
-        <span class="fsh-count">${group.files.length} files</span>
-      </div>`;
-      html += '<div class="list-view" style="margin-bottom:16px">';
-      group.files.forEach(f => { html += renderListItem(f); });
-      html += '</div>';
-    });
-    container.innerHTML = html;
-  } else {
-    let html = '<div class="list-view">';
-    files.forEach(f => { html += renderListItem(f); });
-    html += '</div>';
-    container.innerHTML = html;
-  }
-}
-
-function renderListItem(file) {
-  const type = getFileType(file.name);
-  const icon = getFileIcon(file.name);
-  const name = getDisplayName(file.name);
-  const folder = getFolderForFile(file.name);
-  
-  return `<div class="list-item" onclick="openFile('${escapeAttr(file.name)}')">
-    <span class="li-icon">${icon}</span>
-    <span class="li-name">${escapeHtml(name)}</span>
-    <span class="li-type"><span class="type-badge ${type}">${type}</span></span>
-    <span class="li-size">${formatSize(file.size)}</span>
-    ${folder ? `<span class="li-folder" style="border-color:${folder.color};color:${folder.color}">${folder.icon} ${folder.name}</span>` : ''}
-  </div>`;
-}
-</script>
-
-<script>
-function renderExplorerView(container, files) {
-  let html = '<div class="explorer-view">';
-  const groups = getGroupedFiles(files);
-  
-  Object.values(groups).forEach(group => {
-    const sectionId = 'exp-' + group.folder.id;
-    html += `<div class="explorer-section">
-      <div class="explorer-section-header" onclick="toggleSection('${sectionId}')" style="border-left:4px solid ${group.folder.color}">
-        <span class="esh-icon">${group.folder.icon}</span>
-        <span class="esh-name">${group.folder.name}</span>
-        <span class="esh-count">${group.files.length} files</span>
-        <span class="esh-chevron">▼</span>
-      </div>
-      <div class="explorer-section-body" id="${sectionId}">`;
-    
-    group.files.forEach(f => {
-      const type = getFileType(f.name);
-      const icon = getFileIcon(f.name);
-      const name = getDisplayName(f.name);
-      html += `<div class="explorer-file" onclick="openFile('${escapeAttr(f.name)}')">
-        <span class="ef-icon">${icon}</span>
-        <span class="ef-name">${escapeHtml(name)}</span>
-        <span class="ef-badge"><span class="type-badge ${type}">${type}</span></span>
-        <span class="ef-size">${formatSize(f.size)}</span>
-      </div>`;
-    });
-    
-    html += '</div></div>';
-  });
-  
-  html += '</div>';
-  container.innerHTML = html;
-}
-
-function toggleSection(id) {
-  const body = document.getElementById(id);
-  const header = body.previousElementSibling;
-  body.classList.toggle('collapsed');
-  header.classList.toggle('collapsed');
-}
-</script>
-
-<script>
-// ============ GROUPING HELPER ============
-function getGroupedFiles(files) {
-  const groups = {};
-  folders.forEach(folder => {
-    const folderFiles = files.filter(f => fileAssignments[f.name] === folder.id);
-    if (folderFiles.length > 0) groups[folder.id] = { folder, files: folderFiles };
-  });
-  const unassigned = files.filter(f => !fileAssignments[f.name]);
-  if (unassigned.length > 0) {
-    groups['unassigned'] = { folder: { id: 'unassigned', name: 'Other', icon: '📂', color: '#6b7280' }, files: unassigned };
-  }
-  return groups;
-}
-
-// ============ ACTIONS ============
-function selectFolder(folderId) {
-  currentFolder = folderId;
-  renderFolderTabs();
-  renderContent();
-}
-
-function setView(view) {
-  currentView = view;
-  document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.view === view);
-  });
-  renderContent();
-}
-
-function applyFilters() {
-  renderContent();
+function getUnassignedFiles() {
+  const assigned = Object.keys(fileAssignments);
+  return allFiles.filter(f => !assigned.includes(f.name));
 }
 
 function openFile(filename) {
-  const type = getFileType(filename);
   const url = getFileUrl(filename);
-  if (type === 'pdf') {
-    openPdfModal(filename, url);
-  } else {
-    window.open(url, '_blank');
-  }
+  const type = getFileType(filename);
+  if (type === 'PDF') { showPdfModal(filename, url); }
+  else { window.open(url, '_blank'); }
 }
-</script>
 
-<script>
-// ============ PDF MODAL ============
-function openPdfModal(filename, url) {
-  currentPdfUrl = url;
-  const modal = document.getElementById('pdfModal');
-  const title = document.getElementById('pdfModalTitle');
-  const body = document.getElementById('pdfModalBody');
-  
-  title.textContent = getDisplayName(filename);
-  body.innerHTML = `<object data="${url}" type="application/pdf" style="width:100%;height:100%">
-    <iframe src="${url}" style="width:100%;height:100%;border:none">
-      <p style="padding:40px;text-align:center;color:var(--text-dim)">
-        Unable to display PDF. <a href="${url}" target="_blank" style="color:var(--accent)">Download instead</a>
-      </p>
-    </iframe>
-  </object>`;
-  
-  modal.classList.add('open');
+function showPdfModal(filename, url) {
+  const modal = document.getElementById('pdf-modal');
+  document.getElementById('pdf-title').textContent = getDisplayName(filename);
+  document.getElementById('pdf-frame').src = url;
+  document.getElementById('pdf-newtab').href = url;
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closePdfModal() {
-  const modal = document.getElementById('pdfModal');
-  modal.classList.remove('open');
-  document.getElementById('pdfModalBody').innerHTML = '';
+  const modal = document.getElementById('pdf-modal');
+  modal.classList.remove('active');
+  document.getElementById('pdf-frame').src = '';
   document.body.style.overflow = '';
-  currentPdfUrl = '';
 }
 
-function openPdfNewTab() {
-  if (currentPdfUrl) window.open(currentPdfUrl, '_blank');
+function navigateToFolder(folder) {
+  currentFolder = folder;
+  searchQuery = '';
+  render();
 }
 
-// Keyboard & overlay close
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closePdfModal();
-});
-document.getElementById('pdfModal').addEventListener('click', e => {
-  if (e.target === document.getElementById('pdfModal')) closePdfModal();
-});
-</script>
-
-<script>
-// ============ ESCAPE HELPERS ============
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+function navigateHome() {
+  currentFolder = null;
+  searchQuery = '';
+  render();
 }
 
-function escapeAttr(str) {
-  return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = renderTopBar() + '<main class="main-content">' + (currentFolder ? renderFolderView() : renderHomeView()) + '</main>' + renderFooter() + renderPdfModal();
+  attachEvents();
 }
 
-// ============ START ============
+function renderTopBar() {
+  const breadcrumb = currentFolder
+    ? '<span class="bc-link" onclick="navigateHome()">\u{1F4C1} Home</span><span class="bc-sep">\u203A</span><span class="bc-current">' + (currentFolder.icon || '\u{1F4C1}') + ' ' + currentFolder.name + '</span>'
+    : '<span class="bc-current">\u{1F4C1} Home</span>';
+  return '<header class="top-bar"><div class="top-bar-left"><div class="site-name">' + siteName + '</div><div class="breadcrumb">' + breadcrumb + '</div></div><div class="top-bar-right"><div class="search-box"><svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="text" id="search-input" placeholder="Search files..." value="' + searchQuery + '"></div></div></header>';
+}
+
+function renderHomeView() {
+  const sortedFolders = [...folders].sort((a,b) => (a.order||99) - (b.order||99));
+  const unassigned = getUnassignedFiles();
+  let folderCards = sortedFolders.map(folder => {
+    const count = getFilesInFolder(folder.id).length;
+    const dataAttr = encodeURIComponent(JSON.stringify(folder));
+    return '<div class="folder-card" onclick="navigateToFolder(JSON.parse(decodeURIComponent(\'' + dataAttr + '\')))" style="--folder-color:' + (folder.color || '#ffd54f') + '"><div class="folder-icon">' + (folder.icon || '\u{1F4C1}') + '</div><div class="folder-name">' + folder.name + '</div><div class="folder-count">' + count + ' file' + (count !== 1 ? 's' : '') + '</div></div>';
+  }).join('');
+
+  if (unassigned.length > 0) {
+    const uData = encodeURIComponent(JSON.stringify({id:'__unassigned__',name:'Other Files',icon:'\u{1F4C2}',color:'#8b949e'}));
+    folderCards += '<div class="folder-card" onclick="navigateToFolder(JSON.parse(decodeURIComponent(\'' + uData + '\')))" style="--folder-color:#8b949e"><div class="folder-icon">\u{1F4C2}</div><div class="folder-name">Other Files</div><div class="folder-count">' + unassigned.length + ' file' + (unassigned.length !== 1 ? 's' : '') + '</div></div>';
+  }
+
+  return '<div class="home-view"><div class="section-header"><h2>\u{1F4C2} My Folders</h2><span class="folder-total">' + folders.length + ' folder' + (folders.length !== 1 ? 's' : '') + '</span></div><div class="folder-grid">' + folderCards + '</div></div>';
+}
+
+function renderFolderView() {
+  let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    files = files.filter(f => getDisplayName(f.name).toLowerCase().includes(q) || f.name.toLowerCase().includes(q));
+  }
+  const fileItems = files.map(f => {
+    const icon = getFileIcon(f.name);
+    const name = getDisplayName(f.name);
+    const type = getFileType(f.name);
+    const size = formatSize(f.size);
+    const typeClass = type === 'PDF' ? 'badge-pdf' : 'badge-html';
+    const escapedName = f.name.replace(/'/g, "\\'");
+    if (viewMode === 'grid') {
+      return '<div class="file-card" onclick="openFile(\'' + escapedName + '\')"><div class="file-card-icon">' + icon + '</div><div class="file-card-name">' + name + '</div><div class="file-card-meta"><span class="type-badge ' + typeClass + '">' + type + '</span>' + (size ? ' \u2022 ' + size : '') + '</div></div>';
+    }
+    return '<div class="file-row" onclick="openFile(\'' + escapedName + '\')"><div class="file-row-icon">' + icon + '</div><div class="file-row-info"><div class="file-row-name">' + name + '</div><div class="file-row-meta">' + size + '</div></div><span class="type-badge ' + typeClass + '">' + type + '</span></div>';
+  }).join('');
+
+  const backBtn = '<button class="back-btn" onclick="navigateHome()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>Back</button>';
+  const title = '<div class="folder-title"><span class="folder-title-icon">' + (currentFolder.icon || '\u{1F4C1}') + '</span><span>' + currentFolder.name + '</span><span class="file-count-badge">' + files.length + ' file' + (files.length !== 1 ? 's' : '') + '</span></div>';
+  const toggle = '<div class="view-toggle"><button class="toggle-btn ' + (viewMode==='list'?'active':'') + '" onclick="viewMode=\'list\';render();" title="List view"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button><button class="toggle-btn ' + (viewMode==='grid'?'active':'') + '" onclick="viewMode=\'grid\';render();" title="Grid view"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button></div>';
+
+  return '<div class="folder-view"><div class="folder-header">' + backBtn + title + toggle + '</div><div class="' + (viewMode === 'grid' ? 'file-grid' : 'file-list') + '">' + (fileItems || '<div class="empty-state">No files in this folder</div>') + '</div></div>';
+}
+
+function renderFooter() {
+  return '<footer class="footer"><div class="footer-links"><a href="' + telegramLink + '" target="_blank" class="footer-link">\u{1F4F1} Telegram Channel</a><span class="footer-sep">\u2022</span><a href="https://github.com/' + REPO_OWNER + '/' + REPO_NAME + '" target="_blank" class="footer-link">\u2B50 GitHub</a></div><div class="footer-copy">\u00A9 2026 ' + siteName + '</div></footer>';
+}
+
+function renderPdfModal() {
+  return '<div id="pdf-modal" class="pdf-modal" onclick="if(event.target===this)closePdfModal()"><div class="pdf-container"><div class="pdf-header"><span id="pdf-title" class="pdf-title"></span><div class="pdf-actions"><a id="pdf-newtab" href="#" target="_blank" class="pdf-newtab-btn">Open in New Tab \u2197</a><button class="pdf-close-btn" onclick="closePdfModal()">\u2715</button></div></div><iframe id="pdf-frame" class="pdf-frame" src=""></iframe></div></div>';
+}
+
+function attachEvents() {
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.addEventListener('input', (e) => { searchQuery = e.target.value; if (currentFolder) render(); });
+  }
+}
+
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePdfModal(); });
+
+async function init() {
+  await loadConfig();
+  await loadFiles();
+  render();
+}
 init();
 </script>
 </body>
