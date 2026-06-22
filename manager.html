@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Manager | Notes Library Control Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kalam:wght@400;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a14;--surface:#12121f;--surface2:#1a1a2e;--card:#1e2a3a;--accent:#ffd54f;--accent2:#80cbc4;--danger:#ef4444;--success:#10b981;--info:#3b82f6;--warn:#f59e0b;--text:#e8e8f0;--dim:#9ca3af;--muted:#6b7280;--border:#2d3748;--radius:12px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;left:-280px;z-index:500;transition:left .3s}.sidebar.open{left:0}.mob-toggle{display:flex!important}}
+
+/* SIDEBAR */
+.sidebar{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto}
+.sb-header{padding:20px;border-bottom:1px solid var(--border);text-align:center}
+.sb-logo{font-family:'Caveat Brush',cursive;font-size:1.4rem;color:var(--accent)}
+.sb-sub{font-size:.72rem;color:var(--dim);margin-top:2px}
+.sb-nav{padding:12px;flex:1}
+.sb-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:.88rem;color:var(--dim);transition:all .15s;margin-bottom:2px}
+.sb-item:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.sb-item.active{background:rgba(255,213,79,.1);color:var(--accent);font-weight:600}
+.sb-item .ico{font-size:1.1rem;width:24px;text-align:center}
+.sb-divider{height:1px;background:var(--border);margin:12px 0}
+.sb-section{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;padding:8px 14px;font-weight:600}
+
+/* TELEGRAM BOX */
+.tg-box{margin:12px;padding:14px;background:linear-gradient(135deg,#0088cc22,#0088cc11);border:1px solid #0088cc44;border-radius:10px;text-align:center}
+.tg-box .tg-icon{font-size:1.8rem;margin-bottom:6px}
+.tg-box .tg-title{font-size:.82rem;font-weight:600;color:#5bc8f5}
+.tg-box .tg-desc{font-size:.7rem;color:var(--dim);margin:4px 0 8px}
+.tg-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#0088cc;color:#fff;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none;transition:background .2s}
+.tg-btn:hover{background:#006fa3;text-decoration:none}
+
+/* MAIN */
+.main{display:flex;flex-direction:column;overflow-y:auto;max-height:100vh}
+.main-header{padding:20px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;background:var(--surface)}
+.mob-toggle{display:none;width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center}
+.main-title{font-family:'Kalam',cursive;font-size:1.4rem;color:var(--accent);flex:1}
+.main-actions{display:flex;gap:8px}
+.btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary{background:var(--accent);color:#1a1a2e;border-color:var(--accent);font-weight:600}
+.btn-primary:hover{background:#ffca28;color:#0a0a14}
+.btn-danger{border-color:var(--danger);color:var(--danger)}
+.btn-danger:hover{background:var(--danger);color:#fff}
+.btn-success{border-color:var(--success);color:var(--success)}
+.btn-success:hover{background:var(--success);color:#fff}
+
+/* CONTENT */
+.content{flex:1;padding:24px 28px;overflow-y:auto}
+
+/* FOLDER TREE */
+.folder-section{margin-bottom:24px}
+.folder-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.folder-header h3{font-size:1rem;font-weight:600;color:var(--text)}
+.folder-tree{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.folder-row{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .1s;cursor:pointer}
+.folder-row:last-child{border-bottom:none}
+.folder-row:hover{background:rgba(255,255,255,.03)}
+.folder-row.selected{background:rgba(255,213,79,.08);border-left:3px solid var(--accent)}
+.folder-row .f-icon{font-size:1.1rem;width:24px;text-align:center}
+.folder-row .f-name{flex:1;font-size:.88rem;font-weight:500}
+.folder-row .f-count{font-size:.75rem;color:var(--muted);background:rgba(255,255,255,.05);padding:2px 8px;border-radius:10px}
+.folder-row .f-actions{display:flex;gap:4px;opacity:0;transition:opacity .15s}
+.folder-row:hover .f-actions{opacity:1}
+.f-actions button{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.f-actions button:hover{color:var(--accent);border-color:var(--accent)}
+
+/* FILE LIST TABLE */
+.file-table{width:100%;border-collapse:collapse;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.file-table th{text-align:left;padding:12px 16px;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:rgba(0,0,0,.2);font-weight:600;border-bottom:1px solid var(--border)}
+.file-table td{padding:10px 16px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle}
+.file-table tr:hover td{background:rgba(255,255,255,.02)}
+.file-table .fname{display:flex;align-items:center;gap:10px;font-weight:500}
+.file-table .fname .ico{font-size:1.1rem}
+.file-table .fbadge{padding:2px 8px;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase}
+.fbadge.html{background:rgba(16,185,129,.15);color:#10b981}
+.fbadge.pdf{background:rgba(239,68,68,.15);color:#ef4444}
+.file-table .fsize{color:var(--muted);font-size:.8rem}
+.file-table .ffolder{color:var(--dim);font-size:.8rem}
+.file-table .fact{display:flex;gap:4px}
+.fact button{width:30px;height:30px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.fact button:hover{color:var(--accent);border-color:var(--accent)}
+.fact button.del:hover{color:var(--danger);border-color:var(--danger)}
+.checkbox{width:18px;height:18px;border-radius:4px;border:2px solid var(--border);cursor:pointer;appearance:none;-webkit-appearance:none;background:transparent;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.checkbox:checked{background:var(--accent);border-color:var(--accent)}
+.checkbox:checked::after{content:'✓';color:#1a1a2e;font-size:.7rem;font-weight:700}
+
+/* MODALS */
+.modal-bg{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:900;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.show{display:flex}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;width:100%;max-width:460px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.modal-box h3{font-family:'Kalam',cursive;color:var(--accent);margin-bottom:16px;font-size:1.2rem}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.8rem;color:var(--dim);margin-bottom:6px;font-weight:500}
+.form-group input,.form-group select{width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.88rem;font-family:'Inter',sans-serif;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent)}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+
+/* STATS CARDS */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
+.stat-card .s-value{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-card .s-label{font-size:.75rem;color:var(--dim);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:10px;background:var(--success);color:#fff;font-size:.85rem;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:999;display:none;animation:slideIn .3s ease}
+@keyframes slideIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+</style>
+</head>
+<body>
+
+
+<div class="layout">
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <div class="sb-logo">📂 File Manager</div>
+    <div class="sb-sub">Notes Library Control Panel</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-item active" onclick="showPanel('dashboard',this)"><span class="ico">📊</span>Dashboard</div>
+    <div class="sb-item" onclick="showPanel('files',this)"><span class="ico">📄</span>All Files</div>
+    <div class="sb-item" onclick="showPanel('folders',this)"><span class="ico">📁</span>Folders</div>
+    <div class="sb-item" onclick="showPanel('organize',this)"><span class="ico">🗂️</span>Organize Files</div>
+    <div class="sb-divider"></div>
+    <div class="sb-section">Display Control</div>
+    <div class="sb-item" onclick="showPanel('display',this)"><span class="ico">👁️</span>Visibility</div>
+    <div class="sb-item" onclick="showPanel('settings',this)"><span class="ico">⚙️</span>Settings</div>
+    <div class="sb-divider"></div>
+    <div class="sb-section">Quick Links</div>
+    <div class="sb-item" onclick="window.open('index.html','_blank')"><span class="ico">🌐</span>View Library</div>
+    <div class="sb-item" onclick="window.open('https://github.com/purendar950/Hand-written-notes-sample-','_blank')"><span class="ico">🐙</span>GitHub Repo</div>
+  </nav>
+  <!-- TELEGRAM -->
+  <div class="tg-box">
+    <div class="tg-icon">✈️</div>
+    <div class="tg-title">Exam Zen StudySync</div>
+    <div class="tg-desc">Join our Telegram for updates, PDFs & daily notes</div>
+    <a href="https://t.me/Exam_Zen_StudySync" target="_blank" class="tg-btn">✈️ Join Channel</a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+  <div class="main-header">
+    <button class="mob-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="main-title" id="panelTitle">📊 Dashboard</div>
+    <div class="main-actions" id="panelActions"></div>
+  </div>
+  <div class="content" id="panelContent"></div>
+</div>
+</div>
+
+<!-- CREATE FOLDER MODAL -->
+<div class="modal-bg" id="modalCreateFolder">
+  <div class="modal-box">
+    <h3>📁 Create New Folder</h3>
+    <div class="form-group"><label>Folder Name</label><input type="text" id="newFolderName" placeholder="e.g. Current Affairs, Polity, Science..."></div>
+    <div class="form-group"><label>Icon (emoji)</label><input type="text" id="newFolderIcon" placeholder="📚" maxlength="4" style="width:80px"></div>
+    <div class="form-group"><label>Description (optional)</label><input type="text" id="newFolderDesc" placeholder="Short description..."></div>
+    <div class="modal-btns">
+      <button class="btn" onclick="closeModal('modalCreateFolder')">Cancel</button>
+      <button class="btn btn-primary" onclick="createFolder()">Create Folder</button>
+    </div>
+  </div>
+</div>
+
+<!-- MOVE FILE MODAL -->
+<div class="modal-bg" id="modalMoveFile">
+  <div class="modal-box">
+    <h3>🗂️ Move File to Folder</h3>
+    <div class="form-group"><label>File</label><input type="text" id="moveFileName" readonly style="opacity:.7"></div>
+    <div class="form-group"><label>Move to Folder</label><select id="moveFolderSelect"></select></div>
+    <div class="modal-btns">
+      <button class="btn" onclick="closeModal('modalMoveFile')">Cancel</button>
+      <button class="btn btn-primary" onclick="moveFileToFolder()">Move</button>
+    </div>
+  </div>
+</div>
+
+<!-- RENAME FOLDER MODAL -->
+<div class="modal-bg" id="modalRenameFolder">
+  <div class="modal-box">
+    <h3>✏️ Rename Folder</h3>
+    <div class="form-group"><label>New Name</label><input type="text" id="renameFolderName"></div>
+    <div class="modal-btns">
+      <button class="btn" onclick="closeModal('modalRenameFolder')">Cancel</button>
+      <button class="btn btn-primary" onclick="renameFolder()">Rename</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+
+<script>
+// ============ CONFIG ============
+const REPO_OWNER = 'purendar950';
+const REPO_NAME = 'Hand-written-notes-sample-';
+const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
+const TELEGRAM_LINK = 'https://t.me/Exam_Zen_StudySync';
+
+// ============ STATE (localStorage based) ============
+let allFiles = [];
+let folders = JSON.parse(localStorage.getItem('mgr_folders') || '[]');
+let fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
+let hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
+let settings = JSON.parse(localStorage.getItem('mgr_settings') || '{"repoName":"Hand-written-notes-sample-","telegramLink":"https://t.me/Exam_Zen_StudySync"}');
+
+// Default folders if empty
+if (folders.length === 0) {
+  folders = [
+    {id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'},
+    {id:'ca',name:'Current Affairs',icon:'📰',desc:'Monthly current affairs notes'},
+    {id:'culture',name:'Culture & Heritage',icon:'🏛️',desc:'Architecture, festivals, music'},
+    {id:'books',name:'Books & Authors',icon:'📚',desc:'Literature related notes'},
+    {id:'sample',name:'Sample Notes',icon:'✍️',desc:'Hand-written sample formats'}
+  ];
+  saveFolders();
+}
+
+function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); }
+function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); }
+function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); }
+function saveSettings(){ localStorage.setItem('mgr_settings', JSON.stringify(settings)); }
+
+// ============ FETCH FILES ============
+async function fetchFiles() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error(`API ${res.status}`);
+    const data = await res.json();
+    allFiles = data.filter(f => {
+      if (f.type !== 'file') return false;
+      const ext = f.name.split('.').pop().toLowerCase();
+      return ['html','pdf'].includes(ext) && f.name.toLowerCase() !== 'index.html' && f.name.toLowerCase() !== 'manager.html';
+    }).map(f => ({
+      name: f.name,
+      ext: f.name.split('.').pop().toLowerCase(),
+      size: f.size,
+      displayName: f.name.replace(/\.(html|pdf)$/i,'')
+    }));
+    allFiles.sort((a,b) => a.displayName.localeCompare(b.displayName));
+    showPanel('dashboard', document.querySelector('.sb-item.active'));
+  } catch(e) {
+    document.getElementById('panelContent').innerHTML = `<div style="text-align:center;padding:60px;color:var(--dim)"><p>⚠️ Failed to load: ${e.message}</p><button class="btn" onclick="fetchFiles()" style="margin-top:12px">Retry</button></div>`;
+  }
+}
+
+// ============ PANELS ============
+function showPanel(panel, el) {
+  document.querySelectorAll('.sb-item').forEach(i => i.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const title = document.getElementById('panelTitle');
+  const actions = document.getElementById('panelActions');
+  const content = document.getElementById('panelContent');
+  actions.innerHTML = '';
+
+  switch(panel) {
+    case 'dashboard': renderDashboard(title, actions, content); break;
+    case 'files': renderFiles(title, actions, content); break;
+    case 'folders': renderFolders(title, actions, content); break;
+    case 'organize': renderOrganize(title, actions, content); break;
+    case 'display': renderDisplay(title, actions, content); break;
+    case 'settings': renderSettings(title, actions, content); break;
+  }
+  // Close mobile sidebar
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+// ============ DASHBOARD ============
+function renderDashboard(title, actions, content) {
+  title.textContent = '📊 Dashboard';
+  const htmlCount = allFiles.filter(f=>f.ext==='html').length;
+  const pdfCount = allFiles.filter(f=>f.ext==='pdf').length;
+  const hidCount = hiddenFiles.length;
+  const folderCount = folders.length;
+  content.innerHTML = `
+    <div class="stats-row">
+      <div class="stat-card"><div class="s-value">${allFiles.length}</div><div class="s-label">Total Files</div></div>
+      <div class="stat-card"><div class="s-value">${htmlCount}</div><div class="s-label">HTML Notes</div></div>
+      <div class="stat-card"><div class="s-value">${pdfCount}</div><div class="s-label">PDF Files</div></div>
+      <div class="stat-card"><div class="s-value">${folderCount}</div><div class="s-label">Folders</div></div>
+      <div class="stat-card"><div class="s-value">${hidCount}</div><div class="s-label">Hidden</div></div>
+    </div>
+    <div class="folder-section">
+      <div class="folder-header"><h3>📁 Folder Summary</h3></div>
+      <div class="folder-tree">${folders.map(f => {
+        const count = Object.values(fileAssignments).filter(v=>v===f.id).length + (f.id==='root' ? allFiles.filter(fi=>!fileAssignments[fi.name]).length : 0);
+        return `<div class="folder-row"><span class="f-icon">${f.icon}</span><span class="f-name">${f.name}</span><span class="f-count">${count} files</span></div>`;
+      }).join('')}</div>
+    </div>
+    <div style="margin-top:20px;padding:16px;background:linear-gradient(135deg,#0088cc15,#0088cc08);border:1px solid #0088cc33;border-radius:var(--radius);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <div style="font-size:2rem">✈️</div>
+      <div style="flex:1;min-width:200px"><div style="font-weight:600;color:#5bc8f5">Telegram: Exam Zen StudySync</div><div style="font-size:.8rem;color:var(--dim);margin-top:2px">Get daily notes, PDFs, and exam updates</div></div>
+      <a href="${TELEGRAM_LINK}" target="_blank" class="btn btn-primary" style="background:#0088cc;border-color:#0088cc">✈️ Join Channel</a>
+    </div>`;
+}
+
+// ============ FILES PANEL ============
+function renderFiles(title, actions, content) {
+  title.textContent = '📄 All Files';
+  actions.innerHTML = `<span style="font-size:.8rem;color:var(--dim)">${allFiles.length} files detected</span>`;
+  content.innerHTML = `
+    <table class="file-table">
+      <thead><tr><th style="width:30px"></th><th>File Name</th><th>Type</th><th>Size</th><th>Folder</th><th>Actions</th></tr></thead>
+      <tbody>${allFiles.map(f => {
+        const folder = fileAssignments[f.name] ? folders.find(fo=>fo.id===fileAssignments[f.name]) : folders[0];
+        const isHidden = hiddenFiles.includes(f.name);
+        return `<tr style="${isHidden?'opacity:.4':''}">
+          <td><input type="checkbox" class="checkbox" data-file="${f.name}"></td>
+          <td><div class="fname"><span class="ico">${f.ext==='pdf'?'📕':'📄'}</span>${f.displayName}</div></td>
+          <td><span class="fbadge ${f.ext}">${f.ext}</span></td>
+          <td class="fsize">${formatSize(f.size)}</td>
+          <td class="ffolder">${folder?folder.icon+' '+folder.name:'—'}</td>
+          <td><div class="fact">
+            <button title="Move to folder" onclick="openMoveModal('${encodeURIComponent(f.name)}')">📁</button>
+            <button title="${isHidden?'Show':'Hide'}" onclick="toggleHide('${encodeURIComponent(f.name)}')">${isHidden?'👁️':'🙈'}</button>
+          </div></td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table>`;
+}
+
+// ============ FOLDERS PANEL ============
+function renderFolders(title, actions, content) {
+  title.textContent = '📁 Manage Folders';
+  actions.innerHTML = `<button class="btn btn-primary" onclick="openModal('modalCreateFolder')">+ New Folder</button>`;
+  content.innerHTML = `
+    <div class="folder-tree">${folders.map((f,i) => {
+      const count = Object.values(fileAssignments).filter(v=>v===f.id).length + (f.id==='root' ? allFiles.filter(fi=>!fileAssignments[fi.name]).length : 0);
+      return `<div class="folder-row">
+        <span class="f-icon">${f.icon}</span>
+        <span class="f-name">${f.name}</span>
+        <span class="f-count">${count} files</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:8px">${f.desc||''}</span>
+        <div class="f-actions">
+          <button title="Rename" onclick="openRenameModal(${i})">✏️</button>
+          ${f.id!=='root'?`<button title="Delete" onclick="deleteFolder(${i})" style="color:var(--danger)">🗑️</button>`:''}
+        </div>
+      </div>`;
+    }).join('')}</div>
+    <div style="margin-top:16px;padding:14px;background:var(--surface2);border-radius:8px;font-size:.8rem;color:var(--dim)">
+      💡 <b>Tip:</b> Folders help organize how files appear on the main library page. Files in "Uncategorized" will show without a folder label. Create subject-wise folders for better organization.
+    </div>`;
+}
+
+// ============ ORGANIZE PANEL ============
+function renderOrganize(title, actions, content) {
+  title.textContent = '🗂️ Organize Files into Folders';
+  let html = '';
+  folders.forEach(folder => {
+    const files = folder.id === 'root'
+      ? allFiles.filter(f => !fileAssignments[f.name])
+      : allFiles.filter(f => fileAssignments[f.name] === folder.id);
+    html += `<div class="folder-section">
+      <div class="folder-header"><h3>${folder.icon} ${folder.name} (${files.length})</h3></div>
+      ${files.length ? `<div class="folder-tree">${files.map(f => `
+        <div class="folder-row">
+          <span class="f-icon">${f.ext==='pdf'?'📕':'📄'}</span>
+          <span class="f-name" style="font-size:.84rem">${f.displayName}</span>
+          <span class="fbadge ${f.ext}" style="margin-left:auto">${f.ext}</span>
+          <div class="f-actions" style="opacity:1;margin-left:8px">
+            <button title="Move" onclick="openMoveModal('${encodeURIComponent(f.name)}')">📁</button>
+          </div>
+        </div>`).join('')}</div>` : `<div style="padding:12px 16px;color:var(--muted);font-size:.82rem;background:var(--surface2);border-radius:8px">No files in this folder</div>`}
+    </div>`;
+  });
+  content.innerHTML = html;
+}
+
+// ============ DISPLAY/VISIBILITY PANEL ============
+function renderDisplay(title, actions, content) {
+  title.textContent = '👁️ Display & Visibility Control';
+  actions.innerHTML = `<button class="btn btn-success" onclick="showAllFiles()">Show All</button><button class="btn btn-danger" onclick="hideAllFiles()">Hide All</button>`;
+  content.innerHTML = `
+    <p style="font-size:.85rem;color:var(--dim);margin-bottom:16px">Control which files are visible on the public library page. Hidden files won't appear on the index page for viewers.</p>
+    <table class="file-table">
+      <thead><tr><th>File</th><th>Type</th><th>Status</th><th>Toggle</th></tr></thead>
+      <tbody>${allFiles.map(f => {
+        const isHidden = hiddenFiles.includes(f.name);
+        return `<tr>
+          <td><div class="fname"><span class="ico">${f.ext==='pdf'?'📕':'📄'}</span>${f.displayName}</div></td>
+          <td><span class="fbadge ${f.ext}">${f.ext}</span></td>
+          <td><span style="color:${isHidden?'var(--danger)':'var(--success)'};font-size:.8rem;font-weight:600">${isHidden?'🙈 Hidden':'👁️ Visible'}</span></td>
+          <td><button class="btn ${isHidden?'btn-success':'btn-danger'}" style="padding:5px 12px;font-size:.75rem" onclick="toggleHide('${encodeURIComponent(f.name)}')">${isHidden?'Show':'Hide'}</button></td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table>`;
+}
+
+// ============ SETTINGS PANEL ============
+function renderSettings(title, actions, content) {
+  title.textContent = '⚙️ Settings';
+  content.innerHTML = `
+    <div style="max-width:500px">
+      <div class="form-group"><label>Repository Owner</label><input value="${REPO_OWNER}" readonly style="opacity:.6"></div>
+      <div class="form-group"><label>Repository Name</label><input value="${REPO_NAME}" readonly style="opacity:.6"></div>
+      <div class="form-group"><label>Telegram Channel</label><input value="${settings.telegramLink}" onchange="settings.telegramLink=this.value;saveSettings();toast('Telegram link updated!')"></div>
+      <div style="margin-top:20px;padding:14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px">
+        <div style="font-weight:600;color:var(--danger);font-size:.88rem;margin-bottom:8px">⚠️ Reset Data</div>
+        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">This will clear all folder assignments, hidden files, and custom folders. Repository files won't be affected.</p>
+        <button class="btn btn-danger" onclick="resetAllData()">Reset All Manager Data</button>
+      </div>
+      <div style="margin-top:20px;padding:14px;background:var(--surface2);border-radius:8px">
+        <div style="font-weight:600;font-size:.88rem;margin-bottom:8px">📤 Export Configuration</div>
+        <p style="font-size:.8rem;color:var(--dim);margin-bottom:12px">Download your folder structure and file assignments as JSON.</p>
+        <button class="btn" onclick="exportConfig()">Download Config</button>
+      </div>
+    </div>`;
+}
+
+// ============ ACTIONS ============
+function createFolder() {
+  const name = document.getElementById('newFolderName').value.trim();
+  const icon = document.getElementById('newFolderIcon').value.trim() || '📁';
+  const desc = document.getElementById('newFolderDesc').value.trim();
+  if (!name) return toast('Please enter a folder name','warn');
+  const id = 'f_' + Date.now();
+  folders.push({id, name, icon, desc});
+  saveFolders();
+  closeModal('modalCreateFolder');
+  toast(`Folder "${name}" created!`);
+  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
+}
+
+function deleteFolder(idx) {
+  if (folders[idx].id === 'root') return;
+  const name = folders[idx].name;
+  if (!confirm(`Delete folder "${name}"? Files will move to Uncategorized.`)) return;
+  const folderId = folders[idx].id;
+  // Move files back to uncategorized
+  Object.keys(fileAssignments).forEach(k => { if(fileAssignments[k]===folderId) delete fileAssignments[k]; });
+  folders.splice(idx, 1);
+  saveFolders(); saveAssignments();
+  toast(`Folder "${name}" deleted`);
+  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
+}
+
+let renamingIdx = -1;
+function openRenameModal(idx) {
+  renamingIdx = idx;
+  document.getElementById('renameFolderName').value = folders[idx].name;
+  openModal('modalRenameFolder');
+}
+function renameFolder() {
+  const name = document.getElementById('renameFolderName').value.trim();
+  if (!name) return;
+  folders[renamingIdx].name = name;
+  saveFolders();
+  closeModal('modalRenameFolder');
+  toast('Folder renamed!');
+  showPanel('folders', document.querySelector('.sb-item:nth-child(3)'));
+}
+
+let movingFile = '';
+function openMoveModal(encodedName) {
+  movingFile = decodeURIComponent(encodedName);
+  document.getElementById('moveFileName').value = movingFile;
+  const sel = document.getElementById('moveFolderSelect');
+  sel.innerHTML = folders.map(f => `<option value="${f.id}"${fileAssignments[movingFile]===f.id?' selected':''}>${f.icon} ${f.name}</option>`).join('');
+  openModal('modalMoveFile');
+}
+function moveFileToFolder() {
+  const folderId = document.getElementById('moveFolderSelect').value;
+  if (folderId === 'root') { delete fileAssignments[movingFile]; }
+  else { fileAssignments[movingFile] = folderId; }
+  saveAssignments();
+  closeModal('modalMoveFile');
+  toast('File moved!');
+  // Refresh current panel
+  const active = document.querySelector('.sb-item.active');
+  if (active) active.click();
+}
+
+function toggleHide(encodedName) {
+  const name = decodeURIComponent(encodedName);
+  const idx = hiddenFiles.indexOf(name);
+  if (idx >= 0) hiddenFiles.splice(idx, 1);
+  else hiddenFiles.push(name);
+  saveHidden();
+  const active = document.querySelector('.sb-item.active');
+  if (active) active.click();
+  toast(idx >= 0 ? 'File is now visible' : 'File hidden');
+}
+
+function showAllFiles() { hiddenFiles = []; saveHidden(); showPanel('display', document.querySelector('.sb-item.active')); toast('All files visible'); }
+function hideAllFiles() { hiddenFiles = allFiles.map(f=>f.name); saveHidden(); showPanel('display', document.querySelector('.sb-item.active')); toast('All files hidden'); }
+
+function resetAllData() {
+  if (!confirm('Are you sure? This will clear all folder structures and assignments.')) return;
+  localStorage.removeItem('mgr_folders'); localStorage.removeItem('mgr_assignments');
+  localStorage.removeItem('mgr_hidden'); localStorage.removeItem('mgr_settings');
+  location.reload();
+}
+
+function exportConfig() {
+  const config = { folders, fileAssignments, hiddenFiles, settings, exportDate: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(config, null, 2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'manager-config.json'; a.click();
+  toast('Config exported!');
+}
+
+// ============ UTILITIES ============
+function formatSize(b){if(!b)return'—';if(b<1024)return b+'B';if(b<1048576)return(b/1024).toFixed(1)+'KB';return(b/1048576).toFixed(1)+'MB'}
+function openModal(id){document.getElementById(id).classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open')}
+function toast(msg, type){const t=document.getElementById('toast');t.textContent=msg;t.style.background=type==='warn'?'var(--warn)':'var(--success)';t.style.display='block';setTimeout(()=>t.style.display='none',2500)}
+
+// Close modals on bg click
+document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('show'); }));
+
+// ============ INIT ============
+fetchFiles();
+</script>
+</body>
+</html>
