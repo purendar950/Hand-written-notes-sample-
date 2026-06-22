@@ -82,6 +82,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 .footer-link:hover{text-decoration:underline}
 .footer-sep{color:#30363d}
 .footer-copy{font-size:12px;color:#484f58}
+.footer-views{font-size:12px;color:#8b949e;margin-bottom:6px}
+.footer-views #view-count{color:#58a6ff;font-weight:600}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
 .top-bar{padding:10px 16px}
@@ -133,6 +135,13 @@ let viewMode = 'list';
 let siteName = 'Parmar Railway Notes';
 let siteSubtitle = 'Hand-Written Notes Library';
 let telegramLink = 'https://t.me/Exam_Zen_StudySync';
+
+// ---- Site visitor counter (Abacus: free, no-signup, CORS-enabled) ----
+// The namespace/key must match manager.html so the admin reads the same count.
+const VIEW_COUNTER_BASE = 'https://abacus.jasoncameron.dev';
+const VIEW_COUNTER_NS = 'parmar-railway-notes-purendar950';
+const VIEW_COUNTER_KEY = 'site-visits';
+let viewCount = null;
 let searchQuery = '';
 const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
 
@@ -453,7 +462,8 @@ function renderFolderView() {
 }
 
 function renderFooter() {
-  return '<footer class="footer"><div class="footer-links"><a href="' + telegramLink + '" target="_blank" class="footer-link">\u{1F4F1} Telegram Channel</a><span class="footer-sep">\u2022</span><a href="https://github.com/' + REPO_OWNER + '/' + REPO_NAME + '" target="_blank" class="footer-link">\u2B50 GitHub</a></div><div class="footer-copy">\u00A9 2026 ' + siteName + '</div></footer>';
+  const views = viewCount != null ? viewCount.toLocaleString() : '\u2026';
+  return '<footer class="footer"><div class="footer-links"><a href="' + telegramLink + '" target="_blank" class="footer-link">\u{1F4F1} Telegram Channel</a><span class="footer-sep">\u2022</span><a href="https://github.com/' + REPO_OWNER + '/' + REPO_NAME + '" target="_blank" class="footer-link">\u2B50 GitHub</a></div><div class="footer-views">\u{1F441}\uFE0F <span id="view-count">' + views + '</span> total views</div><div class="footer-copy">\u00A9 2026 ' + siteName + '</div></footer>';
 }
 
 function renderPdfModal() {
@@ -469,10 +479,34 @@ function attachEvents() {
 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePdfModal(); });
 
+// Increment the site visit counter once per browser session, then display the
+// running total. Uses Abacus (free, no signup). Best-effort: any failure is
+// silently ignored so it can never break the page.
+async function trackVisit() {
+  try {
+    const counted = sessionStorage.getItem('pv_counted') === '1';
+    const path = (counted ? '/get/' : '/hit/') + VIEW_COUNTER_NS + '/' + VIEW_COUNTER_KEY;
+    const res = await fetch(VIEW_COUNTER_BASE + path, { cache: 'no-store' });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!counted) sessionStorage.setItem('pv_counted', '1');
+    if (typeof data.value === 'number') {
+      viewCount = data.value;
+      updateViewCount();
+    }
+  } catch (e) { /* counter is best-effort; ignore errors */ }
+}
+
+function updateViewCount() {
+  const el = document.getElementById('view-count');
+  if (el && viewCount != null) el.textContent = viewCount.toLocaleString();
+}
+
 async function init() {
   await loadConfig();
   await loadFiles();
   render();
+  trackVisit();
 }
 init();
 </script>
