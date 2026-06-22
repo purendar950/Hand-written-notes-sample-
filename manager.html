@@ -209,14 +209,14 @@ const REPO_NAME = 'Hand-written-notes-sample-';
 const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
 const TELEGRAM_LINK = 'https://t.me/Exam_Zen_StudySync';
 
-// ============ STATE (localStorage based) ============
+// ============ STATE ============
 let allFiles = [];
 let folders = JSON.parse(localStorage.getItem('mgr_folders') || '[]');
 let fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
 let hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
 let settings = JSON.parse(localStorage.getItem('mgr_settings') || '{"repoName":"Hand-written-notes-sample-","telegramLink":"https://t.me/Exam_Zen_StudySync"}');
 
-// Default folders if empty
+// Default folders if first time (localStorage empty)
 if (folders.length === 0) {
   folders = [
     {id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'},
@@ -225,80 +225,108 @@ if (folders.length === 0) {
     {id:'books',name:'Books & Authors',icon:'📚',desc:'Literature related notes'},
     {id:'sample',name:'Sample Notes',icon:'✍️',desc:'Hand-written sample formats'}
   ];
-  saveFolders();
+  localStorage.setItem('mgr_folders', JSON.stringify(folders));
 }
 
-function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); publishConfig(); }
-function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); publishConfig(); }
-function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); publishConfig(); }
+function saveFolders(){ localStorage.setItem('mgr_folders', JSON.stringify(folders)); autoPublish(); }
+function saveAssignments(){ localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments)); autoPublish(); }
+function saveHidden(){ localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles)); autoPublish(); }
 function saveSettings(){ localStorage.setItem('mgr_settings', JSON.stringify(settings)); }
 
 // ============ AUTO-PUBLISH config.json TO REPO ============
-let configSha = null; // SHA of existing config.json (needed for updates)
+let configSha = null;
 let publishTimer = null;
 
-async function loadConfigSha() {
+// On first-ever load: seed localStorage from remote config.json
+async function initFromRemote() {
+  // Only seed if localStorage has NO file assignments (truly first visit)
+  const hasLocalAssignments = Object.keys(JSON.parse(localStorage.getItem('mgr_assignments') || '{}')).length > 0;
+  
   try {
-    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`);
-    if (res.ok) {
-      const data = await res.json();
-      configSha = data.sha;
-      // Decode remote config (source of truth)
-      const binaryStr = atob(data.content.replace(/\n/g, ''));
-      const bytes = new Uint8Array(binaryStr.length);
-      for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
-      const decoded = new TextDecoder('utf-8').decode(bytes);
-      const remoteConfig = JSON.parse(decoded);
-
-      // ALWAYS use remote config as base (source of truth)
-      const remoteFolders = remoteConfig.folders || [];
-      folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remoteFolders];
-
-      // Merge any NEW local folders not already in remote
-      const localFolders = JSON.parse(localStorage.getItem('mgr_folders') || '[]');
-      localFolders.forEach(lf => {
-        if (lf.id !== 'root' && !folders.find(f => f.id === lf.id)) {
-          folders.push(lf);
-        }
-      });
-
-      // ALWAYS use remote file assignments as base
-      fileAssignments = remoteConfig.fileAssignments || {};
-      // Merge any NEW local assignments (for files not in remote)
-      const localAssign = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
-      Object.keys(localAssign).forEach(k => {
-        if (!(k in fileAssignments)) fileAssignments[k] = localAssign[k];
-      });
-
-      // ALWAYS use remote hidden files as base
-      hiddenFiles = remoteConfig.hiddenFiles || [];
-      const localHidden = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
-      localHidden.forEach(h => { if (!hiddenFiles.includes(h)) hiddenFiles.push(h); });
-
-      // Save merged state back to localStorage
-      localStorage.setItem('mgr_folders', JSON.stringify(folders));
-      localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
-      localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+    // Always get SHA (needed for publish/update)
+    const shaRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`);
+    if (shaRes.ok) {
+      const shaData = await shaRes.json();
+      configSha = shaData.sha;
     }
-  } catch(e) { /* first time, no config exists yet — defaults will be used */ }
+  } catch(e) {}
+
+  // Only import remote config if this is truly a FIRST visit (no local data)
+  if (!hasLocalAssignments) {
+    try {
+      const rawUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/config.json`;
+      const res = await fetch(rawUrl);
+      if (res.ok) {
+        const remote = await res.json();
+        if (remote.folders && remote.folders.length > 0) {
+          folders = [{id:'root',name:'Uncategorized',icon:'📂',desc:'Files not assigned to any folder'}, ...remote.folders];
+          localStorage.setItem('mgr_folders', JSON.stringify(folders));
+        }
+        if (remote.fileAssignments && Object.keys(remote.fileAssignments).length > 0) {
+          fileAssignments = remote.fileAssignments;
+          localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+        }
+        if (remote.hiddenFiles && remote.hiddenFiles.length > 0) {
+          hiddenFiles = remote.hiddenFiles;
+          localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+        }
+      }
+    } catch(e) {}
+  }
 }
 
-function publishConfig() {
-  // Debounce: wait 1.5s after last change before publishing
+function autoPublish() {
   clearTimeout(publishTimer);
-  publishTimer = setTimeout(doPublish, 1500);
+  publishTimer = setTimeout(doPublish, 1000);
 }
 
 async function doPublish() {
   const token = localStorage.getItem('mgr_github_token');
   if (!token) {
-    // Show a subtle indicator that changes are local-only
-    document.getElementById('publishStatus').textContent = '⚠️ No token — changes saved locally only';
+    document.getElementById('publishStatus').textContent = '⚠️ Add token in Settings to publish changes';
     document.getElementById('publishStatus').style.color = 'var(--warn)';
     return;
   }
 
+  document.getElementById('publishStatus').textContent = '⏳ Publishing...';
+  document.getElementById('publishStatus').style.color = 'var(--accent)';
+
   const configData = {
+    folders: folders.filter(f => f.id !== 'root'),
+    fileAssignments,
+    hiddenFiles,
+    telegramLink: settings.telegramLink || 'https://t.me/Exam_Zen_StudySync',
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(configData, null, 2))));
+
+  try {
+    const body = { message: 'Update config from manager', content, branch: 'main' };
+    if (configSha) body.sha = configSha;
+
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/config.json`, {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      configSha = data.content.sha;
+      document.getElementById('publishStatus').textContent = '✅ Published! User page updated.';
+      document.getElementById('publishStatus').style.color = 'var(--success)';
+      setTimeout(() => { document.getElementById('publishStatus').textContent = ''; }, 4000);
+    } else {
+      const err = await res.json();
+      document.getElementById('publishStatus').textContent = '❌ Failed: ' + (err.message || res.status);
+      document.getElementById('publishStatus').style.color = 'var(--danger)';
+    }
+  } catch(e) {
+    document.getElementById('publishStatus').textContent = '❌ ' + e.message;
+    document.getElementById('publishStatus').style.color = 'var(--danger)';
+  }
+}
     folders: folders.filter(f => f.id !== 'root'),
     fileAssignments,
     hiddenFiles,
@@ -662,7 +690,7 @@ function toast(msg, type){const t=document.getElementById('toast');t.textContent
 document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('show'); }));
 
 // ============ INIT ============
-loadConfigSha().then(() => fetchFiles());
+initFromRemote().then(() => fetchFiles());
 </script>
 </body>
 </html>
