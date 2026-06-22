@@ -55,6 +55,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 .type-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0}
 .badge-html{background:#1a3a2a;color:#3fb950}
 .badge-pdf{background:#3d1a1a;color:#f85149}
+.dl-pdf-btn{background:#21262d;border:1px solid #30363d;border-radius:6px;color:#58a6ff;font-size:11px;font-weight:600;padding:5px 9px;cursor:pointer;flex-shrink:0;transition:all .2s;display:inline-flex;align-items:center;gap:4px;font-family:inherit;white-space:nowrap}
+.dl-pdf-btn:hover{border-color:#58a6ff;background:#161b22;color:#79c0ff}
+.file-card-actions{margin-top:8px;display:flex;justify-content:center}
 .file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
 .file-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:all .2s}
 .file-card:hover{background:#21262d;border-color:#484f58;transform:translateY(-2px)}
@@ -116,6 +119,7 @@ let folders = [];
 let fileAssignments = {};
 let hiddenFiles = [];
 let displayNames = {};
+let fileOrder = {};
 let allFiles = [];
 let currentFolder = null;
 let viewMode = 'list';
@@ -137,6 +141,7 @@ async function loadConfig() {
       fileAssignments = data.fileAssignments || {};
       hiddenFiles = data.hiddenFiles || [];
       displayNames = data.displayNames || {};
+      fileOrder = data.fileOrder || {};
       if (data.siteName) siteName = data.siteName;
       if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
       if (data.telegramLink) telegramLink = data.telegramLink;
@@ -145,6 +150,7 @@ async function loadConfig() {
       localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
       localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
       localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
+      localStorage.setItem('mgr_fileOrder', JSON.stringify(fileOrder));
       localStorage.setItem('mgr_settings', JSON.stringify({ siteName, siteSubtitle, telegramLink }));
       return;
     }
@@ -158,6 +164,7 @@ async function loadConfig() {
     fileAssignments = JSON.parse(localAssignments);
     hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
     displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
+    fileOrder = JSON.parse(localStorage.getItem('mgr_fileOrder') || '{}');
     const s = JSON.parse(localStorage.getItem('mgr_settings') || '{}');
     if (s.siteName) siteName = s.siteName;
     if (s.siteSubtitle) siteSubtitle = s.siteSubtitle;
@@ -257,6 +264,43 @@ function openFile(filename) {
   else { window.open(url, '_blank'); }
 }
 
+// Convert an HTML note to PDF using the browser's native print-to-PDF engine.
+// A hidden same-origin iframe is loaded with the note and printed; the user can
+// then "Save as PDF" from the print dialog. This preserves the note's exact
+// styling/fonts far better than a canvas-based rasteriser.
+function downloadAsPdf(filename) {
+  const url = getFileUrl(filename);
+  const frame = document.createElement('iframe');
+  frame.style.position = 'fixed';
+  frame.style.right = '0';
+  frame.style.bottom = '0';
+  frame.style.width = '0';
+  frame.style.height = '0';
+  frame.style.border = '0';
+  frame.style.opacity = '0';
+  frame.setAttribute('aria-hidden', 'true');
+  let done = false;
+  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 1500); };
+  frame.onload = () => {
+    if (done) return;
+    done = true;
+    setTimeout(() => {
+      try {
+        frame.contentWindow.focus();
+        frame.contentWindow.print();
+      } catch (e) {
+        // Cross-origin or print blocked — fall back to opening the note so the
+        // user can print/save it manually.
+        window.open(url, '_blank');
+      }
+      cleanup();
+    }, 400);
+  };
+  frame.onerror = () => { window.open(url, '_blank'); cleanup(); };
+  frame.src = url;
+  document.body.appendChild(frame);
+}
+
 function showPdfModal(filename, url) {
   const modal = document.getElementById('pdf-modal');
   document.getElementById('pdf-title').textContent = getDisplayName(filename);
@@ -321,6 +365,13 @@ function renderFolderView() {
     const q = searchQuery.toLowerCase();
     files = files.filter(f => getDisplayName(f.name).toLowerCase().includes(q) || f.name.toLowerCase().includes(q));
   }
+  // Sort strictly by serial number (admin-assigned). Files without a serial
+  // number fall to the end, tie-broken by display name so order stays stable.
+  files = files.slice().sort((a, b) => {
+    const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : Number.MAX_SAFE_INTEGER;
+    const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : Number.MAX_SAFE_INTEGER;
+    return oA - oB || getDisplayName(a.name).localeCompare(getDisplayName(b.name));
+  });
   const fileItems = files.map(f => {
     const icon = getFileIcon(f.name);
     const name = getDisplayName(f.name);
@@ -328,10 +379,13 @@ function renderFolderView() {
     const size = formatSize(f.size);
     const typeClass = type === 'PDF' ? 'badge-pdf' : 'badge-html';
     const escapedName = f.name.replace(/'/g, "\\'");
+    const pdfBtn = type === 'HTML'
+      ? '<button class="dl-pdf-btn" onclick="event.stopPropagation();downloadAsPdf(\'' + escapedName + '\')" title="Download this note as PDF">\u2B07\uFE0F PDF</button>'
+      : '';
     if (viewMode === 'grid') {
-      return '<div class="file-card" onclick="openFile(\'' + escapedName + '\')"><div class="file-card-icon">' + icon + '</div><div class="file-card-name">' + name + '</div><div class="file-card-meta"><span class="type-badge ' + typeClass + '">' + type + '</span>' + (size ? ' \u2022 ' + size : '') + '</div></div>';
+      return '<div class="file-card" onclick="openFile(\'' + escapedName + '\')"><div class="file-card-icon">' + icon + '</div><div class="file-card-name">' + name + '</div><div class="file-card-meta"><span class="type-badge ' + typeClass + '">' + type + '</span>' + (size ? ' \u2022 ' + size : '') + '</div>' + (pdfBtn ? '<div class="file-card-actions">' + pdfBtn + '</div>' : '') + '</div>';
     }
-    return '<div class="file-row" onclick="openFile(\'' + escapedName + '\')"><div class="file-row-icon">' + icon + '</div><div class="file-row-info"><div class="file-row-name">' + name + '</div><div class="file-row-meta">' + size + '</div></div><span class="type-badge ' + typeClass + '">' + type + '</span></div>';
+    return '<div class="file-row" onclick="openFile(\'' + escapedName + '\')"><div class="file-row-icon">' + icon + '</div><div class="file-row-info"><div class="file-row-name">' + name + '</div><div class="file-row-meta">' + size + '</div></div>' + pdfBtn + '<span class="type-badge ' + typeClass + '">' + type + '</span></div>';
   }).join('');
 
   const backBtn = '<button class="back-btn" onclick="navigateHome()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>Back</button>';

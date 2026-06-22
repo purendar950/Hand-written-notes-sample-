@@ -652,6 +652,10 @@ async function uploadFiles(files) {
   if (uploadQueue.length === 0) { toast('Only .html and .pdf files allowed', 'error'); return; }
   currentView = 'upload';
   render();
+  // Next free serial number across all files, so newly uploaded files append to
+  // the end and never renumber/disorganise files that already have a serial.
+  const existingSerials = Object.values(fileOrder).filter(n => typeof n === 'number' && !isNaN(n));
+  let nextSerial = (existingSerials.length ? Math.max(...existingSerials) : 0) + 1;
   for (const item of uploadQueue) {
     item.status = 'uploading';
     render();
@@ -685,6 +689,11 @@ async function uploadFiles(files) {
         // Assign to current folder if inside one
         if (currentFolder && currentFolder.id !== '__unassigned__') {
           fileAssignments[item.name] = currentFolder.id;
+        }
+        // Give brand-new files the next serial number. Existing files keep
+        // their numbers, so the established order is never disturbed.
+        if (fileOrder[item.name] === undefined) {
+          fileOrder[item.name] = nextSerial++;
         }
       } else { item.status = 'error'; item.progress = 0; }
     } catch(e) { item.status = 'error'; item.progress = 0; }
@@ -1077,7 +1086,7 @@ function saveSiteSettings() {
 
 function exportConfig() {
   const configData = {
-    folders, fileAssignments, displayNames, hiddenFiles,
+    folders, fileAssignments, displayNames, hiddenFiles, fileOrder,
     telegramLink: settings.telegramLink, siteName: settings.siteName, siteSubtitle: settings.siteSubtitle,
     lastUpdated: new Date().toISOString().split('T')[0]
   };
