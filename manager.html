@@ -916,13 +916,6 @@ function renderFolderView() {
       </div>
     </div>
     ${bulkBar}
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-      <span style="font-size:12px;color:var(--muted)">Sort:</span>
-      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('name')">A-Z</button>
-      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('size')">Size</button>
-      <button class="btn" style="padding:5px 10px;font-size:12px" onclick="sortFilesBy('type')">Type</button>
-      <button class="btn btn-accent" style="padding:5px 10px;font-size:12px" onclick="autoNumberFiles()">🔢 Auto Number</button>
-    </div>
     ${selectAll}
     <div class="file-list">${fileRows}</div>
     <div class="drop-zone" id="folder-drop-zone" onclick="document.getElementById('folder-file-input').click()">
