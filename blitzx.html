@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newton's Laws – Exam Zen Handwritten Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Architects+Daughter&family=Schoolbell&family=Kalam:wght@400;700&family=Indie+Flower&family=Shadows+Into+Light+Two&family=Gochi+Hand&family=Handlee&family=Caveat:wght@600;700&family=Dancing+Script:wght@500;700&family=Satisfy&family=Homemade+Apple&family=Reenie+Beanie&family=Nanum+Pen+Script&family=Permanent+Marker&family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --paper:#f7efdb;
+    --line:#bcc9da;
+    --margin-line:#d9818a;
+    --ink:#1a2f55;
+    --hand:'Patrick Hand';
+  }
+
+  body {
+    font-family:var(--hand), cursive;
+    display:flex; flex-direction:column; align-items:center; padding:0 24px 60px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(255,220,150,.10), transparent 60%),
+      repeating-linear-gradient(90deg, #4a3526 0 120px, #543d2c 120px 122px, #4f3929 122px 240px),
+      #4a3526;
+  }
+
+  #progress {
+    position:fixed; top:0; left:0; height:6px; width:0%; z-index:200;
+    background:linear-gradient(90deg, #ffd97a, #fd79a8, #6c5ce7);
+    box-shadow:0 0 12px rgba(255,217,122,.8);
+  }
+
+  header { text-align:center; padding:55px 20px 25px; color:#f5ecd7; }
+  header h1 {
+    font-family:'Caveat', cursive; font-size:3.4rem; line-height:1.1;
+    background:linear-gradient(90deg, #ffd97a, #ffb4c8, #b3a6ff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,.45));
+  }
+  header p { font-size:1.1rem; opacity:.85; margin-top:6px; letter-spacing:1px; }
+
+  /* ===== Toolbar ===== */
+  .toolbar {
+    position:sticky; top:14px; z-index:150; display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    justify-content:center; background:rgba(30,24,16,.88); backdrop-filter:blur(6px);
+    padding:10px 22px; border-radius:30px; margin-bottom:35px;
+    box-shadow:0 8px 25px rgba(0,0,0,.45);
+  }
+  .toolbar span { color:#f5ecd7; font-size:1rem; }
+  .swatch {
+    width:28px; height:28px; border-radius:50%; cursor:pointer;
+    border:3px solid transparent; transition:all .2s;
+  }
+  .swatch:hover { transform:scale(1.18); }
+  .swatch.active { border-color:#ffd97a; box-shadow:0 0 10px #ffd97a; }
+  .font-select {
+    font-size:1rem; padding:6px 12px; border-radius:20px; border:none; cursor:pointer;
+    background:#f5ecd7; color:#3b2c1a; max-width:220px;
+  }
+  .print-btn {
+    font-family:var(--hand), cursive; font-size:1.05rem; padding:7px 20px; cursor:pointer;
+    border:none; border-radius:30px; background:linear-gradient(90deg,#ffd97a,#fdab76);
+    color:#3b2c1a; font-weight:bold; transition:transform .2s;
+  }
+  .print-btn:hover { transform:scale(1.06); }
+
+  /* ===== A4 portrait page ===== */
+  .wrap { position:relative; width:min(800px, 95vw); margin-bottom:70px; }
+  .wrap:nth-child(even) .slide { transform:rotate(.4deg); }
+  .wrap:nth-child(odd)  .slide { transform:rotate(-.4deg); }
+
+  .slide {
+    aspect-ratio:210/297;
+    position:relative; border-radius:6px; overflow:hidden;
+    box-shadow:0 14px 24px rgba(0,0,0,.45), 0 35px 70px rgba(0,0,0,.5);
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(120,90,40,.10), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(120,90,40,.14), transparent 50%),
+      repeating-linear-gradient(var(--paper) 0px, var(--paper) 31px, var(--line) 32px);
+    padding:35px 45px 45px 100px;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .slide:hover { transform:rotate(0deg) scale(1.008) !important; }
+  .slide::before {
+    content:''; position:absolute; top:0; bottom:0; left:80px; width:2px;
+    background:var(--margin-line);
+  }
+
+  /* ===== Rubber stamp watermark ===== */
+  .stamp {
+    position:absolute; top:45%; left:50%; z-index:1; pointer-events:none;
+    transform:translate(-50%,-50%) rotate(-15deg);
+    font-family:'Caveat', cursive; font-size:2.8rem; font-weight:bold;
+    color:rgba(176,48,48,.15); white-space:nowrap;
+    border:5px double rgba(176,48,48,.18); border-radius:14px;
+    padding:8px 30px;
+    box-shadow:inset 0 0 25px rgba(176,48,48,.06);
+  }
+
+  /* ===== Washi tape ===== */
+  .tape {
+    position:absolute; top:-14px; width:110px; height:32px; z-index:5;
+    background:repeating-linear-gradient(45deg, rgba(255,180,200,.85) 0 12px, rgba(255,210,225,.85) 12px 24px);
+    box-shadow:0 4px 8px rgba(0,0,0,.25); opacity:.92;
+  }
+  .tape.l { left:50px; transform:rotate(-7deg); }
+  .tape.r { right:30px; transform:rotate(6deg);
+    background:repeating-linear-gradient(45deg, rgba(170,215,255,.85) 0 12px, rgba(210,235,255,.85) 12px 24px); }
+
+  /* ===== Spiral binding ===== */
+  .spiral { position:absolute; left:12px; top:0; bottom:0; width:40px; z-index:4; }
+  .spiral i {
+    display:block; width:24px; height:24px; margin:19px auto; border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #fff 0 28%, #6b6b6b 30% 55%, #2e2e2e 60%);
+    box-shadow:inset 0 2px 4px rgba(0,0,0,.5);
+  }
+
+  .content { position:relative; z-index:2; }
+  h2 {
+    font-family:'Schoolbell', cursive; color:#1c3d6e; text-align:center; font-size:1.9rem;
+    text-decoration:underline wavy #c0392b 2px; margin-bottom:14px;
+  }
+  .ink  { color:var(--ink); font-size:1.2rem; line-height:30px; font-family:var(--hand), cursive; }
+  .red  { color:#b03030; } .green{ color:#2e7d4f; } .purple{ color:#6a3fa0; }
+  .hl { background:linear-gradient(104deg, transparent .9%, #ffe16b 2.4%, #ffe16bcc 96%, transparent 98%); padding:0 4px; border-radius:4px; }
+  .hl.pink { background:linear-gradient(104deg, transparent .9%, #ffb8d0 2.4%, #ffb8d0cc 96%, transparent 98%); }
+  .formula {
+    display:inline-block; font-family:var(--hand), 'Architects Daughter', cursive; font-size:1.3rem;
+    color:#8a1f1f; border:2px dashed #8a1f1f; border-radius:10px;
+    padding:2px 14px; margin:6px 4px; background:rgba(255,235,180,.55);
+    transform:rotate(-.6deg); box-shadow:2px 3px 0 rgba(138,31,31,.15);
+  }
+  .cols { display:flex; flex-direction:column; gap:20px; }
+  ul { list-style:none; }
+  ul li::before { content:'➤ '; color:#b03030; }
+  .box {
+    border:2.5px solid #2e7d4f; border-radius:14px; padding:8px 14px;
+    background:rgba(210,235,210,.4); transform:rotate(.4deg);
+    font-size:1.1rem; color:var(--ink); box-shadow:3px 4px 0 rgba(46,125,79,.18);
+  }
+
+  /* ===== Sticky notes (in-flow, never overlap text) ===== */
+  .sticky {
+    position:relative; display:inline-block; max-width:340px;
+    margin:18px 0 5px 10px; padding:14px 16px;
+    background:linear-gradient(160deg, #fff8a8, #ffe97a); color:#6b5400;
+    font-size:.98rem; line-height:1.35; z-index:6; border-radius:2px;
+    box-shadow:3px 6px 12px rgba(0,0,0,.3); transform:rotate(-2deg);
+  }
+  .sticky::before { content:'📌'; position:absolute; top:-13px; left:45%; font-size:1.2rem; }
+  .sticky b { display:block; margin-bottom:3px; }
+  .sticky.pink  { background:linear-gradient(160deg,#ffd9e8,#ffb8d0); color:#7a2a4a; transform:rotate(2deg); }
+  .sticky.blue  { background:linear-gradient(160deg,#d6ecff,#aed4f5); color:#1f4a73; transform:rotate(-1.5deg); }
+  .sticky.green { background:linear-gradient(160deg,#ddf5d6,#b8e6a8); color:#2a5c1f; transform:rotate(1.5deg); }
+  .sticky:hover { transform:rotate(0) scale(1.05); transition:.25s; }
+
+  .sketch { filter:drop-shadow(1px 2px 1px rgba(80,60,20,.25)); display:block; max-width:420px; margin:0 auto; }
+  .caption { text-align:center; font-size:1rem; color:#6a3fa0; }
+  .pageno { position:absolute; bottom:12px; right:24px; color:#8a7a5a; font-size:1rem; z-index:2; }
+  table { border-collapse:collapse; width:100%; font-size:1.05rem; color:var(--ink); }
+  td, th { border:2px solid #6a3fa0; padding:4px 10px; text-align:left; }
+  th { color:#6a3fa0; background:rgba(106,63,160,.08); }
+  footer { color:#cdbfa3; font-size:1rem; text-align:center; }
+  footer b { color:#ffd97a; }
+
+  /* ===== Print / Save as PDF ===== */
+  @media print {
+    @page { size: A4 portrait; margin: 0; }
+    body { background:#fff; padding:0; display:block; }
+    header, footer, .toolbar, #progress, .tape { display:none !important; }
+    .wrap { width:100%; margin:0; opacity:1 !important; transform:none !important; page-break-after:always; }
+    .slide {
+      transform:none !important; border-radius:0; box-shadow:none;
+      width:100%; height:100vh; aspect-ratio:auto;
+      -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    }
+  }
+
+  @media (max-width:600px) {
+    .slide { padding:28px 20px 45px 75px; }
+    header h1 { font-size:2.3rem; }
+    .stamp { font-size:2rem; }
+    .sticky { max-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header>
+  <h1>✍️ Newton's Laws of Motion</h1>
+  <p>Topper's Handwritten Notes · Physics · t.me/Exam_Zen</p>
+</header>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <span>🎨 Page:</span>
+  <div class="swatch active" style="background:#f7efdb" onclick="setColor(this,'#f7efdb','#bcc9da')" title="Classic Cream"></div>
+  <div class="swatch" style="background:#ffffff" onclick="setColor(this,'#ffffff','#c9d6e8')" title="White"></div>
+  <div class="swatch" style="background:#eafbe7" onclick="setColor(this,'#eafbe7','#aed3b5')" title="Mint"></div>
+  <div class="swatch" style="background:#e8f1ff" onclick="setColor(this,'#e8f1ff','#a9c2e8')" title="Sky Blue"></div>
+  <div class="swatch" style="background:#fdeef3" onclick="setColor(this,'#fdeef3','#e3b5c8')" title="Rose Pink"></div>
+  <div class="swatch" style="background:#fff9d9" onclick="setColor(this,'#fff9d9','#d8c98a')" title="Lemon"></div>
+  <span>✒️ Font:</span>
+  <select class="font-select" onchange="setFont(this.value)">
+    <optgroup label="✏️ Neat Print (topper style)">
+      <option value="Patrick Hand">Patrick Hand – neat print</option>
+      <option value="Kalam">Kalam – bold marker</option>
+      <option value="Indie Flower">Indie Flower – rounded cute</option>
+      <option value="Handlee">Handlee – soft casual</option>
+      <option value="Gochi Hand">Gochi Hand – playful</option>
+      <option value="Architects Daughter">Architects Daughter – sketchy</option>
+      <option value="Annie Use Your Telescope">Annie – tall &amp; airy</option>
+    </optgroup>
+    <optgroup label="🖋️ Cursive &amp; Pen Styles">
+      <option value="Caveat">Caveat – quick cursive</option>
+      <option value="Dancing Script">Dancing Script – elegant cursive</option>
+      <option value="Satisfy">Satisfy – smooth flowing</option>
+      <option value="Homemade Apple">Homemade Apple – real pen look</option>
+      <option value="Shadows Into Light Two">Shadows Into Light – slim pen</option>
+      <option value="Reenie Beanie">Reenie Beanie – fast scribble</option>
+      <option value="Nanum Pen Script">Nanum Pen – thin gel pen</option>
+    </optgroup>
+    <optgroup label="🖍️ Bold Marker">
+      <option value="Permanent Marker">Permanent Marker – thick marker</option>
+    </optgroup>
+  </select>
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>⚛ Newton's Laws of Motion ⚛</h2>
+      <div class="cols">
+        <div class="ink">
+          <p><b class="red">Definition:</b> Three fundamental laws given by <span class="hl">Sir Isaac Newton (1687)</span> that describe the relationship between a body and the <b class="green">forces</b> acting on it.</p>
+          <br>
+          <ul>
+            <li><b>Force (F)</b> → push or pull. Unit: <span class="formula">newton (N)</span></li>
+            <li><b>Mass (m)</b> → quantity of matter (kg)</li>
+            <li><b>Acceleration (a)</b> → rate of change of velocity (m/s²)</li>
+          </ul>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 320 200" width="100%">
+            <rect x="90" y="80" width="120" height="70" rx="6" fill="#f3c98b" stroke="#7a4a12" stroke-width="3"/>
+            <text x="118" y="122" font-family="Patrick Hand" font-size="20" fill="#7a4a12">BLOCK m</text>
+            <line x1="20" y1="115" x2="85" y2="115" stroke="#b03030" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="85,107 100,115 85,123" fill="#b03030"/>
+            <text x="22" y="102" font-family="Patrick Hand" font-size="18" fill="#b03030">Force F</text>
+            <line x1="215" y1="115" x2="290" y2="115" stroke="#2e7d4f" stroke-width="4" stroke-dasharray="8 6"/>
+            <polygon points="290,107 305,115 290,123" fill="#2e7d4f"/>
+            <text x="218" y="102" font-family="Patrick Hand" font-size="18" fill="#2e7d4f">motion a</text>
+            <line x1="40" y1="152" x2="300" y2="152" stroke="#5a4632" stroke-width="3"/>
+          </svg>
+          <p class="caption">↑ Force applied on a block produces acceleration</p>
+        </div>
+      </div>
+      <div class="sticky blue"><b>💡 Trick:</b> FMA → "Force Makes Acceleration"</div>
+    </div>
+    <div class="pageno">pg. 1</div>
+  </section>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>1st Law → Law of Inertia 🛑</h2>
+      <div class="cols">
+        <div class="ink">
+          <p>"A body remains at <span class="hl">rest</span> or in <span class="hl">uniform motion</span> unless an external force acts on it."</p>
+          <span class="formula">If F<sub>net</sub> = 0 ⇒ a = 0</span>
+          <br><br>
+          <ul>
+            <li><b>Inertia of rest</b> – passengers jerk backwards when bus starts</li>
+            <li><b>Inertia of motion</b> – we fall forward when bus stops suddenly</li>
+            <li>Inertia <b class="purple">∝ mass</b> (heavier → more inertia)</li>
+          </ul>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 320 200" width="100%">
+            <rect x="40" y="70" width="170" height="60" rx="12" fill="#9fc4e8" stroke="#2a4d7a" stroke-width="3"/>
+            <circle cx="80" cy="140" r="18" fill="#555" stroke="#222" stroke-width="3"/>
+            <circle cx="170" cy="140" r="18" fill="#555" stroke="#222" stroke-width="3"/>
+            <circle cx="120" cy="60" r="14" fill="#f0b27a" stroke="#7a4a12" stroke-width="2.5"/>
+            <line x1="120" y1="74" x2="120" y2="95" stroke="#7a4a12" stroke-width="3"/>
+            <line x1="120" y1="82" x2="100" y2="68" stroke="#7a4a12" stroke-width="3"/>
+            <text x="225" y="90" font-family="Patrick Hand" font-size="17" fill="#b03030">Bus stops →</text>
+            <text x="225" y="112" font-family="Patrick Hand" font-size="17" fill="#b03030">body falls</text>
+            <text x="225" y="134" font-family="Patrick Hand" font-size="17" fill="#b03030">forward!</text>
+            <line x1="20" y1="162" x2="300" y2="162" stroke="#5a4632" stroke-width="3"/>
+          </svg>
+          <p class="caption">↑ Daily-life example of inertia of motion</p>
+        </div>
+      </div>
+      <div class="sticky pink"><b>⚠ Important:</b> No force needed to KEEP moving, only to CHANGE motion!</div>
+    </div>
+    <div class="pageno">pg. 2</div>
+  </section>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>2nd Law → F = ma 💪</h2>
+      <div class="cols">
+        <div class="ink">
+          <p>"Rate of change of <span class="hl pink">momentum</span> is directly proportional to applied force."</p>
+          <span class="formula">p = m × v</span>
+          <span class="formula">F = dp/dt</span>
+          <span class="formula">F = m × a</span>
+          <span class="formula">1 N = 1 kg·m/s²</span>
+          <br><br>
+          <div class="box">⚠ Same force → small mass = <span class="hl">MORE acceleration</span>!</div>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 320 210" width="100%">
+            <rect x="60" y="35" width="60" height="40" rx="5" fill="#a8d5a2" stroke="#2e7d4f" stroke-width="3"/>
+            <text x="72" y="61" font-family="Patrick Hand" font-size="16" fill="#2e7d4f">m</text>
+            <line x1="130" y1="55" x2="220" y2="55" stroke="#b03030" stroke-width="4"/>
+            <polygon points="220,47 238,55 220,63" fill="#b03030"/>
+            <text x="245" y="61" font-family="Patrick Hand" font-size="17" fill="#b03030">big a</text>
+            <rect x="45" y="115" width="95" height="60" rx="5" fill="#a8d5a2" stroke="#2e7d4f" stroke-width="3"/>
+            <text x="78" y="151" font-family="Patrick Hand" font-size="16" fill="#2e7d4f">2m</text>
+            <line x1="150" y1="145" x2="200" y2="145" stroke="#b03030" stroke-width="4"/>
+            <polygon points="200,137 218,145 200,153" fill="#b03030"/>
+            <text x="226" y="151" font-family="Patrick Hand" font-size="17" fill="#b03030">small a</text>
+            <line x1="20" y1="190" x2="300" y2="190" stroke="#5a4632" stroke-width="3"/>
+          </svg>
+          <p class="caption">↑ Same force F, different mass → different acceleration</p>
+        </div>
+      </div>
+      <div class="sticky green"><b>💡 Trick:</b> Double the mass → half the acceleration (same F)</div>
+    </div>
+    <div class="pageno">pg. 3</div>
+  </section>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>3rd Law → Action = Reaction 🔁</h2>
+      <div class="cols">
+        <div class="ink">
+          <p>"To every <span class="hl">action</span> there is an equal and opposite <span class="hl pink">reaction</span>."</p>
+          <span class="formula">F<sub>AB</sub> = − F<sub>BA</sub></span>
+          <br><br>
+          <ul>
+            <li>Forces act on <b>different bodies</b> → never cancel!</li>
+            <li>Rocket propulsion 🚀</li>
+            <li>Walking – we push ground backward, ground pushes us forward</li>
+            <li>Gun recoil after firing</li>
+          </ul>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 320 240" width="72%">
+            <polygon points="160,40 185,90 185,150 135,150 135,90" fill="#d7d7e8" stroke="#444a7a" stroke-width="3"/>
+            <polygon points="135,150 115,180 135,165" fill="#b03030"/>
+            <polygon points="185,150 205,180 185,165" fill="#b03030"/>
+            <path d="M150 155 Q160 195 170 155" fill="#f5a623" stroke="#c0392b" stroke-width="3"/>
+            <line x1="160" y1="200" x2="160" y2="225" stroke="#b03030" stroke-width="4"/>
+            <polygon points="152,222 160,238 168,222" fill="#b03030"/>
+            <text x="195" y="215" font-family="Patrick Hand" font-size="16" fill="#b03030">gases ↓ (action)</text>
+            <line x1="160" y1="35" x2="160" y2="14" stroke="#2e7d4f" stroke-width="4"/>
+            <polygon points="152,16 160,2 168,16" fill="#2e7d4f"/>
+            <text x="195" y="25" font-family="Patrick Hand" font-size="16" fill="#2e7d4f">rocket ↑ (reaction)</text>
+          </svg>
+          <p class="caption">↑ Rocket: gases pushed down, rocket moves up</p>
+        </div>
+      </div>
+      <div class="sticky blue"><b>⚠ Remember:</b> Action &amp; reaction act on DIFFERENT bodies, so they never cancel!</div>
+    </div>
+    <div class="pageno">pg. 4</div>
+  </section>
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>Important Derived Formulas 📐</h2>
+      <div class="cols">
+        <div class="ink">
+          <ul>
+            <li><b>Weight:</b> <span class="formula">W = m × g</span> (g = 9.8 m/s²)</li>
+            <li><b>Friction:</b> <span class="formula">f = μ × N</span></li>
+            <li><b>Impulse:</b> <span class="formula">J = F × Δt = Δp</span></li>
+            <li><b>Momentum conservation:</b> <span class="formula">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</span></li>
+          </ul>
+          <div class="box">💡 Impulse explains why cricketers <span class="hl">pull hands back</span> while catching!</div>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 320 200" width="78%">
+            <rect x="110" y="60" width="100" height="60" rx="6" fill="#e8b4c8" stroke="#8a3a5a" stroke-width="3"/>
+            <text x="142" y="96" font-family="Patrick Hand" font-size="18" fill="#8a3a5a">m</text>
+            <line x1="160" y1="120" x2="160" y2="165" stroke="#b03030" stroke-width="4"/>
+            <polygon points="152,162 160,178 168,162" fill="#b03030"/>
+            <text x="170" y="160" font-family="Patrick Hand" font-size="16" fill="#b03030">W = mg</text>
+            <line x1="160" y1="60" x2="160" y2="18" stroke="#2e7d4f" stroke-width="4"/>
+            <polygon points="152,21 160,5 168,21" fill="#2e7d4f"/>
+            <text x="170" y="25" font-family="Patrick Hand" font-size="16" fill="#2e7d4f">N (normal)</text>
+            <line x1="110" y1="90" x2="55" y2="90" stroke="#6a3fa0" stroke-width="4"/>
+            <polygon points="58,82 42,90 58,98" fill="#6a3fa0"/>
+            <text x="20" y="75" font-family="Patrick Hand" font-size="16" fill="#6a3fa0">f = μN</text>
+            <line x1="20" y1="190" x2="300" y2="190" stroke="#5a4632" stroke-width="3"/>
+          </svg>
+          <p class="caption">↑ Free Body Diagram (FBD) of a block</p>
+        </div>
+      </div>
+      <div class="sticky pink"><b>💡 Memory aid:</b> "WIN" → Weight=mg, Impulse=Δp, Normal force N</div>
+    </div>
+    <div class="pageno">pg. 5</div>
+  </section>
+</div>
+
+<!-- ================= PAGE 6 ================= -->
+<div class="wrap">
+  <div class="tape l"></div><div class="tape r"></div>
+  <section class="slide">
+    <div class="stamp">✦ t.me/Exam_Zen ✦</div>
+    <div class="spiral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="content">
+      <h2>⭐ Quick Revision Summary ⭐</h2>
+      <div class="cols">
+        <div class="ink">
+          <table>
+            <tr><th>Law</th><th>Statement</th><th>Formula</th></tr>
+            <tr><td>1st</td><td>Inertia</td><td>F=0 ⇒ a=0</td></tr>
+            <tr><td>2nd</td><td>F ∝ dp/dt</td><td>F = ma</td></tr>
+            <tr><td>3rd</td><td>Action-Reaction</td><td>F₁ = −F₂</td></tr>
+          </table>
+          <br>
+          <div class="box">📝 Exam tip: <span class="hl">Always draw FBD</span> before solving force problems!</div>
+          <br>
+          <p class="red"><b>Remember:</b></p>
+          <ul>
+            <li>p = mv | J = Δp</li>
+            <li>W = mg | f = μN</li>
+            <li>1 N = 1 kg·m/s²</li>
+            <li>Momentum is conserved when F<sub>ext</sub> = 0</li>
+          </ul>
+        </div>
+        <div>
+          <svg class="sketch" viewBox="0 0 300 90" width="70%">
+            <ellipse cx="60" cy="45" rx="50" ry="30" fill="#fdf0b0" stroke="#c0392b" stroke-width="3"/>
+            <text x="38" y="50" font-family="Patrick Hand" font-size="16" fill="#c0392b">F = ma</text>
+            <line x1="115" y1="45" x2="170" y2="45" stroke="#2e7d4f" stroke-width="3"/>
+            <polygon points="170,38 184,45 170,52" fill="#2e7d4f"/>
+            <ellipse cx="237" cy="45" rx="52" ry="30" fill="#d2ebd2" stroke="#2e7d4f" stroke-width="3"/>
+            <text x="200" y="50" font-family="Patrick Hand" font-size="15" fill="#2e7d4f">solves motion!</text>
+          </svg>
+        </div>
+      </div>
+      <div class="sticky green"><b>🍀 All the best!</b> Revise FBD daily · Join t.me/Exam_Zen</div>
+    </div>
+    <div class="pageno">pg. 6</div>
+  </section>
+</div>
+
+<footer>Made with 💛 · <b>Exam Zen</b> · t.me/Exam_Zen</footer>
+
+<script>
+  // Page color switcher
+  function setColor(el, paper, line) {
+    document.documentElement.style.setProperty('--paper', paper);
+    document.documentElement.style.setProperty('--line', line);
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Handwriting font switcher
+  function setFont(font) {
+    document.documentElement.style.setProperty('--hand', "'" + font + "'");
+  }
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('progress').style.width =
+      (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+
+  // Fade pages into view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.wrap').forEach(w => {
+    w.style.opacity = 0; w.style.transform = 'translateY(50px)';
+    w.style.transition = 'all .8s cubic-bezier(.22,1,.36,1)';
+    observer.observe(w);
+  });
+</script>
+
+</body>
+</html>
