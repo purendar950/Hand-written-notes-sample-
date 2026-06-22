@@ -35,12 +35,6 @@
       "name": "BLITZ SERIES",
       "icon": "📁",
       "desc": ""
-    },
-    {
-      "id": "ancient_history",
-      "name": "SSC GD Ancient History",
-      "icon": "🏛️",
-      "desc": "Ancient history MCQ notes for SSC GD preparation"
     }
   ],
   "fileAssignments": {
@@ -70,8 +64,7 @@
     "Exam_Zen_Folk_Dances_TopperNotes_Hindi.pdf": "f_1782105578544",
     "Exam_Zen_Folk_Dances_TopperNotes (1).pdf": "f_1782105578544",
     "Parmar_Folk_Dances_Handwritten_Notes.html": "f_1782105578544",
-    "Parmar_Folk_Dances_Handwritten_Notes-1.html": "f_1782105578544",
-    "Ancient History Notes.html": "ancient_history"
+    "Parmar_Folk_Dances_Handwritten_Notes-1.html": "f_1782105578544"
   },
   "displayNames": {},
   "hiddenFiles": [],
