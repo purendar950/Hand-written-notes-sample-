@@ -145,34 +145,47 @@ let viewCount = null;
 let searchQuery = '';
 const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
 
-async function loadConfig() {
-  // Always fetch the published config.json first (cache-busted) so every
-  // visitor sees the latest admin changes. localStorage is only an offline
-  // fallback, never the primary source.
-  try {
-    const res = await fetch(CONFIG_URL + '?t=' + Date.now(), { cache: 'no-store' });
-    if (res.ok) {
-      const data = await res.json();
-      folders = data.folders || [];
-      fileAssignments = data.fileAssignments || {};
-      hiddenFiles = data.hiddenFiles || [];
-      displayNames = data.displayNames || {};
-      fileOrder = data.fileOrder || {};
-      if (data.siteName) siteName = data.siteName;
-      if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
-      if (data.telegramLink) telegramLink = data.telegramLink;
-      // Mirror to localStorage for offline fallback only.
-      localStorage.setItem('mgr_folders', JSON.stringify(folders));
-      localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
-      localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
-      localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
-      localStorage.setItem('mgr_fileOrder', JSON.stringify(fileOrder));
-      localStorage.setItem('mgr_settings', JSON.stringify({ siteName, siteSubtitle, telegramLink }));
-      return;
-    }
-  } catch(e) { console.error('Config load failed, using offline fallback:', e); }
+function applyConfigData(data) {
+  folders = data.folders || [];
+  fileAssignments = data.fileAssignments || {};
+  hiddenFiles = data.hiddenFiles || [];
+  displayNames = data.displayNames || {};
+  fileOrder = data.fileOrder || {};
+  if (data.siteName) siteName = data.siteName;
+  if (data.siteSubtitle) siteSubtitle = data.siteSubtitle;
+  if (data.telegramLink) telegramLink = data.telegramLink;
+  // Mirror to localStorage for offline fallback only.
+  localStorage.setItem('mgr_folders', JSON.stringify(folders));
+  localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
+  localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
+  localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
+  localStorage.setItem('mgr_fileOrder', JSON.stringify(fileOrder));
+  localStorage.setItem('mgr_settings', JSON.stringify({ siteName, siteSubtitle, telegramLink }));
+}
 
-  // Network failed — fall back to last known config from localStorage.
+async function loadConfig() {
+  // Fetch the published config.json so every visitor sees the latest admin
+  // changes. We try the GitHub Contents API FIRST because it reflects a fresh
+  // commit immediately. raw.githubusercontent.com is a CDN that can keep
+  // serving a stale copy for several minutes and does not reliably honor the
+  // cache-busting query string — that lag is why admin updates/deletes were
+  // not reaching visitors. The raw CDN is kept only as a fallback (e.g. when
+  // the unauthenticated API is rate-limited). localStorage is the last resort.
+  const sources = [
+    { url: API_URL + 'config.json?t=' + Date.now(), headers: { 'Accept': 'application/vnd.github.raw' } },
+    { url: CONFIG_URL + '?t=' + Date.now(), headers: {} }
+  ];
+  for (const src of sources) {
+    try {
+      const res = await fetch(src.url, { headers: src.headers, cache: 'no-store' });
+      if (res.ok) {
+        applyConfigData(await res.json());
+        return;
+      }
+    } catch(e) { console.error('Config source failed (' + src.url + '):', e); }
+  }
+
+  // All network sources failed — fall back to last known config from localStorage.
   const localFolders = localStorage.getItem('mgr_folders');
   const localAssignments = localStorage.getItem('mgr_assignments');
   if (localFolders && localAssignments) {
@@ -249,9 +262,13 @@ function getDisplayName(filename) {
 }
 
 function getFileUrl(filename) {
+  // Append a cache-busting param so visitors always get the latest version of
+  // a file after it has been re-uploaded/edited (GitHub Pages + browser caches
+  // would otherwise serve a stale copy). Only called on open/download.
+  const bust = '?v=' + Date.now();
   const host = window.location.hostname;
-  if (host.includes('github.io')) return './' + encodeURIComponent(filename);
-  return `https://${REPO_OWNER}.github.io/${REPO_NAME}/` + encodeURIComponent(filename);
+  if (host.includes('github.io')) return './' + encodeURIComponent(filename) + bust;
+  return `https://${REPO_OWNER}.github.io/${REPO_NAME}/` + encodeURIComponent(filename) + bust;
 }
 
 function formatSize(bytes) {
