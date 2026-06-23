@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy – Folk Dances of India Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f1e3;
+  --paper:#fffdf7;
+  --ink:#2d3436;
+  --accent:#d35400;
+  --line:#dfe6e9;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:'Kalam',cursive;
+  color:var(--ink);
+}
+.header{
+  position:sticky;top:0;z-index:10;
+  background:#ffffffd9;backdrop-filter:blur(10px);
+  padding:12px 18px;border-bottom:2px solid var(--accent);
+}
+.search{
+  width:100%;padding:12px 16px;border-radius:12px;
+  border:2px solid var(--accent);font-family:inherit;font-size:1rem;
+}
+.container{
+  max-width:1000px;margin:20px auto;padding:24px;
+}
+.paper{
+  background:repeating-linear-gradient(
+    var(--paper),
+    var(--paper) 31px,
+    var(--line) 32px
+  );
+  padding:32px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+h1,h2,h3{color:var(--accent)}
+.note{
+  background:#fff7e6;
+  border-left:5px solid var(--accent);
+  padding:14px 18px;
+  margin:18px 0;
+  border-radius:10px;
+}
+pre{
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  font-family:'Kalam',cursive;
+  font-size:1rem;
+  line-height:1.9;
+}
+@media print{
+  .header{display:none}
+  body{background:white}
+  .paper{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <input class="search" id="searchBox" placeholder="Search question, dance, state...">
+</div>
+
+<div class="container">
+  <div class="paper" id="content">
+    <h1>📚 Parmar Academy — Folk Dances of India (2025 ADT Pattern)</h1>
+
+    <div class="note">
+      Paste your complete 102-question notes inside the &lt;pre&gt; section below.
+      This file is already a single HTML file with handwritten styling, search, print support, and notebook layout.
+    </div>
+
+<pre id="notes">
+PASTE_YOUR_COMPLETE_102_QUESTIONS_CONTENT_HERE
+</pre>
+
+  </div>
+</div>
+
+<script>
+const search=document.getElementById('searchBox');
+const notes=document.getElementById('notes');
+const original=notes.innerHTML;
+
+search.addEventListener('input',()=>{
+ const q=search.value.trim();
+ if(!q){notes.innerHTML=original;return;}
+ const r=new RegExp(`(${q})`,'gi');
+ notes.innerHTML=original.replace(r,'<mark>$1</mark>');
+});
+</script>
+</body>
+</html>
