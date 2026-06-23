@@ -298,82 +298,49 @@ function openFile(filename) {
   else { window.open(url, '_blank'); }
 }
 
-// Generate a PDF of an HTML note that matches what is shown on screen.
+// Generate a PDF of an HTML note that matches exactly what is shown on screen.
 //
-// These notes use handwriting web-fonts, CSS gradients, textured backgrounds
-// and ruled-paper effects, and they ship their own `@media print` styles
-// (hide toolbar, A4 pages, preserved highlight colours, page-break control).
-// The browser's native print engine reproduces all of that faithfully and
-// outputs crisp, selectable vector text. html2canvas rasterisation, by
-// contrast, drops the web-fonts/gradients and clips content — so the PDF did
-// not look like the note. We therefore drive the native print dialog, where
-// the user picks "Save as PDF".
+// We open the note in its OWN window/tab and trigger the browser's native
+// print dialog there, where the user chooses "Save as PDF". This renders the
+// note at full size, identical to its built-in "Print / PDF" button, and
+// respects each note's `@media print` styles (hidden toolbar, A4 pages,
+// preserved highlight colours, page breaks).
+//
+// We deliberately do NOT rasterise with html2canvas (drops web-fonts/gradients
+// and clips content) and we no longer print a hidden off-screen iframe (its
+// constrained width distorted the layout). Opening the real page is the only
+// approach that is pixel-faithful to the on-screen note.
 function downloadAsPdf(filename) {
-  printNote(getFileUrl(filename));
-}
+  const url = getFileUrl(filename);
+  const win = window.open(url, '_blank');
+  if (!win) {
+    alert('Please allow pop-ups for this site, then click "PDF" again. The note will open and the Save-as-PDF dialog will appear.');
+    return;
+  }
 
-function waitForImages(doc) {
-  const imgs = Array.from(doc.images || []);
-  const pending = imgs.filter(img => !img.complete).map(img => new Promise(res => {
-    img.addEventListener('load', res, { once: true });
-    img.addEventListener('error', res, { once: true });
-  }));
-  return Promise.all(pending);
-}
-
-function printNote(url) {
-  showPdfLoading(true);
-  const frame = document.createElement('iframe');
-  frame.style.position = 'fixed';
-  frame.style.left = '-10000px';
-  frame.style.top = '0';
-  frame.style.width = '900px';
-  frame.style.height = '1200px';
-  frame.style.border = '0';
-  frame.setAttribute('aria-hidden', 'true');
-
-  let done = false;
-  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 2000); };
-  // If we cannot drive the iframe (cross-origin, e.g. a custom domain) just
-  // open the note in a new tab so the user can use its built-in print button.
-  const openInTab = () => { if (done) return; done = true; showPdfLoading(false); try { window.open(url, '_blank'); } catch (e) {} cleanup(); };
-  const doPrint = (win) => {
-    if (done) return; done = true;
-    showPdfLoading(false);
+  // For same-origin notes (the github.io site) we can auto-open the print
+  // dialog once the page has fully rendered. For cross-origin notes (a custom
+  // domain) the browser blocks scripted access, so the note simply opens and
+  // the user taps its own "Print / PDF" button.
+  let printed = false, attempts = 0;
+  const triggerPrint = () => {
+    if (printed) return;
     try {
-      win.onafterprint = cleanup;
       win.focus();
-      win.print();            // blocks until the user dismisses the dialog
-      cleanup();
-    } catch (e) { try { window.open(url, '_blank'); } catch (_) {} cleanup(); }
+      win.print();
+      printed = true;
+    } catch (e) { /* cross-origin: the note has its own Print button */ }
   };
-
-  frame.onload = () => {
-    let win, doc;
-    try {
-      win = frame.contentWindow;
-      doc = frame.contentDocument || win.document;
-      void doc.title; // touch to confirm same-origin access
-    } catch (e) { openInTab(); return; }
-
-    // Wait for web-fonts and images so the printed output matches the screen,
-    // but never block forever.
-    const fontsReady = (doc.fonts && doc.fonts.ready) ? doc.fonts.ready : Promise.resolve();
-    Promise.race([
-      fontsReady.then(() => waitForImages(doc)),
-      new Promise(res => setTimeout(res, 4000))
-    ]).then(() => doPrint(win)).catch(() => doPrint(win));
+  const whenReady = () => {
+    if (printed) return;
+    let ready = false;
+    try { ready = win.closed || (win.document && win.document.readyState === 'complete'); }
+    catch (e) { return; } // cross-origin — stop polling, rely on note's own button
+    if (win.closed) return;
+    if (ready) { setTimeout(triggerPrint, 500); return; } // small delay for fonts/images
+    if (++attempts < 60) setTimeout(whenReady, 200); // up to ~12s
   };
-  frame.onerror = openInTab;
-  frame.src = url;
-  document.body.appendChild(frame);
-  // Safety net in case the note never loads.
-  setTimeout(() => { if (!done) openInTab(); }, 20000);
-}
-
-function showPdfLoading(show) {
-  const el = document.getElementById('pdf-loading');
-  if (el) el.classList.toggle('show', !!show);
+  whenReady();
 }
 
 function showPdfModal(filename, url) {
