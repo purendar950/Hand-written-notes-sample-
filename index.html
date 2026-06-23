@@ -211,7 +211,8 @@ async function loadFiles() {
   apiFiles.forEach(f => { fileMap[f.name] = { name: f.name, size: f.size, type: 'file' }; });
   const knownFromConfig = new Set([
     ...Object.keys(fileAssignments || {}),
-    ...Object.keys(displayNames || {})
+    ...Object.keys(displayNames || {}),
+    ...Object.keys(fileOrder || {})
   ]);
   knownFromConfig.forEach(name => {
     if (!fileMap[name] && !EXCLUDED_FILES.includes(name) && !name.startsWith('.')) {
@@ -236,8 +237,9 @@ function getFileIcon(name) {
 }
 
 function getFileType(name) {
-  if (name.endsWith('.pdf')) return 'PDF';
-  if (name.endsWith('.html') || name.endsWith('.htm')) return 'HTML';
+  const n = name.toLowerCase();
+  if (n.endsWith('.pdf')) return 'PDF';
+  if (n.endsWith('.html') || n.endsWith('.htm')) return 'HTML';
   return 'FILE';
 }
 

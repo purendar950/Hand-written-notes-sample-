@@ -218,15 +218,36 @@ function applyConfig(data) {
 }
 
 async function loadFiles() {
+  // 1) Live GitHub directory listing (cache-busted) — gives real file sizes.
+  let apiFiles = [];
   try {
     const token = localStorage.getItem('mgr_github_token');
     const headers = token ? { 'Authorization': `token ${token}` } : {};
-    const res = await fetch(API_URL, { headers });
+    const res = await fetch(API_URL + '?t=' + Date.now(), { headers, cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
-      allFiles = data.filter(f => f.type === 'file' && !EXCLUDED_FILES.includes(f.name) && !f.name.startsWith('.'));
+      apiFiles = data.filter(f => f.type === 'file' && !EXCLUDED_FILES.includes(f.name) && !f.name.startsWith('.'));
     }
-  } catch(e) { console.error('Files load error:', e); allFiles = []; }
+  } catch(e) { console.error('Files load error:', e); }
+
+  // 2) Supplement with files the published config already knows about
+  //    (assignments, display names, serial order). GitHub's directory listing
+  //    is eventually consistent and can lag a few seconds/minutes behind a
+  //    fresh upload commit — without this merge a just-uploaded file would
+  //    vanish from the manager after a refresh until the listing catches up.
+  const fileMap = {};
+  apiFiles.forEach(f => { fileMap[f.name] = { name: f.name, size: f.size, type: 'file', sha: f.sha }; });
+  const knownFromConfig = new Set([
+    ...Object.keys(fileAssignments || {}),
+    ...Object.keys(displayNames || {}),
+    ...Object.keys(fileOrder || {})
+  ]);
+  knownFromConfig.forEach(name => {
+    if (!fileMap[name] && !EXCLUDED_FILES.includes(name) && !name.startsWith('.')) {
+      fileMap[name] = { name, size: 0, type: 'file' };
+    }
+  });
+  allFiles = Object.values(fileMap);
 }
 
 // ==================== PERSISTENCE ====================
@@ -343,8 +364,9 @@ function getFileIcon(name) {
 }
 
 function getFileType(name) {
-  if (name.endsWith('.pdf')) return 'PDF';
-  if (name.endsWith('.html') || name.endsWith('.htm')) return 'HTML';
+  const n = name.toLowerCase();
+  if (n.endsWith('.pdf')) return 'PDF';
+  if (n.endsWith('.html') || n.endsWith('.htm')) return 'HTML';
   return 'FILE';
 }
 
@@ -499,6 +521,7 @@ async function deleteFileFromRepo(filename) {
         allFiles = allFiles.filter(f => f.name !== filename);
         delete fileAssignments[filename];
         delete displayNames[filename];
+        delete fileOrder[filename];
         hiddenFiles = hiddenFiles.filter(f => f !== filename);
         saveAndPublish();
         toast('File deleted from repo', 'success');
