@@ -117,7 +117,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 <body>
 <div id="app"></div>
 <div id="pdf-loading" class="pdf-loading"><div class="spinner"></div><div class="msg">Generating PDF…</div></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 const REPO_OWNER = 'purendar950';
 const REPO_NAME = 'Hand-written-notes-sample-';
@@ -299,91 +298,82 @@ function openFile(filename) {
   else { window.open(url, '_blank'); }
 }
 
-// Directly download an HTML note as a .pdf file (no print dialog needed).
-// The note is rendered in a hidden same-origin iframe so its exact styling is
-// preserved, then html2pdf.js rasterises it and triggers a direct file
-// download. If the library is unavailable, we fall back to the browser's
-// print-to-PDF dialog.
+// Generate a PDF of an HTML note that matches what is shown on screen.
+//
+// These notes use handwriting web-fonts, CSS gradients, textured backgrounds
+// and ruled-paper effects, and they ship their own `@media print` styles
+// (hide toolbar, A4 pages, preserved highlight colours, page-break control).
+// The browser's native print engine reproduces all of that faithfully and
+// outputs crisp, selectable vector text. html2canvas rasterisation, by
+// contrast, drops the web-fonts/gradients and clips content — so the PDF did
+// not look like the note. We therefore drive the native print dialog, where
+// the user picks "Save as PDF".
 function downloadAsPdf(filename) {
-  const url = getFileUrl(filename);
-  const baseName = getDisplayName(filename).replace(/\.(html?|pdf)$/i, '').trim() || 'note';
-  if (typeof html2pdf === 'undefined') { downloadViaPrint(url); return; }
+  printNote(getFileUrl(filename));
+}
 
+function waitForImages(doc) {
+  const imgs = Array.from(doc.images || []);
+  const pending = imgs.filter(img => !img.complete).map(img => new Promise(res => {
+    img.addEventListener('load', res, { once: true });
+    img.addEventListener('error', res, { once: true });
+  }));
+  return Promise.all(pending);
+}
+
+function printNote(url) {
   showPdfLoading(true);
   const frame = document.createElement('iframe');
   frame.style.position = 'fixed';
   frame.style.left = '-10000px';
   frame.style.top = '0';
-  frame.style.width = '794px';   // ~A4 width at 96dpi for faithful layout
-  frame.style.height = '1123px';
+  frame.style.width = '900px';
+  frame.style.height = '1200px';
   frame.style.border = '0';
   frame.setAttribute('aria-hidden', 'true');
 
-  let finished = false;
-  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 500); };
-  const finish = () => { if (finished) return; finished = true; showPdfLoading(false); cleanup(); };
-  const fallback = () => { if (finished) return; finished = true; showPdfLoading(false); downloadViaPrint(url); cleanup(); };
+  let done = false;
+  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 2000); };
+  // If we cannot drive the iframe (cross-origin, e.g. a custom domain) just
+  // open the note in a new tab so the user can use its built-in print button.
+  const openInTab = () => { if (done) return; done = true; showPdfLoading(false); try { window.open(url, '_blank'); } catch (e) {} cleanup(); };
+  const doPrint = (win) => {
+    if (done) return; done = true;
+    showPdfLoading(false);
+    try {
+      win.onafterprint = cleanup;
+      win.focus();
+      win.print();            // blocks until the user dismisses the dialog
+      cleanup();
+    } catch (e) { try { window.open(url, '_blank'); } catch (_) {} cleanup(); }
+  };
 
   frame.onload = () => {
-    // Give the note a moment to apply fonts/images before rasterising.
-    setTimeout(() => {
-      let target;
-      try {
-        const doc = frame.contentDocument || frame.contentWindow.document;
-        target = doc.body || doc.documentElement;
-      } catch (e) { fallback(); return; }
-      if (!target) { fallback(); return; }
-      const opt = {
-        margin: [8, 8, 8, 8],
-        filename: baseName + '.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      try {
-        html2pdf().set(opt).from(target).save().then(finish).catch(fallback);
-      } catch (e) { fallback(); }
-    }, 600);
+    let win, doc;
+    try {
+      win = frame.contentWindow;
+      doc = frame.contentDocument || win.document;
+      void doc.title; // touch to confirm same-origin access
+    } catch (e) { openInTab(); return; }
+
+    // Wait for web-fonts and images so the printed output matches the screen,
+    // but never block forever.
+    const fontsReady = (doc.fonts && doc.fonts.ready) ? doc.fonts.ready : Promise.resolve();
+    Promise.race([
+      fontsReady.then(() => waitForImages(doc)),
+      new Promise(res => setTimeout(res, 4000))
+    ]).then(() => doPrint(win)).catch(() => doPrint(win));
   };
-  frame.onerror = fallback;
+  frame.onerror = openInTab;
   frame.src = url;
   document.body.appendChild(frame);
-  // Safety timeout in case rendering hangs.
-  setTimeout(() => { if (!finished) fallback(); }, 30000);
+  // Safety net in case the note never loads.
+  setTimeout(() => { if (!done) openInTab(); }, 20000);
 }
 
 function showPdfLoading(show) {
   const el = document.getElementById('pdf-loading');
   if (el) el.classList.toggle('show', !!show);
-}
-
-// Fallback: open the note in a hidden iframe and invoke the browser's native
-// print dialog so the user can choose "Save as PDF".
-function downloadViaPrint(url) {
-  const frame = document.createElement('iframe');
-  frame.style.position = 'fixed';
-  frame.style.right = '0';
-  frame.style.bottom = '0';
-  frame.style.width = '0';
-  frame.style.height = '0';
-  frame.style.border = '0';
-  frame.style.opacity = '0';
-  frame.setAttribute('aria-hidden', 'true');
-  let done = false;
-  const cleanup = () => { setTimeout(() => { if (frame.parentNode) frame.remove(); }, 1500); };
-  frame.onload = () => {
-    if (done) return;
-    done = true;
-    setTimeout(() => {
-      try { frame.contentWindow.focus(); frame.contentWindow.print(); }
-      catch (e) { window.open(url, '_blank'); }
-      cleanup();
-    }, 400);
-  };
-  frame.onerror = () => { window.open(url, '_blank'); cleanup(); };
-  frame.src = url;
-  document.body.appendChild(frame);
 }
 
 function showPdfModal(filename, url) {
@@ -466,7 +456,7 @@ function renderFolderView() {
     const typeClass = type === 'PDF' ? 'badge-pdf' : 'badge-html';
     const escapedName = f.name.replace(/'/g, "\\'");
     const pdfBtn = type === 'HTML'
-      ? '<button class="dl-pdf-btn" onclick="event.stopPropagation();downloadAsPdf(\'' + escapedName + '\')" title="Download this note as PDF">\u2B07\uFE0F PDF</button>'
+      ? '<button class="dl-pdf-btn" onclick="event.stopPropagation();downloadAsPdf(\'' + escapedName + '\')" title="Save this note as PDF (opens the print dialog \u2192 choose Save as PDF)">\u2B07\uFE0F PDF</button>'
       : '';
     if (viewMode === 'grid') {
       return '<div class="file-card" onclick="openFile(\'' + escapedName + '\')"><div class="file-card-icon">' + icon + '</div><div class="file-card-name">' + name + '</div><div class="file-card-meta"><span class="type-badge ' + typeClass + '">' + type + '</span>' + (size ? ' \u2022 ' + size : '') + '</div>' + (pdfBtn ? '<div class="file-card-actions">' + pdfBtn + '</div>' : '') + '</div>';
