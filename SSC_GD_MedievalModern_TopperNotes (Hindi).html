@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — मध्यकालीन एवं आधुनिक इतिहास | Topper Notes (हिंदी)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ परीक्षा TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 याद करने की TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 मुख्य तथ्य';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 परीक्षा TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 समसामयिकी';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — मध्यकालीन एवं आधुनिक इतिहास (हिंदी)</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Topper Notes</div>
+    <div class="cover-title">📝 SSC GD — मध्यकालीन एवं आधुनिक इतिहास</div>
+    <div class="cover-sub">संपूर्ण संरचित नोट्स | सभी प्रश्न एवं विकल्प</div>
+    <div class="cover-badge">🏛️ मध्यकालीन इतिहास · ⚔️ सल्तनत · 👑 मुगल · 🕌 स्थापत्य · 📜 इतिहासकार</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- Q1: NAGINA MASJID -->
+    <div class="sec red">① मध्यकालीन इतिहास — मुगल स्थापत्य कला 🕌</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> आगरा किले में Shah Jahan द्वारा शाही महिलाओं के लिए बनाई गई तीन गुंबदों वाली मस्जिद कौन सी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Moti Masjid</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mina Masjid</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nagina Masjid ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jama Masjid</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — Nagina Masjid Shah Jahan ने शाही महिलाओं (हरम) के लिए बनवाई, 3 गुंबद, आगरा किले के अंदर</div>
+    </div>
+
+
+    <div class="sub">मस्जिदें — तुलना तालिका</div>
+    <table class="hw-t grn">
+      <tr><th>मस्जिद</th><th>निर्माता</th><th>स्थान</th></tr>
+      <tr><td><span class="hl"><strong>Moti Masjid (लाहौर)</strong></span></td><td>Jahangir</td><td>लाहौर किला, पाकिस्तान</td></tr>
+      <tr><td><span class="hl-g"><strong>Moti Masjid (आगरा)</strong></span></td><td>Shah Jahan</td><td>आगरा किला</td></tr>
+      <tr><td><span class="hl-b"><strong>Moti Masjid (दिल्ली)</strong></span></td><td>Aurangzeb</td><td>लाल किला, दिल्ली</td></tr>
+      <tr><td><span class="hl-p"><strong>Nagina Masjid</strong></span></td><td>Shah Jahan</td><td>आगरा किला (शाही महिलाओं हेतु)</td></tr>
+    </table>
+
+    <div class="sticky">
+      <div class="slbl">याद रखें — LODI वंश</div>
+      <span class="hl"><strong>Lodi वंश = Double Dome स्थापत्य</strong></span><br>
+      भारत में Double Dome तकनीक लाने वाले पहले शासक<br>
+      3 Moti Masjid = 3 अलग-अलग निर्माता, 3 अलग-अलग शहर!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q2: ZIAUDDIN BARANI -->
+    <div class="sec blue">② मध्यकालीन इतिहास — सल्तनत काल के इतिहासकार 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> निम्नलिखित में से सल्तनत काल का प्रसिद्ध इतिहासकार कौन था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Amir Khusro</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Abul Fazl</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alberuni</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ziauddin Barani ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — Ziauddin Barani ने "Tarikh-e-Firozshahi" लिखी जिसमें Muhammad Bin Tughlaq की असफल नीतियों का वर्णन है</div>
+    </div>
+
+    <div class="sub">इतिहासकार एवं उनकी रचनाएँ — तुलना</div>
+    <table class="hw-t org">
+      <tr><th>इतिहासकार</th><th>काल</th><th>पुस्तक</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>Ziauddin Barani</strong></span></td><td>सल्तनत (तुगलक)</td><td>Tarikh-e-Firozshahi</td><td>MBT की असफल नीतियों का वर्णन</td></tr>
+      <tr><td><span class="hl-g"><strong>Alberuni</strong></span></td><td>11वीं सदी</td><td>Kitabul Hind</td><td>Mahmud Ghazni के साथ आए</td></tr>
+      <tr><td><span class="hl-b"><strong>Abul Fazl</strong></span></td><td>मुगल (Akbar)</td><td>Akbarnama (3 खंड)</td><td>तीसरा खंड = Ain-i-Akbari</td></tr>
+      <tr><td><span class="hl-p"><strong>Amir Khusro</strong></span></td><td>सल्तनत (खिलजी)</td><td>Nuh Sipihr, Khazain-ul-Futuh</td><td>कव्वाली के जनक, सितार एवं तबला के आविष्कारक</td></tr>
+    </table>
+
+
+    <div class="sticky purple">
+      <div class="slbl">AMIR KHUSRO — योगदान</div>
+      उपाधि: <span class="hl"><strong>"Tuti-e-Hind"</strong></span> (भारत का तोता) — Alauddin Khilji द्वारा दी गई<br>
+      आविष्कार: <span class="hl-g"><strong>सितार एवं तबला</strong></span><br>
+      जनक: <span class="hl-b"><strong>कव्वाली</strong></span><br>
+      पुस्तकें: Nuh Sipihr + Khazain-ul-Futuh<br>
+      संरक्षक: Alauddin Khilji
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3: BABY TAJ -->
+    <div class="sec orange">③ मध्यकालीन इतिहास — मुगल स्मारक 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> मुगल काल के किस स्मारक को "Baby Taj" कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tomb of Itmad-ud-Daulah ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bibi Ka Maqbara</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Moti Masjid</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun's Tomb</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Tomb of Itmad-ud-Daulah = "Baby Taj" | Nur Jahan द्वारा निर्मित | Pietra Dura का पहला प्रयोग</div>
+    </div>
+
+
+    <div class="sub">मुगल स्मारक — उपनाम एवं निर्माता</div>
+    <table class="hw-t pur">
+      <tr><th>स्मारक</th><th>निर्माता</th><th>स्थान</th><th>उपनाम / मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>Tomb of Itmad-ud-Daulah</strong></span></td><td>Nur Jahan</td><td>आगरा</td><td><span class="hl"><strong>"Baby Taj"</strong></span> — प्रथम Pietra Dura</td></tr>
+      <tr><td><span class="hl-g"><strong>Bibi Ka Maqbara</strong></span></td><td>Aurangzeb</td><td>औरंगाबाद</td><td><span class="hl-g"><strong>"दक्कन का ताज"</strong></span></td></tr>
+      <tr><td><span class="hl-b"><strong>Humayun's Tomb</strong></span></td><td>Haji Begum (पत्नी)</td><td>दिल्ली</td><td>प्रथम <span class="hl-b"><strong>Char Bagh</strong></span> शैली का उद्यान मकबरा</td></tr>
+      <tr><td><strong>Taj Mahal</strong></td><td>Shah Jahan</td><td>आगरा</td><td>Mumtaz Mahal हेतु; Pietra Dura जड़ाई कार्य</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw" style="margin-top:8px;"><strong>मुगल स्थापत्य में प्रथम:</strong></p>
+      <ul class="hw key">
+        <li><span class="hl"><strong>प्रथम Pietra Dura</strong></span> = Tomb of Itmad-ud-Daulah (Nur Jahan द्वारा)</li>
+        <li><span class="hl-g"><strong>प्रथम Char Bagh</strong></span> = Humayun's Tomb (Haji Begum द्वारा)</li>
+        <li><span class="hl-b"><strong>प्रथम Double Dome</strong></span> = Lodi वंश ने यह तकनीक प्रारंभ की</li>
+        <li><span class="hl-p"><strong>लाल बलुआ पत्थर का प्रथम प्रयोग</strong></span> = कुतुब मीनार परिसर (दास वंश)</li>
+        <li><strong>Pietra Dura</strong> = अर्ध-कीमती पत्थरों की जड़ाई कार्य (इतालवी तकनीक)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q4: BANJARAS -->
+    <div class="sec green">④ मध्यकालीन इतिहास — मुगल अर्थव्यवस्था एवं व्यापार 💰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> किसने अपने संस्मरणों में बंजारों की अनाज ढुलाई की भूमिका का उल्लेख किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jahangir ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Babur</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sher Shah Suri</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Jahangir (शासनकाल 1605-1627) ने बंजारों द्वारा मंडियों में अनाज पहुँचाने का उल्लेख किया</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">ALAUDDIN KHILJI के 3 बाज़ार</div>
+      1. <span class="hl"><strong>मंडी</strong></span> = अनाज बाज़ार<br>
+      2. <span class="hl-g"><strong>Sarai Adil</strong></span> = कपड़ा बाज़ार<br>
+      3. <span class="hl-p"><strong>तीसरा बाज़ार</strong></span> = दास एवं घोड़े<br>
+      अधिकारी: <span class="hl-b"><strong>शाहना</strong></span> (बाज़ार नियंत्रक) + बरीद (जासूस) + मुन्हियान (गुप्तचर)<br>
+      बंजारे इन मंडियों में अनाज पहुँचाते थे
+    </div>
+
+
+    <div class="sub">मुगल शासक — समयरेखा</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1526–30</span> <span class="hl"><strong>Babur</strong></span> — संस्थापक; पानीपत का प्रथम युद्ध 1526; बारूद युद्ध की शुरुआत</div>
+      <div class="tl-item"><span class="yr">1530–40</span> <strong>Humayun</strong> — Sher Shah Suri से पराजित; 15 वर्ष निर्वासन</div>
+      <div class="tl-item"><span class="yr">1555–56</span> <strong>Humayun</strong> (वापसी) — पुस्तकालय की सीढ़ियों से गिरकर मृत्यु</div>
+      <div class="tl-item"><span class="yr">1556–1605</span> <span class="hl-g"><strong>Akbar</strong></span> — Din-i-Ilahi, Sulh-i-Kul, जजिया समाप्त किया</div>
+      <div class="tl-item"><span class="yr">1605–27</span> <span class="hl-b"><strong>Jahangir</strong></span> — बंजारों का उल्लेख; Nur Jahan का प्रभाव; चित्रकला का संरक्षक</div>
+      <div class="tl-item"><span class="yr">1627–58</span> <span class="hl-p"><strong>Shah Jahan</strong></span> — स्थापत्य कला का स्वर्ण युग; Taj Mahal, लाल किला</div>
+      <div class="tl-item"><span class="yr">1658–1707</span> <strong>Aurangzeb</strong> — जजिया पुनः लागू; सबसे लंबा मुगल शासन</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q5: LALKOT -->
+    <div class="sec purple">⑤ मध्यकालीन इतिहास — दिल्ली के शहर 🏰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> दिल्ली में लालकोट शहर किसने बनवाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Prithviraj Chauhan</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Alauddin Khilji</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Humayun</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Anangpal Tomar ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — Anangpal Tomar (तोमर वंश) ने लालकोट बनवाया — दिल्ली का पहला शहर</div>
+    </div>
+
+    <div class="sub">दिल्ली के सात शहर — समयरेखा</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">पहला</span> <span class="hl"><strong>लालकोट</strong></span> — Anangpal Tomar (तोमर वंश) द्वारा निर्मित; साकेत मेट्रो के पास; Prithviraj Chauhan ने पूरा किया</div>
+      <div class="tl-item"><span class="yr">दूसरा</span> <span class="hl-g"><strong>सिरी</strong></span> — Alauddin Khilji (खिलजी वंश) द्वारा निर्मित</div>
+      <div class="tl-item"><span class="yr">तीसरा</span> <strong>तुगलकाबाद</strong> — Ghiyasuddin Tughlaq द्वारा निर्मित</div>
+      <div class="tl-item"><span class="yr">चौथा</span> <span class="hl-b"><strong>जहाँपनाह</strong></span> — Muhammad Bin Tughlaq द्वारा निर्मित</div>
+      <div class="tl-item"><span class="yr">पाँचवाँ</span> <strong>फिरोज़ाबाद</strong> — Firoz Shah Tughlaq द्वारा निर्मित</div>
+      <div class="tl-item"><span class="yr">छठा</span> <span class="hl-p"><strong>दीनपनाह</strong></span> — Humayun द्वारा निर्मित (बाद में Sher Shah ने शेरगढ़ के रूप में पुनर्निर्मित)</div>
+      <div class="tl-item"><span class="yr">सातवाँ</span> <span class="hl"><strong>शाहजहाँनाबाद</strong></span> — Shah Jahan द्वारा निर्मित (पुरानी दिल्ली / लाल किला क्षेत्र)</div>
+    </div>
+
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>तोमर बनाम चौहान भ्रम:</strong> <span class="hl"><strong>Anangpal Tomar</strong></span> ने लालकोट बनवाया, लेकिन <span class="hl-g"><strong>Prithviraj Chauhan</strong></span> ने इसे पूरा किया जब चौहानों ने तोमरों से सत्ता ली। परीक्षा में अक्सर इन दोनों में भ्रम पैदा किया जाता है! Prithviraj III ने Mohammad Ghori से युद्ध किया — तराइन का प्रथम युद्ध 1191 (चौहान जीते), द्वितीय 1192 (Ghori जीता)।</p>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">तराइन के युद्ध</div>
+        <span class="hl"><strong>प्रथम युद्ध (1191)</strong></span> — Prithviraj III जीते<br>
+        <span class="hl-p"><strong>द्वितीय युद्ध (1192)</strong></span> — Mohammad Ghori जीता<br>
+        1192 के बाद: Ghori के सेनापति <span class="hl-g"><strong>Qutbuddin Aibak</strong></span> ने दास वंश की स्थापना की
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">दिल्ली सल्तनत क्रम</div>
+        1. <span class="hl"><strong>दास/मामलूक</strong></span> (1206-1290)<br>
+        2. <span class="hl-g"><strong>खिलजी</strong></span> (1290-1320)<br>
+        3. <span class="hl-b"><strong>तुगलक</strong></span> (1320-1414)<br>
+        4. <strong>सैय्यद</strong> (1414-1451)<br>
+        5. <span class="hl-p"><strong>लोदी</strong></span> (1451-1526)
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q6: ZABT SYSTEM -->
+    <div class="sec teal">⑥ मध्यकालीन इतिहास — मुगल राजस्व प्रणाली 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> गुजरात और बंगाल में ज़ब्त प्रणाली क्यों लागू नहीं की गई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अधिकारियों की कमी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अधिक वर्षा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भूमि सर्वेक्षण में कठिनाई ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>किसानों का विरोध</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — वहाँ भूमि का सर्वेक्षण करना बहुत कठिन था</div>
+    </div>
+
+    <div class="sub">ज़ब्त/ज़ब्ती (Dahsala) प्रणाली — मुख्य बिंदु</div>
+    <div class="sticky teal">
+      <div class="slbl">ज़ब्त प्रणाली</div>
+      <span class="hl"><strong>ज़ब्त = ज़ब्ती = Dahsala प्रणाली</strong></span> (1580, Akbar का काल)<br>
+      लागू करने वाले: <span class="hl-g"><strong>Raja Todar Mal</strong></span><br>
+      विधि: 10 वर्षों के औसत भू-राजस्व की गणना<br>
+      गुजरात एवं बंगाल में लागू नहीं — भूमि सर्वेक्षण में कठिनाई के कारण
+    </div>
+
+    <div class="sub">ज़ब्त के अंतर्गत भूमि श्रेणियाँ</div>
+    <table class="hw-t teal-h">
+      <tr><th>श्रेणी</th><th>अर्थ</th><th>परती अवधि</th></tr>
+      <tr><td><span class="hl"><strong>पोलज</strong></span></td><td>निरंतर कृषि योग्य</td><td>कभी परती नहीं</td></tr>
+      <tr><td><span class="hl-g"><strong>पराउती</strong></span></td><td>अस्थायी रूप से परती</td><td>1–2 वर्ष</td></tr>
+      <tr><td><span class="hl-b"><strong>चाचर</strong></span></td><td>मध्यम परती</td><td>3–4 वर्ष</td></tr>
+      <tr><td><span class="hl-p"><strong>बंजर</strong></span></td><td>दीर्घकालिक परती</td><td>5+ वर्ष</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q7: MANSABDARI SYSTEM -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> मनसबदारी प्रणाली में घुड़सवारों को क्या कहा जाता था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ज़ात</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सवार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मनसब</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जागीर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — सवार = घुड़सवार/अश्वारोही</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">मनसबदारी प्रणाली — मुख्य बिंदु</div>
+      <span class="hl"><strong>सवार</strong></span> = घुड़सवार/अश्वारोही<br>
+      <span class="hl-g"><strong>ज़ात</strong></span> = पैदल सैनिक<br>
+      <span class="hl-b"><strong>मनसब</strong></span> = पद (10–10,000 तक; सुल्तान के पुत्रों को ऊँचे मनसब)<br>
+      दो प्रकार: <span class="hl-p"><strong>नक़दी</strong></span> (नगद भुगतान) एवं <strong>जागीरदारी</strong> (भूमि अनुदान)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q8: HUMAYUN -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Humayun को मुगल सिंहासन पुनः प्राप्त करने में किसने सहायता की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गुजरात का Bahadur Shah</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sher Shah Suri</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>ईरान का Safavid वंश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rana Sanga</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — ईरान (फारस) के Safavid वंश ने Humayun को सिंहासन पुनः प्राप्त करने में सहायता की</div>
+    </div>
+
+
+    <div class="sub">Humayun की यात्रा — समयरेखा</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1539</span> <span class="hl"><strong>चौसा</strong></span> का युद्ध — Sher Shah Suri से पराजित</div>
+      <div class="tl-item"><span class="yr">1540</span> <span class="hl-p"><strong>कन्नौज/बिलग्राम</strong></span> का युद्ध — पुनः पराजित; भारत से भागे</div>
+      <div class="tl-item"><span class="yr">1540–55</span> <span class="hl-b"><strong>फारस में निर्वासन</strong></span> — Safavid वंश ने शरण एवं सैन्य सहायता दी</div>
+      <div class="tl-item"><span class="yr">1555</span> <span class="hl-g"><strong>दिल्ली पुनः प्राप्त</strong></span> — Safavid सहायता से</div>
+      <div class="tl-item"><span class="yr">1556</span> पुस्तकालय की सीढ़ियों से गिरकर मृत्यु</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky pink">
+        <div class="slbl">BABUR के 4 प्रमुख युद्ध</div>
+        1. <span class="hl"><strong>प्रथम पानीपत (1526)</strong></span> — Ibrahim Lodi के विरुद्ध<br>
+        2. <span class="hl-g"><strong>खानवा (1527)</strong></span> — Rana Sanga के विरुद्ध<br>
+        3. <span class="hl-b"><strong>चंदेरी (1528)</strong></span> — Medini Rai के विरुद्ध<br>
+        4. <span class="hl-p"><strong>घाघरा (1529)</strong></span> — अफगानों के विरुद्ध
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">HUMAYUN की पराजय</div>
+        पराजित हुए: <span class="hl"><strong>Sher Shah Suri</strong></span> से<br>
+        युद्ध: चौसा (1539) + कन्नौज (1540)<br>
+        निर्वासन: 15 वर्ष फारस में<br>
+        वापसी: <span class="hl-g"><strong>Safavid</strong></span> सैन्य सहायता से
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q9: NAWAB OF BENGAL -->
+    <div class="sec pink">⑦ मध्यकालीन इतिहास — नवाब एवं क्षेत्रीय शक्तियाँ 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> निम्न में से कौन कभी बंगाल का नवाब नहीं था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Alivardi Khan</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Sadat Ali Khan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mir Qasim</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Siraj-ud-Daula</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — Sadat Ali Khan अवध के प्रथम नवाब थे, बंगाल के नहीं</div>
+    </div>
+
+    <div class="sub">प्रथम नवाब — तुलना</div>
+    <table class="hw-t red-h">
+      <tr><th>राज्य</th><th>प्रथम नवाब</th><th>मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>बंगाल</strong></span></td><td>Murshid Quli Khan</td><td>बंगाल के नवाबों ने प्लासी युद्ध तक नेतृत्व किया</td></tr>
+      <tr><td><span class="hl-g"><strong>अवध</strong></span></td><td>Sadat Ali Khan (Saadat Khan)</td><td>बंगाल के नवाब नहीं — परीक्षा में भ्रम!</td></tr>
+      <tr><td><span class="hl-b"><strong>हैदराबाद</strong></span></td><td>Nizam-ul-Mulk</td><td>स्वतंत्र हैदराबाद राज्य की स्थापना</td></tr>
+    </table>
+
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">बंगाल के नवाब — उत्तराधिकार</div>
+        Murshid Quli Khan → ... → <span class="hl"><strong>Alivardi Khan</strong></span><br>
+        → <span class="hl-g"><strong>Siraj-ud-Daula</strong></span> (प्लासी 1757)<br>
+        → <span class="hl-b"><strong>Mir Jafar</strong></span> (अंग्रेज़ों का कठपुतली)<br>
+        → <span class="hl-p"><strong>Mir Qasim</strong></span> (बक्सर 1764)
+      </div>
+      <div class="sticky purple">
+        <div class="slbl">प्लासी एवं बक्सर का युद्ध</div>
+        <span class="hl"><strong>प्लासी (1757)</strong></span> — Siraj बनाम Clive; Mir Jafar ने विश्वासघात किया<br>
+        <span class="hl-g"><strong>बक्सर (1764)</strong></span> — Mir Qasim + Shah Alam II + Shuja-ud-Daula की संयुक्त सेना बनाम अंग्रेज़<br>
+        परिणाम: इलाहाबाद की संधि (1765) — अंग्रेज़ों को दीवानी अधिकार
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q10: LODI DYNASTY -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> लोदी वंश की स्थापना किसने की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sikandar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ibrahim</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Bahlol Lodi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Nasiruddin</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — Bahlol Lodi (दिल्ली सल्तनत का अंतिम वंश)</div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">LODI वंश — दिल्ली सल्तनत का अंतिम वंश</div>
+      उत्तराधिकार: <span class="hl"><strong>Bahlol Lodi</strong></span> → <span class="hl-g"><strong>Sikandar Lodi</strong></span> → <span class="hl-p"><strong>Ibrahim Lodi</strong></span> (अंतिम शासक)<br>
+      Ibrahim को <span class="hl-b"><strong>Babur (1526)</strong></span> ने पानीपत के प्रथम युद्ध में पराजित किया<br>
+      Babur ने प्रयोग किया: <span class="hl"><strong>तुलुगमा</strong></span> (flanking) + <strong>बारूद</strong> युद्ध<br>
+      Ibrahim खटोली के युद्ध में Rana Sanga से भी हारा
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q11: SULH-I-KUL -->
+    <div class="sec teal">⑧ मध्यकालीन इतिहास — Akbar की नीतियाँ 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> मुगल नीति "Sulh-i-Kul" किस बात पर बल देती थी:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>धार्मिक सहिष्णुता एवं सार्वभौमिक शांति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आक्रामक विजय</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>करों की समाप्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवल इस्लामी कानून</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Akbar द्वारा प्रारंभ, अर्थ "सार्वभौमिक शांति"</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw" style="margin-top:8px;"><strong>Akbar की धार्मिक नीतियाँ:</strong></p>
+      <ul class="hw key">
+        <li><span class="hl"><strong>Sulh-i-Kul</strong></span> = सार्वभौमिक शांति एवं धार्मिक सहिष्णुता</li>
+        <li><span class="hl-g"><strong>Din-e-Ilahi</strong></span> = समन्वयवादी धर्म (सभी धर्मों का मिश्रण) — मुख्यतः असफल</li>
+        <li><span class="hl-b"><strong>Birbal</strong></span> = Din-e-Ilahi अपनाने वाले प्रथम एवं एकमात्र हिन्दू</li>
+        <li><span class="hl-p"><strong>इबादतखाना</strong></span> = फतेहपुर सीकरी में इबादत का हॉल (धार्मिक वाद-विवाद)</li>
+        <li><strong>जजिया</strong> (गैर-मुसलमानों पर कर) एवं <strong>तीर्थ यात्रा कर</strong> समाप्त किया</li>
+      </ul>
+    </div>
+
+
+    <!-- Q12: SHALIMAR BAGH -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> जम्मू-कश्मीर में शालीमार बाग किसने बनवाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jahangir ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Akbar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Babur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Jahangir; उनकी प्रिय पत्नी Nur Jahan (Mehrunissa) थीं</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">JAHANGIR — मुख्य तथ्य</div>
+      निर्मित: <span class="hl"><strong>शालीमार बाग</strong></span> (जम्मू-कश्मीर)<br>
+      पत्नी: <span class="hl-g"><strong>Nur Jahan (Mehrunissa)</strong></span> — सर्वाधिक शक्तिशाली मुगल रानी<br>
+      Nur Jahan ने बनवाया: Tomb of Itmad-ud-Daulah ("Baby Taj")<br>
+      शासनकाल: 1605–1627 | चित्रकला एवं प्रकृति का संरक्षक
+    </div>
+
+    <!-- Q13: MANSABDAR MILITARY -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> मनसबदार की सैन्य ज़िम्मेदारी क्या थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>घुड़सवारों को बनाए रखना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर संग्रह</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>न्याय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भूमि वितरण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — मनसबदारी प्रणाली 1571 में Akbar के काल में प्रारंभ; मनसबदार घुड़सवारों (सवार) को बनाए रखते थे</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q14: AURANGZEB -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Aurangzeb की मृत्यु कब हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1707 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1680</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1725</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1690</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — 1707 में औरंगाबाद में। 1658 में सिंहासन पर बैठे।</div>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">AURANGZEB का उत्तराधिकार युद्ध</div>
+      सिंहासन: <span class="hl"><strong>1658</strong></span> भाइयों को पराजित करने के बाद<br>
+      प्रमुख युद्ध: <span class="hl-g"><strong>धरमत</strong></span> → <span class="hl-b"><strong>सामूगढ़</strong></span> → <span class="hl-p"><strong>देवराई</strong></span><br>
+      पिता <strong>Shah Jahan</strong> को आगरा किले में कैद किया<br>
+      मृत्यु: <span class="hl"><strong>1707</strong></span> औरंगाबाद में | सबसे लंबा मुगल शासन (49 वर्ष)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q15: IQTA SYSTEM -->
+    <div class="sec orange">⑨ मध्यकालीन इतिहास — सल्तनत प्रशासन ⚙️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> इक्ता प्रणाली सामंती प्रणाली से मिलती-जुलती थी क्योंकि:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सैन्य सेवा के बदले राजस्व अधिकार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>धार्मिक नियंत्रण</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लोकतांत्रिक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कर-मुक्त</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Iltutmish द्वारा प्रारंभ, Alauddin Khilji द्वारा समाप्त। इक्तादार को मुक्ती/वली भी कहते थे।</div>
+    </div>
+
+    <div class="sub">इक्ता बनाम मनसबदारी — तुलना</div>
+    <table class="hw-t alt">
+      <tr><th>विशेषता</th><th>इक्ता प्रणाली</th><th>मनसबदारी प्रणाली</th></tr>
+      <tr><td><strong>प्रारंभकर्ता</strong></td><td><span class="hl"><strong>Iltutmish</strong></span> (सल्तनत)</td><td><span class="hl-g"><strong>Akbar</strong></span> (मुगल, 1571)</td></tr>
+      <tr><td><strong>समाप्तकर्ता</strong></td><td>Alauddin Khilji</td><td>Aurangzeb के बाद पतन</td></tr>
+      <tr><td><strong>धारक का नाम</strong></td><td>इक्तादार / मुक्ती / वली</td><td>मनसबदार</td></tr>
+      <tr><td><strong>भुगतान</strong></td><td>भू-राजस्व अधिकार</td><td>नक़दी (नगद) या जागीरदारी (भूमि)</td></tr>
+      <tr><td><strong>दायित्व</strong></td><td>सैन्य सेवा</td><td>घुड़सवारों (सवार) को बनाए रखना</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="slbl">ILTUTMISH — अतिरिक्त तथ्य</div>
+      इन्होंने प्रारंभ किया: <span class="hl"><strong>चहलगनी</strong></span> (40 तुर्की दासों/अमीरों का समूह)<br>
+      चहलगनी समाप्त: <span class="hl-g"><strong>Balban</strong></span> द्वारा<br>
+      Iltutmish = दिल्ली सल्तनत के वास्तविक संस्थापक (Aibak के बाद सत्ता सुदृढ़ की)
+    </div>
+
+
+    <!-- Q16: TODAR MAL -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Akbar के राजस्व मंत्री जिन्हें भूमि सुधार का श्रेय दिया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Abul Fazl</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Birbal</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Raja Todar Mal ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tansen</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — Todar Mal ने 1580 में Dahsala (ज़ब्त) प्रणाली प्रारंभ की</div>
+    </div>
+
+    <div class="sub">Akbar के नवरत्न (नौ रत्न)</div>
+    <table class="hw-t grn">
+      <tr><th>नवरत्न</th><th>भूमिका / योगदान</th></tr>
+      <tr><td><span class="hl"><strong>Raja Todar Mal</strong></span></td><td>राजस्व मंत्री — Dahsala/ज़ब्त प्रणाली (1580)</td></tr>
+      <tr><td><span class="hl-g"><strong>Abul Fazl</strong></span></td><td>इतिहासकार — Akbarnama (3 खंड) लिखी</td></tr>
+      <tr><td><span class="hl-b"><strong>Birbal</strong></span></td><td>बुद्धि एवं विवेक; Din-e-Ilahi स्वीकार करने वाले एकमात्र हिन्दू</td></tr>
+      <tr><td><span class="hl-p"><strong>Tansen</strong></span></td><td>संगीतकार — राग (दीपक, मेघ मल्हार)</td></tr>
+      <tr><td><strong>Raja Man Singh</strong></td><td>सैन्य सेनापति</td></tr>
+      <tr><td><strong>Abdul Rahim Khan-e-Khana</strong></td><td>कवि; Baburnama का फारसी अनुवाद</td></tr>
+      <tr><td><strong>Faizi</strong></td><td>कवि (Abul Fazl के भाई)</td></tr>
+      <tr><td><strong>Mullah Do-Piaza</strong></td><td>सलाहकार</td></tr>
+      <tr><td><strong>Fakir Aziao-Din</strong></td><td>सूफी संत सलाहकार</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q17: IBN BATTUTA -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> किस यात्री ने Muhammad bin Tughlaq का वर्णन किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ibn Battuta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Marco Polo</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alberuni</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Domingo Paes</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Ibn Battuta (मोरक्को का यात्री), "Rihla" अरबी में लिखी</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">IBN BATTUTA — त्वरित स्मरण</div>
+      मूल स्थान: <span class="hl"><strong>मोरक्को</strong></span> (उत्तरी अफ्रीका)<br>
+      पुस्तक: <span class="hl-g"><strong>Rihla</strong></span> (अरबी में लिखी)<br>
+      भ्रमण: Muhammad bin Tughlaq के दरबार में<br>
+      वर्णन: MBT के असफल प्रयोग (सांकेतिक मुद्रा, राजधानी दौलताबाद स्थानांतरण)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q18: ALAUDDIN KHILJI TAXES -->
+    <div class="sec red">⑩ मध्यकालीन इतिहास — Alauddin Khilji के सुधार 💰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Alauddin Khilji के शासन में कृषि पर लगाया जाने वाला कर कौन सा था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>खराज ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>घरी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चराई</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जजिया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — खराज = कृषि/भूमि कर (उपज का 50%)</div>
+    </div>
+
+    <div class="sub">Alauddin Khilji के 3 कर</div>
+    <table class="hw-t red-h">
+      <tr><th>कर</th><th>अर्थ</th><th>दर/विवरण</th></tr>
+      <tr><td><span class="hl"><strong>खराज</strong></span></td><td>भूमि/कृषि कर</td><td>उपज का 50%</td></tr>
+      <tr><td><span class="hl-g"><strong>घरी</strong></span></td><td>गृह कर</td><td>घरों/संपत्ति पर</td></tr>
+      <tr><td><span class="hl-p"><strong>चराई</strong></span></td><td>पशुचारण कर</td><td>पशुओं/मवेशियों पर</td></tr>
+    </table>
+
+
+    <!-- Q19: ALAI DARWAZA -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Alauddin Khilji ने क्या बनवाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Alai Darwaza ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Qutub Minar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लाल किला</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun's Tomb</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Alai Darwaza = कुतुब मीनार परिसर का प्रवेश द्वार</div>
+    </div>
+
+    <!-- Q20: ZAKAT -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> ज़कात मुसलमानों के लिए अनिवार्य कर्तव्य था। यह क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मामलूक</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>ज़कात ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>किस्मत</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — ज़कात = धार्मिक दान/भिक्षा (इस्लाम के 5 स्तंभों में से एक)</div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">शब्दावली स्पष्टीकरण</div>
+      <span class="hl"><strong>ज़कात</strong></span> = धार्मिक दान/भिक्षा (मुसलमानों के लिए अनिवार्य)<br>
+      <span class="hl-g"><strong>मामलूक</strong></span> = दास (इसलिए "दास वंश" = मामलूक वंश)<br>
+      <span class="hl-b"><strong>उर</strong></span> = चोल काल में सामान्य लोगों की सभा<br>
+      <span class="hl-p"><strong>जजिया</strong></span> = गैर-मुसलमानों पर कर (Akbar ने समाप्त किया, Aurangzeb ने पुनः लागू किया)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q21: THE LAST MUGHAL -->
+    <div class="sec blue">⑪ मध्यकालीन इतिहास — पुस्तकें एवं साहित्य 📖</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> William Dalrymple की "The Last Mughal" किस विषय पर है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्लासी</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1857 का विद्रोह ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुगलों का पतन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विभाजन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 1857 का भारतीय विद्रोह (Bahadur Shah Zafar अंतिम मुगल सम्राट थे)</div>
+    </div>
+
+    <!-- Q22: AKBAR ADMIN -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> कौन सा मुगल शासक प्रशासनिक सुधारों एवं धार्मिक सहिष्णुता के लिए जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Akbar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Aurangzeb</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Shah Jahan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jahangir</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Akbar (Sulh-i-Kul, Din-e-Ilahi, मनसबदारी, ज़ब्ती प्रणाली)</div>
+    </div>
+
+
+    <!-- Q23: AIN-I-AKBARI -->
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Akbarnama का तीसरा खंड किस नाम से जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ain-i-Akbari ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tuzuk-e-Babri</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Padshahnamah</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tarikh-e-Firozshahi</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — Ain-i-Akbari (प्रशासन से संबंधित)। Abul Fazl द्वारा लिखित।</div>
+    </div>
+
+    <div class="sub">मुगल पुस्तकें एवं लेखक</div>
+    <table class="hw-t pur">
+      <tr><th>पुस्तक</th><th>लेखक</th><th>विषय / मुख्य तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>Akbarnama (3 खंड)</strong></span></td><td>Abul Fazl</td><td>Akbar के शासनकाल का इतिहास; तीसरा खंड = Ain-i-Akbari</td></tr>
+      <tr><td><span class="hl-g"><strong>Ain-i-Akbari</strong></span></td><td>Abul Fazl</td><td>मुगल भारत का प्रशासन, भूगोल, संस्कृति</td></tr>
+      <tr><td><span class="hl-b"><strong>Tuzuk-e-Babri (Baburnama)</strong></span></td><td>Babur</td><td>तुर्की में आत्मकथा; Abdul Rahim Khan-e-Khana द्वारा फारसी अनुवाद</td></tr>
+      <tr><td><span class="hl-p"><strong>Padshahnamah</strong></span></td><td>Abdul Hamid Lahori</td><td>Shah Jahan के शासनकाल का इतिहास</td></tr>
+      <tr><td><strong>Tarikh-e-Firozshahi</strong></td><td>Ziauddin Barani</td><td>सल्तनत काल — Muhammad bin Tughlaq</td></tr>
+      <tr><td><strong>Shahnama</strong></td><td>Ferdowsi</td><td>फारसी महाकाव्य; Mahmud of Ghazni द्वारा प्रायोजित</td></tr>
+      <tr><td><strong>Rihla</strong></td><td>Ibn Battuta</td><td>भारत यात्रा वृत्तांत (अरबी); MBT के दरबार का वर्णन</td></tr>
+      <tr><td><strong>Kitabul Hind</strong></td><td>Alberuni</td><td>Mahmud Ghazni के साथ आए; भारतीय समाज का वर्णन</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- END NOTE -->
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 प्रश्न 1–23 सम्मिलित</div>
+      <strong>मध्यकालीन इतिहास — स्थापत्य, इतिहासकार, स्मारक, व्यापार, शहर, राजस्व, मनसबदारी, नवाब, नीतियाँ, कर, पुस्तकें ✅</strong>
+    </div>
+
+</div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
