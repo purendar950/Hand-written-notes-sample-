@@ -897,6 +897,7 @@ function renderFolderView() {
       </div>
       <span class="type-badge ${typeClass}">${type}</span>
       <div class="file-admin-actions">
+        <button onclick="previewFile('${f.name.replace(/'/g,"\\'")}')" title="Preview">👀</button>
         <button onclick="moveFileUp(${idx})" title="Move Up" ${idx===0?'style="opacity:.3"':''}>⬆️</button>
         <button onclick="moveFileDown(${idx})" title="Move Down" ${idx===files.length-1?'style="opacity:.3"':''}>⬇️</button>
         <button onclick="setSerialNumber('${f.name.replace(/'/g,"\\'")}')" title="Set #">🔢</button>
