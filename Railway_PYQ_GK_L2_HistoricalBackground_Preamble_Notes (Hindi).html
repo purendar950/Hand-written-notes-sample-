@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Railway PYQ GK L2 | ऐतिहासिक पृष्ठभूमि एवं उद्देशिका | Topper Notes (हिंदी)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(139,109,56,.15) 35px,rgba(139,109,56,.15) 70px),
+    repeating-linear-gradient(-45deg,transparent,transparent 35px,rgba(100,80,40,.1) 35px,rgba(100,80,40,.1) 70px);
+  background-color:#8B6914;opacity:.40;z-index:-1;pointer-events:none;
+}
+
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#1a1a2e 45%,#16213e 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.7rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.cover-train{font-size:2rem;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.sticky.orange{background:#fff3e0;border-color:#e65100}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.hw-t.navy th{background:#1a237e;color:#e8eaf6}
+.hw-t.maroon th{background:#880e4f;color:#fce4ec}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ परीक्षा TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 याद करने की TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 सूत्र';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 मुख्य तथ्य';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 परीक्षा TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'🚂 रेलवे कनेक्ट';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.preamble-box{border:3px double var(--purple);border-radius:10px;padding:14px 18px;
+  margin:16px 0;background:linear-gradient(135deg,#fce4ec,#f3e5f5);position:relative;text-align:center}
+.preamble-box::before{content:'📜 उद्देशिका का पाठ';position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 14px;border-radius:4px;white-space:nowrap}
+
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-exam{font-size:.72rem;color:#b2dfdb;float:right;font-family:'Kalam',cursive;margin-top:2px}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col,.four-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col,.four-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* ACT CARD */
+.act-card{border-radius:10px;margin:16px 0;overflow:hidden;box-shadow:2px 3px 10px rgba(0,0,0,.12)}
+.act-hdr{padding:10px 16px;font-family:'Caveat Brush',cursive;font-size:1.2rem;color:#fff;display:flex;align-items:center;gap:8px}
+.act-hdr.r1773{background:linear-gradient(90deg,#b71c1c,#d32f2f)}
+.act-hdr.p1784{background:linear-gradient(90deg,#1565c0,#1976d2)}
+.act-hdr.c1813{background:linear-gradient(90deg,#2e7d32,#388e3c)}
+.act-hdr.c1833{background:linear-gradient(90deg,#6a1b9a,#7b1fa2)}
+.act-hdr.c1853{background:linear-gradient(90deg,#e65100,#f57c00)}
+.act-hdr.g1858{background:linear-gradient(90deg,#880e4f,#ad1457)}
+.act-hdr.ic1861{background:linear-gradient(90deg,#00695c,#00897b)}
+.act-hdr.ic1892{background:linear-gradient(90deg,#37474f,#546e7a)}
+.act-hdr.ic1909{background:linear-gradient(90deg,#1a237e,#283593)}
+.act-hdr.g1919{background:linear-gradient(90deg,#bf360c,#e64a19)}
+.act-hdr.g1935{background:linear-gradient(90deg,#1b5e20,#2e7d32)}
+.act-hdr.i1947{background:linear-gradient(90deg,#4a148c,#6a1b9a)}
+.act-body{background:#fff;padding:12px 16px}
+
+
+/* DARK MODE */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item,body.dark .act-body{color:#d0d8e8}
+body.dark .act-body{background:#1e2d4a}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+body.dark .preamble-box{background:linear-gradient(135deg,#2d1018,#1e0d28)}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box,.act-card{break-inside:avoid}
+  .hw-t th,.cover,.act-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">🚂 Railway PYQ GK — Lecture 2 | ऐतिहासिक पृष्ठभूमि एवं उद्देशिका (हिंदी)</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">🚂 Parmar Academy — Railway PYQ Series</div>
+    <div class="cover-title">📝 GK Lecture 2 — Topper Notes (हिंदी)</div>
+    <div class="cover-sub">ऐतिहासिक पृष्ठभूमि एवं उद्देशिका</div>
+    <div class="cover-badge">⚖️ राजव्यवस्था | अधिनियम 1773–1947 + उद्देशिका | Railway NTPC / RPF / Group-D</div>
+    <div class="cover-train">🚂🚃🚃🚃🚃🚃</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- INTRO STATS -->
+    <div class="sub" style="margin-top:12px">Lecture 2 — संक्षिप्त अवलोकन</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">12</div><div class="lbl">महत्वपूर्ण अधिनियम<br>1773–1947</div></div>
+      <div class="num-b"><div class="big">29+</div><div class="lbl">PYQ इस Lecture में<br>Cover किए गए</div></div>
+      <div class="num-b"><div class="big">2</div><div class="lbl">Topics<br>अधिनियम + उद्देशिका</div></div>
+    </div>
+
+    <div class="sticky orange" style="margin-top:14px">
+      <div class="slbl">📚 LECTURE PLAN — आज के Topics</div>
+      <strong>Topic 1:</strong> ऐतिहासिक पृष्ठभूमि — ईस्ट इंडिया कंपनी के अधिनियम (1773 → 1947)<br>
+      <strong>Topic 2:</strong> उद्देशिका (Preamble) — स्रोत, पाठ, विशेषताएँ, संशोधन<br>
+      <strong>अगला Lecture (L3):</strong> संघ और उसका राज्यक्षेत्र 🗺️
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PART A: HISTORICAL BACKGROUND -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec red">📜 भाग A — ऐतिहासिक पृष्ठभूमि: महत्वपूर्ण अधिनियम 🏛️</div>
+
+    <div class="sub">अधिनियम क्यों आए? — पृष्ठभूमि समझो</div>
+    <div class="key-box">
+      <ul class="hw key">
+        <li>ईस्ट इंडिया कंपनी ब्रिटेन से <span class="hl"><strong>व्यापार</strong></span> करने आई थी, लेकिन धीरे-धीरे <span class="hl-p"><strong>शासन</strong></span> करने लगी</li>
+        <li>प्लासी का युद्ध <span class="hl"><strong>1757</strong></span> → बक्सर का युद्ध <span class="hl"><strong>1764</strong></span> → EIC ने अपनी स्थिति मजबूत की</li>
+        <li>कर्मचारी ब्रिटेन से <span class="hl-g"><strong>गरीब जाते और अमीर लौटते</strong></span> — ब्रिटिश सरकार चिंतित हुई</li>
+        <li>ब्रिटिश सरकार ने EIC के मामलों को <span class="hl"><strong>नियंत्रित (regulate)</strong></span> करने के लिए अधिनियम पारित किए</li>
+        <li>केंद्रीकरण <span class="hl"><strong>1773</strong></span> में शुरू हुआ, चरम पर <span class="hl-g"><strong>1833</strong></span> में पहुँचा, फिर विकेंद्रीकरण <span class="hl-p"><strong>1861</strong></span> में शुरू हुआ</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ACT 1: REGULATING ACT 1773 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="act-card">
+      <div class="act-hdr r1773">① रेग्युलेटिंग एक्ट 1773 — नियामक अधिनियम</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>बंगाल के गवर्नर → को <span class="hl"><strong>बंगाल का गवर्नर जनरल</strong></span> बनाया गया (मद्रास और बॉम्बे से अधिक शक्तियाँ)</li>
+          <li><strong>बंगाल का प्रथम गवर्नर जनरल</strong> = <span class="hl"><strong>वॉरेन हेस्टिंग्स</strong></span> (ब्रिटेन में इन पर महाभियोग चलाया गया)</li>
+          <li>कलकत्ता में <span class="hl-g"><strong>1774</strong></span> में सर्वोच्च न्यायालय (Supreme Court) की स्थापना — 1 मुख्य न्यायाधीश + <span class="hl"><strong>3 अतिरिक्त न्यायाधीश</strong></span></li>
+          <li>सर्वोच्च न्यायालय के <strong>प्रथम मुख्य न्यायाधीश</strong> = <span class="hl"><strong>एलिजाह इम्पे</strong></span></li>
+          <li>मद्रास और बॉम्बे के गवर्नरों को <span class="hl-p"><strong>बंगाल के गवर्नर जनरल</strong></span> को रिपोर्ट करना होता था</li>
+          <li>Court of Directors EIC के <span class="hl"><strong>व्यावसायिक मामलों</strong></span> का प्रबंधन करती थी</li>
+          <li><span class="hl-b"><strong>केंद्रीकरण की शुरुआत</strong></span> इसी अधिनियम से हुई — शक्ति बंगाल में केंद्रित हुई</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Q1 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q1.</span> रेग्युलेटिंग एक्ट 1773 में प्रावधान था कि एक सर्वोच्च न्यायालय की स्थापना की जाए जिसमें एक मुख्य न्यायाधीश और ___ अतिरिक्त न्यायाधीश हों।
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चार अतिरिक्त न्यायाधीश</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दो अतिरिक्त न्यायाधीश</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>तीन अतिरिक्त न्यायाधीश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>छह अतिरिक्त न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — तीन अतिरिक्त न्यायाधीश | सर्वोच्च न्यायालय 1774 में स्थापित | प्रथम CJ = एलिजाह इम्पे | प्रथम GG बंगाल = वॉरेन हेस्टिंग्स</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q2.</span> रेग्युलेटिंग एक्ट 1773 के अनुसार, मद्रास और बॉम्बे के गवर्नरों को नियमित रूप से किसे रिपोर्ट करना होता था?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Court of Directors को</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ब्रिटिश Crown को</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>बंगाल के गवर्नर जनरल को ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ब्रिटिश संसद को</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — बंगाल का गवर्नर जनरल | केंद्रीकरण की शुरुआत यहीं से | Court of Directors = केवल व्यावसायिक मामले</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>याद करने की Trick — रेग्युलेटिंग एक्ट 1773:</strong><br>
+      "1 CJ + <span class="hl"><strong>3</strong></span> Judges" → <strong>वॉरेन हेस्टिंग्स</strong> (प्रथम GG बंगाल) → <strong>एलिजाह इम्पे</strong> (प्रथम CJ) → केंद्रीकरण शुरू 🎯</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ACT 2: PITT'S INDIA ACT 1784 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="act-card">
+      <div class="act-hdr p1784">② पिट्स इंडिया एक्ट 1784</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><span class="hl"><strong>बोर्ड ऑफ कंट्रोल (Board of Control)</strong></span> की स्थापना → ब्रिटिश भारत के <span class="hl-p"><strong>सिविल और सैन्य मामलों</strong></span> को नियंत्रित करने के लिए</li>
+          <li>Court of Directors (पहले से मौजूद) = <span class="hl-g"><strong>व्यावसायिक मामलों</strong></span> का प्रबंधन</li>
+          <li>Board of Control = <span class="hl"><strong>प्रशासनिक / राजनीतिक / सिविल / सैन्य मामलों</strong></span> का प्रबंधन</li>
+          <li>इस अधिनियम ने <span class="hl-b"><strong>द्वैध शासन (Double Government)</strong></span> बनाया — Board of Control + Court of Directors</li>
+          <li>Board of Control को बाद में <span class="hl"><strong>भारत शासन अधिनियम 1858</strong></span> द्वारा समाप्त किया गया</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q3.</span> ब्रिटिश भारतीय क्षेत्रों में सिविल और सैन्य शासन के सभी मामलों को नियंत्रित करने के लिए किस निकाय की स्थापना की गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Board of Executives</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Board of Directors</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Board of Legislature</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Board of Control ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — Board of Control | पिट्स इंडिया एक्ट 1784 द्वारा स्थापित | Court of Directors = व्यावसायिक; Board of Control = सिविल और सैन्य</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CHARTER ACTS 1813, 1833, 1853 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec blue">② चार्टर अधिनियम — 1813 | 1833 | 1853 📃</div>
+
+    <div class="act-card">
+      <div class="act-hdr c1813">③ चार्टर एक्ट 1813</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>भारत में शिक्षा के लिए <span class="hl"><strong>₹1 लाख</strong></span> आवंटित किए गए</li>
+          <li><span class="hl-p"><strong>ईसाई मिशनरियों</strong></span> को भारत आने की अनुमति दी गई</li>
+          <li>EIC का व्यापारिक एकाधिकार समाप्त — अपवाद: <span class="hl"><strong>चाय का व्यापार और चीन के साथ व्यापार</strong></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="act-card">
+      <div class="act-hdr c1833">④ चार्टर एक्ट 1833 — सेंट हेलेना एक्ट</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>शेष अपवाद (चाय + चीन व्यापार) भी समाप्त → EIC <span class="hl"><strong>पूरी तरह प्रशासनिक निकाय</strong></span> बनी (अब कोई व्यापार नहीं!)</li>
+          <li>बंगाल का गवर्नर जनरल → <span class="hl"><strong>भारत का गवर्नर जनरल</strong></span> (पूरे भारत पर अधिक शक्तियाँ)</li>
+          <li><strong>भारत का प्रथम गवर्नर जनरल</strong> = <span class="hl"><strong>विलियम बेंटिंक</strong></span></li>
+          <li><span class="hl-p"><strong>विधि आयोग (Law Commission)</strong></span> की स्थापना → प्रथम अध्यक्ष = <span class="hl"><strong>थॉमस बैबिंगटन मैकाले</strong></span></li>
+          <li>मैकाले गवर्नर जनरल की कार्यकारी परिषद में <span class="hl-g">विधि सदस्य (Law Member)</span> भी थे</li>
+          <li>अधिनियम अगले <span class="hl-b"><strong>20 वर्षों</strong></span> के लिए वैध (समय सीमा उल्लेखित)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="act-card">
+      <div class="act-hdr c1853">⑤ चार्टर एक्ट 1853</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>GG की परिषद के <span class="hl"><strong>विधायी और कार्यकारी कार्यों</strong></span> को औपचारिक रूप से अलग किया गया</li>
+          <li>भारतीय सिविल सेवा (ICS) में <span class="hl-p"><strong>खुली प्रतियोगिता (Open Competition)</strong></span> शुरू की गई</li>
+          <li>भारतीय विधानमंडल में <span class="hl-g"><strong>स्थानीय प्रतिनिधित्व</strong></span> शुरू किया गया</li>
+          <li><span class="hl"><strong>कोई समय सीमा नहीं</strong></span> — EIC को संकेत कि उनका शासन कभी भी समाप्त हो सकता है!</li>
+          <li>पहली बार भारतीयों को विधानमंडल में स्थानीय प्रतिनिधित्व मिला</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Q4 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q4.</span> ईस्ट इंडिया कंपनी के निम्नलिखित में से किस अधिनियम ने गवर्नर जनरल की परिषद के विधायी और कार्यकारी कार्यों को औपचारिक रूप से अलग किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चार्टर एक्ट 1833</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>चार्टर एक्ट 1853 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चार्टर एक्ट 1793</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चार्टर एक्ट 1813</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — चार्टर एक्ट 1853 | इसने शुरू किया: ICS में खुली प्रतियोगिता + विधानमंडल में स्थानीय प्रतिनिधित्व + कोई समय सीमा नहीं (EIC को चेतावनी)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>केंद्रीकरण की यात्रा — परीक्षा TRAP:</strong><br>
+      1773 एक्ट → GG of <span class="hl">Bengal</span> | केंद्रीकरण शुरू<br>
+      1833 एक्ट → GG of <span class="hl-g">India</span> | केंद्रीकरण चरम पर 🔝<br>
+      1861 एक्ट → विकेंद्रीकरण शुरू (बॉम्बे और मद्रास को शक्तियाँ)</p>
+    </div>
+
+    <div class="sub">सारांश तालिका — चार्टर अधिनियम</div>
+    <table class="hw-t alt">
+      <tr><th>अधिनियम</th><th>मुख्य योगदान</th><th>कौन / क्या</th></tr>
+      <tr><td><span class="hl"><strong>1813</strong></span></td><td>शिक्षा कोष + मिशनरी + आंशिक एकाधिकार समाप्त</td><td>₹1 लाख; चाय और चीन अपवाद</td></tr>
+      <tr><td><span class="hl-g"><strong>1833</strong></span></td><td>EIC = पूर्णतः प्रशासनिक; GG of India; विधि आयोग</td><td>विलियम बेंटिंक (प्रथम GG India); मैकाले (प्रथम विधि आयोग अध्यक्ष)</td></tr>
+      <tr><td><span class="hl-p"><strong>1853</strong></span></td><td>विधायी और कार्यकारी अलग; ICS में खुली प्रतियोगिता; स्थानीय प्रतिनिधित्व</td><td>कोई समय सीमा नहीं = चेतावनी</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GoI ACT 1858 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec purple">③ भारत शासन अधिनियम 1858 🏴 — सिक्का उद्घोषणा</div>
+
+    <div class="act-card">
+      <div class="act-hdr g1858">⑥ भारत शासन अधिनियम 1858 — "सुशासन अधिनियम" / "सिक्का उद्घोषणा (Coin Proclamation)"</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><strong>क्यों?</strong> → 1857 की क्रांति ने EIC को पूरी तरह समाप्त करने का बहाना दिया</li>
+          <li><span class="hl"><strong>ईस्ट इंडिया कंपनी</strong></span> पूरी तरह समाप्त → सीधे <span class="hl-p"><strong>ब्रिटिश क्राउन का शासन</strong></span> स्थापित</li>
+          <li><span class="hl"><strong>भारत सचिव (Secretary of State)</strong></span> का पद बनाया + उनकी सहायता के लिए <span class="hl-g"><strong>15 सदस्यीय परिषद</strong></span></li>
+          <li>गवर्नर जनरल → <span class="hl"><strong>वायसराय</strong></span> (Viceroy)</li>
+          <li><strong>भारत का प्रथम वायसराय</strong> = <span class="hl"><strong>लॉर्ड कैनिंग</strong></span></li>
+          <li><span class="hl-b"><strong>Board of Control</strong></span> (पिट्स इंडिया एक्ट 1784 से) और <span class="hl-b"><strong>Court of Directors</strong></span> दोनों समाप्त</li>
+          <li><span class="hl"><strong>पील आयोग</strong></span> की सिफारिशों के आधार पर → ब्रिटिश भारतीय सेना में भारतीयों की संख्या कम की गई</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q5.</span> निम्नलिखित में से किस अधिनियम ने सत्ता को ब्रिटिश ईस्ट इंडिया कंपनी से ब्रिटिश क्राउन को हस्तांतरित किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारत शासन अधिनियम 1935</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पिट्स इंडिया एक्ट</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भारत शासन अधिनियम 1858 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — भारत शासन अधिनियम 1858 | अन्य नाम: सिक्का उद्घोषणा और सुशासन अधिनियम | प्रथम वायसराय = लॉर्ड कैनिंग | EIC, Board of Control, Court of Directors सब समाप्त</div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>याद करने की Trick — 1858 अधिनियम:</strong><br>
+      <span class="hl">"<strong>C</strong>anning <strong>C</strong>arried the <strong>C</strong>rown's <strong>C</strong>ontrol"</span><br>
+      सिक्का उद्घोषणा → कैनिंग (प्रथम वायसराय) → Crown का सीधा शासन → SoS के लिए 15 की परिषद → Board of Control समाप्त 🔥</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- INDIAN COUNCILS ACTS -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec green">④ भारतीय परिषद अधिनियम — 1861 | 1892 | 1909 🏛️</div>
+
+    <div class="act-card">
+      <div class="act-hdr ic1861">⑦ भारतीय परिषद अधिनियम 1861</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><span class="hl"><strong>विकेंद्रीकरण की शुरुआत</strong></span> → विधायी शक्तियाँ <span class="hl"><strong>बॉम्बे और मद्रास</strong></span> को वापस दी गईं</li>
+          <li><strong>वायसराय कैनिंग</strong> ने तीन भारतीयों को विधान परिषद में नामांकित किया:<br>
+            <span class="hl-g">① बनारस के राजा</span> &nbsp; <span class="hl-p">② पटियाला के महाराजा</span> &nbsp; <span class="hl">③ सर दिनकर राव</span></li>
+          <li>भारतीयों को <span class="hl-b"><strong>विधायी प्रक्रिया</strong></span> में पहली बार प्रतिनिधित्व मिला</li>
+          <li><span class="hl"><strong>पोर्टफोलियो प्रणाली</strong></span> और <span class="hl-g"><strong>अध्यादेश शक्ति (Ordinance Power)</strong></span> शुरू हुई (दोनों इसी अधिनियम से)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q6.</span> भारतीय परिषद अधिनियम 1861 ने किन प्रांतों को विधायी शक्तियाँ वापस देकर विकेंद्रीकरण की प्रक्रिया शुरू की?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उत्तर प्रदेश और असम</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बंगाल और पंजाब</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बिहार और ओडिशा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>बॉम्बे और मद्रास ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — बॉम्बे और मद्रास | विकेंद्रीकरण 1861 में शुरू | इसके अलावा: भारतीय परिषद अधिनियम 1861 = पहली बार भारतीयों को विधानमंडल में नामांकित किया गया</div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q7.</span> निम्नलिखित में से किस अधिनियम ने सबसे पहले विधायी प्रक्रिया में भारतीय प्रतिनिधित्व का प्रावधान किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चार्टर एक्ट 1853</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1861 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत शासन अधिनियम 1858</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पिट्स इंडिया एक्ट 1784</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — भारतीय परिषद अधिनियम 1861 | 3 भारतीय नामांकित: बनारस के राजा + पटियाला के महाराजा + सर दिनकर राव | इसने शुरू किया: पोर्टफोलियो प्रणाली + अध्यादेश शक्ति</div>
+    </div>
+
+
+    <div class="act-card">
+      <div class="act-hdr ic1892">⑧ भारतीय परिषद अधिनियम 1892</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>विधान परिषद में <span class="hl"><strong>बजट पर चर्चा</strong></span> की अनुमति दी गई</li>
+          <li>भारत में पहली बार <span class="hl-p"><strong>अप्रत्यक्ष चुनाव (Indirect Elections)</strong></span> शुरू हुए</li>
+          <li>INC ने <span class="hl-g"><strong>इलाहाबाद अधिवेशन 1892</strong></span> में भारतीयों को <span class="hl"><strong>विधान परिषद</strong></span> में शामिल करने की माँग का प्रस्ताव पारित किया</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q8.</span> 1892 में, भारतीय राष्ट्रीय कांग्रेस ने अपने इलाहाबाद अधिवेशन में एक महत्वपूर्ण प्रस्ताव पारित किया — यह निम्न में से किसमें भारतीयों को शामिल करने की माँग थी?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>विधान परिषद (Legislative Council) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रांतीय विधानमंडल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सिविल सेवाएँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Council of Voices</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — विधान परिषद | INC इलाहाबाद अधिवेशन 1892 | भारतीय परिषद अधिनियम 1892 ने भी शुरू किया: बजट चर्चा + प्रथम अप्रत्यक्ष चुनाव</div>
+    </div>
+
+    <div class="act-card">
+      <div class="act-hdr ic1909">⑨ भारतीय परिषद अधिनियम 1909 — मॉर्ले-मिंटो सुधार</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><span class="hl"><strong>मुसलमानों के लिए पृथक निर्वाचक मंडल (Separate Electorates)</strong></span> शुरू — पहली बार सांप्रदायिक प्रतिनिधित्व</li>
+          <li>विधान परिषद की सदस्य संख्या बढ़ी: <span class="hl-g"><strong>16 → 60</strong></span></li>
+          <li><span class="hl-p"><strong>वायसराय की कार्यकारी परिषद</strong></span> (inner cabinet) में प्रथम भारतीय = <span class="hl"><strong>सत्येंद्र प्रसाद सिन्हा</strong></span></li>
+          <li>विधान परिषद में <span class="hl-b"><strong>पूरक प्रश्न (Supplementary Questions)</strong></span> पूछने की अनुमति</li>
+          <li>नाम: <span class="hl"><strong>मॉर्ले</strong></span> (भारत सचिव) + <span class="hl-g"><strong>मिंटो</strong></span> (वायसराय)</li>
+          <li>लॉर्ड मिंटो = <span class="hl"><strong>भारत में सांप्रदायिकता के जनक</strong></span> 🔴</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">⚠️ परीक्षा TRAP — 1909 vs 1861</div>
+        <strong>विधान परिषद (Legislative Council)</strong> (1861) = कानून बनाने में भारतीय = <span class="hl">नामांकित</span><br>
+        <strong>कार्यकारी परिषद (Executive Council)</strong> (1909) = कैबिनेट में भारतीय = <span class="hl-p">सत्येंद्र प्रसाद सिन्हा</span><br>
+        ये दोनों अलग-अलग हैं! इन्हें मिलाओ मत।
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">📊 बजट Timeline</div>
+        <strong>1892 अधिनियम</strong> → बजट पर <span class="hl">चर्चा</span> हो सकती थी<br>
+        <strong>1909 अधिनियम</strong> → पूरक प्रश्न भी <span class="hl-g">पूछे जा सकते थे</span><br>
+        1892 = चर्चा | 1909 = प्रश्न
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GoI ACT 1919 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec orange">⑤ भारत शासन अधिनियम 1919 — मॉन्टेग्यू-चेम्सफोर्ड सुधार 🏛️</div>
+
+    <div class="act-card">
+      <div class="act-hdr g1919">⑩ भारत शासन अधिनियम 1919 — मॉन्टेग्यू-चेम्सफोर्ड / मॉन्टफोर्ड सुधार</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li>प्रांतों में <span class="hl"><strong>द्वैध शासन (Dyarchy)</strong></span> शुरू किया गया (केंद्र में नहीं)</li>
+          <li>प्रांतीय विषयों को दो भागों में बाँटा गया: <span class="hl-p"><strong>आरक्षित (Reserved)</strong></span> + <span class="hl-g"><strong>हस्तांतरित (Transferred)</strong></span></li>
+          <li><strong>आरक्षित विषय</strong> (महत्वपूर्ण, गवर्नर जवाबदेह नहीं): पुलिस, जेल, भू-राजस्व, वित्त</li>
+          <li><strong>हस्तांतरित विषय</strong> (कम महत्वपूर्ण, गवर्नर जवाबदेह): स्वास्थ्य, शिक्षा, स्थानीय सरकार, कृषि</li>
+          <li>केंद्र में <span class="hl"><strong>द्विसदनीय विधानमंडल (Bicameral Legislature)</strong></span> शुरू (राज्य परिषद + विधान सभा)</li>
+          <li>भारत में पहली बार <span class="hl-p"><strong>प्रत्यक्ष चुनाव (Direct Elections)</strong></span> शुरू हुए</li>
+          <li><span class="hl-g"><strong>प्रांतीय बजट</strong></span> को केंद्रीय बजट से अलग किया गया</li>
+          <li>पृथक निर्वाचक मंडल का विस्तार: <span class="hl"><strong>सिख, एंग्लो-इंडियन, ईसाई</strong></span> (1909 में केवल मुसलमान थे)</li>
+          <li><span class="hl-b"><strong>लोक सेवा आयोग (Public Service Commission)</strong></span> की स्थापना (केंद्र और प्रांत दोनों में)</li>
+          <li>नाम: <span class="hl"><strong>मॉन्टेग्यू</strong></span> (भारत सचिव) + <span class="hl-g"><strong>चेम्सफोर्ड</strong></span> (वायसराय)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q9.</span> प्रांतों में द्वैध शासन / Dyarchy की व्यवस्था किस अधिनियम द्वारा शुरू की गई?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारत शासन अधिनियम 1929</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारत शासन अधिनियम 1935</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारत शासन अधिनियम 1919 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारतीय परिषद अधिनियम 1909</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — भारत शासन अधिनियम 1919 | द्वैध शासन = आरक्षित विषय + हस्तांतरित विषय | केवल प्रांतों में (केंद्र में नहीं)</div>
+    </div>
+
+
+    <!-- Q10 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q10.</span> निम्नलिखित में से किस अधिनियम ने भारत में द्विसदनीय विधानमंडल (Bicameral Legislature) शुरू किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>भारत शासन अधिनियम 1919 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चार्टर एक्ट 1853</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत शासन अधिनियम 1935</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — भारत शासन अधिनियम 1919 | केंद्र में द्विसदनीय विधानमंडल | इसके अलावा: प्रथम प्रत्यक्ष चुनाव + प्रांतीय बजट अलग + PSC स्थापित</div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q11.</span> निम्नलिखित में से किस अधिनियम ने ब्रिटिश भारत में सिविल सेवकों की भर्ती के लिए लोक सेवा आयोग की स्थापना का प्रावधान किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भारत शासन अधिनियम 1919 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1929 (ऐसा कोई अधिनियम नहीं)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत शासन अधिनियम 1935</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — भारत शासन अधिनियम 1919 | PSC केंद्र और प्रांतों में स्थापित | ध्यान दें: 1929 में कोई अधिनियम नहीं आया!</div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">🚨 साइमन कमीशन — बहिष्कार</div>
+      साइमन कमीशन भारत <span class="hl"><strong>1928</strong></span> में आया (गठन 1927)<br>
+      कुल सदस्य: <span class="hl-p"><strong>7 सदस्य — सभी ब्रिटिश</strong></span>, कोई भारतीय नहीं!<br>
+      परिणाम: <strong>बहिष्कार</strong> → नारा: <span class="hl-g"><strong>"Simon Go Back!"</strong></span><br>
+      प्रथम अप्रत्यक्ष चुनाव (1892) &lt; साइमन कमीशन बहिष्कार (1928)
+    </div>
+
+    <div class="sub">द्वैध शासन — आरक्षित vs हस्तांतरित विषय</div>
+    <table class="hw-t red-h">
+      <tr><th>आरक्षित विषय (गवर्नर जवाबदेह नहीं)</th><th>हस्तांतरित विषय (गवर्नर जवाबदेह)</th></tr>
+      <tr>
+        <td>🚔 पुलिस &nbsp;|&nbsp; 🏛️ जेल &nbsp;|&nbsp; 💰 भू-राजस्व &nbsp;|&nbsp; 💵 वित्त</td>
+        <td>🏥 स्वास्थ्य &nbsp;|&nbsp; 📚 शिक्षा &nbsp;|&nbsp; 🏘️ स्थानीय सरकार &nbsp;|&nbsp; 🌾 कृषि</td>
+      </tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GoI ACT 1935 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec teal">⑥ भारत शासन अधिनियम 1935 — सबसे महत्वपूर्ण अधिनियम 🏛️</div>
+
+    <div class="act-card">
+      <div class="act-hdr g1935">⑪ भारत शासन अधिनियम 1935 — सर्वाधिक प्रभावशाली अधिनियम</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><span class="hl"><strong>प्रांतों से द्वैध शासन समाप्त</strong></span> → <span class="hl-p"><strong>प्रांतीय स्वायत्तता (Provincial Autonomy)</strong></span> दी गई</li>
+          <li>केंद्र में <span class="hl"><strong>द्वैध शासन शुरू</strong></span> (1919 का उल्टा!)</li>
+          <li>प्रांतों को <span class="hl-g"><strong>द्विसदनीय विधानमंडल</strong></span> दिया गया — लेकिन 11 में से केवल 6 प्रांतों को</li>
+          <li>तीन विधायी सूचियाँ: <span class="hl"><strong>संघीय सूची</strong></span> + <span class="hl-p"><strong>प्रांतीय सूची</strong></span> + <span class="hl-g"><strong>समवर्ती सूची</strong></span></li>
+          <li><span class="hl-b"><strong>अवशिष्ट शक्तियाँ (Residual Powers)</strong></span> <span class="hl"><strong>वायसराय</strong></span> को दी गईं (आज हमारे संविधान में केंद्र के पास हैं)</li>
+          <li><span class="hl"><strong>भारतीय रिज़र्व बैंक (RBI)</strong></span> की स्थापना</li>
+          <li>1937 में <span class="hl-p"><strong>संघीय न्यायालय (Federal Court)</strong></span> स्थापित (बाद में भारत के सर्वोच्च न्यायालय ने इसकी जगह ली)</li>
+          <li>भारत सचिव की <span class="hl"><strong>15 सदस्यीय परिषद</strong></span> (1858 अधिनियम से) समाप्त</li>
+          <li><span class="hl-g"><strong>अखिल भारतीय संघ (All India Federation)</strong></span> का प्रस्ताव — लेकिन कभी लागू नहीं हुआ (रियासतों ने मना किया)</li>
+          <li>आधार: <span class="hl"><strong>संघवाद और संसदीय प्रणाली का सिद्धांत</strong></span></li>
+          <li>भारतीय संविधान का लगभग <span class="hl"><strong>~40%</strong></span> इसी अधिनियम से लिया गया!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q12.</span> औपनिवेशिक काल में भारत में निम्नलिखित में से किस अधिनियम ने प्रांतीय स्तर पर द्वैध शासन को समाप्त किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारत शासन अधिनियम 1919</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चार्टर एक्ट 1853</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भारत शासन अधिनियम 1935 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — भारत शासन अधिनियम 1935 | प्रांतों से द्वैध शासन समाप्त (1919 ने शुरू किया था) | प्रांतीय स्वायत्तता दी | केंद्र में द्वैध शासन शुरू</div>
+    </div>
+
+
+    <!-- Q13 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q13.</span> किस अधिनियम ने केंद्र और प्रांतों के लिए तीन अलग-अलग सूचियों के साथ अलग विधायी विषय प्रदान किए?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चार्टर एक्ट 1833</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारत शासन अधिनियम 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत शासन अधिनियम 1919</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — भारत शासन अधिनियम 1935 | तीन सूचियाँ: संघीय + प्रांतीय + समवर्ती | अवशिष्ट शक्तियाँ → वायसराय</div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q14.</span> भारत शासन अधिनियम 1935 निम्नलिखित में से किस पर आधारित था?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारत की स्वतंत्रता की स्वीकृति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संविधान सभा के विचार की स्वीकृति</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>संघवाद और संसदीय प्रणाली का सिद्धांत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ब्रिटिश भारतीय प्रांतों के विलय का सिद्धांत</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — संघवाद + संसदीय प्रणाली | स्वतंत्रता 1947 में आई | संविधान सभा 1946 में बनी → ये 1935 के उत्तर नहीं हो सकते</div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q15.</span> किस ब्रिटिश कानून का भारतीय संविधान के संस्थागत ढाँचे पर सबसे अधिक प्रभाव पड़ा?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारत शासन अधिनियम 1858</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चार्टर एक्ट 1853</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भारत शासन अधिनियम 1935 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — भारत शासन अधिनियम 1935 | भारतीय संविधान का ~40% इसी अधिनियम से लिया गया! सबसे प्रभावशाली एकल स्रोत</div>
+    </div>
+
+    <div class="sub">तीन सूचियाँ — 1935 अधिनियम vs आज का भारतीय संविधान</div>
+    <table class="hw-t teal-h">
+      <tr><th>1935 अधिनियम — सूची का नाम</th><th>आज का संविधान</th><th>कानून कौन बनाता है?</th></tr>
+      <tr><td><span class="hl">संघीय सूची (Federal List)</span></td><td>संघ सूची (अनुसूची 7)</td><td>केवल संसद</td></tr>
+      <tr><td><span class="hl-g">प्रांतीय सूची (Provincial List)</span></td><td>राज्य सूची (अनुसूची 7)</td><td>राज्य विधानमंडल</td></tr>
+      <tr><td><span class="hl-p">समवर्ती सूची (Concurrent List)</span></td><td>समवर्ती सूची (अनुसूची 7)</td><td>संसद और राज्य दोनों</td></tr>
+      <tr><td><span class="hl-b">अवशिष्ट शक्तियाँ (Residual Powers)</span></td><td>संसद (केंद्र) के पास</td><td>1935 में वायसराय; आज केंद्र</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- INDIAN INDEPENDENCE ACT 1947 -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec pink">⑦ भारतीय स्वतंत्रता अधिनियम 1947 🇮🇳</div>
+
+    <div class="act-card">
+      <div class="act-hdr i1947">⑫ भारतीय स्वतंत्रता अधिनियम 1947</div>
+      <div class="act-body">
+        <ul class="hw chk">
+          <li><span class="hl"><strong>माउंटबेटन योजना (विभाजन योजना) 1947</strong></span> पर आधारित</li>
+          <li>ब्रिटिश भारत को दो अधिराज्यों में विभाजित किया: <span class="hl-g"><strong>भारत</strong></span> और <span class="hl-p"><strong>पाकिस्तान</strong></span></li>
+          <li>रियासतों को विकल्प दिया गया: भारत में शामिल हों, पाकिस्तान में शामिल हों, या स्वतंत्र रहें</li>
+          <li><span class="hl"><strong>भारत सचिव (Secretary of State) का पद समाप्त</strong></span> (1858 अधिनियम द्वारा बनाया गया था)</li>
+          <li><span class="hl"><strong>वायसराय का पद समाप्त</strong></span></li>
+          <li><span class="hl-p"><strong>ब्रिटिश सर्वोच्चता (Paramountcy) समाप्त</strong></span> — ब्रिटिश शासन पूरी तरह समाप्त</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q16.</span> निम्नलिखित में से कौन सा अधिनियम माउंटबेटन योजना पर आधारित था?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>साइमन कमीशन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारत शासन अधिनियम 1935</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारतीय स्वतंत्रता अधिनियम 1947 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संविधान सभा का गठन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — भारतीय स्वतंत्रता अधिनियम 1947 | माउंटबेटन योजना = विभाजन योजना | समाप्त: भारत सचिव + वायसराय + EIC शासन | ब्रिटिश सर्वोच्चता समाप्त</div>
+    </div>
+
+    <!-- Q17 — Privy Purses -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q17.</span> प्रिवी पर्स (Privy Purses) क्या थे?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ब्रिटिश सरकार से ऋण</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>शाही परिवारों के लिए यात्रा भत्ता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>शाही कर</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>एकीकरण के बाद राजाओं को दी गई पेंशन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — प्रिवी पर्स = रियासतों के शासकों को भारत में शामिल होने के लिए राजी करने हेतु दी गई निश्चित पेंशन | 26वें संविधान संशोधन, 1971 (इंदिरा गांधी) द्वारा समाप्त</div>
+    </div>
+
+
+    <!-- Q18 — Electric Lightning Act -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">Q18.</span> बंगाल सरकार ने विद्युत प्रकाश अधिनियम (Electric Lighting Act) किस वर्ष पारित किया?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1880</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1895 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1900</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1905</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 1895 | बंगाल सरकार ने 1895 में विद्युत प्रकाश अधिनियम पारित किया</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">🔑 प्रिवी पर्स — पूरी कहानी</div>
+      रियासतें स्वतंत्र रहना चाहती थीं। उन्हें <span class="hl"><strong>निश्चित पेंशन = प्रिवी पर्स</strong></span> का लालच देकर भारत में शामिल किया गया।<br>
+      समाप्त: <span class="hl-p"><strong>26वाँ संविधान संशोधन, 1971</strong></span><br>
+      किसके समय: <span class="hl-g"><strong>इंदिरा गांधी</strong></span> सरकार
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MASTER TABLE — ALL ACTS -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec red">📋 मास्टर तालिका — सभी अधिनियम एक नज़र में 1773–1947</div>
+
+    <table class="hw-t navy">
+      <tr>
+        <th>अधिनियम / वर्ष</th>
+        <th>अन्य नाम</th>
+        <th>मुख्य योगदान</th>
+        <th>प्रथम / महत्वपूर्ण व्यक्ति</th>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>रेग्युलेटिंग एक्ट 1773</strong></span></td>
+        <td>—</td>
+        <td>GG बंगाल; सर्वोच्च न्यायालय (1 CJ + 3 J); केंद्रीकरण शुरू; Court of Directors (व्यापार)</td>
+        <td>वॉरेन हेस्टिंग्स (प्रथम GG बंगाल); एलिजाह इम्पे (प्रथम CJ)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>पिट्स इंडिया एक्ट 1784</strong></span></td>
+        <td>—</td>
+        <td>Board of Control (सिविल और सैन्य); द्वैध शासन प्रणाली</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>चार्टर एक्ट 1813</strong></span></td>
+        <td>—</td>
+        <td>शिक्षा के लिए ₹1 लाख; मिशनरी; एकाधिकार आंशिक रूप से समाप्त</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>चार्टर एक्ट 1833</strong></span></td>
+        <td>सेंट हेलेना एक्ट</td>
+        <td>EIC = केवल प्रशासनिक; GG of India; विधि आयोग; केंद्रीकरण चरम</td>
+        <td>विलियम बेंटिंक (प्रथम GG India); मैकाले (विधि आयोग अध्यक्ष)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>चार्टर एक्ट 1853</strong></span></td>
+        <td>—</td>
+        <td>विधायी और कार्यकारी अलग; ICS में खुली प्रतियोगिता; स्थानीय प्रतिनिधित्व; कोई समय सीमा नहीं</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>भारत शासन अधिनियम 1858</strong></span></td>
+        <td>सिक्का उद्घोषणा / सुशासन अधिनियम</td>
+        <td>EIC समाप्त; Crown शासन; SoS + 15 परिषद; GG → वायसराय; Board of Control समाप्त</td>
+        <td>लॉर्ड कैनिंग (प्रथम वायसराय)</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>भारतीय परिषद अधिनियम 1861</strong></span></td>
+        <td>—</td>
+        <td>विकेंद्रीकरण; बॉम्बे और मद्रास को शक्तियाँ; 3 भारतीय विधान परिषद में; पोर्टफोलियो और अध्यादेश शक्ति</td>
+        <td>बनारस के राजा, पटियाला के महाराजा, सर दिनकर राव</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>भारतीय परिषद अधिनियम 1892</strong></span></td>
+        <td>—</td>
+        <td>बजट चर्चा; प्रथम अप्रत्यक्ष चुनाव; INC इलाहाबाद माँग</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>भारतीय परिषद अधिनियम 1909</strong></span></td>
+        <td>मॉर्ले-मिंटो सुधार</td>
+        <td>पृथक निर्वाचक मंडल (मुसलमान); परिषद 16→60; कार्यकारी परिषद में भारतीय; पूरक प्रश्न</td>
+        <td>सत्येंद्र प्रसाद सिन्हा (वायसराय की कार्यकारी परिषद में प्रथम भारतीय); लॉर्ड मिंटो = सांप्रदायिकता के जनक</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>भारत शासन अधिनियम 1919</strong></span></td>
+        <td>मॉन्टेग्यू-चेम्सफोर्ड सुधार</td>
+        <td>प्रांतों में द्वैध शासन (आरक्षित + हस्तांतरित); केंद्र में द्विसदनीय; प्रथम प्रत्यक्ष चुनाव; PSC; प्रांतीय बजट अलग</td>
+        <td>मॉन्टेग्यू (SoS) + चेम्सफोर्ड (वायसराय)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>भारत शासन अधिनियम 1935</strong></span></td>
+        <td>—</td>
+        <td>प्रांतों से द्वैध शासन समाप्त; प्रांतीय स्वायत्तता; 3 सूचियाँ; RBI; संघीय न्यायालय; संविधान का ~40%</td>
+        <td>संघीय न्यायालय (1937) → बाद में SC India</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>भारतीय स्वतंत्रता अधिनियम 1947</strong></span></td>
+        <td>—</td>
+        <td>माउंटबेटन योजना पर आधारित; भारत और पाकिस्तान बने; SoS समाप्त; वायसराय समाप्त; सर्वोच्चता समाप्त</td>
+        <td>—</td>
+      </tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PART B: PREAMBLE -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec purple">📜 भाग B — उद्देशिका (Preamble) 🇮🇳</div>
+
+    <div class="sub">उद्देशिका (Preamble) क्या है?</div>
+    <p class="hw">संविधान में एक प्रारंभिक कथन जो संविधान के <span class="hl"><strong>कारणों और मार्गदर्शक मूल्यों</strong></span> को बताता है, उसे <span class="hl-p"><strong>उद्देशिका (Preamble)</strong></span> कहते हैं।</p>
+
+    <!-- P1 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P1.</span> संविधान में एक प्रारंभिक कथन जो संविधान के कारणों और मार्गदर्शक मूल्यों को बताता है ___ कहलाता है। यह अवधारणा किस देश के संविधान से ली गई है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>UK (ब्रिटेन)</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USA (अमेरिका) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>फ्रांस</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — USA | उद्देशिका की अवधारणा USA से ली गई | USA की उद्देशिका भी "We the People of USA…" से शुरू होती है</div>
+    </div>
+
+    <!-- PREAMBLE TEXT BOX -->
+    <div class="preamble-box">
+      <p style="font-family:'Kalam',cursive;font-size:.96rem;line-height:1.9;color:#1c1c2e">
+        <strong>"हम, भारत के लोग,</strong> भारत को एक<br>
+        <span class="hl"><strong>संपूर्ण प्रभुत्व-संपन्न समाजवादी पंथनिरपेक्ष लोकतंत्रात्मक गणराज्य</strong></span><br>
+        बनाने के लिए, तथा इसके समस्त नागरिकों को:<br>
+        <span class="hl-g"><strong>न्याय</strong></span> — सामाजिक, आर्थिक और राजनीतिक;<br>
+        <span class="hl-p"><strong>स्वतंत्रता</strong></span> — विचार, अभिव्यक्ति, विश्वास, धर्म और उपासना की;<br>
+        <span class="hl-b"><strong>समता</strong></span> — प्रतिष्ठा और अवसर की;<br>
+        तथा उन सब में<br>
+        <span class="hl"><strong>बंधुता</strong></span> — व्यक्ति की गरिमा और राष्ट्र की एकता और अखंडता<br>
+        सुनिश्चित करने वाली बंधुता बढ़ाने के लिए<br>
+        <strong>दृढ़संकल्प होकर अपनी इस संविधान सभा में आज तारीख 26 नवंबर 1949 ई. को</strong><br>
+        <strong>एतद्द्वारा इस संविधान को अंगीकृत, अधिनियमित और आत्मार्पित करते हैं।"</strong>
+      </p>
+    </div>
+
+
+    <!-- P2 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC CBT2 2022</span>
+        <span class="qno">P2.</span> रिक्त स्थान भरें — "हम ___ भारत को एक संपूर्ण प्रभुत्व-संपन्न समाजवादी पंथनिरपेक्ष लोकतंत्रात्मक गणराज्य बनाने के लिए…"
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सर्वोच्च न्यायालय</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>केंद्र सरकार</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भारत के लोग ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — "हम, भारत के लोग…" | शक्ति का स्रोत = भारत के लोग | यह उद्देशिका का प्रथम घटक है</div>
+    </div>
+
+    <!-- P3 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway NTPC Graduate Previous 2025</span>
+        <span class="qno">P3.</span> उद्देशिका भारत को निम्नलिखित में से क्या घोषित करती है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>संपूर्ण प्रभुत्व-संपन्न, लोकतंत्रात्मक, संघीय गणराज्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संपूर्ण प्रभुत्व-संपन्न, समाजवादी, पंथनिरपेक्ष, लोकतंत्रात्मक गणराज्य ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संपूर्ण प्रभुत्व-संपन्न, पंथनिरपेक्ष, लोकतंत्रात्मक संघ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संघीय, समाजवादी, पंथनिरपेक्ष, लोकतंत्रात्मक गणराज्य</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — संपूर्ण प्रभुत्व-संपन्न + समाजवादी + पंथनिरपेक्ष + लोकतंत्रात्मक + गणराज्य | ध्यान दें: "संघीय (Federal)" उद्देशिका में नहीं है!</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 4 COMPONENTS OF PREAMBLE -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec blue">📖 उद्देशिका — 4 घटक 🔢</div>
+
+    <div class="four-col">
+      <div class="num-b">
+        <div class="big">①</div>
+        <div class="lbl"><strong>शक्ति का स्रोत</strong><br>"हम, भारत के लोग"</div>
+      </div>
+      <div class="num-b">
+        <div class="big">②</div>
+        <div class="lbl"><strong>राज्य की प्रकृति</strong><br>प्रभुत्व-संपन्न, समाजवादी, पंथनिरपेक्ष, लोकतंत्रात्मक, गणराज्य</div>
+      </div>
+      <div class="num-b">
+        <div class="big">③</div>
+        <div class="lbl"><strong>उद्देश्य</strong><br>न्याय, स्वतंत्रता, समता, बंधुता</div>
+      </div>
+      <div class="num-b">
+        <div class="big">④</div>
+        <div class="lbl"><strong>अंगीकरण की तिथि</strong><br>26 नवंबर 1949</div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NATURE OF STATE — SSSDR -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sub">घटक 2 — राज्य की प्रकृति (SSSDR) — अर्थ</div>
+
+    <table class="hw-t grn">
+      <tr><th>शब्द</th><th>अर्थ</th><th>महत्वपूर्ण नोट</th></tr>
+      <tr>
+        <td><span class="hl"><strong>संपूर्ण प्रभुत्व-संपन्न (Sovereign)</strong></span></td>
+        <td>बाहरी नियंत्रण से स्वतंत्रता — कोई हम पर शासन नहीं कर सकता; हम अपने निर्णय स्वयं लेते हैं</td>
+        <td>मूल रूप से जोड़ा गया; 42वें संशोधन द्वारा नहीं</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>समाजवादी (Socialist)</strong></span></td>
+        <td>उत्पादन के साधन अधिकांशतः सरकार के पास; लोगों के कल्याण के लिए कार्य; पूँजीवाद का विपरीत</td>
+        <td><strong>42वें संशोधन 1976</strong> द्वारा जोड़ा गया</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>पंथनिरपेक्ष (Secular)</strong></span></td>
+        <td>सभी धर्मों को समान मान्यता; भारत में सकारात्मक पंथनिरपेक्षता (सरकार धार्मिक मामलों में शामिल)</td>
+        <td><strong>42वें संशोधन 1976</strong> द्वारा जोड़ा गया</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>लोकतंत्रात्मक (Democratic)</strong></span></td>
+        <td>लिंकन: "जनता की, जनता द्वारा, जनता के लिए सरकार"</td>
+        <td>मूल रूप से जोड़ा गया</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>गणराज्य (Republic)</strong></span></td>
+        <td>राज्य का प्रमुख <span class="hl-p">निर्वाचित</span> होता है (भारत का राष्ट्रपति अप्रत्यक्ष रूप से निर्वाचित)</td>
+        <td>UK = गणराज्य नहीं (राजा/रानी = प्रमुख, निर्वाचित नहीं)</td>
+      </tr>
+    </table>
+
+    <!-- P4 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P4.</span> भारतीय संविधान की उद्देशिका में "संपूर्ण प्रभुत्व-संपन्न (Sovereign)" शब्द भारत के लिए क्या दर्शाता है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गुटनिरपेक्षता की नीति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सभी नागरिकों के लिए धार्मिक स्वतंत्रता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रपति नियुक्त करने की शक्ति</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>बाहरी नियंत्रण से स्वतंत्रता ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — Sovereign = बाहरी स्वतंत्रता | हम अपने निर्णय स्वयं लेने के लिए स्वतंत्र हैं, किसी के अधीन नहीं</div>
+    </div>
+
+    <!-- P5 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P5.</span> उद्देशिका में ___ शब्द राज्य के निर्वाचित प्रमुख को संदर्भित करता है।
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>गणराज्य (Republic) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संपूर्ण प्रभुत्व-संपन्न (Sovereign)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लोकतंत्रात्मक (Democratic)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>समाजवादी (Socialist)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — गणराज्य = निर्वाचित राज्य प्रमुख | भारत का राष्ट्रपति राज्य प्रमुख है और निर्वाचित (अप्रत्यक्ष रूप से) | UK = राजा/रानी → गणराज्य नहीं</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- OBJECTIVES OF PREAMBLE -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec orange">🎯 घटक 3 — उद्देशिका के उद्देश्य: न्याय, स्वतंत्रता, समता, बंधुता</div>
+
+    <table class="hw-t org">
+      <tr><th>उद्देश्य</th><th>प्रकार</th><th>कहाँ से लिया गया</th></tr>
+      <tr>
+        <td><span class="hl"><strong>⚖️ न्याय (Justice)</strong></span></td>
+        <td>सामाजिक, आर्थिक, राजनीतिक (3 प्रकार)</td>
+        <td><span class="hl-p"><strong>रूस (USSR)</strong></span></td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>🕊️ स्वतंत्रता (Liberty)</strong></span></td>
+        <td>विचार, अभिव्यक्ति, विश्वास, धर्म, उपासना (5 प्रकार)</td>
+        <td rowspan="3" style="vertical-align:middle;text-align:center"><span class="hl-p"><strong>फ्रांस</strong></span><br>(फ्रांसीसी क्रांति — Liberté, Égalité, Fraternité)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>🤝 समता (Equality)</strong></span></td>
+        <td>प्रतिष्ठा और अवसर (2 प्रकार)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>👥 बंधुता (Fraternity)</strong></span></td>
+        <td>कोई निश्चित वर्गीकरण नहीं</td>
+      </tr>
+    </table>
+
+    <!-- P6 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P6.</span> निम्नलिखित में से क्या संविधान की उद्देशिका का भाग नहीं है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>स्वतंत्रता (Liberty)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>समता (Equality)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>न्याय (Justice)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>प्रावधान (Provision) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — "Provision" उद्देशिका में नहीं है | उद्देशिका में हैं: न्याय, स्वतंत्रता, समता, बंधुता</div>
+    </div>
+
+    <!-- P7 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P7.</span> भारतीय संविधान की उद्देशिका में स्वतंत्रता, समता और बंधुता के सिद्धांत किस देश से लिए गए हैं?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>फ्रांस ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयरलैंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USSR</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — फ्रांस | फ्रांसीसी क्रांति (1789) = Liberté, Égalité, Fraternité | न्याय = रूस/USSR</div>
+    </div>
+
+    <!-- P8 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P8.</span> अनुच्छेद 39A (राज्य नीति के निदेशक सिद्धांत) के तहत गरीबों को मुफ्त कानूनी सहायता देना अप्रत्यक्ष रूप से उद्देशिका के किस उद्देश्य को बढ़ावा देता है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>न्याय (Justice) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गणराज्य (Republic)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संप्रभुता (Sovereignty)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पंथनिरपेक्षता (Secularism)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — न्याय | मुफ्त कानूनी सहायता = गरीबों के लिए न्याय तक पहुँच | अनुच्छेद 39A = मुफ्त कानूनी सहायता देने वाला DPSP</div>
+    </div>
+
+    <div class="sub">स्वतंत्रता — 5 प्रकार (याद रखें: TEBFW)</div>
+    <div class="key-box">
+      <ul class="hw num">
+        <li><span class="hl"><strong>T</strong></span>hought — विचार</li>
+        <li><span class="hl-g"><strong>E</strong></span>xpression — अभिव्यक्ति</li>
+        <li><span class="hl-p"><strong>B</strong></span>elief — विश्वास</li>
+        <li><span class="hl-b"><strong>F</strong></span>aith — धर्म</li>
+        <li><span class="hl"><strong>W</strong></span>orship — उपासना</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PREAMBLE NATURE, CASES, AMENDMENT -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec teal">⚖️ उद्देशिका — प्रकृति, वाद एवं संशोधन</div>
+
+    <!-- P9 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P9.</span> उद्देशिका मुख्य रूप से निम्नलिखित में से किस रूप में कार्य करती है?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>संविधान की एक अनुसूची</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>व्याख्या के लिए मार्गदर्शक सिद्धांत ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सरकार के लिए शक्ति का स्रोत</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सरकार की शक्तियों पर सीमा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — व्याख्या के लिए मार्गदर्शक सिद्धांत | उद्देशिका = न शक्ति का स्रोत, न शक्ति पर सीमा | न्यायालय में लागू नहीं (Non-justiciable)</div>
+    </div>
+
+    <!-- P10 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">Railway PYQ</span>
+        <span class="qno">P10.</span> किस संविधान संशोधन ने उद्देशिका में "समाजवादी," "पंथनिरपेक्ष," और "अखंडता" शब्द जोड़े?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>40वाँ संशोधन 1976</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>42वाँ संशोधन 1976 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>44वाँ संशोधन 1978</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>25वाँ संशोधन 1971</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 42वाँ संविधान संशोधन 1976 (लघु संविधान) | जोड़े गए: समाजवादी + पंथनिरपेक्ष + अखंडता | उद्देशिका में अब तक केवल एक बार संशोधन हुआ</div>
+    </div>
+
+    <div class="sub">उद्देशिका से संबंधित प्रमुख वाद और व्यक्ति</div>
+    <table class="hw-t pur">
+      <tr><th>वाद / व्यक्ति</th><th>वर्ष</th><th>निर्णय / कथन</th></tr>
+      <tr>
+        <td><span class="hl"><strong>बेरुबाड़ी संघ वाद</strong></span></td>
+        <td>1960</td>
+        <td>उद्देशिका संविधान का भाग <span class="hl-p"><strong>नहीं</strong></span> है → संशोधित नहीं की जा सकती</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>केशवानंद भारती वाद</strong></span></td>
+        <td>1973</td>
+        <td>उद्देशिका संविधान का भाग <span class="hl"><strong>है</strong></span> → संशोधित की जा <span class="hl"><strong>सकती</strong></span> है (बेरुबाड़ी निर्णय उलट दिया)</td>
+      </tr>
+      <tr>
+        <td><span class="hl-p"><strong>42वाँ संशोधन</strong></span></td>
+        <td>1976</td>
+        <td>समाजवादी, पंथनिरपेक्ष, अखंडता जोड़े → उद्देशिका में अब तक <span class="hl"><strong>केवल एक बार</strong></span> संशोधन</td>
+      </tr>
+      <tr>
+        <td><span class="hl-b"><strong>एन.ए. पालखीवाला</strong></span></td>
+        <td>—</td>
+        <td>उद्देशिका को संविधान का <span class="hl"><strong>"पहचान पत्र (Identity Card)"</strong></span> कहा</td>
+      </tr>
+      <tr>
+        <td><span class="hl"><strong>के.एम. मुंशी</strong></span></td>
+        <td>—</td>
+        <td>उद्देशिका को संविधान की <span class="hl-p"><strong>"राजनीतिक कुंडली (Political Horoscope)"</strong></span> कहा</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g"><strong>उद्देश्य प्रस्ताव (Objective Resolution)</strong></span></td>
+        <td>प्रस्तुत: 13 दिसंबर 1946; अंगीकृत: 22 जनवरी 1947</td>
+        <td>उद्देशिका उद्देश्य प्रस्ताव से <span class="hl"><strong>प्रेरित</strong></span> है (समान नहीं!) नेहरू द्वारा प्रस्तुत।</td>
+      </tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>परीक्षा TRAP — उद्देश्य प्रस्ताव vs उद्देशिका:</strong><br>
+      उद्देश्य प्रस्ताव <span class="hl">13 दिसंबर 1946</span> को प्रस्तुत और <span class="hl-g">22 जनवरी 1947</span> को अंगीकृत।<br>
+      उद्देशिका संविधान के साथ <span class="hl-p">26 नवंबर 1949</span> को अंगीकृत।<br>
+      उद्देशिका उद्देश्य प्रस्ताव से <strong>प्रेरित</strong> है — यह उद्देश्य प्रस्ताव नहीं है!<br>
+      के.एम. मुंशी ने <span class="hl">कार्य व्यवस्था समिति (Order of Business Committee)</span> की अध्यक्षता की और <span class="hl-g">प्रारूप समिति (Drafting Committee)</span> के सदस्य थे।</p>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw"><strong>उद्देशिका — क्या है और क्या नहीं:</strong></p>
+      <ul class="hw chk">
+        <li>उद्देशिका <span class="hl"><strong>है</strong></span>: व्याख्या के लिए मार्गदर्शक सिद्धांत; संविधान का भाग (1973 वाद के बाद); एक बार संशोधित (42वाँ, 1976)</li>
+        <li>उद्देशिका <span class="hl-p"><strong>न्यायालय में लागू नहीं (Non-Justiciable)</strong></span> — न्यायालय इसे सीधे लागू नहीं कर सकते</li>
+        <li>उद्देशिका <span class="hl-g"><strong>नहीं</strong></span> है: सरकार के लिए शक्ति का स्रोत; सरकार की शक्तियों पर सीमा; न्यायालय में प्रवर्तनीय</li>
+        <li>उद्देशिका <span class="hl-b"><strong>दर्शाती</strong></span> है: संविधान का स्रोत (भारत के लोग); राज्य की प्रकृति; उद्देश्य; अंगीकरण की तिथि</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- QUICK REVISION TABLE -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec red">⚡ त्वरित पुनरावृत्ति — सभी Key Facts एक जगह</div>
+
+    <table class="qr-t">
+      <tr><th>व्यक्ति / अधिनियम / शब्द</th><th>मुख्य तथ्य</th></tr>
+      <tr><td>वॉरेन हेस्टिंग्स</td><td>बंगाल के प्रथम गवर्नर जनरल (रेग्युलेटिंग एक्ट 1773); महाभियोग चलाया गया</td></tr>
+      <tr><td>एलिजाह इम्पे</td><td>सर्वोच्च न्यायालय के प्रथम मुख्य न्यायाधीश (1774 में स्थापित, रेग्युलेटिंग एक्ट 1773)</td></tr>
+      <tr><td>विलियम बेंटिंक</td><td>भारत के प्रथम गवर्नर जनरल (चार्टर एक्ट 1833)</td></tr>
+      <tr><td>थॉमस बैबिंगटन मैकाले</td><td>भारत के विधि आयोग के प्रथम अध्यक्ष (चार्टर एक्ट 1833)</td></tr>
+      <tr><td>लॉर्ड कैनिंग</td><td>भारत के प्रथम वायसराय (भारत शासन अधिनियम 1858)</td></tr>
+      <tr><td>सत्येंद्र प्रसाद सिन्हा</td><td>वायसराय की कार्यकारी परिषद में प्रथम भारतीय (भारतीय परिषद अधिनियम 1909)</td></tr>
+      <tr><td>लॉर्ड मिंटो</td><td>भारत में सांप्रदायिकता के जनक (मॉर्ले-मिंटो सुधार 1909)</td></tr>
+      <tr><td>एन.ए. पालखीवाला</td><td>उद्देशिका = संविधान का "पहचान पत्र (Identity Card)"</td></tr>
+      <tr><td>के.एम. मुंशी</td><td>उद्देशिका = "राजनीतिक कुंडली" | कार्य व्यवस्था समिति के अध्यक्ष; प्रारूप समिति के सदस्य</td></tr>
+      <tr><td>रेग्युलेटिंग एक्ट 1773</td><td>EIC को नियंत्रित करने वाला प्रथम अधिनियम; सर्वोच्च न्यायालय: 1 CJ + 3 judges; केंद्रीकरण शुरू</td></tr>
+      <tr><td>पिट्स इंडिया एक्ट 1784</td><td>Board of Control (सिविल और सैन्य); द्वैध शासन प्रणाली</td></tr>
+      <tr><td>चार्टर एक्ट 1813</td><td>शिक्षा के लिए ₹1 लाख; मिशनरी; चाय + चीन व्यापार अपवाद बना रहा</td></tr>
+      <tr><td>चार्टर एक्ट 1833</td><td>सेंट हेलेना एक्ट; EIC = केवल प्रशासनिक; GG of India; मैकाले विधि आयोग; केंद्रीकरण चरम</td></tr>
+      <tr><td>चार्टर एक्ट 1853</td><td>विधायी और कार्यकारी अलग; ICS में खुली प्रतियोगिता; स्थानीय प्रतिनिधित्व; कोई समय सीमा नहीं</td></tr>
+      <tr><td>भारत शासन अधिनियम 1858</td><td>सिक्का उद्घोषणा; EIC समाप्त; Crown शासन; प्रथम वायसराय कैनिंग; Board of Control समाप्त</td></tr>
+      <tr><td>भारतीय परिषद अधिनियम 1861</td><td>विकेंद्रीकरण शुरू; बॉम्बे और मद्रास को शक्तियाँ; 3 भारतीय विधान परिषद में; पोर्टफोलियो + अध्यादेश शक्ति</td></tr>
+      <tr><td>भारतीय परिषद अधिनियम 1892</td><td>बजट चर्चा; प्रथम अप्रत्यक्ष चुनाव; INC इलाहाबाद माँग — विधान परिषद</td></tr>
+      <tr><td>भारतीय परिषद अधिनियम 1909</td><td>मॉर्ले-मिंटो; मुसलमानों के लिए पृथक निर्वाचक मंडल; परिषद 16→60; सत्येंद्र प्रसाद सिन्हा; पूरक प्रश्न</td></tr>
+      <tr><td>भारत शासन अधिनियम 1919</td><td>मॉन्टेग्यू-चेम्सफोर्ड; प्रांतों में द्वैध शासन; केंद्र में द्विसदनीय; प्रथम प्रत्यक्ष चुनाव; PSC; प्रांतीय बजट अलग</td></tr>
+      <tr><td>साइमन कमीशन 1928</td><td>7 ब्रिटिश सदस्य, कोई भारतीय नहीं; बहिष्कार; "Simon Go Back!" नारा</td></tr>
+      <tr><td>भारत शासन अधिनियम 1935</td><td>प्रांतीय स्वायत्तता; केंद्र में द्वैध शासन; 3 सूचियाँ; RBI; संघीय न्यायालय (1937); संविधान का ~40%</td></tr>
+      <tr><td>भारतीय स्वतंत्रता अधिनियम 1947</td><td>माउंटबेटन योजना; भारत और पाकिस्तान; SoS समाप्त; वायसराय समाप्त; सर्वोच्चता समाप्त</td></tr>
+      <tr><td>विद्युत प्रकाश अधिनियम (बंगाल)</td><td>1895</td></tr>
+      <tr><td>प्रिवी पर्स</td><td>राजाओं को पेंशन; 26वें संशोधन 1971 (इंदिरा गांधी) द्वारा समाप्त</td></tr>
+      <tr><td>उद्देशिका का स्रोत</td><td>USA ("We the People…")</td></tr>
+      <tr><td>न्याय (उद्देशिका)</td><td>सामाजिक, आर्थिक, राजनीतिक (3 प्रकार) — रूस/USSR से</td></tr>
+      <tr><td>स्वतंत्रता (उद्देशिका)</td><td>विचार, अभिव्यक्ति, विश्वास, धर्म, उपासना (5 प्रकार) — फ्रांस से</td></tr>
+      <tr><td>समता (उद्देशिका)</td><td>प्रतिष्ठा और अवसर (2 प्रकार) — फ्रांस से</td></tr>
+      <tr><td>बंधुता (उद्देशिका)</td><td>कोई निश्चित वर्गीकरण नहीं — फ्रांस से</td></tr>
+      <tr><td>बेरुबाड़ी वाद 1960</td><td>उद्देशिका संविधान का भाग नहीं</td></tr>
+      <tr><td>केशवानंद भारती वाद 1973</td><td>उद्देशिका संविधान का भाग है; संशोधित की जा सकती है</td></tr>
+      <tr><td>42वाँ संशोधन 1976</td><td>जोड़े: समाजवादी + पंथनिरपेक्ष + अखंडता | उद्देशिका में अब तक केवल एक बार संशोधन</td></tr>
+      <tr><td>उद्देश्य प्रस्ताव</td><td>प्रस्तुत 13 दिसंबर 1946 (नेहरू द्वारा); अंगीकृत 22 जनवरी 1947; उद्देशिका इससे प्रेरित (समान नहीं)</td></tr>
+      <tr><td>लिंकन की लोकतंत्र की परिभाषा</td><td>"जनता की, जनता द्वारा, जनता के लिए सरकार"</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- EXAM TRAPS -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec red" style="margin-top:20px">⚠️ TOP परीक्षा TRAPS — Railway PYQ में बार-बार आने वाले Confusions</div>
+
+    <div class="two-col">
+      <div class="imp">
+        <ul class="hw dot">
+          <li>GG of <span class="hl">Bengal</span> (1773) ≠ GG of <span class="hl-g">India</span> (1833) — अलग-अलग अधिनियम!</li>
+          <li>प्रथम GG बंगाल = <span class="hl">वॉरेन हेस्टिंग्स</span> | प्रथम GG India = <span class="hl-g">विलियम बेंटिंक</span></li>
+          <li>द्वैध शासन प्रांतों में शुरू = <span class="hl">1919</span> | द्वैध शासन प्रांतों से समाप्त = <span class="hl-g">1935</span></li>
+          <li>Board of Control बनाया <span class="hl">1784</span> में; समाप्त <span class="hl-p">1858</span> में</li>
+          <li>भारत सचिव बनाया <span class="hl">1858</span> में; समाप्त <span class="hl-g">1947</span> में</li>
+          <li>अप्रत्यक्ष चुनाव पहली बार = <span class="hl">1892</span> | प्रत्यक्ष चुनाव पहली बार = <span class="hl-g">1919</span></li>
+          <li>प्रिवी पर्स समाप्त = <span class="hl">26वाँ संशोधन</span> (25वाँ नहीं!) 1971</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw dot">
+          <li>न्याय (उद्देशिका) <span class="hl">रूस</span> से | स्वतंत्रता, समता, बंधुता <span class="hl-g">फ्रांस</span> से</li>
+          <li>उद्देशिका <span class="hl">USA</span> से ली गई | "We the People" शैली</li>
+          <li>उद्देशिका = <span class="hl">न्यायालय में अप्रवर्तनीय (Non-Justiciable)</span> | शक्ति का स्रोत नहीं | शक्ति पर सीमा नहीं</li>
+          <li>समाजवादी + पंथनिरपेक्ष + अखंडता <span class="hl">42वें संशोधन 1976</span> द्वारा जोड़े</li>
+          <li>उद्देशिका में <span class="hl">इतिहास में केवल एक बार</span> संशोधन हुआ</li>
+          <li>उद्देश्य प्रस्ताव ≠ उद्देशिका! उद्देशिका इससे <span class="hl">प्रेरित</span> है</li>
+          <li>मॉर्ले-मिंटो (1909) → मिंटो = <span class="hl">सांप्रदायिकता के जनक</span> (मॉर्ले नहीं!)</li>
+          <li>साइमन कमीशन = <span class="hl">7 ब्रिटिश</span> सदस्य → बहिष्कार 1928</li>
+          <li>भारतीय संविधान का ~40% <span class="hl">भारत शासन अधिनियम 1935</span> से</li>
+          <li>सत्येंद्र प्रसाद सिन्हा = <span class="hl">कार्यकारी (Executive)</span> परिषद में प्रथम भारतीय (विधायी नहीं!)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>🧠 याद करने की Trick — SSSDR (राज्य की प्रकृति):</strong><br>
+      <span class="hl"><strong>स</strong></span>त्यम <span class="hl-g"><strong>शि</strong></span>वम <span class="hl-p"><strong>सुं</strong></span>दरम = <strong>S</strong>overeign <strong>S</strong>ocialist <strong>S</strong>ecular<br>
+      + <span class="hl-b"><strong>D</strong></span>emo<strong>D</strong>emo = <strong>D</strong>emocratic + <span class="hl"><strong>R</strong></span>ing = <strong>R</strong>epublic 🔔</p>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>🧠 याद करने की Trick — अधिनियमों की प्रगति (केंद्रीकरण → विकेंद्रीकरण):</strong><br>
+      1773 → <span class="hl">GG of Bengal</span> (केंद्रीकरण शुरू)<br>
+      1833 → <span class="hl-g">GG of India</span> (केंद्रीकरण चरम 🔝)<br>
+      1861 → <span class="hl-p">विकेंद्रीकरण</span> शुरू (बॉम्बे और मद्रास को शक्तियाँ)<br>
+      सोचो: एक <strong>पेंडुलम</strong> की तरह — केंद्र की ओर जाता है, फिर वापस आता है! 🕰️</p>
+    </div>
+
+    <div class="trick">
+      <p class="hw"><strong>🧠 याद करने की Trick — भारतीय परिषद अधिनियमों में प्रथम:</strong><br>
+      1861 = <span class="hl">प्रथम भारतीय</span> विधानमंडल में (3 नामांकित)<br>
+      1892 = <span class="hl-g">प्रथम अप्रत्यक्ष</span> चुनाव + बजट चर्चा<br>
+      1909 = <span class="hl-p">प्रथम पृथक निर्वाचक मंडल</span> (मुसलमान) + कार्यकारी परिषद में प्रथम भारतीय<br>
+      याद रखो: 1-2-3 हर अधिनियम के साथ बढ़ता है! ⬆️</p>
+    </div>
+
+    <!-- FOOTER STICKY -->
+    <div class="sticky green" style="margin-top:24px;text-align:center">
+      <div class="slbl">🚂 LECTURE 2 समाप्त — RAILWAY PYQ GK SERIES</div>
+      <strong>ऐतिहासिक पृष्ठभूमि (सभी अधिनियम 1773–1947) ✅ | उद्देशिका पूर्ण ✅</strong><br>
+      <span style="font-size:.85rem">कल (L3): संघ और उसका राज्यक्षेत्र 🗺️ | Parmar Academy App → Free Content Section 📲 | Regular रहो, Selected बनो! 🚂</span>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
