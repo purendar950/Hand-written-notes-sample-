@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Economy PYQ | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — अर्थव्यवस्था PYQ नोट्स</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · भारतीय अर्थव्यवस्था</div>
+    <div class="cover-title">💰 अर्थव्यवस्था PYQ — टॉपर नोट्स</div>
+    <div class="cover-sub">वैश्विक सूचकांक · मुद्रा · बजट · योजना · 1991 सुधार | सभी प्रश्न सहित</div>
+    <div class="cover-badge">🌐 सूचकांक · 💱 मुद्रा व व्यापार · 🏭 औद्योगिक नीति · 📊 बजट व मुद्रास्फीति · 🏦 बैंक · 🧠 योजना</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec orange">① वैश्विक सूचकांक व अर्थशास्त्री 🌐</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> ग्लोबल लिवेबिलिटी इंडेक्स किसके द्वारा जारी किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>इकोनॉमिस्ट इंटेलिजेंस यूनिट (EIU) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विश्व बैंक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UNDP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विश्व आर्थिक मंच</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — ग्लोबल लिवेबिलिटी इंडेक्स = <strong>इकोनॉमिस्ट इंटेलिजेंस यूनिट (EIU)</strong>। UNDP → HDI; विश्व बैंक पहले → लॉजिस्टिक्स परफॉर्मेंस इंडेक्स व ईज ऑफ डूइंग बिजनेस।</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>हालिया ग्लोबल लिवेबिलिटी इंडेक्स — शीर्ष शहर:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl">कोपेनहेगन</span> (डेनमार्क) — पहला</li>
+        <li><span class="hl-g">वियना</span> (ऑस्ट्रिया की राजधानी) — दूसरा</li>
+        <li><span class="hl-b">मेलबर्न</span> (ऑस्ट्रेलिया) — तीसरा</li>
+      </ul>
+      <p class="hw">भारत: <strong>दिल्ली व मुंबई</strong> दोनों <span class="hl-p">173 में से 141वें</span> स्थान पर।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> तुलनात्मक लाभ (comparative advantage) की अवधारणा किस अर्थशास्त्री ने दी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कीन्स</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एडम स्मिथ</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हिक्स</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>रिकार्डो ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>डेविड रिकार्डो</strong> (रैयतवाड़ी व्यवस्था भी रिकार्डियन सिद्धांत पर आधारित थी)</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>अर्थशास्त्री</th><th>उपनाम</th><th>प्रसिद्ध पुस्तक / अवधारणा</th></tr>
+      <tr><td><span class="hl"><strong>जे.एम. कीन्स</strong></span></td><td>मैक्रोइकोनॉमिक्स के जनक (ब्रिटिश)</td><td><em>General Theory of Employment</em> · "एनिमल स्पिरिट"</td></tr>
+      <tr><td><span class="hl-g"><strong>एडम स्मिथ</strong></span></td><td>माइक्रो/आधुनिक अर्थशास्त्र के जनक</td><td><em>Wealth of Nations</em> · "इनविजिबल हैंड"</td></tr>
+      <tr><td><strong>अल्फ्रेड मार्शल</strong></td><td>इन्हें भी माइक्रोइकोनॉमिक्स का जनक कहा जाता है</td><td>—</td></tr>
+      <tr><td><strong>रिकार्डो</strong></td><td>तुलनात्मक लाभ</td><td>रिकार्डियन सिद्धांत (रैयतवाड़ी)</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">इनविजिबल हैंड बनाम एनिमल स्पिरिट</div>
+      <span class="hl"><strong>इनविजिबल हैंड</strong></span> (एडम स्मिथ): व्यक्ति अपने हित में कार्य करते हुए पूरी अर्थव्यवस्था का भला करता है।<br>
+      <span class="hl-g"><strong>एनिमल स्पिरिट</strong></span> (कीन्स): जोखिम उठाकर व्यवसाय शुरू करने की प्रवृत्ति।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> हैप्पीनेस इंडेक्स की गणना में मुख्यतः किसके सर्वेक्षण डेटा का उपयोग होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ऑक्सफोर्ड वेलबीइंग रिसर्च</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गैलप</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एक संस्थान</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>UN सस्टेनेबल डेवलपमेंट सॉल्यूशंस नेटवर्क ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — हैप्पीनेस इंडेक्स <strong>UN सस्टेनेबल डेवलपमेंट सॉल्यूशंस नेटवर्क</strong> के डेटा का उपयोग करता है</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">शीर्ष 3 खुशहाल — "FDI"</div>
+        <span class="hl"><strong>F</strong></span>inland (फिनलैंड) · <span class="hl"><strong>I</strong></span>celand (आइसलैंड) · <span class="hl"><strong>D</strong></span>enmark (डेनमार्क)<br>
+        (क्रम में याद रखें: F-I-D)
+      </div>
+      <div class="sticky red">
+        <div class="slbl">नीचे 3 + भारत</div>
+        सबसे नीचे: <span class="hl">अफगानिस्तान</span> (अंतिम), सिएरा लियोन, मलावी<br>
+        भारत रैंक = <strong>116</strong> · नेपाल = 99 (भारत से खुशहाल)
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> निम्न में से कौन एक प्रवाह (flow) चर है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रीय आय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मुद्रा आपूर्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पूँजी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>इन्वेंटरी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>राष्ट्रीय आय</strong> प्रवाह चर है (समयावधि में मापा जाता है)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>प्रवाह (Flow) चर</th><th>स्टॉक (Stock) चर</th></tr>
+      <tr><td><span class="hl">समयावधि</span> में मापा जाता है</td><td><span class="hl-g">समय-बिंदु</span> पर मापा जाता है</td></tr>
+      <tr><td>राष्ट्रीय आय, अर्जित आय, <strong>इन्वेंटरी में परिवर्तन</strong></td><td>मुद्रा आपूर्ति, पूँजी, संपत्ति, <strong>इन्वेंटरी</strong></td></tr>
+    </table>
+    <div class="trick">
+      🧠 "आपके पास कितना धन <em>है</em>?" = <strong>स्टॉक</strong> (समय की जरूरत नहीं)। "आप कितना <em>कमाते</em> हैं?" = <strong>प्रवाह</strong> (प्रति दिन/माह/वर्ष)। इन्वेंटरी = स्टॉक; <span class="hl">इन्वेंटरी में परिवर्तन</span> = प्रवाह।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> हैप्पीनेस इंडेक्स में देशों की रैंकिंग के लिए कितने चर उपयोग होते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>7</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>6 चर</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>हैप्पीनेस इंडेक्स के 6 चर:</strong></p>
+      <ul class="hw chk">
+        <li>GDP प्रति व्यक्ति</li>
+        <li>सामाजिक समर्थन</li>
+        <li>स्वस्थ जीवन प्रत्याशा</li>
+        <li>जीवन चुनने की स्वतंत्रता</li>
+        <li>उदारता (Generosity)</li>
+        <li>भ्रष्टाचार की धारणा</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec red">② औद्योगिक नीति व लाइसेंसिंग 🏭</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> किस नीति ने लघु उद्योगों को प्रमुख बढ़ावा दिया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>औद्योगिक नीति 1948</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>औद्योगिक नीति 1956</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>औद्योगिक नीति 1977 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>औद्योगिक नीति 1980</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>IPR 1977</strong> (मोरारजी देसाई / जनता पार्टी) ने लघु उद्योगों पर बल दिया व <span class="hl">"टिनी यूनिट्स"</span> की अवधारणा दी (₹1 लाख से कम निवेश)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>औद्योगिक नीति</th><th>प्रमुख बिंदु</th></tr>
+      <tr><td><strong>IPR 1948</strong></td><td>उद्योगों को <span class="hl">4 समूहों</span> में विभाजित किया</td></tr>
+      <tr><td><strong>IPR 1956</strong></td><td>उद्योगों को <span class="hl-g">3 अनुसूचियों</span> (A, B, C) में विभाजित किया</td></tr>
+      <tr><td><span class="hl"><strong>IPR 1977</strong></span></td><td>लघु उद्योगों को बढ़ावा; टिनी यूनिट्स की अवधारणा</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> औद्योगिक लाइसेंसिंग प्रणाली कब शुरू की गई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1948</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1951 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1956</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1961</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>1951</strong> ("लाइसेंस राज")</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">लाइसेंस राज <span class="hl"><strong>1991</strong></span> के आर्थिक सुधारों में समाप्त हुआ — परंतु <strong>पूरी तरह नहीं</strong>। कुछ <span class="hl-p">खतरनाक उद्योगों</span> (जैसे शराब, तंबाकू) के लिए आज भी लाइसेंस आवश्यक है। यह "रेड-टेपिज्म" का दौर था।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec green">③ व्यापार, मुद्रा व वैध मुद्रा 💱</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> 1993 में विश्व सेवा बाजार में भारत के सेवा निर्यात का हिस्सा कितना था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>0.5% (आधा प्रतिशत) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>6%</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — 1993 में <strong>0.5%</strong>। (2022 तक यह <span class="hl">4.3%</span> हो गया।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> निम्न में से कौन वैध मुद्रा (legal tender) माना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>डेबिट कार्ड</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सिक्के ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चेक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>क्रेडिट कार्ड</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>सिक्के</strong> (फिएट मनी, RBI/सरकार द्वारा समर्थित = वैध मुद्रा)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>प्रकार</th><th>अर्थ</th></tr>
+      <tr><td><span class="hl"><strong>फिएट मनी</strong></span></td><td>वैध मुद्रा; सरकार द्वारा समर्थित (नोट, सिक्के) — अस्वीकार नहीं की जा सकती</td></tr>
+      <tr><td><span class="hl-g"><strong>फिड्यूशरी मनी</strong></span></td><td>विश्वास पर आधारित (जैसे चेक) — अस्वीकार की जा सकती है</td></tr>
+      <tr><td><strong>कमोडिटी मनी</strong></td><td>आंतरिक मूल्य रखती है (जैसे सोने का सिक्का)</td></tr>
+    </table>
+    <div class="sticky blue">
+      <div class="slbl">अंकित मूल्य बनाम आंतरिक मूल्य</div>
+      <strong>अंकित मूल्य (Face value)</strong> = मुद्रा पर छपा मूल्य · <strong>आंतरिक मूल्य (Intrinsic value)</strong> = जिस सामग्री से बनी उसका मूल्य।<br>
+      प्रचलन हेतु: <span class="hl">अंकित मूल्य &gt; आंतरिक मूल्य</span> होना चाहिए।<br>
+      🧠 मोहम्मद बिन तुगलक की विफल टोकन मुद्रा: आंतरिक मूल्य अंकित मूल्य से अधिक हो गया।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> हाल ही में भारत का सबसे बड़ा व्यापारिक साझेदार कौन-सा देश रहा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>चीन (पीपुल्स रिपब्लिक ऑफ चाइना) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UAE</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जापान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>चीन</strong> (~$151 बिलियन व्यापार; निर्यात ≈ $19B, आयात ≈ $131B, व्यापार घाटा ≈ $112B)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>वस्तु विनिमय (Barter)</strong> <span class="hl">"दोहरे संयोग की इच्छा (double coincidence of wants)"</span> पर काम करता है — जो आप चाहते हैं वह मेरे पास हो, जो मैं चाहता हूँ वह आपके पास हो। (यही इसकी सबसे बड़ी सीमा है!)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec blue">④ वैश्विक संस्थाएँ, घाटा वित्तपोषण व विमुद्रीकरण 📊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> ग्लोबल एनर्जी ट्रांज़िशन इंडेक्स किसके द्वारा प्रकाशित किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अंतर्राष्ट्रीय ऊर्जा एजेंसी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विश्व बैंक</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>विश्व आर्थिक मंच (WEF) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>OPEC</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>विश्व आर्थिक मंच (WEF)</strong> एनर्जी ट्रांज़िशन इंडेक्स प्रकाशित करता है</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>संस्था</th><th>मुख्यालय</th></tr>
+      <tr><td><strong>OPEC</strong></td><td>वियना, ऑस्ट्रिया (ऑस्ट्रिया OPEC सदस्य भी नहीं है)</td></tr>
+      <tr><td><span class="hl"><strong>विश्व आर्थिक मंच</strong></span></td><td>कोलोनी, <span class="hl-p">स्विट्ज़रलैंड</span> (जिनेवा नहीं)</td></tr>
+      <tr><td><strong>विश्व बैंक</strong></td><td>वाशिंगटन, D.C.</td></tr>
+      <tr><td><strong>UNESCO</strong></td><td>पेरिस, फ्रांस</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> निम्न में से कौन बजटीय घाटे के वित्तपोषण का तरीका नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उधार लेना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मुद्रा छापना</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>न तो 1 न ही 2 (दोनों तरीके हैं) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — उधार व मुद्रा छापना दोनों वैध तरीके हैं, अतः "न तो 1 न 2" सही है। तरीके = कर बढ़ाना, उधार (बाह्य/आंतरिक), मुद्रा छापना।</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">सेन्योरेज (Seigniorage)</div>
+      <span class="hl"><strong>मुद्रा छापकर सरकार द्वारा कमाया गया लाभ</strong></span>। जैसे ₹1 करोड़ छापा; छपाई/कागज/स्टाफ लागत बहुत कम हो तो अंतर ही सेन्योरेज है। सिक्के व ₹1 के नोट = भारत सरकार; अन्य नोट = RBI।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> 1978 में विमुद्रीकृत नोटों में निम्न में से कौन-सा मूल्यवर्ग नहीं था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>₹500 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>₹1,000</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>₹5,000</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>₹10,000</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>1978</strong> में (मोरारजी देसाई) ₹1,000, ₹5,000 व ₹10,000 विमुद्रीकृत हुए। ₹500 नहीं था।</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>विमुद्रीकरण वर्ष: <span class="hl">1946</span>, <span class="hl">1978</span> (मोरारजी देसाई), <span class="hl">2016</span> (मोदी, 8 नवंबर)</li>
+        <li>2016 विमुद्रीकरण के समय RBI गवर्नर = <strong>उर्जित पटेल</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> निम्न में से कौन-सा सूचकांक विश्व आर्थिक मंच द्वारा प्रकाशित नहीं किया जाता?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ग्लोबल जेंडर गैप इंडेक्स</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एनर्जी ट्रांज़िशन इंडेक्स</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ग्लोबल कॉम्पिटिटिवनेस इंडेक्स</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मानव विकास सूचकांक (HDI) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>HDI, UNDP द्वारा प्रकाशित</strong> होता है। (जेंडर गैप — आइसलैंड शीर्ष पर — एनर्जी ट्रांज़िशन व कॉम्पिटिटिवनेस WEF द्वारा।)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>मानव विकास सूचकांक (HDI) — 3 आयाम व संकेतक:</strong></p>
+      <table class="hw-t grn">
+        <tr><th>आयाम</th><th>संकेतक</th></tr>
+        <tr><td>लंबा व स्वस्थ जीवन</td><td>जन्म के समय जीवन प्रत्याशा</td></tr>
+        <tr><td>ज्ञान</td><td>अपेक्षित स्कूली वर्ष + औसत स्कूली वर्ष</td></tr>
+        <tr><td>सम्मानजनक जीवन स्तर</td><td>GNI प्रति व्यक्ति</td></tr>
+      </table>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ राष्ट्रीय आय व प्रमुख संस्थाएँ 📈</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> मानव विकास की अवधारणा (1990 में) सबसे पहले किसने प्रस्तुत की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>महबूब उल हक व अमर्त्य सेन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एडम स्मिथ व रिकार्डो</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कीन्स व मार्शल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दादाभाई नौरोजी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — पाकिस्तानी अर्थशास्त्री <strong>महबूब उल हक</strong> व भारतीय अर्थशास्त्री <strong>अमर्त्य सेन</strong> (सेन को <span class="hl">1998</span> में अर्थशास्त्र का नोबेल, पहले भारतीय)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> व्यक्तिगत प्रयोज्य आय (Personal Disposable Income) का सही वर्णन कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>व्यक्तिगत आय − व्यक्तिगत कर व गैर-कर भुगतान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>व्यक्तिगत आय + हस्तांतरण भुगतान</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रीय आय − मूल्यह्रास</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>GDP − अप्रत्यक्ष कर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>PDI = व्यक्तिगत आय − (व्यक्तिगत कर भुगतान + गैर-कर भुगतान)</strong> = खर्च करने योग्य बची आय</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>राष्ट्रीय आय से <span class="hl">घटाएँ</span> अर्जित पर अप्राप्त आय (जैसे अवितरित कॉर्पोरेट लाभ)</li>
+        <li><span class="hl-g">जोड़ें</span> प्राप्त पर अनर्जित आय (हस्तांतरण भुगतान — सरकारी सब्सिडी, पेंशन)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> भारत के निर्यात-आयात क्रियाकलापों में अग्रणी भूमिका कौन-सी वित्तीय संस्था निभाती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>NABARD</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>EXIM बैंक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>विश्व बैंक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>SIDBI</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>EXIM बैंक</strong> (एक्सपोर्ट-इम्पोर्ट बैंक), स्थापना <span class="hl">1 जनवरी 1982</span></div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>संस्था</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>EXIM बैंक</strong></span></td><td>1 जनवरी 1982 — निर्यात/आयात समर्थन</td></tr>
+      <tr><td><strong>NABARD</strong></td><td>12 जुलाई 1982; बी. शिवरामन समिति; RRBs का पर्यवेक्षण (RBI द्वारा विनियमित); सीधे जनता से व्यवहार नहीं</td></tr>
+      <tr><td><strong>SIDBI</strong></td><td>1990; मुख्यालय लखनऊ</td></tr>
+      <tr><td><strong>विश्व बैंक</strong></td><td>मुख्यालय वाशिंगटन D.C.; 1944 ब्रेटन वुड्स सम्मेलन; IBRD</td></tr>
+      <tr><td><strong>SEBI</strong></td><td>अधिनियम प्रभावी 1988</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> भारत का पहला आर्थिक सर्वेक्षण कब प्रस्तुत किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1947–48</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1950–51 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1951–52</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1952–53</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — पहला आर्थिक सर्वेक्षण = <strong>1950–51</strong></div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">आर्थिक सर्वेक्षण</div>
+      <span class="hl">1964</span> तक आर्थिक सर्वेक्षण व बजट साथ प्रस्तुत होते थे; <strong>1964 के बाद अलग किए गए</strong>। अब सर्वेक्षण (वित्त मंत्रालय द्वारा) बजट से ~2 दिन पहले प्रस्तुत होता है।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec orange">⑥ बजट, SEZ व मुद्रास्फीति 💰</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> अवसंरचना निर्माण हेतु विशेष आर्थिक क्षेत्र (SEZ) विकासकर्ताओं को कौन-सी विशेष वित्तीय रियायत दी जाती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भूमि अधिग्रहण पर सब्सिडी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>निर्यात पर कर वापसी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बैंकों से कम ब्याज ऋण</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>केंद्र सरकार से पूँजी अनुदान ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — केंद्र सरकार से <strong>पूँजी अनुदान (capital grant)</strong> (अनुदान = मुफ्त धन, लौटाना नहीं)</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">पहला SEZ / EPZ</div>
+      भारत का (व <span class="hl">एशिया</span> का) पहला निर्यात प्रसंस्करण क्षेत्र = <strong>कांडला EPZ</strong>, स्थापना <span class="hl-g">1965</span> (गुजरात)।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> बजट के संदर्भ में, निम्न में से किसमें सरकार की संपत्तियाँ व देनदारियाँ शामिल होती हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राजस्व खाता</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>पूँजी खाता ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एस्क्रो खाता</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>फॉरेक्स खाता</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>पूँजी खाता</strong> संपत्तियों व देनदारियों से संबंधित है। (एस्क्रो = निष्पक्ष तीसरे पक्ष द्वारा रखा अस्थायी खाता।)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>भाग</th><th>प्राप्तियाँ</th><th>व्यय</th></tr>
+      <tr><td><strong>राजस्व</strong></td><td>कर (प्रत्यक्ष/अप्रत्यक्ष) व गैर-कर (PSUs से लाभांश, ब्याज)</td><td>वेतन, पेंशन, मजदूरी, ब्याज भुगतान, सब्सिडी</td></tr>
+      <tr><td><strong>पूँजी</strong></td><td>देनदारी बनाती है (उधार) या संपत्ति घटाती है (विनिवेश)</td><td>विकासात्मक — अवसंरचना, सड़कें, PSUs (संपत्ति बनाता है)</td></tr>
+    </table>
+    <div class="tip-box">
+      <p class="hw">बजट = <span class="hl"><strong>वार्षिक वित्तीय विवरण</strong></span>, <strong>अनुच्छेद 112</strong> के तहत; राष्ट्रपति के नाम पर दोनों सदनों के समक्ष रखा जाता है (वित्त मंत्री द्वारा प्रस्तुत)। "पूँजी खाता" व "बजट" किसी अनुच्छेद में नामित नहीं हैं।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> भारत में हेडलाइन मुद्रास्फीति मापने के लिए कौन-सा सूचकांक उपयोग होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>CPI Combined ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>GDP डिफ्लेटर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>IIP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>WPI</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>CPI Combined</strong> हेडलाइन मुद्रास्फीति मापता है। कोर मुद्रास्फीति = हेडलाइन − (खाद्य व ईंधन/ऊर्जा)।</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>सूचकांक</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>CPI</strong></span></td><td>हेडलाइन मुद्रास्फीति; सेवाएँ शामिल; सर्वाधिक भार = खाद्य व पेय (पहले ~45%, अब <span class="hl-p">36.75%</span>)</td></tr>
+      <tr><td><strong>WPI</strong></td><td>सेवाएँ शामिल नहीं; सर्वाधिक भार = निर्मित वस्तुएँ; आर्थिक सलाहकार कार्यालय द्वारा</td></tr>
+      <tr><td><strong>IIP</strong></td><td>8 कोर उद्योग = IIP का <span class="hl">40%</span></td></tr>
+      <tr><td><strong>GDP डिफ्लेटर</strong></td><td>= (नॉमिनल GDP ÷ रियल GDP) × 100</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> भारत में जेंडर बजटिंग कब शुरू की गई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1991–92</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1997–98</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2005–06 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2020–21</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — जेंडर बजटिंग (महिलाओं हेतु धन आवंटन) <strong>2005–06</strong> में शुरू हुई</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> न्यूनतम समर्थन मूल्य (MSP) कब शुरू किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1950 का दशक</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1960 का दशक (1966–67) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1970 का दशक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1980 का दशक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — MSP <strong>1960 के दशक (1966–67)</strong> में शुरू हुआ</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec teal">⑦ व्यापार संतुलन, BOP व मुद्रा मूल्य 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> 1991 से पहले, किस क्षेत्र को लाइसेंसिंग, कोटा व मूल्य नियंत्रण के माध्यम से भारी विनियमन का सामना करना पड़ा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कृषि</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>उपभोक्ता व लघु उद्योग</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारी उद्योग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवल बैंकिंग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>भारी उद्योग</strong> (जैसे स्टील, सीमेंट) को सर्वाधिक लाइसेंसिंग, कोटा व मूल्य नियंत्रण झेलना पड़ा। लघु उद्योगों को बहुत कम।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> 1990 के दशक की शुरुआत में किस बाह्य घटना ने भारत के भुगतान संतुलन (BOP) संकट को जन्म दिया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>खाड़ी युद्ध व तेल कीमतों में वृद्धि ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एशियाई वित्तीय संकट</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>डॉट-कॉम बुलबुला</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>महामंदी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>खाड़ी युद्ध</strong> व बढ़ती तेल कीमतों ने 1991 BOP संकट को जन्म दिया (केवल ~2 सप्ताह का फॉरेक्स बचा) → LPG सुधार हुए</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw">भारत अपनी LPG जरूरतों का ~<span class="hl">60%</span> आयात करता है; उसमें से ~90% <strong>होर्मुज जलडमरूमध्य</strong> से आता है। वहाँ कोई व्यवधान हमारी तेल/LPG लागत बढ़ा देता है।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> भारत के व्यापार संतुलन की मुख्य कमी क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सेवाओं का अधिशेष निर्यात</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कुछ ही साझेदारों पर अति-निर्भरता</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>आयात के कारण निरंतर व्यापार घाटा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्च टैरिफ संरचना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>आयात के कारण निरंतर व्यापार घाटा</strong> (आयात &gt; निर्यात)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>BOP खाता</th><th>शामिल</th></tr>
+      <tr><td><span class="hl"><strong>चालू खाता</strong></span></td><td>वस्तु (दृश्य) व सेवा (अदृश्य) व्यापार + हस्तांतरण भुगतान (रेमिटेंस — भारत प्राप्त करने में #1)</td></tr>
+      <tr><td><span class="hl-g"><strong>पूँजी खाता</strong></span></td><td>FDI, FPI, उधार (निवेश)</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>जुड़वाँ घाटा (Twin Deficit)</strong> = व्यापार घाटा + राजकोषीय (नकद) घाटा एक साथ।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> GST से पहले भारतीय राज्यों द्वारा मूल्य वर्धित कर (VAT) लागू करने का मुख्य उद्देश्य क्या था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अप्रत्यक्ष कराधान के कैस्केडिंग प्रभाव को कम करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रत्यक्ष कर संग्रह बढ़ाना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सीमा शुल्क घटाना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयकर समाप्त करना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अप्रत्यक्ष कराधान के <strong>कैस्केडिंग प्रभाव (कर-पर-कर)</strong> को कम करना। VAT व GST अप्रत्यक्ष कर हैं।</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>GST की सिफारिश पहले <span class="hl">केलकर समिति</span> ने की; सिफारिश करने वाला पहला वित्त आयोग = <strong>13वाँ FC</strong> (अध्यक्ष: विजय केलकर)</li>
+        <li>GST परिषद = अनुच्छेद <span class="hl">279A</span>; 33 सदस्य; निर्णय <span class="hl">3/4 बहुमत</span> से; केंद्र = 1/3 मतदान शक्ति, सभी राज्य मिलकर = 2/3</li>
+        <li><strong>टैरिफ</strong> = आयात पर लगाया गया कर</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> स्थिर विनिमय दर प्रणाली में, जब सरकारी कार्रवाई से घरेलू मुद्रा का मूल्य घटता है, उसे क्या कहते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अवमूल्यन (Depreciation)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अधिमूल्यन (Appreciation)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अवमूल्यन – सरकारी (Devaluation) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पुनर्मूल्यन (Revaluation)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — सरकार मूल्य घटाए = <strong>Devaluation (अवमूल्यन)</strong></div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>मूल्य गिरना</th><th>मूल्य बढ़ना</th></tr>
+      <tr><td>सरकार द्वारा → <span class="hl"><strong>Devaluation</strong></span></td><td>सरकार द्वारा → <span class="hl-g"><strong>Revaluation</strong></span></td></tr>
+      <tr><td>बाजार शक्तियों द्वारा → <strong>Depreciation</strong></td><td>बाजार शक्तियों द्वारा → <strong>Appreciation</strong></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec red">⑧ योजना विचारक, राजस्व व्यय व HDI 🧠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> भारतीय योजना का जनक किसे माना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>दादाभाई नौरोजी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पी.सी. महालनोबिस</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>एम. विश्वेश्वरैया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जवाहरलाल नेहरू</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>एम. विश्वेश्वरैया</strong> (इंजीनियर), पुस्तक <em>Planned Economy for India</em> (1934)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>व्यक्ति</th><th>योगदान</th></tr>
+      <tr><td><span class="hl"><strong>एम. विश्वेश्वरैया</strong></span></td><td>भारतीय योजना के जनक; <em>Planned Economy for India</em> (1934)</td></tr>
+      <tr><td><strong>दादाभाई नौरोजी</strong></td><td>पहली गरीबी रेखा, राष्ट्रीय आय अवधारणा; "ग्रैंड ओल्ड मैन ऑफ इंडिया"; ड्रेन ऑफ वेल्थ सिद्धांत (<em>Poverty &amp; Un-British Rule in India</em>); ईस्ट इंडिया एसोसिएशन (1866)</td></tr>
+      <tr><td><strong>पी.सी. महालनोबिस</strong></td><td>भारत में सांख्यिकी के जनक; सांख्यिकी दिवस = 29 जून; जर्नल <em>Sankhya</em>; भारतीय सांख्यिकी संस्थान</td></tr>
+      <tr><td><strong>जवाहरलाल नेहरू</strong></td><td>योजना आयोग के पहले अध्यक्ष</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> भारतीय बजट के संदर्भ में, निम्न में से कौन राजस्व व्यय में शामिल है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सब्सिडी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लड़ाकू विमानों का अधिग्रहण</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नौसैनिक जहाजों का अधिग्रहण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>एक्सप्रेसवे निर्माण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सब्सिडी</strong> (राजस्व व्यय)। विमान/जहाज/एक्सप्रेसवे संपत्ति बनाते हैं → पूँजीगत व्यय।</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">राजस्व व्यय में शामिल</div>
+      सब्सिडी · ब्याज भुगतान · वेतन · पेंशन · मजदूरी (कोई संपत्ति निर्माण नहीं)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> मानव विकास सूचकांक में शिक्षा सूचकांक किससे मापा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>औसत स्कूली वर्ष व अपेक्षित स्कूली वर्ष ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल साक्षरता दर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>GNI प्रति व्यक्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जीवन प्रत्याशा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — शिक्षा सूचकांक = <strong>औसत स्कूली वर्ष + अपेक्षित स्कूली वर्ष</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec blue">⑨ योजनाएँ, अधिनियम व संस्थाएँ 📋</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> कौन-सी योजना विशेष रूप से MSMEs को प्रौद्योगिकी उन्नयन हेतु समर्थन देती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रधानमंत्री रोजगार सृजन कार्यक्रम</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>क्रेडिट लिंक्ड कैपिटल सब्सिडी स्कीम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मेक इन इंडिया</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अटल इनोवेशन मिशन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>क्रेडिट लिंक्ड कैपिटल सब्सिडी स्कीम</strong> — संस्थागत ऋण पर 15% अग्रिम पूँजी सब्सिडी (₹1 करोड़ तक के ऋण पर)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> NITI आयोग की कौन-सी नीतिगत पहल नवाचार व उद्यमिता को बढ़ावा देती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अटल इनोवेशन मिशन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मेक इन इंडिया</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>स्टार्टअप इंडिया</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>स्टैंड-अप इंडिया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>अटल इनोवेशन मिशन</strong> (अटल टिंकरिंग लैब्स, अटल इन्क्यूबेशन सेंटर्स)</div>
+    </div>
+    <div class="sticky green">
+      <div class="slbl">स्टार्टअप इंडिया</div>
+      स्टार्टअप दिवस = <span class="hl">16 जनवरी</span> · <strong>DPIIT</strong> की योजना (वाणिज्य व उद्योग मंत्रालय के अधीन)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> भारतीय खाद्य निगम (FCI) की स्थापना कब हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1965 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1955</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1975</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1982</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — FCI की स्थापना <strong>1965</strong> (तीसरी पंचवर्षीय योजना)। CACP (कृषि लागत व मूल्य आयोग) — MSP की सिफारिश/घोषणा करता है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> सरकार ने बीमा क्षेत्र सुधार हेतु पूर्व RBI गवर्नर आर.एन. मल्होत्रा की अध्यक्षता में समिति कब बनाई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1983</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1963</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1993 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1999</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>1993</strong> (मल्होत्रा समिति) → <strong>IRDA</strong> (अधिनियम 1999, निकाय 2000 में स्थापित)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> किस अधिनियम ने भारत में खाद्य सुरक्षा हेतु अलग प्राधिकरण बनाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>खाद्य सुरक्षा व मानक अधिनियम, 2006 (FSSAI) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रतिस्पर्धा अधिनियम, 2002</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>MRTP अधिनियम, 1969</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>IRDA अधिनियम, 1999</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>FSSAI</strong> (खाद्य सुरक्षा व मानक अधिनियम, 2006)। साथ ही: प्रतिस्पर्धा अधिनियम 2002 ने MRTP अधिनियम 1969 को प्रतिस्थापित किया।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> मानव विकास सूचकांक (HDI) किसका समग्र सूचकांक है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जीवन स्तर, ज्ञान व जीवन प्रत्याशा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आय, बचत व निवेश</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>GDP, GNP व NNP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>स्वास्थ्य, स्वच्छता व आवास</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — जीवन स्तर (आय) + ज्ञान (शिक्षा) + जीवन प्रत्याशा</div>
+    </div>
+    <div class="imp">
+      <p class="hw"><strong>MPI (बहुआयामी गरीबी सूचकांक):</strong> वैश्विक MPI <span class="hl">UNDP</span> द्वारा = 3 आयाम, <strong>10 संकेतक</strong>। राष्ट्रीय MPI <span class="hl-p">NITI आयोग</span> द्वारा = 3 आयाम, <strong>12 संकेतक</strong> (अतिरिक्त 2 = बैंक खाता व प्रसवपूर्व देखभाल)।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> भारत में 1950–1980 के दशकों की व्यापार नीति किस पर केंद्रित थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पूर्ण उदारीकरण</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>आयात प्रतिस्थापन व संरक्षणवाद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुक्त व्यापार से निर्यात प्रोत्साहन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विदेशी पोर्टफोलियो निवेश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>आयात प्रतिस्थापन व संरक्षणवाद</strong> (शिशु घरेलू उद्योगों की रक्षा हेतु "अंतर्मुखी रणनीति")</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> सार्वजनिक बैंकों के महाविलय में आंध्रा बैंक का विलय किसमें हुआ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>यूनियन बैंक ऑफ इंडिया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पंजाब नेशनल बैंक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>केनरा बैंक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>इंडियन बैंक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — आंध्रा बैंक + कॉर्पोरेशन बैंक → <strong>यूनियन बैंक ऑफ इंडिया</strong></div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>एंकर बैंक</th><th>विलीन बैंक</th></tr>
+      <tr><td><span class="hl"><strong>यूनियन बैंक ऑफ इंडिया</strong></span></td><td>आंध्रा बैंक + कॉर्पोरेशन बैंक</td></tr>
+      <tr><td><strong>PNB</strong></td><td>ओरिएंटल बैंक ऑफ कॉमर्स + यूनाइटेड बैंक ऑफ इंडिया</td></tr>
+      <tr><td><strong>केनरा बैंक</strong></td><td>सिंडिकेट बैंक</td></tr>
+      <tr><td><strong>इंडियन बैंक</strong></td><td>इलाहाबाद बैंक</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">नरसिम्हम समिति</div>
+      बैंकिंग सुधारों पर (PSBs के विलय/समेकन की सिफारिश)। <span class="hl">नरसिम्हम-I = 1991</span>; <span class="hl-g">नरसिम्हम-II = 1998</span>।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> मिश्रित अर्थव्यवस्था में सरकार का कौन-सा कार्य नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सभी वस्तुओं के मूल्य निर्धारित करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बाजार का विनियमन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सार्वजनिक वस्तुओं की आपूर्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आय का वितरण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सभी वस्तुओं के मूल्य निर्धारित करना</strong> = समाजवादी/सार्वजनिक अर्थव्यवस्था, मिश्रित नहीं। ("सभी" = चरम शब्द → प्रायः गलत।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> BOP संकट से निपटने हेतु जुलाई 1991 में भारतीय रुपये का अवमूल्यन कितना हुआ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5–7%</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>18–20% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>30–35%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>50%</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>~18–20%</strong> दो चरणों में: 1 जुलाई (≈9%) + 3 जुलाई (≈11%)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> भारत में "मुख्य कामगार (main worker)" वह है जो वर्ष में कम से कम कितने दिन काम करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>100 दिन</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>183 दिन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>200 दिन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>270 दिन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — मुख्य कामगार = <strong>183 दिन से अधिक</strong> काम; 183 दिन से कम = सीमांत कामगार</div>
+    </div>
+    <div class="sticky red">
+      <div class="slbl">संगठित बनाम असंगठित</div>
+      संगठित = सरकार के साथ पंजीकृत · असंगठित = अपंजीकृत। भारत के <span class="hl">90% से अधिक</span> कामगार असंगठित क्षेत्र में हैं।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> भारत के 1991 बाह्य क्षेत्र सुधारों में व्यापार उदारीकरण को कौन-सा उपाय सबसे अच्छा दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>घरेलू उद्योग की रक्षा हेतु उच्च टैरिफ लगाना</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अधिकांश वस्तुओं के लिए आयात लाइसेंसिंग प्रणाली समाप्त करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सभी आयातों पर प्रतिबंध</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयात प्रतिस्थापन बढ़ाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अधिकांश वस्तुओं के लिए <strong>आयात लाइसेंसिंग प्रणाली समाप्त करना</strong> (अर्थव्यवस्था को खोलना)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> भारत में राष्ट्रीय बहुआयामी गरीबी सूचकांक (MPI) किसके द्वारा जारी किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>NITI आयोग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UNDP</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विश्व बैंक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — राष्ट्रीय MPI <strong>NITI आयोग</strong> द्वारा (वैश्विक MPI = UNDP)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>संबंधित (संवैधानिक):</strong> NHRC स्थापना 1993 (मानवाधिकार संरक्षण अधिनियम, 1993)। राष्ट्रीय अनुसूचित जाति आयोग = अनु. <span class="hl">338</span>; राष्ट्रीय अनुसूचित जनजाति आयोग = अनु. <span class="hl">338A</span> (89वें संशोधन द्वारा विभाजित; पहले दोनों 338 के अधीन)।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec purple">⑩ मुद्रास्फीति, बेरोजगारी व पंचवर्षीय योजनाएँ 📉</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> स्टैगफ्लेशन (Stagflation) किस स्थिति को कहते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उच्च मुद्रास्फीति + ठहरी हुई अर्थव्यवस्था (उच्च बेरोजगारी) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>गिरती कीमतें + उच्च वृद्धि</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कम मुद्रास्फीति + कम बेरोजगारी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्च वृद्धि + कम मुद्रास्फीति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>स्टैगफ्लेशन</strong> = मुद्रास्फीति + ठहराव (उच्च बेरोजगारी)। यहाँ <span class="hl">फिलिप्स वक्र विफल</span> हो जाता है (सामान्यतः मुद्रास्फीति↑ → बेरोजगारी↓, विपरीत संबंध)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> कौन-सी प्रवृत्ति दर्शाती है कि 1991 के सुधारों ने "असमानता के साथ वृद्धि" को जन्म दिया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ग्रामीण गरीबी शहरी गरीबी से तेजी से घटी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कृषि रोजगार तेजी से बढ़ा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनौपचारिक क्षेत्र काफी सिकुड़ा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>शहरी सेवा क्षेत्र तेजी से बढ़ा जबकि कृषि ठहरी रही ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — शहरी सेवाएँ तेजी से बढ़ीं जबकि कृषि ठहरी रही → बढ़ती असमानता (अमीर अमीर, गरीब गरीब)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> भारत में FDI सीमाएँ कब उदार की गईं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1991 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1995</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2000</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2010</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>1991</strong> (LPG सुधार)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> भारत में कृषि उत्पादकता को सीमित करने वाला सबसे महत्वपूर्ण संरचनात्मक कारक कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>श्रम की कमी</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>मानसून पर अत्यधिक निर्भरता ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अत्यधिक मशीनीकरण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अधिशेष ऋण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>मानसून पर अत्यधिक निर्भरता</strong> (जैसे एल नीनो / विलंबित मानसून वर्ष उत्पादकता घटाते हैं)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> FRBM अधिनियम का मुख्य उद्देश्य क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राजकोषीय घाटा कम करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सब्सिडी बढ़ाना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आयात शुल्क बढ़ाना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुद्रा आपूर्ति नियंत्रित करना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>FRBM</strong> (राजकोषीय उत्तरदायित्व व बजट प्रबंधन) अधिनियम → राजकोषीय घाटा कम करना</div>
+    </div>
+
+    <div class="formula">
+      <strong>राजकोषीय घाटा</strong> = कुल व्यय − कुल प्राप्तियाँ (उधार को छोड़कर)<br>
+      <strong>प्राथमिक घाटा</strong> = राजकोषीय घाटा − ब्याज भुगतान
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>FRBM समीक्षा समिति (अध्यक्ष: एन.के. सिंह) — 2023 तक लक्ष्य:</strong></p>
+      <ul class="hw arr">
+        <li>ऋण-GDP अनुपात = <span class="hl">60%</span> (केंद्र 40% + राज्य 20%)</li>
+        <li>राजकोषीय घाटा-GDP = <span class="hl-g">2.5%</span></li>
+        <li>राजस्व घाटा = <span class="hl-p">0.8%</span> GDP का</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> स्थिर कीमतों पर मापी गई राष्ट्रीय आय को क्या कहते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>वास्तविक राष्ट्रीय आय (रियल GDP) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नॉमिनल राष्ट्रीय आय</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रयोज्य आय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रति व्यक्ति आय</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — स्थिर कीमतें = <strong>रियल GDP</strong> (मुद्रास्फीति समायोजित)। नॉमिनल GDP = वर्तमान कीमतें।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> तकनीकी प्रगति से कौन-सी बेरोजगारी उत्पन्न होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौसमी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रच्छन्न (Disguised)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>घर्षणात्मक (Frictional)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>संरचनात्मक (Structural) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>संरचनात्मक बेरोजगारी</strong> (कौशल अंतर; शिक्षित; शहरी)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>प्रकार</th><th>अर्थ</th></tr>
+      <tr><td><strong>मौसमी</strong></td><td>गाँव/कृषि; केवल कुछ महीनों में काम</td></tr>
+      <tr><td><strong>प्रच्छन्न</strong></td><td>आवश्यकता से अधिक लोग कार्यरत (कृषि)</td></tr>
+      <tr><td><strong>घर्षणात्मक</strong></td><td>खोज/स्वैच्छिक; नौकरी बदलना</td></tr>
+      <tr><td><span class="hl"><strong>संरचनात्मक</strong></span></td><td>कौशल अंतर; तकनीक बेमेल; शिक्षित शहरी बेरोजगार</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> किस पंचवर्षीय योजना को गाडगिल योजना कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पहली</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दूसरी</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>तीसरी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चौथी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — शिक्षक का निर्देश: यदि 3 व 4 दोनों विकल्प हों तो <strong>तीसरी (गाडगिल योजना)</strong> चुनें; चौथी रुद्र मॉडल पर, पाँचवीं डी.पी. धर मॉडल पर आधारित थी।</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>योजना</th><th>मॉडल / टिप्पणी</th></tr>
+      <tr><td>पहली (1951–56)</td><td>हैरोड–डोमर मॉडल</td></tr>
+      <tr><td>दूसरी (1956–61)</td><td>पी.सी. महालनोबिस मॉडल; तीव्र औद्योगीकरण; 3 स्टील प्लांट</td></tr>
+      <tr><td>तीसरी (1961–66)</td><td><span class="hl">गाडगिल योजना</span>; लक्ष्य: आत्मनिर्भर अर्थव्यवस्था; <span class="hl-p">विफल</span> (लक्ष्य 5.6%, प्राप्त 2.8%) — चीन/पाक युद्ध + अकाल</td></tr>
+      <tr><td>योजना अवकाश (1966–69)</td><td>3 वार्षिक योजनाएँ</td></tr>
+      <tr><td>चौथी (1969–74)</td><td>"स्थिरता के साथ वृद्धि"; रुद्र मॉडल</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec green">⑪ रोजगार, उद्योग व बीमा 👷</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> कृषि के बाद भारतीय अर्थव्यवस्था में रोजगार का दूसरा सबसे बड़ा स्रोत कौन है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>MSME ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>IT क्षेत्र</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>निर्माण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बैंकिंग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>MSME</strong> (सूक्ष्म, लघु व मध्यम उद्यम)। MSME दिवस = <span class="hl">27 जून</span>।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> 1950 से 1990 के बीच भारतीय कृषि के सामने निम्न में से कौन-सी चुनौती नहीं थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>खंडित जोत</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मानसून वर्षा पर निर्भरता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उर्वरक व सिंचाई का कम उपयोग</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>उच्च ग्रामीण साक्षरता से श्रम आपूर्ति संकट ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — उस समय ग्रामीण साक्षरता वास्तव में <span class="hl">कम</span> थी, अतः "उच्च ग्रामीण साक्षरता दर" चुनौती नहीं थी</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> 1991 से पहले किस नीति ने कुछ उद्योगों में निजी क्षेत्र की भागीदारी सीमित की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>औद्योगिक लाइसेंसिंग नीति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कृषि सब्सिडी नीति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>निर्यात प्रोत्साहन नीति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मौद्रिक नीति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>औद्योगिक लाइसेंसिंग नीति</strong> (लाइसेंस राज, 1951) ने निजी क्षेत्र को सीमित किया</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> LIC (भारतीय जीवन बीमा निगम) की स्थापना कब हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1950</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1954</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1956 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1969</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — LIC की स्थापना <strong>1 सितंबर 1956</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> कौन-सी प्रवृत्ति दर्शाती है कि 1991 के सुधारों ने भारत के बाह्य क्षेत्र की स्थिरता में सुधार किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>फॉरेक्स व विनिमय भंडार में निरंतर गिरावट</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बाह्य ऋण दोगुना हुआ</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>समय के साथ विदेशी मुद्रा भंडार में वृद्धि ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>निवेश में गिरावट</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — समय के साथ <strong>फॉरेक्स भंडार में वृद्धि</strong> बेहतर स्थिरता दर्शाती है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> 1956 की औद्योगिक नीति संकल्प (IPR) ने उद्योगों को कितनी श्रेणियों में बाँटा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>3 अनुसूचियाँ</strong></div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>अनुसूची</th><th>उद्योग</th></tr>
+      <tr><td><strong>अनुसूची A</strong></td><td>17 उद्योग — विशेष रूप से सरकारी (राज्य एकाधिकार)</td></tr>
+      <tr><td><strong>अनुसूची B</strong></td><td>12 उद्योग — सरकार-प्रधान, निजी अनुमत</td></tr>
+      <tr><td><strong>अनुसूची C</strong></td><td>शेष — निजी क्षेत्र के लिए</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> ईज ऑफ डूइंग बिजनेस में "Enforcing Contracts" संकेतक किसे मापता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>श्रम संबंध</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर प्रबंधन</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वाणिज्यिक विवादों के समाधान में न्यायिक प्रणाली की दक्षता ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>व्यापार खुलापन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — वाणिज्यिक विवादों के समाधान में न्यायिक प्रणाली की दक्षता</div>
+    </div>
+    <div class="tip-box">
+      <p class="hw">🧠 अधिक <strong>व्याख्यात्मक / लंबा</strong> विकल्प प्रायः उत्तर होता है — इसे ध्यान से पढ़ें (पर आँख मूँदकर न चुनें)।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> आज भारतीय कृषि के सामने प्रमुख चुनौती कौन-सी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जोतों का उत्तरोत्तर विखंडन व घटता आकार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बड़े खेतों की अधिकता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अत्यधिक मशीनीकरण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अधिशेष सिंचाई</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — भूमि का निरंतर विभाजन (पीढ़ी-दर-पीढ़ी) → छोटी जोतें → कम उत्पादकता</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec red">⑫ सुधार, NITI आयोग, बजट व योजनाएँ 🔄</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> 1991 के सुधारों को कभी-कभी "रोजगारविहीन वृद्धि" से क्यों जोड़ा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>आनुपातिक रोजगार वृद्धि के बिना उच्च GDP वृद्धि ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नकारात्मक GDP वृद्धि</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>गिरती उत्पादकता</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>घटता निर्यात</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — वृद्धि हुई, पर रोजगार आनुपातिक रूप से नहीं बढ़ा</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> निम्न में से कौन NITI आयोग का मुख्य कार्य है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राज्यों को योजना निधि आवंटन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मौद्रिक नीति नियंत्रण</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चुनाव कराना</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>नीति थिंक टैंक व सहकारी संघवाद ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — NITI आयोग = <strong>नीति थिंक टैंक व सहकारी संघवाद</strong> (1 जनवरी 2015 को गठित, योजना आयोग के स्थान पर; कार्यकारी/अतिरिक्त-संवैधानिक निकाय — यह निधि आवंटन नहीं करता)</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">मौद्रिक नीति (RBI / MPC द्वारा)</div>
+      <strong>मात्रात्मक</strong> व <strong>गुणात्मक</strong> उपकरण। मात्रात्मक = विस्तारक (सस्ती/डोविश) या संकुचनकारी। <span class="hl">मुद्रास्फीति में → संकुचनकारी</span> (CRR, SLR, बैंक दर, रेपो, रिवर्स रेपो बढ़ाना) — "हॉकिश / डियर / टाइट"।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> योजना युग में "आयात प्रतिस्थापन औद्योगीकरण" का भारत में उद्देश्य क्या था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>निर्मित वस्तुओं के निर्यात को प्रोत्साहित करना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विदेशी निवेश आकर्षित करना</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>संरक्षणवादी नीतियों से आयातित उत्पादों को घरेलू उत्पादन से बदलना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुक्त व्यापार को बढ़ावा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — संरक्षणवादी नीतियों से आयात को घरेलू उत्पादन से प्रतिस्थापित करना</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> EXIM बैंक की स्थापना कब हुई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1 जनवरी 1982 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>12 जुलाई 1982</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1990</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1956</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — EXIM बैंक = <strong>1 जनवरी 1982</strong>। (NABARD = 12 जुलाई 1982, बी. शिवरामन समिति की सिफारिश पर।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> जब कर संग्रह आवश्यक व्यय से अधिक हो, तो बजट क्या होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अधिशेष बजट ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>घाटे का बजट</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संतुलित बजट</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>शून्य-आधारित बजट</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — आय &gt; व्यय = <strong>अधिशेष बजट</strong>। (व्यय &gt; आय = घाटा; बराबर = संतुलित।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> कौन-सा सूचकांक थोक मूल्यों को मापता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>WPI ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>CPI</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>IIP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>GDP डिफ्लेटर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>WPI</strong>, आर्थिक सलाहकार कार्यालय द्वारा (वाणिज्य व उद्योग मंत्रालय)। CPI = NSO/CSO (MoSPI); GDP = MoSPI।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec orange">⑬ पंचवर्षीय योजनाएँ, उद्योग व व्यापार योजनाएँ 🏗️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> भारत की 10वीं पंचवर्षीय योजना का लक्ष्य निम्न में से क्या था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>निर्यात दोगुना करना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल 100% ग्रामीण विद्युतीकरण</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>साक्षरता 75% तक व IMR/MMR घटाना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राजकोषीय घाटा समाप्त करना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — 10वीं FYP (<span class="hl">2002–2007</span>): साक्षरता → 75%; IMR को 45 (प्रति 1000) व MMR को 2 (प्रति 1000 जीवित जन्म) तक घटाना</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> 1950–1980 के दौरान किस उद्योग को अर्थव्यवस्था का "कमांडिंग हाइट्स" माना गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>वस्त्र</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हस्तशिल्प</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कृषि</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भारी उद्योग, स्टील व ऊर्जा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — भारी उद्योग, स्टील व ऊर्जा (अधिक व्याख्यात्मक विकल्प)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> भारत की दूसरी पंचवर्षीय योजना में किस क्षेत्र को सर्वोच्च प्राथमिकता दी गई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भारी व आधारभूत उद्योग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कृषि</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सेवाएँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वस्त्र</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>भारी व आधारभूत उद्योग</strong> (महालनोबिस मॉडल)</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">आधारभूत बनाम फुटलूज उद्योग</div>
+      <strong>आधारभूत उद्योग</strong> = जिस पर अन्य उद्योग निर्भर हों (जैसे स्टील)।<br>
+      <strong>फुटलूज उद्योग</strong> = कहीं भी स्थापित किया जा सकता है (कच्चा माल बाधा नहीं)। भारी उद्योग कच्चे माल के पास सर्वोत्तम (परिवहन लागत बचाने हेतु)।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> कौन-सी योजना SEZ से निर्यातकों को वित्तीय प्रोत्साहन देती थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>विदेशी व्यापार निवेश कार्यक्रम</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री निर्यात कोष</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रीय निर्यात बीमा योजना</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मर्चेंडाइज एक्सपोर्ट्स फ्रॉम इंडिया स्कीम (MEIS) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>MEIS</strong> (विदेश व्यापार नीति 2015–20)। 2021 में <span class="hl">RoDTEP</span> (निर्यातित उत्पादों पर शुल्क व कर की छूट) द्वारा प्रतिस्थापित — WTO मानकों के अनुपालन हेतु।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> पंचवर्षीय योजना की अवधारणा कहाँ से ली गई?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पूर्व सोवियत संघ (USSR) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>फ्रांस</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पूर्व सोवियत संघ (USSR)</strong> से ली गई</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> 1991 में भारत के निर्यात को बढ़ावा देने हेतु कौन-सा व्यापार-संबंधी नीति सुधार लाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>आयात प्रतिस्थापन रणनीति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>निर्यात-आयात नीति ढाँचा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>आर्थिक उदारीकरण नीति (LPG) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्च टैरिफ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>आर्थिक उदारीकरण (LPG — उदारीकरण, निजीकरण, वैश्वीकरण)</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> 1991 के बाद राजस्व संग्रह मजबूत करने हेतु भारत में कौन-सा राजकोषीय सुधार लाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सब्सिडी बढ़ाई गई</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>GST लाया गया</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>MODVAT के माध्यम से अप्रत्यक्ष कर सरल किए ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयकर समाप्त किया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>MODVAT</strong> (संशोधित मूल्य वर्धित कर) ने अप्रत्यक्ष कर सरल किया व कैस्केडिंग प्रभाव (कर-पर-कर) घटाया</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> लघु उद्योग आरक्षण नीतियों की मुख्य कमी क्या थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>एकाधिकार शक्ति को बढ़ावा</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>निर्यात अवसर समाप्त किए</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ग्रामीण उद्यमी को बाहर रखा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>पैमाने की मितव्ययिता व प्रौद्योगिकी उन्नयन को सीमित किया ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — पैमाने की मितव्ययिता (economies of scale) व प्रौद्योगिकी उन्नयन को सीमित किया (छोटी इकाइयाँ हस्तचालित रहीं, बढ़ नहीं सकीं)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> भारत-चीन युद्ध के कारण कौन-सी योजना पूरा होने से एक वर्ष पहले समाप्त की गई? <span class="hl-p">(त्रुटिपूर्ण प्रश्न — नोट देखें)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पहली योजना</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दूसरी योजना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तीसरी योजना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चौथी योजना</div>
+      </div>
+      <div class="mcq-ans">⚠ उत्तर: प्रश्न त्रुटिपूर्ण लगता है। एक वर्ष पहले समाप्त की गई योजना <strong>पाँचवीं योजना</strong> (1974–78, 1978 में समाप्त) थी — पर वह विकल्पों में नहीं है। भारत-चीन युद्ध (1962) <strong>तीसरी योजना</strong> के दौरान हुआ। संभवतः मुद्रण/रचना त्रुटि (शिक्षक ने स्वयं इंगित किया)।</div>
+    </div>
+    <div class="imp">
+      <p class="hw">शिक्षक का नोट: पाँचवीं योजना एक वर्ष पहले समाप्त हुई (जनता सरकार द्वारा), पर युद्ध का संदर्भ तीसरी योजना की ओर इशारा करता है — अतः प्रश्न में विसंगति है। आधिकारिक उत्तर-कुंजी में सत्यापित करें।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> जब नॉमिनल GDP, रियल GDP से तेजी से बढ़ता है, तो यह क्या दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उच्च मुद्रास्फीति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अपस्फीति (Deflation)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मंदी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विमुद्रास्फीति (Disinflation)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>उच्च मुद्रास्फीति</strong> (नॉमिनल GDP में मुद्रास्फीति शामिल रहती है; रियल GDP इसे हटा देता है)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">मुद्रास्फीति शब्द</div>
+      <strong>Deflation</strong> = कीमतें गिरना (मुद्रास्फीति का विपरीत) · <strong>Disinflation</strong> = मुद्रास्फीति अब भी धनात्मक पर उसकी <span class="hl">दर धीमी</span> (मुद्रास्फीति का विपरीत नहीं)।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec blue">⑭ मौद्रिक उपकरण, बैंकिंग व समापन 🏁</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> मुद्रा आपूर्ति के संदर्भ में, निम्न में से कौन RBI का मात्रात्मक उपकरण नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>रेपो दर</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>खुला बाजार परिचालन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मार्जिनल स्टैंडिंग फैसिलिटी</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>नैतिक दबाव / मार्जिन आवश्यकताएँ ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>नैतिक दबाव व मार्जिन आवश्यकताएँ गुणात्मक हैं</strong>। मात्रात्मक = बैंक दर, रेपो, रिवर्स रेपो, CRR, SLR, OMO, MSF।</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>खुला बाजार परिचालन (OMO / स्टरलाइज़ेशन)</strong> = सरकारी प्रतिभूतियों की खरीद/बिक्री। मुद्रास्फीति में <span class="hl">बेचना</span> (धन निकालना); अपस्फीति/मंदी में <span class="hl-g">खरीदना</span> (धन डालना)। दो प्रकार: <strong>आउटराइट परचेज</strong> व <strong>रेपो</strong> (पुनर्खरीद दायित्व)।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> 1990 तक भारत का बाह्य ऋण क्या हो गया था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>बहुत अधिक, संकट की ओर ले गया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>शून्य</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ऋणात्मक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1947 से अपरिवर्तित</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — बाह्य ऋण <strong>बहुत अधिक</strong> था, जिसने 1991 संकट में योगदान दिया</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> GST परिषद का अध्यक्ष कौन होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>केंद्रीय वित्त मंत्री ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI गवर्नर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राष्ट्रपति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>केंद्रीय वित्त मंत्री</strong> GST परिषद के अध्यक्ष होते हैं (अनुच्छेद 279A)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> प्रच्छन्न रोजगार (Disguised employment) आमतौर पर कहाँ पाया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>कृषि क्षेत्र ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>IT क्षेत्र</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बैंकिंग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विनिर्माण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>कृषि</strong> (आवश्यकता से अधिक लोग काम करते हैं)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> मनमोहन सिंह समिति किसके लिए जानी जाती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उदारीकरण व संरचनात्मक समायोजन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बैंकिंग सुधार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कृषि मूल्य निर्धारण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कर सुधार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>उदारीकरण व संरचनात्मक समायोजन</strong> (LPG सुधार)। 1991 में मनमोहन सिंह वित्त मंत्री थे; PM = पी.वी. नरसिम्हा राव। (बैंकिंग सुधार = नरसिम्हम समिति।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> LIC का राष्ट्रीयकरण किसलिए किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>योजना विकास हेतु बचत जुटाना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल विदेशी व्यापार को बढ़ावा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कर घटाना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयात बढ़ाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>योजना विकास हेतु जन बचत जुटाना</strong> (ग्रामीण रोजगार, कृषि जैसे उद्देश्यों सहित)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> निम्न में से कौन "उदारता (generosity)" कारक का उदाहरण है (हैप्पीनेस इंडेक्स)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>GDP प्रति व्यक्ति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>जीवन प्रत्याशा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भ्रष्टाचार की धारणा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>दान / दूसरों की मदद करने की इच्छा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — उदारता = <strong>दान करने की इच्छा</strong> (अधिक व्याख्यात्मक विकल्प)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> मुद्रा आपूर्ति के संदर्भ में, ___ भारत सरकार द्वारा जारी बॉन्ड की खरीद-बिक्री को संदर्भित करता है।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>खुला बाजार परिचालन (OMO) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नैतिक दबाव</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मार्जिन आवश्यकताएँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>CRR</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>खुला बाजार परिचालन</strong> (मुद्रास्फीति में बेचना, अपस्फीति में खरीदना)। नैतिक दबाव व मार्जिन आवश्यकताएँ = गुणात्मक उपकरण।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> ईज ऑफ डूइंग बिजनेस में "Getting Electricity" संकेतक किसे मापता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बिजली वाले घरों की संख्या</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कुल बिजली उत्पादन</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>बिजली कनेक्शन पाने की लागत, समय व प्रक्रियाएँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रति व्यक्ति बिजली खपत</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — बिजली पाने की लागत, समय व प्रक्रियाएँ (अधिक व्याख्यात्मक विकल्प)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> तीसरी पंचवर्षीय योजना के दौरान भारत के औद्योगिक प्रदर्शन को कौन-सा कथन सबसे अच्छा दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>योजना की विफलता (युद्ध व सूखा) ने आयात निर्भरता को जन्म दिया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>रिकॉर्ड औद्योगिक अधिशेष</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पूर्ण आत्मनिर्भरता प्राप्त</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सभी योजनाओं में सर्वाधिक वृद्धि</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — तीसरी योजना युद्धों व सूखे के कारण विफल रही (लक्ष्य 5.6% बनाम प्राप्त 2.8%) → आयात निर्भरता</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — प्रमुख तथ्य व आँकड़े</div>
+    <table class="qr-t">
+      <tr><th>विषय</th><th>तथ्य</th></tr>
+      <tr><td>ग्लोबल लिवेबिलिटी इंडेक्स</td><td>EIU (कोपेनहेगन पहला)</td></tr>
+      <tr><td>तुलनात्मक लाभ</td><td>रिकार्डो</td></tr>
+      <tr><td>मैक्रो / माइक्रो अर्थशास्त्र के जनक</td><td>कीन्स / एडम स्मिथ</td></tr>
+      <tr><td>हैप्पीनेस इंडेक्स डेटा / चर</td><td>UN SDSN / 6</td></tr>
+      <tr><td>शीर्ष 3 खुशहाल</td><td>फिनलैंड, आइसलैंड, डेनमार्क (FDI)</td></tr>
+      <tr><td>लघु उद्योगों को बढ़ावा</td><td>IPR 1977 (टिनी यूनिट्स)</td></tr>
+      <tr><td>औद्योगिक लाइसेंसिंग शुरू</td><td>1951</td></tr>
+      <tr><td>वैध मुद्रा</td><td>सिक्के (फिएट मनी)</td></tr>
+      <tr><td>भारत का सबसे बड़ा व्यापार साझेदार</td><td>चीन</td></tr>
+      <tr><td>एनर्जी ट्रांज़िशन / जेंडर गैप इंडेक्स</td><td>विश्व आर्थिक मंच</td></tr>
+      <tr><td>HDI प्रकाशक / आयाम</td><td>UNDP / 3</td></tr>
+      <tr><td>1978 विमुद्रीकरण</td><td>₹1000, ₹5000, ₹10000 (मोरारजी देसाई)</td></tr>
+      <tr><td>EXIM बैंक / NABARD</td><td>1 जन. 1982 / 12 जुलाई 1982</td></tr>
+      <tr><td>पहला आर्थिक सर्वेक्षण</td><td>1950–51</td></tr>
+      <tr><td>पहला SEZ/EPZ (एशिया)</td><td>कांडला, 1965</td></tr>
+      <tr><td>बजट = वार्षिक वित्तीय विवरण</td><td>अनुच्छेद 112</td></tr>
+      <tr><td>हेडलाइन मुद्रास्फीति सूचकांक</td><td>CPI Combined</td></tr>
+      <tr><td>जेंडर बजटिंग / MSP शुरू</td><td>2005–06 / 1966–67</td></tr>
+      <tr><td>1991 BOP संकट कारण</td><td>खाड़ी युद्ध + तेल कीमतें</td></tr>
+      <tr><td>जुलाई 1991 रुपया अवमूल्यन</td><td>~18–20%</td></tr>
+      <tr><td>GST परिषद / पहली सिफारिश</td><td>अनु. 279A, FM अध्यक्ष / केलकर समिति (13वाँ FC)</td></tr>
+      <tr><td>भारतीय योजना के जनक</td><td>एम. विश्वेश्वरैया</td></tr>
+      <tr><td>FCI / LIC स्थापना</td><td>1965 / 1956</td></tr>
+      <tr><td>मल्होत्रा समिति (बीमा)</td><td>1993 → IRDA</td></tr>
+      <tr><td>FSSAI अधिनियम / प्रतिस्पर्धा अधिनियम</td><td>2006 / 2002 (MRTP 1969 प्रतिस्थापित)</td></tr>
+      <tr><td>NITI आयोग गठन</td><td>1 जन. 2015 (योजना आयोग के स्थान पर)</td></tr>
+      <tr><td>राष्ट्रीय MPI / वैश्विक MPI</td><td>NITI आयोग / UNDP</td></tr>
+      <tr><td>पंचवर्षीय योजना अवधारणा</td><td>USSR</td></tr>
+      <tr><td>मुख्य कामगार</td><td>&gt; 183 दिन/वर्ष</td></tr>
+      <tr><td>MSME दिवस / स्टार्टअप दिवस</td><td>27 जून / 16 जनवरी</td></tr>
+      <tr><td>10वीं FYP अवधि</td><td>2002–2007</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखें!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>प्रवाह = <span class="hl"><strong>समयावधि</strong></span> में; स्टॉक = <span class="hl-g"><strong>समय-बिंदु</strong></span> पर</li>
+          <li>सरकार मुद्रा घटाए = <strong>Devaluation</strong>; बाजार = Depreciation</li>
+          <li>HDI = UNDP; जेंडर गैप / एनर्जी ट्रांज़िशन / कॉम्पिटिटिवनेस = WEF</li>
+          <li>"सभी / केवल / कभी नहीं" = चरम शब्द = प्रायः गलत विकल्प</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>शीर्ष 3 खुशहाल → 🧠 <span class="hl"><strong>"FDI"</strong></span> (फिनलैंड, आइसलैंड, डेनमार्क)</li>
+          <li>प्राथमिक घाटा = राजकोषीय घाटा − ब्याज भुगतान</li>
+          <li>नैतिक दबाव व मार्जिन आवश्यकताएँ = <strong>गुणात्मक</strong> उपकरण</li>
+          <li>लंबा/अधिक <span class="hl-p">व्याख्यात्मक</span> विकल्प प्रायः सही — ध्यान से पढ़ें</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 अर्थव्यवस्था PYQ नोट्स समाप्त</div>
+      <strong>सभी 86 प्रश्न शामिल ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
