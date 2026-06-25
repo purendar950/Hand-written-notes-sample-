@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway PYQ GK — L3 Union & Its Territory | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Railway PYQ GK — L3 Union & Its Territory</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy · Railway PYQ GK</div>
+    <div class="cover-title">🗺️ Lecture 3 — Union & Its Territory</div>
+    <div class="cover-sub">Part I of the Constitution + Union Territories | All Questions Covered</div>
+    <div class="cover-badge">🏛️ Article 1 · 📜 Schedules · 🏝️ UTs · ⚖️ Art 239–241 · 🆕 Formation of States · 🔑 Article 371</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① Part I &amp; Article 1 — Union of States 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> In which Article of the Constitution is it written that "India, that is Bharat, shall be a Union of States"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 3</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 4</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Article <strong>1</strong>: "India, that is Bharat, shall be a Union of States" (Part I, Arts 1–4)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Why "Union of States" &amp; not "Federation"? (Ambedkar's logic):</strong></p>
+      <ul class="hw arr">
+        <li>States did <span class="hl">not</span> form India by an agreement among themselves</li>
+        <li>So states have <span class="hl-p"><strong>no right to secede</strong></span> from the Union</li>
+        <li>India = <span class="hl-g"><strong>indestructible Union of destructible states</strong></span></li>
+      </ul>
+    </div>
+    <div class="imp">
+      <p class="hw"><strong>USA contrast:</strong> USA = <span class="hl">destructible Union of indestructible states</span> (states can't be altered, but the union was formed by agreement). India is the opposite.</p>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">PARTS OF THE CONSTITUTION</div>
+      Originally <span class="hl"><strong>22 parts</strong></span> → Now <span class="hl-g"><strong>25 parts</strong></span><br>
+      4 parts added · 1 part deleted (Part VII repealed by 7th Amendment, 1956)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec orange">② Schedules of the Constitution 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which Schedule contains the names and extent (territorial jurisdiction) of States and Union Territories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>First Schedule ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Second Schedule</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fourth Schedule</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Fifth Schedule</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>First Schedule</strong> = names &amp; territorial extent of States &amp; UTs (Arts 1–4)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>12 Schedules — "TEARS OF OLD PM"</strong><br>
+      <strong>T</strong> = Territory · <strong>E</strong> = Emoluments · <strong>A</strong> = Affirmation &amp; Oath · <strong>R</strong> = Rajya Sabha seat allocation · <strong>S</strong> = Scheduled Areas · <strong>O</strong> = Other (Tribal) Areas · <strong>F</strong> = Federal Lists · <strong>O</strong> = Official Languages · <strong>L</strong> = Land reforms · <strong>D</strong> = Defection · <strong>P</strong> = Panchayat · <strong>M</strong> = Municipality
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Schedule</th><th>Subject</th><th>Key Detail</th></tr>
+      <tr><td><span class="hl"><strong>1st</strong></span></td><td>Names &amp; territory of States/UTs</td><td>—</td></tr>
+      <tr><td><strong>2nd</strong></td><td>Emoluments / salaries / allowances</td><td>President, Governors, judges, etc.</td></tr>
+      <tr><td><strong>3rd</strong></td><td>Affirmation &amp; Oath</td><td>Forms of oath</td></tr>
+      <tr><td><strong>4th</strong></td><td>Allocation of Rajya Sabha seats</td><td>—</td></tr>
+      <tr><td><strong>5th</strong></td><td>Scheduled Areas</td><td>—</td></tr>
+      <tr><td><strong>6th</strong></td><td>Other / Tribal Areas</td><td><span class="hl-p">Assam, Tripura, Meghalaya, Mizoram</span></td></tr>
+      <tr><td><strong>7th</strong></td><td>Federal Lists (Union/State/Concurrent)</td><td>Doctrine of Repugnancy</td></tr>
+      <tr><td><strong>8th</strong></td><td>Official Languages</td><td>14 → <span class="hl-g">22</span></td></tr>
+      <tr><td><strong>9th</strong></td><td>Land reforms (1st Amdt, 1951)</td><td>I.R. Coelho case</td></tr>
+      <tr><td><strong>10th</strong></td><td>Anti-Defection (52nd Amdt, 1985)</td><td>Merger exception (91st Amdt)</td></tr>
+      <tr><td><strong>11th</strong></td><td>Panchayat (73rd Amdt)</td><td><span class="hl">29 functional items</span></td></tr>
+      <tr><td><strong>12th</strong></td><td>Municipality (74th Amdt)</td><td><span class="hl">18 functional items</span></td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>6th Schedule trap:</strong> "ATM" → <span class="hl">Assam, Tripura, Meghalaya, Mizoram</span>. <strong>Manipur is NOT included!</strong> (no "P" in ATM)</p>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky teal">
+        <div class="slbl">8TH SCHEDULE — LANGUAGES (14 → 22)</div>
+        <span class="hl"><strong>21st Amdt</strong></span> → Sindhi<br>
+        <span class="hl-g"><strong>71st Amdt</strong></span> → Konkani, Nepali, Manipuri (KNM)<br>
+        <span class="hl-p"><strong>92nd Amdt</strong></span> → Bodo, Dogri, Santhali, Maithili (BDSM)
+      </div>
+      <div class="sticky purple">
+        <div class="slbl">9TH SCHEDULE — I.R. COELHO</div>
+        Land reform laws here = immune from judicial review<br>
+        <strong>Kesavananda Bharati (1973)</strong> → judicial review = basic structure<br>
+        <span class="hl">I.R. Coelho case</span>: laws added <em>after 24 Apr 1973</em> ARE subject to judicial review
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec blue">③ Articles 2, 3, 4 — New States &amp; Territory 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Admission and establishment of new states is mentioned in which Article of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 2 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 3</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 1</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 4</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>2</strong> = admission/establishment of new states (bringing <span class="hl">foreign territory</span> into India). Art 3 = formation/alteration of existing states.</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Article</th><th>Provision</th></tr>
+      <tr><td><span class="hl"><strong>2</strong></span></td><td><strong>Admission / establishment</strong> of new states (foreign territory → India)</td></tr>
+      <tr><td><span class="hl-g"><strong>3</strong></span></td><td><strong>Formation</strong> of new states; alter area/boundary/name; split or merge <em>existing</em> states</td></tr>
+      <tr><td><strong>4</strong></td><td>Changes under Art 2 &amp; 3 are <span class="hl">NOT deemed amendments</span> under Art 368 (done by simple majority)</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>Berubari Union Case (1960):</strong> To <span class="hl">cede Indian territory</span> to another country, a Constitutional Amendment (Art 368) IS required → <strong>9th Amendment</strong> (Nehru–Noon Agreement, to Pakistan) &amp; <strong>100th Amendment</strong> (enclave exchange with Bangladesh). Taking foreign territory in = only Art 2 (simple majority).</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which of the following provisions is covered under Article 4 of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fundamental Rights</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Emergency Provisions</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Laws for Reorganization of States ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Financial Powers</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>4</strong> = laws for reorganization of states (changes under Art 2 &amp; 3 are not treated as constitutional amendments)</div>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">CONSTITUTIONAL AMENDMENT (Art 368, Part XX)</div>
+      <strong>2 types:</strong> (1) Special majority · (2) Special majority + ratification by ≥ half the states<br>
+      Simple-majority changes (Art 2 &amp; 3) are <span class="hl">NOT</span> Art 368 amendments<br>
+      🧠 42nd Amdt added 3 words to Preamble = <span class="hl-g"><strong>"ISS"</strong></span> → Socialist, Secular, Integrity (NOT Sovereign)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec green">④ Union Territories — Formation 🏝️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> In which year were Union Territories (UTs) first introduced in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1956 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1952</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1960</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1950</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — UTs first introduced in <strong>1956</strong> via the <span class="hl">States Reorganization Act, 1956</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> How many UTs were created after the States Reorganization Act was passed in 1956?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>7</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>8</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>6 UTs</strong> created in 1956</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>The 6 original UTs (1956):</strong></p>
+      <ul class="hw chk">
+        <li>Andaman &amp; Nicobar Islands</li>
+        <li>Delhi</li>
+        <li>Himachal Pradesh</li>
+        <li>Lakshadweep</li>
+        <li>Manipur</li>
+        <li>Tripura</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Which UT was merged with Dadra and Nagar Haveli to form a new UT on January 26, 2020?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Chandigarh</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Puducherry</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Andaman &amp; Nicobar Islands</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Daman and Diu ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Daman and Diu</strong> merged with Dadra &amp; Nagar Haveli (26 Jan 2020)</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">CURRENT COUNT</div>
+      Earlier: 29 states + 7 UTs → J&amp;K split into 2 UTs (28 states, 9 UTs) → DNH + Daman &amp; Diu merged → <span class="hl"><strong>28 states + 8 UTs</strong></span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> For which major reason was Chandigarh created as a UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Cultural distinctiveness</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Care of backward &amp; tribal people</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Political &amp; administrative considerations ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Strategic reasons</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Both Punjab &amp; Haryana claimed Chandigarh as capital → Centre made it a UT for <strong>political &amp; administrative considerations</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec red">⑤ UT Administration — Parts &amp; Articles ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which Part of the Constitution contains Articles 239 to 241 dealing with UTs?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Part VII</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Part X</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Part IX</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Part VIII ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Part VIII</strong> (Arts 239–241) = Union Territories</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Part</th><th>Subject</th></tr>
+      <tr><td><strong>Part VII</strong></td><td><span class="hl-p">Repealed</span> by 7th Amendment, 1956</td></tr>
+      <tr><td><span class="hl"><strong>Part VIII</strong></span></td><td>Union Territories (239–241)</td></tr>
+      <tr><td><strong>Part IX</strong></td><td>Panchayats</td></tr>
+      <tr><td><strong>Part X</strong></td><td>Scheduled &amp; Tribal Areas</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Which Article deals with the administration of Union Territories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 245</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 255</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 239 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 260</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>239</strong> = Administration of UTs. (245 = territorial extent of laws; 255 = requirements as to recommendations; 260 = jurisdiction over territories outside India)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Who appoints the administrator of a UT that has no legislative assembly?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Governor of neighbouring state</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>President</strong> appoints the administrator (the Lieutenant Governor / LG) under Art 239</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Who is responsible for the administration of UTs like Chandigarh and Lakshadweep?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Governor of the neighbouring state</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Minister of the UT</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>State Legislature</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — The <strong>President</strong> (through an appointed administrator, Art 239). Chandigarh &amp; Lakshadweep have no CM.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> The administrators of Andaman &amp; Nicobar Islands and Puducherry are designated as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Governor</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Lieutenant Governor (LG) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Administrator</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Designated as <strong>Lieutenant Governor (LG)</strong></div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">Only <span class="hl"><strong>3 UTs</strong></span> have a Legislative Assembly &amp; Chief Minister: <strong>Delhi, Puducherry, Jammu &amp; Kashmir</strong>.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec blue">⑥ UT Legislative Assembly &amp; Delhi 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which Article provides for the establishment of a UT Legislative Assembly?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 240</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 239</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 239A ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 241</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>239A</strong> = Legislative <span class="hl">A</span>ssembly for a UT. (239 = administrator; 240 = regulations; 241 = High Court)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Article</th><th>Content</th></tr>
+      <tr><td><strong>239</strong></td><td>Administration of UTs / appointment of administrator</td></tr>
+      <tr><td><span class="hl"><strong>239A</strong></span></td><td>Legislative <strong>A</strong>ssembly for a UT (general)</td></tr>
+      <tr><td><span class="hl-g"><strong>239AA</strong></span></td><td>Special provisions for <strong>Delhi</strong> (NCT)</td></tr>
+      <tr><td><strong>239AB</strong></td><td>Failure of constitutional machinery in Delhi</td></tr>
+      <tr><td><strong>239B</strong></td><td>LG's ordinance-making power</td></tr>
+      <tr><td><strong>240</strong></td><td>President's power to make regulations (peace, progress, good governance)</td></tr>
+      <tr><td><strong>241</strong></td><td>High Court for UTs / its jurisdiction</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Which of these UTs has a Legislative Assembly and a Council of Ministers?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Andaman &amp; Nicobar Islands</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Dadra &amp; Nagar Haveli</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Daman &amp; Diu</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Puducherry ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Puducherry</strong> (one of Delhi, Puducherry, J&amp;K)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which Amendment introduced a Legislative Assembly for the UT of Delhi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>69th Amendment ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>74th Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>61st Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>42nd Amendment</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>69th Amendment (1991)</strong> created Delhi's Legislative Assembly via Art 239AA</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Amendment</th><th>Did what</th></tr>
+      <tr><td><strong>42nd</strong></td><td>Mini-Constitution; added Fundamental Duties; 4 DPSPs; 5 subjects State→Concurrent List</td></tr>
+      <tr><td><strong>61st (1988)</strong></td><td>Voting age 21 → 18</td></tr>
+      <tr><td><span class="hl"><strong>69th (1991)</strong></span></td><td>Delhi Legislative Assembly (239AA); NCT of Delhi</td></tr>
+      <tr><td><strong>74th</strong></td><td>Part IX-A, 12th Schedule, Arts 243-P to 243-ZG (Municipalities)</td></tr>
+    </table>
+    <div class="imp">
+      <p class="hw"><strong>CoM size trap:</strong> Union/State CoM cap = <span class="hl">15%</span> of Lower House (91st Amdt). But for <span class="hl-p">Delhi, the cap is 10%</span> of the Legislative Assembly.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> After the 69th Amendment Act (1991) &amp; Art 239AA, the UT of Delhi is designated by which title?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>National Capital Territory of Delhi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Capital Union Territory</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Delhi Special Region</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Greater Delhi UT</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Delhi became the <strong>National Capital Territory (NCT) of Delhi</strong>. Art 239AB = constitutional machinery failure in Delhi (≈ Art 356).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Who is the Chief Executive Officer of the UT of Delhi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lieutenant Governor ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chief Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mayor</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Speaker</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Lieutenant Governor</strong> = nominal/de jure head (appointed by President, Art 239AA). CM = real/de facto head.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec teal">⑦ Goa, Daman &amp; Diu, Dadra &amp; Nagar Haveli 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which Amendment Act (1987) made Goa a full-fledged state and formed Daman &amp; Diu as a UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>55th Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>57th Amendment</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>56th Amendment ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5th Amendment</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>56th Amendment</strong>: Goa → state; Daman &amp; Diu → UT</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Goa, Daman &amp; Diu liberated from Portuguese in <span class="hl">1961</span> (Operation Vijay)</li>
+        <li>Made UTs via the <strong>12th Amendment, 1962</strong></li>
+        <li><strong>56th Amdt (1987):</strong> Goa = state; Daman &amp; Diu = UT</li>
+        <li>Dadra &amp; Nagar Haveli created by the <span class="hl-g">10th Amendment</span></li>
+        <li>2020 → DNH + Daman &amp; Diu merged into one UT</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which Article states there shall be a Legislative Assembly for the National Capital Territory, with seats filled by direct election?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 239A</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 239AA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 239AB</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 239B</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>239AA</strong> (Delhi-specific). 239A = general UT Assembly; 239AB = machinery failure; 239B = LG ordinance.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which Article empowers the Administrator to promulgate ordinances during recess of the Legislature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 123</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 213</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 239B ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 241</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>239B</strong> = Administrator's ordinance power. (123 = President; 213 = Governor)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Ordinance ladder:</strong> President = Art <strong>123</strong> · Governor = Art <strong>213</strong> (swap the digits!) · UT Administrator = Art <strong>239B</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Per clause (2) of Art 239A, a law made by Parliament for Puducherry shall not be deemed an amendment for the purpose of which Article?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 371</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 368 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 370</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 356</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>368</strong> (same logic as Art 4). 371 = special provisions; 370 = J&amp;K (repealed).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Which UTs were merged to form a single Indian Union Territory in 2020?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dadra &amp; Nagar Haveli and Daman &amp; Diu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chandigarh and Delhi</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Lakshadweep and Puducherry</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Andaman &amp; Nicobar and Lakshadweep</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Dadra &amp; Nagar Haveli and Daman &amp; Diu</strong> merged (2020)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec orange">⑧ Chandigarh &amp; Article 240 — 131st Amendment Bill 📰</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> The Government has proposed to include which UT under the ambit of Article 240?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Chandigarh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Puducherry</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Delhi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lakshadweep</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Chandigarh</strong>, via the proposed 131st Constitutional Amendment Bill. Art 240 = President's power to make regulations for peace, progress &amp; good governance.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Under the proposed 131st Constitutional Amendment Bill (2025), with which category would Chandigarh be aligned?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>UTs without legislatures ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UTs with partial state powers</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UTs governed under special provisions</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>UTs with legislatures</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Chandigarh would be administered like <strong>UTs without legislatures</strong>. (Bill faced strong opposition, mainly from Punjab/AAP.)</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw">Through the 131st Amendment Bill, the Union sought greater control over Chandigarh. Strong opposition (especially Punjab) blocked its passage. Haryana has a BJP government; Punjab has an AAP government.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec purple">⑨ Formation of States — Timeline 📅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> When was Nagaland established as a separate state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1 December 1960</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1 December 1966</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 December 1953</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>1 December 1963 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Nagaland established on <strong>1 December 1963</strong></div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Formation-of-states order — "Tussi Gaao Aur Mauj Lo"</strong> — learn the years state-by-state (see timeline below).
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1953</span> <strong>Andhra Pradesh</strong> — 1st linguistic state (fully reorganized 1956)</div>
+      <div class="tl-item"><span class="yr">1960</span> <strong>Maharashtra</strong> &amp; <strong>Gujarat</strong> (split from Bombay State)</div>
+      <div class="tl-item"><span class="yr">1963</span> <strong>Nagaland</strong></div>
+      <div class="tl-item"><span class="yr">1966</span> <strong>Haryana</strong></div>
+      <div class="tl-item"><span class="yr">1971</span> <strong>Himachal Pradesh</strong> — founding father <span class="hl">Y.S. Parmar</span> (Yashwant Singh Parmar)</div>
+      <div class="tl-item"><span class="yr">1972</span> <strong>Meghalaya, Manipur, Tripura</strong></div>
+      <div class="tl-item"><span class="yr">1975</span> <strong>Sikkim</strong></div>
+      <div class="tl-item"><span class="yr">1987</span> <strong>Goa</strong>, <strong>Arunachal Pradesh</strong> (55th Amdt), <strong>Mizoram</strong> (53rd Amdt)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Which Indian state was the first to be carved out on the basis of language?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Andhra Pradesh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tamil Nadu</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kerala</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Karnataka</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Andhra Pradesh</strong> = first linguistic state (1953), after Potti Sriramulu's fast-unto-death</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Commissions on States Reorganization:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl">S.K. Dhar Commission (1948)</span> → states on administrative (not linguistic) basis</li>
+        <li><span class="hl">JVP Committee (1948)</span> → <strong>J</strong>awaharlal Nehru, <strong>V</strong>allabhbhai Patel, <strong>P</strong>attabhi Sitaramayya → against linguistic states</li>
+        <li><span class="hl-g">Fazal Ali Commission (1953)</span> = States Reorganization Commission → H.N. Kunzru, K.M. Panikkar, Fazal Ali (chair) → accepted language basis but rejected "One Language, One State" → <strong>SRA 1956</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> The State of Telangana was carved out of which of the following states?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Andhra Pradesh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Karnataka</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Maharashtra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Odisha</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Telangana carved out of <strong>Andhra Pradesh</strong> on <span class="hl">2 June 2014</span>; Hyderabad = common capital for 10 years; AP's new capital = Amaravati</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec green">⑩ Article 371 — Special Provisions 🔑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Which state has special status under Article 371A?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Assam</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Manipur</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nagaland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sikkim</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>371A</strong> = special status for <strong>Nagaland</strong></div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Article 371 — "NAAM AASMA GK"</strong><br>
+      <strong>N</strong> = Nagaland (371A) · <strong>A</strong> = Assam (371B) · <strong>M</strong> = Manipur (371C) · <strong>A</strong> = Andhra/Telangana (371D-E) · <strong>S</strong> = Sikkim (371F) · <strong>M</strong> = Mizoram (371G) · <strong>A</strong> = Arunachal (371H) · <strong>G</strong> = Goa (371I) · <strong>K</strong> = Karnataka (371J)
+    </div>
+    <div class="sticky red">
+      <div class="slbl">NOTE</div>
+      Article <span class="hl"><strong>370</strong></span> (special status to Jammu &amp; Kashmir) has been <span class="hl-p">repealed</span>.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Which Articles in Part VIII of the Constitution deal with Union Territories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Articles 239 to 241 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Articles 1 to 4</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Articles 245 to 255</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Articles 370 to 371</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Articles 239–241</strong> (Part VIII) deal with Union Territories</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — Articles &amp; Key Facts</div>
+    <table class="qr-t">
+      <tr><th>Topic</th><th>Article / Fact</th></tr>
+      <tr><td>India = Union of States</td><td>Article 1</td></tr>
+      <tr><td>Admission of new states (foreign territory)</td><td>Article 2</td></tr>
+      <tr><td>Formation/alteration of existing states</td><td>Article 3</td></tr>
+      <tr><td>Reorganization not an amendment</td><td>Article 4</td></tr>
+      <tr><td>Administration of UTs</td><td>Article 239</td></tr>
+      <tr><td>UT Legislative Assembly (general)</td><td>Article 239A</td></tr>
+      <tr><td>Delhi (NCT) special provisions</td><td>Article 239AA</td></tr>
+      <tr><td>Delhi constitutional machinery failure</td><td>Article 239AB</td></tr>
+      <tr><td>Administrator's ordinance power</td><td>Article 239B</td></tr>
+      <tr><td>President's regulation power</td><td>Article 240</td></tr>
+      <tr><td>High Court for UTs</td><td>Article 241</td></tr>
+      <tr><td>Constitutional amendment</td><td>Article 368 (Part XX)</td></tr>
+      <tr><td>Special provisions (states)</td><td>Article 371 (A–J)</td></tr>
+      <tr><td>Names/extent of States &amp; UTs</td><td>First Schedule</td></tr>
+      <tr><td>Schedules (original → now)</td><td>8 → 12</td></tr>
+      <tr><td>Parts (original → now)</td><td>22 → 25</td></tr>
+      <tr><td>UTs first introduced</td><td>1956 (SRA)</td></tr>
+      <tr><td>First linguistic state</td><td>Andhra Pradesh (1953)</td></tr>
+      <tr><td>Nagaland formed</td><td>1 Dec 1963</td></tr>
+      <tr><td>Telangana formed</td><td>2 June 2014</td></tr>
+      <tr><td>Delhi Assembly created</td><td>69th Amendment (1991)</td></tr>
+      <tr><td>Goa became a state</td><td>56th Amendment (1987)</td></tr>
+      <tr><td>Current count</td><td>28 states + 8 UTs</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>Art <span class="hl"><strong>2</strong></span> = admission (foreign land in) · Art <span class="hl"><strong>3</strong></span> = formation (existing states)</li>
+          <li>6th Schedule = <span class="hl-g"><strong>"ATM"</strong></span> (Assam, Tripura, Meghalaya, Mizoram) — NOT Manipur</li>
+          <li>Only 3 UTs have Assembly: Delhi, Puducherry, J&amp;K</li>
+          <li>Delhi CoM = <span class="hl-p">10%</span> (not 15%) of Assembly</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Schedules → 🧠 <span class="hl"><strong>"TEARS OF OLD PM"</strong></span></li>
+          <li>Article 371 → 🧠 <span class="hl-g"><strong>"NAAM AASMA GK"</strong></span></li>
+          <li>Ordinance: President 123 · Governor 213 · Administrator 239B</li>
+          <li>Ceding territory needs Art 368 amendment (Berubari case)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF LECTURE 3 NOTES</div>
+      <strong>All Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
