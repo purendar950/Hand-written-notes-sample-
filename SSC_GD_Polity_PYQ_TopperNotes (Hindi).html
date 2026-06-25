@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Polity PYQ | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — पॉलिटी PYQ नोट्स</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · भारतीय राजव्यवस्था</div>
+    <div class="cover-title">⚖️ पॉलिटी PYQ — टॉपर नोट्स</div>
+    <div class="cover-sub">भारतीय संविधान | सभी प्रश्न, विकल्प व उत्तर सहित</div>
+    <div class="cover-badge">🏛️ संविधान · 📜 ब्रिटिश अधिनियम · ✊ मौलिक अधिकार · 📘 DPSP · 🚨 आपातकाल · 🗳️ आयोग</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① सातवीं अनुसूची व केंद्र–राज्य शक्तियाँ ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> भारतीय संविधान के अनुसार, विषय व सूची का कौन-सा युग्म सही है? (1) दत्तक ग्रहण व उत्तराधिकार → राज्य सूची (2) व्यापार व वाणिज्य → समवर्ती सूची</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल 1</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 व 2 दोनों</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>न तो 1 न ही 2 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — दोनों गलत (आपस में बदले हुए हैं)। दत्तक ग्रहण व उत्तराधिकार → <strong>समवर्ती सूची</strong>; व्यापार व वाणिज्य → <strong>राज्य सूची</strong></div>
+    </div>
+
+    <div class="sub">सातवीं अनुसूची — तीन सूचियाँ</div>
+    <table class="hw-t">
+      <tr><th>सूची</th><th>मूल</th><th>वर्तमान</th><th>प्रमुख विषय</th></tr>
+      <tr><td><span class="hl"><strong>संघ सूची</strong></span></td><td>97</td><td><span class="hl-g">100</span></td><td>रक्षा, परमाणु ऊर्जा, विदेशी मामले, बैंकिंग, रेलवे, डाक व तार, वायुमार्ग, विदेशी व्यापार, मुद्रा व सिक्के</td></tr>
+      <tr><td><span class="hl"><strong>राज्य सूची</strong></span></td><td>66</td><td><span class="hl-g">61</span></td><td>कृषि, पुलिस, जेल, स्थानीय शासन, सार्वजनिक स्वास्थ्य, भूमि, <span class="hl-p">व्यापार व वाणिज्य</span>, पशुपालन</td></tr>
+      <tr><td><span class="hl"><strong>समवर्ती सूची</strong></span></td><td>47</td><td><span class="hl-g">52</span></td><td>शिक्षा, वन, ट्रेड यूनियन, मिलावट, <span class="hl-p">दत्तक ग्रहण व उत्तराधिकार</span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">प्रतिकूलता का सिद्धांत (Repugnancy)</div>
+        समवर्ती सूची पर संसद व राज्य विधानमंडल दोनों कानून बना सकते हैं।<br>
+        टकराव होने पर → <span class="hl"><strong>संसद का कानून मान्य</strong></span><br>
+        अपवाद: यदि राज्यपाल ने राज्य विधेयक को <span class="hl-g"><strong>अनुच्छेद 200</strong></span> के तहत राष्ट्रपति हेतु आरक्षित किया हो तो राज्य का कानून मान्य
+      </div>
+      <div class="sticky green">
+        <div class="slbl">कहाँ से लिया गया</div>
+        समवर्ती सूची → <span class="hl"><strong>ऑस्ट्रेलिया</strong></span><br>
+        संयुक्त बैठक (अनु. 108) → ऑस्ट्रेलिया<br>
+        अवशिष्ट शक्तियाँ केंद्र को → <span class="hl-g"><strong>कनाडा</strong></span><br>
+        <span class="trick" style="display:block;margin-top:6px;padding:6px 10px">🧠 <strong>C for Centre = C for Canada</strong></span>
+      </div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>5 स्थितियाँ — जब संसद राज्य सूची के विषयों पर कानून बना सकती है:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl"><strong>अनु. 249</strong></span> — राज्यसभा विशेष बहुमत से संसद को अधिकार दे</li>
+        <li><span class="hl"><strong>अनु. 250</strong></span> — राष्ट्रीय आपातकाल के दौरान</li>
+        <li><span class="hl"><strong>अनु. 252</strong></span> — दो या अधिक राज्य संसद से अनुरोध करें</li>
+        <li><span class="hl"><strong>अनु. 253</strong></span> — अंतर्राष्ट्रीय संधि लागू करने हेतु</li>
+        <li><span class="hl"><strong>अनु. 356</strong></span> — राष्ट्रपति शासन लागू होने पर</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> संविधान का अनुच्छेद 256 निम्न में से किससे संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राज्यों को शक्ति प्रदान करने की संघ की शक्ति (258)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संघ को कार्य सौंपने की राज्यों की शक्ति (258A)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत से बाहर के क्षेत्रों पर संघ का क्षेत्राधिकार (260)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>राज्यों व संघ का दायित्व ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — अनु. <strong>256</strong> = राज्यों व संघ का दायित्व (राज्य को संसद द्वारा बनाए कानूनों का पालन सुनिश्चित करते हुए कार्यपालिका कार्य करने होते हैं)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>अनुच्छेद</th><th>प्रावधान</th></tr>
+      <tr><td><span class="hl"><strong>256</strong></span></td><td>राज्यों व संघ का दायित्व</td></tr>
+      <tr><td><strong>258</strong></td><td>राज्यों को शक्ति प्रदान करने की संघ की शक्ति</td></tr>
+      <tr><td><strong>258A</strong></td><td>संघ को लाभकारी कार्य सौंपने की राज्य की शक्ति (राज्यपाल, संघ से परामर्श कर सौंप सकते हैं)</td></tr>
+      <tr><td><strong>260</strong></td><td>भारत से बाहर के क्षेत्रों पर संघ का क्षेत्राधिकार</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② भाग V की संरचना, नागरिक संहिता व NHRC 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> संविधान के भाग V का कौन-सा अध्याय कार्यपालिका से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अध्याय 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अध्याय 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अध्याय 3</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अध्याय 4</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अध्याय 1 = <strong>संघ की कार्यपालिका</strong> (राष्ट्रपति, उपराष्ट्रपति, प्रधानमंत्री, मंत्रिपरिषद, महान्यायवादी)</div>
+    </div>
+
+    <div class="sub">भाग V — 5 अध्याय</div>
+    <table class="hw-t pur">
+      <tr><th>अध्याय</th><th>विषय</th><th>अनुच्छेद</th></tr>
+      <tr><td><span class="hl"><strong>अध्याय 1</strong></span></td><td>संघ की कार्यपालिका (राष्ट्रपति → PM कर्तव्य)</td><td>52 – 78</td></tr>
+      <tr><td><strong>अध्याय 2</strong></td><td>संसद</td><td>79 – 122</td></tr>
+      <tr><td><strong>अध्याय 3</strong></td><td>राष्ट्रपति की विधायी शक्ति (अध्यादेश)</td><td><span class="hl-g">केवल 123</span></td></tr>
+      <tr><td><strong>अध्याय 4</strong></td><td>उच्चतम न्यायालय</td><td>124 – 147</td></tr>
+      <tr><td><strong>अध्याय 5</strong></td><td>CAG</td><td>148 – 151</td></tr>
+    </table>
+    <div class="sticky">
+      <div class="slbl">याद रखें</div>
+      भाग V = संघ (5 अध्याय) · भाग VI = राज्य (6 अध्याय) · महान्यायवादी = <span class="hl"><strong>अनुच्छेद 76</strong></span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> भारतीय नागरिक सुरक्षा संहिता के अनुसार यौन अपराधों की जाँच कितने समय में पूरी की जानी चाहिए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>6 महीने</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1 वर्ष</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2 महीने ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 महीने</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — यौन अपराधों की जाँच <strong>2 महीने</strong> में पूरी होनी चाहिए</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> NHRC (राष्ट्रीय मानवाधिकार आयोग) के अध्यक्ष का कार्यकाल क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>3 वर्ष या 70 वर्ष की आयु तक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5 वर्ष या 65 वर्ष तक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>6 वर्ष या 62 वर्ष तक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 वर्ष या 65 वर्ष तक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>3 वर्ष या 70 वर्ष</strong> (जो पहले हो) — <span class="hl">2019 संशोधन</span> द्वारा परिवर्तित</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">NHRC <span class="hl"><strong>संवैधानिक निकाय नहीं</strong></span> है — यह <span class="hl-g"><strong>सांविधिक निकाय</strong></span> है जो <strong>मानवाधिकार संरक्षण अधिनियम, 1993</strong> द्वारा बना।</p>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>NHRC अध्यक्ष की सिफारिश करने वाली चयन समिति:</strong></p>
+      <ul class="hw chk">
+        <li>प्रधानमंत्री</li>
+        <li>केंद्रीय गृह मंत्री</li>
+        <li>लोकसभा अध्यक्ष</li>
+        <li>राज्यसभा के उपसभापति</li>
+        <li>दोनों सदनों के विपक्ष के नेता</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec orange">③ संवैधानिक विकास — ब्रिटिश अधिनियम 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> किस अधिनियम ने पहली बार भारतीयों को केंद्रीय विधान सभा में प्रतिनिधित्व दिया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भारतीय परिषद अधिनियम 1861</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारतीय परिषद अधिनियम 1892</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारतीय परिषद अधिनियम 1909 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत सरकार अधिनियम 1919</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — भारतीय परिषद अधिनियम <strong>1909</strong> = <span class="hl">मॉर्ले–मिंटो सुधार</span> (पहला प्रतिनिधित्व + मुसलमानों हेतु पृथक निर्वाचक मंडल)</div>
+    </div>
+
+    <div class="sub">ब्रिटिश अधिनियम — समयरेखा</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1861</span> पोर्टफोलियो प्रणाली; <span class="hl">वायसराय को अध्यादेश की शक्ति</span>; विकेंद्रीकरण; बॉम्बे व मद्रास की शक्तियाँ बहाल; 3 भारतीय परिषद में नामित</div>
+      <div class="tl-item"><span class="yr">1892</span> पहली बार <span class="hl-g"><strong>बजट पर चर्चा</strong></span> की शक्ति; परिषद का आकार बढ़ा</div>
+      <div class="tl-item"><span class="yr">1909</span> <strong>मॉर्ले–मिंटो</strong>: मुसलमानों हेतु पृथक निर्वाचक मंडल · <span class="hl"><strong>सत्येंद्र प्रसाद सिन्हा</strong></span> = वायसराय की कार्यकारी परिषद में पहले भारतीय · परिषद 16 → 60 · बजट पर पूरक प्रश्न व संकल्प</div>
+      <div class="tl-item"><span class="yr">1919</span> <strong>मॉन्टेग्यू–चेम्सफोर्ड</strong>: प्रांतों में द्वैध शासन · केंद्र में द्विसदनीय विधायिका · सिखों व आंग्ल-भारतीय ईसाइयों को पृथक निर्वाचक मंडल</div>
+      <div class="tl-item"><span class="yr">1935</span> प्रांतों से द्वैध शासन हटाया (<span class="hl-p">प्रांतीय स्वायत्तता</span>); केंद्र में द्वैध शासन लागू</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>1773 अधिनियम</strong> → बंगाल का गवर्नर <em>बंगाल का गवर्नर-जनरल</em> बना · <strong>1833 अधिनियम</strong> → <em>भारत का गवर्नर-जनरल</em> बना (केंद्रीकरण) · <strong>1861</strong> → पुनः विकेंद्रीकरण
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec purple">④ संसद — विशेषाधिकार व प्रश्नकाल 🗣️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> कौन-सा अनुच्छेद प्रावधान करता है कि न्यायालय (राज्य) विधानमंडल की कार्यवाहियों की जाँच नहीं करेंगे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 213</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 211</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 212 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 208</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>212</strong> = न्यायालय राज्य विधानमंडल की कार्यवाहियों की जाँच नहीं करेंगे (भाग V → भाग VI: 90 जोड़ें)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>अनुच्छेद (संसद)</th><th>विषय</th><th>राज्य (+90)</th></tr>
+      <tr><td><strong>120</strong></td><td>संसद में प्रयुक्त भाषा</td><td>210</td></tr>
+      <tr><td><strong>121</strong></td><td>संसद न्यायाधीशों के आचरण पर चर्चा नहीं कर सकती</td><td>211</td></tr>
+      <tr><td><strong>122</strong></td><td>न्यायालय कार्यवाहियों की जाँच नहीं करेंगे</td><td><span class="hl">212</span></td></tr>
+      <tr><td><strong>123</strong></td><td>राष्ट्रपति की अध्यादेश शक्ति</td><td><span class="hl-g">213 (राज्यपाल)</span></td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> निम्न में से कौन-सा भारतीय संसद में पूछे जाने वाला प्रश्न का प्रकार नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तारांकित प्रश्न</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अतारांकित प्रश्न</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>तत्काल सूचना प्रश्न (Urgent Notice) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अल्प सूचना प्रश्न (Short Notice)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>तत्काल सूचना प्रश्न</strong> कोई मान्य प्रकार नहीं है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw">संसदीय कार्यवाही <span class="hl"><strong>11:00 बजे</strong></span> <strong>प्रश्नकाल</strong> से शुरू होती है। चार मान्य प्रकार:</p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>तारांकित</strong></span> — तारांकित, <strong>मौखिक उत्तर</strong> → पूरक प्रश्न संभव</li>
+        <li><span class="hl-g"><strong>अतारांकित</strong></span> — <strong>लिखित उत्तर</strong> → पूरक प्रश्न नहीं</li>
+        <li><span class="hl-b"><strong>अल्प सूचना</strong></span> — पूर्व सूचना आवश्यक (अत्यावश्यक जनहित विषय)</li>
+        <li><span class="hl-p"><strong>निजी सदस्य का प्रश्न</strong></span> — ऐसा सदस्य जो मंत्री नहीं है</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec green">⑤ DPSP व वित्त आयोग 📘</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> DPSP के संबंध में कौन-सा कथन सही है? (1) अनु. 39 → जनकल्याण हेतु सामाजिक व्यवस्था (2) अनु. 40 → ग्राम पंचायतों का संगठन</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल 1</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>केवल 2 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दोनों</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — केवल 2 सही। अनु. <strong>38</strong> = कल्याण/सामाजिक व्यवस्था (39 नहीं); अनु. <strong>40</strong> = ग्राम पंचायत ✔</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>अनुच्छेद 39 → "L D C goes to P H C"</strong><br>
+      L = जीविका (Livelihood) · D = भौतिक संसाधनों का वितरण · C = धन के संकेंद्रण को रोकना · P = समान कार्य हेतु समान वेतन · H = श्रमिकों का स्वास्थ्य व शक्ति · C = बच्चों का स्वस्थ विकास (<span class="hl">42वें संशोधन</span> से जोड़ा गया)
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">अन्य DPSP अनुच्छेद</div>
+      अनु. 41 → कार्य व सार्वजनिक सहायता का अधिकार<br>
+      अनु. 43 → श्रमिकों हेतु निर्वाह मजदूरी<br>
+      अनु. 43A → प्रबंधन में श्रमिकों की भागीदारी (<span class="hl">42वाँ संशोधन</span>)<br>
+      अनु. 44 → समान नागरिक संहिता · अनु. 45 → प्रारंभिक बाल्यावस्था देखभाल
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> किस वित्त आयोग ने सबसे पहले राज्यों को GST क्षतिपूर्ति की सिफारिश की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>12वाँ</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>13वाँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>14वाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>15वाँ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>13वाँ वित्त आयोग</strong> (अध्यक्ष: <span class="hl">विजय केलकर</span>) | वित्त आयोग = <strong>अनुच्छेद 280</strong></div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>वित्त आयोग</th><th>अध्यक्ष</th></tr>
+      <tr><td>13वाँ (पहली GST क्षतिपूर्ति)</td><td><span class="hl">विजय केलकर</span></td></tr>
+      <tr><td>14वाँ</td><td>वाई.वी. रेड्डी</td></tr>
+      <tr><td>15वाँ</td><td>एन.के. सिंह</td></tr>
+      <tr><td>16वाँ (वर्तमान)</td><td><span class="hl-g">अरविंद पनगढ़िया</span></td></tr>
+    </table>
+    <div class="tip-box">
+      <p class="hw">GST की सिफारिश करने वाली पहली समिति = <span class="hl"><strong>केलकर समिति</strong></span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec red">⑥ सूचियाँ, बजट अधिनियम व पॉलिटी GK 📑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> निम्न में से कौन संविधान की समवर्ती सूची का भाग है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>वन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बैंकिंग</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>रेलवे</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रक्षा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>वन</strong> समवर्ती सूची में है। बैंकिंग <span class="hl">संघ सूची</span> में है।</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>42वें संशोधन ने 5 विषय राज्य सूची → समवर्ती सूची में स्थानांतरित किए:</strong></p>
+      <ul class="hw chk">
+        <li>शिक्षा</li>
+        <li>वन</li>
+        <li>वन्य जीवों व पक्षियों का संरक्षण</li>
+        <li>नाप-तौल</li>
+        <li>न्याय प्रशासन</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> किस अधिनियम ने सबसे पहले भारतीय विधायिका में बजट चर्चा की अनुमति दी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1892 अधिनियम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1861 अधिनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1909 अधिनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1919 अधिनियम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>1892 अधिनियम</strong> ने बजट चर्चा की शक्ति दी। <span class="hl">1909</span> ने पूरक प्रश्न व संकल्प की शक्ति दी।</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">1919 अधिनियम — याद रखें</div>
+      <span class="hl"><strong>लोक सेवा आयोग</strong></span> की शुरुआत · प्रत्यक्ष निर्वाचन की शुरुआत · प्रांतों में द्वैध शासन · केंद्र में द्विसदनीय विधायिका
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> किस राज्य में ई.एम.एस. नंबूदरीपाद मुख्यमंत्री के रूप में विश्व की पहली लोकतांत्रिक रूप से निर्वाचित कम्युनिस्ट सरकार थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पश्चिम बंगाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>केरल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>त्रिपुरा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आंध्र प्रदेश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>केरल</strong> में पहली लोकतांत्रिक रूप से निर्वाचित कम्युनिस्ट सरकार थी</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>CPI</strong> की स्थापना <span class="hl">1920 में ताशकंद (उज़्बेकिस्तान)</span> में <strong>एम.एन. रॉय</strong> द्वारा; <span class="hl-g">कानपुर, 1925</span> में औपचारिक रूप दिया गया।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> अटल बिहारी वाजपेयी पहली बार किस वर्ष भारत के प्रधानमंत्री बने?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1996 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1998</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1999</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1991</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>1996</strong> (केवल <span class="hl">13 दिन</span> रहे, अविश्वास प्रस्ताव के कारण इस्तीफा)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec blue">⑦ राष्ट्रपति, वीटो व मौलिक अधिकार 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> भारत के राष्ट्रपति के रूप में निर्दलीय उम्मीदवार के रूप में निर्वाचित होने वाले एकमात्र व्यक्ति कौन थे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ज्ञानी जैल सिंह</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नीलम संजीव रेड्डी</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वी.वी. गिरि ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>फखरुद्दीन अली अहमद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>वी.वी. गिरि</strong> (चौथे राष्ट्रपति) निर्दलीय उम्मीदवार के रूप में जीते</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>ज़ाकिर हुसैन का पद पर निधन → वी.वी. गिरि (तत्कालीन उपराष्ट्रपति) ने चुनाव लड़ने हेतु इस्तीफा दिया</li>
+        <li>CJI <span class="hl">एम. हिदायतुल्लाह</span> कार्यवाहक राष्ट्रपति बने जब तक वी.वी. गिरि ने पद नहीं संभाला</li>
+        <li><strong>फखरुद्दीन अली अहमद</strong> = <span class="hl-p">1975 आपातकाल</span> के समय राष्ट्रपति</li>
+        <li><strong>ज्ञानी जैल सिंह</strong> = डाक संशोधन विधेयक, 1987 पर <span class="hl-g">पॉकेट वीटो</span></li>
+      </ul>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">राष्ट्रपति के 3 वीटो</div>
+      <span class="hl"><strong>आत्यंतिक वीटो</strong></span> = अनुमति देने से इनकार<br>
+      <span class="hl-g"><strong>निलंबनकारी वीटो</strong></span> = विधेयक लौटाना<br>
+      <span class="hl-p"><strong>पॉकेट वीटो</strong></span> = कोई प्रतिक्रिया न देना
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> कौन-सा मौलिक अधिकार अल्पसंख्यकों के शैक्षणिक संस्थान स्थापित करने के अधिकार की रक्षा करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 25</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 28</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 29</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>अनुच्छेद 30 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — अनु. <strong>30</strong> = अल्पसंख्यक शैक्षणिक संस्थान स्थापित व प्रशासित कर सकते हैं</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>अनुच्छेद</th><th>अधिकार</th></tr>
+      <tr><td><strong>25</strong></td><td>अंतःकरण, धर्म के आचरण व प्रचार की स्वतंत्रता</td></tr>
+      <tr><td><strong>26</strong></td><td>धार्मिक संप्रदायों के अधिकार</td></tr>
+      <tr><td><strong>27</strong></td><td>किसी धर्म के प्रवर्धन हेतु कर से स्वतंत्रता</td></tr>
+      <tr><td><strong>28</strong></td><td>सरकारी सहायता प्राप्त संस्थानों में धार्मिक शिक्षा नहीं</td></tr>
+      <tr><td><span class="hl"><strong>29</strong></span></td><td>किसी वर्ग की भाषा/लिपि/संस्कृति का संरक्षण</td></tr>
+      <tr><td><span class="hl-g"><strong>30</strong></span></td><td>अल्पसंख्यकों का शैक्षणिक संस्थान स्थापित करने का अधिकार</td></tr>
+    </table>
+    <div class="tip-box"><p class="hw">अनुच्छेद <span class="hl"><strong>29 व 30</strong></span> मिलकर = <strong>सांस्कृतिक व शैक्षिक अधिकार</strong> · अनुच्छेद 25–28 = धार्मिक स्वतंत्रता</p></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec teal">⑧ न्यायपालिका व स्थानीय शासन संशोधन 👨‍⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> उच्च न्यायालय में न्यायाधीशों की संख्या कौन तय करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भारत के राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत के मुख्य न्यायाधीश</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राज्य के राज्यपाल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>राष्ट्रपति</strong> HC की संख्या तय करते हैं | <span class="hl">संसद</span> उच्चतम न्यायालय की संख्या तय करती है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> किस संवैधानिक संशोधन ने सहकारी समितियों को संवैधानिक दर्जा दिया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>73वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>86वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>91वाँ संशोधन</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>97वाँ संशोधन ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>97वाँ संशोधन</strong> → भाग IX-B (अनु. 243-ZH से 243-ZT) + अनु. 43B (सहकारी समिति बनाने का अधिकार)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>संशोधन</th><th>प्रमुख प्रावधान</th></tr>
+      <tr><td><strong>73वाँ (1992)</strong></td><td>त्रिस्तरीय पंचायती राज · भाग IX · अनु. 243–243O · 11वीं अनुसूची (29 विषय) · 24 अप्रैल 1993 से लागू (पंचायती राज दिवस)</td></tr>
+      <tr><td><strong>74वाँ</strong></td><td>नगरपालिकाएँ · भाग IX-A (243-P से 243-ZG)</td></tr>
+      <tr><td><strong>91वाँ (2003)</strong></td><td>अनु. 75(1A): मंत्रिपरिषद ≤ लोकसभा का 15% · 75(1B): दलबदल अयोग्यता · विलय अपवाद</td></tr>
+      <tr><td><span class="hl"><strong>97वाँ</strong></span></td><td>सहकारी समितियाँ → भाग IX-B + अनु. 43B</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>समितियाँ:</strong> बलवंत राय मेहता (1957) → त्रिस्तरीय पंचायती राज · अशोक मेहता (1977) → द्विस्तरीय
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> भारत में क्षेत्रीय परिषदों (Zonal Councils) का अध्यक्ष कौन होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नीति आयोग के उपाध्यक्ष</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>केंद्रीय गृह मंत्री ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>केंद्रीय गृह मंत्री</strong> क्षेत्रीय परिषदों के अध्यक्ष होते हैं (वर्तमान में अमित शाह)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">क्षेत्रीय परिषदें</div>
+        <span class="hl"><strong>राज्य पुनर्गठन अधिनियम, 1956</strong></span> द्वारा निर्मित<br>
+        5 परिषदें: उत्तर, दक्षिण, पूर्व, पश्चिम, मध्य<br>
+        पूर्वोत्तर परिषद → अलग, <span class="hl-g">1971 अधिनियम</span><br>
+        <em>सांविधिक (गैर-संवैधानिक) निकाय</em>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">अंतर-राज्य परिषद</div>
+        अनुच्छेद <span class="hl"><strong>263</strong></span> · अध्यक्ष = <strong>PM</strong><br>
+        राष्ट्रपति द्वारा गठित · स्थापना <span class="hl-g">1990</span><br>
+        <strong>सरकारिया आयोग (1983)</strong> की सिफारिश पर
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec orange">⑨ DPSP व राजभाषा 📘</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> DPSP के संबंध में कौन-सा कथन सही है? (1) अनु. 47 → न्यायपालिका का कार्यपालिका से पृथक्करण (2) अनु. 50 → अंतर्राष्ट्रीय शांति व सुरक्षा</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल 1</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दोनों</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>कोई नहीं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — दोनों गलत। अनु. <strong>47</strong> = पोषण व जीवन स्तर; अनु. <strong>50</strong> = न्यायपालिका का कार्यपालिका से पृथक्करण; अनु. <strong>51</strong> = अंतर्राष्ट्रीय शांति</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> संविधान का कौन-सा भाग राजभाषा से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भाग 15</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भाग 16</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भाग 17 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भाग 18</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>भाग 17</strong> (अनुच्छेद 343–351) = राजभाषा</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>भाग</th><th>विषय</th></tr>
+      <tr><td><strong>भाग 15</strong></td><td>निर्वाचन / निर्वाचन आयोग (अनु. 324–329)</td></tr>
+      <tr><td><strong>भाग 16</strong></td><td>कुछ वर्गों हेतु विशेष प्रावधान</td></tr>
+      <tr><td><span class="hl"><strong>भाग 17</strong></span></td><td>राजभाषा (343–351)</td></tr>
+      <tr><td><strong>भाग 18</strong></td><td>आपातकालीन प्रावधान</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>3 प्रकार के आपातकाल:</strong> राष्ट्रीय (<span class="hl">352</span>) · राष्ट्रपति शासन (<span class="hl">356</span>) · वित्तीय (<span class="hl">360</span>)</p>
+      <ul class="hw arr">
+        <li>राष्ट्रीय आपातकाल <strong>3 बार</strong> लगा; राष्ट्रपति शासन सर्वाधिक <span class="hl-p">मणिपुर में (11 बार)</span>; वित्तीय आपातकाल <strong>कभी नहीं लगा</strong></li>
+        <li>अनु. <span class="hl">358</span> → अनु. 19 (6 स्वतंत्रताएँ) स्वतः निलंबित</li>
+        <li>अनु. <span class="hl">359</span> → न्यायालय जाने का अधिकार निलंबित (अनु. 20 व 21 छोड़कर — कभी निलंबित नहीं)</li>
+        <li>आपातकाल में मौलिक अधिकारों का निलंबन <span class="hl-g"><strong>जर्मनी (वाइमर) संविधान</strong></span> से लिया गया</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec purple">⑩ राज्यपाल — राज्य कार्यपालिका 🪑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> राज्यपालों का वेतन कौन तय करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>संसद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वित्त आयोग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>संसद</strong> <span class="hl">अनुच्छेद 158</span> के तहत राज्यपाल का वेतन तय करती है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> राज्यपाल को पद की शपथ कौन दिलाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उच्च न्यायालय के मुख्य न्यायाधीश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्यमंत्री</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>उच्च न्यायालय के मुख्य न्यायाधीश</strong> राज्यपाल को शपथ दिलाते हैं</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec red">⑪ UPSC, अनुच्छेद 53 व विधेयक 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> UPSC अपनी वार्षिक रिपोर्ट किसे सौंपता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत के मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — UPSC अपनी वार्षिक रिपोर्ट <strong>राष्ट्रपति</strong> को सौंपता है</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>अनुच्छेद</th><th>लोक सेवा आयोग (भाग 14)</th></tr>
+      <tr><td><span class="hl"><strong>315</strong></span></td><td>संघ व राज्यों हेतु PSC</td></tr>
+      <tr><td><strong>316</strong></td><td>सदस्यों की नियुक्ति व कार्यकाल</td></tr>
+      <tr><td><strong>317</strong></td><td>सदस्यों को हटाना व निलंबन</td></tr>
+      <tr><td><strong>320</strong></td><td>PSC के कार्य</td></tr>
+      <tr><td><strong>323</strong></td><td>PSC की रिपोर्ट</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> संविधान का अनुच्छेद 53 निम्न में से किससे संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति का कार्यकाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संघ की कार्यपालिका शक्ति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रपति निर्वाचन हेतु योग्यता</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राष्ट्रपति का निर्वाचन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>53</strong> = संघ की कार्यपालिका शक्ति (राष्ट्रपति में निहित)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>अनुच्छेद</th><th>विषय</th></tr>
+      <tr><td><strong>52</strong></td><td>भारत का एक राष्ट्रपति होगा</td></tr>
+      <tr><td><span class="hl"><strong>53</strong></span></td><td>संघ की कार्यपालिका शक्ति</td></tr>
+      <tr><td><strong>54</strong></td><td>निर्वाचक मंडल (निर्वाचित सांसद व विधायक)</td></tr>
+      <tr><td><strong>55</strong></td><td>निर्वाचन की रीति (समानुपातिक प्रतिनिधित्व + एकल संक्रमणीय मत)</td></tr>
+      <tr><td><strong>56</strong></td><td>कार्यकाल (5 वर्ष)</td></tr>
+      <tr><td><strong>58</strong></td><td>योग्यता (35 वर्ष, नागरिक, लोकसभा हेतु योग्य)</td></tr>
+      <tr><td><strong>61</strong></td><td>महाभियोग (संविधान का उल्लंघन)</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>आयरलैंड से "RED"</strong> → R = राज्यसभा नामांकन · E = राष्ट्रपति निर्वाचन की रीति · D = DPSP
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> भारत में राज्यसभा को किस मामले में लोकसभा के समान शक्ति प्राप्त है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>धन विधेयक</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संविधान संशोधन विधेयक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अविश्वास प्रस्ताव</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राष्ट्रपति निर्वाचन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>संविधान संशोधन विधेयक (अनु. 368)</strong> में दोनों सदनों को समान शक्ति प्राप्त है</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">लोकसभा को अधिक शक्ति</div>
+        धन विधेयक केवल LS में पेश (अनु. 109)<br>
+        बजट पर मतदान केवल LS में<br>
+        अविश्वास प्रस्ताव केवल LS में<br>
+        <em>(पहला अविश्वास प्रस्ताव: जे.बी. कृपलानी बनाम नेहरू सरकार)</em>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">राज्यसभा को अधिक शक्ति</div>
+        अनु. <span class="hl"><strong>249</strong></span> — राज्य सूची पर कानून<br>
+        अनु. <span class="hl"><strong>312</strong></span> — नई अखिल भारतीय सेवा का सृजन
+      </div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>धन विधेयक की <strong>परिभाषा</strong> = अनु. <span class="hl">110</span>; <strong>प्रक्रिया</strong> = अनु. <span class="hl">109</span></li>
+        <li><strong>लोकसभा अध्यक्ष</strong> द्वारा प्रमाणित (अंतिम, परंतु न्यायिक समीक्षा के अधीन — पुट्टस्वामी मामला)</li>
+        <li>केवल <span class="hl-g"><strong>राष्ट्रपति</strong></span> की सिफारिश पर पेश होता है</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> भारत के उपराष्ट्रपति के निर्वाचन संबंधी विवादों का निर्णय कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उच्च न्यायालय</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>उच्चतम न्यायालय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>निर्वाचन आयोग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संसद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>उच्चतम न्यायालय</strong> (अनु. <span class="hl">71</span>) राष्ट्रपति/उपराष्ट्रपति निर्वाचन विवादों का निर्णय करता है — मूल व अनन्य क्षेत्राधिकार</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">संबंधित अनुच्छेद</div>
+      71 → राष्ट्रपति/VP निर्वाचन विवाद (SC) · 72 → क्षमादान शक्ति · 73 → कार्यपालिका शक्ति का विस्तार · <span class="hl">74</span> → राष्ट्रपति को सहायता व सलाह हेतु मंत्रिपरिषद (PM = वास्तविक प्रधान; राष्ट्रपति = नाममात्र प्रधान)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec green">⑫ ब्रिटिश अधिनियम व क्षेत्र 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> निम्न में से किस अधिनियम ने प्रांतीय स्वायत्तता प्रदान की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भारत सरकार अधिनियम 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1919 अधिनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1909 अधिनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1861 अधिनियम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>भारत सरकार अधिनियम 1935</strong> ने प्रांतीय स्वायत्तता दी (प्रांतीय द्वैध हटाया, केंद्र में द्वैध लागू)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>भारत सरकार अधिनियम 1935 ने यह भी किया:</strong></p>
+      <ul class="hw chk">
+        <li>11 में से 6 प्रांतों में द्विसदनीय विधायिका</li>
+        <li>अखिल भारतीय संघ का प्रस्ताव</li>
+        <li><span class="hl">RBI</span> की स्थापना</li>
+        <li><span class="hl-g">संघीय न्यायालय</span> की स्थापना (1937 में गठित)</li>
+        <li>भारत सचिव की परिषद समाप्त की</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> किस संशोधन अधिनियम ने भारत द्वारा कुछ क्षेत्रों के अधिग्रहण व बांग्लादेश को कुछ क्षेत्रों के हस्तांतरण को प्रभावित किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>91वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>97वाँ संशोधन</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>100वाँ संशोधन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>101वाँ संशोधन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>100वाँ संशोधन</strong> (भूमि सीमा समझौता — बांग्लादेश के साथ परिक्षेत्रों का आदान-प्रदान)</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>अनुच्छेद</th><th>क्षेत्र संबंधी प्रावधान</th></tr>
+      <tr><td><strong>अनु. 2</strong></td><td>नए राज्यों का प्रवेश/स्थापना (विदेशी क्षेत्र)</td></tr>
+      <tr><td><strong>अनु. 3</strong></td><td>नए राज्यों का निर्माण; मौजूदा राज्यों के क्षेत्र/सीमा/नाम में परिवर्तन</td></tr>
+      <tr><td><strong>अनु. 4</strong></td><td>ऐसे परिवर्तन <span class="hl">साधारण बहुमत</span> से (अनु. 368 के तहत नहीं)</td></tr>
+    </table>
+    <div class="imp">
+      <p class="hw"><strong>बेरुबाड़ी संघ मामला (1960):</strong> SC ने कहा कि भारतीय क्षेत्र किसी अन्य देश को हस्तांतरित करने हेतु <span class="hl">संवैधानिक संशोधन</span> आवश्यक है → <strong>9वाँ संशोधन</strong> (नेहरू–नून समझौता)। संशोधन शक्ति = <span class="hl-g">अनु. 368, भाग XX</span>।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> निम्न में से किस केंद्रशासित प्रदेश में विधान सभा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चंडीगढ़</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>पुडुचेरी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लक्षद्वीप</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अंडमान व निकोबार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>पुडुचेरी</strong> (विधान सभा वाले UT: दिल्ली, पुडुचेरी, J&amp;K)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky pink">
+        <div class="slbl">पुडुचेरी</div>
+        UT में सर्वाधिक <span class="hl"><strong>लिंगानुपात</strong></span> (≈1037)
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">लक्षद्वीप</div>
+        UT में सर्वाधिक <span class="hl-g"><strong>साक्षरता</strong></span> (91.85%)
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec blue">⑬ मौलिक अधिकार, स्रोत व मंत्रिपरिषद 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> कौन-सा कथन सही है? (1) अनु. 27 → किसी विशेष धर्म के प्रवर्धन हेतु कर से स्वतंत्रता (2) अनु. 28 → मानव व्यापार व बलात् श्रम का प्रतिषेध</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>केवल 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दोनों</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — केवल 1 सही। मानव व्यापार व बलात् श्रम का प्रतिषेध = अनु. <strong>23</strong> (28 नहीं)</div>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">शोषण के विरुद्ध अधिकार</div>
+      अनु. <span class="hl"><strong>23</strong></span> = मानव व्यापार व बलात् श्रम (बेगार) का प्रतिषेध<br>
+      अनु. <span class="hl"><strong>24</strong></span> = खतरनाक कार्य / स्कूल समय में बाल श्रम नहीं<br>
+      अनु. 23 व 24 मिलकर = <strong>शोषण के विरुद्ध अधिकार</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> संविधान की निम्न में से कौन-सी विशेषता USA से ली गई है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौलिक कर्तव्य</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पंचवर्षीय योजनाएँ</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रस्तावना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>एकल नागरिकता</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>प्रस्तावना</strong> USA से ली गई। मौलिक कर्तव्य व पंचवर्षीय योजनाएँ = USSR</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>देश</th><th>ली गई विशेषताएँ</th></tr>
+      <tr><td><span class="hl"><strong>USA</strong></span></td><td>प्रस्तावना, मौलिक अधिकार, राष्ट्रपति/VP, महाभियोग, न्यायाधीशों को हटाना, न्यायिक समीक्षा, न्यायिक स्वतंत्रता</td></tr>
+      <tr><td><strong>USSR</strong></td><td>मौलिक कर्तव्य, न्याय (सामाजिक/आर्थिक/राजनीतिक), पंचवर्षीय योजनाएँ</td></tr>
+      <tr><td><strong>UK</strong></td><td>संसदीय शासन, द्विसदनीयता, एकल नागरिकता, विधि का शासन, मार्शल लॉ, फर्स्ट-पास्ट-द-पोस्ट</td></tr>
+      <tr><td><strong>आयरलैंड</strong></td><td>DPSP, राष्ट्रपति निर्वाचन रीति, राज्यसभा में नामांकन</td></tr>
+      <tr><td><strong>कनाडा</strong></td><td>अवशिष्ट शक्तियाँ, राज्यपालों की नियुक्ति, सशक्त केंद्र</td></tr>
+      <tr><td><strong>ऑस्ट्रेलिया</strong></td><td>समवर्ती सूची, संयुक्त बैठक (108), व्यापार व वाणिज्य</td></tr>
+      <tr><td><strong>फ्रांस</strong></td><td>गणतंत्र, स्वतंत्रता-समानता-बंधुत्व</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> किसी राज्य की मंत्रिपरिषद सामूहिक रूप से किसके प्रति उत्तरदायी होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राज्यपाल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुख्यमंत्री</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>राज्य विधान सभा ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — राज्य मंत्रिपरिषद सामूहिक रूप से <strong>विधान सभा</strong> के प्रति उत्तरदायी (अनु. 164; संघ = अनु. 75(3) → लोकसभा)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">मंत्रिपरिषद की सलाह <span class="hl"><strong>राष्ट्रपति पर बाध्यकारी</strong></span> है (42वाँ संशोधन; 44वाँ एक बार लौटाने की अनुमति देता है)। परंतु सलाह <span class="hl-p"><strong>राज्यपाल पर बाध्यकारी नहीं</strong></span> (राज्य मंत्रिपरिषद अनु. 163 के तहत राज्यपाल को सलाह देती है)।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> भारत के महान्यायवादी (Attorney General) का कार्यकाल क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5 वर्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>6 वर्ष</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>निश्चित नहीं (राष्ट्रपति के प्रसादपर्यंत) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 वर्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — AG का कार्यकाल संविधान में <strong>निश्चित नहीं</strong> (राष्ट्रपति के प्रसादपर्यंत पद धारण करता है)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>महान्यायवादी (अनु. 76):</strong></p>
+      <ul class="hw arr">
+        <li>भारत का सर्वोच्च विधि अधिकारी · राष्ट्रपति द्वारा नियुक्त</li>
+        <li><span class="hl">उच्चतम न्यायालय न्यायाधीश</span> बनने हेतु योग्य होना चाहिए</li>
+        <li>सरकार को कानूनी मामलों पर सलाह · सभी न्यायालयों में सुनवाई का अधिकार</li>
+        <li>सॉलिसिटर जनरल व अतिरिक्त SG द्वारा सहायता (संवैधानिक पद नहीं)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec red">⑭ आपातकाल, न्यायाधीश हटाना व राज्यपाल 🚨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> संविधान का कौन-सा अनुच्छेद वित्तीय आपातकाल से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 352</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 356</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 360 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 365</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>360</strong> = वित्तीय आपातकाल</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">राष्ट्रपति शासन — 2 आधार</div>
+      अनु. <span class="hl"><strong>356</strong></span> = संवैधानिक तंत्र की विफलता<br>
+      अनु. <span class="hl"><strong>365</strong></span> = राज्य द्वारा केंद्र के निर्देशों का पालन न करना
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> उच्चतम न्यायालय के न्यायाधीश को हटाने की प्रक्रिया को क्या कहते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>न्यायिक समीक्षा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>महाभियोग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रपति द्वारा बर्खास्तगी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वापसी (Recall)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — सर्वोत्तम विकल्प = <strong>महाभियोग</strong> (तकनीकी रूप से "हटाना"; आधार: सिद्ध दुर्व्यवहार व अक्षमता)</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>प्रस्ताव हेतु <span class="hl"><strong>100 लोकसभा सदस्य</strong></span> या <span class="hl"><strong>50 राज्यसभा सदस्य</strong></span> आवश्यक</li>
+        <li>3-सदस्यीय समिति आरोपों की जाँच करती है → दोनों सदनों में <strong>विशेष बहुमत</strong> से पारित</li>
+        <li>संसद के संकल्प के बाद राष्ट्रपति हटाते हैं</li>
+        <li>न्यायिक समीक्षा = अनु. <span class="hl-g">13</span> में निहित · SC अपने निर्णय की समीक्षा कर सकता है = अनु. <span class="hl-g">137</span> (USA से)</li>
+        <li>राष्ट्रपति को हटाना = अनु. <strong>61</strong> (संविधान का उल्लंघन)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> कौन-सा अनुच्छेद राज्यपाल को विधानमंडल के सत्रावकाश में अध्यादेश जारी करने की शक्ति देता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 123</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 213 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 211</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 212</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>213</strong> = राज्यपाल की अध्यादेश शक्ति (अनु. 123 = राष्ट्रपति की)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> प्रतिभा पाटिल ने 25 जुलाई 2007 को भारत के राष्ट्रपति के रूप में पद ग्रहण किया। वे भारत की कौन-सी राष्ट्रपति थीं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>10वीं</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>11वीं</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>12वीं ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>13वीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — प्रतिभा पाटिल = <strong>12वीं राष्ट्रपति</strong> (पहली महिला राष्ट्रपति)। 11वें = एपीजे अब्दुल कलाम।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 15 ============ -->
+    <div class="sec green">⑮ नदियाँ, राज्य पुनर्गठन व द्विसदनीयता 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> अंतर-राज्यीय नदी जल के उपयोग/वितरण/नियंत्रण संबंधी विवादों के निपटान हेतु कौन कानून बना सकता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उच्चतम न्यायालय</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>संसद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वित्त आयोग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>संसद</strong> अनु. <span class="hl">262</span> के तहत (अंतर-राज्यीय नदी जल विवाद अधिनियम, 1956)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">अनु. <strong>131</strong> SC को केंद्र–राज्य विवादों पर <span class="hl">मूल व अनन्य क्षेत्राधिकार</span> देता है। <strong>अपवाद:</strong> अंतर-राज्यीय नदी जल विवाद व संविधान-पूर्व संधियों से उत्पन्न मामले। उदाहरण: कावेरी विवाद (केरल, TN, कर्नाटक) → कावेरी ट्रिब्यूनल, 1990।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> किस आयोग ने भाषाई आधार पर नए राज्यों के निर्माण की सिफारिश की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राजमन्नार आयोग</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>फजल अली आयोग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पुंछी आयोग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सरकारिया आयोग</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>फजल अली आयोग (1953)</strong>। सरकारिया/पुंछी/राजमन्नार = केंद्र–राज्य संबंध।</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1948</span> <strong>एस.के. धर आयोग</strong> → राज्य प्रशासनिक आधार पर (भाषाई नहीं)</div>
+      <div class="tl-item"><span class="yr">1948</span> <strong>JVP समिति</strong> → भाषाई राज्यों के विरुद्ध</div>
+      <div class="tl-item"><span class="yr">1953</span> <span class="hl">पोट्टी श्रीरामुलु</span> का आमरण अनशन → <strong>आंध्र प्रदेश</strong> = पहला भाषाई राज्य</div>
+      <div class="tl-item"><span class="yr">1953</span> <strong>फजल अली आयोग</strong> (सदस्य: एच.एन. कुंजरू, के.एम. पणिक्कर, फजल अली-अध्यक्ष) → भाषा आधार स्वीकार पर <span class="hl-p">"एक भाषा, एक राज्य" अस्वीकृत</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> जब राज्य विधान सभा में किसी दल को स्पष्ट बहुमत न हो तो मुख्यमंत्री नियुक्त करने की शक्ति किसके पास है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अध्यक्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुख्य न्यायाधीश</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>राज्यपाल ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>राज्यपाल</strong> <span class="hl">त्रिशंकु विधानसभा</span> में CM नियुक्त करते हैं (स्पष्ट बहुमत नहीं)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> निम्न में से किस राज्य में द्विसदनीय विधायिका है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तमिलनाडु</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजस्थान</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>केरल</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>कर्नाटक ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>कर्नाटक</strong> में विधान परिषद है (द्विसदनीय)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>6 द्विसदनीय राज्य — "KABUTM"</strong>: <strong>K</strong>arnataka (कर्नाटक), <strong>A</strong>ndhra Pradesh (आंध्र प्रदेश), <strong>B</strong>ihar (बिहार), <strong>U</strong>ttar Pradesh (उत्तर प्रदेश), <strong>T</strong>elangana (तेलंगाना), <strong>M</strong>aharashtra (महाराष्ट्र)
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">विधान परिषद</div>
+      अनु. <span class="hl"><strong>169</strong></span> = सृजन/उन्मूलन (साधारण बहुमत) · अनु. <span class="hl"><strong>171</strong></span> = संरचना<br>
+      1/3 विधानसभा से · 1/3 स्थानीय निकायों से · 1/12 शिक्षक · 1/12 स्नातक · 1/6 राज्यपाल द्वारा नामित
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> 2002 से 2007 तक भारत के 11वें राष्ट्रपति के रूप में किसने कार्य किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>डॉ. ए.पी.जे. अब्दुल कलाम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>के.आर. नारायणन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रतिभा पाटिल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आर. वेंकटरमन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>ए.पी.जे. अब्दुल कलाम</strong> | पुस्तकें: <em>इग्नाइटेड माइंड्स, विंग्स ऑफ फायर, इंडिया 2020</em></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 16 ============ -->
+    <div class="sec orange">⑯ मंत्रिपरिषद, EC व ब्लूप्रिंट 🗳️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> संघ मंत्रिपरिषद में मंत्रियों की अधिकतम संख्या कितनी सीमित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>लोकसभा का 10%</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>लोकसभा का 15% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लोकसभा का 20%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>लोकसभा का 12%</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>लोकसभा की संख्या का 15%</strong> (अनु. 75(1A), 91वें संशोधन द्वारा जोड़ा गया)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> मुख्य निर्वाचन आयुक्त का कार्यकाल क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>3 वर्ष या 62 वर्ष तक</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5 वर्ष या 60 वर्ष तक</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>6 वर्ष या 65 वर्ष तक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>6 वर्ष या 62 वर्ष तक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>6 वर्ष या 65 वर्ष</strong> (जो पहले हो)</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>निर्वाचन आयोग = भाग 15 (अनु. <span class="hl">324–329</span>)</li>
+        <li>CEC को SC न्यायाधीश की तरह हटाया जाता है; अन्य EC को राष्ट्रपति CEC की सिफारिश पर हटाते हैं</li>
+        <li>पहले CEC = <span class="hl-g">सुकुमार सेन</span> · ECI गठन 1950 · बहु-सदस्यीय 1989 · स्थायी बहु-सदस्यीय 1993</li>
+        <li>61वाँ संशोधन (1989) → मतदान आयु 21 → 18</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> भारतीय संविधान का "ब्लूप्रिंट" / ढाँचा किसे कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मॉर्ले–मिंटो सुधार</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मॉन्टेग्यू–चेम्सफोर्ड सुधार</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>भारत सरकार अधिनियम 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारतीय स्वतंत्रता अधिनियम 1947</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>GoI अधिनियम 1935</strong> — संविधान का ~40%+ इससे लिया गया (ढाँचा/"कंकाल")</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">भारतीय स्वतंत्रता अधिनियम 1947</div>
+      भारत को <span class="hl">भारत व पाकिस्तान</span> में विभाजित किया · वायसराय का पद समाप्त किया
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> किसी राज्य में राष्ट्रपति शासन की सिफारिश करने की शक्ति किसके पास है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मुख्यमंत्री</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राज्यपाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>राज्यपाल</strong> राष्ट्रपति शासन की सिफारिश करते हैं (अनु. 356; आधार 356 व 365)। मौलिक अधिकारों पर कोई प्रभाव नहीं। सर्वाधिक मणिपुर में (11 बार)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 17 ============ -->
+    <div class="sec purple">⑰ अनुसूचियाँ, अनुच्छेद 32 व वित्त 📑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> संघ स्तर पर मंत्रिपरिषद किसके प्रति उत्तरदायी होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राज्यसभा</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>लोकसभा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रधानमंत्री</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — सामूहिक रूप से <strong>लोकसभा</strong> के प्रति उत्तरदायी (अनु. 75, खंड 3)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> संविधान की कौन-सी अनुसूची में राज्यों व केंद्रशासित प्रदेशों के नाम हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पहली अनुसूची ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दूसरी अनुसूची</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चौथी अनुसूची</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>छठी अनुसूची</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पहली अनुसूची</strong> = राज्यों व UT के नाम व क्षेत्रीय क्षेत्राधिकार</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>अनुसूची</th><th>विषय</th></tr>
+      <tr><td><span class="hl"><strong>पहली</strong></span></td><td>राज्यों व UT के नाम व क्षेत्र</td></tr>
+      <tr><td><strong>दूसरी</strong></td><td>वेतन व भत्ते</td></tr>
+      <tr><td><strong>चौथी</strong></td><td>राज्यसभा में सीटों का आवंटन</td></tr>
+      <tr><td><strong>पाँचवीं</strong></td><td>अनुसूचित क्षेत्र</td></tr>
+      <tr><td><strong>छठी</strong></td><td>जनजातीय क्षेत्र — असम, त्रिपुरा, मिजोरम, मेघालय (मणिपुर नहीं)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> 42वें संशोधन को किस नाम से जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>लघु संविधान (Mini Constitution) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लघु संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>प्रमुख संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत का संविधान अधिनियम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — 42वाँ संशोधन (1976) = <strong>लघु संविधान</strong> (मौलिक कर्तव्य जोड़े; CoM की सलाह राष्ट्रपति पर बाध्यकारी)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> संविधान का अनुच्छेद 32 निम्न में से किससे संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कुछ अधिनियमों व विनियमों का विधिमान्यकरण</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>धार्मिक मामलों के प्रबंधन की स्वतंत्रता</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अधिकारों के प्रवर्तन हेतु उपचार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अल्पसंख्यकों के हितों का संरक्षण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>32</strong> = संवैधानिक उपचारों का अधिकार — आंबेडकर ने इसे संविधान की <span class="hl">"आत्मा"</span> कहा</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>5 रिट:</strong> बंदी प्रत्यक्षीकरण · परमादेश · प्रतिषेध · उत्प्रेषण · अधिकार-पृच्छा</p>
+      <ul class="hw arr">
+        <li>अनु. <span class="hl">32</span> → SC रिट जारी करने से <strong>इनकार नहीं कर सकता</strong> (यह मौलिक अधिकार है)</li>
+        <li>अनु. <span class="hl">226</span> → उच्च न्यायालय की रिट (व्यापक — कानूनी अधिकारों हेतु भी; इनकार कर सकता है)</li>
+        <li>बंदी प्रत्यक्षीकरण मामला = <span class="hl-p"><strong>ADM जबलपुर बनाम शिवकांत शुक्ला (1975)</strong></span></li>
+        <li>9वीं अनुसूची व अनु. 31B पहले संशोधन से जोड़े; आई.आर. कोएलो मामला (2008) → 1973 के बाद के कानून न्यायिक समीक्षा के अधीन (मूल ढाँचा — केशवानंद भारती, 1973)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> उपराष्ट्रपति का वेतन व भत्ते कौन तय करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संसद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>वित्त आयोग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्चतम न्यायालय</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>संसद</strong> VP का वेतन व भत्ते तय करती है</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">भारत की संचित निधि</div>
+      <span class="hl"><strong>भारित व्यय</strong></span> = गैर-मतदेय (राष्ट्रपति, VP, न्यायाधीश, CAG आदि के वेतन)<br>
+      <span class="hl-g"><strong>मतदेय व्यय</strong></span> = मतदान योग्य — केवल <strong>लोकसभा</strong> में मतदान (राज्यसभा केवल चर्चा कर सकती है)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> वित्त आयोग के अध्यक्ष व सदस्यों की नियुक्ति कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संसद</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>राष्ट्रपति</strong> FC नियुक्त करते हैं (अनु. <span class="hl">280</span>) — अर्ध-न्यायिक निकाय; सिफारिशें बाध्यकारी नहीं</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">वित्त आयोग संरचना</div>
+      1 अध्यक्ष + 4 अन्य सदस्य · अध्यक्ष = <span class="hl">सार्वजनिक मामलों</span> में अनुभवी व्यक्ति
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 18 ============ -->
+    <div class="sec blue">⑱ संविधान सभा, संयुक्त बैठक व प्रणाली 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> संविधान सभा के संवैधानिक सलाहकार कौन थे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>डॉ. बी.आर. आंबेडकर</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>बी.एन. राव ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अल्लादी कृष्णस्वामी अय्यर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>के.एम. मुंशी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>बी.एन. राव</strong> = संविधान सभा के संवैधानिक सलाहकार</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>संविधान सभा — प्रमुख तथ्य:</strong></p>
+      <ul class="hw arr">
+        <li>प्रारूप समिति गठित <span class="hl">29 अगस्त 1947</span>; अध्यक्ष = <strong>बी.आर. आंबेडकर</strong></li>
+        <li>सदस्य: अल्लादी कृष्णस्वामी अय्यर, एन. गोपालस्वामी अय्यंगार, सादुल्लाह, के.एम. मुंशी, डी.पी. खेतान, टी.टी. कृष्णमाचारी</li>
+        <li>अस्थायी अध्यक्ष = <span class="hl-g">सच्चिदानंद सिन्हा</span>; स्थायी अध्यक्ष = <strong>डॉ. राजेंद्र प्रसाद</strong></li>
+        <li>के.एम. मुंशी ने <strong>कार्य संचालन समिति</strong> का नेतृत्व किया</li>
+        <li>राष्ट्रगान व राष्ट्रगीत <span class="hl">24 जनवरी 1950</span> को अपनाया; राष्ट्रध्वज <span class="hl">22 जुलाई 1947</span>; राष्ट्रमंडल सदस्यता मई 1949 में अनुमोदित</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> संसद की संयुक्त बैठक किस अनुच्छेद के तहत प्रावधानित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 107</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 108 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 110</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 368</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — संयुक्त बैठक = अनु. <strong>108</strong> (ऑस्ट्रेलिया से ली गई); केवल <span class="hl">साधारण विधेयकों</span> हेतु</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>धन विधेयक या संविधान संशोधन विधेयक हेतु नहीं</li>
+        <li><strong>राष्ट्रपति</strong> द्वारा बुलाई जाती है; <span class="hl">लोकसभा अध्यक्ष</span> अध्यक्षता करते हैं (फिर उपाध्यक्ष, फिर राज्यसभा उपसभापति)</li>
+        <li><strong>3 बार</strong> हुई: दहेज निषेध विधेयक, बैंकिंग सेवा आयोग विधेयक, POTA</li>
+        <li>विधेयक साधारण बहुमत से पारित</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> PM किस प्रणाली के तहत "वास्तविक कार्यपालिका" है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>संसदीय प्रणाली ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति प्रणाली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एकात्मक प्रणाली</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>परिसंघ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>संसदीय प्रणाली</strong> में PM = वास्तविक कार्यपालिका (राष्ट्रपति = नाममात्र प्रधान)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky purple">
+        <div class="slbl">संसदीय (UK)</div>
+        शक्तियों का कठोर पृथक्करण नहीं<br>
+        सामूहिक उत्तरदायित्व (अनु. 75(3))<br>
+        मंत्री को <span class="hl">6 महीने</span> में सदन की सदस्यता लेनी होती है (अनु. 75(5))
+      </div>
+      <div class="sticky red">
+        <div class="slbl">संघवाद — किसने क्या कहा</div>
+        आइवर जेनिंग्स → केंद्रोन्मुखी प्रवृत्ति वाला संघ<br>
+        ग्रानविले ऑस्टिन → सहकारी संघवाद<br>
+        के.सी. व्हेयर → अर्ध-संघीय<br>
+        मॉरिस जोन्स → सौदेबाजी संघवाद
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> वीटो के संबंध में — किस विधेयक पर निलंबनकारी वीटो लागू नहीं, और किस विधेयक पर कोई वीटो नहीं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>निलंबनकारी वीटो → धन विधेयक पर नहीं; कोई वीटो नहीं → संविधान संशोधन विधेयक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कोई वीटो नहीं → धन विधेयक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>निलंबनकारी वीटो → केवल साधारण विधेयक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आत्यंतिक वीटो → संविधान संशोधन विधेयक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — निलंबनकारी वीटो धन विधेयक पर नहीं; संविधान संशोधन विधेयक = कोई वीटो नहीं (24वाँ संशोधन, 1971 → राष्ट्रपति को अनुमति देनी होगी)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 19 ============ -->
+    <div class="sec red">⑲ आपातकाल, CAG व अनुच्छेद 200 🚨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> भारत में किस प्रकार का आपातकाल कभी घोषित नहीं किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रीय आपातकाल (352)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति शासन (356)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वित्तीय आपातकाल (360) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सभी घोषित किए गए</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>वित्तीय आपातकाल (अनु. 360)</strong> कभी नहीं लगाया गया</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1962</span> राष्ट्रीय आपातकाल — युद्ध / बाह्य आक्रमण</div>
+      <div class="tl-item"><span class="yr">1971</span> राष्ट्रीय आपातकाल — बाह्य आक्रमण</div>
+      <div class="tl-item"><span class="yr">1975</span> राष्ट्रीय आपातकाल — <span class="hl">आंतरिक अशांति</span> (44वाँ संशोधन → "सशस्त्र विद्रोह" किया गया)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> 26वाँ संवैधानिक संशोधन (1971) क्यों महत्वपूर्ण है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौलिक कर्तव्य जोड़े</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दलबदल विरोधी कानून</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रिवी पर्स समाप्त किया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संपत्ति का अधिकार हटाया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — 26वें संशोधन ने <strong>प्रिवी पर्स समाप्त</strong> किया (पूर्व रियासतों के शासकों को दी जाने वाली पेंशन)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> कौन-सा संवैधानिक निकाय संघ व राज्यों के लेखाओं का लेखापरीक्षण करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>वित्त आयोग</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>CAG ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>UPSC</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>CAG</strong> (नियंत्रक व महालेखापरीक्षक) — भाग V का अध्याय 5, अनु. <span class="hl">148–151</span></div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>CAG = <span class="hl"><strong>लोक धन का संरक्षक</strong></span>; PAC का मार्गदर्शक, मित्र व दार्शनिक</li>
+        <li>लोक लेखा समिति (PAC) = 22 सदस्य (15 LS + 7 RS)</li>
+        <li>प्राक्कलन समिति = 30 सदस्य (सभी लोकसभा से)</li>
+        <li>पहले CAG = <span class="hl-g">वी. नरहरि राव</span> · भाग 14-A = अधिकरण (323A प्रशासनिक, 323B अन्य) 42वें संशोधन से जोड़ा गया</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> संविधान के अनुच्छेद 200 के तहत क्या प्रावधान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति की विधेयक को अनुमति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राज्यपाल: विधेयक को अनुमति / रोकना / राष्ट्रपति हेतु आरक्षित करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>धन विधेयक की परिभाषा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राज्यपाल की अध्यादेश शक्ति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>200</strong> = राज्यपाल विधेयक को अनुमति, रोक, या राष्ट्रपति हेतु आरक्षित कर सकते हैं। अनु. <strong>201</strong> = आरक्षित विधेयक पर राष्ट्रपति की कार्रवाई।</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>अनुच्छेद रूपांतरण:</strong> अनु. 110 तक → <strong>89</strong> जोड़ें (संघ → राज्य); अनु. 112 से आगे → <strong>90</strong> जोड़ें। (अनु. 200 छोटा अपवाद है — राज्यपाल का विधेयक आरक्षित करना।)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 20 ============ -->
+    <div class="sec green">⑳ वित्त, EC, महाधिवक्ता व राज्यसभा 💼</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> केंद्र व राज्यों के बीच करों के वितरण की सिफारिश कौन-सा निकाय करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>वित्त आयोग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नीति आयोग</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>CAG</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>RBI</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>वित्त आयोग</strong> (अनु. 280) केंद्र व राज्यों के बीच करों के वितरण की सिफारिश करता है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> भारत में राष्ट्रीय व राज्य दलों के लिए आरक्षित चुनाव चिह्न कौन तय करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उच्चतम न्यायालय</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>निर्वाचन आयोग ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सदन का अध्यक्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>निर्वाचन आयोग</strong> आरक्षित दल चिह्न तय करता है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> राज्य के महाधिवक्ता (Advocate General) को नियुक्त करने की शक्ति किसके पास है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राज्यपाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुख्यमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्च न्यायालय के मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>राज्यपाल</strong> महाधिवक्ता नियुक्त करते हैं (अनु. <span class="hl">165</span>) — राज्य का सर्वोच्च विधि अधिकारी, HC न्यायाधीश बनने हेतु योग्य</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> राज्यसभा की स्थायी प्रकृति का सही वर्णन कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हर 5 वर्ष में भंग</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राष्ट्रपति द्वारा भंग</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1/3 सदस्य हर 2 वर्ष में सेवानिवृत्त; कभी भंग नहीं ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सभी सदस्य एक साथ सेवानिवृत्त</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — राज्यसभा (अनु. <span class="hl">80</span>) = स्थायी सदन; <strong>1/3 हर 2 वर्ष में सेवानिवृत्त</strong>; प्रत्येक सदस्य का कार्यकाल = 6 वर्ष</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 21 ============ -->
+    <div class="sec orange">㉑ नागरिकता, राज्य, कर्तव्य व DPSP स्रोत 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> नागरिकता के प्रावधान संविधान के किस भाग में हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भाग I</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>भाग II ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भाग III</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भाग IV</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>भाग II</strong> (अनुच्छेद 5–11) = नागरिकता</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">नागरिकता अनुच्छेद</div>
+      भाग I → संघ व उसका राज्यक्षेत्र · भाग II → नागरिकता (5–11)<br>
+      अनु. 9 → स्वेच्छा से विदेशी नागरिकता लेना = भारतीय नागरिकता समाप्त<br>
+      अनु. 10 → नागरिकता अधिकारों की निरंतरता · अनु. 11 → <span class="hl">संसद नागरिकता को विनियमित करती है</span> · नागरिकता अधिनियम, 1955
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> नए राज्य बनाने या मौजूदा राज्यों की सीमाएँ बदलने की शक्ति किसके पास है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संसद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उच्चतम न्यायालय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राज्य विधानमंडल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>संसद</strong> अनु. <span class="hl">3</span> के तहत (साधारण बहुमत से)। अनु. 169 → विधान परिषद का सृजन/उन्मूलन साधारण बहुमत से।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> किसी भारतीय राज्य की पहली महिला राज्यपाल कौन थीं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सरोजिनी नायडू ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सुचेता कृपलानी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>विजया लक्ष्मी पंडित</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>इंदिरा गांधी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सरोजिनी नायडू</strong> = पहली महिला राज्यपाल (उत्तर प्रदेश)</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>पहली महिला</th><th>उपलब्धि</th></tr>
+      <tr><td><span class="hl"><strong>सरोजिनी नायडू</strong></span></td><td>पहली महिला राज्यपाल (UP); पहली भारतीय महिला कांग्रेस अध्यक्ष (1925, कानपुर)</td></tr>
+      <tr><td><strong>सुचेता कृपलानी</strong></td><td>पहली महिला मुख्यमंत्री (UP)</td></tr>
+      <tr><td><strong>विजया लक्ष्मी पंडित</strong></td><td>UN महासभा की पहली महिला अध्यक्ष</td></tr>
+      <tr><td><strong>इंदिरा गांधी</strong></td><td>भारत रत्न पाने वाली पहली महिला (1971)</td></tr>
+      <tr><td><strong>मदर टेरेसा</strong></td><td>नोबेल शांति पुरस्कार, 1979</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> मौलिक कर्तव्यों की सिफारिश किस समिति ने की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सरदार स्वर्ण सिंह समिति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बलवंत राय मेहता समिति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सरकारिया आयोग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अशोक मेहता समिति</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सरदार स्वर्ण सिंह समिति</strong> ने मौलिक कर्तव्यों की सिफारिश की (भाग IV-A, अनु. 51A)</div>
+    </div>
+
+    <div class="sticky pink">
+      <div class="slbl">मौलिक कर्तव्य</div>
+      स्वर्ण सिंह ने 8 सुझाए → <span class="hl"><strong>42वें संशोधन से 10 जोड़े</strong></span><br>
+      <span class="hl-g"><strong>11वाँ कर्तव्य 86वें संशोधन (2002) से</strong></span> → कुल <strong>11</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> राज्य के नीति-निदेशक तत्व (DPSP) कहाँ से लिए गए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कनाडा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>USA</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>आयरलैंड ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — DPSP <strong>आयरलैंड</strong> से लिया गया 🧠 "RED" → राज्यसभा नामांकन, निर्वाचन रीति, DPSP</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> कौन-सा अनुच्छेद संघ की राजभाषा से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 343 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 324</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 280</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 312</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>343</strong> = संघ की राजभाषा (भाग 17: 343–351)</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">केंद्र–राज्य संबंध</div>
+      विधायी → अनु. <span class="hl">245–255</span> · प्रशासनिक → <span class="hl">256–263</span> · वित्तीय → <span class="hl">268–293</span><br>
+      संविधान का भाग XI व भाग XII
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 22 ============ -->
+    <div class="sec purple">㉒ संशोधन शक्ति, अनुसूचियाँ व आपातकाल गणना 📝</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> कौन-सा अनुच्छेद संसद को संविधान संशोधन की अनुमति देता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 352</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 370</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 368 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 356</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>368</strong> = संविधान संशोधन की संसद की शक्ति</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>अनुच्छेद</th><th>विषय</th></tr>
+      <tr><td><strong>33</strong></td><td>सशस्त्र बलों हेतु FR प्रतिबंधित</td></tr>
+      <tr><td><strong>34</strong></td><td>मार्शल लॉ</td></tr>
+      <tr><td><strong>35</strong></td><td>कुछ FR पर केवल संसद कानून बना सकती है</td></tr>
+      <tr><td><strong>356</strong></td><td>राष्ट्रपति शासन</td></tr>
+      <tr><td><strong>370</strong></td><td>J&amp;K को विशेष दर्जा (अब निरस्त)</td></tr>
+      <tr><td><span class="hl"><strong>368</strong></span></td><td>संविधान का संशोधन</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> कौन-सी अनुसूची संघ व राज्यों के बीच शक्ति विभाजन निर्दिष्ट करती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पाँचवीं अनुसूची</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सातवीं अनुसूची ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नौवीं अनुसूची</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दसवीं अनुसूची</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>सातवीं अनुसूची</strong> = संघ सूची, राज्य सूची व समवर्ती सूची</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>अनुसूची</th><th>विषय</th></tr>
+      <tr><td><strong>पाँचवीं</strong></td><td>अनुसूचित क्षेत्र</td></tr>
+      <tr><td><span class="hl"><strong>सातवीं</strong></span></td><td>3 सूचियाँ (शक्ति विभाजन)</td></tr>
+      <tr><td><strong>नौवीं</strong></td><td>भूमि सुधार (पहला संशोधन; अनु. 31A व 31B) — आई.आर. कोएलो मामला</td></tr>
+      <tr><td><strong>दसवीं</strong></td><td>दलबदल विरोधी कानून (52वाँ संशोधन)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> पहला संशोधन कब हुआ, और अब कितनी अनुसूचियाँ हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पहला संशोधन 1951; 8 → 12 अनुसूचियाँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1949; 10 अनुसूचियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1952; 11 अनुसूचियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1950; 9 अनुसूचियाँ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पहला संशोधन, 1951</strong> (नेहरू काल)। अनुसूचियाँ: मूल रूप से <span class="hl">8</span>, अब <span class="hl">12</span>।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> संविधान में कितने प्रकार के आपातकाल का प्रावधान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>3 प्रकार</strong>: राष्ट्रीय (352), राष्ट्रपति शासन (356), वित्तीय (360)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 23 ============ -->
+    <div class="sec red">㉓ संरक्षक, UT, महाभियोग व संशोधन ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> "संविधान का संरक्षक" किसे कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राष्ट्रपति</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>उच्चतम न्यायालय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>महान्यायवादी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>उच्चतम न्यायालय</strong> संविधान का संरक्षक/रक्षक है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> केंद्रशासित प्रदेशों का प्रशासन कौन करता है (भाग 8)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>संसद</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मुख्यमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राज्यपाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>राष्ट्रपति द्वारा नियुक्त प्रशासक ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — UT (भाग 8) का प्रशासन <strong>राष्ट्रपति द्वारा नियुक्त प्रशासकों</strong> द्वारा होता है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> भारत के राष्ट्रपति के महाभियोग की शुरुआत हेतु कितने सदस्य आवश्यक हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सदन का 1/2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>सदन के कुल सदस्यों का 1/4 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सदन का 2/3</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>100 सदस्य</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — राष्ट्रपति का महाभियोग (अनु. 61) सदन के <strong>1/4 सदस्यों</strong> द्वारा शुरू; विशेष बहुमत से पारित</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw"><strong>SC/HC न्यायाधीशों</strong> को हटाने हेतु 100 लोकसभा या 50 राज्यसभा सदस्य आवश्यक (न्यायाधीश जाँच अधिनियम, 1968)। <span class="hl">अब तक कोई राष्ट्रपति नहीं हटाया गया; कोई न्यायाधीश सफलतापूर्वक महाभियोजित नहीं हुआ।</span> वी. रामास्वामी = पहले न्यायाधीश जिनके विरुद्ध महाभियोग प्रस्ताव लाया गया (1991)। यह <span class="hl-g">अर्ध-न्यायिक प्रक्रिया</span> है।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> संविधान का 52वाँ संशोधन किससे संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अधिकरण</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>दलबदल विरोधी कानून (10वीं अनुसूची) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सहकारी समितियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पंचायती राज</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 52वाँ संशोधन (1985) = <strong>दलबदल विरोधी कानून / 10वीं अनुसूची</strong>। (42वाँ → अधिकरण भाग 14-A; 97वाँ → सहकारी; 73वाँ → पंचायती राज)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 24 ============ -->
+    <div class="sec blue">㉔ राज्यसभा, निर्वाचन आयु, VP व राष्ट्रपति 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> उपराष्ट्रपति की अनुपस्थिति में राज्यसभा की अध्यक्षता कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>लोकसभा अध्यक्ष</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>उपसभापति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राष्ट्रपति</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रधानमंत्री</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — VP की अनुपस्थिति में <strong>उपसभापति</strong> राज्यसभा की अध्यक्षता करते हैं</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> लोकसभा चुनाव लड़ने हेतु न्यूनतम आयु क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>18 वर्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>21 वर्ष</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>25 वर्ष ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>30 वर्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — लोकसभा हेतु <strong>25 वर्ष</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>न्यूनतम आयु चार्ट:</strong></p>
+      <ul class="hw arr">
+        <li>मतदान / पंचायत → <span class="hl">18 वर्ष</span></li>
+        <li>लोकसभा → <span class="hl">25 वर्ष</span></li>
+        <li>राज्यसभा → <span class="hl">30 वर्ष</span></li>
+        <li>राष्ट्रपति / उपराष्ट्रपति / राज्यपाल → <span class="hl">35 वर्ष</span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> उपराष्ट्रपति अपना त्यागपत्र किसे सौंपता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अध्यक्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — उपराष्ट्रपति अपना त्यागपत्र <strong>राष्ट्रपति</strong> को सौंपता है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> राष्ट्रपति के पद में रिक्ति (मृत्यु के कारण) को कितने समय में भरा जाना चाहिए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>3 महीने</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>6 महीने ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 वर्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>30 दिन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — राष्ट्रपति के पद की रिक्ति <strong>6 महीने</strong> में भरी जानी चाहिए</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> प्रधानमंत्री की नियुक्ति कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लोकसभा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अध्यक्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>राष्ट्रपति</strong> प्रधानमंत्री की नियुक्ति करते हैं (अनु. 75)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 25 ============ -->
+    <div class="sec teal">㉕ आठवीं अनुसूची, संपत्ति का अधिकार व CJI 👨‍⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> 92वें संशोधन द्वारा आठवीं अनुसूची में कौन-सी भाषाएँ जोड़ी गईं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सिंधी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कोंकणी, मणिपुरी, नेपाली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बोडो, डोगरी, संथाली, मैथिली</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>बोडो, डोगरी, संथाली, मैथिली (92वाँ संशोधन) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — 92वें संशोधन ने <strong>बोडो, डोगरी, संथाली व मैथिली</strong> जोड़ीं</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">आठवीं अनुसूची — भाषाएँ (14 → 22)</div>
+      <span class="hl"><strong>21वाँ संशोधन</strong></span> → सिंधी<br>
+      <span class="hl-g"><strong>71वाँ संशोधन</strong></span> → कोंकणी, मणिपुरी, नेपाली<br>
+      <span class="hl-p"><strong>92वाँ संशोधन</strong></span> → बोडो, डोगरी, संथाली, मैथिली
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> कौन-सा मौलिक अधिकार संविधान से हटाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>समानता का अधिकार</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>संपत्ति का अधिकार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>स्वतंत्रता का अधिकार</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संवैधानिक उपचारों का अधिकार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>संपत्ति का अधिकार</strong> 44वें संशोधन (1978) से हटाया गया; अनु. <span class="hl">300A</span> (भाग XII) के तहत कानूनी अधिकार बनाया गया</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">संपत्ति का अधिकार अब <span class="hl"><strong>कानूनी अधिकार</strong></span> है (मौलिक नहीं)। इसके लिए रिट <span class="hl-p">केवल उच्च न्यायालय</span> (अनु. 226) जारी कर सकता है, अनु. 32 के तहत नहीं।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q87.</span> भारत के मुख्य न्यायाधीश की नियुक्ति कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>निवर्तमान CJI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>संसद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>राष्ट्रपति</strong> भारत के मुख्य न्यायाधीश की नियुक्ति करते हैं</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">भारत के मुख्य न्यायाधीश — ट्रिविया</div>
+      पहले CJI = <span class="hl"><strong>एच.जे. कनिया</strong></span><br>
+      संभावित पहली महिला CJI = <span class="hl-g"><strong>बी.वी. नागरत्ना</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — अनुच्छेद व प्रमुख तथ्य</div>
+    <table class="qr-t">
+      <tr><th>विषय</th><th>अनुच्छेद / तथ्य</th></tr>
+      <tr><td>समवर्ती सूची किससे ली गई</td><td>ऑस्ट्रेलिया</td></tr>
+      <tr><td>अवशिष्ट शक्तियाँ / राज्यपाल</td><td>कनाडा</td></tr>
+      <tr><td>DPSP / राष्ट्रपति निर्वाचन / RS नामांकन</td><td>आयरलैंड (RED)</td></tr>
+      <tr><td>प्रस्तावना व मौलिक अधिकार</td><td>USA</td></tr>
+      <tr><td>राज्यों व संघ का दायित्व</td><td>अनु. 256</td></tr>
+      <tr><td>संघ की कार्यपालिका शक्ति</td><td>अनु. 53</td></tr>
+      <tr><td>मंत्रिपरिषद राष्ट्रपति को सहायता</td><td>अनु. 74</td></tr>
+      <tr><td>CoM लोकसभा के प्रति उत्तरदायी</td><td>अनु. 75(3)</td></tr>
+      <tr><td>राष्ट्रपति/VP निर्वाचन विवाद</td><td>अनु. 71 (SC)</td></tr>
+      <tr><td>राज्यपाल की विवेकाधीन / अध्यादेश</td><td>अनु. 163 / 213</td></tr>
+      <tr><td>राज्यपाल का वेतन</td><td>अनु. 158 (संसद)</td></tr>
+      <tr><td>संयुक्त बैठक</td><td>अनु. 108</td></tr>
+      <tr><td>धन विधेयक परिभाषा / प्रक्रिया</td><td>अनु. 110 / 109</td></tr>
+      <tr><td>संवैधानिक उपचारों का अधिकार</td><td>अनु. 32</td></tr>
+      <tr><td>अंतर-राज्यीय नदी जल विवाद</td><td>अनु. 262</td></tr>
+      <tr><td>अंतर-राज्य परिषद</td><td>अनु. 263</td></tr>
+      <tr><td>वित्त आयोग</td><td>अनु. 280</td></tr>
+      <tr><td>संविधान का संशोधन</td><td>अनु. 368</td></tr>
+      <tr><td>राष्ट्रीय / राष्ट्रपति शासन / वित्तीय आपातकाल</td><td>352 / 356 / 360</td></tr>
+      <tr><td>CAG</td><td>अनु. 148–151</td></tr>
+      <tr><td>नागरिकता</td><td>भाग II (अनु. 5–11)</td></tr>
+      <tr><td>राजभाषा</td><td>भाग 17 (343–351)</td></tr>
+      <tr><td>पहला संशोधन</td><td>1951</td></tr>
+      <tr><td>42वाँ संशोधन</td><td>लघु संविधान (1976)</td></tr>
+      <tr><td>97वाँ संशोधन</td><td>सहकारी समितियाँ</td></tr>
+      <tr><td>100वाँ संशोधन</td><td>भूमि सीमा (बांग्लादेश)</td></tr>
+      <tr><td>26वाँ संशोधन</td><td>प्रिवी पर्स समाप्त (1971)</td></tr>
+      <tr><td>CEC कार्यकाल</td><td>6 वर्ष या 65 वर्ष</td></tr>
+      <tr><td>NHRC अध्यक्ष कार्यकाल</td><td>3 वर्ष या 70 वर्ष</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखें!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>भाग V → राज्य (भाग VI): अनु. 110 तक <span class="hl"><strong>89</strong></span> जोड़ें, 112 से <span class="hl"><strong>90</strong></span> जोड़ें</li>
+          <li><span class="hl-g"><strong>वन = समवर्ती</strong></span>, बैंकिंग = संघ (भ्रमित न हों!)</li>
+          <li>NHRC, EC, FC = कौन सांविधिक बनाम संवैधानिक है, याद रखें</li>
+          <li>धन विधेयक = केवल लोकसभा; संविधान संशोधन = दोनों सदन समान</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>अनुच्छेद 39 → 🧠 <span class="hl"><strong>"L D C goes to P H C"</strong></span></li>
+          <li>द्विसदनीय राज्य → 🧠 <span class="hl-g"><strong>"KABUTM"</strong></span></li>
+          <li>संपत्ति का अधिकार = कानूनी अधिकार (अनु. 300A), मौलिक नहीं</li>
+          <li>वित्तीय आपातकाल (360) = भारत में कभी नहीं लगा</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 SSC GD — पॉलिटी PYQ नोट्स समाप्त</div>
+      <strong>सभी प्रश्न शामिल ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
