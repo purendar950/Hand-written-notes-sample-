@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Polity PYQ | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — Polity PYQ Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · Indian Polity</div>
+    <div class="cover-title">⚖️ Polity PYQ — Topper Notes</div>
+    <div class="cover-sub">Indian Constitution | All Questions, Options & Answers Covered</div>
+    <div class="cover-badge">🏛️ Constitution · 📜 British Acts · ✊ Fundamental Rights · 📘 DPSP · 🚨 Emergency · 🗳️ Bodies</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① Seventh Schedule & Centre–State Powers ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> According to the Indian Constitution, which of the following pair of subject &amp; list is correct? (1) Adoption &amp; Succession → State List (2) Trade &amp; Commerce → Concurrent List</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Only 1</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Both 1 &amp; 2</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Neither 1 nor 2 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Both wrong (interchanged). Adoption &amp; Succession → <strong>Concurrent List</strong>; Trade &amp; Commerce → <strong>State List</strong></div>
+    </div>
+
+    <div class="sub">7th Schedule — Three Lists</div>
+    <table class="hw-t">
+      <tr><th>List</th><th>Original</th><th>Now</th><th>Key Subjects</th></tr>
+      <tr><td><span class="hl"><strong>Union List</strong></span></td><td>97</td><td><span class="hl-g">100</span></td><td>Defence, Atomic Energy, Foreign Affairs, Banking, Railways, Post &amp; Telegraph, Airways, Foreign Trade, Currency &amp; Coins</td></tr>
+      <tr><td><span class="hl"><strong>State List</strong></span></td><td>66</td><td><span class="hl-g">61</span></td><td>Agriculture, Police, Prison, Local Govt, Public Health, Land, <span class="hl-p">Trade &amp; Commerce</span>, Animal Husbandry</td></tr>
+      <tr><td><span class="hl"><strong>Concurrent List</strong></span></td><td>47</td><td><span class="hl-g">52</span></td><td>Education, Forests, Trade Unions, Adulteration, <span class="hl-p">Adoption &amp; Succession</span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">DOCTRINE OF REPUGNANCY</div>
+        Both Parliament &amp; State Legislature can make laws on Concurrent List.<br>
+        If both clash → <span class="hl"><strong>Parliament's law prevails</strong></span><br>
+        Exception: State law prevails if State Bill was reserved for President by Governor under <span class="hl-g"><strong>Article 200</strong></span>
+      </div>
+      <div class="sticky green">
+        <div class="slbl">BORROWED FROM</div>
+        Concurrent List → <span class="hl"><strong>Australia</strong></span><br>
+        Joint Sitting (Art 108) → Australia<br>
+        Residuary Powers with Centre → <span class="hl-g"><strong>Canada</strong></span><br>
+        <span class="trick" style="display:block;margin-top:6px;padding:6px 10px">🧠 <strong>C for Centre = C for Canada</strong></span>
+      </div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>5 Conditions — Parliament can legislate on State List subjects:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl"><strong>Art 249</strong></span> — Rajya Sabha empowers Parliament via special majority</li>
+        <li><span class="hl"><strong>Art 250</strong></span> — During National Emergency</li>
+        <li><span class="hl"><strong>Art 252</strong></span> — Two or more states request Parliament</li>
+        <li><span class="hl"><strong>Art 253</strong></span> — To enforce international treaties</li>
+        <li><span class="hl"><strong>Art 356</strong></span> — When President's Rule is imposed</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Article 256 of the Constitution is related to which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Power of Union to confer powers on States (258)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Power of States to confer functions on Union (258A)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jurisdiction of Union over territories outside India (260)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Obligation of States &amp; Union ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Art 256 = <strong>Obligation of States &amp; the Union</strong> (state must exercise executive functions to comply with laws made by Parliament)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Article</th><th>Provision</th></tr>
+      <tr><td><span class="hl"><strong>256</strong></span></td><td>Obligation of States &amp; Union</td></tr>
+      <tr><td><strong>258</strong></td><td>Power of Union to confer powers on States</td></tr>
+      <tr><td><strong>258A</strong></td><td>Power of State to confer functions beneficial to Union (Governor, after consulting Union, may delegate)</td></tr>
+      <tr><td><strong>260</strong></td><td>Jurisdiction of the Union over territories outside India</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② Part V Structure, Civil Code &amp; NHRC 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which chapter of Part V of the Constitution is related to the Executive?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Chapter 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chapter 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chapter 3</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chapter 4</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Chapter 1 = <strong>The Union Executive</strong> (President, Vice-President, PM, Council of Ministers, Attorney General)</div>
+    </div>
+
+    <div class="sub">Part V — 5 Chapters Breakdown</div>
+    <table class="hw-t pur">
+      <tr><th>Chapter</th><th>Topic</th><th>Articles</th></tr>
+      <tr><td><span class="hl"><strong>Ch 1</strong></span></td><td>Union Executive (Pres → PM duties)</td><td>52 – 78</td></tr>
+      <tr><td><strong>Ch 2</strong></td><td>Parliament</td><td>79 – 122</td></tr>
+      <tr><td><strong>Ch 3</strong></td><td>Legislative power of President (Ordinance)</td><td><span class="hl-g">123 only</span></td></tr>
+      <tr><td><strong>Ch 4</strong></td><td>The Supreme Court</td><td>124 – 147</td></tr>
+      <tr><td><strong>Ch 5</strong></td><td>CAG</td><td>148 – 151</td></tr>
+    </table>
+    <div class="sticky">
+      <div class="slbl">REMEMBER</div>
+      Part V = Union (5 chapters) · Part VI = States (6 chapters) · Attorney General = <span class="hl"><strong>Article 76</strong></span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> The Bharatiya Nagarik Suraksha Sanhita (Indian Civil Security Code) requires completion of investigations into sexual offences within how much time?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>6 months</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1 year</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2 months ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 months</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Investigation into sexual offences must be completed within <strong>2 months</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> What is the tenure of the Chairperson of the NHRC (National Human Rights Commission)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>3 years or till 70 years of age ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5 years or till 65 years</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>6 years or till 62 years</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 years or till 65 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>3 years or till 70 years</strong> (whichever earlier) — changed by <span class="hl">2019 Amendment</span></div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">NHRC is <span class="hl"><strong>NOT a constitutional body</strong></span> — it is a <span class="hl-g"><strong>statutory body</strong></span> formed by the <strong>Protection of Human Rights Act, 1993</strong>.</p>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Selection Committee that recommends NHRC Chairperson to President:</strong></p>
+      <ul class="hw chk">
+        <li>Prime Minister</li>
+        <li>Union Home Minister</li>
+        <li>Speaker of Lok Sabha</li>
+        <li>Deputy Chairman of Rajya Sabha</li>
+        <li>Leaders of Opposition in both Houses</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec orange">③ Constitutional Development — British Acts 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which Act gave representation to Indians in the Central Legislative Assembly for the first time?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Indian Councils Act 1861</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Indian Councils Act 1892</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Indian Councils Act 1909 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Government of India Act 1919</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Indian Councils Act <strong>1909</strong> = <span class="hl">Morley–Minto Reforms</span> (first representation + separate electorates for Muslims)</div>
+    </div>
+
+    <div class="sub">British Acts — Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1861</span> Portfolio system; <span class="hl">ordinance power to Viceroy</span>; decentralisation; restored powers of Bombay &amp; Madras; 3 Indians nominated to Council</div>
+      <div class="tl-item"><span class="yr">1892</span> First power to <span class="hl-g"><strong>discuss the budget</strong></span>; strength of Council increased</div>
+      <div class="tl-item"><span class="yr">1909</span> <strong>Morley–Minto</strong>: Separate electorates for Muslims · <span class="hl"><strong>Satyendra Prasad Sinha</strong></span> = 1st Indian on Viceroy's Executive Council · Council 16 → 60 · supplementary questions &amp; resolutions on budget</div>
+      <div class="tl-item"><span class="yr">1919</span> <strong>Montagu–Chelmsford</strong>: Diarchy in provinces · bicameral legislature at centre · separate electorates extended to Sikhs &amp; Anglo-Indian Christians</div>
+      <div class="tl-item"><span class="yr">1935</span> Removed diarchy from provinces (<span class="hl-p">provincial autonomy</span>); introduced diarchy at the centre</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>1773 Act</strong> → Governor of Bengal became <em>Governor-General of Bengal</em> · <strong>1833 Act</strong> → became <em>Governor-General of India</em> (centralisation) · <strong>1861</strong> → decentralisation again
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec purple">④ Parliament — Privileges &amp; Question Hour 🗣️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Which Article provides that courts shall not inquire into the proceedings of the (State) Legislature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 213</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 211</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 212 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 208</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>212</strong> = courts not to inquire into proceedings of State Legislature (Part V → Part VI: add 90)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Article (Parliament)</th><th>Content</th><th>State (+90)</th></tr>
+      <tr><td><strong>120</strong></td><td>Language used in Parliament</td><td>210</td></tr>
+      <tr><td><strong>121</strong></td><td>Parliament cannot discuss conduct of judges</td><td>211</td></tr>
+      <tr><td><strong>122</strong></td><td>Courts not to inquire into proceedings</td><td><span class="hl">212</span></td></tr>
+      <tr><td><strong>123</strong></td><td>President's Ordinance power</td><td><span class="hl-g">213 (Governor)</span></td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Which of the following is NOT a type of question asked in the Indian Parliament?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Starred Question</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Unstarred Question</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Urgent Notice Question ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Short Notice Question</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Urgent Notice Question</strong> is NOT a valid type</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw">Parliamentary proceedings begin at <span class="hl"><strong>11:00 AM</strong></span> with <strong>Question Hour</strong>. Four valid types:</p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Starred</strong></span> — marked with asterisk, <strong>oral answer</strong> → supplementary questions allowed</li>
+        <li><span class="hl-g"><strong>Unstarred</strong></span> — <strong>written answer</strong> → no supplementary questions</li>
+        <li><span class="hl-b"><strong>Short Notice</strong></span> — needs prior notice (urgent public matters)</li>
+        <li><span class="hl-p"><strong>Question by a Private Member</strong></span> — a member who is not a minister</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec green">⑤ DPSP &amp; Finance Commission 📘</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which statement regarding the DPSP is correct? (1) Art 39 → secure social order for welfare of people (2) Art 40 → organisation of Village Panchayats</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Only 1</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Only 2 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Both</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Neither</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Only 2 correct. Art <strong>38</strong> = welfare/social order (not 39); Art <strong>40</strong> = Village Panchayats ✔</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Article 39 → "L D C goes to P H C"</strong><br>
+      L = Livelihood · D = Distribution of material resources · C = prevent Concentration of wealth · P = equal Pay for equal work · H = Health &amp; strength of workers · C = Children's healthy development (added by <span class="hl">42nd Amendment</span>)
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">OTHER DPSP ARTICLES</div>
+      Art 41 → Right to work &amp; public assistance<br>
+      Art 43 → Living wage for workers<br>
+      Art 43A → Workers' participation in management (<span class="hl">42nd Amendment</span>)<br>
+      Art 44 → Uniform Civil Code · Art 45 → Early childhood care
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Which Finance Commission was the first to recommend GST compensation to states?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>12th</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>13th ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>14th</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>15th</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>13th Finance Commission</strong> (Chairman: <span class="hl">Vijay Kelkar</span>) | Finance Commission = <strong>Article 280</strong></div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Finance Commission</th><th>Chairman</th></tr>
+      <tr><td>13th (first GST compensation)</td><td><span class="hl">Vijay Kelkar</span></td></tr>
+      <tr><td>14th</td><td>Y.V. Reddy</td></tr>
+      <tr><td>15th</td><td>N.K. Singh</td></tr>
+      <tr><td>16th (current)</td><td><span class="hl-g">Arvind Panagariya</span></td></tr>
+    </table>
+    <div class="tip-box">
+      <p class="hw">First committee to recommend GST = <span class="hl"><strong>Kelkar Committee</strong></span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec red">⑥ Lists, Budget Acts &amp; Polity GK 📑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which of the following is part of the Concurrent List of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Forest ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Banking</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Railways</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Defence</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Forest</strong> is in Concurrent List. Banking is in the <span class="hl">Union List</span>.</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>42nd Amendment shifted 5 subjects: State List → Concurrent List</strong></p>
+      <ul class="hw chk">
+        <li>Education</li>
+        <li>Forests</li>
+        <li>Protection of Wild Animals &amp; Birds</li>
+        <li>Weights &amp; Measures</li>
+        <li>Administration of Justice</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Which Act first allowed budget discussions in the Indian Legislature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Act of 1892 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Act of 1861</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Act of 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Act of 1919</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1892 Act</strong> gave power to discuss budget. <span class="hl">1909</span> gave supplementary questions &amp; resolutions.</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">1919 ACT — REMEMBER</div>
+      Introduced a <span class="hl"><strong>Public Service Commission</strong></span> · introduced direct elections · diarchy in provinces · bicameral legislature at the centre
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which state had the world's first democratically elected communist government with E.M.S. Namboodiripad as CM?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>West Bengal</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Kerala ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tripura</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Andhra Pradesh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Kerala</strong> had the first democratically elected communist government</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>CPI</strong> established <span class="hl">1920 in Tashkent (Uzbekistan)</span> by <strong>M.N. Roy</strong>; formalised in <span class="hl-g">Kanpur, 1925</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> In which year did Atal Bihari Vajpayee become the Prime Minister of India for the first time?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1996 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1998</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1999</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1991</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1996</strong> (lasted only <span class="hl">13 days</span>, resigned due to no-confidence motion)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec blue">⑦ President, Vetoes &amp; Fundamental Rights 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Who was the only person to be elected President of India as an independent candidate?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Giani Zail Singh</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Neelam Sanjiva Reddy</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>V.V. Giri ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Fakhruddin Ali Ahmed</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>V.V. Giri</strong> (4th President) won as an independent candidate</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Zakir Hussain died in office → V.V. Giri (then VP) resigned to contest</li>
+        <li>CJI <span class="hl">M. Hidayatullah</span> became Acting President until V.V. Giri took over</li>
+        <li><strong>Fakhruddin Ali Ahmed</strong> = President during the <span class="hl-p">1975 Emergency</span></li>
+        <li><strong>Giani Zail Singh</strong> = <span class="hl-g">pocket-vetoed</span> the Postal Amendment Bill, 1987</li>
+      </ul>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">3 VETOES OF THE PRESIDENT</div>
+      <span class="hl"><strong>Absolute Veto</strong></span> = refuse assent<br>
+      <span class="hl-g"><strong>Suspensive Veto</strong></span> = return the bill<br>
+      <span class="hl-p"><strong>Pocket Veto</strong></span> = no response at all
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which fundamental right protects the right of minorities to establish educational institutions?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 25</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 28</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 29</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Article 30 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Art <strong>30</strong> = minorities may establish &amp; administer educational institutions</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Article</th><th>Right</th></tr>
+      <tr><td><strong>25</strong></td><td>Freedom of conscience, practice &amp; propagation of religion</td></tr>
+      <tr><td><strong>26</strong></td><td>Rights of religious denominations</td></tr>
+      <tr><td><strong>27</strong></td><td>Freedom from taxation for promotion of any religion</td></tr>
+      <tr><td><strong>28</strong></td><td>No religious instruction in govt-aided institutions</td></tr>
+      <tr><td><span class="hl"><strong>29</strong></span></td><td>Protection of language/script/culture of any section</td></tr>
+      <tr><td><span class="hl-g"><strong>30</strong></span></td><td>Minorities' right to establish educational institutions</td></tr>
+    </table>
+    <div class="tip-box"><p class="hw">Articles <span class="hl"><strong>29 &amp; 30</strong></span> together = <strong>Cultural &amp; Educational Rights</strong> · Articles 25–28 = Religious Freedom</p></div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec teal">⑧ Judiciary &amp; Local Government Amendments 👨‍⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Who decides the number of judges in a High Court?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President of India ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Parliament</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Justice of India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Governor of the State</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>President</strong> decides HC strength | <span class="hl">Parliament</span> decides Supreme Court strength</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Which constitutional amendment gave constitutional status to cooperative societies?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>73rd Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>86th Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>91st Amendment</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>97th Amendment ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>97th Amendment</strong> → Part IX-B (Arts 243-ZH to 243-ZT) + Art 43B (right to form cooperative societies)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Amendment</th><th>Key Provision</th></tr>
+      <tr><td><strong>73rd (1992)</strong></td><td>3-tier Panchayati Raj · Part IX · Arts 243–243O · 11th Schedule (29 items) · in force 24 Apr 1993 (Panchayati Raj Day)</td></tr>
+      <tr><td><strong>74th</strong></td><td>Municipalities · Part IX-A (243-P to 243-ZG)</td></tr>
+      <tr><td><strong>91st (2003)</strong></td><td>Art 75(1A): CoM ≤ 15% of Lok Sabha · 75(1B): defection disqualification · merger exception</td></tr>
+      <tr><td><span class="hl"><strong>97th</strong></span></td><td>Cooperative societies → Part IX-B + Art 43B</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>Committees:</strong> Balwant Rai Mehta (1957) → 3-tier Panchayati Raj · Ashok Mehta (1977) → 2-tier
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Who is the Chairman of the Zonal Councils in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Vice-Chairman of NITI Aayog</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Union Home Minister ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Union Home Minister</strong> heads Zonal Councils (currently Amit Shah)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">ZONAL COUNCILS</div>
+        Created by <span class="hl"><strong>States Reorganization Act, 1956</strong></span><br>
+        5 councils: North, South, East, West, Central<br>
+        North-Eastern Council → separate, <span class="hl-g">1971 Act</span><br>
+        <em>Statutory (non-constitutional) bodies</em>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">INTER-STATE COUNCIL</div>
+        Article <span class="hl"><strong>263</strong></span> · Chairman = <strong>PM</strong><br>
+        Appointed by President · formed <span class="hl-g">1990</span><br>
+        On recommendation of <strong>Sarkaria Commission (1983)</strong>
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec orange">⑨ DPSP &amp; Official Language 📘</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which statement regarding DPSP is correct? (1) Art 47 → separation of judiciary from executive (2) Art 50 → promotion of international peace &amp; security</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Only 1</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Both</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Neither ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Both wrong. Art <strong>47</strong> = nutrition &amp; standard of living; Art <strong>50</strong> = separation of judiciary from executive; Art <strong>51</strong> = international peace</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which part of the Constitution deals with the Official Language?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Part 15</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Part 16</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Part 17 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Part 18</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Part 17</strong> (Articles 343–351) = Official Language</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Part</th><th>Subject</th></tr>
+      <tr><td><strong>Part 15</strong></td><td>Elections / Election Commission (Arts 324–329)</td></tr>
+      <tr><td><strong>Part 16</strong></td><td>Special provisions for certain classes</td></tr>
+      <tr><td><span class="hl"><strong>Part 17</strong></span></td><td>Official Language (343–351)</td></tr>
+      <tr><td><strong>Part 18</strong></td><td>Emergency Provisions</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>3 Types of Emergency:</strong> National (<span class="hl">352</span>) · President's Rule (<span class="hl">356</span>) · Financial (<span class="hl">360</span>)</p>
+      <ul class="hw arr">
+        <li>National Emergency imposed <strong>3 times</strong>; President's Rule most in <span class="hl-p">Manipur (11 times)</span>; Financial Emergency <strong>never imposed</strong></li>
+        <li>Art <span class="hl">358</span> → automatically suspends Art 19 (6 freedoms)</li>
+        <li>Art <span class="hl">359</span> → suspends right to move court (except Arts 20 &amp; 21 — never suspended)</li>
+        <li>Suspension of FR during Emergency borrowed from <span class="hl-g"><strong>German (Weimar) Constitution</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec purple">⑩ Governor — State Executive 🪑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Who decides the salaries of state Governors?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Parliament ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Finance Commission</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Parliament</strong> decides Governor's salary under <span class="hl">Article 158</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> The oath of office of the Governor is administered by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Chief Justice of the High Court ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Minister</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Chief Justice of the High Court</strong> administers the Governor's oath</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec red">⑪ UPSC, Article 53 &amp; Bills 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> The UPSC submits its annual report to whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Parliament</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice of India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — UPSC submits its annual report to the <strong>President</strong></div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Article</th><th>Public Service Commission (Part 14)</th></tr>
+      <tr><td><span class="hl"><strong>315</strong></span></td><td>PSC for the Union &amp; the States</td></tr>
+      <tr><td><strong>316</strong></td><td>Appointment &amp; term of members</td></tr>
+      <tr><td><strong>317</strong></td><td>Removal &amp; suspension of members</td></tr>
+      <tr><td><strong>320</strong></td><td>Functions of PSC</td></tr>
+      <tr><td><strong>323</strong></td><td>Reports of the PSC</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Article 53 of the Constitution is related to which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Term of office of the President</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Executive Power of the Union ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Qualifications for election as President</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Election of President</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>53</strong> = Executive Power of the Union (vested in the President)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Article</th><th>Content</th></tr>
+      <tr><td><strong>52</strong></td><td>There shall be a President of India</td></tr>
+      <tr><td><span class="hl"><strong>53</strong></span></td><td>Executive power of the Union</td></tr>
+      <tr><td><strong>54</strong></td><td>Electoral College (elected MPs &amp; MLAs)</td></tr>
+      <tr><td><strong>55</strong></td><td>Manner of election (Proportional Rep. + Single Transferable Vote)</td></tr>
+      <tr><td><strong>56</strong></td><td>Term of office (5 years)</td></tr>
+      <tr><td><strong>58</strong></td><td>Qualifications (35 yrs, citizen, qualified for Lok Sabha)</td></tr>
+      <tr><td><strong>61</strong></td><td>Impeachment (violation of Constitution)</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>"RED" from Ireland</strong> → R = Rajya Sabha nominations · E = Election method of President · D = DPSP
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> In India, the Council of States (Rajya Sabha) has EQUAL power with the House of the People in which matter?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Money Bills</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Constitutional Amendment Bills ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>No-Confidence Motions</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Presidential Elections</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — In <strong>Constitution Amendment Bills (Art 368)</strong> both Houses have equal power</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">LOK SABHA MORE POWER</div>
+        Money Bill introduced only in LS (Art 109)<br>
+        Voting on Budget only in LS<br>
+        No-Confidence Motion only in LS<br>
+        <em>(1st no-confidence motion: J.B. Kripalani vs Nehru govt)</em>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">RAJYA SABHA MORE POWER</div>
+        Art <span class="hl"><strong>249</strong></span> — legislate on State List<br>
+        Art <span class="hl"><strong>312</strong></span> — create new All-India Service
+      </div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Money Bill <strong>definition</strong> = Art <span class="hl">110</span>; <strong>procedure</strong> = Art <span class="hl">109</span></li>
+        <li>Certified by <strong>Speaker of Lok Sabha</strong> (final, but subject to judicial review — Puttaswamy case)</li>
+        <li>Introduced only on the recommendation of the <span class="hl-g"><strong>President</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Who decides disputes regarding the election of the Vice President of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>High Court</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Supreme Court ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Election Commission</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Parliament</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Supreme Court</strong> (Art <span class="hl">71</span>) decides President/VP election disputes — original &amp; exclusive jurisdiction</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">RELATED ARTICLES</div>
+      71 → President/VP election disputes (SC) · 72 → Pardoning power · 73 → Extent of executive power · <span class="hl">74</span> → Council of Ministers to aid &amp; advise President (PM = de facto/real head; President = de jure/nominal head)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec green">⑫ British Acts &amp; Territories 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> Which of the following Acts provided for provincial autonomy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Government of India Act 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Act of 1919</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Act of 1909</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Act of 1861</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>GoI Act 1935</strong> gave provincial autonomy (removed provincial diarchy, introduced diarchy at centre)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Government of India Act 1935 also:</strong></p>
+      <ul class="hw chk">
+        <li>Bicameral legislature in 6 of 11 provinces</li>
+        <li>Proposed an All-India Federation</li>
+        <li>Established the <span class="hl">RBI</span></li>
+        <li>Established the <span class="hl-g">Federal Court</span> (formed 1937)</li>
+        <li>Abolished the Council of the Secretary of State</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Which Amendment Act affected acquisition of certain territories by India &amp; transfer of certain territories to Bangladesh?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>91st Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>97th Amendment</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>100th Amendment ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>101st Amendment</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>100th Amendment</strong> (Land Boundary Agreement — exchange of enclaves with Bangladesh)</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Article</th><th>Territory Provision</th></tr>
+      <tr><td><strong>Art 2</strong></td><td>Admission/establishment of new states (foreign territory)</td></tr>
+      <tr><td><strong>Art 3</strong></td><td>Formation of new states; alter area/boundary/name of existing states</td></tr>
+      <tr><td><strong>Art 4</strong></td><td>Such changes done by <span class="hl">simple majority</span> (not under Art 368)</td></tr>
+    </table>
+    <div class="imp">
+      <p class="hw"><strong>Berubari Union Case (1960):</strong> SC held that transferring Indian territory to another country needs a <span class="hl">Constitutional Amendment</span> → led to the <strong>9th Amendment</strong> (Nehru–Noon Agreement). Amendment power = <span class="hl-g">Art 368, Part XX</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Which of the following Union Territories has a Legislative Assembly?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Chandigarh</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Puducherry ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Lakshadweep</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Andaman &amp; Nicobar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Puducherry</strong> (UTs with Assembly: Delhi, Puducherry, J&amp;K)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky pink">
+        <div class="slbl">PUDUCHERRY</div>
+        Highest <span class="hl"><strong>sex ratio</strong></span> among UTs (≈1037)
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">LAKSHADWEEP</div>
+        Highest <span class="hl-g"><strong>literacy</strong></span> among UTs (91.85%)
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec blue">⑬ FR, Borrowings &amp; Council of Ministers 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Which statement is correct? (1) Art 27 → freedom from tax for promotion of a particular religion (2) Art 28 → prohibition of traffic in human beings &amp; forced labour</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Both</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Neither</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Only 1 correct. Prohibition of traffic &amp; forced labour = Art <strong>23</strong> (not 28)</div>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">RIGHT AGAINST EXPLOITATION</div>
+      Art <span class="hl"><strong>23</strong></span> = Prohibition of traffic in human beings &amp; forced labour (begar)<br>
+      Art <span class="hl"><strong>24</strong></span> = No child labour in hazardous work / during school hours<br>
+      Art 23 &amp; 24 together = <strong>Right Against Exploitation</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Which of the following features of the Constitution is borrowed from the USA?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fundamental Duties</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Five-Year Plans</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Preamble ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Single Citizenship</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Preamble</strong> borrowed from USA. Fundamental Duties &amp; Five-Year Plans = USSR</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Country</th><th>Borrowed Features</th></tr>
+      <tr><td><span class="hl"><strong>USA</strong></span></td><td>Preamble, Fundamental Rights, President/VP, Impeachment, Removal of judges, Judicial Review, Judicial Independence</td></tr>
+      <tr><td><strong>USSR</strong></td><td>Fundamental Duties, Justice (social/economic/political), Five-Year Plans</td></tr>
+      <tr><td><strong>UK</strong></td><td>Parliamentary govt, Bicameralism, Single citizenship, Rule of Law, Martial Law, First-Past-the-Post</td></tr>
+      <tr><td><strong>Ireland</strong></td><td>DPSP, Election method of President, Nomination to Rajya Sabha</td></tr>
+      <tr><td><strong>Canada</strong></td><td>Residuary powers, Appointment of Governors, Strong centre</td></tr>
+      <tr><td><strong>Australia</strong></td><td>Concurrent List, Joint Sitting (108), Trade &amp; Commerce</td></tr>
+      <tr><td><strong>France</strong></td><td>Republic, Liberty-Equality-Fraternity</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> The Council of Ministers in a State is collectively responsible to whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Governor</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Minister</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>State Legislative Assembly ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — State CoM collectively responsible to the <strong>Legislative Assembly</strong> (Art 164; Union = Art 75(3) → Lok Sabha)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">Advice of CoM is <span class="hl"><strong>binding on the President</strong></span> (42nd Amdt; 44th allows one return). But advice is <span class="hl-p"><strong>NOT binding on the Governor</strong></span> (State CoM advises Governor under Art 163).</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> What is the term of office of the Attorney General of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5 years</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>6 years</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Not fixed (holds office during pleasure of President) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — AG's term is <strong>not fixed</strong> in the Constitution (holds office during the President's pleasure)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Attorney General (Art 76):</strong></p>
+      <ul class="hw arr">
+        <li>Highest law officer of India · appointed by President</li>
+        <li>Must be qualified to be a <span class="hl">Supreme Court judge</span></li>
+        <li>Advises government on legal matters · right of audience in all courts</li>
+        <li>Assisted by Solicitor General &amp; Additional SG (not constitutional posts)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec red">⑭ Emergency, Judiciary Removal &amp; Governors 🚨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> Which article of the Indian Constitution deals with the Financial Emergency?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 352</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 356</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 360 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 365</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>360</strong> = Financial Emergency</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">PRESIDENT'S RULE — 2 GROUNDS</div>
+      Art <span class="hl"><strong>356</strong></span> = breakdown of constitutional machinery<br>
+      Art <span class="hl"><strong>365</strong></span> = state fails to comply with directions of the Centre
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> The removal procedure of a Supreme Court judge is known as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Judicial Review</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Impeachment ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dismissal by President</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Recall</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Best option = <strong>Impeachment</strong> (technically "removal"; grounds: proved misbehaviour &amp; incapacity)</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Motion needs <span class="hl"><strong>100 LS members</strong></span> OR <span class="hl"><strong>50 RS members</strong></span></li>
+        <li>3-member committee examines charges → passed by <strong>special majority</strong> in both Houses</li>
+        <li>President removes after Parliament's resolution</li>
+        <li>Judicial Review = implicit in Art <span class="hl-g">13</span> · SC can review its own judgment = Art <span class="hl-g">137</span> (from USA)</li>
+        <li>President's removal = Art <strong>61</strong> (violation of Constitution)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Which article empowers the Governor to promulgate ordinances during recess of the Legislature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 123</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 213 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 211</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 212</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>213</strong> = Governor's ordinance power (Art 123 = President's)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> Pratibha Patil assumed office as President of India on 25 July 2007. She was which President of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>10th</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>11th</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>12th ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>13th</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Pratibha Patil = <strong>12th President</strong> (1st woman President). 11th = APJ Abdul Kalam.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 15 ============ -->
+    <div class="sec green">⑮ Rivers, States Reorganization &amp; Bicameralism 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> Who can provide by law for adjudication of disputes over use/distribution/control of inter-state river waters?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Supreme Court</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Parliament ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Finance Commission</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Parliament</strong> under Art <span class="hl">262</span> (Inter-State River Water Disputes Act, 1956)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">Art <strong>131</strong> gives SC <span class="hl">original &amp; exclusive jurisdiction</span> over Centre–State disputes. <strong>Exceptions:</strong> inter-state river water disputes &amp; matters from pre-Constitution treaties. Example: Cauvery dispute (Kerala, TN, Karnataka) → Cauvery Tribunal, 1990.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Which Commission recommended the creation of new states on a linguistic basis?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rajamannar Commission</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Fazal Ali Commission ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Punchhi Commission</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sarkaria Commission</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Fazal Ali Commission (1953)</strong>. Sarkaria/Punchhi/Rajamannar = Centre–State relations.</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1948</span> <strong>S.K. Dhar Commission</strong> → states on administrative basis (not linguistic)</div>
+      <div class="tl-item"><span class="yr">1948</span> <strong>JVP Committee</strong> → against linguistic states</div>
+      <div class="tl-item"><span class="yr">1953</span> <span class="hl">Potti Sriramulu</span> fast-unto-death → <strong>Andhra Pradesh</strong> = 1st linguistic state</div>
+      <div class="tl-item"><span class="yr">1953</span> <strong>Fazal Ali Commission</strong> (Members: H.N. Kunzru, K.M. Panikkar, Fazal Ali-chair) → accepted language basis but <span class="hl-p">rejected "One Language, One State"</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> Who has the power to appoint the Chief Minister when no party has a clear majority in the State Assembly?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Speaker</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Justice</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Governor ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Governor</strong> appoints CM in a <span class="hl">Hung Assembly</span> (no clear majority)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> Which of the following states has a bicameral legislature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Tamil Nadu</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajasthan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kerala</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Karnataka ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Karnataka</strong> has a Legislative Council (bicameral)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>6 Bicameral States — "KABUTM"</strong>: <strong>K</strong>arnataka, <strong>A</strong>ndhra Pradesh, <strong>B</strong>ihar, <strong>U</strong>ttar Pradesh, <strong>T</strong>elangana, <strong>M</strong>aharashtra
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">LEGISLATIVE COUNCIL</div>
+      Art <span class="hl"><strong>169</strong></span> = creation/abolition (simple majority) · Art <span class="hl"><strong>171</strong></span> = composition<br>
+      1/3 from Assembly · 1/3 from local bodies · 1/12 teachers · 1/12 graduates · 1/6 nominated by Governor
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> Who served as the 11th President of India from 2002 to 2007?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dr. A.P.J. Abdul Kalam ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>K.R. Narayanan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pratibha Patil</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>R. Venkataraman</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>A.P.J. Abdul Kalam</strong> | Books: <em>Ignited Minds, Wings of Fire, India 2020</em></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 16 ============ -->
+    <div class="sec orange">⑯ Council of Ministers, EC &amp; Blueprint 🗳️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> The maximum number of ministers in the Union Council of Ministers is restricted to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>10% of Lok Sabha</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>15% of Lok Sabha ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>20% of Lok Sabha</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>12% of Lok Sabha</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>15% of Lok Sabha</strong> strength (Art 75(1A), added by 91st Amendment)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> What is the tenure of the Chief Election Commissioner?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>3 years or till 62 years</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5 years or till 60 years</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>6 years or till 65 years ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>6 years or till 62 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>6 years or till 65 years</strong> (whichever earlier)</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Election Commission = Part 15 (Arts <span class="hl">324–329</span>)</li>
+        <li>CEC removed like a SC judge; other ECs removed by President on CEC's recommendation</li>
+        <li>1st CEC = <span class="hl-g">Sukumar Sen</span> · ECI formed 1950 · multi-member 1989 · permanent multi-member 1993</li>
+        <li>61st Amendment (1989) → voting age 21 → 18</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> Which is often described as the "blueprint" / skeleton of the Indian Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Morley–Minto Reforms</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Montagu–Chelmsford Reforms</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Government of India Act 1935 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indian Independence Act 1947</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>GoI Act 1935</strong> — ~40%+ of the Constitution borrowed from it (the "skeleton")</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">INDIAN INDEPENDENCE ACT 1947</div>
+      Divided India into <span class="hl">India &amp; Pakistan</span> · abolished the office of Viceroy
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> Who has the power to recommend President's Rule in a state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Chief Minister</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Governor ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Governor</strong> recommends President's Rule (Art 356; grounds 356 &amp; 365). No impact on Fundamental Rights. Imposed most in Manipur (11 times).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 17 ============ -->
+    <div class="sec purple">⑰ Schedules, Article 32 &amp; Finances 📑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> The Council of Ministers at the Union level is responsible to whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajya Sabha</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Lok Sabha ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Prime Minister</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Collectively responsible to the <strong>Lok Sabha</strong> (Art 75, Clause 3)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> Which Schedule of the Constitution contains the names of States and UTs?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>First Schedule ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Second Schedule</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fourth Schedule</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sixth Schedule</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>First Schedule</strong> = Names &amp; territorial jurisdiction of States &amp; UTs</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Schedule</th><th>Content</th></tr>
+      <tr><td><span class="hl"><strong>First</strong></span></td><td>Names &amp; territories of States &amp; UTs</td></tr>
+      <tr><td><strong>Second</strong></td><td>Emoluments &amp; allowances</td></tr>
+      <tr><td><strong>Fourth</strong></td><td>Allocation of seats in the Rajya Sabha</td></tr>
+      <tr><td><strong>Fifth</strong></td><td>Scheduled Areas</td></tr>
+      <tr><td><strong>Sixth</strong></td><td>Tribal areas — Assam, Tripura, Mizoram, Meghalaya (NOT Manipur)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> The 42nd Amendment is known as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mini Constitution ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mini Parliament</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Major Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Constitution of India Act</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 42nd Amendment (1976) = <strong>Mini Constitution</strong> (added Fundamental Duties; made CoM advice binding on President)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> Article 32 of the Constitution relates to which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Validation of certain Acts and regulations</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Freedom to manage religious affairs</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Remedies for enforcement of rights ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Protection of interests of minorities</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>32</strong> = Right to Constitutional Remedies — Ambedkar called it the <span class="hl">"heart &amp; soul"</span> of the Constitution</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>5 Writs:</strong> Habeas Corpus · Mandamus · Prohibition · Certiorari · Quo-Warranto</p>
+      <ul class="hw arr">
+        <li>Art <span class="hl">32</span> → SC <strong>cannot refuse</strong> a writ (it is a Fundamental Right)</li>
+        <li>Art <span class="hl">226</span> → High Court writs (wider — also for legal rights; can refuse)</li>
+        <li>Habeas Corpus Case = <span class="hl-p"><strong>ADM Jabalpur vs Shivkant Shukla (1975)</strong></span></li>
+        <li>9th Schedule &amp; Art 31B added by 1st Amendment; I.R. Coelho case (2008) → post-1973 laws subject to judicial review (Basic Structure — Kesavananda Bharati, 1973)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> Who decides the salaries and allowances of the Vice President?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Parliament ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Finance Commission</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Supreme Court</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Parliament</strong> decides VP's salary &amp; allowances</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">CONSOLIDATED FUND OF INDIA</div>
+      <span class="hl"><strong>Charged Expenditure</strong></span> = non-votable (salaries of President, VP, judges, CAG etc.)<br>
+      <span class="hl-g"><strong>Made/Voted Expenditure</strong></span> = votable — voting only in the <strong>Lok Sabha</strong> (Rajya Sabha can only discuss)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> Who appoints the Chairman and Members of the Finance Commission?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Parliament</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>President</strong> appoints FC (Art <span class="hl">280</span>) — quasi-judicial body; recommendations NOT binding</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">FINANCE COMMISSION COMPOSITION</div>
+      1 Chairperson + 4 other members · Chairperson = person with experience in <span class="hl">public affairs</span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 18 ============ -->
+    <div class="sec blue">⑱ Constituent Assembly, Joint Sitting &amp; System 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Who was the Constitutional Advisor to the Constituent Assembly?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dr. B.R. Ambedkar</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>B.N. Rau ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alladi Krishnaswami Iyer</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>K.M. Munshi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>B.N. Rau</strong> = Constitutional Advisor to the Constituent Assembly</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Constituent Assembly Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Drafting Committee formed <span class="hl">29 Aug 1947</span>; Chairman = <strong>B.R. Ambedkar</strong></li>
+        <li>Members: Alladi Krishnaswami Iyer, N. Gopalaswami Iyengar, Sadullah, K.M. Munshi, D.P. Khaitan, T.T. Krishnamachari</li>
+        <li>Temporary Chairman = <span class="hl-g">Sachchidananda Sinha</span>; Permanent President = <strong>Dr. Rajendra Prasad</strong></li>
+        <li>K.M. Munshi headed the <strong>Order of Business Committee</strong></li>
+        <li>National Anthem &amp; Song adopted on <span class="hl">24 Jan 1950</span>; National Flag on <span class="hl">22 July 1947</span>; Commonwealth membership ratified May 1949</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> Under which article is a joint sitting of Parliament provided?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 107</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 108 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 110</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 368</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Joint sitting = Art <strong>108</strong> (borrowed from Australia); only for <span class="hl">ordinary bills</span></div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>NOT for Money Bills or Constitution Amendment Bills</li>
+        <li>Summoned by <strong>President</strong>; presided by <span class="hl">Speaker of Lok Sabha</span> (then Deputy Speaker, then Deputy Chairman of RS)</li>
+        <li>Held <strong>3 times</strong>: Dowry Prohibition Bill, Banking Service Commission Bill, POTA</li>
+        <li>Bills passed by simple majority</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> The PM is the "real executive" under which system?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Parliamentary System ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Presidential System</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Unitary System</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Confederation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Under the <strong>Parliamentary System</strong>, PM = real/de facto executive (President = nominal head)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky purple">
+        <div class="slbl">PARLIAMENTARY (UK)</div>
+        No strict separation of powers<br>
+        Collective responsibility (Art 75(3))<br>
+        Minister must gain House membership within <span class="hl">6 months</span> (Art 75(5))
+      </div>
+      <div class="sticky red">
+        <div class="slbl">FEDERALISM — WHO SAID WHAT</div>
+        Ivor Jennings → Federation with centralising tendency<br>
+        Granville Austin → Cooperative federalism<br>
+        K.C. Wheare → Quasi-federal<br>
+        Morris Jones → Bargaining federalism
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> Regarding vetoes — for which bill is the Suspensive Veto not applicable, and which bill has NO veto at all?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Suspensive veto → not on Money Bills; No veto → Constitution Amendment Bills ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>No veto → Money Bills</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Suspensive veto → Ordinary Bills only</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Absolute veto → Constitution Amendment Bills</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Suspensive veto NOT on Money Bills; Constitution Amendment Bills = no veto (24th Amdt, 1971 → President must assent)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 19 ============ -->
+    <div class="sec red">⑲ Emergency, CAG &amp; Article 200 🚨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> Which type of emergency has never been declared in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>National Emergency (352)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>President's Rule (356)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Financial Emergency (360) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>All have been declared</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Financial Emergency (Art 360)</strong> has never been imposed</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1962</span> National Emergency — war / external aggression</div>
+      <div class="tl-item"><span class="yr">1971</span> National Emergency — external aggression</div>
+      <div class="tl-item"><span class="yr">1975</span> National Emergency — <span class="hl">internal disturbance</span> (44th Amdt → changed to "armed rebellion")</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> Why is the 26th Constitutional Amendment (1971) important?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Added Fundamental Duties</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Anti-Defection Law</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Abolished the Privy Purse ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Removed Right to Property</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — 26th Amendment <strong>abolished the Privy Purse</strong> (pensions paid to former princely-state rulers)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> Which constitutional body audits the accounts of the Union and the States?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Finance Commission</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>CAG ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>UPSC</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>CAG</strong> (Comptroller &amp; Auditor General) — Chapter 5 of Part V, Arts <span class="hl">148–151</span></div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>CAG = <span class="hl"><strong>Guardian of the Public Purse</strong></span>; Guide, Friend &amp; Philosopher of the PAC</li>
+        <li>Public Accounts Committee (PAC) = 22 members (15 LS + 7 RS)</li>
+        <li>Estimates Committee = 30 members (all from Lok Sabha)</li>
+        <li>1st CAG = <span class="hl-g">V. Narahari Rao</span> · Part 14-A = Tribunals (323A admin, 323B others) added by 42nd Amdt</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> What is provided under Article 200 of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President's assent to a bill</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Governor: assent / withhold / reserve a bill for the President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Definition of Money Bill</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ordinance power of the Governor</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>200</strong> = Governor may assent, withhold, or reserve a bill for the President. Art <strong>201</strong> = President's action on a reserved bill.</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Article conversion:</strong> Up to Art 110 → add <strong>89</strong> (Union → State); from Art 112 onward → add <strong>90</strong>. (Art 200 is the small exception — Governor reserving a bill for the President.)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 20 ============ -->
+    <div class="sec green">⑳ Finance, EC, Advocate General &amp; Rajya Sabha 💼</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> Which body recommends the distribution of taxes between the Centre and the States?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Finance Commission ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>NITI Aayog</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>CAG</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>RBI</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Finance Commission</strong> (Art 280) recommends distribution of taxes between Centre &amp; States</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> Who decides the symbols reserved for national and state parties in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Supreme Court</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Election Commission ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Speaker of the House</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — The <strong>Election Commission</strong> decides reserved party symbols</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> Who has the power to appoint the Advocate General of a State?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Governor ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chief Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice of the High Court</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Governor</strong> appoints the Advocate General (Art <span class="hl">165</span>) — highest law officer of a State, qualified to be a HC judge</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> Which statement correctly describes the permanent nature of the Rajya Sabha?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dissolved every 5 years</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Dissolved by the President</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1/3 members retire every 2 years; never dissolved ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>All members retire together</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Rajya Sabha (Art <span class="hl">80</span>) = permanent house; <strong>1/3 retire every 2 years</strong>; each member's term = 6 years</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 21 ============ -->
+    <div class="sec orange">㉑ Citizenship, States, Duties &amp; DPSP Source 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> Citizenship provisions are given under which part of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Part I</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Part II ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Part III</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Part IV</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Part II</strong> (Articles 5–11) = Citizenship</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">CITIZENSHIP ARTICLES</div>
+      Part I → Union &amp; its Territory · Part II → Citizenship (5–11)<br>
+      Art 9 → voluntarily acquiring foreign citizenship = loss of Indian citizenship<br>
+      Art 10 → continuance of citizenship rights · Art 11 → <span class="hl">Parliament regulates citizenship</span> · Citizenship Act, 1955
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Who has the power to create new states or alter the boundaries of existing states?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Parliament ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Supreme Court</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>State Legislature</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Parliament</strong> under Art <span class="hl">3</span> (by simple majority). Art 169 → create/abolish Legislative Council by simple majority.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> The first woman Governor of any Indian state was?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sarojini Naidu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sucheta Kripalani</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Vijaya Lakshmi Pandit</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indira Gandhi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Sarojini Naidu</strong> = 1st woman Governor (Uttar Pradesh)</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>First Woman</th><th>Achievement</th></tr>
+      <tr><td><span class="hl"><strong>Sarojini Naidu</strong></span></td><td>1st woman Governor (UP); 1st Indian woman Congress President (1925, Kanpur)</td></tr>
+      <tr><td><strong>Sucheta Kripalani</strong></td><td>1st woman Chief Minister (UP)</td></tr>
+      <tr><td><strong>Vijaya Lakshmi Pandit</strong></td><td>1st woman President of UN General Assembly</td></tr>
+      <tr><td><strong>Indira Gandhi</strong></td><td>1st woman to receive Bharat Ratna (1971)</td></tr>
+      <tr><td><strong>Mother Teresa</strong></td><td>Nobel Peace Prize, 1979</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> Which committee recommended the Fundamental Duties?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sardar Swaran Singh Committee ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Balwant Rai Mehta Committee</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sarkaria Commission</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ashok Mehta Committee</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Sardar Swaran Singh Committee</strong> recommended Fundamental Duties (Part IV-A, Art 51A)</div>
+    </div>
+
+    <div class="sticky pink">
+      <div class="slbl">FUNDAMENTAL DUTIES</div>
+      Swaran Singh suggested 8 → <span class="hl"><strong>10 added by 42nd Amendment</strong></span><br>
+      <span class="hl-g"><strong>11th duty added by 86th Amendment (2002)</strong></span> → total <strong>11</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> The Directive Principles of State Policy (DPSP) were borrowed from?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Canada</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>USA</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ireland ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — DPSP borrowed from <strong>Ireland</strong> 🧠 "RED" → Rajya Sabha nominations, Election method, DPSP</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> Which article deals with the official language of the Union?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 343 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 324</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 280</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 312</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>343</strong> = Official Language of the Union (Part 17: 343–351)</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">CENTRE–STATE RELATIONS</div>
+      Legislative → Arts <span class="hl">245–255</span> · Administrative → <span class="hl">256–263</span> · Financial → <span class="hl">268–293</span><br>
+      Part XI &amp; Part XII of the Constitution
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 22 ============ -->
+    <div class="sec purple">㉒ Amendment Power, Schedules &amp; Emergency Count 📝</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Which article allows Parliament to amend the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 352</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 370</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 368 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 356</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>368</strong> = Parliament's power to amend the Constitution</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Article</th><th>Content</th></tr>
+      <tr><td><strong>33</strong></td><td>Restrict FRs for armed forces</td></tr>
+      <tr><td><strong>34</strong></td><td>Martial Law</td></tr>
+      <tr><td><strong>35</strong></td><td>Only Parliament can make laws on certain FRs</td></tr>
+      <tr><td><strong>356</strong></td><td>President's Rule</td></tr>
+      <tr><td><strong>370</strong></td><td>Special status to J&amp;K (now repealed)</td></tr>
+      <tr><td><span class="hl"><strong>368</strong></span></td><td>Amendment of the Constitution</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> Which Schedule specifies the division of power between the Union and the States?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fifth Schedule</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Seventh Schedule ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ninth Schedule</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tenth Schedule</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Seventh Schedule</strong> = Union List, State List &amp; Concurrent List</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Schedule</th><th>Content</th></tr>
+      <tr><td><strong>Fifth</strong></td><td>Scheduled Areas</td></tr>
+      <tr><td><span class="hl"><strong>Seventh</strong></span></td><td>3 Lists (division of power)</td></tr>
+      <tr><td><strong>Ninth</strong></td><td>Land reforms (1st Amdt; Arts 31A &amp; 31B) — I.R. Coelho case</td></tr>
+      <tr><td><strong>Tenth</strong></td><td>Anti-Defection Law (52nd Amendment)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> When was the First Amendment made, and how many Schedules are there now?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>First Amendment 1951; 8 → 12 Schedules ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1949; 10 Schedules</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1952; 11 Schedules</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1950; 9 Schedules</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>First Amendment, 1951</strong> (Nehru's time). Schedules: originally <span class="hl">8</span>, now <span class="hl">12</span>.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> How many types of emergency are provided in the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>3 types</strong>: National (352), President's Rule (356), Financial (360)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 23 ============ -->
+    <div class="sec red">㉓ Custodian, UTs, Impeachment &amp; Amendments ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Who is called the "Custodian of the Constitution"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>President</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Supreme Court ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Parliament</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Attorney General</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — The <strong>Supreme Court</strong> is the Custodian/Protector of the Constitution</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> Union Territories are administered by whom (Part 8)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Parliament</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chief Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Governor</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Administrators appointed by the President ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — UTs (Part 8) are administered by <strong>Administrators appointed by the President</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> How many members are required to initiate the impeachment of the President of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1/2 of the House</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1/4 of the total members of the House ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2/3 of the House</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>100 members</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Impeachment of President (Art 61) initiated by <strong>1/4 of members</strong> of the House; passed by special majority</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">Removal of <strong>SC/HC judges</strong> needs 100 Lok Sabha OR 50 Rajya Sabha members (Judges Inquiry Act, 1968). <span class="hl">No President has been removed; no judge has been successfully impeached.</span> V. Ramaswami = 1st judge against whom an impeachment motion was moved (1991). It is a <span class="hl-g">quasi-judicial process</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> The 52nd Amendment of the Constitution deals with?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Tribunals</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Anti-Defection Law (10th Schedule) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Cooperative Societies</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Panchayati Raj</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 52nd Amendment (1985) = <strong>Anti-Defection Law / 10th Schedule</strong>. (42nd → Tribunals Part 14-A; 97th → Cooperatives; 73rd → Panchayati Raj)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 24 ============ -->
+    <div class="sec blue">㉔ Rajya Sabha, Election Ages, VP &amp; President 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> Who presides over the Rajya Sabha in the absence of the Vice President?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Speaker of Lok Sabha</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Deputy Chairman ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>President</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Prime Minister</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — The <strong>Deputy Chairman</strong> presides over the Rajya Sabha when the VP is absent</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> What is the minimum age for contesting Lok Sabha elections?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>18 years</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>21 years</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>25 years ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>30 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>25 years</strong> for Lok Sabha</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Minimum Age Chart:</strong></p>
+      <ul class="hw arr">
+        <li>Voting / Panchayat → <span class="hl">18 years</span></li>
+        <li>Lok Sabha → <span class="hl">25 years</span></li>
+        <li>Rajya Sabha → <span class="hl">30 years</span></li>
+        <li>President / Vice President / Governor → <span class="hl">35 years</span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> To whom does the Vice President submit his resignation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Speaker</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The Vice President submits his resignation to the <strong>President</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> An election to fill a vacancy in the office of the President (due to death) must be held within?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>3 months</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>6 months ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 year</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>30 days</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — A vacancy in the office of the President must be filled within <strong>6 months</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> Who appoints the Prime Minister?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lok Sabha</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Speaker</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chief Justice</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>President</strong> appoints the Prime Minister (Art 75)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 25 ============ -->
+    <div class="sec teal">㉕ Eighth Schedule, Right to Property &amp; CJI 👨‍⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> Which languages were added to the Eighth Schedule by the 92nd Amendment?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sindhi</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Konkani, Manipuri, Nepali</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Bodo, Dogri, Santhali, Maithili</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Bodo, Dogri, Santhali, Maithili (92nd Amdt) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — 92nd Amendment added <strong>Bodo, Dogri, Santhali &amp; Maithili</strong></div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">EIGHTH SCHEDULE — LANGUAGES (14 → 22)</div>
+      <span class="hl"><strong>21st Amdt</strong></span> → Sindhi<br>
+      <span class="hl-g"><strong>71st Amdt</strong></span> → Konkani, Manipuri, Nepali<br>
+      <span class="hl-p"><strong>92nd Amdt</strong></span> → Bodo, Dogri, Santhali, Maithili
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> Which fundamental right was removed from the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Right to Equality</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Right to Property ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Right to Freedom</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Right to Constitutional Remedies</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Right to Property</strong> removed by 44th Amendment (1978); made a legal right under Art <span class="hl">300A</span> (Part XII)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">Right to Property is now a <span class="hl"><strong>legal right</strong></span> (not fundamental). A writ for it can be issued <span class="hl-p">only by the High Court</span> (Art 226), not under Art 32.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q87.</span> The Chief Justice of India is appointed by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>President ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Outgoing CJI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Parliament</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>President</strong> appoints the Chief Justice of India</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">CHIEF JUSTICE OF INDIA — TRIVIA</div>
+      1st CJI = <span class="hl"><strong>H.J. Kania</strong></span><br>
+      Likely 1st woman CJI = <span class="hl-g"><strong>B.V. Nagarathna</strong></span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — Articles &amp; Key Facts</div>
+    <table class="qr-t">
+      <tr><th>Topic</th><th>Article / Fact</th></tr>
+      <tr><td>Concurrent List borrowed from</td><td>Australia</td></tr>
+      <tr><td>Residuary powers / Governors</td><td>Canada</td></tr>
+      <tr><td>DPSP / President election / RS nominations</td><td>Ireland (RED)</td></tr>
+      <tr><td>Preamble &amp; Fundamental Rights</td><td>USA</td></tr>
+      <tr><td>Obligation of States &amp; Union</td><td>Art 256</td></tr>
+      <tr><td>Executive Power of the Union</td><td>Art 53</td></tr>
+      <tr><td>Council of Ministers aids President</td><td>Art 74</td></tr>
+      <tr><td>CoM responsible to Lok Sabha</td><td>Art 75(3)</td></tr>
+      <tr><td>President/VP election disputes</td><td>Art 71 (SC)</td></tr>
+      <tr><td>Governor's discretionary / ordinance</td><td>Art 163 / 213</td></tr>
+      <tr><td>Governor's salary</td><td>Art 158 (Parliament)</td></tr>
+      <tr><td>Joint Sitting</td><td>Art 108</td></tr>
+      <tr><td>Money Bill definition / procedure</td><td>Art 110 / 109</td></tr>
+      <tr><td>Right to Constitutional Remedies</td><td>Art 32</td></tr>
+      <tr><td>Inter-State river water disputes</td><td>Art 262</td></tr>
+      <tr><td>Inter-State Council</td><td>Art 263</td></tr>
+      <tr><td>Finance Commission</td><td>Art 280</td></tr>
+      <tr><td>Amendment of Constitution</td><td>Art 368</td></tr>
+      <tr><td>National / President's / Financial Emergency</td><td>352 / 356 / 360</td></tr>
+      <tr><td>CAG</td><td>Arts 148–151</td></tr>
+      <tr><td>Citizenship</td><td>Part II (Arts 5–11)</td></tr>
+      <tr><td>Official Language</td><td>Part 17 (343–351)</td></tr>
+      <tr><td>First Amendment</td><td>1951</td></tr>
+      <tr><td>42nd Amendment</td><td>Mini Constitution (1976)</td></tr>
+      <tr><td>97th Amendment</td><td>Cooperative Societies</td></tr>
+      <tr><td>100th Amendment</td><td>Land Boundary (Bangladesh)</td></tr>
+      <tr><td>26th Amendment</td><td>Abolished Privy Purse (1971)</td></tr>
+      <tr><td>CEC tenure</td><td>6 years or 65 yrs</td></tr>
+      <tr><td>NHRC Chairperson tenure</td><td>3 years or 70 yrs</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>Part V → State (Part VI): up to Art 110 add <span class="hl"><strong>89</strong></span>, from 112 add <span class="hl"><strong>90</strong></span></li>
+          <li><span class="hl-g"><strong>Forest = Concurrent</strong></span>, Banking = Union (don't confuse!)</li>
+          <li>NHRC, EC, FC = remember which is statutory vs constitutional</li>
+          <li>Money Bill = Lok Sabha only; Constitution Amendment = both Houses equal</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Article 39 → 🧠 <span class="hl"><strong>"L D C goes to P H C"</strong></span></li>
+          <li>Bicameral states → 🧠 <span class="hl-g"><strong>"KABUTM"</strong></span></li>
+          <li>Right to Property = legal right (Art 300A), not fundamental</li>
+          <li>Financial Emergency (360) = NEVER imposed in India</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF SSC GD — POLITY PYQ NOTES</div>
+      <strong>All Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
