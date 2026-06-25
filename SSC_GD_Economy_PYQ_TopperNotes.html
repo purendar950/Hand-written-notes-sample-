@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Economy PYQ | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — Economy PYQ Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · Indian Economy</div>
+    <div class="cover-title">💰 Economy PYQ — Topper Notes</div>
+    <div class="cover-sub">Global Indices · Money · Budget · Planning · 1991 Reforms | All Questions Covered</div>
+    <div class="cover-badge">🌐 Indices · 💱 Money &amp; Trade · 🏭 Industrial Policy · 📊 Budget &amp; Inflation · 🏦 Banks · 🧠 Planning</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec orange">① Global Indices &amp; Economic Thinkers 🌐</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> The Global Livability Index is released by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Economist Intelligence Unit (EIU) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>World Bank</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UNDP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>World Economic Forum</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Global Livability Index = <strong>Economist Intelligence Unit (EIU)</strong>. UNDP → HDI; World Bank earlier → Logistics Performance Index &amp; Ease of Doing Business.</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Recent Global Livability Index — top cities:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl">Copenhagen</span> (Denmark) — 1st</li>
+        <li><span class="hl-g">Vienna</span> (capital of Austria) — 2nd</li>
+        <li><span class="hl-b">Melbourne</span> (Australia) — 3rd</li>
+      </ul>
+      <p class="hw">India: <strong>Delhi &amp; Mumbai</strong> both ranked <span class="hl-p">141 out of 173</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which economist gave the concept of comparative advantage?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Keynes</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Adam Smith</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hicks</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ricardo ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>David Ricardo</strong> (the Ryotwari System was also based on Ricardian theory)</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Economist</th><th>Known As</th><th>Famous Book / Concept</th></tr>
+      <tr><td><span class="hl"><strong>J.M. Keynes</strong></span></td><td>Father of Macroeconomics (British)</td><td><em>General Theory of Employment</em> · "Animal Spirit"</td></tr>
+      <tr><td><span class="hl-g"><strong>Adam Smith</strong></span></td><td>Father of Microeconomics / Modern Economics</td><td><em>Wealth of Nations</em> · "Invisible Hand"</td></tr>
+      <tr><td><strong>Alfred Marshall</strong></td><td>Also called Father of Microeconomics</td><td>—</td></tr>
+      <tr><td><strong>Ricardo</strong></td><td>Comparative Advantage</td><td>Ricardian theory (Ryotwari)</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">INVISIBLE HAND vs ANIMAL SPIRIT</div>
+      <span class="hl"><strong>Invisible Hand</strong></span> (Adam Smith): an individual working for own welfare also benefits the whole economy.<br>
+      <span class="hl-g"><strong>Animal Spirit</strong></span> (Keynes): the urge to take risks &amp; start a business.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which survey data is mainly used to calculate the Happiness Index?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Oxford Wellbeing Research</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gallup</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>An institute</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>UN Sustainable Development Solutions Network ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Happiness Index uses <strong>UN Sustainable Development Solutions Network</strong> data</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">TOP 3 HAPPIEST — "FDI"</div>
+        <span class="hl"><strong>F</strong></span>inland · <span class="hl"><strong>I</strong></span>celand · <span class="hl"><strong>D</strong></span>enmark<br>
+        (remember in order: F-I-D)
+      </div>
+      <div class="sticky red">
+        <div class="slbl">BOTTOM 3 + INDIA</div>
+        Bottom: <span class="hl">Afghanistan</span> (last), Sierra Leone, Malawi<br>
+        India rank = <strong>116</strong> · Nepal = 99 (happier than India)
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which of the following is a flow variable?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>National Income ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Money supply</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Capital</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Inventory</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>National Income</strong> is a flow variable (measured over a period of time)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Flow Variable</th><th>Stock Variable</th></tr>
+      <tr><td>Measured over a <span class="hl">period of time</span></td><td>Measured at a <span class="hl-g">point of time</span></td></tr>
+      <tr><td>National income, income earned, <strong>change in inventory</strong></td><td>Money supply, capital, wealth, <strong>inventory</strong></td></tr>
+    </table>
+    <div class="trick">
+      🧠 "How much money do you <em>have</em>?" = <strong>Stock</strong> (no time needed). "How much do you <em>earn</em>?" = <strong>Flow</strong> (per day/month/year). Inventory = stock; <span class="hl">change in inventory</span> = flow.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> How many variables are used to rank countries in the Happiness Index?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>7</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>6 variables</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>6 Happiness Index variables:</strong></p>
+      <ul class="hw chk">
+        <li>GDP per capita</li>
+        <li>Social support</li>
+        <li>Healthy life expectancy</li>
+        <li>Freedom to make life choices</li>
+        <li>Generosity</li>
+        <li>Perception of corruption</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec red">② Industrial Policy &amp; Licensing 🏭</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which policy gave a major thrust to small-scale industries?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Industrial Policy 1948</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Industrial Policy 1956</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Industrial Policy 1977 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Industrial Policy 1980</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>IPR 1977</strong> (Morarji Desai / Janata Party) emphasized small-scale &amp; introduced <span class="hl">"tiny units"</span> (investment below ₹1 lakh)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Industrial Policy</th><th>Key Point</th></tr>
+      <tr><td><strong>IPR 1948</strong></td><td>Divided industries into <span class="hl">4 groups</span></td></tr>
+      <tr><td><strong>IPR 1956</strong></td><td>Divided industries into <span class="hl-g">3 schedules</span> (A, B, C)</td></tr>
+      <tr><td><span class="hl"><strong>IPR 1977</strong></span></td><td>Thrust to small-scale; concept of tiny units</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> The Industrial Licensing System was introduced in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1948</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1951 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1956</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1961</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>1951</strong> (the "License Raj")</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw">License Raj was abolished in <span class="hl"><strong>1991</strong></span> economic reforms — but <strong>not completely</strong>. Licenses are still required for some <span class="hl-p">hazardous industries</span> (e.g., alcohol, tobacco). This was the era of "red-tapism".</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec green">③ Trade, Currency &amp; Legal Tender 💱</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> What was the share of India's services exports in the world services market in 1993?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>0.5% (half a percent) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>6%</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>0.5%</strong> in 1993. (By 2022 it had risen to <span class="hl">4.3%</span>.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which of the following is considered legal tender?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Debit card</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Coins ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Cheque</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Credit card</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Coins</strong> (fiat money, backed by RBI/Govt = legal tender)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Type</th><th>Meaning</th></tr>
+      <tr><td><span class="hl"><strong>Fiat money</strong></span></td><td>Legal tender; backed by govt (notes, coins) — cannot be refused</td></tr>
+      <tr><td><span class="hl-g"><strong>Fiduciary money</strong></span></td><td>Works on trust (e.g., cheque) — can be refused</td></tr>
+      <tr><td><strong>Commodity money</strong></td><td>Has intrinsic value (e.g., gold coin)</td></tr>
+    </table>
+    <div class="sticky blue">
+      <div class="slbl">FACE VALUE vs INTRINSIC VALUE</div>
+      <strong>Face value</strong> = value printed on the currency · <strong>Intrinsic value</strong> = value of the material it's made of.<br>
+      For circulation: <span class="hl">face value must be &gt; intrinsic value</span>.<br>
+      🧠 Mohammad bin Tughlaq's failed token currency: intrinsic value became greater than face value.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Which country has been India's largest trading partner most recently?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>People's Republic of China ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UAE</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Japan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>China</strong> (~$151 billion trade; exports ≈ $19B, imports ≈ $131B, trade deficit ≈ $112B)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Barter exchange</strong> works on the <span class="hl">"double coincidence of wants"</span> — what you want, I must have; what I want, you must have. (Its biggest limitation!)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec blue">④ World Bodies, Deficit Financing &amp; Demonetization 📊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> The Global Energy Transition Index is published by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>International Energy Agency</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>World Bank</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>World Economic Forum ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>OPEC</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>World Economic Forum</strong> publishes the Energy Transition Index</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Body</th><th>Headquarters</th></tr>
+      <tr><td><strong>OPEC</strong></td><td>Vienna, Austria (Austria is not even an OPEC member)</td></tr>
+      <tr><td><span class="hl"><strong>World Economic Forum</strong></span></td><td>Cologny, <span class="hl-p">Switzerland</span> (NOT Geneva)</td></tr>
+      <tr><td><strong>World Bank</strong></td><td>Washington, D.C.</td></tr>
+      <tr><td><strong>UNESCO</strong></td><td>Paris, France</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Which of the following is NOT a way to finance a budgetary deficit?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Borrowing</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Printing currency</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Neither 1 nor 2 (both ARE ways) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Both borrowing &amp; printing currency are valid ways, so "neither" is correct. Ways = raise taxes, borrow (external/internal), print money.</div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">SEIGNIORAGE</div>
+      The <span class="hl"><strong>profit the government earns by printing currency</strong></span>. E.g., print ₹1 crore; printing/paper/staff cost ≈ ₹1 crore... if cost is much lower, the difference is seigniorage. Coins &amp; ₹1 notes = Govt of India; other notes = RBI.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which of the following is NOT a denomination of notes demonetized in 1978?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>₹500 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>₹1,000</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>₹5,000</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>₹10,000</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — In <strong>1978</strong> (Morarji Desai), ₹1,000, ₹5,000 &amp; ₹10,000 were demonetized. ₹500 was NOT.</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Demonetization years: <span class="hl">1946</span>, <span class="hl">1978</span> (Morarji Desai), <span class="hl">2016</span> (Modi, 8 Nov)</li>
+        <li>RBI Governor during 2016 demonetization = <strong>Urjit Patel</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which of the following indices is NOT published by the World Economic Forum?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Global Gender Gap Index</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Energy Transition Index</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Global Competitiveness Index</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Human Development Index ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>HDI is published by UNDP</strong>. (Gender Gap — topped by Iceland — Energy Transition &amp; Competitiveness are by WEF.)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Human Development Index (HDI) — 3 dimensions &amp; indicators:</strong></p>
+      <table class="hw-t grn">
+        <tr><th>Dimension</th><th>Indicator(s)</th></tr>
+        <tr><td>Long &amp; healthy life</td><td>Life expectancy at birth</td></tr>
+        <tr><td>Knowledge</td><td>Expected years of schooling + Mean years of schooling</td></tr>
+        <tr><td>Decent standard of living</td><td>GNI per capita</td></tr>
+      </table>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ National Income &amp; Key Institutions 📈</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Who first proposed the concept of Human Development (in 1990)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mahbub ul Haq &amp; Amartya Sen ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Adam Smith &amp; Ricardo</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Keynes &amp; Marshall</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Dadabhai Naoroji</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Pakistani economist <strong>Mahbub ul Haq</strong> &amp; Indian economist <strong>Amartya Sen</strong> (Sen won the Economics Nobel in <span class="hl">1998</span>, 1st Indian)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which statement accurately describes Personal Disposable Income (PDI)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Personal Income − personal tax &amp; non-tax payments ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Personal Income + transfer payments</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>National Income − depreciation</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>GDP − indirect taxes</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>PDI = Personal Income − (personal tax payments + non-tax payments)</strong> = income left to spend</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>From National Income, <span class="hl">subtract</span> income earned but not received (e.g., undistributed corporate profits)</li>
+        <li><span class="hl-g">Add</span> income received but not earned (transfer payments — govt subsidies, pensions)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which financial institution plays the lead role in supporting India's export-import activities?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>NABARD</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>EXIM Bank ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>World Bank</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>SIDBI</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>EXIM Bank</strong> (Export-Import Bank), established <span class="hl">1 January 1982</span></div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Institution</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl"><strong>EXIM Bank</strong></span></td><td>1 Jan 1982 — supports exports/imports</td></tr>
+      <tr><td><strong>NABARD</strong></td><td>12 July 1982; B. Sivaraman Committee; supervises RRBs (regulated by RBI); does not deal directly with people</td></tr>
+      <tr><td><strong>SIDBI</strong></td><td>1990; HQ Lucknow (Small Industries Development Bank of India)</td></tr>
+      <tr><td><strong>World Bank</strong></td><td>HQ Washington D.C.; 1944 Bretton Woods Conference; IBRD</td></tr>
+      <tr><td><strong>SEBI</strong></td><td>Act came into effect 1988</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> The first Economic Survey of India was presented in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1947–48</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1950–51 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1951–52</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1952–53</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — First Economic Survey = <strong>1950–51</strong></div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">ECONOMIC SURVEY</div>
+      Until <span class="hl">1964</span> the Economic Survey &amp; Budget were presented together; <strong>after 1964 they were separated</strong>. Now the Survey is presented (by the Ministry of Finance) ~2 days before the Budget.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec orange">⑥ Budget, SEZ &amp; Inflation 💰</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which financial incentive is specifically extended to developers of Special Economic Zones (SEZs) to facilitate infrastructure creation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Subsidy on land acquisition</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tax refund on exports</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Low-interest loans from banks</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Capital grant from the central government ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Capital grant</strong> from the central government (a grant = free money, not to be returned)</div>
+    </div>
+
+    <div class="sticky green">
+      <div class="slbl">FIRST SEZ / EPZ</div>
+      First Export Processing Zone in India (&amp; in <span class="hl">Asia</span>) = <strong>Kandla EPZ</strong>, created in <span class="hl-g">1965</span> (Gujarat).
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> In the context of budgets, which of the following includes the assets and liabilities of the government?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Revenue account</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Capital account ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Escrow account</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Forex account</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — The <strong>Capital account</strong> deals with assets &amp; liabilities. (Escrow = a temporary account held by a neutral third party.)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Part</th><th>Receipts</th><th>Expenditure</th></tr>
+      <tr><td><strong>Revenue</strong></td><td>Tax (direct/indirect) &amp; non-tax (dividends from PSUs, interest)</td><td>Salaries, pensions, wages, interest payments, subsidies</td></tr>
+      <tr><td><strong>Capital</strong></td><td>Creates liability (borrowing) or loses asset (disinvestment)</td><td>Developmental — infrastructure, roads, PSUs (creates assets)</td></tr>
+    </table>
+    <div class="tip-box">
+      <p class="hw">Budget = <span class="hl"><strong>Annual Financial Statement</strong></span>, given under <strong>Article 112</strong>; laid before both Houses in the President's name (presented by the Finance Minister). "Capital account" &amp; "budget" terms are not named in any Article.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which index is used to measure headline inflation in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>CPI Combined ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>GDP Deflator</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>IIP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>WPI</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>CPI Combined</strong> measures headline inflation. Core inflation = headline − (food &amp; fuel/energy).</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Index</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl"><strong>CPI</strong></span></td><td>Headline inflation; includes services; highest weight = food &amp; beverages (was ~45%, now <span class="hl-p">36.75%</span>)</td></tr>
+      <tr><td><strong>WPI</strong></td><td>Excludes services; highest weight = manufactured goods; by Office of Economic Adviser</td></tr>
+      <tr><td><strong>IIP</strong></td><td>8 core industries = <span class="hl">40%</span> of IIP</td></tr>
+      <tr><td><strong>GDP Deflator</strong></td><td>= (Nominal GDP ÷ Real GDP) × 100</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> When was Gender Budgeting introduced in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1991–92</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1997–98</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2005–06 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2020–21</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Gender budgeting (allocating funds for women) was introduced in <strong>2005–06</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> When was the Minimum Support Price (MSP) introduced?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1950s</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1960s (1966–67) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1970s</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1980s</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — MSP introduced in the <strong>1960s (1966–67)</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec teal">⑦ Trade Balance, BOP &amp; Currency Value 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Before 1991, which sector faced heavy regulation through licensing, quotas and price controls?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Agriculture</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Consumer &amp; small-scale industries</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Heavy industry ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Banking only</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Heavy industry</strong> (e.g., steel, cement) faced the heaviest licensing, quotas &amp; price controls. Small-scale faced far less.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Which external event in the early 1990s caused India's Balance of Payments crisis?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gulf War &amp; rise in oil prices ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Asian Financial Crisis</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dot-com bubble</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Great Depression</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>Gulf War</strong> &amp; soaring oil prices triggered the 1991 BOP crisis (only ~2 weeks of forex left) → led to LPG reforms</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw">India imports ~<span class="hl">60%</span> of its LPG needs; ~90% of that comes via the <strong>Strait of Hormuz</strong>. Any disruption there spikes our oil/LPG costs.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> What is the main drawback of India's trade balance?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Surplus exports of services</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Overdependence on a few trading partners</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Persistent trade deficit due to imports ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>High tariff structure</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Persistent trade deficit due to imports</strong> (imports &gt; exports)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>BOP Account</th><th>Includes</th></tr>
+      <tr><td><span class="hl"><strong>Current Account</strong></span></td><td>Trade in goods (visible) &amp; services (invisible) + transfer payments (remittances — India is #1 in receiving)</td></tr>
+      <tr><td><span class="hl-g"><strong>Capital Account</strong></span></td><td>FDI, FPI, borrowings (investments)</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>Twin Deficit</strong> = trade deficit + fiscal (cash) deficit together.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> The introduction of Value Added Tax (VAT) by Indian states before GST primarily aimed to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Minimize the cascading effect of indirect taxation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Increase direct tax collection</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Reduce customs duty</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Eliminate income tax</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — To <strong>minimize the cascading effect</strong> (tax-on-tax) of indirect taxation. VAT &amp; GST are indirect taxes.</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>GST first recommended by the <span class="hl">Kelkar Committee</span>; first Finance Commission to recommend it = <strong>13th FC</strong> (Chairman: Vijay Kelkar)</li>
+        <li>GST Council = Article <span class="hl">279A</span>; 33 members; decisions by <span class="hl">3/4 majority</span>; Centre = 1/3 voting power, States together = 2/3</li>
+        <li><strong>Tariff</strong> = tax levied on imports</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> In a fixed exchange rate system, when government action decreases the value of the domestic currency, this is called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Depreciation</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Appreciation</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Devaluation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Revaluation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Government lowers value = <strong>Devaluation</strong></div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Value falls</th><th>Value rises</th></tr>
+      <tr><td>By government → <span class="hl"><strong>Devaluation</strong></span></td><td>By government → <span class="hl-g"><strong>Revaluation</strong></span></td></tr>
+      <tr><td>By market forces → <strong>Depreciation</strong></td><td>By market forces → <strong>Appreciation</strong></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec red">⑧ Planning Thinkers, Revenue Expenditure &amp; HDI 🧠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Who is regarded as the Father of Indian Planning?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dadabhai Naoroji</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>P.C. Mahalanobis</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>M. Visvesvaraya ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jawaharlal Nehru</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>M. Visvesvaraya</strong> (engineer), wrote <em>Planned Economy for India</em> (1934)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Person</th><th>Contribution</th></tr>
+      <tr><td><span class="hl"><strong>M. Visvesvaraya</strong></span></td><td>Father of Indian Planning; <em>Planned Economy for India</em> (1934)</td></tr>
+      <tr><td><strong>Dadabhai Naoroji</strong></td><td>First poverty line, national income concept; "Grand Old Man of India"; Drain of Wealth theory in <em>Poverty &amp; Un-British Rule in India</em>; East India Association (1866)</td></tr>
+      <tr><td><strong>P.C. Mahalanobis</strong></td><td>Father of Statistics in India; Statistics Day = 29 June; journal <em>Sankhya</em>; Indian Statistical Institute</td></tr>
+      <tr><td><strong>Jawaharlal Nehru</strong></td><td>First Chairperson of the Planning Commission</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> In the context of the Indian budget, which of the following is included in Revenue Expenditure?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Subsidies ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Acquisition of combat aircraft</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Acquisition of naval ships</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Expressway construction</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Subsidies</strong> (revenue expenditure). Aircraft/ships/expressways create assets → capital expenditure.</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">REVENUE EXPENDITURE includes</div>
+      Subsidies · interest payments · salaries · pensions · wages (no asset creation)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> In the Human Development Index, the Education Index is measured using?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mean years of schooling &amp; expected years of schooling ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Literacy rate only</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>GNI per capita</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Life expectancy</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Education Index = <strong>mean years of schooling + expected years of schooling</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec blue">⑨ Schemes, Acts &amp; Institutions 📋</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Which scheme specifically supports MSMEs for technology upgrading?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>PM Employment Generation Programme</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Credit Linked Capital Subsidy Scheme ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Make in India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Atal Innovation Mission</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Credit Linked Capital Subsidy Scheme</strong> — 15% upfront capital subsidy on institutional credit (loans up to ₹1 crore)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> Which NITI Aayog policy initiative focuses on fostering innovation and entrepreneurship?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Atal Innovation Mission ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Make in India</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Startup India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Stand-Up India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Atal Innovation Mission</strong> (Atal Tinkering Labs, Atal Incubation Centres)</div>
+    </div>
+    <div class="sticky green">
+      <div class="slbl">STARTUP INDIA</div>
+      Startup Day = <span class="hl">16 January</span> · Scheme of <strong>DPIIT</strong> (under Ministry of Commerce &amp; Industry)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> The Food Corporation of India (FCI) was established in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1965 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1955</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1975</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1982</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — FCI established in <strong>1965</strong> (Third Five-Year Plan). CACP (Commission for Agricultural Costs &amp; Prices) — recommends/announces MSP.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> The Government set up a committee under R.N. Malhotra (former RBI Governor) to recommend insurance sector reforms in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1983</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1963</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1993 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1999</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>1993</strong> (Malhotra Committee) → led to <strong>IRDA</strong> (Act 1999, body established 2000)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> Which Act created a separate authority for food safety in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Food Safety &amp; Standards Act, 2006 (FSSAI) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Competition Act, 2002</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>MRTP Act, 1969</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>IRDA Act, 1999</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>FSSAI</strong> (Food Safety &amp; Standards Act, 2006). Also: Competition Act 2002 replaced the MRTP Act 1969.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> The Human Development Index (HDI) is a composite index of?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Standard of living, knowledge &amp; life expectancy ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Income, savings &amp; investment</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>GDP, GNP &amp; NNP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Health, sanitation &amp; housing</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Standard of living (income) + Knowledge (education) + Life expectancy</div>
+    </div>
+    <div class="imp">
+      <p class="hw"><strong>MPI (Multidimensional Poverty Index):</strong> Global MPI by <span class="hl">UNDP</span> = 3 dimensions, <strong>10 indicators</strong>. National MPI by <span class="hl-p">NITI Aayog</span> = 3 dimensions, <strong>12 indicators</strong> (extra 2 = bank account &amp; ante-natal care).</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> The trade policy of the 1950s–1980s in India focused on?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Complete liberalization</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Import substitution &amp; protectionism ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Export promotion through free trade</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Foreign portfolio investment</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Import substitution &amp; protectionism</strong> (an "inward-looking strategy" to protect infant domestic industries)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> In the mega consolidation of public sector banks, Andhra Bank was amalgamated into?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Union Bank of India ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Punjab National Bank</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Canara Bank</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indian Bank</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Andhra Bank + Corporation Bank → <strong>Union Bank of India</strong></div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Anchor Bank</th><th>Merged Banks</th></tr>
+      <tr><td><span class="hl"><strong>Union Bank of India</strong></span></td><td>Andhra Bank + Corporation Bank</td></tr>
+      <tr><td><strong>PNB</strong></td><td>Oriental Bank of Commerce + United Bank of India</td></tr>
+      <tr><td><strong>Canara Bank</strong></td><td>Syndicate Bank</td></tr>
+      <tr><td><strong>Indian Bank</strong></td><td>Allahabad Bank</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">NARASIMHAM COMMITTEE</div>
+      On banking reforms (recommended consolidation/merger of PSBs). <span class="hl">Narasimham-I = 1991</span>; <span class="hl-g">Narasimham-II = 1998</span>.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Which of the following is NOT a function of the government in a mixed economy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Setting prices for all goods ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Regulation of the market</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Provision of public goods</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Distribution of income</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Setting prices for ALL goods</strong> = socialist/public economy, not a mixed economy. ("All" = extreme keyword → usually wrong.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> By how much did the Indian rupee devalue in July 1991 to tackle the BOP crisis?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5–7%</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>18–20% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>30–35%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>50%</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>~18–20%</strong> in two steps: 1 July (≈9%) + 3 July (≈11%)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> A "main worker" in India is a person who works for at least how many days a year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>100 days</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>183 days ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>200 days</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>270 days</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Main worker = works <strong>more than 183 days</strong>; less than 183 days = marginal worker</div>
+    </div>
+    <div class="sticky red">
+      <div class="slbl">ORGANIZED vs UNORGANIZED</div>
+      Organized = registered with govt · Unorganized = not registered. <span class="hl">Over 90%</span> of Indian workers are in the unorganized sector.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> India's 1991 external sector reforms included trade liberalization. Which measure best exemplifies this shift?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Imposing high tariffs to protect domestic industry</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Abolishing the import licensing system for most goods ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Banning all imports</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Increasing import substitution</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Abolishing the import licensing system</strong> for most goods (opening up the economy)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> The National Multidimensional Poverty Index (MPI) in India is released by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>NITI Aayog ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UNDP</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>World Bank</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — National MPI by <strong>NITI Aayog</strong> (Global MPI = UNDP)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Related (constitutional):</strong> NHRC est. 1993 (Protection of Human Rights Act, 1993). National Commission for SCs = Art <span class="hl">338</span>; National Commission for STs = Art <span class="hl">338A</span> (split by the 89th Amendment; earlier both under 338).</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec purple">⑩ Inflation, Unemployment &amp; Five-Year Plans 📉</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> Stagflation is a situation of?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>High inflation + stagnant economy (high unemployment) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Falling prices + high growth</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Low inflation + low unemployment</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>High growth + low inflation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Stagflation</strong> = inflation + stagnation (high unemployment). The <span class="hl">Phillips Curve fails</span> here (normally inflation↑ → unemployment↓, an inverse relation).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> Which trend shows that the 1991 reforms led to "growth with inequality"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rural poverty declined faster than urban poverty</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Agricultural employment grew faster</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>The informal sector shrank significantly</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Urban service sector expanded rapidly while agriculture remained stagnant ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Urban services boomed while agriculture stagnated → widening inequality (rich richer, poor poorer)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> When were FDI limits liberalized in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1991 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1995</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2000</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2010</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1991</strong> (LPG reforms)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> Which structural constraint continues to be the most critical factor limiting agricultural productivity in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lack of labour</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>High dependence on monsoon variability ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Excess mechanization</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Surplus credit</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>High dependence on the monsoon</strong> (e.g., El Niño / delayed monsoon years hit productivity)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> The FRBM Act primarily aims to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Reduce the fiscal deficit ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Increase subsidies</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Raise import duties</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Control the money supply</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>FRBM</strong> (Fiscal Responsibility &amp; Budget Management) Act → reduce the fiscal deficit</div>
+    </div>
+
+    <div class="formula">
+      <strong>Fiscal Deficit</strong> = Total Expenditure − Total Receipts (excluding borrowings)<br>
+      <strong>Primary Deficit</strong> = Fiscal Deficit − Interest Payments
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>FRBM Review Committee (Chair: N.K. Singh) targets by 2023:</strong></p>
+      <ul class="hw arr">
+        <li>Debt-to-GDP ratio = <span class="hl">60%</span> (Centre 40% + States 20%)</li>
+        <li>Fiscal deficit-to-GDP = <span class="hl-g">2.5%</span></li>
+        <li>Revenue deficit = <span class="hl-p">0.8%</span> of GDP</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> National income measured at constant prices is called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Real national income (Real GDP) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nominal national income</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Disposable income</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Per capita income</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Constant prices = <strong>Real GDP</strong> (adjusts for inflation). Nominal GDP = current prices.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> What kind of unemployment is caused by technological progress?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Seasonal</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Disguised</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Frictional</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Structural ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Structural unemployment</strong> (skills gap; educated; urban)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Type</th><th>Meaning</th></tr>
+      <tr><td><strong>Seasonal</strong></td><td>Villages/agriculture; work only in certain months</td></tr>
+      <tr><td><strong>Disguised</strong></td><td>More people employed than needed (agriculture)</td></tr>
+      <tr><td><strong>Frictional</strong></td><td>Search/voluntary; switching jobs</td></tr>
+      <tr><td><span class="hl"><strong>Structural</strong></span></td><td>Skills gap; technology mismatch; educated urban unemployed</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> Which Five-Year Plan is referred to as the Gadgil Plan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>First</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Second</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Third ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Fourth</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Teacher's instruction: if both 3rd &amp; 4th appear, choose the <strong>Third (Gadgil Plan)</strong>; the 4th was based on the Rudra model, the 5th on the D.P. Dhar model.</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Plan</th><th>Model / Note</th></tr>
+      <tr><td>First (1951–56)</td><td>Harrod–Domar model</td></tr>
+      <tr><td>Second (1956–61)</td><td>P.C. Mahalanobis model; rapid industrialization; 3 steel plants</td></tr>
+      <tr><td>Third (1961–66)</td><td><span class="hl">Gadgil Plan</span>; goal: self-reliant economy; <span class="hl-p">failed</span> (target 5.6%, achieved 2.8%) — China/Pakistan wars + famine</td></tr>
+      <tr><td>Plan Holiday (1966–69)</td><td>3 annual plans</td></tr>
+      <tr><td>Fourth (1969–74)</td><td>"Growth with stability"; Rudra model</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec green">⑪ Employment, Industries &amp; Insurance 👷</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> Which segment of the Indian economy is the second largest source of employment after agriculture?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>MSME ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>IT sector</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Construction</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Banking</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>MSME</strong> (Micro, Small &amp; Medium Enterprises). MSME Day = <span class="hl">27 June</span>.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Which of the following was NOT a challenge faced by Indian agriculture between 1950 and 1990?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fragmented land holdings</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Dependence on monsoon rainfall</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Low use of fertilizer &amp; irrigation</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>High rural literacy rate causing a labour supply crisis ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Rural literacy was actually <span class="hl">low</span> back then, so a "high rural literacy rate" was NOT a challenge</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> Before 1991, which policy limited private sector participation in certain industries?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Industrial Licensing Policy ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Agricultural subsidy policy</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Export promotion policy</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Monetary policy</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>Industrial Licensing Policy</strong> (License Raj, 1951) restricted the private sector</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> The LIC (Life Insurance Corporation) was established in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1950</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1954</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1956 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1969</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — LIC established <strong>1 September 1956</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> Which trend shows that the 1991 reforms improved India's external sector stability?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Continuous fall in forex &amp; exchange reserves</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>External debt doubled</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Rise in foreign exchange reserves over time ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Decline in investment</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — A <strong>rise in forex reserves</strong> over time shows improved stability</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> The Industrial Policy Resolution of 1956 classified industries into how many categories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>3 schedules</strong></div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Schedule</th><th>Industries</th></tr>
+      <tr><td><strong>Schedule A</strong></td><td>17 industries — exclusively government (state monopoly)</td></tr>
+      <tr><td><strong>Schedule B</strong></td><td>12 industries — government-led, private allowed</td></tr>
+      <tr><td><strong>Schedule C</strong></td><td>Remaining — left to the private sector</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> The "Enforcing Contracts" indicator in the Ease of Doing Business measures?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Labour relations</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Managing taxes</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Efficiency of the judicial system in resolving commercial disputes ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Trade openness</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Efficiency of the judicial system in resolving commercial disputes</div>
+    </div>
+    <div class="tip-box">
+      <p class="hw">🧠 The more <strong>explanatory / longer</strong> option is often the answer — read it carefully (but don't blindly jump to it).</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> Which of the following is a major challenge for Indian agriculture today?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Progressive fragmentation &amp; declining size of operational holdings ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Excess of large farms</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Too much mechanization</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Surplus irrigation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Continuous division of land (across generations) → smaller holdings → lower productivity</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec red">⑫ Reforms, NITI Aayog, Budget &amp; Plans 🔄</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> Why are the 1991 reforms sometimes linked to "jobless growth"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>High GDP growth without proportionate employment expansion ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Negative GDP growth</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Falling productivity</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Declining exports</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Growth happened, but employment did not expand proportionately</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> Which of the following is a core function of NITI Aayog?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Allocation of plan funds to states</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Controlling monetary policy</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Conducting elections</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Policy think tank &amp; cooperative federalism ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — NITI Aayog = <strong>policy think tank &amp; cooperative federalism</strong> (formed 1 Jan 2015, replacing the Planning Commission; an executive/extra-constitutional body — it does NOT allocate funds)</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">MONETARY POLICY (by RBI / MPC)</div>
+      <strong>Quantitative</strong> &amp; <strong>Qualitative</strong> tools. Quantitative = expansionary (cheap/dovish) or contractionary. During <span class="hl">inflation → contractionary</span> (raise CRR, SLR, bank rate, repo, reverse repo) — "hawkish / dear / tight".
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> During the planning era, "import substitution industrialization" in India aimed to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Encourage exports of manufactured goods</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Attract foreign investment</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Replace imports of manufactured products with domestic production through protectionist policies ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Promote free trade</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Replace imports with domestic production via protectionist policies</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> When was the EXIM Bank established?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1 January 1982 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>12 July 1982</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1990</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1956</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — EXIM Bank = <strong>1 Jan 1982</strong>. (NABARD = 12 July 1982, on B. Sivaraman Committee recommendation.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> When tax collection exceeds the required expenditure, the budget is?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Surplus budget ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Deficit budget</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Balanced budget</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Zero-based budget</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Income &gt; expenditure = <strong>Surplus budget</strong>. (Expenditure &gt; income = deficit; equal = balanced.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> Which index measures wholesale prices?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>WPI ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>CPI</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>IIP</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>GDP Deflator</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>WPI</strong>, by the Office of Economic Adviser (Ministry of Commerce &amp; Industry). CPI = NSO/CSO (MoSPI); GDP = MoSPI.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec orange">⑬ Five-Year Plans, Industries &amp; Trade Schemes 🏗️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Which of the following was a target of India's 10th Five-Year Plan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Doubling exports</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>100% rural electrification only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Raise literacy to 75% &amp; reduce IMR/MMR ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Eliminate the fiscal deficit</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — 10th FYP (<span class="hl">2002–2007</span>): literacy → 75%; reduce IMR to 45 (per 1000) &amp; MMR to 2 (per 1000 live births)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> Which industry was considered the "commanding heights of the economy" during 1950–1980?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Textile</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Handicraft</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Agriculture</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Heavy industry, steel &amp; energy ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Heavy industry, steel &amp; energy (the more explanatory option)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> Which sector was given top priority in India's Second Five-Year Plan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Heavy &amp; basic industry ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Agriculture</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Services</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Textiles</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Heavy &amp; basic industry</strong> (Mahalanobis model)</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">BASIC vs FOOTLOOSE INDUSTRY</div>
+      <strong>Basic industry</strong> = one on which other industries depend (e.g., steel).<br>
+      <strong>Footloose industry</strong> = can be set up anywhere (raw material not a constraint). Heavy industries are best near raw materials (to cut transport cost).
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> Which scheme provided financial incentives to exporters from SEZs?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Foreign Trade Investment Programme</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>PM Export Fund</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>National Export Insurance Scheme</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Merchandise Exports from India Scheme (MEIS) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>MEIS</strong> (Foreign Trade Policy 2015–20). Replaced in 2021 by <span class="hl">RoDTEP</span> (Remission of Duties &amp; Taxes on Exported Products) to comply with WTO norms.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> The concept of the Five-Year Plan was borrowed from?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Former Soviet Union (USSR) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>USA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>France</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Borrowed from the <strong>former Soviet Union (USSR)</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Which trade-related policy reform was introduced in 1991 to boost India's export growth?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Import substitution strategy</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Export-import policy framework</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Economic Liberalization Policy (LPG) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Higher tariffs</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Economic Liberalization (LPG — Liberalization, Privatization, Globalization)</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> Which fiscal reform was introduced in India after 1991 to strengthen revenue collection?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Increased subsidies</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Introduced GST</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Simplified indirect taxes through MODVAT ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Abolished income tax</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>MODVAT</strong> (Modified Value Added Tax) simplified indirect tax &amp; reduced the cascading effect (tax-on-tax)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> What was the main drawback of small-scale industry reservation policies?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Encouraged monopoly power</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Eliminated export opportunities</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Excluded the rural entrepreneur</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Restricted economies of scale &amp; technological upgrading ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Restricted economies of scale &amp; technological upgrading (small units stayed manual, couldn't scale up)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> Which plan was terminated one year before completion due to the Indo-China War? <span class="hl-p">(flawed question — see note)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>First Plan</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Second Plan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Third Plan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Fourth Plan</div>
+      </div>
+      <div class="mcq-ans">⚠ Answer: Question appears erroneous. The plan terminated one year early was the <strong>Fifth Plan</strong> (1974–78, ended 1978) — but that is NOT in the options. The Indo-China War (1962) occurred during the <strong>Third Plan</strong>. Likely a printing/framing error (teacher flagged it).</div>
+    </div>
+    <div class="imp">
+      <p class="hw">Teacher's note: the Fifth Plan was terminated a year early (by the Janata government), but the war reference points to the Third Plan — so the question itself has a discrepancy. Verify in the official key.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> When nominal GDP rises faster than real GDP, what does this indicate?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>High inflation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Deflation</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Recession</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Disinflation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>High inflation</strong> (nominal GDP still contains inflation; real GDP removes it)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">INFLATION TERMS</div>
+      <strong>Deflation</strong> = prices fall (opposite of inflation) · <strong>Disinflation</strong> = inflation still positive but its <span class="hl">rate is slowing</span> (NOT the opposite of inflation).
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec blue">⑭ Monetary Tools, Banking &amp; Wrap-up 🏁</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> In the context of money supply in India, which of the following is NOT a quantitative tool of the RBI?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Repo rate</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Open Market Operations</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Marginal Standing Facility</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Moral suasion / Margin requirements ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Moral suasion &amp; margin requirements are QUALITATIVE</strong>. Quantitative = bank rate, repo, reverse repo, CRR, SLR, OMO, MSF.</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Open Market Operations (OMO / sterilization)</strong> = buying/selling govt securities. <span class="hl">Sell</span> during inflation (suck out money); <span class="hl-g">buy</span> during deflation/recession (inject money). Two types: <strong>outright purchase</strong> &amp; <strong>repo</strong> (repurchase obligation).</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> By 1990, India's external debt had become?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Very high, leading to a crisis ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Zero</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Negative</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Unchanged since 1947</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — External debt was <strong>very high</strong>, contributing to the 1991 crisis</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> The GST Council is chaired by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Union Finance Minister ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Prime Minister</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>RBI Governor</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>President</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>Union Finance Minister</strong> chairs the GST Council (Article 279A)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> Disguised employment is generally found in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Agriculture sector ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>IT sector</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Banking</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Manufacturing</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Agriculture</strong> (more people work than actually required)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> The Manmohan Singh Committee is known for?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Liberalization &amp; structural adjustment ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Banking reforms</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Agricultural pricing</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tax reforms</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Liberalization &amp; structural adjustment</strong> (LPG reforms). In 1991, Manmohan Singh was Finance Minister; PM = P.V. Narasimha Rao. (Banking reforms = Narasimham Committee.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> LIC was nationalized to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mobilize savings for plan development ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Promote foreign trade only</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Reduce taxes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Increase imports</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — To <strong>mobilize public savings for plan development</strong> (among aims like rural employment, agriculture)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> Which of the following is an example of the "generosity" factor (Happiness Index)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>GDP per capita</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Life expectancy</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Perception of corruption</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Willingness to donate / help others ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Generosity = <strong>willingness to donate</strong> (the more explanatory option)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> In the context of money supply, ___ refers to the buying and selling of bonds issued by the Government of India.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Open Market Operations ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Moral suasion</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Margin requirements</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>CRR</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Open Market Operations</strong> (sell during inflation, buy during deflation). Moral suasion &amp; margin requirements = qualitative tools.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> The "Getting Electricity" indicator in Ease of Doing Business measures?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Number of households with power</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Total power production</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Cost, time &amp; procedures to obtain an electricity connection ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Per capita power consumption</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Cost, time &amp; procedures to get electricity (the more explanatory option)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> Which statement best captures India's industrial performance during the Third Five-Year Plan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The plan's failure (wars &amp; droughts) led to import dependence ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Record industrial surplus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Full self-sufficiency achieved</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Highest growth of all plans</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The Third Plan failed (target 5.6% vs achieved 2.8%) due to wars &amp; droughts → import dependence</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — Key Facts &amp; Figures</div>
+    <table class="qr-t">
+      <tr><th>Topic</th><th>Fact</th></tr>
+      <tr><td>Global Livability Index</td><td>EIU (Copenhagen 1st)</td></tr>
+      <tr><td>Comparative advantage</td><td>Ricardo</td></tr>
+      <tr><td>Father of Macro / Micro economics</td><td>Keynes / Adam Smith</td></tr>
+      <tr><td>Happiness Index data / variables</td><td>UN SDSN / 6</td></tr>
+      <tr><td>Top 3 happiest</td><td>Finland, Iceland, Denmark (FDI)</td></tr>
+      <tr><td>Thrust to small-scale industries</td><td>IPR 1977 (tiny units)</td></tr>
+      <tr><td>Industrial Licensing introduced</td><td>1951</td></tr>
+      <tr><td>Legal tender</td><td>Coins (fiat money)</td></tr>
+      <tr><td>India's largest trading partner</td><td>China</td></tr>
+      <tr><td>Energy Transition / Gender Gap Index</td><td>World Economic Forum</td></tr>
+      <tr><td>HDI publisher / dimensions</td><td>UNDP / 3</td></tr>
+      <tr><td>1978 demonetization</td><td>₹1000, ₹5000, ₹10000 (Morarji Desai)</td></tr>
+      <tr><td>EXIM Bank / NABARD</td><td>1 Jan 1982 / 12 July 1982</td></tr>
+      <tr><td>First Economic Survey</td><td>1950–51</td></tr>
+      <tr><td>First SEZ/EPZ (Asia)</td><td>Kandla, 1965</td></tr>
+      <tr><td>Budget = Annual Financial Statement</td><td>Article 112</td></tr>
+      <tr><td>Headline inflation index</td><td>CPI Combined</td></tr>
+      <tr><td>Gender budgeting / MSP introduced</td><td>2005–06 / 1966–67</td></tr>
+      <tr><td>1991 BOP crisis trigger</td><td>Gulf War + oil prices</td></tr>
+      <tr><td>July 1991 rupee devaluation</td><td>~18–20%</td></tr>
+      <tr><td>GST Council / first recommended by</td><td>Art 279A, FM-chaired / Kelkar Committee (13th FC)</td></tr>
+      <tr><td>Father of Indian Planning</td><td>M. Visvesvaraya</td></tr>
+      <tr><td>FCI / LIC established</td><td>1965 / 1956</td></tr>
+      <tr><td>Malhotra Committee (insurance)</td><td>1993 → IRDA</td></tr>
+      <tr><td>FSSAI Act / Competition Act</td><td>2006 / 2002 (replaced MRTP 1969)</td></tr>
+      <tr><td>NITI Aayog formed</td><td>1 Jan 2015 (replaced Planning Commission)</td></tr>
+      <tr><td>National MPI / Global MPI</td><td>NITI Aayog / UNDP</td></tr>
+      <tr><td>Five-Year Plan concept from</td><td>USSR</td></tr>
+      <tr><td>Main worker</td><td>&gt; 183 days/year</td></tr>
+      <tr><td>MSME Day / Startup Day</td><td>27 June / 16 January</td></tr>
+      <tr><td>10th FYP period</td><td>2002–2007</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>Flow = over a <span class="hl"><strong>period</strong></span> of time; Stock = at a <span class="hl-g"><strong>point</strong></span> of time</li>
+          <li>Govt lowers currency = <strong>Devaluation</strong>; market = Depreciation</li>
+          <li>HDI = UNDP; Gender Gap / Energy Transition / Competitiveness = WEF</li>
+          <li>"ALL / ONLY / NEVER" = extreme keywords = usually wrong options</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Happy 3 → 🧠 <span class="hl"><strong>"FDI"</strong></span> (Finland, Iceland, Denmark)</li>
+          <li>Primary Deficit = Fiscal Deficit − Interest Payments</li>
+          <li>Moral suasion &amp; margin requirements = <strong>qualitative</strong> tools</li>
+          <li>The longer/more <span class="hl-p">explanatory</span> option is often correct — read it carefully</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF ECONOMY PYQ NOTES</div>
+      <strong>All 86 Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
