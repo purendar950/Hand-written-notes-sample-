@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway PYQ GK — L4 Citizenship | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Railway PYQ GK — L4 नागरिकता</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy · Railway PYQ GK</div>
+    <div class="cover-title">🛂 लेक्चर 4 — नागरिकता (भाग 1)</div>
+    <div class="cover-sub">संविधान का भाग II · अनुच्छेद 5–11 | सभी प्रश्न सहित</div>
+    <div class="cover-badge">🛂 भाग II · ⚖️ अनु. 5–11 · 🇬🇧 एकल नागरिकता · 🚪 प्रवास तिथियाँ · 🌍 विदेश में भारतवंशी · 🏛️ संसद की शक्ति</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① नागरिकता — भाग II व अनुच्छेद सीमा 🛂</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> संविधान के अनुच्छेद 5 से 11 किससे संबंधित हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौलिक कर्तव्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>नागरिकता ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मौलिक अधिकार</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>DPSP</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनुच्छेद 5–11 = <strong>नागरिकता</strong>। (मौलिक कर्तव्य = अनु. 51A; मौलिक अधिकार = अनु. 12–35; DPSP = अनु. 36–51।)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>भाग</th><th>विषय</th><th>अनुच्छेद</th></tr>
+      <tr><td>भाग I</td><td>संघ व उसका राज्यक्षेत्र</td><td>1–4</td></tr>
+      <tr><td><span class="hl"><strong>भाग II</strong></span></td><td><span class="hl">नागरिकता</span></td><td><span class="hl">5–11</span></td></tr>
+      <tr><td>भाग III</td><td>मौलिक अधिकार</td><td>12–35</td></tr>
+      <tr><td>भाग IV</td><td>DPSP</td><td>36–51</td></tr>
+      <tr><td>भाग V</td><td>संघ (केंद्र)</td><td>52–151</td></tr>
+      <tr><td>भाग VI</td><td>राज्य</td><td>152–237</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> भारतीय संविधान का कौन-सा भाग नागरिकता से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भाग II ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भाग VI</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भाग III</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भाग IV</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>भाग II</strong> (भाग III = मौलिक अधिकार, भाग IV = DPSP, भाग VI = राज्य)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> संविधान के प्रारंभ (commencement) के समय नागरिकता से कौन-से अनुच्छेद संबंधित हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 14 से 24</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 12 से 18</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 1 से 4</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>अनुच्छेद 5 से 11 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>अनुच्छेद 5–11</strong>। (14–24 व 12–18 = मौलिक अधिकार; 1–4 = संघ व राज्यक्षेत्र।) संविधान <span class="hl">26 जनवरी 1950</span> को प्रवृत्त हुआ।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② एकल नागरिकता व उधार लिए प्रावधान 🇬🇧</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> भारतीय संविधान निम्न में से किस प्रकार की नागरिकता का निषेध करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>दोहरी नागरिकता ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एकल नागरिकता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अर्जित नागरिकता</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जन्म से नागरिकता</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — भारत <strong>दोहरी नागरिकता</strong> का निषेध करता है → भारत में <span class="hl">एकल नागरिकता</span> है (UK से ली गई)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>UK (ब्रिटिश संविधान) से उधार लिए प्रावधान:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">एकल नागरिकता</span></li>
+        <li>संसदीय शासन प्रणाली (वेस्टमिंस्टर मॉडल)</li>
+        <li>विधि का शासन (अवधारणा: ए.वी. डायसी)</li>
+        <li>द्विसदनीयता</li>
+        <li>मार्शल लॉ</li>
+        <li>फर्स्ट-पास्ट-द-पोस्ट प्रणाली</li>
+        <li>विशेषाधिकार रिट</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec orange">③ नागरिकता प्रावधानों का प्रारंभ 📅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> संविधान के नागरिकता प्रावधान कब प्रभावी हुए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>15 अगस्त 1947</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>26 नवंबर 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>19 जुलाई 1949</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>26 जनवरी 1950</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — नागरिकता प्रावधान <strong>26 नवंबर 1949</strong> को प्रभावी हुए (जिस दिन संविधान अंगीकृत हुआ) — इन्हें 2 महीने प्रतीक्षा नहीं कराई गई।</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">26 जन. 1930</span> पूर्ण स्वराज दिवस (पहला स्वतंत्रता दिवस मनाया गया)</div>
+      <div class="tl-item"><span class="yr">26 नव. 1949</span> संविधान <strong>अंगीकृत</strong> (संविधान दिवस) — नागरिकता, निर्वाचन व अनंतिम संसद के प्रावधान <span class="hl">तुरंत</span> प्रभावी हुए</div>
+      <div class="tl-item"><span class="yr">26 जन. 1950</span> संविधान <strong>प्रवृत्त</strong> हुआ (तिथि 1930 पूर्ण स्वराज दिवस के सम्मान में चुनी गई)</div>
+    </div>
+    <div class="tip-box">
+      <p class="hw">अनुच्छेद 5–11 <span class="hl">प्रारंभ के समय</span> की नागरिकता से संबंधित हैं (संविधान से पहले)। प्रारंभ के <em>बाद</em> की नागरिकता <strong>नागरिकता अधिनियम, 1955</strong> द्वारा शासित है।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec green">④ अनुच्छेद 5–11 — मुख्य संदर्भ ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> संविधान के प्रारंभ के समय नागरिकता के अधिकार किस अनुच्छेद में हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 7</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 11</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>5</strong> = संविधान के प्रारंभ के समय नागरिकता</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>अनुच्छेद</th><th>प्रावधान</th></tr>
+      <tr><td><span class="hl"><strong>5</strong></span></td><td>संविधान के प्रारंभ के समय नागरिकता</td></tr>
+      <tr><td><strong>6</strong></td><td><span class="hl">पाकिस्तान से भारत आए</span> व्यक्तियों के नागरिकता अधिकार</td></tr>
+      <tr><td><strong>7</strong></td><td><span class="hl">पाकिस्तान गए</span> कुछ प्रवासियों के अधिकार (जो बाद में लौट आए)</td></tr>
+      <tr><td><strong>8</strong></td><td><span class="hl">भारत से बाहर रहने वाले</span> भारतवंशी व्यक्तियों के नागरिकता अधिकार</td></tr>
+      <tr><td><strong>9</strong></td><td>स्वेच्छा से विदेशी नागरिकता लेने वाले = नागरिक नहीं</td></tr>
+      <tr><td><strong>10</strong></td><td>नागरिकता अधिकारों की निरंतरता</td></tr>
+      <tr><td><strong>11</strong></td><td>संसद कानून द्वारा नागरिकता को विनियमित करेगी</td></tr>
+    </table>
+    <div class="sticky blue">
+      <div class="slbl">केवल संसद क्यों? (अनु. 11)</div>
+      नागरिकता <span class="hl"><strong>संघ सूची</strong></span> का विषय है, अतः इस पर केवल संसद कानून बना सकती है।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ प्रवास व कट-ऑफ तिथियाँ — अनुच्छेद 6 व 7 🚪</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> संविधान के प्रारंभ से पहले पाकिस्तान से आए लोगों की नागरिकता को कौन-सा प्रावधान संबोधित करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 5</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 8</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 9</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>6</strong> (पाकिस्तान से भारत आए व्यक्तियों के नागरिकता अधिकार)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>अनुच्छेद 6(b)(1) — कट-ऑफ तिथि = <span class="hl">19 जुलाई 1948</span>:</strong></p>
+      <ul class="hw arr">
+        <li>पाकिस्तान से <strong>19 जुलाई 1948 से पहले</strong> आए व सामान्यतः निवासी → नागरिक ✔ ("हैप्पी बर्थडे!")</li>
+        <li><strong>19 जुलाई 1948 के बाद</strong> आए → भारत में कम-से-कम <span class="hl">6 महीने</span> निवास, फिर आवेदन व पंजीकरण आवश्यक</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> अनुच्छेद 7 के अनुसार, ___ के बाद भारत के राज्यक्षेत्र से अब पाकिस्तान में शामिल क्षेत्र में प्रवास करने वाला व्यक्ति भारत का नागरिक नहीं माना जाएगा।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1 मार्च 1947 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>19 जुलाई 1948</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15 अगस्त 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>26 जनवरी 1950</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. 7 कट-ऑफ = <strong>1 मार्च 1947</strong>। इसके बाद पाकिस्तान गए व बाद में लौटे लोगों को आवेदन हेतु वैध पासपोर्ट/परमिट चाहिए।</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>दो कट-ऑफ तिथियाँ:</strong> अनुच्छेद <strong>6</strong> (पाकिस्तान से आए) → <span class="hl">19 जुलाई 1948</span> · अनुच्छेद <strong>7</strong> (पाकिस्तान गए, फिर लौटे) → <span class="hl-g">1 मार्च 1947</span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec teal">⑥ विदेश में भारतवंशी — अनुच्छेद 8 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> भारत से बाहर रहने वाले कुछ भारतवंशी व्यक्तियों के नागरिकता अधिकारों के प्रावधान किस अनुच्छेद में हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 11</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 8 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 5</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 13</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>8</strong> (भारत से बाहर रहने वाले भारतवंशी — विशेष रूप से पाकिस्तान के बारे में नहीं)। अनु. 13 = मौलिक अधिकार (मौलिक अधिकारों के असंगत कानून शून्य)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> अनुच्छेद 8 के तहत विदेश में रहने वाले भारतवंशी भारतीय नागरिकता के लिए कहाँ आवेदन कर सकते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल दिल्ली के भारतीय दूतावास में</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अपने निवास देश के भारतीय दूतावास में ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>राज्य सरकार कार्यालय में</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उच्चतम न्यायालय में</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>अपने निवास देश के भारतीय दूतावास में</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec red">⑦ संसद की शक्ति व दोहरी नागरिकता 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> कानून द्वारा नागरिकता को विनियमित करने की संसद की शक्ति किस अनुच्छेद में वर्णित है? <span class="hl-p">(RPF कांस्टेबल 2024)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 11 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 10</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 5</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>11</strong>: संसद कानून द्वारा नागरिकता को विनियमित कर सकती है। (अनु. 10 = नागरिकता अधिकारों की निरंतरता।)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">संबंधित अनुच्छेद (लेक्चर में उल्लिखित)</div>
+      अनु. <span class="hl">89</span> = उपराष्ट्रपति राज्यसभा के पदेन सभापति (सभापति + उपसभापति)।<br>
+      अनु. <span class="hl-g">93</span> = लोकसभा अपने सदस्यों में से अध्यक्ष व उपाध्यक्ष चुनती है।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> निम्न में से किस देश में दोहरी नागरिकता की नीति स्वीकार की जाती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चीन</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>भारत</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>USA</strong> दोहरी नागरिकता स्वीकार करता है। भारत व UK = एकल नागरिकता (भारत ने UK से ली)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec blue">⑧ प्रारंभ के समय अनुच्छेद 5 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> भाग II का कौन-सा प्रावधान प्रारंभ के समय नागरिकता का एक आधार बताता है — विशेषकर कि माता या पिता में से कोई भारत में जन्मा हो?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 6</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 8</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>5</strong> (प्रारंभ के समय नागरिकता)</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>समाचार संदर्भ:</strong> विदेश मंत्रालय ने स्पष्ट किया है कि <span class="hl">पासपोर्ट एक यात्रा दस्तावेज है, नागरिकता का प्रमाण नहीं</span>।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> कौन-सा अनुच्छेद भारत में जन्मे, जिनके माता/पिता में से कोई भारत में जन्मा हो, व संविधान के प्रारंभ से ठीक पहले 5 वर्ष भारत में सामान्यतः निवासी रहे, ऐसे व्यक्तियों से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 4</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 6</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>5</strong> प्रारंभ के समय नागरिकता के आधार बताता है (अधिवास + भारत में जन्म / माता-पिता का भारत में जन्म / 5 वर्ष सामान्य निवास)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec orange">⑨ प्रवासी शर्तें व अनुच्छेद 9 🔚</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> 19 जुलाई 1948 के बाद पाकिस्तान से आया व्यक्ति भारतीय नागरिक केवल तभी बन सकता था जब?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>वह 1948 में पाकिस्तान का निवासी था</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>उसने केवल निष्ठा की शपथ ली</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>वह भारत में (1947 से पहले) जन्मा हो व डोमिनियन ऑफ इंडिया के अधिकारी द्वारा पंजीकृत हो ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वह विदेशी नागरिक था</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>भारत में जन्मा</strong> (1947 से पहले) हो व <strong>डोमिनियन ऑफ इंडिया के अधिकारी द्वारा पंजीकृत</strong> हो (कम-से-कम 6 महीने निवास के बाद)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> कौन-सा अनुच्छेद कहता है कि स्वेच्छा से विदेशी राज्य की नागरिकता लेने वाला व्यक्ति संविधान के प्रारंभ के समय भारत का नागरिक नहीं माना जाएगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 7</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 8</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 9 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 10</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>9</strong>: स्वेच्छा से विदेशी नागरिकता लेना → भारतीय नागरिकता समाप्त</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec green">⑩ आवश्यकताएँ, सही कथन व पुनरावलोकन ✅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> अनुच्छेद 5 के तहत, प्रारंभ के समय नागरिक माने जाने के लिए निम्न में से क्या आवश्यक नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भारतीय पासपोर्ट ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भारत के राज्यक्षेत्र में अधिवास</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत में जन्म</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>माता/पिता में से कम-से-कम एक का भारत में जन्म</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनुच्छेद 5 के तहत <strong>भारतीय पासपोर्ट आवश्यक नहीं</strong> है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> भारतीय नागरिकता प्रावधानों के संदर्भ में निम्न में से कौन-सा कथन सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नागरिकता राज्य सूची में है</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 5–11 नागरिकता के हकदार व्यक्तियों की विभिन्न श्रेणियों से संबंधित हैं ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारतीय नागरिकता पाने के केवल तीन तरीके हैं</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नागरिकता राज्य सरकारों द्वारा दी जाती है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — नागरिकता <span class="hl">संघ सूची</span> में है (राज्य सूची नहीं); इसे पाने के <span class="hl">तीन से अधिक</span> तरीके हैं (नागरिकता अधिनियम, 1955 में)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> संविधान के प्रारंभ के समय नागरिकता किस अनुच्छेद के तहत परिभाषित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 6</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 11</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>अनुच्छेद 5</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> अनुच्छेद 6 निम्न में से किस क्षेत्र से भारत आए व्यक्तियों की नागरिकता से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पाकिस्तान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नेपाल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>श्रीलंका</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बांग्लादेश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. 6 = <strong>पाकिस्तान</strong> से भारत आए व्यक्ति</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> निम्न में से कौन-सा अनुच्छेद भारत से बाहर रहने वाले भारतवंशी लोगों की नागरिकता से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 7</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 11</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 8 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 9</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>8</strong> (अनु. 7 = पाकिस्तान गए प्रवासी; अनु. 11 = संसद की शक्ति; अनु. 9 = विदेशी नागरिकता लेना)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> कौन-सा अनुच्छेद संसद को भारतीय नागरिकता के अर्जन व समाप्ति संबंधी कानून बनाने का अधिकार देता है? <span class="hl-p">(RRB NTPC UG CBT-1)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 11 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 12</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 7</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>11</strong> संसद को नागरिकता के अर्जन व समाप्ति का अधिकार देता है। (अनु. 12 = "राज्य" की परिभाषा; अनु. 10 = नागरिकता की निरंतरता।)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — अनुच्छेद 5–11 एक नज़र में</div>
+    <table class="qr-t">
+      <tr><th>अनुच्छेद / विषय</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td>नागरिकता — भाग</td><td>भाग II (अनुच्छेद 5–11)</td></tr>
+      <tr><td>अनुच्छेद 5</td><td>प्रारंभ के समय नागरिकता</td></tr>
+      <tr><td>अनुच्छेद 6</td><td>पाकिस्तान से प्रवासी (कट-ऑफ 19 जुलाई 1948)</td></tr>
+      <tr><td>अनुच्छेद 7</td><td>पाकिस्तान गए व लौटे प्रवासी (कट-ऑफ 1 मार्च 1947)</td></tr>
+      <tr><td>अनुच्छेद 8</td><td>भारत से बाहर रहने वाले भारतवंशी</td></tr>
+      <tr><td>अनुच्छेद 9</td><td>स्वेच्छा से विदेशी नागरिकता → नागरिक नहीं</td></tr>
+      <tr><td>अनुच्छेद 10</td><td>नागरिकता अधिकारों की निरंतरता</td></tr>
+      <tr><td>अनुच्छेद 11</td><td>संसद कानून द्वारा नागरिकता विनियमित करती है</td></tr>
+      <tr><td>अनुच्छेद 12</td><td>"राज्य" की परिभाषा (मौलिक अधिकार)</td></tr>
+      <tr><td>नागरिकता किस सूची में</td><td>संघ सूची</td></tr>
+      <tr><td>एकल नागरिकता किससे ली</td><td>UK</td></tr>
+      <tr><td>दोहरी नागरिकता कहाँ स्वीकार</td><td>USA</td></tr>
+      <tr><td>संविधान अंगीकृत / प्रवृत्त</td><td>26 नव. 1949 / 26 जन. 1950</td></tr>
+      <tr><td>प्रारंभ के बाद नागरिकता</td><td>नागरिकता अधिनियम, 1955</td></tr>
+      <tr><td>पासपोर्ट</td><td>यात्रा दस्तावेज, नागरिकता का प्रमाण नहीं</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखें!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><strong>5</strong> = प्रारंभ · <strong>6</strong> = पाकिस्तान से · <strong>7</strong> = पाकिस्तान को · <strong>8</strong> = विदेश में</li>
+          <li><strong>9</strong> = विदेशी नागरिकता · <strong>10</strong> = निरंतरता · <strong>11</strong> = संसद</li>
+          <li>कट-ऑफ: अनु. 6 = <span class="hl">19 जुलाई 1948</span> · अनु. 7 = <span class="hl-g">1 मार्च 1947</span></li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 3">
+          <li>"भारत से बाहर रहने वाले" → हमेशा <strong>अनुच्छेद 8</strong> (पाकिस्तान नहीं)</li>
+          <li>भारत = एकल नागरिकता (UK से); USA = दोहरी</li>
+          <li>प्रारंभ के समय नागरिकता = संविधान; बाद में = <span class="hl-p">अधिनियम 1955</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 लेक्चर 4 नोट्स समाप्त (भाग 1)</div>
+      <strong>सभी प्रश्न शामिल ✅ | अगला: नागरिकता अधिनियम, 1955 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
