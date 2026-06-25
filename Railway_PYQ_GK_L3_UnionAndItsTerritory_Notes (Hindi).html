@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway PYQ GK — L3 Union & Its Territory | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Railway PYQ GK — L3 संघ व उसका राज्यक्षेत्र</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy · Railway PYQ GK</div>
+    <div class="cover-title">🗺️ लेक्चर 3 — संघ व उसका राज्यक्षेत्र</div>
+    <div class="cover-sub">संविधान का भाग I + केंद्रशासित प्रदेश | सभी प्रश्न सहित</div>
+    <div class="cover-badge">🏛️ अनुच्छेद 1 · 📜 अनुसूचियाँ · 🏝️ UTs · ⚖️ अनु. 239–241 · 🆕 राज्यों का गठन · 🔑 अनुच्छेद 371</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① भाग I व अनुच्छेद 1 — राज्यों का संघ 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> संविधान के किस अनुच्छेद में लिखा है कि "इंडिया, अर्थात् भारत, राज्यों का संघ होगा"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 1 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 3</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 4</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनुच्छेद <strong>1</strong>: "इंडिया, अर्थात् भारत, राज्यों का संघ होगा" (भाग I, अनु. 1–4)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>"राज्यों का संघ" क्यों, "महासंघ (Federation)" क्यों नहीं? (आंबेडकर का तर्क):</strong></p>
+      <ul class="hw arr">
+        <li>राज्यों ने आपसी समझौते से भारत का निर्माण <span class="hl">नहीं</span> किया</li>
+        <li>इसलिए राज्यों को संघ से <span class="hl-p"><strong>अलग होने का अधिकार नहीं</strong></span></li>
+        <li>भारत = <span class="hl-g"><strong>नष्ट न होने वाला संघ (अविनाशी), विनाशी राज्यों का</strong></span></li>
+      </ul>
+    </div>
+    <div class="imp">
+      <p class="hw"><strong>USA से तुलना:</strong> USA = <span class="hl">विनाशी संघ, अविनाशी राज्यों का</span> (राज्य नहीं बदले जा सकते, पर संघ समझौते से बना)। भारत इसके विपरीत है।</p>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">संविधान के भाग</div>
+      मूल रूप से <span class="hl"><strong>22 भाग</strong></span> → अब <span class="hl-g"><strong>25 भाग</strong></span><br>
+      4 भाग जोड़े गए · 1 भाग हटाया गया (भाग VII, 7वें संशोधन, 1956 द्वारा निरस्त)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec orange">② संविधान की अनुसूचियाँ 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> कौन-सी अनुसूची में राज्यों व केंद्रशासित प्रदेशों के नाम व विस्तार (क्षेत्रीय क्षेत्राधिकार) हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पहली अनुसूची ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दूसरी अनुसूची</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चौथी अनुसूची</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पाँचवीं अनुसूची</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पहली अनुसूची</strong> = राज्यों व UT के नाम व क्षेत्रीय विस्तार (अनु. 1–4)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>12 अनुसूचियाँ — "TEARS OF OLD PM"</strong><br>
+      <strong>T</strong> = Territory (राज्यक्षेत्र) · <strong>E</strong> = Emoluments (वेतन) · <strong>A</strong> = Affirmation &amp; Oath (शपथ) · <strong>R</strong> = राज्यसभा सीट आवंटन · <strong>S</strong> = अनुसूचित क्षेत्र · <strong>O</strong> = अन्य (जनजातीय) क्षेत्र · <strong>F</strong> = संघीय सूचियाँ · <strong>O</strong> = राजभाषाएँ · <strong>L</strong> = भूमि सुधार · <strong>D</strong> = दलबदल · <strong>P</strong> = पंचायत · <strong>M</strong> = नगरपालिका
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>अनुसूची</th><th>विषय</th><th>प्रमुख बिंदु</th></tr>
+      <tr><td><span class="hl"><strong>पहली</strong></span></td><td>राज्यों/UT के नाम व क्षेत्र</td><td>—</td></tr>
+      <tr><td><strong>दूसरी</strong></td><td>वेतन / भत्ते</td><td>राष्ट्रपति, राज्यपाल, न्यायाधीश आदि</td></tr>
+      <tr><td><strong>तीसरी</strong></td><td>शपथ व प्रतिज्ञान</td><td>शपथ के प्रारूप</td></tr>
+      <tr><td><strong>चौथी</strong></td><td>राज्यसभा सीटों का आवंटन</td><td>—</td></tr>
+      <tr><td><strong>पाँचवीं</strong></td><td>अनुसूचित क्षेत्र</td><td>—</td></tr>
+      <tr><td><strong>छठी</strong></td><td>अन्य / जनजातीय क्षेत्र</td><td><span class="hl-p">असम, त्रिपुरा, मेघालय, मिजोरम</span></td></tr>
+      <tr><td><strong>सातवीं</strong></td><td>संघीय सूचियाँ (संघ/राज्य/समवर्ती)</td><td>प्रतिकूलता का सिद्धांत</td></tr>
+      <tr><td><strong>आठवीं</strong></td><td>राजभाषाएँ</td><td>14 → <span class="hl-g">22</span></td></tr>
+      <tr><td><strong>नौवीं</strong></td><td>भूमि सुधार (पहला संशोधन, 1951)</td><td>आई.आर. कोएलो मामला</td></tr>
+      <tr><td><strong>दसवीं</strong></td><td>दलबदल विरोधी (52वाँ संशोधन, 1985)</td><td>विलय अपवाद (91वाँ संशोधन)</td></tr>
+      <tr><td><strong>ग्यारहवीं</strong></td><td>पंचायत (73वाँ संशोधन)</td><td><span class="hl">29 कार्यात्मक विषय</span></td></tr>
+      <tr><td><strong>बारहवीं</strong></td><td>नगरपालिका (74वाँ संशोधन)</td><td><span class="hl">18 कार्यात्मक विषय</span></td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>छठी अनुसूची का जाल:</strong> "ATM" → <span class="hl">असम, त्रिपुरा, मेघालय, मिजोरम</span>। <strong>मणिपुर शामिल नहीं है!</strong> (ATM में "P" नहीं)</p>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky teal">
+        <div class="slbl">आठवीं अनुसूची — भाषाएँ (14 → 22)</div>
+        <span class="hl"><strong>21वाँ संशोधन</strong></span> → सिंधी<br>
+        <span class="hl-g"><strong>71वाँ संशोधन</strong></span> → कोंकणी, नेपाली, मणिपुरी (KNM)<br>
+        <span class="hl-p"><strong>92वाँ संशोधन</strong></span> → बोडो, डोगरी, संथाली, मैथिली (BDSM)
+      </div>
+      <div class="sticky purple">
+        <div class="slbl">नौवीं अनुसूची — आई.आर. कोएलो</div>
+        यहाँ रखे भूमि सुधार कानून = न्यायिक समीक्षा से मुक्त<br>
+        <strong>केशवानंद भारती (1973)</strong> → न्यायिक समीक्षा = मूल ढाँचा<br>
+        <span class="hl">आई.आर. कोएलो मामला</span>: <em>24 अप्रैल 1973 के बाद</em> जोड़े कानून न्यायिक समीक्षा के अधीन
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec blue">③ अनुच्छेद 2, 3, 4 — नए राज्य व राज्यक्षेत्र 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> नए राज्यों का प्रवेश व स्थापना संविधान के किस अनुच्छेद में वर्णित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 2 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 3</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 1</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 4</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अनु. <strong>2</strong> = नए राज्यों का प्रवेश/स्थापना (<span class="hl">विदेशी राज्यक्षेत्र</span> को भारत में लाना)। अनु. 3 = मौजूदा राज्यों का गठन/परिवर्तन।</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>अनुच्छेद</th><th>प्रावधान</th></tr>
+      <tr><td><span class="hl"><strong>2</strong></span></td><td><strong>प्रवेश / स्थापना</strong> नए राज्यों की (विदेशी राज्यक्षेत्र → भारत)</td></tr>
+      <tr><td><span class="hl-g"><strong>3</strong></span></td><td><strong>गठन</strong> नए राज्यों का; क्षेत्र/सीमा/नाम बदलना; <em>मौजूदा</em> राज्यों को विभाजित/विलय करना</td></tr>
+      <tr><td><strong>4</strong></td><td>अनु. 2 व 3 के तहत परिवर्तन अनु. 368 के तहत <span class="hl">संशोधन नहीं माने जाते</span> (साधारण बहुमत से)</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw"><strong>बेरुबाड़ी संघ मामला (1960):</strong> भारतीय राज्यक्षेत्र किसी अन्य देश को <span class="hl">देने (cede)</span> हेतु संवैधानिक संशोधन (अनु. 368) आवश्यक → <strong>9वाँ संशोधन</strong> (नेहरू–नून समझौता, पाकिस्तान को) व <strong>100वाँ संशोधन</strong> (बांग्लादेश के साथ परिक्षेत्र अदला-बदली)। विदेशी राज्यक्षेत्र लेना = केवल अनु. 2 (साधारण बहुमत)।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> निम्न में से कौन-सा प्रावधान संविधान के अनुच्छेद 4 के अंतर्गत आता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मौलिक अधिकार</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आपातकालीन प्रावधान</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>राज्यों के पुनर्गठन हेतु कानून ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वित्तीय शक्तियाँ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>4</strong> = राज्यों के पुनर्गठन हेतु कानून (अनु. 2 व 3 के तहत परिवर्तन संवैधानिक संशोधन नहीं माने जाते)</div>
+    </div>
+
+    <div class="sticky red">
+      <div class="slbl">संवैधानिक संशोधन (अनु. 368, भाग XX)</div>
+      <strong>2 प्रकार:</strong> (1) विशेष बहुमत · (2) विशेष बहुमत + आधे राज्यों का अनुसमर्थन<br>
+      साधारण-बहुमत परिवर्तन (अनु. 2 व 3) अनु. 368 संशोधन <span class="hl">नहीं</span><br>
+      🧠 42वें संशोधन ने प्रस्तावना में 3 शब्द जोड़े = <span class="hl-g"><strong>"ISS"</strong></span> → समाजवादी, पंथनिरपेक्ष, अखंडता (सॉवरेन नहीं)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec green">④ केंद्रशासित प्रदेश — गठन 🏝️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> भारत में केंद्रशासित प्रदेश (UTs) पहली बार किस वर्ष शुरू किए गए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1956 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1952</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1960</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1950</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — UTs पहली बार <strong>1956</strong> में <span class="hl">राज्य पुनर्गठन अधिनियम, 1956</span> के माध्यम से शुरू हुए</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> 1956 में राज्य पुनर्गठन अधिनियम पारित होने के बाद कितने UTs बनाए गए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>7</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>8</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — 1956 में <strong>6 UTs</strong> बनाए गए</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>मूल 6 UTs (1956):</strong></p>
+      <ul class="hw chk">
+        <li>अंडमान व निकोबार द्वीप</li>
+        <li>दिल्ली</li>
+        <li>हिमाचल प्रदेश</li>
+        <li>लक्षद्वीप</li>
+        <li>मणिपुर</li>
+        <li>त्रिपुरा</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> 26 जनवरी 2020 को कौन-सा UT दादरा व नगर हवेली के साथ मिलाकर नया UT बनाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>चंडीगढ़</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पुडुचेरी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अंडमान व निकोबार द्वीप</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>दमन व दीव ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>दमन व दीव</strong> को दादरा व नगर हवेली के साथ मिलाया गया (26 जनवरी 2020)</div>
+    </div>
+
+    <div class="sticky blue">
+      <div class="slbl">वर्तमान गणना</div>
+      पहले: 29 राज्य + 7 UT → J&amp;K 2 UT में विभाजित (28 राज्य, 9 UT) → DNH + दमन व दीव विलय → <span class="hl"><strong>28 राज्य + 8 UT</strong></span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> चंडीगढ़ को किस प्रमुख कारण से UT बनाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सांस्कृतिक विशिष्टता</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पिछड़े व जनजातीय लोगों की देखभाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>राजनीतिक व प्रशासनिक विचार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>रणनीतिक कारण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — पंजाब व हरियाणा दोनों ने चंडीगढ़ को राजधानी के रूप में दावा किया → केंद्र ने <strong>राजनीतिक व प्रशासनिक विचारों</strong> से UT बनाया</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec red">⑤ UT प्रशासन — भाग व अनुच्छेद ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> संविधान का कौन-सा भाग UTs से संबंधित अनुच्छेद 239 से 241 रखता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>भाग VII</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भाग X</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भाग IX</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>भाग VIII ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>भाग VIII</strong> (अनु. 239–241) = केंद्रशासित प्रदेश</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>भाग</th><th>विषय</th></tr>
+      <tr><td><strong>भाग VII</strong></td><td><span class="hl-p">निरस्त</span> (7वाँ संशोधन, 1956)</td></tr>
+      <tr><td><span class="hl"><strong>भाग VIII</strong></span></td><td>केंद्रशासित प्रदेश (239–241)</td></tr>
+      <tr><td><strong>भाग IX</strong></td><td>पंचायतें</td></tr>
+      <tr><td><strong>भाग X</strong></td><td>अनुसूचित व जनजातीय क्षेत्र</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> कौन-सा अनुच्छेद केंद्रशासित प्रदेशों के प्रशासन से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 245</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 255</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 239 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 260</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>239</strong> = UTs का प्रशासन। (245 = कानूनों का क्षेत्रीय विस्तार; 255 = सिफारिशों संबंधी अपेक्षाएँ; 260 = भारत से बाहर के क्षेत्रों पर क्षेत्राधिकार)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> जिस UT में विधान सभा नहीं है, उसके प्रशासक की नियुक्ति कौन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रधानमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पड़ोसी राज्य का राज्यपाल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मुख्य न्यायाधीश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>राष्ट्रपति</strong> अनु. 239 के तहत प्रशासक (उपराज्यपाल / LG) नियुक्त करते हैं</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> चंडीगढ़ व लक्षद्वीप जैसे UTs के प्रशासन के लिए कौन जिम्मेदार है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पड़ोसी राज्य का राज्यपाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>राष्ट्रपति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UT का मुख्यमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>राज्य विधानमंडल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>राष्ट्रपति</strong> (नियुक्त प्रशासक के माध्यम से, अनु. 239)। चंडीगढ़ व लक्षद्वीप में CM नहीं है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> अंडमान व निकोबार द्वीप तथा पुडुचेरी के प्रशासक किस पदनाम से जाने जाते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>राज्यपाल</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>उपराज्यपाल (LG) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मुख्यमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रशासक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — पदनाम <strong>उपराज्यपाल (LG)</strong></div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">केवल <span class="hl"><strong>3 UTs</strong></span> में विधान सभा व मुख्यमंत्री हैं: <strong>दिल्ली, पुडुचेरी, जम्मू व कश्मीर</strong>।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec blue">⑥ UT विधान सभा व दिल्ली 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> कौन-सा अनुच्छेद UT की विधान सभा की स्थापना का प्रावधान करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 240</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 239</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 239A ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 241</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>239A</strong> = UT हेतु विधान सभा (<span class="hl">A = Assembly</span>)। (239 = प्रशासक; 240 = विनियम; 241 = उच्च न्यायालय)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>अनुच्छेद</th><th>विषय</th></tr>
+      <tr><td><strong>239</strong></td><td>UTs का प्रशासन / प्रशासक की नियुक्ति</td></tr>
+      <tr><td><span class="hl"><strong>239A</strong></span></td><td>UT हेतु विधान सभा (सामान्य)</td></tr>
+      <tr><td><span class="hl-g"><strong>239AA</strong></span></td><td><strong>दिल्ली</strong> हेतु विशेष प्रावधान (NCT)</td></tr>
+      <tr><td><strong>239AB</strong></td><td>दिल्ली में संवैधानिक तंत्र की विफलता</td></tr>
+      <tr><td><strong>239B</strong></td><td>उपराज्यपाल की अध्यादेश शक्ति</td></tr>
+      <tr><td><strong>240</strong></td><td>राष्ट्रपति की विनियम बनाने की शक्ति (शांति, प्रगति, सुशासन)</td></tr>
+      <tr><td><strong>241</strong></td><td>UTs हेतु उच्च न्यायालय / उसका क्षेत्राधिकार</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> इनमें से किस UT में विधान सभा व मंत्रिपरिषद है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अंडमान व निकोबार द्वीप</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दादरा व नगर हवेली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दमन व दीव</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>पुडुचेरी ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>पुडुचेरी</strong> (दिल्ली, पुडुचेरी, J&amp;K में से एक)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> किस संशोधन ने दिल्ली UT के लिए विधान सभा शुरू की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>69वाँ संशोधन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>74वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>61वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>42वाँ संशोधन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>69वाँ संशोधन (1991)</strong> ने अनु. 239AA के तहत दिल्ली की विधान सभा बनाई</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>संशोधन</th><th>क्या किया</th></tr>
+      <tr><td><strong>42वाँ</strong></td><td>लघु संविधान; मौलिक कर्तव्य जोड़े; 4 DPSP; 5 विषय राज्य→समवर्ती सूची</td></tr>
+      <tr><td><strong>61वाँ (1988)</strong></td><td>मतदान आयु 21 → 18</td></tr>
+      <tr><td><span class="hl"><strong>69वाँ (1991)</strong></span></td><td>दिल्ली विधान सभा (239AA); दिल्ली NCT</td></tr>
+      <tr><td><strong>74वाँ</strong></td><td>भाग IX-A, 12वीं अनुसूची, अनु. 243-P से 243-ZG (नगरपालिकाएँ)</td></tr>
+    </table>
+    <div class="imp">
+      <p class="hw"><strong>CoM आकार का जाल:</strong> संघ/राज्य CoM सीमा = निचले सदन का <span class="hl">15%</span> (91वाँ संशोधन)। परंतु <span class="hl-p">दिल्ली में सीमा 10%</span> विधान सभा का है।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> 69वें संशोधन अधिनियम (1991) व अनु. 239AA के बाद, दिल्ली UT को किस नाम से नामित किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>राष्ट्रीय राजधानी क्षेत्र दिल्ली (NCT) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजधानी केंद्रशासित प्रदेश</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दिल्ली विशेष क्षेत्र</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>वृहद दिल्ली UT</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — दिल्ली <strong>राष्ट्रीय राजधानी क्षेत्र (NCT) दिल्ली</strong> बना। अनु. 239AB = दिल्ली में संवैधानिक तंत्र की विफलता (≈ अनु. 356)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> दिल्ली UT का मुख्य कार्यकारी अधिकारी (CEO) कौन है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उपराज्यपाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मुख्यमंत्री</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>महापौर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अध्यक्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>उपराज्यपाल</strong> = नाममात्र/de jure प्रधान (राष्ट्रपति द्वारा नियुक्त, अनु. 239AA)। CM = वास्तविक/de facto प्रधान।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec teal">⑦ गोवा, दमन व दीव, दादरा व नगर हवेली 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> किस संशोधन अधिनियम (1987) ने गोवा को पूर्ण राज्य बनाया और दमन व दीव को UT बनाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>55वाँ संशोधन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>57वाँ संशोधन</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>56वाँ संशोधन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5वाँ संशोधन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>56वाँ संशोधन</strong>: गोवा → राज्य; दमन व दीव → UT</div>
+    </div>
+
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>गोवा, दमन व दीव पुर्तगालियों से <span class="hl">1961</span> में मुक्त (ऑपरेशन विजय)</li>
+        <li><strong>12वें संशोधन, 1962</strong> द्वारा UT बनाए गए</li>
+        <li><strong>56वाँ संशोधन (1987):</strong> गोवा = राज्य; दमन व दीव = UT</li>
+        <li>दादरा व नगर हवेली <span class="hl-g">10वें संशोधन</span> द्वारा बना</li>
+        <li>2020 → DNH + दमन व दीव एक UT में विलय</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> कौन-सा अनुच्छेद कहता है कि राष्ट्रीय राजधानी क्षेत्र के लिए विधान सभा होगी, जिसकी सीटें प्रत्यक्ष निर्वाचन से भरी जाएँगी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 239A</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 239AA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 239AB</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 239B</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>239AA</strong> (दिल्ली-विशिष्ट)। 239A = सामान्य UT सभा; 239AB = तंत्र विफलता; 239B = LG अध्यादेश।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> कौन-सा अनुच्छेद प्रशासक को विधानमंडल के सत्रावकाश में अध्यादेश जारी करने की शक्ति देता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 123</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 213</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>अनुच्छेद 239B ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 241</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>239B</strong> = प्रशासक की अध्यादेश शक्ति। (123 = राष्ट्रपति; 213 = राज्यपाल)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>अध्यादेश सीढ़ी:</strong> राष्ट्रपति = अनु. <strong>123</strong> · राज्यपाल = अनु. <strong>213</strong> (अंक उलट दें!) · UT प्रशासक = अनु. <strong>239B</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> अनु. 239A के खंड (2) के अनुसार, पुडुचेरी के लिए संसद द्वारा बनाया कोई कानून किस अनुच्छेद के प्रयोजन हेतु संशोधन नहीं माना जाएगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अनुच्छेद 371</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>अनुच्छेद 368 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 370</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 356</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — अनु. <strong>368</strong> (वही तर्क जो अनु. 4 का)। 371 = विशेष प्रावधान; 370 = J&amp;K (निरस्त)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> 2020 में किन UTs को मिलाकर एक भारतीय केंद्रशासित प्रदेश बनाया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>दादरा व नगर हवेली तथा दमन व दीव ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चंडीगढ़ व दिल्ली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लक्षद्वीप व पुडुचेरी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अंडमान व निकोबार तथा लक्षद्वीप</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>दादरा व नगर हवेली तथा दमन व दीव</strong> का विलय (2020)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec orange">⑧ चंडीगढ़ व अनुच्छेद 240 — 131वाँ संशोधन विधेयक 📰</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> सरकार ने किस UT को अनुच्छेद 240 के दायरे में लाने का प्रस्ताव दिया है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>चंडीगढ़ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पुडुचेरी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दिल्ली</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>लक्षद्वीप</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>चंडीगढ़</strong>, प्रस्तावित 131वें संवैधानिक संशोधन विधेयक के माध्यम से। अनु. 240 = राष्ट्रपति की शांति, प्रगति व सुशासन हेतु विनियम बनाने की शक्ति।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> प्रस्तावित 131वें संवैधानिक संशोधन विधेयक (2025) के तहत चंडीगढ़ को किस श्रेणी के साथ संरेखित किया जाएगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>विधानमंडल रहित UTs ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आंशिक राज्य शक्तियों वाले UTs</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>विशेष प्रावधानों के तहत शासित UTs</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विधानमंडल वाले UTs</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — चंडीगढ़ को <strong>विधानमंडल रहित UTs</strong> की तरह प्रशासित किया जाएगा। (विधेयक का कड़ा विरोध हुआ, मुख्यतः पंजाब/AAP से।)</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw">131वें संशोधन विधेयक के माध्यम से केंद्र चंडीगढ़ पर अधिक नियंत्रण चाहता था। कड़े विरोध (विशेषकर पंजाब) से यह पारित नहीं हो सका। हरियाणा में BJP सरकार है; पंजाब में AAP सरकार है।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec purple">⑨ राज्यों का गठन — समयरेखा 📅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> नागालैंड को अलग राज्य के रूप में कब स्थापित किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1 दिसंबर 1960</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1 दिसंबर 1966</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 दिसंबर 1953</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>1 दिसंबर 1963 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — नागालैंड <strong>1 दिसंबर 1963</strong> को स्थापित हुआ</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>राज्यों के गठन का क्रम — "तुस्सी गाओ और मौज लो"</strong> — राज्य-दर-राज्य वर्ष याद करें (नीचे समयरेखा देखें)।
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1953</span> <strong>आंध्र प्रदेश</strong> — पहला भाषाई राज्य (1956 में पूर्ण पुनर्गठन)</div>
+      <div class="tl-item"><span class="yr">1960</span> <strong>महाराष्ट्र</strong> व <strong>गुजरात</strong> (बॉम्बे राज्य से विभाजित)</div>
+      <div class="tl-item"><span class="yr">1963</span> <strong>नागालैंड</strong></div>
+      <div class="tl-item"><span class="yr">1966</span> <strong>हरियाणा</strong></div>
+      <div class="tl-item"><span class="yr">1971</span> <strong>हिमाचल प्रदेश</strong> — संस्थापक <span class="hl">वाई.एस. परमार</span> (यशवंत सिंह परमार)</div>
+      <div class="tl-item"><span class="yr">1972</span> <strong>मेघालय, मणिपुर, त्रिपुरा</strong></div>
+      <div class="tl-item"><span class="yr">1975</span> <strong>सिक्किम</strong></div>
+      <div class="tl-item"><span class="yr">1987</span> <strong>गोवा</strong>, <strong>अरुणाचल प्रदेश</strong> (55वाँ संशोधन), <strong>मिजोरम</strong> (53वाँ संशोधन)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> भाषा के आधार पर बनने वाला भारत का पहला राज्य कौन था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>आंध्र प्रदेश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तमिलनाडु</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>केरल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कर्नाटक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>आंध्र प्रदेश</strong> = पहला भाषाई राज्य (1953), पोट्टी श्रीरामुलु के आमरण अनशन के बाद</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>राज्य पुनर्गठन संबंधी आयोग:</strong></p>
+      <ul class="hw num">
+        <li><span class="hl">एस.के. धर आयोग (1948)</span> → राज्य प्रशासनिक आधार पर (भाषाई नहीं)</li>
+        <li><span class="hl">JVP समिति (1948)</span> → <strong>J</strong>awaharlal Nehru, <strong>V</strong>allabhbhai Patel, <strong>P</strong>attabhi Sitaramayya → भाषाई राज्यों के विरुद्ध</li>
+        <li><span class="hl-g">फजल अली आयोग (1953)</span> = राज्य पुनर्गठन आयोग → एच.एन. कुंजरू, के.एम. पणिक्कर, फजल अली (अध्यक्ष) → भाषा आधार स्वीकार पर "एक भाषा, एक राज्य" अस्वीकृत → <strong>SRA 1956</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> तेलंगाना राज्य निम्न में से किस राज्य से अलग किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>आंध्र प्रदेश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कर्नाटक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>महाराष्ट्र</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ओडिशा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — तेलंगाना <strong>आंध्र प्रदेश</strong> से अलग किया गया, <span class="hl">2 जून 2014</span> को; हैदराबाद = 10 वर्ष हेतु साझा राजधानी; AP की नई राजधानी = अमरावती</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec green">⑩ अनुच्छेद 371 — विशेष प्रावधान 🔑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> अनुच्छेद 371A के तहत किस राज्य को विशेष दर्जा प्राप्त है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>असम</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मणिपुर</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>नागालैंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सिक्किम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अनु. <strong>371A</strong> = <strong>नागालैंड</strong> हेतु विशेष दर्जा</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>अनुच्छेद 371 — "NAAM AASMA GK"</strong><br>
+      <strong>N</strong> = नागालैंड (371A) · <strong>A</strong> = असम (371B) · <strong>M</strong> = मणिपुर (371C) · <strong>A</strong> = आंध्र/तेलंगाना (371D-E) · <strong>S</strong> = सिक्किम (371F) · <strong>M</strong> = मिजोरम (371G) · <strong>A</strong> = अरुणाचल (371H) · <strong>G</strong> = गोवा (371I) · <strong>K</strong> = कर्नाटक (371J)
+    </div>
+    <div class="sticky red">
+      <div class="slbl">ध्यान दें</div>
+      अनुच्छेद <span class="hl"><strong>370</strong></span> (जम्मू व कश्मीर को विशेष दर्जा) <span class="hl-p">निरस्त</span> कर दिया गया है।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> संविधान के भाग VIII में कौन-से अनुच्छेद केंद्रशासित प्रदेशों से संबंधित हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अनुच्छेद 239 से 241 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अनुच्छेद 1 से 4</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अनुच्छेद 245 से 255</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अनुच्छेद 370 से 371</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>अनुच्छेद 239–241</strong> (भाग VIII) केंद्रशासित प्रदेशों से संबंधित हैं</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — अनुच्छेद व प्रमुख तथ्य</div>
+    <table class="qr-t">
+      <tr><th>विषय</th><th>अनुच्छेद / तथ्य</th></tr>
+      <tr><td>भारत = राज्यों का संघ</td><td>अनुच्छेद 1</td></tr>
+      <tr><td>नए राज्यों का प्रवेश (विदेशी क्षेत्र)</td><td>अनुच्छेद 2</td></tr>
+      <tr><td>मौजूदा राज्यों का गठन/परिवर्तन</td><td>अनुच्छेद 3</td></tr>
+      <tr><td>पुनर्गठन संशोधन नहीं</td><td>अनुच्छेद 4</td></tr>
+      <tr><td>UTs का प्रशासन</td><td>अनुच्छेद 239</td></tr>
+      <tr><td>UT विधान सभा (सामान्य)</td><td>अनुच्छेद 239A</td></tr>
+      <tr><td>दिल्ली (NCT) विशेष प्रावधान</td><td>अनुच्छेद 239AA</td></tr>
+      <tr><td>दिल्ली संवैधानिक तंत्र विफलता</td><td>अनुच्छेद 239AB</td></tr>
+      <tr><td>प्रशासक की अध्यादेश शक्ति</td><td>अनुच्छेद 239B</td></tr>
+      <tr><td>राष्ट्रपति की विनियम शक्ति</td><td>अनुच्छेद 240</td></tr>
+      <tr><td>UTs हेतु उच्च न्यायालय</td><td>अनुच्छेद 241</td></tr>
+      <tr><td>संवैधानिक संशोधन</td><td>अनुच्छेद 368 (भाग XX)</td></tr>
+      <tr><td>विशेष प्रावधान (राज्य)</td><td>अनुच्छेद 371 (A–J)</td></tr>
+      <tr><td>राज्यों व UT के नाम/विस्तार</td><td>पहली अनुसूची</td></tr>
+      <tr><td>अनुसूचियाँ (मूल → अब)</td><td>8 → 12</td></tr>
+      <tr><td>भाग (मूल → अब)</td><td>22 → 25</td></tr>
+      <tr><td>UTs पहली बार शुरू</td><td>1956 (SRA)</td></tr>
+      <tr><td>पहला भाषाई राज्य</td><td>आंध्र प्रदेश (1953)</td></tr>
+      <tr><td>नागालैंड गठन</td><td>1 दिसंबर 1963</td></tr>
+      <tr><td>तेलंगाना गठन</td><td>2 जून 2014</td></tr>
+      <tr><td>दिल्ली विधान सभा बनी</td><td>69वाँ संशोधन (1991)</td></tr>
+      <tr><td>गोवा राज्य बना</td><td>56वाँ संशोधन (1987)</td></tr>
+      <tr><td>वर्तमान गणना</td><td>28 राज्य + 8 UT</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखें!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>अनु. <span class="hl"><strong>2</strong></span> = प्रवेश (विदेशी भूमि अंदर) · अनु. <span class="hl"><strong>3</strong></span> = गठन (मौजूदा राज्य)</li>
+          <li>छठी अनुसूची = <span class="hl-g"><strong>"ATM"</strong></span> (असम, त्रिपुरा, मेघालय, मिजोरम) — मणिपुर नहीं</li>
+          <li>केवल 3 UTs में सभा: दिल्ली, पुडुचेरी, J&amp;K</li>
+          <li>दिल्ली CoM = सभा का <span class="hl-p">10%</span> (15% नहीं)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>अनुसूचियाँ → 🧠 <span class="hl"><strong>"TEARS OF OLD PM"</strong></span></li>
+          <li>अनुच्छेद 371 → 🧠 <span class="hl-g"><strong>"NAAM AASMA GK"</strong></span></li>
+          <li>अध्यादेश: राष्ट्रपति 123 · राज्यपाल 213 · प्रशासक 239B</li>
+          <li>क्षेत्र देने हेतु अनु. 368 संशोधन आवश्यक (बेरुबाड़ी मामला)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 लेक्चर 3 नोट्स समाप्त</div>
+      <strong>सभी प्रश्न शामिल ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
