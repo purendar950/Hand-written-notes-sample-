@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway PYQ GK — L4 Citizenship | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Railway PYQ GK — L4 Citizenship</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy · Railway PYQ GK</div>
+    <div class="cover-title">🛂 Lecture 4 — Citizenship (Part 1)</div>
+    <div class="cover-sub">Part II of the Constitution · Articles 5–11 | All Questions Covered</div>
+    <div class="cover-badge">🛂 Part II · ⚖️ Art 5–11 · 🇬🇧 Single Citizenship · 🚪 Migration Dates · 🌍 PIO Abroad · 🏛️ Parliament's Power</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec red">① Citizenship — Part II &amp; Article Range 🛂</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Articles 5 to 11 of the Constitution of India deal with the ___?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Fundamental Duties</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Citizenship ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fundamental Rights</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>DPSP</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Articles 5–11 = <strong>Citizenship</strong>. (Fundamental Duties = Art 51A; Fundamental Rights = Arts 12–35; DPSP = Arts 36–51.)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Part</th><th>Subject</th><th>Articles</th></tr>
+      <tr><td>Part I</td><td>Union &amp; its Territory</td><td>1–4</td></tr>
+      <tr><td><span class="hl"><strong>Part II</strong></span></td><td><span class="hl">Citizenship</span></td><td><span class="hl">5–11</span></td></tr>
+      <tr><td>Part III</td><td>Fundamental Rights</td><td>12–35</td></tr>
+      <tr><td>Part IV</td><td>DPSP</td><td>36–51</td></tr>
+      <tr><td>Part V</td><td>The Union (Centre)</td><td>52–151</td></tr>
+      <tr><td>Part VI</td><td>The States</td><td>152–237</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which part of the Indian Constitution is related to citizenship?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Part II ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Part VI</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Part III</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Part IV</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Part II</strong> (Part III = FR, Part IV = DPSP, Part VI = States)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which articles of the Constitution of India deal with citizenship at the time of its commencement?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Articles 14 to 24</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Articles 12 to 18</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Articles 1 to 4</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Articles 5 to 11 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Articles 5–11</strong>. (14–24 &amp; 12–18 = FR; 1–4 = Union &amp; Territory.) Constitution commenced on <span class="hl">26 Jan 1950</span>.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② Single Citizenship &amp; Borrowed Provisions 🇬🇧</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> The Constitution of India prohibits which of the following types of citizenship?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dual citizenship ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Single citizenship</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Acquired citizenship</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Citizenship by birth</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — India prohibits <strong>dual citizenship</strong> → India has <span class="hl">single citizenship</span> (borrowed from the UK)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Provisions borrowed from the UK (British Constitution):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Single citizenship</span></li>
+        <li>Parliamentary form of government (Westminster model)</li>
+        <li>Rule of Law (concept by A.V. Dicey)</li>
+        <li>Bicameralism</li>
+        <li>Martial Law</li>
+        <li>First-Past-the-Post system</li>
+        <li>Prerogative writs</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec orange">③ Commencement of Citizenship Provisions 📅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> When did the citizenship provisions in the Constitution come into effect?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>15 August 1947</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>26 November 1949 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>19 July 1949</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>26 January 1950</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Citizenship provisions came into effect on <strong>26 November 1949</strong> (the day the Constitution was adopted) — they were not made to wait 2 months.</div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item"><span class="yr">26 Jan 1930</span> Purna Swaraj Day (first Independence Day celebrated)</div>
+      <div class="tl-item"><span class="yr">26 Nov 1949</span> Constitution <strong>adopted</strong> (Constitution Day) — citizenship, elections &amp; Provisional Parliament provisions came into force <span class="hl">immediately</span></div>
+      <div class="tl-item"><span class="yr">26 Jan 1950</span> Constitution <strong>came into force</strong> (date chosen to honour 1930 Purna Swaraj Day)</div>
+    </div>
+    <div class="tip-box">
+      <p class="hw">Articles 5–11 deal with citizenship <span class="hl">at the commencement</span> (before the Constitution). Citizenship <em>after</em> commencement is governed by the <strong>Citizenship Act, 1955</strong>.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec green">④ Articles 5–11 — Master Reference ⚖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which article deals with the rights of citizenship at the commencement of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 7</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 11</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>5</strong> = citizenship at the commencement of the Constitution</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Article</th><th>Provision</th></tr>
+      <tr><td><span class="hl"><strong>5</strong></span></td><td>Citizenship at the commencement of the Constitution</td></tr>
+      <tr><td><strong>6</strong></td><td>Rights of citizenship of persons who <span class="hl">migrated to India from Pakistan</span></td></tr>
+      <tr><td><strong>7</strong></td><td>Rights of citizenship of certain migrants <span class="hl">to Pakistan</span> (who later returned)</td></tr>
+      <tr><td><strong>8</strong></td><td>Rights of citizenship of persons of Indian origin <span class="hl">residing outside India</span></td></tr>
+      <tr><td><strong>9</strong></td><td>Persons voluntarily acquiring foreign citizenship = NOT citizens</td></tr>
+      <tr><td><strong>10</strong></td><td>Continuance of the rights of citizenship</td></tr>
+      <tr><td><strong>11</strong></td><td>Parliament to regulate citizenship by law</td></tr>
+    </table>
+    <div class="sticky blue">
+      <div class="slbl">WHY ONLY PARLIAMENT? (Art 11)</div>
+      Citizenship is a subject of the <span class="hl"><strong>Union List</strong></span>, so only Parliament can make laws regarding it.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ Migration &amp; Cut-off Dates — Articles 6 &amp; 7 🚪</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Which provision addresses the citizenship of people who migrated from Pakistan before the commencement of India's Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 5</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 6 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 8</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 9</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>6</strong> (rights of citizenship of persons who migrated to India from Pakistan)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Article 6(b)(1) — cut-off date = <span class="hl">19 July 1948</span>:</strong></p>
+      <ul class="hw arr">
+        <li>Migrated from Pakistan <strong>before 19 July 1948</strong> &amp; ordinarily resident → citizen ✔ ("Happy Birthday!")</li>
+        <li>Migrated <strong>after 19 July 1948</strong> → must reside in India ≥ <span class="hl">6 months</span>, then apply &amp; be registered</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Per Article 7, any person who migrated from the territory of India to the territory now in Pakistan after ___ shall not be deemed a citizen of India.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1 March 1947 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>19 July 1948</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15 August 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>26 January 1950</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art 7 cut-off = <strong>1 March 1947</strong>. Those who left for Pakistan after this &amp; later returned need a valid passport/permit to apply for citizenship.</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Two cut-off dates:</strong> Article <strong>6</strong> (migrated FROM Pakistan) → <span class="hl">19 July 1948</span> · Article <strong>7</strong> (migrated TO Pakistan, then returned) → <span class="hl-g">1 March 1947</span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec teal">⑥ Persons of Indian Origin Abroad — Article 8 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which article contains the provisions regarding the rights to citizenship of certain persons of Indian origin residing outside India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 11</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Article 8 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 5</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 13</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Art <strong>8</strong> (persons of Indian origin residing outside India — NOT specifically about Pakistan). Art 13 = Fundamental Rights (laws inconsistent with FR are void).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Where can people of Indian origin living abroad apply for Indian citizenship under Article 8?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Indian Embassy in Delhi only</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Indian Embassy in their country of residence ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>State government office</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Supreme Court</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — At the <strong>Indian Embassy in their country of residence</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec red">⑦ Parliament's Power &amp; Dual Citizenship 🏛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> The right of Parliament to regulate citizenship by law is mentioned in which article? <span class="hl-p">(RPF Constable 2024)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 11 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 10</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 5</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>11</strong>: Parliament may regulate citizenship by law. (Art 10 = continuance of citizenship rights.)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">RELATED ARTICLES (mentioned in lecture)</div>
+      Art <span class="hl">89</span> = Vice President is the ex-officio Chairman of the Rajya Sabha (Chairman + Deputy Chairman).<br>
+      Art <span class="hl-g">93</span> = Lok Sabha chooses its Speaker &amp; Deputy Speaker from among its members.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> In which of the following countries is the policy of dual citizenship accepted?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>China</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>USA ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>UK</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>USA</strong> accepts dual citizenship. India &amp; UK = single citizenship (India borrowed it from the UK).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec blue">⑧ Article 5 at Commencement 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which provision in Part II defines one basis for citizenship at commencement — specifically that either parent was born in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 6</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 9</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 8</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>5</strong> (citizenship at commencement)</div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>News context:</strong> The Ministry of External Affairs has clarified that a <span class="hl">passport is a travel document, NOT proof of citizenship</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which article discusses people born in India, with either parent born in India, who have been ordinarily resident in India for 5 years immediately before the commencement of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 4</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 6</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>5</strong> lays down the bases for citizenship at commencement (domicile + born in India / parent born in India / ordinarily resident for 5 years)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec orange">⑨ Migrant Conditions &amp; Article 9 🔚</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> A person who migrated from Pakistan after 19 July 1948 could become an Indian citizen only if?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>He was a resident of Pakistan in 1948</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>He simply took an oath of allegiance</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>He was born in India (before 1947) &amp; was registered by an officer of the Dominion of India ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>He was a foreign national</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Must have been <strong>born in India</strong> (pre-1947) &amp; <strong>registered by an officer of the Dominion of India</strong> (after residing ≥ 6 months)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which article states that a person who voluntarily acquires the citizenship of a foreign state shall not be considered a citizen of India at the commencement of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 7</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 8</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 9 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 10</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>9</strong>: voluntarily acquiring foreign citizenship → loss of Indian citizenship</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec green">⑩ Requirements, Correct Statements &amp; Recap ✅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Under Article 5, which of the following is NOT required for a person to be considered a citizen at the commencement of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>An Indian passport ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Having domicile in the territory of India</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Being born in India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Having at least one parent born in India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — An <strong>Indian passport is NOT required</strong> under Article 5</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Which of the following statements about Indian citizenship provisions is correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Citizenship is listed in the State List</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Articles 5–11 deal with various categories of persons entitled to citizenship ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>There are only three ways to get Indian citizenship</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Citizenship is granted by State governments</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Citizenship is in the <span class="hl">Union List</span> (not State List); there are <span class="hl">more than three</span> ways to acquire it (covered in the Citizenship Act, 1955).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Under which Article is citizenship defined at the commencement of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 6</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 11</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Article 5</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Article 6 pertains to the citizenship of persons who migrated to India from which of the following territories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Pakistan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nepal</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sri Lanka</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bangladesh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art 6 = persons who migrated to India from <strong>Pakistan</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which of the following articles deals with the citizenship of people of Indian origin residing outside India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Article 7</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 11</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Article 8 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 9</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Art <strong>8</strong> (Art 7 = migrants to Pakistan; Art 11 = Parliament's power; Art 9 = acquiring foreign citizenship)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Which article of the Constitution empowers Parliament to make laws relating to the acquisition and termination of Indian citizenship? <span class="hl-p">(RRB NTPC UG CBT-1)</span></div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Article 11 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Article 12</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Article 10</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Article 7</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Art <strong>11</strong> empowers Parliament on acquisition &amp; termination of citizenship. (Art 12 = defines "State"; Art 10 = continuance of citizenship.)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — Articles 5–11 at a Glance</div>
+    <table class="qr-t">
+      <tr><th>Article / Topic</th><th>Key Fact</th></tr>
+      <tr><td>Citizenship — Part</td><td>Part II (Articles 5–11)</td></tr>
+      <tr><td>Article 5</td><td>Citizenship at commencement</td></tr>
+      <tr><td>Article 6</td><td>Migrants from Pakistan (cut-off 19 July 1948)</td></tr>
+      <tr><td>Article 7</td><td>Migrants to Pakistan who returned (cut-off 1 March 1947)</td></tr>
+      <tr><td>Article 8</td><td>Persons of Indian origin residing outside India</td></tr>
+      <tr><td>Article 9</td><td>Voluntary foreign citizenship → not a citizen</td></tr>
+      <tr><td>Article 10</td><td>Continuance of citizenship rights</td></tr>
+      <tr><td>Article 11</td><td>Parliament regulates citizenship by law</td></tr>
+      <tr><td>Article 12</td><td>Defines "State" (Fundamental Rights)</td></tr>
+      <tr><td>Citizenship is in</td><td>Union List</td></tr>
+      <tr><td>Single citizenship borrowed from</td><td>UK</td></tr>
+      <tr><td>Dual citizenship accepted in</td><td>USA</td></tr>
+      <tr><td>Constitution adopted / enforced</td><td>26 Nov 1949 / 26 Jan 1950</td></tr>
+      <tr><td>Citizenship after commencement</td><td>Citizenship Act, 1955</td></tr>
+      <tr><td>Passport</td><td>Travel document, NOT proof of citizenship</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><strong>5</strong> = commencement · <strong>6</strong> = from Pakistan · <strong>7</strong> = to Pakistan · <strong>8</strong> = abroad</li>
+          <li><strong>9</strong> = foreign citizenship · <strong>10</strong> = continuance · <strong>11</strong> = Parliament</li>
+          <li>Cut-offs: Art 6 = <span class="hl">19 July 1948</span> · Art 7 = <span class="hl-g">1 March 1947</span></li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 3">
+          <li>"Residing outside India" → always <strong>Article 8</strong> (not Pakistan)</li>
+          <li>India = single citizenship (from UK); USA = dual</li>
+          <li>Citizenship at commencement = Constitution; after = <span class="hl-p">Act of 1955</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF LECTURE 4 NOTES (Part 1)</div>
+      <strong>All Questions Covered ✅ | Next: Citizenship Act, 1955 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
