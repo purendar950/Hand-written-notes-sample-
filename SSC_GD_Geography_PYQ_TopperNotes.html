@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Geography PYQ | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — Geography PYQ Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · Geography</div>
+    <div class="cover-title">🌍 Geography PYQ — Topper Notes</div>
+    <div class="cover-sub">Physical · Indian · World · Universe | All Questions Covered</div>
+    <div class="cover-badge">🏔️ Physiography · 🪐 Universe · 🌊 Rivers &amp; Lakes · 👥 Population · 🪨 Minerals &amp; Soils · 🚠 Passes</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec orange">① Demography, Minerals &amp; Space 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> According to the Demographic Transition Theory, in which stage of population growth is India currently?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>High stationary</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Early expanding</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Late expanding ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Low stationary</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Late expanding</strong> (the answer accepted by SSC). The Demographic Transition Model (DTM) tracks birth &amp; death rates over stages.</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>India's 4 Phases of population growth:</strong></p>
+      <ul class="hw num">
+        <li>Phase 1 (<span class="hl">1901–1921</span>): Stagnant / high stationary</li>
+        <li>Phase 2 (<span class="hl">1921–1951</span>): Early expanding — <span class="hl-p">1921 = "Year of the Great Divide"</span></li>
+        <li>Phase 3 (<span class="hl">1951–1981</span>): Late expanding (current per SSC)</li>
+        <li>Phase 4 (<span class="hl">1981–present</span>): Slowing growth — India now below replacement fertility</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> With respect to mineral resources, what does CBM mainly stand for?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Coalbed Methane ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Copper-Bearing Minerals</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Crude Biofuel Mixtures</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Compressed Bauxite Minerals</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Coalbed Methane</strong>. Methane = greenhouse gas, also called <span class="hl">marsh gas</span> (released from marshy/paddy areas).</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">GREENHOUSE GASES (most abundant order)</div>
+      <span class="hl">Water vapour</span> &gt; Carbon dioxide &gt; Methane
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> If a star is similar to the Sun, what can be inferred about the surface temperature of an exoplanet compared to Earth?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Significantly hotter</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Similar temperature ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Cooler</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>No effect</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Similar temperature</strong> (a Sun-like star at a similar distance → similar conditions)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> In the Indian Census, the working population is classified into which three categories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Main worker, Marginal worker, Non-worker ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Skilled, Semi-skilled, Unskilled</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rural, Urban, Suburban</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Formal, Informal, Casual</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Main worker (&gt; <span class="hl">183 days</span> employment), Marginal worker (&lt; 183 days), Non-worker (unemployed)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> According to Census 2011, which religious group in India is mostly concentrated in urban areas?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jains ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Christians</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hindus</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sikhs</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Jains</strong> (~<span class="hl">79.7%</span> urban). Christians ~40% urban (many are tribal in the North-East, hence also rural).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② Bhutan, Himalayas &amp; Earth's Interior 🏔️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which Himalayan nation is exploring ways to mine green cryptocurrencies using hydropower to boost its economy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bhutan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nepal</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Myanmar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Bhutan</strong> (famous for hydropower; runs largely on it). Currency = Ngultrum; capital = Thimphu.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> The Himalayas are wider in which sector of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Western Himalayas ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Eastern Himalayas</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Central Himalayas</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Uniform throughout</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Western Himalayas</strong> are wider; towards the east the Shivaliks disappear (replaced by the <span class="hl">Duars</span>, famous for tea gardens), making them narrower.</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Regional Division</th><th>Between Rivers</th></tr>
+      <tr><td>Punjab Himalayas</td><td>Indus – Sutlej</td></tr>
+      <tr><td>Kumaon Himalayas</td><td>Sutlej – Kali</td></tr>
+      <tr><td>Nepal Himalayas</td><td>Kali – Teesta</td></tr>
+      <tr><td>Assam Himalayas</td><td>Teesta – Brahmaputra</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Which discontinuity divides the crust and the mantle?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Moho (Mohorovicic) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Conrad</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Gutenberg</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lehmann</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Moho</strong> separates crust &amp; mantle</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Discontinuity</th><th>Separates</th></tr>
+      <tr><td><strong>Conrad</strong></td><td>Upper crust &amp; lower crust</td></tr>
+      <tr><td><span class="hl"><strong>Moho</strong></span></td><td>Crust &amp; mantle</td></tr>
+      <tr><td><strong>Gutenberg</strong></td><td>Mantle &amp; core</td></tr>
+      <tr><td><strong>Lehmann</strong></td><td>Outer core (liquid) &amp; inner core (solid)</td></tr>
+    </table>
+    <div class="trick">🧠 "<strong>S</strong>omeone <strong>C</strong>an <strong>M</strong>ake <strong>G</strong>old <strong>L</strong>ighter" → order of discontinuities: Conrad → Moho → Gutenberg → Lehmann</div>
+    <div class="sticky purple">
+      <div class="slbl">CRUST FACTS</div>
+      Continental = granitic (SIAL); Oceanic = basaltic (SIMA) — denser, so it <span class="hl">subducts</span>. Core = nickel + iron. Outer liquid core gives Earth its magnetic field.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> The Kuiper Belt is?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A region beyond Neptune filled with icy bodies ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>A belt between Mars and Jupiter</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>A ring around Saturn</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>A cluster of stars</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Region <strong>beyond Neptune</strong> with icy bodies &amp; dwarf planets (Pluto, Haumea, Makemake). Ceres lies in the asteroid belt.</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Pluto removed from planet list in <span class="hl">2006</span> (IAU) — it doesn't clear its orbit</li>
+        <li><strong>Asteroid belt</strong> (between Mars &amp; Jupiter) divides terrestrial (interior) &amp; Jovian (gaseous) planets</li>
+        <li>Terrestrial = small, dense, rocky · Jovian = large, gaseous/icy, low density</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec green">③ Conflict Minerals, Trade Blocs &amp; Ramsar 💎</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Which mineral is commonly referred to as a "conflict mineral" due to its role in financing armed groups, especially in Africa?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Diamond ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gold</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Coltan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Copper</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Diamond</strong> ("conflict/blood diamonds"). Tackled by the <span class="hl">Kimberley Process</span>.</div>
+    </div>
+    <div class="ca-box">
+      <p class="hw"><strong>Kimberley Process:</strong> removes conflict diamonds from trade. <span class="hl">India holds its chairmanship for 2026</span> — exam-important!</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Mercosur is a trading bloc associated with which region?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Asia</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Europe</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Africa</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>South America ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>South America</strong> (Southern Common Market, formed 1991). Members: Argentina, Brazil, Paraguay, Uruguay. <span class="hl">Venezuela is suspended</span>.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Which is the first Ramsar site of Jharkhand?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Udhwa Lake ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chilika Lake</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Surha Tal</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Keoladeo</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Udhwa Lake</strong> = Jharkhand's first Ramsar site</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">RAMSAR SITES</div>
+      India has <span class="hl">100+</span> Ramsar sites. <strong>Tamil Nadu</strong> has the most (~20); UP ~12–13. (UP examples: Patna Lake — Etah, Saman/Sakha Bird Sanctuary — Aligarh, Surha Tal/JP Narayan Bird Sanctuary — Ballia.)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec red">④ Fertility, Physiography &amp; Geopolitics 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> The average number of children a woman was expected to give birth to during her lifetime was 3.8 in ___ in India.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1990 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2011</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2015</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1960</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1990</strong>. Replacement level = <span class="hl">2.1</span>. By 2011, TFR ≈ 2.4 (rural 2.6, urban 1.8); India is now below replacement level.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> The Bhabar zone is associated with which physiographic feature of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Himalayan foothills ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Peninsular Plateau</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Indo-Gangetic Plain</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Desert region</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Himalayan foothills</strong>. Bhabar = narrow belt (8–16 km) where rivers disappear underground.</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Belt</th><th>Feature</th></tr>
+      <tr><td><span class="hl"><strong>Bhabar</strong></span></td><td>8–16 km; rivers disappear underground (foothills)</td></tr>
+      <tr><td><strong>Terai</strong></td><td>15–30 km; rivers reappear; marshy, no demarcated channels</td></tr>
+      <tr><td><strong>Alluvial floodplains</strong></td><td>Khadar (new alluvium) &amp; Bhangar (old alluvium)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> The Philadelphi Corridor is located along the border of Gaza and which country?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Iran</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UAE</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Turkey</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Egypt ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Gaza &amp; <strong>Egypt</strong>. ~14 km narrow strip; the <span class="hl">Rafah Crossing</span> (Gaza ↔ Egypt's Sinai Peninsula) lies on it.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ Ranges, Airways &amp; Ghats ⛰️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> The Vindhya Range separates which two river systems?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Ganga and Godavari</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Ganga and Narmada ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Narmada and Tapi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Godavari and Krishna</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Vindhya</strong> separates the Ganga &amp; Narmada systems. (<span class="hl">Satpura</span> separates Narmada &amp; Tapi.)</div>
+    </div>
+    <div class="imp">
+      <p class="hw">Don't confuse! <strong>Vindhya</strong> (north) = Ganga &amp; Narmada · <strong>Satpura</strong> (south) = Narmada &amp; Tapi. Both are <span class="hl">block / fault mountains</span>. Highest peaks: Vindhya = Sadbhavana Shikhar; Satpura = <span class="hl-p">Dhupgarh</span>.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> In which year was Deccan Airways nationalized?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1953 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1947</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1956</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1962</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Deccan Airways was nationalized in <strong>1953</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> The Eastern Ghats are also known by which of the following names?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Nilgiri Hills</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajmahal Hills</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Maikal Hills</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Nallamala Hills ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Nallamala Hills</strong> are part of the Eastern Ghats. Nilgiri Hills = where Western &amp; Eastern Ghats meet (Doddabetta, 2nd-highest South Indian peak, 2637 m).</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>Feature</th><th>Western Ghats</th><th>Eastern Ghats</th></tr>
+      <tr><td>Avg height</td><td><span class="hl">1200 m</span> (higher)</td><td>600 m</td></tr>
+      <tr><td>Continuity</td><td>Continuous</td><td>Discontinuous (rivers cut through)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec teal">⑥ Rivers, Plateaus &amp; Plate Tectonics 🌋</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which river flows through the Grand Canyon of India (Gandikota)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Krishna</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kaveri</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Penna (Pennar) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Godavari</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Penna / Pennar</strong> flows through Gandikota (Andhra Pradesh); it originates from <span class="hl">Nandi Hills, Karnataka</span>.</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>River</th><th>Origin</th></tr>
+      <tr><td>Krishna</td><td>Mahabaleshwar (Sahyadri, Maharashtra)</td></tr>
+      <tr><td>Kaveri</td><td>Brahmagiri Hills, Kodagu (Karnataka)</td></tr>
+      <tr><td>Godavari</td><td>Trimbakeshwar (Sahyadri, Maharashtra)</td></tr>
+      <tr><td>Penna</td><td>Nandi Hills (Karnataka)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which region of India is called the "Roof of the World"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ladakh Plateau ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Deccan Plateau</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chota Nagpur Plateau</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Malwa Plateau</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Ladakh / Tibet Plateau</strong> = "Roof of the World". Chota Nagpur = "Ruhr of India"; Malwa = in MP.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which plate boundary formed the Himalayas?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Divergent</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Transform</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hotspot</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Convergent boundary ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Convergent</strong> (Indian + Eurasian plates). The Himalayas are <span class="hl">young fold mountains</span> (still rising).</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>Boundary</th><th>Nature</th><th>Example</th></tr>
+      <tr><td>Convergent</td><td>Destructive</td><td>Himalayas, Pacific Ring of Fire (90% earthquakes)</td></tr>
+      <tr><td>Divergent</td><td>Constructive</td><td>Sea-floor spreading</td></tr>
+      <tr><td>Transform</td><td>Conservative</td><td>San Andreas Fault</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec orange">⑦ Space, Rivers &amp; Agriculture 🛰️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> If a planet takes 88 Earth days to orbit the Sun, what is its orbital period in seconds?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>7.6 × 10⁶ seconds ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>8.8 × 10⁴ seconds</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>3.2 × 10⁷ seconds</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1.0 × 10⁵ seconds</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 88 days × 86,400 s ≈ <strong>7.6 × 10⁶ s</strong>. (88 days = <span class="hl">Mercury</span> — shortest orbit; Neptune ~165 years — longest.)</div>
+    </div>
+    <div class="tip-box"><p class="hw">If the orbital period is given directly, just multiply by 86,400 (seconds/day). Don't waste time on heavy formulas in a GK exam — skip if unsure.</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Kartarpur is situated near which river?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Ganga</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Ravi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Yamuna</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sutlej</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Ravi</strong> (ancient name = Purushni/Iravati). On the Ravi: Shahpur Kandi Barrage, Chamera Dam, Ranjit Sagar (Thein) Dam. Ravi &amp; Beas originate from Rohtang.</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">SUTLEJ</div>
+      Originates from <span class="hl">Rakshastal</span> (Tibet, near Mansarovar); enters India via <strong>Shipki La</strong>; joins Beas at Harike — source of the Indira Gandhi Canal (longest canal, feeds 7 Rajasthan districts).
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Which protects a crop from both frost and hot air currents?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Water ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Starch</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fertilizer</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Manure</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Water</strong> protects crops from both frost &amp; hot air currents</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Chabahar Port is strategically positioned at the crossroads of which three regions?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>East Asia, Africa, Europe</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>South Asia, Central Asia, Middle East ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Europe, Africa, Americas</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>South Asia, East Asia, Oceania</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>South Asia, Central Asia &amp; Middle East</strong>. Chabahar is in <span class="hl">Iran</span>.</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>Two terminals: <span class="hl">Shahid Beheshti</span> &amp; <span class="hl">Shahid Kalantari</span></li>
+        <li>A node for the <strong>INSTC</strong> (International North–South Transport Corridor) — links Russia, Central Asia &amp; Europe</li>
+        <li>India signed a 10-year operating agreement with Iran in <span class="hl-p">2024</span>; an alternative to the Strait of Hormuz</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec blue">⑧ Planets &amp; Islands 🪐</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> Which planet has a magnetic field that is offset from its centre and tilted around 59° to its rotational axis?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Earth</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Jupiter</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Uranus ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Saturn</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Uranus</strong> (magnetic axis ~59°). Called the <span class="hl">Rolling Planet</span> (~98° axial tilt) &amp; the <span class="hl-g">Green Planet</span> (methane).</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>Jupiter</strong> = largest planet, ~92 moons; Galilean moons = Io, Europa, Ganymede, Callisto (<span class="hl">Ganymede</span> = largest moon in the solar system)</li>
+        <li><strong>Saturn</strong> = least dense (0.68 g/cm³), ice rings · <strong>Earth</strong> = densest planet</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Which of the following planets is NOT made up of gases and liquids?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Saturn</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Uranus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jupiter</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Venus ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Venus</strong> (a rocky/terrestrial planet). Also called <span class="hl">Lucifer / Morning &amp; Evening Star</span>; brightest &amp; hottest planet (thick H₂SO₄ clouds + CO₂). Mercury is closest to the Sun.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> The Great Nicobar Island is closest to which neighbouring country?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Myanmar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sri Lanka</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Indonesia ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bangladesh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Great Nicobar (southernmost) is closest to <strong>Indonesia</strong>. North Andaman is closest to Myanmar.</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>Channel / Strait</th><th>Separates</th></tr>
+      <tr><td>Duncan Passage</td><td>South Andaman &amp; Little Andaman</td></tr>
+      <tr><td>10° Channel</td><td>Little Andaman &amp; Car Nicobar (Andaman &amp; Nicobar)</td></tr>
+      <tr><td>9° Channel</td><td>Minicoy &amp; Lakshadweep</td></tr>
+      <tr><td>8° Channel</td><td>Minicoy &amp; Maldives</td></tr>
+      <tr><td>11° Channel</td><td>Amindivi &amp; Cannanore (Lakshadweep)</td></tr>
+      <tr><td>Palk Strait / Gulf of Mannar</td><td>India &amp; Sri Lanka</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> The axial tilt of Uranus is about 98° (it rotates almost on its side). What effect does this have on Uranus's seasons?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Extreme seasonal changes ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mild seasons</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Permanent day on one side</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>No effect</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Extreme seasonal changes</strong>. Seasons are caused by tilt + revolution, so a huge tilt → extreme seasonal contrast. (Earth: 23½° on axis, 66½° to orbital plane.)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec green">⑨ Pressure Belts &amp; Earth's Movements 🌬️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> The belt at about 30°–35° latitude, where descending air creates "Horse Latitudes," is the ___?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sub-Tropical High ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Equatorial Low (Doldrums)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sub-Polar Low</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Polar High</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Sub-Tropical High</strong> (descending air → "Horse Latitudes," 30°–35°)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>Pressure belts &amp; cells:</strong></p>
+      <ul class="hw arr">
+        <li>Equatorial Low = <span class="hl">Doldrums</span> (calm, 5°N–5°S) · Sub-Tropical High = Horse Latitudes</li>
+        <li>Sub-Polar Low · Polar High</li>
+        <li>Cells: <strong>Hadley</strong>, <strong>Ferrel</strong> (mechanical), <strong>Polar</strong></li>
+        <li>Cyclones rotate <span class="hl-p">anticlockwise</span> in the Northern Hemisphere</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Earth's axial tilt varies between ~22.1° and 24.5° over 41,000 years (Milankovitch cycle). How does this variation affect Earth?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Greater tilt increases seasonal contrast ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It changes orbital speed</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>It affects the magnetic field</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>No effect</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Greater tilt → more seasonal contrast</strong> (Milankovitch cycles link Earth's tilt/orbit to long-term climate change)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec red">⑩ Physiography, Population &amp; Minerals 🪨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Which physiographic division of India is geologically the oldest?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>The Himalayas</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Northern Plains</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Peninsular Plateau ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Coastal Plains</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Peninsular Plateau</strong> = oldest, largest &amp; most stable (rare earthquakes — except the 2001 Bhuj quake)</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">6 PHYSIOGRAPHIC DIVISIONS</div>
+      Himalayas · Northern Plains · <span class="hl">Peninsular Plateau (largest &amp; oldest)</span> · Coastal Plains · Islands · Desert
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> Per Census 2011, Rajasthan is the largest state by area but holds only what share of India's population?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>~5.5% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>~12%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>~17%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>~9%</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Rajasthan ≈ <strong>5.5%</strong> of population (largest by area). UP is 4th by area but holds ~<span class="hl">17%</span> of India's population.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> Goa is well known for which of the following mineral resources?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Manganese only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Iron ore only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both manganese &amp; iron ore ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bauxite</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Goa is known for <strong>both manganese &amp; iron ore</strong>. Manganese (largest producer = MP) is used in metallurgy/steel.</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">4 IRON ORE BELTS OF INDIA</div>
+      Maharashtra–Goa · Bellary-Chitradurga-Chikmagalur-Tumkur (Karnataka) · Odisha–Jharkhand · Durg-Bastar-Chandrapur
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> The Deccan Plateau is rich in which type of soil?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Alluvial soil</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Black soil ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Laterite soil</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Arid soil</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Black soil</strong> (volcanic origin, "regur"); self-plowing, cracks when dry, best for <span class="hl">cotton</span>.</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>Soil</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl"><strong>Black (Regur)</strong></span></td><td>Volcanic; cotton; self-plowing; ~210 frost-free days</td></tr>
+      <tr><td><strong>Alluvial</strong></td><td>Rich in potash; poor in phosphorus, nitrogen, humus</td></tr>
+      <tr><td><strong>Red</strong></td><td>Iron oxide (red); water-deficit regions</td></tr>
+      <tr><td><strong>Laterite</strong></td><td>Heavy rainfall (leaching); cashew, coffee, tea; "brick soil"</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> The Majhgawan (Majgawa) mine in Madhya Pradesh is famous for?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Diamonds ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gold</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Copper</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Coal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Diamonds</strong> — India's only diamond-processing mine, in <span class="hl">Panna, MP</span> (near Kalinjar Fort).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec purple">⑪ Plateaus, Ports &amp; the Sun ☀️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> The Meghalaya Plateau is an extension of which larger landform?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Western Ghats</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Deccan Plateau</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Peninsular Plateau ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chota Nagpur Plateau</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Extension of the <strong>Peninsular Plateau</strong> (separated by the Malda Gap/Fault). Includes the <span class="hl">Garo, Khasi &amp; Jaintia Hills</span>.</div>
+    </div>
+    <div class="ca-box"><p class="hw">Meghalaya's official languages now include <span class="hl">English + Garo + Khasi</span>.</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> Which Indian port was designated as the site of the country's first Export Processing Zone (EPZ)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mumbai</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Kandla ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chennai</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Visakhapatnam</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Kandla (1965)</strong> — the first EPZ in India &amp; in <span class="hl">Asia</span>. SEZs receive capital grants from the central government.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> Which layer of the Sun is visible during a total solar eclipse?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Photosphere</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chromosphere</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Corona ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Core</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — The <strong>Corona</strong> (outermost layer) is visible during a total solar eclipse. The Photosphere is the normally-visible surface.</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>Layer</th><th>Note</th></tr>
+      <tr><td>Core → Radiative → Convective</td><td>Internal layers ("CRC")</td></tr>
+      <tr><td><strong>Photosphere</strong></td><td>Visible surface; sunspots &amp; solar flares here</td></tr>
+      <tr><td>Chromosphere</td><td>Middle outer layer</td></tr>
+      <tr><td><span class="hl"><strong>Corona</strong></span></td><td>Outermost; visible in total eclipse; coronal mass ejections</td></tr>
+    </table>
+    <div class="sticky teal"><div class="slbl">ADITYA-L1</div>Placed at <span class="hl">L1</span>. L1–L2 ≈ 1.5 million km apart; L2–L3 ≈ 320 million km apart.</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Light from a star 100 light-years away takes about how long to reach Earth?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>100 years ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>100 days</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 year</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>10 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>100 years</strong> (1 light-year = distance light travels in 1 year).</div>
+    </div>
+    <div class="sticky blue"><div class="slbl">STAR LIFE CYCLE</div>Average/massive star → Red Giant → Supernova → <span class="hl">Neutron Star / Black Hole / White Dwarf</span></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> A satellite in geostationary orbit (orbital radius ~42,200 km) stays fixed above a point on the equator. Its orbital period is?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>24 hours ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>12 hours</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 hour</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>48 hours</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — A <strong>geostationary</strong> satellite has a period of <span class="hl">24 hours</span> (matches Earth's rotation).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec teal">⑫ Agriculture &amp; History 🌾</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> In which seasons is rice cultivated in Southern India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rabi only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kharif only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both Rabi &amp; Kharif ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Zaid only</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — In Southern India rice grows in <strong>both Rabi &amp; Kharif</strong> (in the North, only Kharif).</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>Season</th><th>Sown / Harvested</th><th>Crops</th></tr>
+      <tr><td><strong>Rabi</strong></td><td>Sown Oct / harvested Apr–May</td><td>Wheat, mustard, linseed, peas</td></tr>
+      <tr><td><strong>Kharif</strong></td><td>Sown July / harvested Oct</td><td>Rice, soybean, cotton, groundnut, maize</td></tr>
+    </table>
+    <div class="ca-box"><p class="hw"><strong>Thumba</strong> Equatorial Rocket Launching Station (1963, Thiruvananthapuram, Kerala) = India's first spaceport — chosen for its proximity to the <span class="hl">magnetic equator</span> (less fuel needed).</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> Mysore controlled the profitable trade of which of the following coasts?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bombay</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hooghly</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Coromandel</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Malabar ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Mysore controlled the <strong>Malabar</strong> coast trade (recall the Anglo-Mysore Wars)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> Mediterranean agriculture is a highly specialized ___ agriculture.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Commercial ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Subsistence</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Shifting</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Pastoral</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Commercial</strong> (citrus fruit &amp; wine industry). Subsistence = primitive (shifting cultivation) or intensive.</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>Shifting Cultivation — Local Names</th><th>Region</th></tr>
+      <tr><td>Roca / Conuco / Chena / Ray / Ladang / Milpa</td><td>Brazil / Venezuela / Sri Lanka / Vietnam / Indonesia / Mexico</td></tr>
+      <tr><td>Jhum · Kumari · Walra · Kurwa · Podu/Penda · Deepa · Bewar/Dahiya</td><td>NE India · W. Ghats · Rajasthan · Jharkhand · AP · Andaman/Bastar · MP</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> Which is the 5th largest planet in the solar system?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Earth ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Venus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mars</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Neptune</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Order by size: Jupiter &gt; Saturn &gt; Uranus &gt; Neptune &gt; <strong>Earth</strong> (5th)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec orange">⑬ Moon, Ghats &amp; Straits 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> If the Moon subtends an angle of 0.5° at Earth's surface, its diameter (avg distance 3.8 × 10⁸ m) is approximately?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>~3,475 km ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>~1,200 km</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>~6,400 km</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>~12,742 km</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Diameter = distance × angle (in radians) = 3.8×10⁸ × (0.5 × π/180) ≈ <strong>3,475 km</strong> (Moon's actual diameter).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> The Western Ghats are also known as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sahyadri Hills ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Vindhya Range</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Aravalli Hills</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Nilgiri Hills</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Sahyadri</strong>. Spread across 6 states: <span class="hl">Gujarat, Maharashtra, Goa, Karnataka, Kerala, Tamil Nadu</span>.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> Jawahar (Nhava Sheva / JNPT) Port provides easier access to global trade routes by bypassing which strait?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Strait of Malacca ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Strait of Hormuz</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Strait of Gibraltar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bab-el-Mandeb</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Strait of Malacca</strong> (connects South China Sea &amp; Indian Ocean)</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>Strait</th><th>Connects</th></tr>
+      <tr><td>Malacca</td><td>South China Sea ↔ Indian Ocean</td></tr>
+      <tr><td>Gibraltar</td><td>Atlantic ↔ Mediterranean (Spain–Morocco)</td></tr>
+      <tr><td>Bab-el-Mandeb ("Gateway of Tears")</td><td>Red Sea ↔ Gulf of Aden</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> In 1951, what percentage of India's population lived in urban areas?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>17.3% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>25%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>31.2%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>11%</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>17.3%</strong> urban in 1951 (by Census 2011, urban ≈ 31.2%, rural ≈ 68.8%).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec blue">⑭ Demography, Space &amp; Mountain Passes 🚠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> Which decline marks the last stage of the Demographic Transition Theory?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Only fertility</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only mortality</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both fertility &amp; mortality are low ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Neither</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — In the last stage, <strong>both birth &amp; death rates are low</strong> (in the first stage, both are high).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> What is Orion?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A constellation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>A planet</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>A galaxy</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>A comet</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Orion</strong> = a constellation (group of stars), also called <span class="hl">"The Hunter"</span>. Ursa Major is another constellation.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> In which direction does the Aravalli Range extend?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>North to South</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>East to West</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>North-East to South-West ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>North-West to South-East</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>NE to SW</strong>. Aravallis are Old Fold Mountains; highest peak = <span class="hl">Guru Shikhar (1722 m, Mount Abu)</span>.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> What causes the direction of Earth's axis to change (axial precession)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gravitational pull of the Sun &amp; Moon ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Earth's rotation speed</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Aeration in Earth's orbit</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Solar winds</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>gravitational pull of the Sun &amp; Moon</strong>. (Earth: 23½° on axis, 66½° to orbital plane.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Which mountain pass connects Ladakh and the Kashmir Valley?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Nathula</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rohtang</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Zoji La ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Shipki La</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Zoji La</strong> connects Kashmir Valley &amp; Ladakh. Nathula/Jelep La (Sikkim); Rohtang (Atal Tunnel, Himachal); Shipki La (Sutlej enters India).</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">PASSES TRIVIA</div>
+      <span class="hl">Mig La</span> = highest motorable pass (earlier Umling La) · Karakoram, Aghil, Mintaka passes · Pangong Tso &amp; Tso Moriri (saltwater lakes)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> The Himalayas are divided into how many parallel ranges from north to south?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>3</strong>: Great Himalayas (Himadri), Lesser Himalayas (Himachal), Shivalik (Outer). The Trans-Himalayas (Karakoram, Ladakh, Zanskar) are counted separately.</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>Peak</th><th>Height &amp; Note</th></tr>
+      <tr><td>Mount Everest</td><td>8,848 m — world's highest (Nepal–Tibet)</td></tr>
+      <tr><td>K2 (Godwin Austin)</td><td>8,611 m — world's 2nd; in Karakoram (Trans-Himalaya, PoK)</td></tr>
+      <tr><td><span class="hl">Kanchenjunga</span></td><td>8,598 m — India's highest (Sikkim), world's 3rd</td></tr>
+      <tr><td>Lhotse</td><td>8,516 m — world's 4th (Tibet)</td></tr>
+    </table>
+    <div class="sticky blue"><div class="slbl">VALLEYS</div>Duns (longitudinal valleys; <span class="hl">Dehradun</span> largest) · Kashmir Valley (Karewas — saffron) between Great &amp; Lesser Himalayas</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 15 ============ -->
+    <div class="sec green">⑮ Population, Plateau &amp; Rivers 🏞️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> Which of the following regions is densely populated in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Brahmaputra Plains only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gangetic Plains only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both Gangetic &amp; Brahmaputra Plains ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Thar Desert</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Both the <strong>Gangetic &amp; Brahmaputra Plains</strong> are densely populated. (The Thar is the world's most populated desert.)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> Which is the only cold desert in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ladakh Desert ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Thar Desert</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rann of Kutch</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gobi Desert</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Ladakh</strong> = India's only cold desert (Gobi, on China–Mongolia border, is also a cold desert).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> The Malwa Plateau is primarily located in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Madhya Pradesh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajasthan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Maharashtra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gujarat</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Madhya Pradesh</strong>. The Peninsular Plateau = Central Highland (Mewar/Marwar, Malwa, Bundelkhand/Baghelkhand, Chota Nagpur) + Deccan Plateau.</div>
+    </div>
+    <div class="tip-box"><p class="hw">In the Deccan Plateau &amp; Western Ghats, height <span class="hl">increases from north to south</span>.</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> In which direction does the Narmada River flow?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>East to West ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>West to East</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>North to South</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>South to North</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>East to West</strong> (longest west-flowing river). Origin: <span class="hl">Amarkantak</span> (radial drainage); Dhuandhar &amp; Kapildhar falls; Indira Sagar Dam.</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Drainage Pattern</th><th>Example / Shape</th></tr>
+      <tr><td>Radial</td><td>Amarkantak (rivers flow outward)</td></tr>
+      <tr><td>Centripetal</td><td>Loktak Lake (inward to a depression)</td></tr>
+      <tr><td>Dendritic</td><td>Tree-branch like</td></tr>
+      <tr><td>Trellis</td><td>Tributaries join at 90°</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> When is the longest day in the Northern Hemisphere?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>21 March</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>23 September</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>22 December</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>21 June (Summer Solstice) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Summer Solstice (21 June)</strong>. Winter solstice = 22 Dec; equinoxes = 21 Mar (vernal) &amp; 23 Sep (autumnal).</div>
+    </div>
+    <div class="sticky teal"><div class="slbl">EARTH–SUN DISTANCE</div>Perihelion (closest) ≈ 147 million km · Aphelion (farthest) ≈ 152 million km</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> Which of the following is NOT a tributary of the Ganga?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Gomti</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Son</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Chambal ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kosi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Chambal</strong> is a tributary of the <span class="hl">Yamuna</span> (along with Sindh, Betwa, Ken), not directly of the Ganga.</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 16 ============ -->
+    <div class="sec red">⑯ Eclipses, Atmosphere &amp; Dams 🌑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> A lunar eclipse occurs when Earth blocks sunlight from reaching the Moon. If Earth were twice its current size, how would a lunar eclipse change?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The eclipse would last longer ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It would last shorter</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>No lunar eclipse would occur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>No change</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — A bigger Earth = bigger shadow → eclipse <strong>lasts longer</strong>. (Lunar eclipse = full moon; solar eclipse = new moon.)</div>
+    </div>
+    <div class="sticky blue"><div class="slbl">SHADOWS</div>Umbra = dark (full) shadow · Penumbra = light (partial) shadow. "Blood Moon" = red Moon during a total lunar eclipse (red has the longest wavelength).</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> Nitrogen is inert in the atmosphere because?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>It does not readily react ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It is very heavy</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>It is radioactive</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>It is a noble gas</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Nitrogen <strong>does not react</strong> easily. Atmosphere: N₂ <span class="hl">78%</span>, O₂ 21%, Argon 0.9%, CO₂ 0.036%.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> Which is the highest dam in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tehri Dam ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bhakra Nangal</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hirakud</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sardar Sarovar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Tehri</strong> (on Bhagirathi) = highest dam. Bhakra = highest gravity dam (Sutlej); Hirakud = longest (Mahanadi); Sardar Sarovar (Narmada, Gujarat).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> Which region in India is most prone to earthquakes and landslides?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Himalayan region ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Indo-Gangetic Plains</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Coastal Plains</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Peninsular Plateau</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The <strong>Himalayan region</strong> (seismic zones 3–4) is tectonically active (convergent plate boundary).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> Where was the ozone hole first discovered?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Antarctica ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Arctic</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sahara</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Amazon</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — First discovered over <strong>Antarctica</strong> (1985). Ozone is in the <span class="hl">stratosphere</span>; thickness measured in Dobson Units; Ozone Day = 16 Sep.</div>
+    </div>
+    <div class="sticky purple"><div class="slbl">OZONE TREATIES</div><span class="hl">Vienna Convention (1985)</span> &amp; <span class="hl-g">Montreal Protocol (1987)</span> → phase out CFCs. (Indo-Pacific Oceans Initiative = India's initiative.)</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Which planet is called the "Stormy Planet"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jupiter ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Neptune</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Saturn</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mars</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Jupiter</strong> = Stormy Planet; <span class="hl">Neptune</span> = Windy Planet. Jupiter has the shortest rotation (9h 55m); Venus the longest (243 days).</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 17 ============ -->
+    <div class="sec purple">⑰ Plateau, Extreme Points &amp; Lakes 🏝️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> Which of the following is INCORRECT about the Peninsular Plateau of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>It lies south of the Northern Plains</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It is triangular in shape</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>It is highly even &amp; smooth ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>The Aravallis border its north-west</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — INCORRECT: the Peninsular Plateau is actually <strong>highly uneven / rugged</strong> (the Eastern Ghats are discontinuous).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> Why are days on Venus longer than its years?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Its rotation is very slow ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It is closest to the Sun</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>It has no moon</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>It revolves backwards</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Venus's <strong>rotation (243 days) is slower than its revolution (~225 days)</strong>, so a day &gt; a year.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> Which is the southernmost point of the Indian mainland?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kanyakumari (Cape Comorin) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Indira Point</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Indira Col</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kibithu</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Kanyakumari</strong> = southernmost <em>mainland</em> point. <span class="hl">Indira Point</span> (Great Nicobar) = southernmost point overall (submerged in the 2004 tsunami). Indira Col = northernmost.</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>N–S extent = <span class="hl">3,214 km</span> · E–W extent = <span class="hl">2,933 km</span></li>
+        <li>Latitudinal: 8°4′–37°6′N · Longitudinal: 68°7′–97°25′E</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> Which Indian lake is of volcanic origin?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sambhar Lake</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Loktak Lake</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Lonar Lake ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chilika Lake</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Lonar</strong> = crater lake (Buldhana, Maharashtra). Sambhar = largest inland saltwater lake (Rajasthan); Loktak = floating lake (Manipur, Keibul Lamjao NP); Chilika = largest brackish lake &amp; India's 1st Ramsar site (1981).</div>
+    </div>
+    <div class="sticky teal"><div class="slbl">ARTIFICIAL LAKES</div>Largest = <span class="hl">Govind Vallabh Pant Sagar</span> · 2nd largest = Jaisamand (Salumber, Rajasthan)</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 18 ============ -->
+    <div class="sec teal">⑱ Ores, Passes, Winds &amp; Key Metal 🧭</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Which is the finest iron ore with the highest iron content?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Magnetite ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hematite</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Limonite</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Siderite</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Magnetite</strong> (&gt; 70% iron) is the finest. Hematite = 60–70%.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> Which pass connects Sikkim to Tibet?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nathula ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rohtang</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Shipki La</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Zoji La</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Nathula</strong> connects Sikkim &amp; Tibet. Arunachal passes: Bumla, Bomdila, Yonggyap, Diphu (India–Myanmar–Tibet trijunction).</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> Which of the following statements about winds is INCORRECT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Wind is an active agent of erosion/deposition in deserts</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Loess deposits are not found in China ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sand dunes are an example of wind deposition</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Wind erosion forms mushroom rocks</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — INCORRECT statement: China <span class="hl">DOES have</span> large loess deposits (the Loess Plateau).</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>Wind Landforms</th><th>Type</th></tr>
+      <tr><td>Mushroom rocks, Pedestal rocks, Zeugen, Yardangs, Pediplains</td><td>Erosional</td></tr>
+      <tr><td>Sand dunes — Barchan, Seif, Parabolic, Transverse</td><td>Depositional</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> Which mineral is commonly called the "Key Metal of Industrial Development"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Copper</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Iron ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Aluminium</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Manganese</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Iron</strong> (basis of steel &amp; most structures). India's first steel plant aimed at self-sufficiency in steel &amp; heavy industry.</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Which religious group recorded the highest decadal population growth rate in India between 2001 and 2011?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Muslims ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hindus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Christians</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jains</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Muslims</strong> (~24.6% decadal growth); Hindus ~16.8%; Jains the lowest (~5.4%).</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>Religion (2011)</th><th>% of Population</th></tr>
+      <tr><td>Hindu</td><td>79.8%</td></tr>
+      <tr><td>Muslim</td><td>14.23%</td></tr>
+      <tr><td>Christian</td><td>2.3%</td></tr>
+      <tr><td>Sikh</td><td>1.72%</td></tr>
+      <tr><td>Buddhist</td><td>0.7%</td></tr>
+      <tr><td>Jain</td><td>0.37%</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — Geography Key Facts</div>
+    <table class="qr-t">
+      <tr><th>Topic</th><th>Fact</th></tr>
+      <tr><td>India's DTM stage (per SSC)</td><td>Late expanding</td></tr>
+      <tr><td>Year of the Great Divide</td><td>1921</td></tr>
+      <tr><td>CBM</td><td>Coalbed Methane</td></tr>
+      <tr><td>Crust–Mantle / Mantle–Core boundary</td><td>Moho / Gutenberg</td></tr>
+      <tr><td>Kuiper Belt</td><td>Icy bodies beyond Neptune</td></tr>
+      <tr><td>Conflict mineral / Kimberley Process</td><td>Diamond / India chairs 2026</td></tr>
+      <tr><td>Mercosur</td><td>South America (1991)</td></tr>
+      <tr><td>Jharkhand's 1st Ramsar site</td><td>Udhwa Lake</td></tr>
+      <tr><td>Most Ramsar sites</td><td>Tamil Nadu (~20)</td></tr>
+      <tr><td>Bhabar / Terai</td><td>Foothills; rivers vanish / reappear</td></tr>
+      <tr><td>Philadelphi Corridor</td><td>Gaza–Egypt (Rafah Crossing)</td></tr>
+      <tr><td>Vindhya / Satpura separates</td><td>Ganga–Narmada / Narmada–Tapi</td></tr>
+      <tr><td>Eastern Ghats also called</td><td>Nallamala Hills</td></tr>
+      <tr><td>Grand Canyon of India (Gandikota)</td><td>Penna River</td></tr>
+      <tr><td>Roof of the World</td><td>Ladakh/Tibet Plateau</td></tr>
+      <tr><td>Himalayas plate boundary</td><td>Convergent (Indian + Eurasian)</td></tr>
+      <tr><td>Chabahar Port</td><td>Iran; INSTC node</td></tr>
+      <tr><td>Rolling/Green Planet / Stormy / Windy</td><td>Uranus / Jupiter / Neptune</td></tr>
+      <tr><td>Hottest / Brightest / Densest planet</td><td>Venus / Venus / Earth</td></tr>
+      <tr><td>Great Nicobar closest to</td><td>Indonesia</td></tr>
+      <tr><td>Oldest physiographic division</td><td>Peninsular Plateau</td></tr>
+      <tr><td>Deccan soil / cotton soil</td><td>Black soil (Regur)</td></tr>
+      <tr><td>Only diamond mine</td><td>Majhgawan, Panna (MP)</td></tr>
+      <tr><td>First EPZ (Asia)</td><td>Kandla, 1965</td></tr>
+      <tr><td>Visible in total solar eclipse</td><td>Corona</td></tr>
+      <tr><td>Western Ghats / India's highest peak</td><td>Sahyadri / Kanchenjunga</td></tr>
+      <tr><td>Ladakh–Kashmir / Sikkim–Tibet pass</td><td>Zoji La / Nathula</td></tr>
+      <tr><td>Only cold desert / Volcanic lake</td><td>Ladakh / Lonar</td></tr>
+      <tr><td>Highest / Longest dam</td><td>Tehri / Hirakud</td></tr>
+      <tr><td>Finest iron ore / Key industrial metal</td><td>Magnetite / Iron</td></tr>
+      <tr><td>Southernmost mainland point</td><td>Kanyakumari</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>Discontinuities: 🧠 Conrad → <span class="hl">Moho</span> → Gutenberg → Lehmann</li>
+          <li>Vindhya = Ganga–Narmada; Satpura = Narmada–Tapi (don't swap!)</li>
+          <li>Venus = hottest &amp; brightest; Earth = densest; Saturn = least dense</li>
+          <li>For orbital/diameter calc Qs — skip if unsure; it's a GK exam</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Black soil → cotton; Laterite → tea/coffee/cashew</li>
+          <li>Magnetite &gt; 70% iron (finest); Hematite 60–70%</li>
+          <li>Indira Point = southernmost overall; Kanyakumari = mainland</li>
+          <li>Tamil Nadu = most Ramsar sites; Thar = most populated desert</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF GEOGRAPHY PYQ NOTES</div>
+      <strong>All 76 Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
