@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC GD — Geography PYQ | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 SSC GD — भूगोल PYQ नोट्स</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 SSC GD · भूगोल</div>
+    <div class="cover-title">🌍 भूगोल PYQ — टॉपर नोट्स</div>
+    <div class="cover-sub">भौतिक · भारत · विश्व · ब्रह्मांड | सभी प्रश्न सहित</div>
+    <div class="cover-badge">🏔️ भौतिक स्वरूप · 🪐 ब्रह्मांड · 🌊 नदियाँ व झीलें · 👥 जनसंख्या · 🪨 खनिज व मृदा · 🚠 दर्रे</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ SECTION 1 ============ -->
+    <div class="sec orange">① जनसांख्यिकी, खनिज व अंतरिक्ष 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> जनसांख्यिकीय संक्रमण सिद्धांत के अनुसार, भारत वर्तमान में जनसंख्या वृद्धि की किस अवस्था में है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उच्च स्थिर (High stationary)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रारंभिक विस्तार (Early expanding)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उत्तर विस्तार (Late expanding) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>निम्न स्थिर (Low stationary)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>Late expanding</strong> (SSC द्वारा स्वीकृत उत्तर)। DTM जन्म व मृत्यु दर के चरणों को दर्शाता है।</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>भारत की जनसंख्या वृद्धि की 4 अवस्थाएँ:</strong></p>
+      <ul class="hw num">
+        <li>अवस्था 1 (<span class="hl">1901–1921</span>): स्थिर / उच्च स्थिर</li>
+        <li>अवस्था 2 (<span class="hl">1921–1951</span>): प्रारंभिक विस्तार — <span class="hl-p">1921 = "महान विभाजन का वर्ष"</span></li>
+        <li>अवस्था 3 (<span class="hl">1951–1981</span>): उत्तर विस्तार (वर्तमान, SSC अनुसार)</li>
+        <li>अवस्था 4 (<span class="hl">1981–वर्तमान</span>): धीमी वृद्धि — भारत अब प्रतिस्थापन स्तर से नीचे</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> खनिज संसाधनों के संदर्भ में CBM का मुख्य अर्थ क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>कोलबेड मीथेन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कॉपर-बेयरिंग मिनरल्स</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>क्रूड बायोफ्यूल मिक्सचर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कंप्रेस्ड बॉक्साइट मिनरल्स</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>कोलबेड मीथेन</strong>। मीथेन = ग्रीनहाउस गैस, इसे <span class="hl">मार्श गैस</span> भी कहते हैं (दलदली/धान के खेतों से निकलती है)।</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">ग्रीनहाउस गैसें (बहुलता क्रम)</div>
+      <span class="hl">जलवाष्प</span> &gt; कार्बन डाइऑक्साइड &gt; मीथेन
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> यदि कोई तारा सूर्य जैसा है, तो उस एक्सोप्लैनेट का सतह तापमान पृथ्वी की तुलना में कैसा होगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>काफी अधिक गर्म</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>समान तापमान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ठंडा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई प्रभाव नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>समान तापमान</strong> (सूर्य जैसा तारा, समान दूरी पर → समान परिस्थितियाँ)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> भारतीय जनगणना में कार्यशील जनसंख्या को किन तीन श्रेणियों में बाँटा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मुख्य कामगार, सीमांत कामगार, गैर-कामगार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कुशल, अर्ध-कुशल, अकुशल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ग्रामीण, शहरी, उपनगरीय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>औपचारिक, अनौपचारिक, आकस्मिक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — मुख्य कामगार (&gt; <span class="hl">183 दिन</span> रोजगार), सीमांत कामगार (&lt; 183 दिन), गैर-कामगार (बेरोजगार)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> जनगणना 2011 के अनुसार, भारत का कौन-सा धार्मिक समूह मुख्यतः शहरी क्षेत्रों में केंद्रित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जैन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ईसाई</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हिंदू</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सिख</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>जैन</strong> (~<span class="hl">79.7%</span> शहरी)। ईसाई ~40% शहरी (पूर्वोत्तर में कई जनजातीय, अतः ग्रामीण भी)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 2 ============ -->
+    <div class="sec blue">② भूटान, हिमालय व पृथ्वी का आंतरिक भाग 🏔️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> कौन-सा हिमालयी देश जलविद्युत का उपयोग कर ग्रीन क्रिप्टोकरेंसी माइन करने के तरीके तलाश रहा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भूटान ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नेपाल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>भारत</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>म्यांमार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>भूटान</strong> (जलविद्युत के लिए प्रसिद्ध; अधिकांशतः इसी पर चलता है)। मुद्रा = नगुलट्रम; राजधानी = थिम्पू।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> भारत के किस भाग में हिमालय अधिक चौड़ा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पश्चिमी हिमालय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पूर्वी हिमालय</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मध्य हिमालय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सर्वत्र समान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पश्चिमी हिमालय</strong> चौड़ा है; पूर्व की ओर शिवालिक लुप्त हो जाता है (<span class="hl">डुआर्स</span> द्वारा प्रतिस्थापित, चाय बागानों हेतु प्रसिद्ध), अतः संकरा।</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>क्षेत्रीय विभाजन</th><th>नदियों के बीच</th></tr>
+      <tr><td>पंजाब हिमालय</td><td>सिंधु – सतलज</td></tr>
+      <tr><td>कुमाऊँ हिमालय</td><td>सतलज – काली</td></tr>
+      <tr><td>नेपाल हिमालय</td><td>काली – तीस्ता</td></tr>
+      <tr><td>असम हिमालय</td><td>तीस्ता – ब्रह्मपुत्र</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> कौन-सी असंबद्धता (discontinuity) क्रस्ट व मैंटल को विभाजित करती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मोहो (Mohorovicic) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कॉनराड</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>गुटेनबर्ग</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>लेहमन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>मोहो</strong> क्रस्ट व मैंटल को अलग करती है</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>असंबद्धता</th><th>अलग करती है</th></tr>
+      <tr><td><strong>कॉनराड</strong></td><td>ऊपरी व निचली क्रस्ट</td></tr>
+      <tr><td><span class="hl"><strong>मोहो</strong></span></td><td>क्रस्ट व मैंटल</td></tr>
+      <tr><td><strong>गुटेनबर्ग</strong></td><td>मैंटल व कोर</td></tr>
+      <tr><td><strong>लेहमन</strong></td><td>बाह्य कोर (तरल) व आंतरिक कोर (ठोस)</td></tr>
+    </table>
+    <div class="trick">🧠 क्रम याद रखें: कॉनराड → मोहो → गुटेनबर्ग → लेहमन (ऊपर से नीचे)</div>
+    <div class="sticky purple">
+      <div class="slbl">क्रस्ट तथ्य</div>
+      महाद्वीपीय = ग्रेनाइटिक (SIAL); महासागरीय = बेसाल्टिक (SIMA) — सघन, अतः <span class="hl">अधोगमन (subduct)</span> करती है। कोर = निकल + लोहा। बाह्य तरल कोर पृथ्वी को चुंबकीय क्षेत्र देता है।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> कुइपर बेल्ट क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>नेप्च्यून से परे बर्फीले पिंडों का क्षेत्र ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मंगल व बृहस्पति के बीच की पट्टी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>शनि के चारों ओर का वलय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तारों का समूह</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>नेप्च्यून से परे</strong> बर्फीले पिंडों व बौने ग्रहों (प्लूटो, हौमिया, माकीमाकी) का क्षेत्र। सेरेस क्षुद्रग्रह पट्टी में है।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>प्लूटो को <span class="hl">2006</span> में ग्रह सूची से हटाया (IAU) — यह अपनी कक्षा साफ नहीं करता</li>
+        <li><strong>क्षुद्रग्रह पट्टी</strong> (मंगल व बृहस्पति के बीच) स्थलीय (आंतरिक) व जोवियन (गैसीय) ग्रहों को बाँटती है</li>
+        <li>स्थलीय = छोटे, सघन, चट्टानी · जोवियन = बड़े, गैसीय/बर्फीले, कम घनत्व</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 3 ============ -->
+    <div class="sec green">③ संघर्ष खनिज, व्यापार समूह व रामसर 💎</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> कौन-सा खनिज, विशेषकर अफ्रीका में सशस्त्र समूहों के वित्तपोषण में भूमिका के कारण, "संघर्ष खनिज" कहलाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हीरा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सोना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कोल्टन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तांबा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>हीरा</strong> ("संघर्ष/ब्लड डायमंड")। इसे <span class="hl">किम्बरली प्रक्रिया</span> द्वारा रोका जाता है।</div>
+    </div>
+    <div class="ca-box">
+      <p class="hw"><strong>किम्बरली प्रक्रिया:</strong> संघर्ष हीरों को व्यापार से हटाती है। <span class="hl">भारत 2026 के लिए इसकी अध्यक्षता संभाल रहा है</span> — परीक्षा हेतु महत्वपूर्ण!</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> मर्कोसुर (Mercosur) किस क्षेत्र से संबंधित व्यापार समूह है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>एशिया</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यूरोप</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अफ्रीका</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>दक्षिण अमेरिका ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>दक्षिण अमेरिका</strong> (सदर्न कॉमन मार्केट, 1991)। सदस्य: अर्जेंटीना, ब्राजील, पैराग्वे, उरुग्वे। <span class="hl">वेनेजुएला निलंबित है</span>।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> झारखंड का पहला रामसर स्थल कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उधवा झील ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चिल्का झील</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सुरहा ताल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवलादेव</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>उधवा झील</strong> = झारखंड का पहला रामसर स्थल</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">रामसर स्थल</div>
+      भारत में <span class="hl">100+</span> रामसर स्थल हैं। सर्वाधिक <strong>तमिलनाडु</strong> में (~20); UP में ~12–13। (UP उदाहरण: पटना झील — एटा, समन/सखा पक्षी विहार — अलीगढ़, सुरहा ताल/JP नारायण पक्षी विहार — बलिया।)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 4 ============ -->
+    <div class="sec red">④ प्रजनन दर, भौतिक स्वरूप व भू-राजनीति 🗺️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> भारत में एक महिला से अपने जीवनकाल में औसतन जितने बच्चों की अपेक्षा थी, वह 3.8 किस वर्ष में थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1990 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2011</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2015</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1960</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>1990</strong>। प्रतिस्थापन स्तर = <span class="hl">2.1</span>। 2011 तक TFR ≈ 2.4 (ग्रामीण 2.6, शहरी 1.8); भारत अब प्रतिस्थापन स्तर से नीचे है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> भाबर क्षेत्र भारत के किस भौतिक स्वरूप से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हिमालय की तलहटी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रायद्वीपीय पठार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सिंधु-गंगा का मैदान</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मरुस्थलीय क्षेत्र</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>हिमालय की तलहटी</strong>। भाबर = संकरी पट्टी (8–16 किमी) जहाँ नदियाँ भूमिगत हो जाती हैं।</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>पट्टी</th><th>विशेषता</th></tr>
+      <tr><td><span class="hl"><strong>भाबर</strong></span></td><td>8–16 किमी; नदियाँ भूमिगत (तलहटी)</td></tr>
+      <tr><td><strong>तराई</strong></td><td>15–30 किमी; नदियाँ पुनः प्रकट; दलदली, अस्पष्ट जलमार्ग</td></tr>
+      <tr><td><strong>जलोढ़ बाढ़ के मैदान</strong></td><td>खादर (नया जलोढ़) व बांगर (पुराना जलोढ़)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> फिलाडेल्फी कॉरिडोर गाजा व किस देश की सीमा पर स्थित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>ईरान</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>UAE</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तुर्की</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मिस्र ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — गाजा व <strong>मिस्र</strong>। ~14 किमी संकरी पट्टी; इस पर <span class="hl">राफा क्रॉसिंग</span> (गाजा ↔ मिस्र का सिनाई प्रायद्वीप) है।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 5 ============ -->
+    <div class="sec purple">⑤ पर्वत श्रेणियाँ, एयरवेज व घाट ⛰️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> विंध्य श्रेणी किन दो नदी तंत्रों को अलग करती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गंगा व गोदावरी</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>गंगा व नर्मदा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>नर्मदा व तापी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गोदावरी व कृष्णा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>विंध्य</strong> गंगा व नर्मदा तंत्र को अलग करती है। (<span class="hl">सतपुड़ा</span> नर्मदा व तापी को अलग करती है।)</div>
+    </div>
+    <div class="imp">
+      <p class="hw">भ्रमित न हों! <strong>विंध्य</strong> (उत्तर) = गंगा व नर्मदा · <strong>सतपुड़ा</strong> (दक्षिण) = नर्मदा व तापी। दोनों <span class="hl">ब्लॉक / भ्रंश पर्वत</span> हैं। सर्वोच्च शिखर: विंध्य = सद्भावना शिखर; सतपुड़ा = <span class="hl-p">धूपगढ़</span>।</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> डेक्कन एयरवेज का राष्ट्रीयकरण किस वर्ष हुआ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1953 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1947</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1956</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1962</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — डेक्कन एयरवेज का राष्ट्रीयकरण <strong>1953</strong> में हुआ</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> पूर्वी घाट को निम्न में से किस नाम से भी जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नीलगिरि पहाड़ियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजमहल पहाड़ियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मैकाल पहाड़ियाँ</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>नल्लामला पहाड़ियाँ ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>नल्लामला पहाड़ियाँ</strong> पूर्वी घाट का भाग हैं। नीलगिरि = जहाँ पश्चिमी व पूर्वी घाट मिलते हैं (डोडाबेट्टा, दक्षिण भारत की दूसरी सर्वोच्च चोटी, 2637 मी)।</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>विशेषता</th><th>पश्चिमी घाट</th><th>पूर्वी घाट</th></tr>
+      <tr><td>औसत ऊँचाई</td><td><span class="hl">1200 मी</span> (अधिक)</td><td>600 मी</td></tr>
+      <tr><td>निरंतरता</td><td>सतत</td><td>असतत (नदियाँ काटती हैं)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 6 ============ -->
+    <div class="sec teal">⑥ नदियाँ, पठार व प्लेट विवर्तनिकी 🌋</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> भारत के ग्रांड कैन्यन (गंडिकोटा) से होकर कौन-सी नदी बहती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>कृष्णा</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>कावेरी</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>पेन्ना (पेन्नार) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गोदावरी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>पेन्ना / पेन्नार</strong> गंडिकोटा (आंध्र प्रदेश) से बहती है; यह <span class="hl">नंदी हिल्स, कर्नाटक</span> से निकलती है।</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>नदी</th><th>उद्गम</th></tr>
+      <tr><td>कृष्णा</td><td>महाबलेश्वर (सह्याद्रि, महाराष्ट्र)</td></tr>
+      <tr><td>कावेरी</td><td>ब्रह्मगिरि पहाड़ियाँ, कोडागु (कर्नाटक)</td></tr>
+      <tr><td>गोदावरी</td><td>त्र्यंबकेश्वर (सह्याद्रि, महाराष्ट्र)</td></tr>
+      <tr><td>पेन्ना</td><td>नंदी हिल्स (कर्नाटक)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> भारत के किस क्षेत्र को "विश्व की छत" कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>लद्दाख पठार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दक्कन पठार</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>छोटा नागपुर पठार</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मालवा पठार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>लद्दाख / तिब्बत पठार</strong> = "विश्व की छत"। छोटा नागपुर = "भारत का रुर"; मालवा = MP में।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> हिमालय का निर्माण किस प्लेट सीमा से हुआ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अपसारी (Divergent)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>रूपांतर (Transform)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हॉटस्पॉट</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>अभिसारी सीमा (Convergent) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>अभिसारी</strong> (भारतीय + यूरेशियन प्लेट)। हिमालय <span class="hl">नवीन वलित पर्वत</span> हैं (अब भी बढ़ रहे हैं)।</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>सीमा</th><th>प्रकृति</th><th>उदाहरण</th></tr>
+      <tr><td>अभिसारी</td><td>विनाशकारी</td><td>हिमालय, पैसिफिक रिंग ऑफ फायर (90% भूकंप)</td></tr>
+      <tr><td>अपसारी</td><td>रचनात्मक</td><td>सागर तल विस्तार</td></tr>
+      <tr><td>रूपांतर</td><td>संरक्षी</td><td>सैन एंड्रियास भ्रंश</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 7 ============ -->
+    <div class="sec orange">⑦ अंतरिक्ष, नदियाँ व कृषि 🛰️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> यदि कोई ग्रह सूर्य की परिक्रमा में 88 पृथ्वी-दिवस लेता है, तो उसका कक्षीय आवर्तकाल सेकंड में कितना होगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>7.6 × 10⁶ सेकंड ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>8.8 × 10⁴ सेकंड</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>3.2 × 10⁷ सेकंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1.0 × 10⁵ सेकंड</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — 88 दिन × 86,400 से ≈ <strong>7.6 × 10⁶ से</strong>। (88 दिन = <span class="hl">बुध</span> — सबसे छोटी कक्षा; नेप्च्यून ~165 वर्ष — सबसे लंबी।)</div>
+    </div>
+    <div class="tip-box"><p class="hw">यदि आवर्तकाल सीधे दिया हो, तो बस 86,400 (सेकंड/दिन) से गुणा करें। GK परीक्षा में भारी फॉर्मूले पर समय न गँवाएँ — संदेह हो तो छोड़ दें।</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> करतारपुर किस नदी के निकट स्थित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गंगा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>रावी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>यमुना</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सतलज</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>रावी</strong> (प्राचीन नाम = पुरुष्णी/इरावती)। रावी पर: शाहपुर कंडी बैराज, चमेरा बांध, रणजीत सागर (थीन) बांध। रावी व ब्यास रोहतांग से निकलती हैं।</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">सतलज</div>
+      <span class="hl">राक्षसताल</span> (तिब्बत, मानसरोवर के निकट) से निकलती है; <strong>शिपकी ला</strong> से भारत में प्रवेश; हरिके में ब्यास से मिलती है — इंदिरा गांधी नहर का स्रोत (सबसे लंबी नहर, राजस्थान के 7 जिलों को जल)।
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> कौन फसल को पाला (frost) व गर्म वायु धाराओं दोनों से बचाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>स्टार्च</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उर्वरक</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>खाद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>जल</strong> फसल को पाला व गर्म वायु धाराओं दोनों से बचाता है</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> चाबहार बंदरगाह किन तीन क्षेत्रों के चौराहे पर सामरिक रूप से स्थित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पूर्वी एशिया, अफ्रीका, यूरोप</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>दक्षिण एशिया, मध्य एशिया, मध्य पूर्व ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>यूरोप, अफ्रीका, अमेरिका</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दक्षिण एशिया, पूर्वी एशिया, ओशिनिया</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>दक्षिण एशिया, मध्य एशिया व मध्य पूर्व</strong>। चाबहार <span class="hl">ईरान</span> में है।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>दो टर्मिनल: <span class="hl">शहीद बेहश्ती</span> व <span class="hl">शहीद कलंतरी</span></li>
+        <li><strong>INSTC</strong> (अंतर्राष्ट्रीय उत्तर–दक्षिण परिवहन गलियारा) का नोड — रूस, मध्य एशिया व यूरोप को जोड़ता है</li>
+        <li>भारत ने <span class="hl-p">2024</span> में ईरान से 10-वर्षीय परिचालन समझौता किया; होर्मुज जलडमरूमध्य का विकल्प</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 8 ============ -->
+    <div class="sec blue">⑧ ग्रह व द्वीप 🪐</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> किस ग्रह का चुंबकीय क्षेत्र अपने केंद्र से हटा हुआ व घूर्णन अक्ष से लगभग 59° झुका है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पृथ्वी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>बृहस्पति</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>यूरेनस ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>शनि</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>यूरेनस</strong> (चुंबकीय अक्ष ~59°)। इसे <span class="hl">लुढ़कता ग्रह</span> (~98° अक्षीय झुकाव) व <span class="hl-g">हरा ग्रह</span> (मीथेन) कहते हैं।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><strong>बृहस्पति</strong> = सबसे बड़ा ग्रह, ~92 चंद्रमा; गैलीलियन चंद्रमा = आयो, यूरोपा, गैनिमीड, कैलिस्टो (<span class="hl">गैनिमीड</span> = सौरमंडल का सबसे बड़ा चंद्रमा)</li>
+        <li><strong>शनि</strong> = सबसे कम घनत्व (0.68 g/cm³), बर्फ के वलय · <strong>पृथ्वी</strong> = सबसे सघन ग्रह</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> निम्न में से कौन-सा ग्रह गैसों व तरल से नहीं बना है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>शनि</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यूरेनस</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बृहस्पति</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>शुक्र ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>शुक्र</strong> (चट्टानी/स्थलीय ग्रह)। इसे <span class="hl">लूसिफर / भोर व सांझ का तारा</span> भी कहते हैं; सबसे चमकीला व सबसे गर्म ग्रह (मोटे H₂SO₄ बादल + CO₂)। बुध सूर्य के सबसे निकट है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> ग्रेट निकोबार द्वीप किस पड़ोसी देश के सबसे निकट है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>म्यांमार</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>श्रीलंका</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>इंडोनेशिया ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बांग्लादेश</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — ग्रेट निकोबार (सबसे दक्षिणी) <strong>इंडोनेशिया</strong> के सबसे निकट है। उत्तरी अंडमान म्यांमार के सबसे निकट है।</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>चैनल / जलडमरूमध्य</th><th>अलग करता है</th></tr>
+      <tr><td>डंकन पैसेज</td><td>दक्षिण अंडमान व लिटिल अंडमान</td></tr>
+      <tr><td>10° चैनल</td><td>लिटिल अंडमान व कार निकोबार (अंडमान व निकोबार)</td></tr>
+      <tr><td>9° चैनल</td><td>मिनिकॉय व लक्षद्वीप</td></tr>
+      <tr><td>8° चैनल</td><td>मिनिकॉय व मालदीव</td></tr>
+      <tr><td>11° चैनल</td><td>अमिनदिवी व कैनानोर (लक्षद्वीप)</td></tr>
+      <tr><td>पाक जलडमरूमध्य / मन्नार की खाड़ी</td><td>भारत व श्रीलंका</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> यूरेनस का अक्षीय झुकाव ~98° है (यह लगभग अपनी ओर लेटा घूमता है)। इसका इसकी ऋतुओं पर क्या प्रभाव है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अत्यधिक ऋतु परिवर्तन ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हल्की ऋतुएँ</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एक ओर स्थायी दिन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई प्रभाव नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>अत्यधिक ऋतु परिवर्तन</strong>। ऋतुएँ झुकाव + परिक्रमण से होती हैं, अतः भारी झुकाव → अत्यधिक ऋतु अंतर। (पृथ्वी: अक्ष पर 23½°, कक्षीय तल से 66½°।)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 9 ============ -->
+    <div class="sec green">⑨ दाब पट्टियाँ व पृथ्वी की गतियाँ 🌬️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> लगभग 30°–35° अक्षांश पर, जहाँ अवरोही वायु "अश्व अक्षांश (Horse Latitudes)" बनाती है, वह कौन-सी पट्टी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>उपोष्ण उच्च दाब (Sub-Tropical High) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विषुवतीय निम्न दाब (Doldrums)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उपध्रुवीय निम्न दाब</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ध्रुवीय उच्च दाब</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>उपोष्ण उच्च दाब</strong> (अवरोही वायु → "अश्व अक्षांश", 30°–35°)</div>
+    </div>
+    <div class="key-box">
+      <p class="hw"><strong>दाब पट्टियाँ व कोशिकाएँ:</strong></p>
+      <ul class="hw arr">
+        <li>विषुवतीय निम्न = <span class="hl">डोलड्रम</span> (शांत, 5°N–5°S) · उपोष्ण उच्च = अश्व अक्षांश</li>
+        <li>उपध्रुवीय निम्न · ध्रुवीय उच्च</li>
+        <li>कोशिकाएँ: <strong>हेडली</strong>, <strong>फेरेल</strong> (यांत्रिक), <strong>ध्रुवीय</strong></li>
+        <li>उत्तरी गोलार्ध में चक्रवात <span class="hl-p">वामावर्त (anticlockwise)</span> घूमते हैं</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> पृथ्वी का अक्षीय झुकाव 41,000 वर्षों में ~22.1° व 24.5° के बीच बदलता है (मिलनकोविच चक्र)। इसका पृथ्वी पर क्या प्रभाव है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अधिक झुकाव से ऋतु अंतर बढ़ता है ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यह कक्षीय गति बदलता है</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>यह चुंबकीय क्षेत्र प्रभावित करता है</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई प्रभाव नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>अधिक झुकाव → अधिक ऋतु अंतर</strong> (मिलनकोविच चक्र पृथ्वी के झुकाव/कक्षा को दीर्घकालिक जलवायु परिवर्तन से जोड़ते हैं)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 10 ============ -->
+    <div class="sec red">⑩ भौतिक स्वरूप, जनसंख्या व खनिज 🪨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> भारत का कौन-सा भौतिक विभाग भूगर्भीय दृष्टि से सबसे पुराना है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हिमालय</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>उत्तरी मैदान</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रायद्वीपीय पठार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तटीय मैदान</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>प्रायद्वीपीय पठार</strong> = सबसे पुराना, सबसे बड़ा व सबसे स्थिर (भूकंप दुर्लभ — 2001 भुज भूकंप अपवाद)</div>
+    </div>
+    <div class="sticky teal">
+      <div class="slbl">6 भौतिक विभाग</div>
+      हिमालय · उत्तरी मैदान · <span class="hl">प्रायद्वीपीय पठार (सबसे बड़ा व पुराना)</span> · तटीय मैदान · द्वीप · मरुस्थल
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> जनगणना 2011 के अनुसार, राजस्थान क्षेत्रफल में सबसे बड़ा राज्य है, पर भारत की जनसंख्या का कितना अंश रखता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>~5.5% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>~12%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>~17%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>~9%</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — राजस्थान ≈ जनसंख्या का <strong>5.5%</strong> (क्षेत्रफल में सबसे बड़ा)। UP क्षेत्रफल में चौथा पर जनसंख्या का ~<span class="hl">17%</span> रखता है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> गोवा किन खनिज संसाधनों के लिए प्रसिद्ध है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल मैंगनीज</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल लौह अयस्क</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>मैंगनीज व लौह अयस्क दोनों ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बॉक्साइट</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — गोवा <strong>मैंगनीज व लौह अयस्क दोनों</strong> के लिए प्रसिद्ध है। मैंगनीज (सबसे बड़ा उत्पादक = MP) धातुकर्म/इस्पात में प्रयुक्त।</div>
+    </div>
+    <div class="sticky blue">
+      <div class="slbl">भारत की 4 लौह अयस्क पट्टियाँ</div>
+      महाराष्ट्र–गोवा · बेल्लारी-चित्रदुर्ग-चिकमगलूर-तुमकुर (कर्नाटक) · ओडिशा–झारखंड · दुर्ग-बस्तर-चंद्रपुर
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> दक्कन पठार किस प्रकार की मृदा से समृद्ध है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>जलोढ़ मृदा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>काली मृदा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लैटेराइट मृदा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>शुष्क मृदा</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>काली मृदा</strong> (ज्वालामुखीय उद्गम, "रेगुर"); स्वतः जुताई, सूखने पर दरारें, <span class="hl">कपास</span> हेतु सर्वोत्तम।</div>
+    </div>
+    <table class="hw-t red-h">
+      <tr><th>मृदा</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td><span class="hl"><strong>काली (रेगुर)</strong></span></td><td>ज्वालामुखीय; कपास; स्वतः जुताई; ~210 पाला-मुक्त दिन</td></tr>
+      <tr><td><strong>जलोढ़</strong></td><td>पोटाश समृद्ध; फॉस्फोरस, नाइट्रोजन, ह्यूमस की कमी</td></tr>
+      <tr><td><strong>लाल</strong></td><td>आयरन ऑक्साइड (लाल); जल-न्यून क्षेत्र</td></tr>
+      <tr><td><strong>लैटेराइट</strong></td><td>भारी वर्षा (निक्षालन); काजू, कॉफी, चाय; "ईंट मृदा"</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> मध्य प्रदेश की मझगवाँ खदान किसके लिए प्रसिद्ध है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हीरा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सोना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तांबा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोयला</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>हीरा</strong> — भारत की एकमात्र हीरा-प्रसंस्करण खदान, <span class="hl">पन्ना, MP</span> में (कालिंजर किले के निकट)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 11 ============ -->
+    <div class="sec purple">⑪ पठार, बंदरगाह व सूर्य ☀️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> मेघालय पठार किस बड़े भू-आकृति का विस्तार है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पश्चिमी घाट</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दक्कन पठार</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रायद्वीपीय पठार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>छोटा नागपुर पठार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>प्रायद्वीपीय पठार</strong> का विस्तार (मालदा गैप/भ्रंश से अलग)। इसमें <span class="hl">गारो, खासी व जयंतिया पहाड़ियाँ</span> शामिल हैं।</div>
+    </div>
+    <div class="ca-box"><p class="hw">मेघालय की राजभाषाओं में अब <span class="hl">अंग्रेजी + गारो + खासी</span> शामिल हैं।</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> भारत के किस बंदरगाह को देश के पहले निर्यात प्रसंस्करण क्षेत्र (EPZ) के रूप में नामित किया गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मुंबई</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>कांडला ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>चेन्नई</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>विशाखापत्तनम</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>कांडला (1965)</strong> — भारत व <span class="hl">एशिया</span> का पहला EPZ। SEZ को केंद्र सरकार से पूँजी अनुदान मिलता है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> पूर्ण सूर्य ग्रहण के दौरान सूर्य की कौन-सी परत दिखाई देती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रकाशमंडल (Photosphere)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वर्णमंडल (Chromosphere)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>किरीट (Corona) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>किरीट (Corona)</strong> (सबसे बाहरी परत) पूर्ण सूर्य ग्रहण में दिखती है। प्रकाशमंडल सामान्यतः दिखने वाली सतह है।</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>परत</th><th>टिप्पणी</th></tr>
+      <tr><td>कोर → विकिरण → संवहन क्षेत्र</td><td>आंतरिक परतें ("CRC")</td></tr>
+      <tr><td><strong>प्रकाशमंडल</strong></td><td>दिखने वाली सतह; यहीं सनस्पॉट व सौर ज्वालाएँ</td></tr>
+      <tr><td>वर्णमंडल</td><td>मध्य बाहरी परत</td></tr>
+      <tr><td><span class="hl"><strong>किरीट</strong></span></td><td>सबसे बाहरी; पूर्ण ग्रहण में दृश्य; कोरोनल मास इजेक्शन</td></tr>
+    </table>
+    <div class="sticky teal"><div class="slbl">आदित्य-L1</div><span class="hl">L1</span> पर स्थापित। L1–L2 ≈ 15 लाख किमी; L2–L3 ≈ 32 करोड़ किमी।</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> 100 प्रकाश-वर्ष दूर तारे का प्रकाश पृथ्वी तक पहुँचने में लगभग कितना समय लेता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>100 वर्ष ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>100 दिन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 वर्ष</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>10 वर्ष</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>100 वर्ष</strong> (1 प्रकाश-वर्ष = प्रकाश द्वारा 1 वर्ष में तय दूरी)।</div>
+    </div>
+    <div class="sticky blue"><div class="slbl">तारे का जीवन चक्र</div>औसत/विशाल तारा → रेड जायंट → सुपरनोवा → <span class="hl">न्यूट्रॉन तारा / ब्लैक होल / श्वेत वामन</span></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> भू-स्थिर कक्षा (कक्षीय त्रिज्या ~42,200 किमी) में उपग्रह भूमध्य रेखा के एक बिंदु के ऊपर स्थिर रहता है। इसका कक्षीय आवर्तकाल कितना है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>24 घंटे ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>12 घंटे</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1 घंटा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>48 घंटे</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>भू-स्थिर</strong> उपग्रह का आवर्तकाल <span class="hl">24 घंटे</span> (पृथ्वी के घूर्णन से मेल)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 12 ============ -->
+    <div class="sec teal">⑫ कृषि व इतिहास 🌾</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> दक्षिण भारत में चावल किन ऋतुओं में उगाया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल रबी</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल खरीफ</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>रबी व खरीफ दोनों ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवल जायद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — दक्षिण भारत में चावल <strong>रबी व खरीफ दोनों</strong> में उगता है (उत्तर में केवल खरीफ)।</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>ऋतु</th><th>बुवाई / कटाई</th><th>फसलें</th></tr>
+      <tr><td><strong>रबी</strong></td><td>बुवाई अक्टूबर / कटाई अप्रैल–मई</td><td>गेहूँ, सरसों, अलसी, मटर</td></tr>
+      <tr><td><strong>खरीफ</strong></td><td>बुवाई जुलाई / कटाई अक्टूबर</td><td>चावल, सोयाबीन, कपास, मूँगफली, मक्का</td></tr>
+    </table>
+    <div class="ca-box"><p class="hw"><strong>थुम्बा</strong> भूमध्यरेखीय रॉकेट प्रक्षेपण स्टेशन (1963, तिरुवनंतपुरम, केरल) = भारत का पहला अंतरिक्ष बंदरगाह — <span class="hl">चुंबकीय भूमध्य रेखा</span> के निकट होने के कारण चुना गया (कम ईंधन)।</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> मैसूर ने निम्न में से किस तट के लाभदायक व्यापार पर नियंत्रण किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>बंबई</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हुगली</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कोरोमंडल</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मालाबार ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — मैसूर ने <strong>मालाबार</strong> तट व्यापार पर नियंत्रण किया (आंग्ल-मैसूर युद्ध याद करें)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> भूमध्यसागरीय कृषि एक अत्यधिक विशिष्ट ___ कृषि है।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>वाणिज्यिक ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>निर्वाह</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>स्थानांतरी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पशुचारण</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>वाणिज्यिक</strong> (खट्टे फल व शराब उद्योग)। निर्वाह = आदिम (स्थानांतरी कृषि) या गहन।</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>स्थानांतरी कृषि — स्थानीय नाम</th><th>क्षेत्र</th></tr>
+      <tr><td>रोका / कोनुको / चेना / रे / लदांग / मिल्पा</td><td>ब्राजील / वेनेजुएला / श्रीलंका / वियतनाम / इंडोनेशिया / मेक्सिको</td></tr>
+      <tr><td>झूम · कुमारी · वालरा · कुरवा · पोडु/पेंडा · दीपा · बेवर/दहिया</td><td>पूर्वोत्तर · प. घाट · राजस्थान · झारखंड · AP · अंडमान/बस्तर · MP</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> सौरमंडल का 5वाँ सबसे बड़ा ग्रह कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पृथ्वी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>शुक्र</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>मंगल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नेप्च्यून</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — आकार क्रम: बृहस्पति &gt; शनि &gt; यूरेनस &gt; नेप्च्यून &gt; <strong>पृथ्वी</strong> (5वाँ)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 13 ============ -->
+    <div class="sec orange">⑬ चंद्रमा, घाट व जलडमरूमध्य 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> यदि चंद्रमा पृथ्वी की सतह पर 0.5° का कोण बनाता है, तो उसका व्यास लगभग कितना होगा (औसत दूरी 3.8 × 10⁸ मी)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>~3,475 किमी ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>~1,200 किमी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>~6,400 किमी</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>~12,742 किमी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — व्यास = दूरी × कोण (रेडियन में) = 3.8×10⁸ × (0.5 × π/180) ≈ <strong>3,475 किमी</strong> (चंद्रमा का वास्तविक व्यास)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> पश्चिमी घाट को किस नाम से भी जाना जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सह्याद्रि पहाड़ियाँ ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>विंध्य श्रेणी</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>अरावली पहाड़ियाँ</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नीलगिरि पहाड़ियाँ</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सह्याद्रि</strong>। 6 राज्यों में फैला: <span class="hl">गुजरात, महाराष्ट्र, गोवा, कर्नाटक, केरल, तमिलनाडु</span>।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> जवाहर (न्हावा शेवा / JNPT) बंदरगाह किस जलडमरूमध्य को बायपास कर वैश्विक व्यापार मार्गों तक आसान पहुँच देता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मलक्का जलडमरूमध्य ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>होर्मुज जलडमरूमध्य</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जिब्राल्टर जलडमरूमध्य</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>बाब-एल-मंडेब</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>मलक्का जलडमरूमध्य</strong> (दक्षिण चीन सागर व हिंद महासागर को जोड़ता है)</div>
+    </div>
+    <table class="hw-t org">
+      <tr><th>जलडमरूमध्य</th><th>जोड़ता है</th></tr>
+      <tr><td>मलक्का</td><td>दक्षिण चीन सागर ↔ हिंद महासागर</td></tr>
+      <tr><td>जिब्राल्टर</td><td>अटलांटिक ↔ भूमध्यसागर (स्पेन–मोरक्को)</td></tr>
+      <tr><td>बाब-एल-मंडेब ("आँसुओं का द्वार")</td><td>लाल सागर ↔ अदन की खाड़ी</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> 1951 में भारत की कितने प्रतिशत जनसंख्या शहरी क्षेत्रों में रहती थी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>17.3% ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>25%</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>31.2%</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>11%</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — 1951 में <strong>17.3%</strong> शहरी (जनगणना 2011 तक शहरी ≈ 31.2%, ग्रामीण ≈ 68.8%)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 14 ============ -->
+    <div class="sec blue">⑭ जनसांख्यिकी, अंतरिक्ष व पर्वतीय दर्रे 🚠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> जनसांख्यिकीय संक्रमण सिद्धांत की अंतिम अवस्था में किसकी गिरावट होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल प्रजनन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल मृत्यु</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>प्रजनन व मृत्यु दोनों निम्न ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — अंतिम अवस्था में <strong>जन्म व मृत्यु दोनों दर निम्न</strong> होती हैं (पहली अवस्था में दोनों उच्च)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> ओरायन (Orion) क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>एक तारामंडल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>एक ग्रह</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एक आकाशगंगा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>एक धूमकेतु</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>ओरायन</strong> = एक तारामंडल (तारों का समूह), इसे <span class="hl">"शिकारी (The Hunter)"</span> भी कहते हैं। उर्सा मेजर भी एक तारामंडल है।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> अरावली श्रेणी किस दिशा में विस्तृत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उत्तर से दक्षिण</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पूर्व से पश्चिम</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>उत्तर-पूर्व से दक्षिण-पश्चिम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>उत्तर-पश्चिम से दक्षिण-पूर्व</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>NE से SW</strong>। अरावली प्राचीन वलित पर्वत हैं; सर्वोच्च शिखर = <span class="hl">गुरु शिखर (1722 मी, माउंट आबू)</span>।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> पृथ्वी की अक्ष की दिशा बदलने (अक्षीय पुरस्सरण) का कारण क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सूर्य व चंद्रमा का गुरुत्वाकर्षण ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पृथ्वी की घूर्णन गति</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>पृथ्वी की कक्षा में वातन</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सौर पवन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>सूर्य व चंद्रमा का गुरुत्वाकर्षण</strong>। (पृथ्वी: अक्ष पर 23½°, कक्षीय तल से 66½°।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> कौन-सा पर्वतीय दर्रा लद्दाख व कश्मीर घाटी को जोड़ता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>नाथू ला</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>रोहतांग</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>जोजि ला ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>शिपकी ला</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>जोजि ला</strong> कश्मीर घाटी व लद्दाख को जोड़ता है। नाथू ला/जेलेप ला (सिक्किम); रोहतांग (अटल टनल, हिमाचल); शिपकी ला (सतलज भारत में प्रवेश)।</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">दर्रे ट्रिविया</div>
+      <span class="hl">मिग ला</span> = सबसे ऊँचा वाहन योग्य दर्रा (पहले उमलिंग ला) · काराकोरम, अघिल, मिंटका दर्रे · पैंगोंग त्सो व त्सो मोरीरी (खारे पानी की झीलें)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> हिमालय उत्तर से दक्षिण कितनी समानांतर श्रेणियों में विभाजित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>3</strong>: वृहत् हिमालय (हिमाद्रि), लघु हिमालय (हिमाचल), शिवालिक (बाह्य)। ट्रांस-हिमालय (काराकोरम, लद्दाख, जास्कर) अलग गिने जाते हैं।</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>चोटी</th><th>ऊँचाई व टिप्पणी</th></tr>
+      <tr><td>माउंट एवरेस्ट</td><td>8,848 मी — विश्व की सर्वोच्च (नेपाल–तिब्बत)</td></tr>
+      <tr><td>K2 (गॉडविन ऑस्टिन)</td><td>8,611 मी — विश्व की दूसरी; काराकोरम (ट्रांस-हिमालय, PoK) में</td></tr>
+      <tr><td><span class="hl">कंचनजंगा</span></td><td>8,598 मी — भारत की सर्वोच्च (सिक्किम), विश्व की तीसरी</td></tr>
+      <tr><td>ल्होत्से</td><td>8,516 मी — विश्व की चौथी (तिब्बत)</td></tr>
+    </table>
+    <div class="sticky blue"><div class="slbl">घाटियाँ</div>दून (अनुदैर्ध्य घाटियाँ; <span class="hl">देहरादून</span> सबसे बड़ी) · कश्मीर घाटी (करेवा — केसर) वृहत् व लघु हिमालय के बीच</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 15 ============ -->
+    <div class="sec green">⑮ जनसंख्या, पठार व नदियाँ 🏞️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> भारत में निम्न में से कौन-सा क्षेत्र घनी आबादी वाला है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल ब्रह्मपुत्र मैदान</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल गंगा मैदान</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>गंगा व ब्रह्मपुत्र मैदान दोनों ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>थार मरुस्थल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>गंगा व ब्रह्मपुत्र मैदान</strong> दोनों घनी आबादी वाले हैं। (थार विश्व का सर्वाधिक आबादी वाला मरुस्थल है।)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> भारत का एकमात्र शीत मरुस्थल कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>लद्दाख मरुस्थल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>थार मरुस्थल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कच्छ का रण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गोबी मरुस्थल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>लद्दाख</strong> = भारत का एकमात्र शीत मरुस्थल (गोबी, चीन–मंगोलिया सीमा पर, भी शीत मरुस्थल है)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> मालवा पठार मुख्यतः किस राज्य में स्थित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मध्य प्रदेश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजस्थान</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>महाराष्ट्र</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>गुजरात</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>मध्य प्रदेश</strong>। प्रायद्वीपीय पठार = मध्य उच्चभूमि (मेवाड़/मारवाड़, मालवा, बुंदेलखंड/बघेलखंड, छोटा नागपुर) + दक्कन पठार।</div>
+    </div>
+    <div class="tip-box"><p class="hw">दक्कन पठार व पश्चिमी घाट में ऊँचाई <span class="hl">उत्तर से दक्षिण बढ़ती है</span>।</p></div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> नर्मदा नदी किस दिशा में बहती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पूर्व से पश्चिम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>पश्चिम से पूर्व</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>उत्तर से दक्षिण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>दक्षिण से उत्तर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>पूर्व से पश्चिम</strong> (सबसे लंबी पश्चिम-बहती नदी)। उद्गम: <span class="hl">अमरकंटक</span> (अरीय अपवाह); धुआँधार व कपिलधारा जलप्रपात; इंदिरा सागर बांध।</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>अपवाह प्रतिरूप</th><th>उदाहरण / आकृति</th></tr>
+      <tr><td>अरीय (Radial)</td><td>अमरकंटक (नदियाँ बाहर की ओर)</td></tr>
+      <tr><td>अभिकेंद्री (Centripetal)</td><td>लोकटक झील (अंदर गर्त की ओर)</td></tr>
+      <tr><td>वृक्षाकार (Dendritic)</td><td>पेड़ की शाखाओं जैसा</td></tr>
+      <tr><td>जालीनुमा (Trellis)</td><td>सहायक नदियाँ 90° पर मिलती हैं</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> उत्तरी गोलार्ध में सबसे लंबा दिन कब होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>21 मार्च</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>23 सितंबर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>22 दिसंबर</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>21 जून (ग्रीष्म संक्रांति) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>ग्रीष्म संक्रांति (21 जून)</strong>। शीत संक्रांति = 22 दिसंबर; विषुव = 21 मार्च (वसंत) व 23 सितंबर (शरद)।</div>
+    </div>
+    <div class="sticky teal"><div class="slbl">पृथ्वी–सूर्य दूरी</div>उपसौर (निकटतम) ≈ 147 मिलियन किमी · अपसौर (दूरतम) ≈ 152 मिलियन किमी</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> निम्न में से कौन गंगा की सहायक नदी नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>गोमती</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सोन</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>चंबल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोसी</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>चंबल</strong> <span class="hl">यमुना</span> की सहायक नदी है (सिंध, बेतवा, केन के साथ), सीधे गंगा की नहीं।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ============ SECTION 16 ============ -->
+    <div class="sec red">⑯ ग्रहण, वायुमंडल व बांध 🌑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> चंद्र ग्रहण तब होता है जब पृथ्वी सूर्य के प्रकाश को चंद्रमा तक पहुँचने से रोकती है। यदि पृथ्वी अपने वर्तमान आकार से दोगुनी हो, तो चंद्र ग्रहण कैसे बदलेगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ग्रहण अधिक समय तक रहेगा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यह कम समय रहेगा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>कोई चंद्र ग्रहण नहीं होगा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई बदलाव नहीं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — बड़ी पृथ्वी = बड़ी छाया → ग्रहण <strong>अधिक समय तक</strong> रहेगा। (चंद्र ग्रहण = पूर्णिमा; सूर्य ग्रहण = अमावस्या।)</div>
+    </div>
+    <div class="sticky blue"><div class="slbl">छायाएँ</div>प्रच्छाया (Umbra) = गहरी (पूर्ण) छाया · उपच्छाया (Penumbra) = हल्की (आंशिक) छाया। "ब्लड मून" = पूर्ण चंद्र ग्रहण में लाल चंद्रमा (लाल की तरंगदैर्ध्य सबसे लंबी)।</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> वायुमंडल में नाइट्रोजन निष्क्रिय (inert) क्यों है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>यह आसानी से अभिक्रिया नहीं करती ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यह बहुत भारी है</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>यह रेडियोधर्मी है</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>यह उत्कृष्ट गैस है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — नाइट्रोजन आसानी से <strong>अभिक्रिया नहीं करती</strong>। वायुमंडल: N₂ <span class="hl">78%</span>, O₂ 21%, आर्गन 0.9%, CO₂ 0.036%।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> भारत का सबसे ऊँचा बांध कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>टिहरी बांध ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भाखड़ा नांगल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>हीराकुंड</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सरदार सरोवर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>टिहरी</strong> (भागीरथी पर) = सबसे ऊँचा बांध। भाखड़ा = सबसे ऊँचा गुरुत्व बांध (सतलज); हीराकुंड = सबसे लंबा (महानदी); सरदार सरोवर (नर्मदा, गुजरात)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> भारत का कौन-सा क्षेत्र भूकंप व भूस्खलन के प्रति सर्वाधिक संवेदनशील है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>हिमालयी क्षेत्र ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सिंधु-गंगा मैदान</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>तटीय मैदान</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रायद्वीपीय पठार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>हिमालयी क्षेत्र</strong> (भूकंपीय क्षेत्र 3–4) विवर्तनिक रूप से सक्रिय है (अभिसारी प्लेट सीमा)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> ओजोन छिद्र पहली बार कहाँ खोजा गया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अंटार्कटिका ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>आर्कटिक</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सहारा</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अमेज़न</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — पहली बार <strong>अंटार्कटिका</strong> के ऊपर खोजा गया (1985)। ओजोन <span class="hl">समतापमंडल</span> में है; मोटाई डॉबसन इकाई में; ओजोन दिवस = 16 सितंबर।</div>
+    </div>
+    <div class="sticky purple"><div class="slbl">ओजोन संधियाँ</div><span class="hl">वियना सम्मेलन (1985)</span> व <span class="hl-g">मॉन्ट्रियल प्रोटोकॉल (1987)</span> → CFCs चरणबद्ध समाप्ति। (इंडो-पैसिफिक ओशन्स इनिशिएटिव = भारत की पहल।)</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> किस ग्रह को "तूफानी ग्रह (Stormy Planet)" कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>बृहस्पति ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नेप्च्यून</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>शनि</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मंगल</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>बृहस्पति</strong> = तूफानी ग्रह; <span class="hl">नेप्च्यून</span> = पवन ग्रह। बृहस्पति का घूर्णन सबसे छोटा (9घं 55मि); शुक्र का सबसे लंबा (243 दिन)।</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 17 ============ -->
+    <div class="sec purple">⑰ पठार, चरम बिंदु व झीलें 🏝️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> भारत के प्रायद्वीपीय पठार के बारे में निम्न में से कौन-सा कथन गलत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>यह उत्तरी मैदान के दक्षिण में है</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यह त्रिकोणीय आकार का है</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>यह अत्यधिक समतल व चिकना है ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अरावली इसके उत्तर-पश्चिम में है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — गलत: प्रायद्वीपीय पठार वास्तव में <strong>अत्यधिक असमतल / ऊबड़-खाबड़</strong> है (पूर्वी घाट असतत हैं)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> शुक्र पर दिन उसके वर्ष से लंबे क्यों होते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>इसका घूर्णन बहुत धीमा है ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>यह सूर्य के सबसे निकट है</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>इसका कोई चंद्रमा नहीं</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>यह उल्टी परिक्रमा करता है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — शुक्र का <strong>घूर्णन (243 दिन) उसकी परिक्रमा (~225 दिन) से धीमा</strong> है, अतः दिन &gt; वर्ष।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> भारतीय मुख्य भूमि का सबसे दक्षिणी बिंदु कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>कन्याकुमारी (केप कोमोरिन) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>इंदिरा प्वाइंट</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>इंदिरा कोल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>किबिथू</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>कन्याकुमारी</strong> = सबसे दक्षिणी <em>मुख्य भूमि</em> बिंदु। <span class="hl">इंदिरा प्वाइंट</span> (ग्रेट निकोबार) = कुल मिलाकर सबसे दक्षिणी बिंदु (2004 सुनामी में जलमग्न)। इंदिरा कोल = सबसे उत्तरी।</div>
+    </div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li>उत्तर–दक्षिण विस्तार = <span class="hl">3,214 किमी</span> · पूर्व–पश्चिम = <span class="hl">2,933 किमी</span></li>
+        <li>अक्षांशीय: 8°4′–37°6′N · देशांतरीय: 68°7′–97°25′E</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> भारत की कौन-सी झील ज्वालामुखीय उद्गम की है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>सांभर झील</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>लोकटक झील</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>लोनार झील ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>चिल्का झील</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>लोनार</strong> = क्रेटर झील (बुलढाणा, महाराष्ट्र)। सांभर = सबसे बड़ी अंतर्देशीय खारी झील (राजस्थान); लोकटक = तैरती झील (मणिपुर, केइबुल लामजाओ NP); चिल्का = सबसे बड़ी खारी झील व भारत का पहला रामसर स्थल (1981)।</div>
+    </div>
+    <div class="sticky teal"><div class="slbl">कृत्रिम झीलें</div>सबसे बड़ी = <span class="hl">गोविंद वल्लभ पंत सागर</span> · दूसरी सबसे बड़ी = जयसमंद (सलूंबर, राजस्थान)</div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ============ SECTION 18 ============ -->
+    <div class="sec teal">⑱ अयस्क, दर्रे, पवन व कुंजी धातु 🧭</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> सर्वोत्तम व सर्वाधिक लौह-अंश वाला लौह अयस्क कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मैग्नेटाइट ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हेमेटाइट</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>लिमोनाइट</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सिडेराइट</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>मैग्नेटाइट</strong> (&gt; 70% लोहा) सर्वोत्तम है। हेमेटाइट = 60–70%।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> कौन-सा दर्रा सिक्किम को तिब्बत से जोड़ता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>नाथू ला ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>रोहतांग</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>शिपकी ला</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जोजि ला</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>नाथू ला</strong> सिक्किम व तिब्बत को जोड़ता है। अरुणाचल के दर्रे: बुम ला, बोमडिला, योंगयाप, दिफू (भारत–म्यांमार–तिब्बत त्रिसंगम)।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> पवनों के बारे में निम्न में से कौन-सा कथन गलत है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मरुस्थलों में पवन अपरदन/निक्षेपण का सक्रिय कारक है</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>लोएस निक्षेप चीन में नहीं पाए जाते ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बालू टीले पवन निक्षेपण के उदाहरण हैं</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>पवन अपरदन से मशरूम चट्टानें बनती हैं</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — गलत कथन: चीन में <span class="hl">विशाल लोएस निक्षेप हैं</span> (लोएस पठार)।</div>
+    </div>
+    <table class="hw-t teal-h">
+      <tr><th>पवन भू-आकृतियाँ</th><th>प्रकार</th></tr>
+      <tr><td>मशरूम चट्टानें, पेडस्टल चट्टानें, ज़्यूगेन, यारडांग, पेडिप्लेन</td><td>अपरदनात्मक</td></tr>
+      <tr><td>बालू टीले — बरखान, सीफ, परवलयिक, अनुप्रस्थ</td><td>निक्षेपात्मक</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> किस खनिज को "औद्योगिक विकास की कुंजी धातु" कहा जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तांबा</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>लोहा ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>एल्युमिनियम</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>मैंगनीज</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>लोहा</strong> (इस्पात व अधिकांश संरचनाओं का आधार)। भारत का पहला इस्पात संयंत्र इस्पात व भारी उद्योग में आत्मनिर्भरता हेतु था।</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> 2001 से 2011 के बीच भारत में किस धार्मिक समूह की दशकीय जनसंख्या वृद्धि दर सर्वाधिक रही?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मुस्लिम ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हिंदू</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ईसाई</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>जैन</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>मुस्लिम</strong> (~24.6% दशकीय वृद्धि); हिंदू ~16.8%; जैन सबसे कम (~5.4%)।</div>
+    </div>
+    <table class="hw-t alt">
+      <tr><th>धर्म (2011)</th><th>जनसंख्या का %</th></tr>
+      <tr><td>हिंदू</td><td>79.8%</td></tr>
+      <tr><td>मुस्लिम</td><td>14.23%</td></tr>
+      <tr><td>ईसाई</td><td>2.3%</td></tr>
+      <tr><td>सिख</td><td>1.72%</td></tr>
+      <tr><td>बौद्ध</td><td>0.7%</td></tr>
+      <tr><td>जैन</td><td>0.37%</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित पुनरावृत्ति — भूगोल प्रमुख तथ्य</div>
+    <table class="qr-t">
+      <tr><th>विषय</th><th>तथ्य</th></tr>
+      <tr><td>भारत की DTM अवस्था (SSC अनुसार)</td><td>उत्तर विस्तार (Late expanding)</td></tr>
+      <tr><td>महान विभाजन का वर्ष</td><td>1921</td></tr>
+      <tr><td>CBM</td><td>कोलबेड मीथेन</td></tr>
+      <tr><td>क्रस्ट–मैंटल / मैंटल–कोर सीमा</td><td>मोहो / गुटेनबर्ग</td></tr>
+      <tr><td>कुइपर बेल्ट</td><td>नेप्च्यून से परे बर्फीले पिंड</td></tr>
+      <tr><td>संघर्ष खनिज / किम्बरली प्रक्रिया</td><td>हीरा / भारत 2026 अध्यक्ष</td></tr>
+      <tr><td>मर्कोसुर</td><td>दक्षिण अमेरिका (1991)</td></tr>
+      <tr><td>झारखंड का पहला रामसर स्थल</td><td>उधवा झील</td></tr>
+      <tr><td>सर्वाधिक रामसर स्थल</td><td>तमिलनाडु (~20)</td></tr>
+      <tr><td>भाबर / तराई</td><td>तलहटी; नदियाँ लुप्त / पुनः प्रकट</td></tr>
+      <tr><td>फिलाडेल्फी कॉरिडोर</td><td>गाजा–मिस्र (राफा क्रॉसिंग)</td></tr>
+      <tr><td>विंध्य / सतपुड़ा अलग करती है</td><td>गंगा–नर्मदा / नर्मदा–तापी</td></tr>
+      <tr><td>पूर्वी घाट का अन्य नाम</td><td>नल्लामला पहाड़ियाँ</td></tr>
+      <tr><td>भारत का ग्रांड कैन्यन (गंडिकोटा)</td><td>पेन्ना नदी</td></tr>
+      <tr><td>विश्व की छत</td><td>लद्दाख/तिब्बत पठार</td></tr>
+      <tr><td>हिमालय प्लेट सीमा</td><td>अभिसारी (भारतीय + यूरेशियन)</td></tr>
+      <tr><td>चाबहार बंदरगाह</td><td>ईरान; INSTC नोड</td></tr>
+      <tr><td>लुढ़कता/हरा / तूफानी / पवन ग्रह</td><td>यूरेनस / बृहस्पति / नेप्च्यून</td></tr>
+      <tr><td>सबसे गर्म / चमकीला / सघन ग्रह</td><td>शुक्र / शुक्र / पृथ्वी</td></tr>
+      <tr><td>ग्रेट निकोबार किसके निकट</td><td>इंडोनेशिया</td></tr>
+      <tr><td>सबसे पुराना भौतिक विभाग</td><td>प्रायद्वीपीय पठार</td></tr>
+      <tr><td>दक्कन मृदा / कपास मृदा</td><td>काली मृदा (रेगुर)</td></tr>
+      <tr><td>एकमात्र हीरा खदान</td><td>मझगवाँ, पन्ना (MP)</td></tr>
+      <tr><td>पहला EPZ (एशिया)</td><td>कांडला, 1965</td></tr>
+      <tr><td>पूर्ण सूर्य ग्रहण में दृश्य</td><td>किरीट (Corona)</td></tr>
+      <tr><td>पश्चिमी घाट / भारत की सर्वोच्च चोटी</td><td>सह्याद्रि / कंचनजंगा</td></tr>
+      <tr><td>लद्दाख–कश्मीर / सिक्किम–तिब्बत दर्रा</td><td>जोजि ला / नाथू ला</td></tr>
+      <tr><td>एकमात्र शीत मरुस्थल / ज्वालामुखीय झील</td><td>लद्दाख / लोनार</td></tr>
+      <tr><td>सबसे ऊँचा / सबसे लंबा बांध</td><td>टिहरी / हीराकुंड</td></tr>
+      <tr><td>सर्वोत्तम लौह अयस्क / कुंजी धातु</td><td>मैग्नेटाइट / लोहा</td></tr>
+      <tr><td>सबसे दक्षिणी मुख्य भूमि बिंदु</td><td>कन्याकुमारी</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — याद रखें!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>असंबद्धताएँ: 🧠 कॉनराड → <span class="hl">मोहो</span> → गुटेनबर्ग → लेहमन</li>
+          <li>विंध्य = गंगा–नर्मदा; सतपुड़ा = नर्मदा–तापी (न उलटें!)</li>
+          <li>शुक्र = सबसे गर्म व चमकीला; पृथ्वी = सबसे सघन; शनि = सबसे कम सघन</li>
+          <li>कक्षीय/व्यास गणना प्रश्न — संदेह हो तो छोड़ें; यह GK परीक्षा है</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>काली मृदा → कपास; लैटेराइट → चाय/कॉफी/काजू</li>
+          <li>मैग्नेटाइट &gt; 70% लोहा (सर्वोत्तम); हेमेटाइट 60–70%</li>
+          <li>इंदिरा प्वाइंट = कुल सबसे दक्षिणी; कन्याकुमारी = मुख्य भूमि</li>
+          <li>तमिलनाडु = सर्वाधिक रामसर; थार = सर्वाधिक आबादी वाला मरुस्थल</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 भूगोल PYQ नोट्स समाप्त</div>
+      <strong>सभी 76 प्रश्न शामिल ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
