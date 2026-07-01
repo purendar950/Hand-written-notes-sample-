@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — SSC GD Sports Blitz | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — SSC GD Sports Blitz Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">🏆 Sports Blitz — Topper Notes</div>
+    <div class="cover-sub">SSC GD Series Final Lecture | All Sports Questions &amp; Options Covered</div>
+    <div class="cover-badge">🏏 Cricket · 🏸 Badminton · 🏐 Volleyball · 🥋 Kabaddi · 🏃 Athletics · ⚽ Football · 🏑 Hockey · ♟️ Chess</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- Q1: KABADDI HU-TU-TU -->
+    <div class="sec orange">① Team Sports — Player Counts & Basics 🏐</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Kabaddi game is primarily known as "Hu-Tu-Tu" in which part of India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Western India ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Eastern India</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Southern India</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Northern India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Known as "Hu-Tu-Tu" in <strong>Western India</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Kabaddi — Player Count:</strong></p>
+      <ul class="hw arr">
+        <li>Total squad = <span class="hl"><strong>12 players</strong></span></li>
+        <li>On field at a time = <span class="hl-g"><strong>7 players</strong></span></li>
+        <li>Substitutes allowed = <span class="hl-p"><strong>5 players</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> In which year was the Volleyball Federation of India formed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1951 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1980</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1958</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1976</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Volleyball Federation of India established in <strong>1951</strong></div>
+    </div>
+
+    <div class="sub">Number of Players — Quick Table</div>
+    <table class="hw-t org">
+      <tr><th>Sport</th><th>Players (per side)</th></tr>
+      <tr><td>Basketball</td><td><span class="hl"><strong>5</strong></span></td></tr>
+      <tr><td>Volleyball</td><td><span class="hl-g"><strong>6</strong></span></td></tr>
+      <tr><td>Handball</td><td><span class="hl-b"><strong>7</strong></span></td></tr>
+      <tr><td>Netball</td><td><span class="hl-b"><strong>7</strong></span></td></tr>
+      <tr><td>Kabaddi (on field)</td><td><strong>7</strong></td></tr>
+      <tr><td>Baseball</td><td><span class="hl-p"><strong>9</strong></span></td></tr>
+    </table>
+    <div class="trick">
+      🧠 Handball &amp; Netball — you use your <strong>hands all 7 days</strong> of the week, so remember <span class="hl">7 players</span> for both!
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> How many judges score an Olympic-style boxing bout?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>3</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>7</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>4</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>5 judges</strong> score an Olympic-style boxing bout</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4: GRAND PRIX / ASIAN GAMES -->
+    <div class="sec red">② Grand Prix, Asian Games &amp; Football History 🏎️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> The history of the Indian Grand Prix started as early as ___, when there were plans to host it in Kolkata?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1997 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1994</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1991</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1981</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — In <strong>1997</strong>, plans started to host the Indian Grand Prix in Kolkata</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Which of the following sports has not yet given India a gold medal at the Asian Games?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Shooting</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Weightlifting ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Athletics</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Golf</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — India has <strong>NOT</strong> won a gold medal in Weightlifting at the Asian Games; India HAS won gold in Shooting, Golf, Athletics &amp; Football (twice)</div>
+    </div>
+
+    <div class="sub">Asian Games — Key Facts</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1951</span> First Asian Games held — hosted by <span class="hl"><strong>India (New Delhi)</strong></span></div>
+      <div class="tl-item"><span class="yr">1982</span> India hosted the Asian Games for the <span class="hl-g"><strong>2nd time</strong></span> (New Delhi) — India has hosted Asian Games <strong>twice</strong></div>
+      <div class="tl-item"><span class="yr">2026 (Sept)</span> 20th Asian Games — <span class="hl-p"><strong>Aichi–Nagoya, Japan</strong></span></div>
+      <div class="tl-item"><span class="yr">Next</span> 21st Asian Games — <span class="hl-b"><strong>Doha, Qatar</strong></span></div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">FOOTBALL — INDIA'S HISTORY</div>
+        Last qualified for <strong>Olympics</strong>: <span class="hl">1960</span><br>
+        Best Olympic performance: <span class="hl-g">1956 — Finished 4th</span> (one step from bronze!)<br>
+        Never qualified for FIFA World Cup — current rank <span class="hl-p"><strong>138th (FIFA)</strong></span><br>
+        India has won <span class="hl-b"><strong>2 Asian Games gold medals</strong></span> in football
+      </div>
+      <div class="sticky teal">
+        <div class="slbl">DURAN CUP 2023 (FOOTBALL)</div>
+        Final hosted by: <span class="hl"><strong>Kolkata</strong></span><br>
+        Venue: Vivekananda Yuba Bharati Krirangan, <strong>Salt Lake Stadium</strong><br>
+        Winner: <span class="hl-g"><strong>Mohun Bagan Super Giants</strong></span>
+      </div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Olympic Rings Trap:</strong> The Olympic flag has <span class="hl"><strong>5 rings</strong></span> (NOT 7!), representing 5 continents — Africa (black), Europe, America, Asia, Oceania.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q: BASKETBALL & HOCKEY -->
+    <div class="sec blue">③ Basketball &amp; Hockey Fundamentals 🏀🏑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> It was presumed that the game of Basketball in India was started at the YMCA, Kolkata, in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1905 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1905 — Basketball started at YMCA, Kolkata</div>
+    </div>
+    <div class="trick">
+      🧠 Remember: Basketball in India started in <span class="hl"><strong>1905</strong></span> — the same year <strong>Bengal was partitioned</strong>!
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> In hockey, the distance between the inner edges of the two goal posts is?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>3.66 metres ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2.44 metres</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1.12 metres</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2.98 metres</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>3.66 metres</strong> between inner edges of hockey goal posts</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Which country first won the FIBA Basketball World Cup after it was established in 1950?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>United States</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Argentina ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Brazil</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>United Kingdom</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Argentina</strong> won the first FIBA World Cup (1950), defeating the USA in the final</div>
+    </div>
+
+    <div class="sticky">
+      <div class="slbl">BASKETBALL QUARTER DURATION</div>
+      <span class="hl"><strong>NBA</strong></span> = 12 minutes per quarter<br>
+      <span class="hl-g"><strong>FIBA (international)</strong></span> = 10 minutes per quarter<br>
+      ⚠ This exact question was asked in CGL Mains — timing varies by league!
+    </div>
+
+    <div class="sub">Hockey — Four-Quarter Format &amp; Pitch</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Earlier</span> Two halves of <strong>35 minutes</strong> each</div>
+      <div class="tl-item"><span class="yr">2014</span> Changed to <span class="hl"><strong>four quarters of 15 minutes each</strong></span> (International Hockey Federation rules)</div>
+    </div>
+    <table class="hw-t grn">
+      <tr><th>Field Hockey Pitch</th><th>Measurement</th></tr>
+      <tr><td>Length</td><td><span class="hl"><strong>91.4 metres</strong></span> (100 yards)</td></tr>
+      <tr><td>Width</td><td><span class="hl-g"><strong>55 metres</strong></span> (60 yards)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Indian Hockey — Gold Medal Legacy:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">1928–1956</span>: 6 consecutive Olympic golds (no defeat!)</li>
+        <li>1960 Rome Olympics: Lost final to <strong>Pakistan</strong> → Silver</li>
+        <li>1964 Tokyo Olympics: Beat Pakistan → <span class="hl-g">7th Gold</span> (revenge!)</li>
+        <li><span class="hl-p"><strong>1980 Moscow Olympics</strong></span> → <strong>8th &amp; last Gold</strong> — Captain: <span class="hl-b"><strong>V. Bhaskaran</strong></span></li>
+        <li>Since 1980, NO gold — but 2 back-to-back <strong>Bronze</strong>: Tokyo 2020 &amp; Paris 2024</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Who was India's captain of the Hockey Team when it won Gold in the 1980 Olympics?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>V. Bhaskaran ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: V. Bhaskaran — Captain of India's hockey team, 1980 Moscow Olympics Gold (India's most recent hockey gold)</div>
+    </div>
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BADMINTON -->
+    <div class="sec purple">④ Badminton — Leagues &amp; Federations 🏸</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> The first edition of the Indian Badminton League (formerly Premier Badminton League) was held in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2013 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2014</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2015</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2016</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>2013</strong>. Winner: <span class="hl">Hyderabad Hot Shots</span> (defeated Awadh Warriors)</div>
+    </div>
+    <div class="sticky purple">
+      <div class="slbl">PBL → IBL</div>
+      <strong>PBL</strong> = Premier Badminton League → renamed <span class="hl"><strong>Indian Badminton League (IBL)</strong></span><br>
+      1st Winner (2013): <span class="hl-g"><strong>Hyderabad Hot Shots</strong></span> beat <strong>Awadh Warriors</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> India joined the Badminton World Federation in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1932</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1934</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1936 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1938</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — India joined the Badminton World Federation in <strong>1936</strong> (Federation formed 1934, London — India joined just 2 years later)</div>
+    </div>
+    <table class="hw-t pur">
+      <tr><th>Detail</th><th>Info</th></tr>
+      <tr><td>Badminton World Federation formed</td><td><span class="hl"><strong>1934</strong></span>, London</td></tr>
+      <tr><td>India joined</td><td><span class="hl-g"><strong>1936</strong></span></td></tr>
+      <tr><td>Headquarters</td><td><span class="hl-b"><strong>Kuala Lumpur, Malaysia</strong></span></td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> In which year did Pullela Gopichand win the All England Open Badminton Championship?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2001 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2001 — Pullela Gopichand won the All England Open Badminton Championship</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ATHLETICS -->
+    <div class="sec green">⑤ Athletics — Records &amp; World Athletics 🏃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which Indian youth athlete broke the 5000m race walk national record by finishing in under 20 minutes?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Akash</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Avinash Sable</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nitin Gupta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Gurindervir Singh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Nitin Gupta</strong> broke the 5000m race walk national record</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> In which year did IAAF change its name to World Athletics?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2008</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2012</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2015</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>2019 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>2019</strong>. IAAF = International Association of Athletics Federations → renamed World Athletics</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> In which city and year were the first World Athletics Championships held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Helsinki, 1983 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tokyo</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rome</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Berlin</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — First World Athletics Championships held in <strong>Helsinki, 1983</strong>. Rome hosted the 2nd (1987); Tokyo hosted the 3rd (1991)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Where did Usain Bolt set the 100m world record?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Berlin, 2009 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>London, 2012</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Beijing, 2008</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rio, 2016</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Berlin, 2009</strong> — Time: <span class="hl">9.58 seconds</span></div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="slbl">NATIONAL RECORDS — 100M</div>
+        India's men's 100m record: <span class="hl"><strong>10.08 sec</strong></span> — Gurindervir Singh<br>
+        India's women's 100m record: <span class="hl-p"><strong>~11 sec</strong></span> — Dutee Chand<br>
+        (Gurindervir Singh also holds the women's-adjacent related record mentioned in class)
+      </div>
+      <div class="sticky red">
+        <div class="slbl">ALL RUNNING = TRACK EVENTS</div>
+        All running events fall under <span class="hl"><strong>Track Events</strong></span> (not "ground/field events")
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> There are how many hurdle jumps and water jumps in the 3000m steeplechase event?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>28 hurdles, 4 water jumps</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>28 hurdles, 5 water jumps</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>28 hurdles, 6 water jumps</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>28 hurdles, 7 water jumps ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>28 hurdle jumps</strong> and <strong>7 water jumps</strong> in the 3000m steeplechase</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Which event did Avinash Sable win a gold medal in at the Asian Games 2023?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5000m race walk</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Marathon</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Javelin</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Steeplechase ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Avinash Sable won gold in <strong>3000m Steeplechase</strong>, Asian Games 2023</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> In which year did Milkha Singh win the Asian Games gold medal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1951</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1954</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1958 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1970</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>1958</strong> Asian Games gold. Milkha Singh's best individual performance: 1960 Rome Olympics — set national 400m record (45.73 sec), finished 4th</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Milkha Singh — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Best performance: <span class="hl">1960 Rome Olympics</span> — 400m, finished 4th (45.73 sec, national record)</li>
+        <li>India has NOT won an Olympic medal in running events to date</li>
+        <li>India's first Olympic athletics medal = <span class="hl-g"><strong>Neeraj Chopra</strong></span> (Javelin — a field event, not running)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- CRICKET -->
+    <div class="sec red">⑥ Cricket — Firsts, Records &amp; World Cups 🏏</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> In which year did the Indian women's cricket team play its first ever Test match?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1976 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1976 — vs West Indies, at M. Chinnaswamy Stadium, Bengaluru</div>
+    </div>
+
+    <div class="sub">Cricket — "Firsts" Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1932</span> First men's Test match ever played (also overall first cricket match)</div>
+      <div class="tl-item"><span class="yr">1973</span> <span class="hl"><strong>First Women's Cricket World Cup</strong></span> (held BEFORE the men's!)</div>
+      <div class="tl-item"><span class="yr">1975</span> First Men's Cricket World Cup</div>
+      <div class="tl-item"><span class="yr">1976</span> India Women's team's first Test — vs West Indies, M. Chinnaswamy Stadium, Bengaluru</div>
+      <div class="tl-item"><span class="yr">1978</span> India Women's team's first ODI</div>
+      <div class="tl-item"><span class="yr">2025</span> India Women win <span class="hl-g"><strong>Cricket World Cup for the FIRST time</strong></span> — defeated South Africa, held in India. Also recognized at <strong>Laureus World Sports Awards</strong> (first team recognition there)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> The first ever Indian Premier League (IPL) final in 2008 was held at which stadium?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>DY Patil Stadium ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: DY Patil Stadium, Navi Mumbai — Winner: <strong>Rajasthan Royals</strong> defeated Chennai Super Kings</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Where did Sachin Tendulkar score his 100th international century?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sher-e-Bangla Stadium, Mirpur, Dhaka (2012) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sher-e-Bangla Stadium, Mirpur, Dhaka — against Bangladesh, in 2012</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">SACHIN TENDULKAR — KEY FACTS</div>
+        Test debut: vs <span class="hl"><strong>Pakistan, 1989</strong></span> (age 16) — scored 25 runs, dismissed by <strong>Waqar Younis</strong> (also Waqar's debut match!)<br>
+        Autobiography: <span class="hl-g"><strong>"Playing It My Way"</strong></span> (co-author: Boria Majumdar)<br>
+        100th intl century: Dhaka, 2012, vs Bangladesh
+      </div>
+      <div class="sticky pink">
+        <div class="slbl">DOUBLE CENTURIES IN ODI</div>
+        First ODI double century: <span class="hl"><strong>Sachin Tendulkar</strong></span> (2010, vs South Africa)<br>
+        Only players with 2 ODI double centuries: <span class="hl-p"><strong>Virender Sehwag &amp; Rohit Sharma</strong></span><br>
+        Highest individual ODI score: <span class="hl-g"><strong>264</strong></span> (Rohit Sharma)<br>
+        Sehwag's double century: Roop Singh Stadium, <strong>Gwalior</strong>, vs West Indies
+      </div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Who was the first Indian batsman to score a triple century in Test cricket?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sachin Tendulkar</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Virender Sehwag ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rahul Dravid</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Karun Nair</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Virender Sehwag</strong> — against Pakistan, 2004, at Multan, Pakistan. Only other Indian to score a Test triple century: <span class="hl">Karun Nair</span> (against England, 2016)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Which Cricket World Cup was known as the Benson &amp; Hedges World Cup?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1992 World Cup ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1992 Cricket World Cup — named after sponsor Benson &amp; Hedges (a tobacco company)</div>
+    </div>
+
+    <div class="sub">Cricket World Cup — India's Hosting History</div>
+    <table class="hw-t red-h">
+      <tr><th>Year</th><th>Host / Co-Host</th><th>Winner</th></tr>
+      <tr><td>1983</td><td>England (hosted)</td><td><span class="hl"><strong>India</strong></span> — under Kapil Dev, beat West Indies</td></tr>
+      <tr><td><span class="hl-g"><strong>1987</strong></span></td><td>India + Pakistan (co-hosted)</td><td>Australia</td></tr>
+      <tr><td><span class="hl-g"><strong>1996</strong></span></td><td>India + Sri Lanka (co-hosted)</td><td>Sri Lanka</td></tr>
+      <tr><td><span class="hl-g"><strong>2011</strong></span></td><td>India + Sri Lanka + Bangladesh (co-hosted)</td><td><span class="hl"><strong>India</strong></span> — under MS Dhoni, beat Sri Lanka</td></tr>
+      <tr><td><span class="hl-p"><strong>2023</strong></span></td><td>India (SOLE host — first time!)</td><td>Australia (6th title)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> In which year did India first host the Cricket World Cup?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1987 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1987 — co-hosted with Pakistan</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> Anil Kumble holds the record for most Test wickets by an Indian bowler — how many wickets did he take?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>619 wickets ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 619 wickets — Anil Kumble (#1). R Ashwin (~500 wickets) = #2. Kapil Dev = #3</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> In T20 cricket, how many fielders are allowed outside the 30-yard circle after the power play?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>4</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>6</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>3</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>5 fielders</strong> allowed outside the 30-yard circle after the power play (first 6 overs). During the power play itself, only <span class="hl">2 fielders</span> allowed outside the circle</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Teacher's Note:</strong> "If you can't answer a basic cricket question like this, stop watching cricket!" — Power play = first 6 overs, max 2 fielders outside 30-yard circle. After power play = max 5 fielders outside.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- TENNIS -->
+    <div class="sec teal">⑦ Tennis — Rules &amp; Indian Legends 🎾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> In tennis, if both players win the same number of games in a set, the set goes into a tie-breaker. How many games must both players win for this?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>6 games each ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 6 games each — the set then moves to a tie-breaker</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> In tennis, a player/team needs to win how many consecutive points after "Deuce" to win a game?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2 points ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2 consecutive points after Deuce. This rule (win by 2) also applies in Volleyball</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> In tennis, if both players win three points each in a game (i.e., 40-40), what is this situation called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Deuce ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Deuce — a score of 0 in tennis is called "Love"</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> The first Indian to win a Grand Slam title was Mahesh Bhupathi. In which year did he achieve this feat?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1996</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1997 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1998</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1999</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>1997</strong> — Mahesh Bhupathi won the French Open Mixed Doubles with partner <span class="hl">Rika Hiraki (Japan)</span></div>
+    </div>
+    <div class="sticky">
+      <div class="slbl">TENNIS — REMEMBER ALSO</div>
+      Keep <span class="hl"><strong>Vijay Amritraj</strong></span> in mind — one of India's most successful tennis players
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- OLYMPICS -->
+    <div class="sec orange">⑧ Olympics — Flag, Golds &amp; Host Cities 🥇</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> The current Olympic flag was first hosted in which Olympic Games?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1916 Olympics</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1920 Summer Olympics ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1924 Olympics</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1912 Olympics</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>1920 Summer Olympics, Antwerp, Belgium</strong>. The flag was meant to debut in 1916, but those Games were cancelled due to World War I</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Olympic Flag — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">5 rings</span> (not 7) — designed by <strong>Pierre de Coubertin</strong> in 1913</li>
+        <li>Rings represent 5 continents: Africa (black), Europe, America, Asia, Oceania</li>
+        <li>1920 Antwerp Olympics = India sent its first-ever Olympic contingent</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> Where were the 2008 Olympic Games held, and why is it important for India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Beijing, China — Abhinav Bindra won India's first individual Olympic gold ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Beijing, China, 2008 — Abhinav Bindra (shooting) became the first Indian to win an <strong>individual</strong> Olympic gold. (India's first-ever Olympic gold overall was 1928, by the hockey team — a team event.) Autobiography: <span class="hl">"A Shot at History"</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> Neeraj Chopra won his first-ever Asian Games gold medal in javelin in which year, at which city?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2014, Incheon</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>2018, Jakarta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2022, Hangzhou</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2010, Guangzhou</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>2018, Jakarta</strong> Asian Games. He later won Olympic Gold at Tokyo 2020 (announced/held 2021)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> Mary Kom won a bronze medal in boxing at which Olympics?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2012 London Olympics ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2012 London Olympics — Mary Kom, Boxing, Bronze medal</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> Where were the 2012 Summer Olympics held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>London ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: London (same Games where Mary Kom won bronze)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Michael Phelps won a record 8 Olympic gold medals in a single Games — which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2016</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>2008 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2012</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2004</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>2008 Beijing Olympics</strong> (same year Abhinav Bindra won gold). Total Phelps career: <span class="hl">23 gold, 3 silver, 2 bronze</span> — most decorated Olympian ever</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> In which Olympics did India have its highest medal tally in any single Olympics (till Paris 2024)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2020 Tokyo Olympics ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2020 Tokyo Olympics — Total: <strong>7 medals</strong> (India's best till date)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Tokyo 2020 — India's 7 Medals:</strong></p>
+      <ul class="hw chk">
+        <li>🥇 Gold: <span class="hl"><strong>Neeraj Chopra</strong></span> — Javelin</li>
+        <li>🥈 Silver: <strong>Mirabai Chanu</strong> — Weightlifting</li>
+        <li>🥈 Silver: <strong>Ravi Kumar Dahiya</strong> — Wrestling</li>
+        <li>🥉 Bronze: <strong>PV Sindhu</strong> — Badminton</li>
+        <li>🥉 Bronze: <strong>Lovlina Borgohain</strong> — Boxing</li>
+        <li>🥉 Bronze: <strong>Bajrang Punia</strong> — Wrestling</li>
+        <li>🥉 Bronze: <strong>Men's Hockey Team</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KABADDI DEEP DIVE -->
+    <div class="sec purple">⑨ Kabaddi — Detailed Rules 🤼</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> In Kabaddi, the raider gets a bonus point for crossing the bonus line only if the catcher's (defending) team has at least how many players?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>4 players</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>5 players</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>6 players ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>7 players</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — At least <strong>6 players</strong> in the defending team required for bonus point eligibility</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> When does a "Super Tackle" happen in Kabaddi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>When there are 3 or fewer defenders on the mat ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: When the defending team has 3 or fewer defenders and still manages to tackle the raider — that's a Super Tackle</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> What is "Lona" in Kabaddi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>When the entire opposing team is declared "All Out" — awards 2 bonus points ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lona = entire opposing team is made "All Out" in a single raid → the raiding team gets 2 EXTRA points</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td><span class="hl"><strong>Super Tackle</strong></span></td><td>Defenders ≤ 3, still tackle raider successfully</td></tr>
+      <tr><td><span class="hl-g"><strong>Lona</strong></span></td><td>Entire opposing team declared All Out → +2 bonus points</td></tr>
+      <tr><td><strong>Bonus Line/Point</strong></td><td>Needs ≥6 defenders on mat for raider to claim bonus</td></tr>
+      <tr><td><span class="hl-b"><strong>Lobby</strong></span></td><td>Active ONLY after raider touches a defender; raider entering lobby without contact = disqualified</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> What is the standard court size for women's Kabaddi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>12 m × 8 m ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 12m × 8m (Women's court). Men's Kabaddi court = <strong>13m × 10m</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> What is the standard duration of a women's Kabaddi match?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>20 minutes (half)</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>30 minutes (2 halves of 15 min, 5-min break) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>25 minutes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>40 minutes</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Women's Kabaddi = <strong>2 halves of 15 minutes</strong> each, with a 5-minute break (Total 30 min). Men's Kabaddi = 2 halves of 20 minutes with a 5-minute break (Total 40 min)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> When did India's women's Kabaddi team win its first Asian Games gold medal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2010 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2002</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>2010</strong>, at Guangzhou, China — India defeated Thailand</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> When was the Pro Kabaddi League launched, and who won the first edition?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2014 — Jaipur Pink Panthers won ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2011</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>2012</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2017</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Pro Kabaddi League launched in <strong>2014</strong>; first winner = <span class="hl">Jaipur Pink Panthers</span></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KHO-KHO -->
+    <div class="sec pink">⑩ Kho-Kho — Rules &amp; World Cup 🎯</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> How many players are there in Kho-Kho (per team)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>9 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 9 players per team ("Kho" has 3 letters, 3×3=9 — memory trick used in class!)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> How many defenders enter at the beginning of a defense turn in Kho-Kho?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>4</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>3 defenders</strong> enter at the start of a defense turn</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> When, where, and how did the first Kho-Kho World Cup take place?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>January 2025, Indira Gandhi Indoor Stadium, New Delhi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: January 2025, Indira Gandhi Indoor Stadium, New Delhi — India won BOTH men's &amp; women's titles, defeating Nepal in both finals</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> Dhaka hosted the South Asian Federation Games in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2005</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2008</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2010 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2016</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>2010</strong> — South Asian Federation Games hosted by Dhaka</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> The 13th South Asian Games were held in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2019 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2019 — 13th South Asian Games (Kathmandu-Pokhara, Nepal)</div>
+    </div>
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- TABLE TENNIS -->
+    <div class="sec blue">⑪ Table Tennis — Dimensions &amp; Rules 🏓</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> In Table Tennis, the playing area should be rectangular and its length should not be less than how many metres?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>15</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>16</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>14 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>17</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Playing area length should not be less than <strong>14 metres</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Table Tennis — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Height of centre net = <span class="hl"><strong>15.25 cm</strong></span></li>
+        <li>Also known as: <span class="hl-g"><strong>Ping Pong</strong></span></li>
+        <li>Introduced by the British as a "night sport"</li>
+        <li>Grips: <span class="hl-p"><strong>Pen-hold grip</strong></span> and <strong>Side-spin drive</strong> — both TT-related terms</li>
+        <li>Top country currently: <span class="hl-b"><strong>China</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> At the Olympic Games, team event matches in Table Tennis are best of how many affairs (games)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>3</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>7</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>5 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>9</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Best of 5</strong> at Olympic team events in Table Tennis</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> Which of the following is generally related to gymnastics: Power tumbling, Pen-hold grip, Side-spin drive, or Popping crease?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Power tumbling ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Pen-hold grip (Table Tennis)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Side-spin drive (Table Tennis)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Popping crease (Cricket)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Power tumbling</strong> = Gymnastics term. Pen-hold grip &amp; Side-spin drive = TT; Popping crease = Cricket</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> "Vaulting Table" is a term related to which sport?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gymnastics ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hockey</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Long Jump</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Pole Vault</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Gymnastics</strong> (like "Roman Rings" — also a gymnastics apparatus)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- GOLF & BOXING -->
+    <div class="sec teal">⑫ Golf &amp; Boxing ⛳🥊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> What is the maximum number of clubs a golfer can carry during a round?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>14 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 14 clubs — maximum allowed per round</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> When did the first Indian Open Golf Championship take place?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1964 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1970</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1958</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1980</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1964</strong> — First Indian Open Golf Championship</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> What is the maximum duration of a standard boxing bout at the Olympics?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>3 rounds of 3 minutes each ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 3 rounds, 3 minutes each — standard Olympic boxing bout duration</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- WRESTLING / CHESS -->
+    <div class="sec red">⑬ Wrestling &amp; World Chess Championship 🤼‍♂️♟️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> The first World Wrestling Championship was held in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1904 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1960</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1920</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1919</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>1904</strong>, first World Wrestling Championship</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> Sushil Kumar won Olympic wrestling medals in which years?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2008 (Bronze) &amp; 2012 (Silver) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2008 Beijing (Bronze) &amp; 2012 London (Silver) — both in wrestling</div>
+    </div>
+    <div class="sticky red">
+      <div class="slbl">2008 &amp; 2012 OLYMPIC MEDALS — COMPARE</div>
+      2008 Beijing: <span class="hl"><strong>Abhinav Bindra</strong></span> — Shooting Gold; <strong>Sushil Kumar</strong> — Wrestling Bronze<br>
+      2012 London: <span class="hl-g"><strong>Mary Kom</strong></span> — Boxing Bronze; <strong>Sushil Kumar</strong> — Wrestling Silver
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> Who is considered the first official World Chess Champion?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bobby Fischer</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Wilhelm Steinitz ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Garry Kasparov</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Paul Morphy</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Wilhelm Steinitz</strong> — first official World Chess Champion, also called "Father of Modern Chess"</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Chess Fact</th><th>Detail</th></tr>
+      <tr><td>First official World Champion</td><td><span class="hl"><strong>Wilhelm Steinitz</strong></span> ("Father of Modern Chess")</td></tr>
+      <tr><td>First woman World Champion</td><td><span class="hl-g"><strong>Vera Menchik</strong></span></td></tr>
+      <tr><td>First Indian World Champion</td><td><span class="hl-p"><strong>Viswanathan Anand</strong></span> — won 2000, 2007, 2008, 2010, 2012 (5 times)</td></tr>
+      <tr><td>Most World Championships won</td><td>Garry Kasparov (Russia) &amp; Emanuel Lasker (Germany) — <strong>6 times each</strong></td></tr>
+      <tr><td>Also won 5 times</td><td>Magnus Carlsen &amp; Viswanathan Anand</td></tr>
+      <tr><td>Governing body</td><td><span class="hl-b"><strong>FIDE</strong></span> (Fédération Internationale des Échecs), formed <strong>1924</strong>, HQ Lausanne, Switzerland</td></tr>
+    </table>
+    <div class="sticky purple">
+      <div class="slbl">VISWANATHAN ANAND — BONUS</div>
+      First recipient of the <span class="hl"><strong>Rajiv Gandhi Khel Ratna Award</strong></span> (now renamed <strong>Major Dhyan Chand Khel Ratna Award</strong>)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ANTI-DOPING & GOVERNING BODIES -->
+    <div class="sec orange">⑭ Anti-Doping &amp; International Governing Bodies 🌐</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> Which international organization oversees the global fight against doping in sports?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>WADA (World Anti-Doping Agency) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>NADA</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>IOC</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>USADA</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>WADA</strong> is the global (international) anti-doping body</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Body</th><th>Full Form / Scope</th><th>Established</th><th>HQ</th></tr>
+      <tr><td><span class="hl"><strong>WADA</strong></span></td><td>World Anti-Doping Agency (Global)</td><td>1999</td><td>Montreal, Canada (Quebec)</td></tr>
+      <tr><td><span class="hl-g"><strong>NADA</strong></span></td><td>National Anti-Doping Agency (India)</td><td>2005</td><td>New Delhi</td></tr>
+      <tr><td><span class="hl-b"><strong>IOC</strong></span></td><td>International Olympic Committee</td><td>1894</td><td>Lausanne, Switzerland</td></tr>
+      <tr><td><strong>USADA</strong></td><td>US Anti-Doping Agency</td><td>—</td><td>USA</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> When was NADA (National Anti-Doping Agency, India) established?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2005 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2005 — NADA established</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> The International Olympic Committee (IOC) was established in which year, and by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1894, by Pierre de Coubertin &amp; Demetrios Vikelas, in Paris ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1894, Paris, France. Founders: <strong>Pierre de Coubertin</strong> (also designed the Olympic flag) &amp; <strong>Demetrios Vikelas</strong> (also the IOC's first President)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> When did World Archery become officially recognized by the International Olympic Committee as the governing body for archery?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1960</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1972 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1980</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1990</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>1972</strong> — IOC recognized World Archery as the governing body</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> What is the maximum time allowed for an archer to shoot three arrows in target archery, under official guidelines?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2 minutes ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2 minutes for 3 arrows. For 6 arrows, the allowed time is <span class="hl">4 minutes</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> When was the Judo Federation of India officially founded and affiliated with the International Judo Federation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1965 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 1965 — Judo Federation of India founded</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Which was the first Asian country to host the FIFA World Cup?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>South Korea &amp; Japan (2002) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: South Korea &amp; Japan — co-hosted the 2002 FIFA World Cup (first Asian host)</div>
+    </div>
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- COMMONWEALTH GAMES -->
+    <div class="sec green">⑮ Commonwealth Games — Rankings &amp; Hosts 🏅</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> What was India's overall rank by total medal count at the 2018 Commonwealth Games?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1st</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2nd</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>3rd ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>4th</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — India ranked <strong>3rd</strong> at 2018 CWG (Gold Coast, Australia). Australia = 1st, England = 2nd, Canada = 4th. India won 26 gold, 66 total medals</div>
+    </div>
+
+    <div class="sub">Commonwealth Games — Host Cities &amp; India's Rank</div>
+    <table class="hw-t grn">
+      <tr><th>Year</th><th>Host</th><th>India's Rank</th><th>Top Country</th></tr>
+      <tr><td>2010</td><td><span class="hl"><strong>New Delhi, India</strong></span></td><td><span class="hl-g"><strong>2nd</strong></span> (India's best ever)</td><td>Australia</td></tr>
+      <tr><td><span class="hl-p"><strong>2018</strong></span></td><td>Gold Coast, Queensland, Australia</td><td><strong>3rd</strong> (26 gold, 66 total)</td><td>Australia</td></tr>
+      <tr><td><span class="hl-b"><strong>2022</strong></span></td><td>Birmingham, England</td><td><strong>4th</strong></td><td>Australia</td></tr>
+      <tr><td>2026</td><td>Glasgow, Scotland (only 10 sports — reduced scale)</td><td>—</td><td>—</td></tr>
+      <tr><td>2030</td><td><span class="hl-g"><strong>Ahmedabad, India</strong></span> (planned)</td><td>—</td><td>—</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>2026 CWG Trap:</strong> Originally planned for <span class="hl">Victoria, Australia</span> — Australia backed out (too expensive). Glasgow, Scotland stepped in but agreed to host only <strong>10 sports</strong> (no badminton, hockey, or cricket this time) due to budget constraints.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> In the medal tally of the Commonwealth Games 2022, which of the following countries ranked below India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>South Africa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: South Africa ranked below India (India was 4th; order was Australia-England-Canada-India-South Africa)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AMERICAN FOOTBALL / SOCCER -->
+    <div class="sec purple">⑯ American Football &amp; Football (Soccer) 🏈⚽</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> In American Football, what is the value (points) of a Field Goal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>3 points ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 3 points — a Field Goal is worth 3 points</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>American Football Scoring — Remember:</strong><br>
+      Touchdown = <span class="hl"><strong>6 points</strong></span> | Field Goal = <span class="hl-g"><strong>3 points</strong></span> | Safety = <span class="hl-p"><strong>2 points</strong></span> | Extra point = <strong>1 point</strong> | Two-point conversion = <strong>2 points</strong>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> In football (soccer), how many types of free kicks are awarded, depending on the nature of the offense?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Five</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Three</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Two ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Four</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Two types</strong>: Direct free kick (serious fouls, e.g., tripping) &amp; Indirect free kick (less serious fouls)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SWIMMING & MISC -->
+    <div class="sec teal">⑰ Swimming, Triathlon &amp; Misc Sports 🏊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Which of the following is a stroke used in swimming?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Breast stroke only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Back stroke only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both breast stroke &amp; back stroke (also butterfly &amp; freestyle) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Swimming strokes include: <span class="hl">Breast stroke, Back stroke, Butterfly, Freestyle</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> Sachin Nag, an Asian Games medalist, is related to which of the following sports?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Swimming ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Goal (Football)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Football</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hockey</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Swimming</strong> — Sachin Nag's connection</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> Which sequence correctly reflects the order of Triathlon events?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Swim → Cycle → Run ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Swim → Cycle → Run — correct Triathlon event sequence</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CRICKET WRAP + PT USHA -->
+    <div class="sec red">⑱ More Cricket, Athletics Legends &amp; Wrap-up 🏃‍♀️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> Who is called the "Payyoli Express"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>P.T. Usha ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: P.T. Usha — nicknamed the "Payyoli Express" (named after her hometown Payyoli, Kerala)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Against which team did Sachin Tendulkar play his first Test match in international cricket?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Australia</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>England</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Pakistan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>West Indies</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Pakistan</strong>, 1989. Sachin scored 25 runs, dismissed by Waqar Younis (also Waqar's debut). Sachin was 16 years old</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">CRICKET WORLD ANTI-DOPING CONNECTION</div>
+        WADA established: <span class="hl"><strong>1999, Lausanne, Switzerland</strong></span> (Note: HQ = Montreal, Canada; founding location = Lausanne)
+      </div>
+      <div class="sticky green">
+        <div class="slbl">SEHWAG'S DOUBLE CENTURY — MEMORY</div>
+        Scored ~<span class="hl"><strong>2011</strong></span>, right after Sachin's double century (2010)<br>
+        Venue: <strong>Roop Singh Stadium, Gwalior</strong>, vs West Indies
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- NATIONAL GAMES -->
+    <div class="sec blue">⑲ National Games &amp; Study Strategy 📌</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> Which city hosted the National Games in 1994?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bombay</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Pune ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Pune</strong> (NOT Bombay) hosted the 1994 National Games</div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw" style="margin-top:8px;"><strong>Teacher's Strategy — 2 Categories of Sports Questions:</strong></p>
+      <ul class="hw num">
+        <li><strong>Category 1 (High-Priority / Repeating):</strong> Commonwealth Games, Asian Games, Sachin Tendulkar facts, major Olympic hockey captains — these repeat across shifts/exams. Study these thoroughly.</li>
+        <li><strong>Category 2 (Random / Low-Priority):</strong> Obscure one-off facts (e.g., exact archery timing rules, American football scoring) — lower repeat probability, don't over-invest time memorizing every detail.</li>
+      </ul>
+      <p class="hw">🧠 Core subjects (Polity, History, Geography, Economy) = the "cake base" — must be strong first. Sports/one-off facts = the "toppings" — add them last for the extra edge.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — All Important Years &amp; Numbers</div>
+    <table class="qr-t">
+      <tr><th>Event / Fact</th><th>Year / Number</th></tr>
+      <tr><td>Volleyball Federation of India formed</td><td>1951</td></tr>
+      <tr><td>Basketball started in India (YMCA, Kolkata)</td><td>1905</td></tr>
+      <tr><td>Indian Grand Prix plans (Kolkata)</td><td>1997</td></tr>
+      <tr><td>First Asian Games (New Delhi, India)</td><td>1951</td></tr>
+      <tr><td>India hosted Asian Games (2nd time)</td><td>1982</td></tr>
+      <tr><td>20th Asian Games — Aichi-Nagoya, Japan</td><td>Sept 2026</td></tr>
+      <tr><td>21st Asian Games — Doha, Qatar</td><td>Next edition</td></tr>
+      <tr><td>India last qualified for Olympic football</td><td>1960</td></tr>
+      <tr><td>India's best Olympic football finish (4th)</td><td>1956</td></tr>
+      <tr><td>India's FIFA world ranking</td><td>138th</td></tr>
+      <tr><td>Indian Badminton League (IBL) — 1st edition</td><td>2013</td></tr>
+      <tr><td>Badminton World Federation formed</td><td>1934</td></tr>
+      <tr><td>India joined Badminton World Federation</td><td>1936</td></tr>
+      <tr><td>IAAF renamed World Athletics</td><td>2019</td></tr>
+      <tr><td>First World Athletics Championships (Helsinki)</td><td>1983</td></tr>
+      <tr><td>Usain Bolt's 100m world record (Berlin)</td><td>2009 (9.58 sec)</td></tr>
+      <tr><td>India women's cricket first Test</td><td>1976</td></tr>
+      <tr><td>First men's Test match ever</td><td>1932</td></tr>
+      <tr><td>First Women's Cricket World Cup</td><td>1973</td></tr>
+      <tr><td>First Men's Cricket World Cup</td><td>1975</td></tr>
+      <tr><td>India women's first ODI</td><td>1978</td></tr>
+      <tr><td>India Women win Cricket WC (1st time)</td><td>2025</td></tr>
+      <tr><td>First IPL Final (DY Patil Stadium)</td><td>2008</td></tr>
+      <tr><td>FIBA Basketball World Cup established</td><td>1950</td></tr>
+      <tr><td>21st Asian Games location</td><td>Doha, Qatar</td></tr>
+      <tr><td>Sachin's 100th intl century (Dhaka)</td><td>2012</td></tr>
+      <tr><td>1st World Wrestling Championship</td><td>1904</td></tr>
+      <tr><td>Olympic flag first hosted (Antwerp)</td><td>1920</td></tr>
+      <tr><td>Olympic flag designed by Coubertin</td><td>1913</td></tr>
+      <tr><td>1980 Hockey Gold (Moscow) — India's last</td><td>1980</td></tr>
+      <tr><td>India's hockey golds streak (6 in a row)</td><td>1928–1956</td></tr>
+      <tr><td>India beat Pakistan for 7th hockey gold</td><td>1964</td></tr>
+      <tr><td>Mary Kom's Olympic bronze (Boxing)</td><td>2012</td></tr>
+      <tr><td>Cricket World Cup first hosted by India</td><td>1987 (co-host Pakistan)</td></tr>
+      <tr><td>India won Cricket World Cup (Kapil Dev)</td><td>1983</td></tr>
+      <tr><td>India won Cricket World Cup (Dhoni)</td><td>2011</td></tr>
+      <tr><td>Benson &amp; Hedges World Cup</td><td>1992</td></tr>
+      <tr><td>WADA established</td><td>1999</td></tr>
+      <tr><td>NADA established</td><td>2005</td></tr>
+      <tr><td>IOC established (Paris)</td><td>1894</td></tr>
+      <tr><td>World Archery recognized by IOC</td><td>1972</td></tr>
+      <tr><td>First Indian Open Golf Championship</td><td>1964</td></tr>
+      <tr><td>2018 Commonwealth Games (Gold Coast)</td><td>India ranked 3rd</td></tr>
+      <tr><td>2010 Commonwealth Games (New Delhi)</td><td>India's best rank — 2nd</td></tr>
+      <tr><td>2022 Commonwealth Games (Birmingham)</td><td>India ranked 4th</td></tr>
+      <tr><td>2030 Commonwealth Games (planned)</td><td>Ahmedabad, India</td></tr>
+      <tr><td>Mahesh Bhupathi's first Grand Slam</td><td>1997</td></tr>
+      <tr><td>Milkha Singh's Asian Games gold</td><td>1958</td></tr>
+      <tr><td>Milkha Singh's best Olympic finish (4th)</td><td>1960 Rome</td></tr>
+      <tr><td>Judo Federation of India founded</td><td>1965</td></tr>
+      <tr><td>First FIFA World Cup in Asia (Korea/Japan)</td><td>2002</td></tr>
+      <tr><td>Women's Kabaddi first Asian Games gold</td><td>2010 (Guangzhou)</td></tr>
+      <tr><td>Pro Kabaddi League launched</td><td>2014</td></tr>
+      <tr><td>Kho-Kho World Cup (New Delhi)</td><td>January 2025</td></tr>
+      <tr><td>South Asian Federation Games (Dhaka)</td><td>2010</td></tr>
+      <tr><td>13th South Asian Games</td><td>2019</td></tr>
+      <tr><td>Sushil Kumar's Olympic medals</td><td>2008 (Bronze), 2012 (Silver)</td></tr>
+      <tr><td>Michael Phelps' 8-gold Olympics (Beijing)</td><td>2008</td></tr>
+      <tr><td>India's best Olympic medal tally (Tokyo)</td><td>2020 (7 medals)</td></tr>
+      <tr><td>Abhinav Bindra's individual Olympic gold</td><td>2008 (Beijing)</td></tr>
+      <tr><td>Neeraj Chopra's first Asian Games gold</td><td>2018 (Jakarta)</td></tr>
+      <tr><td>National Games hosted by Pune</td><td>1994</td></tr>
+      <tr><td>Sachin's Test debut vs Pakistan</td><td>1989</td></tr>
+      <tr><td>Sehwag's first Test triple century</td><td>2004 (Multan)</td></tr>
+      <tr><td>Anil Kumble's Test wickets</td><td>619</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Sports Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>India has NOT won Asian Games gold in Weightlifting</strong></span> — but HAS in Shooting, Golf, Athletics &amp; Football (2x)</li>
+          <li>Olympic flag = <span class="hl-g"><strong>5 rings</strong></span> (NOT 7!) — a common trap</li>
+          <li>India has hosted the Asian Games <strong>twice</strong>: 1951 &amp; 1982 (both New Delhi)</li>
+          <li>India's LAST hockey Olympic gold = <span class="hl-p"><strong>1980 Moscow</strong></span> — captained by V. Bhaskaran</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Women's World Cup (Cricket) came <span class="hl"><strong>BEFORE</strong></span> Men's (1973 vs 1975) — reverse of common assumption!</li>
+          <li>2023 Cricket World Cup = <strong>first-ever solely India-hosted</strong> edition (no co-hosts)</li>
+          <li>2018 &amp; 2022 CWG: Australia consistently #1 — India dropped from 3rd (2018) to 4th (2022)</li>
+          <li>Category segregation strategy: repeat-prone topics (CWG, Sachin, hockey captains) &gt; one-off random facts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF SPORTS BLITZ NOTES</div>
+      <strong>Last Lecture of SSC GD Series | All Sports Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
