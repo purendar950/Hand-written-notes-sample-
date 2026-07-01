@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — SSC GD Science | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — SSC GD Science Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">🔬 Science — Topper Notes</div>
+    <div class="cover-sub">SSC GD Series | Biology · Chemistry · Physics — Complete PYQ Coverage</div>
+    <div class="cover-badge">🧬 Biology · ⚗️ Chemistry · ⚛️ Physics — All Questions &amp; Explanations Covered</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- CELL BIOLOGY -->
+    <div class="sec green">① Biology — Cell Biology &amp; Cell Organelles 🧫</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Cork cells contain which substance in their cell walls that makes them impermeable to gases and water?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lignin</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chitin</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Suberin ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Cutin</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Suberin</strong> makes cork cells (dead cells) impermeable to gases &amp; water. Cork cells were first discovered by <span class="hl">Robert Hooke in 1665</span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Cell Wall Substances — Don't Confuse!</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Suberin</strong></span> — found in cork cells (dead cells); makes them impermeable</li>
+        <li><span class="hl-g"><strong>Cutin</strong></span> — secreted by epidermis of desert plants; builds up layer-by-layer to form the <strong>cuticle</strong></li>
+        <li><span class="hl-p"><strong>Lignin</strong></span> — found in cell walls of xylem (sclerenchyma); slows down decomposition rate when present in detritus (broken down by detritivores)</li>
+        <li><span class="hl-b"><strong>Chitin</strong></span> — found in fungal cell walls AND in the exoskeleton of arthropods (largest animal phylum)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which components of a plant's vascular system are responsible for water conduction?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sieve tubes and companion cells</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Vessels and Tracheae ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Guard cells and stomata</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Phloem fibers</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Vessels and Tracheae</strong> (parts of xylem) conduct water &amp; minerals. Phloem conducts food. Guard cells/stomata handle gas exchange &amp; transpiration (water loss)</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Tissue</th><th>Function</th><th>Components</th></tr>
+      <tr><td><span class="hl"><strong>Xylem</strong></span></td><td>Transports water &amp; minerals</td><td>Vessels, Tracheae, Xylem parenchyma (only living part), Xylem fibers</td></tr>
+      <tr><td><span class="hl-g"><strong>Phloem</strong></span></td><td>Transports food</td><td>Sieve tubes, Companion cells, Phloem fibers, Phloem parenchyma</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>Fiber = Strength</strong> (in both xylem &amp; phloem). <strong>Parenchyma = Food Storage.</strong> All xylem tissues are DEAD except xylem parenchyma (living). All phloem tissues are LIVING except phloem fiber (dead)!
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Plant Tissue Types — Overview:</strong></p>
+      <ul class="hw arr">
+        <li><strong>Complex permanent tissue</strong> = Xylem &amp; Phloem</li>
+        <li><strong>Simple permanent tissue</strong> = Parenchyma (food storage; Aerenchyma = air spaces for floating), Collenchyma (flexibility; thickened at corners), Sclerenchyma (rigidity &amp; toughness)</li>
+        <li><span class="hl"><strong>Meristematic tissue</strong></span> = site of cell division; <strong>Apical</strong> (root/shoot tips — increases height), <strong>Intercalary</strong> (between nodes — increases height), <strong>Lateral</strong> (increases girth/width)</li>
+      </ul>
+      <p class="hw">Meristematic cells: <span class="hl-g">lack vacuoles</span>, have a <span class="hl-p">prominent nucleus</span>, and <span class="hl-b">dense cytoplasm</span>. When division stops, they differentiate into permanent tissue.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Plastids are similar to which organelle in external structure?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Nucleus</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lysosome</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Mitochondria ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Endoplasmic Reticulum</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Mitochondria</strong>. Both plastids AND mitochondria have their <span class="hl">own DNA and ribosomes</span> — this is the key similarity</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Organelle</th><th>Nickname</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Nucleus</strong></span></td><td>"Brain of the cell"</td><td>Regulates other organelles; discovered by <strong>Robert Brown</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>Lysosome</strong></span></td><td>"Suicide bag of the cell"</td><td>Digests the cell by bursting; hydrolytic enzymes made in rough ER, packaged in Golgi apparatus</td></tr>
+      <tr><td><span class="hl-p"><strong>Mitochondria</strong></span></td><td>"Powerhouse of the cell"</td><td>Own DNA &amp; ribosomes; double-membrane bound; produces ATP; inner membrane folds = <strong>cristae</strong></td></tr>
+      <tr><td><strong>Endoplasmic Reticulum</strong></td><td>—</td><td>Rough ER (has ribosomes, makes protein); Smooth ER (makes lipids/fats, detoxification)</td></tr>
+      <tr><td><span class="hl-b"><strong>Ribosome</strong></span></td><td>—</td><td>Non-membrane bound; makes proteins; discovered by <strong>George Palade</strong>; found even in prokaryotic cells</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> How many membranes surround a mitochondrion?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>2 (double-membrane bound) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2 — outer membrane &amp; inner membrane (which folds into <strong>cristae</strong>, surrounding the <strong>matrix</strong> where the Krebs/Citric Acid Cycle occurs)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> What is the primary function of lysosomes?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Waste disposal / digestion ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Waste disposal (digestion of the cell). ATP is called the "energy currency" of the cell — produced mainly in the cristae (inner membrane folds) of mitochondria</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- PLANT HORMONES & TROPISMS -->
+    <div class="sec teal">② Biology — Plant Hormones &amp; Tropisms 🌱</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which hormone inhibits plant growth and can cause wilting of leaves?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Cytokinin</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gibberellin</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Abscisic Acid ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Auxin</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Abscisic Acid</strong>, called the "stress hormone" of plants; inhibits growth &amp; causes leaf wilting</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Plant Hormone</th><th>Function</th></tr>
+      <tr><td><span class="hl"><strong>Cytokinin</strong></span></td><td>"Cyto" = cell; helps in <strong>cell division</strong>; prevents cell aging</td></tr>
+      <tr><td><span class="hl-g"><strong>Gibberellin</strong></span></td><td>Helps in <strong>flowering</strong> and <strong>seed germination</strong></td></tr>
+      <tr><td><span class="hl-p"><strong>Auxin (Acetic Acid type)</strong></span></td><td>Helps plant growth; accumulates on the shaded side of tip → causes bending toward light (phototropism)</td></tr>
+      <tr><td><span class="hl-b"><strong>Abscisic Acid</strong></span></td><td>"Stress hormone"; inhibits growth; causes wilting</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Tropisms — Positive vs Negative:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Phototropism</strong></span> — response to light; shoots show <strong>positive</strong> phototropism (grow toward light); roots show <strong>negative</strong> phototropism</li>
+        <li><span class="hl-g"><strong>Hydrotropism</strong></span> — response to water; roots show <strong>positive</strong> hydrotropism (grow toward water, downward); shoots show <strong>negative</strong> hydrotropism</li>
+        <li><span class="hl-p"><strong>Geotropism</strong></span> — response to gravity; same pattern as hydrotropism</li>
+        <li><span class="hl-b"><strong>Chemotropism</strong></span> — response to chemicals; e.g., pollen tube growing toward the ovule</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Which of the following is an example of chemotropism in plants?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Growth of the pollen tube toward the ovule ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The pollen tube grows toward the ovule (chemical signal-based movement) — this is chemotropism. Movements are of 2 types: <strong>Tropic</strong> (growth-related: photo/hydro/geo/chemo-tropism) &amp; <strong>Nastic/Athetic</strong> (non-growth-related)</div>
+    </div>
+
+    <div class="sub">Pollination &amp; Fertilization — Quick Flow</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Step 1</span> Pollen grain (male part, from anther) lands on the sticky <strong>stigma</strong> (pollination)</div>
+      <div class="tl-item"><span class="yr">Step 2</span> A <span class="hl"><strong>pollen tube</strong></span> forms, growing toward the ovule (chemotropism)</div>
+      <div class="tl-item"><span class="yr">Step 3</span> Pollen grain (male) meets ovule (female) → <span class="hl-g"><strong>fertilization</strong></span></div>
+      <div class="tl-item"><span class="yr">Step 4</span> Ovule → becomes the <strong>seed</strong>; Ovary → becomes the <strong>fruit</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ENDOCRINE SYSTEM -->
+    <div class="sec red">③ Biology — Human Endocrine System 🧠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Which of the following is NOT a part of the endocrine system of the human body?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kidney ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hypothalamus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pancreas</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ovaries</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Kidney</strong> does not release hormones; it's an excretory organ, not endocrine</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Hypothalamus → Pituitary Gland ("Master Gland"):</strong></p>
+      <ul class="hw arr">
+        <li>Hypothalamus <span class="hl"><strong>synthesizes</strong></span> hormones, transfers them to Pituitary, which <span class="hl-g"><strong>secretes</strong></span> them</li>
+        <li><strong>Anterior lobe</strong> — produces &amp; secretes its own hormones: <span class="hl-p">Growth Hormone</span> &amp; <span class="hl-p">Prolactin</span> (released ONLY when Hypothalamus sends a "growth hormone-releasing factor" signal)</li>
+        <li><strong>Posterior lobe</strong> — releases <span class="hl-b">Oxytocin</span> (helps uterine contractions during childbirth + milk secretion) and <strong>ADH/Vasopressin</strong> (anti-diuretic hormone — maintains water balance)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which brain structure is responsible for releasing the "growth hormone-releasing factor" in humans?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Hypothalamus ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Thyroid</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pituitary</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Thymus gland</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Hypothalamus</strong> releases the growth hormone-releasing factor, which signals the pituitary gland's anterior lobe to release growth hormone. (Thymus gland: located in the chest, produces antibodies, shrinks after puberty)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Gland</th><th>Cells / Hormones</th><th>Function</th></tr>
+      <tr><td rowspan="2"><span class="hl"><strong>Pancreas</strong></span> (mixed gland — both endocrine &amp; exocrine)</td><td>Beta cells (Islets of Langerhans) → <strong>Insulin</strong></td><td>Converts glucose → glycogen (lowers blood sugar)</td></tr>
+      <tr><td>Alpha cells → <strong>Glucagon</strong></td><td>Converts glycogen → glucose (raises blood sugar)</td></tr>
+      <tr><td><span class="hl-g"><strong>Ovaries</strong></span></td><td>Estrogen &amp; Progesterone</td><td>Female hormones; release egg every 28-day cycle</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Endocrine vs Exocrine:</strong> Endocrine glands release hormones <span class="hl">directly into bloodstream</span> — NO ducts needed (also called "ductless glands"). Exocrine glands release enzymes <strong>through ducts</strong>. The pancreas is a "mixed gland" because it does BOTH!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ANIMAL TISSUES -->
+    <div class="sec purple">④ Biology — Animal Tissues 🧵</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> On the basis of function, which of the following is NOT a type of animal tissue?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Vascular tissue (xylem/phloem are PLANT tissues) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Epithelial tissue</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Connective tissue</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Muscular tissue</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Xylem &amp; Phloem are PLANT tissues, not animal tissues. The 4 animal tissue types are: <span class="hl">Epithelial, Connective, Muscular, Nervous</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which type of epithelial tissue lines the esophagus and inner surface of the mouth, providing protection against friction?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Squamous (Simple Squamous / Stratified Squamous) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Columnar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Cuboidal</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Glandular</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Squamous epithelium</strong> (Stratified Squamous in skin/mouth/esophagus)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Epithelial Type</th><th>Location</th></tr>
+      <tr><td><span class="hl"><strong>Squamous</strong></span></td><td>Skin, mouth, esophagus (protects against friction)</td></tr>
+      <tr><td><span class="hl-g"><strong>Columnar</strong></span></td><td>Intestines (height &gt; width)</td></tr>
+      <tr><td><span class="hl-p"><strong>Cuboidal</strong></span></td><td>Kidney tubules (height ≈ width, cube-shaped)</td></tr>
+      <tr><td><strong>Glandular</strong></td><td>Salivary gland, thyroid gland</td></tr>
+      <tr><td><span class="hl-b"><strong>Ciliated</strong></span></td><td>Respiratory tract, fallopian tube (hair-like cilia aid movement, e.g., of the egg)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Bone belongs to which category of animal tissue?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Muscular</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Connective ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Nervous</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Epithelial</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Connective tissue</strong> (bone, cartilage, tendons, ligaments, blood, lymph all fall here)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Tendon vs Ligament:</strong> Tendon connects <span class="hl">Muscle to Bone</span> (MTB). Ligament connects <span class="hl-g">Bone to Bone</span>. Cartilage = nose tip, ear, trachea (C-shaped rings) — matrix neither hard nor soft.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Cardiac muscles are classified as?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Involuntary, Striated ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Voluntary, Striated</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Involuntary, Smooth</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Voluntary, Smooth</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Cardiac muscle = <strong>Involuntary</strong> (not under our control) + <strong>Striated</strong> (has alternating light/dark bands)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Muscle Type</th><th>Control</th><th>Striations</th><th>Nucleation</th><th>Special</th></tr>
+      <tr><td><span class="hl"><strong>Skeletal</strong></span></td><td>Voluntary</td><td>Striated</td><td><strong>Multinucleated</strong></td><td>Attached to bones</td></tr>
+      <tr><td><span class="hl-g"><strong>Smooth</strong></span></td><td>Involuntary</td><td><strong>Non-striated</strong></td><td>Uninucleated</td><td>Found in intestine, stomach (no bones)</td></tr>
+      <tr><td><span class="hl-p"><strong>Cardiac</strong></span></td><td>Involuntary</td><td>Striated</td><td>Uninucleated</td><td><strong>Branched</strong> cells (heart connects to everything!)</td></tr>
+    </table>
+
+    <div class="sub">Neuron Structure</div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Dendrite</strong></span> → receives signal</li>
+        <li><strong>Cyton (Cell body)</strong> → contains nucleus</li>
+        <li><strong>Axon</strong> → begins at the <span class="hl-g"><strong>Axon Hillock</strong></span></li>
+        <li><strong>Myelin Sheath</strong> → speeds up signal transmission; gaps = <span class="hl-p"><strong>Nodes of Ranvier</strong></span></li>
+        <li><strong>Nerve terminals</strong> → gap between two neurons = <span class="hl-b"><strong>Synapse (Synaptic cleft)</strong></span>; <strong>neurotransmitters</strong> are released here</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- NERVOUS SYSTEM / BRAIN -->
+    <div class="sec blue">⑤ Biology — Nervous System &amp; Brain 🧠</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which part of the brain is primarily responsible for thinking?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Forebrain ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Midbrain</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hindbrain</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Spinal cord</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Forebrain</strong> (thinking, reasoning, memory)</div>
+    </div>
+
+    <div class="sub">Brain — 3 Main Parts</div>
+    <table class="hw-t teal-h">
+      <tr><th>Part</th><th>Sub-parts</th><th>Functions</th></tr>
+      <tr><td><span class="hl"><strong>Forebrain</strong></span></td><td>Cerebrum, Hypothalamus, Thalamus</td><td>Reasoning, memory (Cerebrum); hunger/thirst/temp regulation (Hypothalamus); relay station for sensations (Thalamus)</td></tr>
+      <tr><td><span class="hl-g"><strong>Midbrain</strong></span></td><td>—</td><td>Connects fore- &amp; hindbrain</td></tr>
+      <tr><td><span class="hl-p"><strong>Hindbrain</strong></span></td><td>Cerebellum, Pons, Medulla Oblongata</td><td>Balance (Cerebellum); Pons connects Cerebellum to Medulla; Medulla controls digestion, respiration, vomiting (involuntary functions)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Brain Lobes:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Frontal lobe</strong></span> — reasoning &amp; memory</li>
+        <li><span class="hl-g"><strong>Parietal lobe</strong></span> — sensory inputs</li>
+        <li><span class="hl-p"><strong>Occipital lobe</strong></span> — vision</li>
+        <li><span class="hl-b"><strong>Temporal lobe</strong></span> — hearing</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> The heartbeat is an example of which type of action?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Involuntary action ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Involuntary action (controlled by the Medulla Oblongata, not under conscious control — similarly, cardiac muscles are involuntary)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Reflex Action</strong> (e.g., touching something hot and pulling away instantly) is controlled by the <span class="hl"><strong>Spinal Cord</strong></span>, NOT the brain — this is the "afferent → efferent" pathway of the peripheral nervous system.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> The spinal cord is protected by which bony structure?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Vertebral column ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ribs</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Vertebral column</strong> protects the spinal cord. (Ribs protect the lungs &amp; heart, NOT the spinal cord)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Ribs — 12 Pairs:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>True ribs</strong></span> — first 7 pairs; directly attach to the sternum</li>
+        <li><span class="hl-g"><strong>False ribs</strong></span> — pairs 8, 9, 10; attach indirectly (via the 7th)</li>
+        <li><span class="hl-p"><strong>Floating ribs</strong></span> — pairs 11 &amp; 12; not attached to sternum or anything else</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- DIGESTIVE SYSTEM -->
+    <div class="sec orange">⑥ Biology — Digestive System &amp; Liver 🍽️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which of the following human organs cannot be imaged using ultrasound — Liver or Gall Bladder?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Neither — both CAN be imaged using ultrasound ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Neither — both the liver and gall bladder CAN be imaged using ultrasound. Trick question!</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Organ</th><th>Function</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl"><strong>Liver</strong></span></td><td>Secretes <strong>bile juice</strong> (not part of alimentary canal)</td><td>Made of Kupffer cells; regenerative power; weighs ~1.5 kg; dark reddish-brown; metabolism &amp; detoxification; diseases: hepatitis, fatty liver, cirrhosis</td></tr>
+      <tr><td><span class="hl-g"><strong>Gall Bladder</strong></span></td><td><strong>Stores</strong> bile juice</td><td>Bile released into small intestine</td></tr>
+    </table>
+    <div class="sticky orange">
+      <div class="slbl">BILE JUICE — 2 FUNCTIONS</div>
+      1) Makes medium <span class="hl"><strong>basic</strong></span> &nbsp; 2) <span class="hl-g"><strong>Emulsifies fat</strong></span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> What is the primary function of villi in the human small intestine?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>To increase surface area for absorption ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: To increase surface area for absorption of digested nutrients</div>
+    </div>
+
+    <div class="sub">Digestive Journey — Full Flow</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Mouth</span> Salivary glands release <span class="hl"><strong>salivary amylase</strong></span> → breaks complex carbs into simple sugars</div>
+      <div class="tl-item"><span class="yr">Pharynx</span> Common passage for air &amp; food</div>
+      <div class="tl-item"><span class="yr">Esophagus</span> Food moves via <strong>peristalsis</strong></div>
+      <div class="tl-item"><span class="yr">Stomach</span> <span class="hl-g"><strong>HCl</strong></span> (hydrochloric acid) lowers pH, kills bacteria; <strong>Mucous membrane</strong> protects stomach lining; enzyme <span class="hl-p"><strong>pepsin</strong></span> breaks proteins → amino acids (works in ACIDIC medium)</div>
+      <div class="tl-item"><span class="yr">Small Intestine (7-8m)</span> Major site of digestion; <strong>Bile</strong> (from liver) emulsifies fat; <strong>Pancreatic juice</strong> has <span class="hl-b"><strong>Trypsin</strong></span> (proteins → amino acids, BASIC medium) &amp; <strong>Lipase</strong> (fats → fatty acids)</div>
+      <div class="tl-item"><span class="yr">Large Intestine (1-2m)</span> <strong>Cecum</strong> (first part) → <strong>Colon</strong> (water absorption) → Anus</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Pepsin vs Trypsin Trap:</strong> <span class="hl"><strong>Pepsin</strong></span> (stomach) works in an <strong>ACIDIC</strong> medium. <span class="hl-g"><strong>Trypsin</strong></span> (small intestine, from pancreas) works in a <strong>BASIC</strong> medium. Both break proteins into amino acids!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- RESPIRATION & PHOTOSYNTHESIS -->
+    <div class="sec green">⑦ Biology — Respiration &amp; Photosynthesis 🌬️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> In the aerobic breakdown of pyruvate, which of the following is formed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lactic acid + energy</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>CO2 + water + energy ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ethanol + CO2 + energy</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lactic acid + energy + CO2</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Aerobic respiration produces <strong>CO2 + H2O + Energy (36 ATP)</strong> in the mitochondria</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Respiration Type</th><th>Occurs In</th><th>Products</th></tr>
+      <tr><td><span class="hl"><strong>Aerobic</strong></span></td><td>Mitochondria (Krebs cycle in matrix)</td><td>CO2 + H2O + 36 ATP</td></tr>
+      <tr><td><span class="hl-g"><strong>Anaerobic (lack of O2 in animals)</strong></span></td><td>Cytoplasm/muscle</td><td><strong>Lactic acid</strong> + energy (causes muscle cramps)</td></tr>
+      <tr><td><span class="hl-p"><strong>Anaerobic (fermentation, e.g., yeast)</strong></span></td><td>Cytoplasm</td><td><strong>Ethanol</strong> + CO2 + energy</td></tr>
+    </table>
+    <div class="sticky green">
+      <div class="slbl">GLYCOLYSIS — FIRST STEP (ALL TYPES)</div>
+      Glucose (6-carbon) → 2 Pyruvate (3-carbon) + 2 ATP — occurs in <span class="hl"><strong>cytoplasm</strong></span>. This step is common to aerobic AND anaerobic respiration.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> The incorporation of carbon into life forms takes place through which process?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Respiration</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Photosynthesis ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fermentation</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Decomposition</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Photosynthesis</strong>: CO2 + H2O + light → C6H12O6 (glucose) + O2</div>
+    </div>
+
+    <div class="sticky teal">
+      <div class="slbl">LIGHT vs DARK REACTION</div>
+      <strong>Light reaction</strong> occurs in the <span class="hl">Grana</span> (stacked thylakoids)<br>
+      <strong>Dark reaction</strong> occurs in the <span class="hl-g">Stroma</span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- DNA, EXCRETION, MISC BIOLOGY -->
+    <div class="sec pink">⑧ Biology — DNA, Excretion &amp; Misc 🧬</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>DNA — Structure &amp; Replication:</strong></p>
+      <ul class="hw arr">
+        <li>Made of <span class="hl"><strong>Genes</strong></span> (functional segments) + <strong>Histone proteins</strong> (hold DNA together)</li>
+        <li>Double helix structure; base pairs: <span class="hl-g"><strong>A-T, G-C</strong></span> (in RNA, <strong>Uracil</strong> replaces Thymine)</li>
+        <li>Semi-conservative replication: <span class="hl-p"><strong>Helicase</strong></span> unwinds → <strong>Primase</strong> starts → <strong>Ligase</strong> joins strands</li>
+        <li>Chromosome = DNA + Protein; Chromatid = duplicated chromosome strand</li>
+        <li>Humans: 46 chromosomes = <span class="hl-b"><strong>22 pairs autosomes</strong></span> + 1 pair sex chromosomes (XX = female, XY = male)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> What are the principal nitrogenous waste products excreted by human kidneys?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Urea and Uric acid ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Urea &amp; Uric acid</strong> — formed when excess protein/amino acids break down. High-protein diets without adequate exercise increase kidney damage risk</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> In living organisms, nitrogen is a component of which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Protein only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chlorophyll only</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both Protein and Chlorophyll ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Neither</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Nitrogen is present in <strong>both</strong>. Proteins are made of <span class="hl">amino acids</span> (contain nitrogen) — hence called "building blocks." Chlorophyll's central metal atom is <strong>Magnesium</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Amino Acids &amp; Chlorophyll:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Essential amino acids (9)</span>: Histidine, Isoleucine, Leucine, Lysine, Methionine, Phenylalanine, Threonine, Tryptophan, Valine — body CANNOT make these, must come from diet</li>
+        <li><span class="hl-g">Chlorophyll a</span> = primary pigment; absorbs blue &amp; red, reflects green</li>
+        <li><span class="hl-p">Chlorophyll b</span> = accessory pigment (helps chlorophyll a)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> What are anabolic steroids primarily used for by athletes who misuse them?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Synthetically boosting testosterone to rapidly build muscle mass ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Synthetic chemicals that massively increase testosterone production for rapid muscle growth. <span class="hl">Side effects:</span> cardiovascular damage, increased heart attack risk, reduced sperm count, voice changes/hair growth in women</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Taste &amp; Smell Receptors:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Olfactory</span> receptors — detect smell</li>
+        <li><span class="hl-g">Gustatory</span> receptors — detect taste; Sweet (front of tongue), Sour (sides), Salty (front sides), Bitter (back of tongue)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Who is called the "Father of Microbiology"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Antonie van Leeuwenhoek ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Antonie van Leeuwenhoek — first discovered living cells in pond water</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Scientist</th><th>Discovery</th></tr>
+      <tr><td><span class="hl"><strong>Robert Hooke</strong></span></td><td>Discovered dead cells (cork), 1665</td></tr>
+      <tr><td><span class="hl-g"><strong>Antonie van Leeuwenhoek</strong></span></td><td>First discovered living cells (pond water) — "Father of Microbiology"</td></tr>
+      <tr><td><span class="hl-p"><strong>Edward Jenner</strong></span></td><td>Discovered the smallpox vaccine</td></tr>
+      <tr><td><strong>Robert Brown</strong></td><td>Discovered the nucleus</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- CHEMISTRY: OZONE & ENVIRONMENT -->
+    <div class="sec teal">⑨ Chemistry — Ozone-Depleting Substances &amp; Protocols 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Which ozone-depleting substance (ODS) releases bromine atoms when exposed to UV radiation in the stratosphere?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Halons ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chlorofluorocarbons (CFCs)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Hydrochlorofluorocarbons (HCFCs)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Halons</strong> release bromine atoms (CFCs release chlorine, not bromine — don't confuse!)</div>
+    </div>
+
+    <div class="sub">Ozone Layer — Protocol Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1985</span> <span class="hl"><strong>Vienna Convention</strong></span> — to conserve the ozone layer (after the ozone hole was discovered over Antarctica)</div>
+      <div class="tl-item"><span class="yr">Sept 16, 1987</span> <span class="hl-g"><strong>Montreal Protocol</strong></span> signed — to eliminate ODS (CFCs, HCFCs, Halons); this date is celebrated as <strong>World Ozone Day</strong></div>
+      <div class="tl-item"><span class="yr">Later</span> <span class="hl-p"><strong>Kigali Amendment</strong></span> to Montreal Protocol — targets HFCs (which became an alternative to CFCs but were still harmful)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>ODS Quick Reference:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">CFCs</span> (Chlorofluorocarbons) — release chlorine &amp; fluorine</li>
+        <li><span class="hl-g">HCFCs</span> (Hydrochlorofluorocarbons) — also ODS</li>
+        <li><span class="hl-p">Halons</span> — release bromine (contain Br)</li>
+        <li>Ozone found in the <strong>stratosphere</strong> — protects Earth from harmful UV radiation</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- PERIODIC TABLE -->
+    <div class="sec red">⑩ Chemistry — Periodic Table Development 🧪</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> The Law of Octaves was applicable only up to which of the following elements?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Calcium ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Potassium</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Thorium</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hydrogen</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Newlands' Law of Octaves applied only up to <strong>Calcium</strong> (56 known elements at the time)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Scientist</th><th>Contribution</th><th>Year</th></tr>
+      <tr><td><span class="hl"><strong>Dobereiner</strong></span></td><td>Law of Triads</td><td>1827</td></tr>
+      <tr><td><span class="hl-g"><strong>Newlands</strong></span></td><td>Law of Octaves (worked up to Calcium only)</td><td>1865</td></tr>
+      <tr><td><span class="hl-p"><strong>Mendeleev</strong></span></td><td>First structured Periodic Table — "Father of the Periodic Table"; based on <strong>atomic mass</strong></td><td>1869</td></tr>
+      <tr><td><span class="hl-b"><strong>Henry Moseley</strong></span></td><td>Modern Periodic Table — based on <strong>atomic number</strong> (not mass!)</td><td>1913</td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 <strong>Law of Octaves — Why "Octaves"?</strong> Like musical notes (Sa Re Ga Ma Pa Dha Ni Sa), the 8th element had similar properties to the 1st, when arranged by increasing atomic mass.
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Key Distinction:</strong> Dobereiner, Newlands &amp; Mendeleev all classified elements based on <span class="hl"><strong>atomic mass</strong></span>. Only <strong>Henry Moseley (1913)</strong> introduced classification by <span class="hl-g"><strong>atomic number</strong></span> — the basis of the MODERN periodic table.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- COKE, EVAPORATION, RARE EARTH -->
+    <div class="sec orange">⑪ Chemistry — Coke, Evaporation &amp; Rare Earth Elements ⚗️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Which of the following is a use of Coke?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Manufacture of steel (as a reducing agent + fuel) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Fuel for residential cooling</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Food preservative</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Production of pharmaceuticals</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Coke is used in <strong>steel manufacturing</strong> — works as a <span class="hl">reducing agent</span> and produces significant energy as fuel</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> Which of the following statements about evaporation is NOT correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"Evaporation causes heating" — INCORRECT (it causes COOLING) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Evaporation causes <strong>cooling</strong>, not heating — because the liquid absorbs heat energy from its surroundings to evaporate</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Evaporation — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Evaporation</span> = surface phenomenon; <span class="hl-g">Boiling</span> = bulk phenomenon</li>
+        <li>Rate of evaporation ↑ when: <strong>temperature ↑</strong>, <strong>wind speed ↑</strong>, <strong>surface area ↑</strong>, <strong>humidity ↓</strong> (LOWER humidity = FASTER evaporation)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> Which of the following is NOT a rare earth element?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>(Any element outside the 17 Rare Earth Elements list) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Total 17 Rare Earth Elements = <strong>15 Lanthanides + Scandium + Yttrium</strong>. Any element not on this list is the correct "NOT a rare earth element" answer</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CURRENT AFFAIRS-LINKED / MISC CHEMISTRY -->
+    <div class="sec purple">⑫ Chemistry — Nuclear Reactions &amp; Radioactivity ☢️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Which of the following nuclei are commonly used in nuclear FUSION reactions?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Uranium and Thorium</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Carbon and Nitrogen</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Hydrogen and its isotopes ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Oxygen and Helium</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Hydrogen and its isotopes</strong> are used in fusion. (Uranium/Thorium are used in FISSION, not fusion!)</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Concept</th><th>Detail</th></tr>
+      <tr><td><span class="hl"><strong>Fusion</strong></span></td><td>Small nuclei combine → larger nucleus; huge energy released; uses Hydrogen isotopes</td></tr>
+      <tr><td><span class="hl-g"><strong>Fission</strong></span></td><td>Large nucleus (e.g., U-235) splits into smaller ones (Barium + Krypton) when hit by a neutron; releases more neutrons → chain reaction</td></tr>
+      <tr><td><strong>Hydrogen Isotopes</strong></td><td>Protium, Deuterium, <span class="hl-p">Tritium (radioactive)</span></td></tr>
+      <tr><td><strong>Thorium source</strong></td><td>Found in <span class="hl-b">Monazite sand</span> — coastal areas of South India (Kerala, Tamil Nadu)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Nuclear Reactor Components:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Control rods</span> — made of Boron &amp; Cadmium (control chain reaction)</li>
+        <li><span class="hl-g">Coolant</span> — heavy water / liquid sodium (transfers heat)</li>
+        <li><span class="hl-p">Moderator</span> — heavy water</li>
+        <li><strong>Kalpakkam, Tamil Nadu</strong> — India's first Fast Breeder Reactor (produces MORE fuel than it consumes, using Plutonium core)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Where are the isotopes Cobalt-60 and Iodine-131 primarily used?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Treatment of cancer and goiter (thyroid disorders) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Cobalt-60</strong> — cancer treatment. <strong>Iodine-131</strong> — treatment of goiter/thyroid disorders (thyroxine/T4 hormone imbalance)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- CORROSION & COMBUSTION -->
+    <div class="sec red">⑬ Chemistry — Corrosion &amp; Combustion 🔥</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Copper reacts with moist CO2 in the air, gradually losing its shiny brown surface and developing a coating. What is this coating?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Copper Carbonate (green coating) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Copper Carbonate</strong> — green coating (corrosion of copper)</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Metal</th><th>Corrosion Coating</th><th>Color</th></tr>
+      <tr><td><span class="hl"><strong>Copper</strong></span></td><td>Copper Carbonate</td><td>Green</td></tr>
+      <tr><td><span class="hl-g"><strong>Iron</strong></span></td><td>Iron Oxide</td><td>Reddish-brown</td></tr>
+      <tr><td><span class="hl-p"><strong>Silver</strong></span></td><td>Silver Sulfide</td><td>Black</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> In a candle flame, the middle zone of partial combustion is which color?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Red</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Yellow ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Green</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Brown</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Middle zone = <strong>Yellow</strong> (luminous zone, partial combustion)</div>
+    </div>
+
+    <div class="sub">Candle Flame — 3 Zones</div>
+    <div class="key-box">
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Innermost zone</strong></span> — black, coolest part (unburnt carbon vapor)</li>
+        <li><span class="hl-g"><strong>Middle zone</strong></span> — yellow, luminous zone (partial combustion)</li>
+        <li><span class="hl-p"><strong>Outermost zone</strong></span> — blue, non-luminous zone, <strong>hottest part</strong> (complete combustion)</li>
+      </ul>
+      <p class="hw">Saturated hydrocarbons burn with a <span class="hl-b"><strong>clear blue flame</strong></span>; unsaturated hydrocarbons burn with a <strong>yellow, sooty flame</strong></p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> Which of the following is a type of combustion — Rapid and Spontaneous?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Both Rapid and Spontaneous are types of combustion ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Rapid combustion</strong> — needs external ignition (e.g., lighter spark), burns quickly. <strong>Spontaneous combustion</strong> — no external ignition needed, occurs via internal chemical reaction, can cause explosion</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> LPG (a constituent of petroleum, in liquefied form) is primarily used for which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Fuel for home and industry ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Fuel for home and industry</strong>. LPG mainly contains <span class="hl">Butane</span> (used most in homes) and Propane</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- UJJWALA YOJANA / MISC -->
+    <div class="sec teal">⑭ Chemistry-Linked Current Affairs — Ujjwala Yojana ⛽</div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>Pradhan Mantri Ujjwala Yojana:</strong> According to the National Family Health Survey (NFHS-4 to NFHS-5), clean cooking fuel usage in India increased from <span class="hl">44% to 59%</span>. Launched on <strong>May 1, 2016</strong>, from <strong>Ballia, Uttar Pradesh</strong>.</p>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Architectural Elements (asked in chemistry section, historical/architecture link):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Chhatri</span> (umbrella-like dome) — used in Rajput monuments</li>
+        <li><span class="hl-g">Stepwells</span> — e.g., Rani ki Vav, Gujarat; also built during the Vijayanagara Empire</li>
+        <li><span class="hl-p">Garbhagriha (Sanctum Sanctorum)</span> — the innermost sacred chamber, found in temples of ANY architectural style</li>
+        <li><span class="hl-b">Gopuram</span> — tall gateway towers, seen in South Indian (Dravidian-style) temples ONLY</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- PHYSICS: ATOMIC STRUCTURE -->
+    <div class="sec blue">⑮ Physics — Atomic Structure &amp; Discoveries ⚛️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> Who discovered the neutron, in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>James Chadwick, 1932 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>James Chadwick</strong> discovered the neutron in 1932</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Particle</th><th>Discoverer</th><th>Year</th></tr>
+      <tr><td><span class="hl"><strong>Electron</strong></span></td><td>J.J. Thomson</td><td>1897</td></tr>
+      <tr><td><span class="hl-g"><strong>Proton</strong></span></td><td>Rutherford / Goldstein</td><td>—</td></tr>
+      <tr><td><span class="hl-p"><strong>Neutron</strong></span></td><td>James Chadwick</td><td>1932</td></tr>
+      <tr><td><span class="hl-b"><strong>Nucleus</strong></span></td><td>Rutherford (Alpha particle scattering / Gold foil experiment)</td><td>—</td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 <strong>Memory:</strong> "E-J-P-R-N-C" — Electron: J.J. Thomson; Proton: Rutherford; Neutron: Chadwick
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Who discovered the electron, in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>J.J. Thomson, 1897 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: J.J. Thomson, 1897</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Bohr's Atomic Model:</strong></p>
+      <ul class="hw arr">
+        <li>Electrons revolve in <span class="hl"><strong>discrete orbits</strong></span> — the orbit (not electron) has fixed energy</li>
+        <li>Max electrons in an orbit = <span class="hl-g"><strong>2n²</strong></span></li>
+        <li>Moving to a higher orbit needs energy gain; moving down releases energy</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- PHYSICS: FORCE, MOTION, ENERGY -->
+    <div class="sec red">⑯ Physics — Force, Motion &amp; Energy ⚙️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> The mass of an object is a measure of its ___?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Weight</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Inertia ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Momentum</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Force</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Mass is the measure of <strong>Inertia</strong> (per Newton's First Law/Law of Inertia). Inertia ∝ Mass</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Types of Inertia:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Inertia of rest</strong></span> — e.g., shaking a tree, leaves (at rest) fall off</li>
+        <li><span class="hl-g"><strong>Inertia of motion</strong></span> — e.g., a moving vehicle continuing forward when brakes are applied suddenly</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> Why do action-reaction forces, equal in magnitude, not always produce equal accelerations?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Because the objects have different masses (a = F/m) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Per Newton's 3rd Law, forces are equal &amp; opposite, but acceleration = F/m — since masses differ, accelerations differ (e.g., football vs cricket ball)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Which factor causes a sheet of paper to fall more slowly than a stone in air?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Air resistance ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Air resistance</strong> — in a vacuum, both would fall at the same rate (as gravity affects all objects equally, regardless of mass)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> At the beginning of a free fall from a height, how are potential energy and kinetic energy related?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>PE is maximum (mgh); KE is zero ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: At the START of free fall — PE = mgh (maximum), KE = 0 (no velocity yet)</div>
+    </div>
+
+    <div class="sub">Free Fall — PE vs KE at Each Stage</div>
+    <table class="hw-t red-h">
+      <tr><th>Position</th><th>Potential Energy</th><th>Kinetic Energy</th></tr>
+      <tr><td><span class="hl"><strong>Top (start)</strong></span></td><td>Maximum (mgh)</td><td>Zero</td></tr>
+      <tr><td><span class="hl-g"><strong>Midway</strong></span></td><td>Equal to KE</td><td>Equal to PE</td></tr>
+      <tr><td><span class="hl-p"><strong>Bottom (just before impact)</strong></span></td><td>Zero</td><td>Maximum</td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 PE + KE = <strong>Mechanical Energy</strong> (conserved throughout free fall, ignoring air resistance)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> Who converts mechanical energy into electrical energy, and who does the reverse?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Generator/Dynamo (mechanical→electrical); Motor (electrical→mechanical) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Generator/Dynamo</strong> converts mechanical → electrical energy. <strong>Motor</strong> does the reverse (electrical → mechanical) — based on the Law of Conservation of Energy</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> What is the relationship between Kinetic Energy and Linear Momentum?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>KE = p²/2m (if momentum doubles, KE becomes 4x) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: KE = p²/2m — Kinetic Energy is proportional to the square of linear momentum. Doubling momentum → KE increases 4 times</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- LIGHT / OPTICS -->
+    <div class="sec purple">⑰ Physics — Light &amp; Optics 💡</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> The splitting of white light into colors was first explained by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Isaac Newton ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Thomas Young</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Huygens</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Maxwell</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Isaac Newton</strong> — using a prism, showed white light splits into 7 colors (VIBGYOR)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Light — Key Scientists:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Isaac Newton</strong></span> — split white light into VIBGYOR using a prism</li>
+        <li><span class="hl-g"><strong>Thomas Young</strong></span> — famous Double Slit Experiment</li>
+        <li><span class="hl-p"><strong>Huygens</strong></span> — gave the <strong>Wave Theory of Light</strong></li>
+        <li><span class="hl-b"><strong>Maxwell</strong></span> — explained <strong>Electromagnetism</strong></li>
+        <li><strong>Heisenberg</strong> — Uncertainty Principle (can't determine position &amp; velocity of a particle simultaneously)</li>
+      </ul>
+      <p class="hw">VIBGYOR: <span class="hl-p"><strong>Violet</strong></span> (shortest wavelength) → ... → <span class="hl">Red</strong> (longest wavelength — used in danger signs)</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> What is the primary function of a hearing aid?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Amplify sound for clear hearing ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: To <strong>amplify sound</strong> for clearer hearing</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> Bifocal lenses are primarily used to correct which vision problem?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Presbyopia (issues with both near AND far vision) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bifocal lenses correct BOTH near and far vision issues — upper part is <strong>concave</strong> (distance vision), lower part is <strong>convex</strong> (near vision)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> What is the primary reason for filling electric bulbs with chemically inactive gases like Nitrogen and Argon?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>To increase the life of the filament ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>To make the bulb heavier</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>To increase brightness</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>To increase the filament's lifespan</strong> (inert gases prevent oxidation of the hot filament)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> The average distance between Earth and Moon is 384,000 km; the Moon's diameter is about 3,474 km. Calculate the angular diameter of the Moon as seen from Earth (in radians).</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>≈ 0.009 radians ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Angular diameter = Diameter ÷ Distance = 3474/384000 ≈ <strong>0.009 radians</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SOUND -->
+    <div class="sec teal">⑱ Physics — Sound 🔊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> The rolling of thunder is mainly due to what?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Successive (repeated) reflection of sound ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Resonance of clouds</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Lightning effect</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Interference of sound waves</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Successive reflection of sound</strong> from clouds and land — repeated reflection of sound is called <span class="hl"><strong>reverberation</strong></span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Sound — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Sound is a <span class="hl"><strong>longitudinal wave</strong></span>; CANNOT travel in a vacuum</li>
+        <li>Speed: <span class="hl-g"><strong>Solids &gt; Liquids &gt; Gases</strong></span>; speed increases with temperature</li>
+        <li>Speed of sound in air at 0°C = <strong>331 m/s</strong>; at 20°C = <strong>344 m/s</strong></li>
+        <li>Light travels faster (3×10⁸ m/s) than sound (330 m/s) — that's why lightning is seen before thunder is heard</li>
+        <li>Sensation of sound persists in the brain for about <span class="hl-p"><strong>0.1 second</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> What is the minimum distance of an obstacle from the sound source needed for a distinct echo?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>34.4 m</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>22.5 m</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>17.2 m ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>10.6 m</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>17.2 metres</strong> is the minimum distance for a distinct echo. (Least distance of distinct vision for human eye = 25 cm — a different, commonly-confused fact)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> Which frequency range can the human ear typically hear?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>20 Hz to 20,000 Hz (20 kHz) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>20 Hz – 20 kHz</strong> — the audible range for humans</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> Which of the following groups of animals produce ultrasound (ultrasonic sound)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dolphins, Bats, Porpoises ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Whales, Elephants (produce INFRASONIC sound)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Dolphins, Bats, Porpoises</strong> produce ultrasound (&gt;20 kHz). Whales &amp; Elephants produce infrasound (&lt;20 Hz)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> When ultrasonic waves are sent into a cleaning solution, what happens to particles of dust, grease, and dirt?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>They get detached and drop out ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: They get <strong>detached and drop out</strong> — this is how ultrasonic cleaning works</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- GRAVITATION -->
+    <div class="sec green">⑲ Physics — Gravitation 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> Who determined the value of the Universal Gravitational Constant, and when?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Isaac Newton</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Albert Einstein</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Henry Cavendish, 1798 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>James Kepler</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Henry Cavendish</strong> determined G in <strong>1798</strong>. Value = <span class="hl">6.67 × 10⁻¹¹ N·m²/kg²</span> (constant everywhere)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Kepler's Laws of Planetary Motion:</strong></p>
+      <ul class="hw arr">
+        <li>1st: <span class="hl">Law of Orbits</span></li>
+        <li>2nd: <span class="hl-g">Law of Areas</span></li>
+        <li>3rd: <span class="hl-p">Law of Time Period</span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> If the distance between two objects increases 6 times, what happens to the gravitational force between them?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Decreases 36 times ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: F = Gm₁m₂/r² — since F is inversely proportional to r², if r increases 6×, F decreases <strong>36 times (6²)</strong></div>
+    </div>
+
+    <div class="formula">
+      <strong>Newton's Law of Gravitation:</strong> F = G·m₁·m₂/r²<br>
+      <strong>Electrostatic Force (Coulomb's Law):</strong> F = (1/4πε₀)·q₁·q₂/r² — unit of charge = <span class="hl">Coulomb</span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> Which of the following phenomena is explained by the Universal Law of Gravitation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tides due to the Moon and Sun ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nuclear fusion in the Sun</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Tides</strong> are explained by gravitation (Moon &amp; Sun's pull). Nuclear fusion in the Sun is a nuclear physics phenomenon, not gravitational</div>
+    </div>
+
+    <div class="sub">Tides — Types</div>
+    <table class="hw-t grn">
+      <tr><th>Tide Type</th><th>Condition</th><th>Effect</th></tr>
+      <tr><td><span class="hl"><strong>Spring Tide</strong></span></td><td>Sun, Earth, Moon in a straight line</td><td>Very high tide + very low tide</td></tr>
+      <tr><td><span class="hl-g"><strong>Neap Tide</strong></span></td><td>Sun, Earth, Moon at 90°</td><td>Moderate high/low tide</td></tr>
+      <tr><td><span class="hl-p"><strong>Diurnal Tide</strong></span></td><td>1 high + 1 low tide in 24h 50min (lunar day)</td><td>—</td></tr>
+      <tr><td><span class="hl-b"><strong>Semi-diurnal Tide</strong></span></td><td>2 high + 2 low tides in 24h 50min (or 1 each in 12h 25min)</td><td>—</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> Just before an object strikes the ground during free fall (ignoring air resistance), how are potential and kinetic energy related?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>PE is minimum (zero); KE is maximum ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: PE = mgh becomes 0 (height = 0); KE is maximum (velocity is highest)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> What is the SI unit of weight?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Newton ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Newton</strong>. Weight = mass × gravity (m×g). Mass stays constant everywhere, but weight changes with gravity (e.g., 1/6th on the Moon)</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Quantity</th><th>SI Unit</th></tr>
+      <tr><td>Weight / Force</td><td><span class="hl"><strong>Newton</strong></span></td></tr>
+      <tr><td>Energy / Work Done</td><td><span class="hl-g"><strong>Joule</strong></span></td></tr>
+      <tr><td>Pressure</td><td><span class="hl-p"><strong>Pascal</strong></span></td></tr>
+      <tr><td>Charge</td><td><strong>Coulomb</strong></td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> Which physical property remains the same on both Earth and Moon?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mass ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Weight (weight becomes 1/6th on Moon due to lower gravity)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Mass</strong> remains constant. Weight changes because gravity on the Moon is 1/6th that of Earth</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ELECTRICITY & MAGNETISM -->
+    <div class="sec orange">⑳ Physics — Electricity &amp; Magnetism ⚡</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> A charged particle enters a uniform magnetic field with velocity perpendicular to the field. What is the nature of its motion?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Circular path (due to centripetal force) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Circular path</strong> — Force F = qv×B acts as centripetal force, always perpendicular to velocity</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> According to Fleming's Left-Hand Rule, what is denoted by the second finger (forefinger) of the left hand?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Direction of Current ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Direction of Magnetic Field</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Direction of Force/Motion</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Current</strong> (Fleming's Left-Hand Rule describes Force on a current-carrying conductor)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Fleming's Left-Hand Rule (FBI):</strong> Thumb = <span class="hl">Force/motion</span>, First finger (forefinger) = <span class="hl-g">Field (magnetic)</span>... wait — memory: <strong>Th</strong>umb=Motion, <strong>F</strong>irst finger=Field, <strong>S</strong>econd finger=Current. Fleming's <strong>Right</strong>-Hand Rule (different!) tells current INDUCED in a conductor in a changing magnetic field.
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> Two long parallel wires carrying current in the SAME direction — what happens between them?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>They attract each other ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>They repel each other</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Same direction current = <strong>attraction</strong>. Opposite direction current = <strong>repulsion</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> A rectangular current-carrying loop is suspended freely in a magnetic field. What position will it naturally attain?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Perpendicular to the field lines ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The loop aligns itself <strong>perpendicular</strong> to the magnetic field lines (teacher corrected mid-lecture from "parallel" to "perpendicular")</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> What is the shape of magnetic field lines around a current-carrying solenoid?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Parallel straight lines inside; concentric circles outside ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Inside a solenoid — uniform &amp; maximum, appears as <strong>parallel straight lines</strong>. Outside — <strong>concentric closed loops</strong>. Field around a straight current-carrying conductor = circular (first shown by <span class="hl">Hans Christian Oersted</span>); direction found using the <strong>Right-Hand Thumb Rule</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Electrical Appliance Load (Amperes):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">15A</span> — Geyser, AC, Microwave, Hair dryer (heavy appliances)</li>
+        <li><span class="hl-g">5A</span> — Ceiling fan, Router, LED TV, Laptop, Refrigerator (light appliances)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> Which visionary is dubbed the "Father of Fiber Optics"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Narinder Singh Kapany ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Narinder Singh Kapany</strong> — Father of Fiber Optics</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> When was Albert Einstein awarded the Nobel Prize, and for what?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1921, for explaining the Photoelectric Effect (NOT Theory of Relativity) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>1921</strong> — for his theoretical work on the <strong>Photoelectric Effect</strong>. Heinrich Hertz first observed/described the effect; Einstein explained it theoretically (energy comes in packets called photons, ejecting electrons from a metal surface)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- RESISTANCE, DENSITY, FRICTION -->
+    <div class="sec pink">㉑ Physics — Resistance, Density &amp; Friction 🔧</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> A wire of resistance 4 ohms is stretched to double its length. What will its new resistance be?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>4 ohms</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>8 ohms</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>12 ohms</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>16 ohms ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>16 ohms</strong>. R = ρL/A. Doubling length (L→2L) AND halving area (A→A/2, since volume is conserved) → R becomes 4× the original = 4×4 = 16Ω</div>
+    </div>
+
+    <div class="formula">
+      <strong>Resistance Formula:</strong> R = ρL/A (Resistance ∝ Length, Resistance ∝ 1/Area)<br>
+      Stretching wire to double length → New R = <span class="hl">4 × Original R</span><br>
+      Cutting wire in half (length halved, area unchanged) → New R = <span class="hl-g">Original R ÷ 2</span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> Water has maximum density at what temperature?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>4°C ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>4°C</strong> — this is the "Anomalous Expansion of Water." From 0°C to 4°C, water CONTRACTS (density increases); above 4°C, it expands normally (density decreases)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> Which of the following statements about friction is correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sliding friction is smaller than static friction ✔</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Rolling friction is the smallest of all ✔</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Friction depends on how hard two surfaces press together ✔</div>
+      </div>
+      <div class="mcq-ans">✅ All TRUE — correct order: <strong>Static &gt; Sliding &gt; Rolling</strong> friction (Rolling is the LEAST). Any option claiming otherwise (e.g., "friction can be increased by making surfaces smooth") would be the FALSE/incorrect statement to pick</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Friction — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Order: <span class="hl"><strong>Static &gt; Sliding &gt; Rolling</strong></span> friction (Rolling friction is LOWEST)</li>
+        <li>Friction depends on how hard two surfaces press together</li>
+        <li>Friction is essential for walking, cycling, driving (imagine walking on ice — no friction!)</li>
+        <li>Friction can be <span class="hl-g">reduced</span> by making surfaces smooth (e.g., using grease/lubricant); <span class="hl-p">increased</span> by making surfaces rough</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> Which of the following devices work on Archimedes' Principle?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lactometer, Hydrometer ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Barometer (measures pressure)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ammeter (measures current)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Thermometer (measures temperature)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Lactometer</strong> &amp; <strong>Hydrometer</strong> work on Archimedes' Principle (buoyant force = weight of fluid displaced)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ELECTROMAGNET -->
+    <div class="sec blue">㉒ Physics — Electromagnetism (Applications) 🔔</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> What does the electromagnet do once it is activated in an electric bell?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Pulls the iron strip toward itself ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Pulls the contact screw</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Melts the coil</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — The electromagnet <strong>pulls the iron strip</strong> toward itself, which then hits the bell and breaks the circuit momentarily (creating the ringing action)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> What happens to the kinetic energy of particles as the temperature of matter increases?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kinetic energy increases (particles move faster) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: KE increases — as temperature ↑, particle velocity ↑, and KE = ½mv² is directly proportional to v²</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — All Key Facts (Biology/Chemistry/Physics)</div>
+    <table class="qr-t">
+      <tr><th>Topic / Fact</th><th>Answer</th></tr>
+      <tr><td>Cork cells discovered by</td><td>Robert Hooke, 1665</td></tr>
+      <tr><td>Cork cell wall substance</td><td>Suberin</td></tr>
+      <tr><td>Fungal cell wall / arthropod exoskeleton</td><td>Chitin</td></tr>
+      <tr><td>Water/mineral conduction in plants</td><td>Xylem (vessels &amp; tracheae)</td></tr>
+      <tr><td>Meristematic tissue features</td><td>Lacks vacuoles, dense cytoplasm, prominent nucleus</td></tr>
+      <tr><td>Max electrons in an orbit (Bohr model)</td><td>2n²</td></tr>
+      <tr><td>Not part of endocrine system</td><td>Kidney</td></tr>
+      <tr><td>Master gland</td><td>Pituitary gland</td></tr>
+      <tr><td>Growth hormone-releasing factor from</td><td>Hypothalamus</td></tr>
+      <tr><td>Plastids similar to (organelle)</td><td>Mitochondria (both have own DNA/ribosomes)</td></tr>
+      <tr><td>Stress hormone of plants</td><td>Abscisic acid</td></tr>
+      <tr><td>Cell division hormone in plants</td><td>Cytokinin</td></tr>
+      <tr><td>Flowering &amp; germination hormone</td><td>Gibberellin</td></tr>
+      <tr><td>Bile juice functions</td><td>Basic medium + emulsifies fat</td></tr>
+      <tr><td>ATP produced in (mitochondria part)</td><td>Cristae (inner membrane)</td></tr>
+      <tr><td>Squamous epithelium location</td><td>Mouth, esophagus, skin</td></tr>
+      <tr><td>Cardiac muscle nature</td><td>Involuntary, Striated, Branched, Uninucleated</td></tr>
+      <tr><td>Skeletal muscle nucleation</td><td>Multinucleated</td></tr>
+      <tr><td>Reflex action controlled by</td><td>Spinal cord</td></tr>
+      <tr><td>Thinking controlled by</td><td>Forebrain</td></tr>
+      <tr><td>Spinal cord protected by</td><td>Vertebral column</td></tr>
+      <tr><td>Aerobic respiration products</td><td>CO2 + H2O + 36 ATP</td></tr>
+      <tr><td>Anaerobic (muscle) respiration product</td><td>Lactic acid + energy</td></tr>
+      <tr><td>Fermentation (yeast) products</td><td>Ethanol + CO2 + energy</td></tr>
+      <tr><td>Light reaction location</td><td>Grana</td></tr>
+      <tr><td>Dark reaction location</td><td>Stroma</td></tr>
+      <tr><td>Father of Microbiology</td><td>Antonie van Leeuwenhoek</td></tr>
+      <tr><td>Smallpox vaccine discoverer</td><td>Edward Jenner</td></tr>
+      <tr><td>Halons release which atom</td><td>Bromine</td></tr>
+      <tr><td>Montreal Protocol signed</td><td>Sept 16, 1987</td></tr>
+      <tr><td>Vienna Convention</td><td>1985</td></tr>
+      <tr><td>Kigali Amendment target</td><td>HFCs</td></tr>
+      <tr><td>Law of Octaves — applicable up to</td><td>Calcium (by Newlands, 1865)</td></tr>
+      <tr><td>Modern Periodic Table by</td><td>Henry Moseley, 1913 (atomic number)</td></tr>
+      <tr><td>Total Rare Earth Elements</td><td>17 (15 Lanthanides + Scandium + Yttrium)</td></tr>
+      <tr><td>Coke used in</td><td>Steel manufacturing (reducing agent)</td></tr>
+      <tr><td>Evaporation causes</td><td>Cooling (not heating)</td></tr>
+      <tr><td>Nuclear fusion uses</td><td>Hydrogen &amp; its isotopes</td></tr>
+      <tr><td>Nuclear fission uses</td><td>Uranium-235, Thorium</td></tr>
+      <tr><td>Thorium found in</td><td>Monazite sand (South Indian coasts)</td></tr>
+      <tr><td>India's first Fast Breeder Reactor</td><td>Kalpakkam, Tamil Nadu</td></tr>
+      <tr><td>Cobalt-60 / Iodine-131 used for</td><td>Cancer / Goiter treatment</td></tr>
+      <tr><td>Copper corrosion coating</td><td>Copper Carbonate (green)</td></tr>
+      <tr><td>Iron corrosion coating</td><td>Iron Oxide (reddish-brown)</td></tr>
+      <tr><td>Silver corrosion coating</td><td>Silver Sulfide (black)</td></tr>
+      <tr><td>Candle flame hottest zone</td><td>Outermost (blue)</td></tr>
+      <tr><td>LPG main constituent (home use)</td><td>Butane</td></tr>
+      <tr><td>Ujjwala Yojana launched</td><td>May 1, 2016, Ballia, UP</td></tr>
+      <tr><td>Electron discovered by</td><td>J.J. Thomson, 1897</td></tr>
+      <tr><td>Neutron discovered by</td><td>James Chadwick, 1932</td></tr>
+      <tr><td>Nucleus discovered by</td><td>Rutherford</td></tr>
+      <tr><td>Mass = measure of</td><td>Inertia</td></tr>
+      <tr><td>White light splitting explained by</td><td>Isaac Newton</td></tr>
+      <tr><td>Wave theory of light by</td><td>Huygens</td></tr>
+      <tr><td>Electromagnetism explained by</td><td>Maxwell</td></tr>
+      <tr><td>Rolling of thunder due to</td><td>Successive reflection of sound</td></tr>
+      <tr><td>Speed of sound at 0°C</td><td>331 m/s</td></tr>
+      <tr><td>Min. distance for distinct echo</td><td>17.2 m</td></tr>
+      <tr><td>Human audible frequency range</td><td>20 Hz – 20 kHz</td></tr>
+      <tr><td>Ultrasound producers</td><td>Dolphins, Bats, Porpoises</td></tr>
+      <tr><td>Universal Gravitational Constant by</td><td>Henry Cavendish, 1798</td></tr>
+      <tr><td>G value</td><td>6.67×10⁻¹¹ N·m²/kg²</td></tr>
+      <tr><td>Tides explained by</td><td>Universal Law of Gravitation</td></tr>
+      <tr><td>Water max density at</td><td>4°C</td></tr>
+      <tr><td>Friction order (highest to lowest)</td><td>Static &gt; Sliding &gt; Rolling</td></tr>
+      <tr><td>Archimedes' Principle devices</td><td>Lactometer, Hydrometer</td></tr>
+      <tr><td>Father of Fiber Optics</td><td>Narinder Singh Kapany</td></tr>
+      <tr><td>Einstein's Nobel Prize (1921) for</td><td>Photoelectric Effect</td></tr>
+      <tr><td>Stretched wire (double length) resistance</td><td>4× original</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Science Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>Pepsin (acidic) vs Trypsin (basic)</strong></span> — both break proteins into amino acids, but in different mediums!</li>
+          <li>Evaporation = <span class="hl-g"><strong>COOLING</strong></span>, not heating — common trap in exams</li>
+          <li>Modern Periodic Table (Moseley) = <strong>atomic number</strong>; older ones (Mendeleev, Newlands) = atomic mass</li>
+          <li>Nuclear <span class="hl-p"><strong>Fusion</strong></span> = Hydrogen isotopes; <strong>Fission</strong> = Uranium/Thorium — don't swap!</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Stretching a wire → Resistance × <span class="hl"><strong>4</strong></span>; Cutting a wire in half → Resistance ÷ <strong>2</strong></li>
+          <li>Water's anomalous expansion — max density at <span class="hl-g"><strong>4°C</strong></span>, contracts from 0°C to 4°C (opposite of normal liquids)</li>
+          <li>Mass = Inertia (constant everywhere); Weight = mass × gravity (changes with location, e.g., 1/6th on Moon)</li>
+          <li>Einstein got his Nobel for the <span class="hl-p"><strong>Photoelectric Effect</strong></span>, NOT Relativity!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF SCIENCE NOTES</div>
+      <strong>SSC GD Series | Biology + Chemistry + Physics Fully Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
