@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Blitz Lecture 15 | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Blitz Lecture 15 Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">⚡ Blitz Lecture 15 — Topper Notes</div>
+    <div class="cover-sub">Mixed PYQ Series | Culture · Polity · Economy · History · Chemistry · Geography · Current Affairs</div>
+    <div class="cover-badge">🏛️ Polity · 💰 Economy · 🎭 Culture · 📜 History · ⚗️ Chemistry · 🌍 Geography · 📰 Current Affairs</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- BIHU -->
+    <div class="sec orange">① Art &amp; Culture — Bihu Festival, Assam 🎋</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Read the statements about the Bihu festival in Assam and choose the correct option: (1) Goru Bihu/Kati Bihu involves sky lamps to attract pests; (2) Bhogali Bihu features bonfire and feasting; (3) Manu Bihu includes gifting Gamucha and traditional dishes.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only 2 and 3 are correct ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Only 1 and 2</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>All three correct</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Only 1 and 3</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Statement 1 is WRONG (Goru Bihu is the 1st day of Rangali Bihu, about cattle worship, NOT sky lamps/pests). Statements 2 &amp; 3 are correct.</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Assam's 3 Bihu Festivals:</strong></p>
+      <table class="hw-t org">
+        <tr><th>Bihu Name</th><th>Also Called</th><th>Timing</th></tr>
+        <tr><td><span class="hl"><strong>Rangali Bihu</strong></span></td><td>Bohag Bihu</td><td>Mid-<strong>April</strong> — the <span class="hl-g">New Year</span> festival</td></tr>
+        <tr><td><span class="hl-p"><strong>Bhogali Bihu</strong></span></td><td>Magh Bihu</td><td>Mid-<strong>January</strong> — bonfire &amp; feasting</td></tr>
+        <tr><td><span class="hl-b"><strong>Kangali Bihu</strong></span></td><td>Kati Bihu</td><td>Mid-<strong>October</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="sub">Rangali Bihu — Day-wise Breakdown</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Day 1</span> <strong>Goru Bihu</strong> (Cow Bihu) — cattle worshipped, bathed</div>
+      <div class="tl-item"><span class="yr">Day 2</span> <span class="hl"><strong>Manu Bihu</strong></span> (Human Bihu) — gifting of <strong>Gamucha (Gamusa)</strong> and traditional dishes among family/relatives</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BHARATANATYAM -->
+    <div class="sec purple">② Art &amp; Culture — Bharatanatyam 💃</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> What is the thematic focus of the "Padam" item in Bharatanatyam?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Abstract rhythmic patterns</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Devotional love and divine affection (expression-driven) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pure footwork</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Energetic fast-paced conclusion</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Padam</strong> is an expression-driven segment showcasing love and divine affection through acting/expression</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Bharatanatyam — 7 Stages (in order):</strong></p>
+      <div class="tl">
+        <div class="tl-item"><span class="yr">1</span> <span class="hl"><strong>Pushpanjali</strong></span> — opening; flower offering</div>
+        <div class="tl-item"><span class="yr">2</span> <span class="hl-g"><strong>Alaripu</strong></span> — pure dance; invokes God; builds momentum</div>
+        <div class="tl-item"><span class="yr">3</span> <strong>Jati Swaram</strong> — intricate footwork</div>
+        <div class="tl-item"><span class="yr">4</span> <strong>Shabdam</strong> — expressive storytelling</div>
+        <div class="tl-item"><span class="yr">5</span> <span class="hl-p"><strong>Varnam</strong></span> — longest &amp; most demanding part</div>
+        <div class="tl-item"><span class="yr">6</span> <span class="hl-b"><strong>Padam</strong></span> — expression-driven; love, divine affection</div>
+        <div class="tl-item"><span class="yr">7</span> <strong>Tillana</strong> — energetic, fast-paced conclusion</div>
+      </div>
+      <p class="hw">Bharatanatyam is also called <span class="hl"><strong>Sadir Attam</strong></span> — a <strong>Shaivaite</strong> (Tandava-dominant) dance form from Tamil Nadu</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MISSION SHAKTI -->
+    <div class="sec red">③ Polity — Mission Shakti Scheme ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> The Mission Shakti scheme launched by the Indian government aims to address which of the following issues?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ensuring safety, security &amp; empowerment of women through various interventions ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Renewable energy adoption among women entrepreneurs</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Strengthening healthcare infrastructure</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Financial assistance for higher education exclusively to female students</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Mission Shakti is an <strong>umbrella scheme</strong> under the <span class="hl">Ministry of Women &amp; Child Development</span></div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">SAMBAL (SAFETY &amp; SECURITY)</div>
+        One-Stop Centers<br>
+        Women's Helpline<br>
+        <span class="hl">Beti Bachao Beti Padhao</span><br>
+        Nari Adalat
+      </div>
+      <div class="sticky green">
+        <div class="slbl">SAMARTHYA (EMPOWERMENT)</div>
+        <span class="hl-g">Pradhan Mantri Matru Vandana Yojana</span> (maternity benefits)<br>
+        Shakti Sadan, Sakhi Niwas, Palna
+      </div>
+    </div>
+    <div class="trick">
+      🧠 <strong>Article 42 (DPSP)</strong> — Provision for just working conditions and <span class="hl">maternity relief</span>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- PANCHAYATI RAJ & AMENDMENTS -->
+    <div class="sec blue">④ Polity — Constitutional Amendments &amp; Panchayati Raj 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which Constitutional Amendment granted constitutional status to the Panchayati Raj Institutions?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>42nd Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>52nd Amendment</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>99th Amendment</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>73rd Amendment ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>73rd Amendment (1992)</strong>, implemented <span class="hl">April 24, 1993</span> (celebrated as Panchayati Raj Day). PM at the time: P.V. Narasimha Rao</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Amendment</th><th>Key Provision</th></tr>
+      <tr><td><span class="hl"><strong>42nd (1976)</strong></span></td><td>"Mini Constitution" — Fundamental Duties added; 4 DPSPs added; Council of Ministers' advice made binding on President</td></tr>
+      <tr><td><span class="hl-g"><strong>52nd (1985)</strong></span></td><td>Added 10th Schedule — <strong>Anti-Defection Law</strong> (Presiding Officer/Speaker has final say on disqualification, NOT the President)</td></tr>
+      <tr><td><span class="hl-p"><strong>91st Amendment</strong></span></td><td>Added the <strong>2/3 merger exception</strong> to anti-defection; Art 75(1A) — CoM strength capped at 15% of Lok Sabha; Art 75(1B) — defection clause for ministers</td></tr>
+      <tr><td><span class="hl-b"><strong>73rd (1992)</strong></span></td><td><strong>Panchayati Raj</strong> — 3-tier system; Part IX; Art 243–243O; 11th Schedule (29 items)</td></tr>
+      <tr><td><strong>74th (1992)</strong></td><td><strong>Municipalities</strong> — Part IXA; Art 243P–243ZG; 12th Schedule (18 items)</td></tr>
+      <tr><td><strong>97th (2011)</strong></td><td><strong>Cooperative Societies</strong> — Part IXB; Art 243ZH–243ZT</td></tr>
+      <tr><td><strong>99th Amendment</strong></td><td>Created the <span class="hl-p">NJAC</span> (National Judicial Appointments Commission) — later struck down as unconstitutional in the Fourth Judges Case; Collegium system restored</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Panchayati Raj — Committees:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Balwant Rai Mehta Committee (1957)</span> — recommended <strong>3-tier</strong> system</li>
+        <li><span class="hl-g">Ashok Mehta Committee (1977)</span> — recommended <strong>2-tier</strong> system</li>
+        <li>Other committees: G.V.K. Rao, P.K. Thungon, L.M. Singhvi</li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Quick Article Recall (73rd Amendment):</strong> Art <span class="hl">243E</span> = 5-year term of Panchayat (remainder term only if dissolved early). Art <span class="hl-g">243F</span> = Disqualification grounds (min age 21 to contest; decided by <strong>State Legislature</strong>). Art <span class="hl-p">243G</span> = Powers, authority &amp; responsibilities of Panchayats.</p>
+    </div>
+
+    <div class="sub">Collegium System — Case Evolution</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1st Judges Case</span> CJI's advice to President treated as just advice</div>
+      <div class="tl-item"><span class="yr">2nd Judges Case</span> CJI's advice made <span class="hl">binding</span> — but needed consultation with 2 more judges</div>
+      <div class="tl-item"><span class="yr">3rd Judges Case</span> Expanded — CJI needed consultation with <span class="hl-g">4 judges</span></div>
+      <div class="tl-item"><span class="yr">4th Judges Case (SP Gupta case link)</span> NJAC (99th Amendment) struck down as unconstitutional; Collegium restored</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ECONOMICS: ELASTICITY & UTILITY -->
+    <div class="sec green">⑤ Economics — Elasticity, Utility &amp; Taxation 💰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Total revenue is maximized when price elasticity of demand equals what value?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Elasticity = 1 (Unitary elastic) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Revenue is maximized when <strong>Elasticity = 1</strong> — demand changes proportionally to price change</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Elasticity Types:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Price Elasticity</span> = % Change in Demand ÷ % Change in Price</li>
+        <li><span class="hl-g">Income Elasticity</span> = % Change in Demand ÷ % Change in Income</li>
+      </ul>
+      <p class="hw"><strong>Law of Diminishing Marginal Utility:</strong> Utility (satisfaction) from each additional unit consumed <span class="hl-p">decreases</span>. Sum of all marginal utilities = Total Utility.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which best explains why indirect taxes are considered regressive?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>They apply equally to all income groups, burdening the poor proportionally more ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Indirect taxes (e.g., GST) apply the <strong>same rate to everyone</strong> regardless of income — this hits lower-income groups harder proportionally</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Tax Type</th><th>Nature</th><th>Examples</th></tr>
+      <tr><td><span class="hl"><strong>Direct Tax</strong></span></td><td><strong>Progressive</strong> — increases with income</td><td>Income tax, Wealth tax, Gift tax ("paper taxes" — low collection)</td></tr>
+      <tr><td><span class="hl-g"><strong>Indirect Tax</strong></span></td><td><strong>Regressive</strong> — same rate for all</td><td>GST, Service tax, Sales tax, Excise, Customs</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Only ~3% of India's population pays direct taxes</strong> — but everyone pays indirect taxes (e.g., GST on purchases) even if they don't realize it, since sellers deposit it on their behalf.</p>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Surcharge vs Cess — Kept ENTIRELY by Centre (not shared with states):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Surcharge</span> — "tax on tax" for high-income earners</li>
+        <li><span class="hl-g">Cess</span> — levied for a specific purpose (e.g., education cess, pollution cess) — applies to everyone</li>
+      </ul>
+      <p class="hw"><strong>Laffer Curve:</strong> As tax rate ↑, tax collection ↑ — but after a point, collection starts to <span class="hl-p">decline</span> (bell-shaped curve)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- 1857 REVOLT -->
+    <div class="sec purple">⑥ Modern History — Revolt of 1857 🚩</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Assertion (A): Pir Ali Khan was executed during the 1857 Revolt. Reason (R): He was a British informant who switched sides during the uprising.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A is true, but R is false ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Both A and R are true</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Both are false</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>A is false, R is true</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Pir Ali Khan was indeed hanged during 1857, BUT he was NOT a British informant — he actually <strong>started a rebellion AGAINST the British</strong> and remained loyal to the cause throughout</div>
+    </div>
+
+    <div class="sub">1857 Revolt — Causes &amp; Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Background</span> Governor-General: <strong>Canning</strong> (later became the first <span class="hl">Viceroy</span> under the Govt. of India Act 1858 / Queen's Proclamation)</div>
+      <div class="tl-item"><span class="yr">Policies causing anger</span> <strong>Doctrine of Lapse</strong> (Awadh annexed in 1856, last Nawab Wajid Ali Shah); <strong>General Service Enlistment Act</strong> (forced overseas service — against religious beliefs)</div>
+      <div class="tl-item"><span class="yr">Immediate cause</span> <span class="hl-g"><strong>Greased cartridges</strong></span> — <strong>Mangal Pandey</strong> (34th Native Infantry) refused to use them, was hanged; revolt began <strong>April 8, 1857</strong></div>
+      <div class="tl-item"><span class="yr">May 10, 1857</span> Meerut soldiers refused to fire; freed jailed comrades → started the <span class="hl-p">"Delhi Chalo"</span> campaign</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Why the 1857 Revolt Failed:</strong></p>
+      <ul class="hw arr">
+        <li>Did not reach South India</li>
+        <li>No single unifying national idea — everyone fought for their own local cause</li>
+        <li>Lack of full-fledged mass movement/participation</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- COLLOIDS -->
+    <div class="sec teal">⑦ Chemistry — Colloids &amp; Mixtures 🧪</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> The solute-like component of the dispersed particles in a colloid forms the ___?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dispersed phase ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Continuous phase</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Solvent</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Solution</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — In a colloid, the "solute-like" component = <strong>Dispersed Phase</strong>; the "solvent-like" component = <strong>Dispersion Medium</strong></div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Mixture Type</th><th>Particle Size</th><th>Stability</th><th>Tyndall Effect</th></tr>
+      <tr><td><span class="hl"><strong>Homogeneous (Solution)</strong></span></td><td>&lt; 1 nm</td><td>Stable (no settling)</td><td>No</td></tr>
+      <tr><td><span class="hl-g"><strong>Colloid</strong></span></td><td>1 nm – 100 nm</td><td>Fairly stable</td><td><strong>Yes</strong></td></tr>
+      <tr><td><span class="hl-p"><strong>Heterogeneous (Suspension)</strong></span></td><td>&gt; 100 nm</td><td>Unstable (settles)</td><td><strong>Yes</strong></td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Colloid Examples:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Tincture of Iodine</span> (antiseptic) — Iodine (solute) + Alcohol (solvent) — actually a true solution</li>
+        <li><span class="hl-g">Milk</span> = Emulsion (liquid dispersed in liquid)</li>
+        <li><span class="hl-p">Paint</span> = Emulsion (liquid in liquid)</li>
+        <li><span class="hl-b">Foam rubber</span> = Solid Sol (gas dispersed in solid)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- GOI ACT 1919 -->
+    <div class="sec red">⑧ Modern History — Government of India Acts 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which system introduced by the Government of India Act 1919 classified provincial subjects into "reserved" and "transferred" categories?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dyarchy (Diarchy) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Federation</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Bicameralism</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Responsible Government</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Dyarchy</strong>, introduced by the Govt. of India Act 1919 (Montford/Montagu-Chelmsford Reforms) at the PROVINCIAL level</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Category</th><th>Subjects</th><th>Accountability</th></tr>
+      <tr><td><span class="hl"><strong>Reserved</strong></span></td><td>Important subjects (e.g., Police)</td><td>Governor + ministers administer, <strong>NOT accountable</strong> to legislature</td></tr>
+      <tr><td><span class="hl-g"><strong>Transferred</strong></span></td><td>Less important (Education, Health, Local Govt.)</td><td>Governor <strong>IS accountable</strong></td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>1919 vs 1935 Act:</strong> Govt. of India Act <span class="hl">1919</span> introduced <strong>Dyarchy at the PROVINCES</strong>. Govt. of India Act <span class="hl-g">1935</span> introduced <strong>Dyarchy at the CENTRE</strong> (reversed it!) and gave <strong>provincial autonomy</strong> + bicameralism to 6 of 11 provinces.</p>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>India's Federation — Types of Commentary:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">K.C. Wheare</span> — "Quasi-federal"</li>
+        <li><span class="hl-g">Granville Austin</span> — "Cooperative federalism"</li>
+        <li><span class="hl-p">Morris Jones</span> — "Bargaining federalism"</li>
+        <li><strong>Ivor Jennings</strong> — "Federation with a strong Centre"</li>
+      </ul>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Federal Features</th><th>Unitary Features</th></tr>
+      <tr><td>Bicameralism (state representation in Rajya Sabha)</td><td>Governor appointed by Centre</td></tr>
+      <tr><td>Rigid Constitution (parts requiring special majority)</td><td>All India Services</td></tr>
+      <tr><td>—</td><td>Single citizenship, Single Constitution, Flexible amendment process</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- SPORTS: HANDBALL -->
+    <div class="sec orange">⑨ Sports — Handball Rules 🤾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> The free throw line in handball is drawn 3 metres outside the goal area line and is represented by a broken line — segments 15 cm long with 15 cm spaces between them. Assess this statement.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Both statement and explanation are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both parts are factually correct as stated</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Players Count (Ball Sports):</strong> Basketball = 5 | Volleyball = 6 | Handball = 7 | Netball = 7 | Baseball = 9
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ANCIENT HISTORY: CHAITYAS/VIHARAS -->
+    <div class="sec green">⑩ Ancient History — Rock-Cut Architecture 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which of the following ancient Indian sites is famous for its chaityas and viharas carved into rock?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Hampi</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mahabalipuram</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Ajanta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Thanjavur</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Ajanta</strong> — 29+1 (unfinished) caves, ALL Buddhist. <strong>Chaitya</strong> = place of worship; <strong>Vihara</strong> = residence for monks</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Site</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl"><strong>Hampi</strong></span></td><td>Capital of Vijayanagara Empire; named after Goddess Pampa Devi; on the Tungabhadra River (tributary of Krishna)</td></tr>
+      <tr><td><span class="hl-g"><strong>Mahabalipuram</strong></span></td><td>Pallava architecture (introduced Dravidian style); Pancharatha temples started by <strong>Mahendravarman I</strong>, completed by <strong>Narasimhavarman I</strong> (defeated Pulakeshin II, took title "Vatapikonda"); Shore Temple built by <strong>Narasimhavarman II</strong> ("Rajasimha")</td></tr>
+      <tr><td><span class="hl-p"><strong>Thanjavur</strong></span></td><td>Chola temples — Brihadeeswarar Temple (by Raja Raja Chola, aka Rajarajeshwara Temple); another Brihadeeswarar temple at Gangaikonda Cholapuram (by Rajendra Chola)</td></tr>
+      <tr><td><span class="hl-b"><strong>Ajanta</strong></span></td><td>29+1 unfinished caves; ALL Buddhist</td></tr>
+      <tr><td><strong>Ellora</strong></td><td>34 caves — Hindu, Jain, AND Buddhist; Cave 16 = <strong>Kailash Temple</strong></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ECONOMICS: EMPLOYMENT SECTORS -->
+    <div class="sec red">⑪ Economics — Employment Sectors &amp; Structure 👷</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> The planning approach between 1951 and 1990 led to a successful transformation of India's employment structure — over 65% of India's workforce remained dependent on agriculture during this period. Evaluate this statement.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The statement is misleading — the transformation was NOT successful; India directly jumped from primary to tertiary, bypassing secondary (manufacturing) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: India's employment structure did NOT transform successfully — it made a "leapfrog jump" from primary directly to tertiary, largely BYPASSING the secondary (manufacturing) sector</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Sector</th><th>LFPR (Labour Force Participation)</th><th>GDP Contribution</th><th>Jobs</th></tr>
+      <tr><td><span class="hl"><strong>Primary</strong></span></td><td><strong>Highest</strong></td><td>Lowest</td><td>"Red collar" jobs — agriculture, mining, fishing, forestry</td></tr>
+      <tr><td><span class="hl-g"><strong>Secondary</strong></span></td><td>Moderate (underdeveloped in India)</td><td>Moderate</td><td>"Blue &amp; white collar" — manufacturing</td></tr>
+      <tr><td><span class="hl-p"><strong>Tertiary</strong></span></td><td><strong>Lowest</strong></td><td><strong>Highest</strong></td><td>"White collar" — services (teaching, banking, hospitality, transport)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>India's Employment Structure Over Time:</strong></p>
+      <ul class="hw arr">
+        <li>At Independence (1947): <span class="hl"><strong>~75%</strong></span> of population engaged in agriculture &amp; allied activities</li>
+        <li>1951 Census: Agriculture LFPR — (baseline reference)</li>
+        <li>2011 Census: LFPR figures show shift — Agriculture ~<span class="hl-g">56.6%</span>; comparatively small growth in secondary; service sector share ~21%</li>
+      </ul>
+      <p class="hw">India's <strong>secondary sector (manufacturing) is underdeveloped</strong> — hence most clothing/goods say "Made in Bangladesh" (Bangladesh's secondary sector is stronger than India's)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MUSIC LEGENDS -->
+    <div class="sec purple">⑫ Art &amp; Culture — Classical Musicians (Sitar &amp; More) 🎻</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Which classical musician is credited with popularizing the sitar on the global music scene?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Pandit Ravi Shankar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ustad Vilayat Khan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pandit Nikhil Banerjee</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ustad Alauddin Khan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Pandit Ravi Shankar</strong>. All 3 sitar players (Ravi Shankar, Vilayat Khan, Nikhil Banerjee) are associated with the <span class="hl">Maihar Gharana</span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Pandit Ravi Shankar — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Belongs to <span class="hl">Maihar Gharana</span> (founder: Alauddin Khan)</li>
+        <li>First wife: <span class="hl-g">Annapurna Devi</span> — exponent of the <strong>Surbahar</strong></li>
+        <li>Son: <span class="hl-p"><strong>Ali Akbar Khan</strong></span> — famous Sarod player</li>
+        <li>First Indian to win a <span class="hl-b"><strong>Grammy</strong></span> (1967, for "West Meets East")</li>
+        <li>Received <strong>Bharat Ratna in 1999</strong> — 2nd musician to receive it</li>
+      </ul>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Person</th><th>Association</th></tr>
+      <tr><td><span class="hl"><strong>Tanvi Shah</strong></span></td><td>First Indian WOMAN to receive a Grammy</td></tr>
+      <tr><td><span class="hl-g"><strong>M.S. Subbulakshmi</strong></span></td><td>"Queen of Carnatic Music"; father: Purandara Das; FIRST Indian musician to receive Bharat Ratna</td></tr>
+      <tr><td><span class="hl-p"><strong>T.H. Vinayakram (Vikku Vinayakram)</strong></span></td><td>Ghatam exponent (percussion instrument)</td></tr>
+      <tr><td><strong>Ali Akbar Khan</strong></td><td>Sarod player; son of Pandit Ravi Shankar's first wife's household (son of Ravi Shankar)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SOUTHERN OSCILLATION / EL NINO -->
+    <div class="sec teal">⑬ Geography — Southern Oscillation, El Niño &amp; ITCZ 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> Which of the following correctly defines the Southern Oscillation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Periodic changes in pressure conditions in the Pacific &amp; Indian Ocean ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Periodic pressure changes across India due to ITCZ shifts</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Periodic reversal of winds in the Indian Peninsula (Monsoon)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Reversal of jet streams during the monsoon season</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Southern Oscillation = periodic pressure changes in the <strong>Pacific and Indian Ocean</strong> — linked to El Niño</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>ITCZ (Intertropical Convergence Zone):</strong></p>
+      <ul class="hw arr">
+        <li>Zone where NE &amp; SE trade winds converge near the equator</li>
+        <li>NOT fixed at 0° — it's a <span class="hl">variable belt</span>, shifting with the sun's apparent movement</li>
+        <li>June 21 (Summer Solstice) — sun overhead at Tropic of Cancer → ITCZ shifts <span class="hl-g">north</span></li>
+        <li><span class="hl-p">Doldrums</span> — belt near equator (5°N–5°S), calm winds</li>
+        <li><span class="hl-b">Horse Latitudes</span> — belt at 30°N–30°S</li>
+      </ul>
+    </div>
+
+    <div class="sub">El Niño vs La Niña</div>
+    <table class="hw-t teal-h">
+      <tr><th>Phenomenon</th><th>Meaning</th><th>Effect</th></tr>
+      <tr><td><span class="hl"><strong>El Niño</strong></span></td><td>"Little Boy" (Christ Child) — trade winds weaken</td><td>Warm water stays in E. Pacific → NO upwelling → fishing industry (Peru) hurt; poor monsoon in India; drought in Australia</td></tr>
+      <tr><td><span class="hl-g"><strong>La Niña</strong></span></td><td>"Little Girl" — opposite of El Niño</td><td>Trade winds strengthen; heavy rainfall in Australia AND India</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Related Oscillations:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Indian Ocean Dipole (IOD)</span> — <strong>Positive IOD</strong> (low pressure west, high pressure east of Indian Ocean) = good rainfall in India</li>
+        <li><span class="hl-g">Madden-Julian Oscillation (MJO)</span> — cluster of clouds/rain moving from Indian Ocean → Pacific Ocean, affects monsoon intensity</li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Trade Winds:</strong> NE Trades &amp; SE Trades are <span class="hl">Primary/Permanent winds</span> (along with Westerlies and Polar Easterlies). <strong>Jet Streams</strong> = high-speed upper atmosphere winds; when Tropical Easterly Jet Streams weaken/shift (replaced by Westerly Jet Streams), monsoon in India weakens.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- PLANT PIGMENTS -->
+    <div class="sec green">⑭ Biology — Plant Pigments 🌿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Which pigment allows plants to absorb light mainly in the blue and red wavelengths?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Chlorophyll a ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Carotenoids</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Anthocyanins</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chlorophyll b</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Chlorophyll a</strong> (primary pigment) absorbs blue &amp; red, reflects green — giving leaves their green color</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Pigment</th><th>Solubility</th><th>Colors Given</th></tr>
+      <tr><td><span class="hl"><strong>Carotenoids</strong></span></td><td>Lipid/fat-soluble</td><td>Yellow, Orange, Red</td></tr>
+      <tr><td><span class="hl-g"><strong>Anthocyanins</strong></span></td><td>Water-soluble</td><td>Red, Purple, Blue</td></tr>
+      <tr><td><span class="hl-p"><strong>Chlorophyll a</strong></span></td><td>—</td><td>Primary pigment; absorbs blue/red, reflects Green</td></tr>
+      <tr><td><span class="hl-b"><strong>Chlorophyll b</strong></span></td><td>—</td><td>Accessory pigment — broadens the wavelength range chlorophyll a can absorb</td></tr>
+    </table>
+    <div class="trick">
+      🧠 "<strong>Roy-Antho-Roy</strong>" — Carotenoids give <span class="hl">R</span>ed/<span class="hl">O</span>range/<span class="hl">Y</span>ellow (ROY); Anthocyanins give the rest. Chlorophyll's central metal = <span class="hl-g"><strong>Magnesium</strong></span> (like iron gives blood its red color)
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CHAMPARAN & GANDHI -->
+    <div class="sec red">⑮ Modern History — Gandhi's Early Satyagrahas 🕊️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Who is the author of the book "Gandhi in Champaran," describing Mahatma Gandhi's first Satyagraha struggle on Indian soil in 1917?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>D.G. Tendulkar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Toru Dutt</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rajendra Prasad</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kamala Das</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>D.G. Tendulkar</strong>. Champaran (Bihar), 1917 — Gandhi's first Satyagraha in India</div>
+    </div>
+
+    <div class="sub">Gandhi's First 3 Movements — Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1917</span> <span class="hl"><strong>Champaran Satyagraha</strong></span> (Bihar) — against the <strong>Tinkathia system</strong> (3/20th of land forced for indigo cultivation); invited by <strong>Rajkumar Shukla</strong>; led to the Champaran Agrarian Act, 1918</div>
+      <div class="tl-item"><span class="yr">1918</span> <span class="hl-g"><strong>Ahmedabad Mill Strike</strong></span> — workers demanded 50% wage hike, owners offered 20%; Gandhi settled at <strong>35%</strong>; invited by Anasuya Sarabhai (sister of a mill owner)</div>
+      <div class="tl-item"><span class="yr">1918</span> <span class="hl-p"><strong>Kheda Satyagraha</strong></span> (Gujarat) — crop failure; farmers demanded tax waiver; Gandhi got the tax <strong>suspended</strong> for the year; Sardar Patel was already leading here</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- INDIAN INDEPENDENCE ACT 1947 -->
+    <div class="sec blue">⑯ Modern History — Indian Independence Act, 1947 🇮🇳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which of the following was a key provision of the Indian Independence Act, 1947, regarding the princely states?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Freedom to choose between joining India, joining Pakistan, or remaining independent ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Princely states had the <strong>freedom to choose</strong> — join India, join Pakistan, or remain independent. Based on the <span class="hl">Mountbatten Plan</span>; created two dominions — India and Pakistan</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- DAMS -->
+    <div class="sec orange">⑰ Geography — Major Dams of India 🏗️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> The Hirakud Dam Project is a multipurpose scheme for flood control, irrigation, and power generation. It is built across which river?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mahanadi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Mahanadi</strong> River, Sambalpur district, Odisha — <strong>longest dam</strong> in India</div>
+    </div>
+
+    <div class="sub">Indus Tributaries — Dams (Jhelum, Chenab, Ravi, Beas, Sutlej)</div>
+    <table class="hw-t org">
+      <tr><th>River</th><th>Major Dams</th></tr>
+      <tr><td><span class="hl"><strong>Jhelum</strong></span></td><td>Tulbul (Kishanganga) — "Bulbul pushed into Jhelum" memory trick</td></tr>
+      <tr><td><span class="hl-g"><strong>Chenab</strong></span></td><td>Baglihar, Dulhasti, Salal (near Chenab Bridge — world's highest arch railway bridge)</td></tr>
+      <tr><td><span class="hl-p"><strong>Ravi</strong></span></td><td>Ranjit Sagar Dam ("Thein Dam"), Shahpur Kandi Barrage, Chamera Dam</td></tr>
+      <tr><td><span class="hl-b"><strong>Beas</strong></span></td><td>Pong Dam (Pandoh Dam), Mandi, Himachal Pradesh</td></tr>
+      <tr><td><strong>Sutlej</strong></td><td><span class="hl">Bhakra Nangal Dam</span> — India's <strong>largest dam</strong> (highest GRAVITY dam), in Himachal &amp; Punjab</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Dam Superlatives — Don't Confuse!</strong> <span class="hl"><strong>Bhakra Nangal</strong></span> (Sutlej) = India's LARGEST dam / highest GRAVITY dam. <span class="hl-g"><strong>Tehri Dam</strong></span> (Bhagirathi River) = India's <strong>HIGHEST</strong> dam overall. <span class="hl-p"><strong>Hirakud</strong></span> (Mahanadi) = India's <strong>LONGEST</strong> dam.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- WOOD'S DISPATCH -->
+    <div class="sec purple">⑱ Modern History — Education Policy (British India) 📖</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Wood's Dispatch of 1854 recommended several changes to the Indian education system. Which was a key recommendation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Promote vernacular languages at lower levels; English only at higher levels ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Wood's Dispatch (1854), under Charles Wood — called the <strong>"Magna Carta of Indian Education"</strong> — promoted <span class="hl">vernacular languages at LOWER levels</span>, English only at HIGHER education level. Introduced during <strong>Dalhousie's</strong> tenure</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Macaulay's Minute (1835) vs Wood's Dispatch (1854):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Macaulay's Minute (1835)</span> — under <strong>William Bentinck</strong>; promoted English education at ALL levels; proposed the <strong>"Downward Filtration Theory"</strong> (educate elites in English → filters down to masses)</li>
+        <li><span class="hl-g">Wood's Dispatch (1854)</span> — under Charles Wood; <strong>REJECTED</strong> downward filtration theory; promoted vernacular at lower levels</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MOON'S ATMOSPHERE -->
+    <div class="sec teal">⑲ Geography/Science — Moon's Atmosphere 🌕</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which of the following best explains why the Moon lacks a significant atmosphere?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lack of gravity ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Strong solar winds</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Excessive volcanism</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rapid rotation</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Lack of gravity</strong> — Moon's gravity is only 1/6th of Earth's, insufficient to hold an atmosphere in place</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Moon — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Highest point on Moon: <span class="hl">Leibnitz Mountains</span></li>
+        <li>Rotation time = Revolution time = <strong>27 days</strong> (synchronous rotation) — hence only one side (~60%) is ever visible from Earth; hidden ~40% = "Far Side of the Moon"</li>
+        <li><span class="hl-g">Perigee</span> = Moon's closest point to Earth; <span class="hl-p">Apogee</span> = farthest point</li>
+      </ul>
+      <p class="hw"><strong>Atmospheric Evolution (Earth) — 3 Stages:</strong> 1) Loss of primordial H/He atmosphere (via solar winds/flares) 2) Volcanic degassing 3) Modification by the living world (photosynthesis, etc.)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ARTICLE 323A/B TRIBUNALS -->
+    <div class="sec red">⑳ Polity — Tribunals (Article 323A &amp; 323B) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Articles 323A and 323B of the Constitution deal with which of the following?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Elections</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Union Territories</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>The States</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Tribunals ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Tribunals</strong> (Part XIVA). Added by the <span class="hl">42nd Amendment</span> ("Mini Constitution")</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Article</th><th>Type of Tribunal</th><th>Who Can Create It</th></tr>
+      <tr><td><span class="hl"><strong>323A</strong></span></td><td>Administrative Tribunal (service-related disputes)</td><td>Only <strong>Parliament</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>323B</strong></span></td><td>Tribunal for other purposes (tax, etc.)</td><td>Parliament <strong>OR</strong> State Legislature</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Other Part Locations (Constitution):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Part VI</span> — The States</li>
+        <li><span class="hl-g">Part VIII</span> — Union Territories</li>
+        <li><span class="hl-p">Part XV</span> — Elections (Art 324–329)</li>
+      </ul>
+      <p class="hw"><strong>L. Chandra Kumar Case:</strong> Tribunal decisions CAN be challenged in the <span class="hl-b">High Court</span>. Article 136 provides <strong>Special Leave to Appeal</strong> to the Supreme Court (a discretionary privilege, not a right).</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MANGANESE / METALLURGY -->
+    <div class="sec green">㉑ Geography/Chemistry — Manganese &amp; Metallurgy 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Which of the following statements about Manganese is NOT correct?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"Andhra Pradesh has the largest reserves of manganese in India" — this is FALSE (largest reserves are in Odisha) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: FALSE statement — Odisha (and Karnataka) have the largest manganese reserves, NOT Andhra Pradesh. Manganese &amp; Bauxite share similar reserve regions</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Manganese — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>~<span class="hl">90%</span> of extracted manganese used in <strong>iron ore smelting</strong> → converted into ferroalloys → used to make steel</li>
+        <li><strong>Steel = alloy</strong> of Iron + Manganese + Chromium + Nickel (a homogeneous mixture/"solution")</li>
+      </ul>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Ore Reactivity</th><th>Process</th><th>Condition</th></tr>
+      <tr><td><span class="hl"><strong>High reactivity</strong></span></td><td>Electrolytic refining</td><td>—</td></tr>
+      <tr><td><span class="hl-g"><strong>Medium reactivity (Carbonate ore)</strong></span></td><td>Calcination</td><td>ABSENCE of air</td></tr>
+      <tr><td><span class="hl-p"><strong>Low reactivity (Sulfide ore)</strong></span></td><td>Roasting</td><td>PRESENCE of air</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MACROECONOMICS -->
+    <div class="sec blue">㉒ Economics — Macroeconomic Concepts &amp; Inflation 📊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Which of the following statements shows accurate understanding of a macroeconomic concept?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>When the general price level rises, the value of money tends to fall ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>GDP includes earnings from citizens working abroad (this is GNP, not GDP)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>A budget is balanced when exports exceed imports (balanced = exports EQUAL imports)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Central bank controls inflation via income tax rate changes (that's fiscal policy, not monetary)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Rising general price level (inflation) = falling value/purchasing power of money</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Economist</th><th>Title</th><th>Key Concept</th></tr>
+      <tr><td><span class="hl"><strong>John Maynard Keynes</strong></span></td><td>"Father of Macroeconomics"</td><td><em>General Theory of Employment</em>; "Animal Spirits"</td></tr>
+      <tr><td><span class="hl-g"><strong>Adam Smith</strong></span></td><td>"Father of Microeconomics" / Modern Economics</td><td><em>Wealth of Nations</em>; "Invisible Hand"</td></tr>
+      <tr><td><strong>Alfred Marshall</strong></td><td>Also called "Father of Microeconomics"</td><td>—</td></tr>
+      <tr><td><span class="hl-p"><strong>John Marshall</strong></span></td><td>Chairman, Archaeological Survey of India</td><td>Oversaw Harappa &amp; Mohenjo-daro excavations</td></tr>
+    </table>
+
+    <div class="formula">
+      <strong>GNP = GDP + Net Factor Income from Abroad (NFIA)</strong><br>
+      NFIA = Factor income FROM abroad − Factor income TO abroad
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Inflation Control — Fiscal vs Monetary Policy:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Monetary Policy</span> (RBI/Central Bank) — contractionary: ↑CRR, ↑SLR, ↑Repo rate, ↑Bank rate, sell govt securities</li>
+        <li><span class="hl-g">Fiscal Policy</span> (Government) — contractionary: ↑Income tax, ↓Subsidies, ↓MSP</li>
+        <li><strong>Demand-pull inflation</strong> — excess money/demand chasing few goods</li>
+        <li><strong>Cost-push (Supply-side) inflation</strong> — includes <span class="hl-p">Bottleneck inflation</span> (e.g., Strait of Hormuz disruption → costlier oil/transport → cascades to other goods)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CONSTITUENT ASSEMBLY -->
+    <div class="sec purple">㉓ Polity — Constituent Assembly of India 🇮🇳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> On which date did the Constituent Assembly of undivided India hold its first official meeting to begin drafting the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>December 9, 1946 (211 members present) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>December 9, 1946</strong> — first meeting, 211 members attended</div>
+    </div>
+
+    <div class="sub">Constituent Assembly — Key Milestones</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Dec 9, 1946</span> First meeting (211 members); <strong>Sachchidananda Sinha</strong> = first temporary Chairman</div>
+      <div class="tl-item"><span class="yr">Dec 13, 1946</span> Nehru moved the <span class="hl"><strong>Objective Resolution</strong></span></div>
+      <div class="tl-item"><span class="yr">Jan 22, 1947</span> Objective Resolution adopted</div>
+      <div class="tl-item"><span class="yr">July 22, 1947</span> National Flag adopted</div>
+      <div class="tl-item"><span class="yr">1949</span> Commonwealth membership taken</div>
+      <div class="tl-item"><span class="yr">Jan 24, 1950</span> National Anthem &amp; National Song adopted</div>
+      <div class="tl-item"><span class="yr">Jan 26, 1950</span> Constitution came into force; Rajendra Prasad sworn in as first President</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Constituent Assembly — Key Roles:</strong></p>
+      <ul class="hw arr">
+        <li>First permanent President: <span class="hl">Rajendra Prasad</span></li>
+        <li>First Vice-Presidents: <span class="hl-g">V.T. Krishnamachari &amp; H.C. Mukherjee</span></li>
+        <li>Constitutional Advisor: <span class="hl-p">B.N. Rau</span></li>
+        <li>Head of the Assembly (as a legislative body): <span class="hl-b">G.V. Mavalankar</span></li>
+        <li>Chief Draftsman: <strong>S.N. Mukherjee</strong></li>
+        <li>Calligrapher (English): <strong>Prem Behari Narain Raizada</strong>; (Hindi): <strong>Vasant Krishan Vaidya</strong></li>
+        <li>Decorator/Illustrator: <strong>Nandalal Bose</strong> (student of Indian Society of Oriental Art); Bharat Mata portrait made by <strong>Abanindranath Tagore</strong></li>
+        <li>Committees: <strong>8 major</strong> + 13-14 minor committees</li>
+      </ul>
+    </div>
+
+    <div class="formula">
+      <strong>Open Market Operations (OMO):</strong><br>
+      <strong>Sterilization</strong> (outright purchase) — Sell securities during inflation (withdraw money); Buy during recession (inject money)<br>
+      <strong>Repo</strong> — "Repurchase Obligation"
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- REPUBLIC DAY 2026 -->
+    <div class="sec red">㉔ Current Affairs — Republic Day 2026 🇮🇳</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> What was the theme of India's Republic Day Parade 2026?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>150 years of Vande Mataram ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>150 years of Vande Mataram</strong></div>
+    </div>
+
+    <div class="ca-box">
+      <p class="hw"><strong>Republic Day 2026 — Key Facts:</strong></p>
+      <ul class="hw chk">
+        <li>Chief Guests: <span class="hl">Ursula von der Leyen</span> (President, European Commission) &amp; <span class="hl-g">António Costa</span> (President, European Council) — both also attended the G7 meeting in France</li>
+        <li>Best Marching Contingent (Services): <span class="hl-p"><strong>Indian Navy</strong></span></li>
+        <li>Best Marching Contingent (CAPF/Police): <span class="hl-b"><strong>Delhi Police</strong></span></li>
+        <li>Uttar Pradesh's tableau featured: <strong>Kalinjar Fort</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec teal">📋 Quick Revision — All Key Facts (Blitz Lecture 15)</div>
+    <table class="qr-t">
+      <tr><th>Topic / Fact</th><th>Answer</th></tr>
+      <tr><td>Rangali Bihu (New Year) timing</td><td>Mid-April</td></tr>
+      <tr><td>Bhogali Bihu timing</td><td>Mid-January</td></tr>
+      <tr><td>Kangali Bihu timing</td><td>Mid-October</td></tr>
+      <tr><td>Bharatanatyam — longest stage</td><td>Varnam</td></tr>
+      <tr><td>Bharatanatyam — expression stage</td><td>Padam</td></tr>
+      <tr><td>Mission Shakti — 2 sub-schemes</td><td>Sambal (safety) + Samarthya (empowerment)</td></tr>
+      <tr><td>Panchayati Raj constitutional status</td><td>73rd Amendment (1992), effective April 24, 1993</td></tr>
+      <tr><td>Municipality constitutional status</td><td>74th Amendment (1992)</td></tr>
+      <tr><td>Cooperative Societies added by</td><td>97th Amendment (2011)</td></tr>
+      <tr><td>Anti-Defection Law added by</td><td>52nd Amendment (1985), 10th Schedule</td></tr>
+      <tr><td>NJAC created by / struck down</td><td>99th Amendment / Fourth Judges Case</td></tr>
+      <tr><td>Balwant Rai Mehta Committee (3-tier)</td><td>1957</td></tr>
+      <tr><td>Ashok Mehta Committee (2-tier)</td><td>1977</td></tr>
+      <tr><td>Revenue maximized when elasticity =</td><td>1 (unitary)</td></tr>
+      <tr><td>Indirect tax nature</td><td>Regressive</td></tr>
+      <tr><td>Direct tax payers in India</td><td>~3% of population</td></tr>
+      <tr><td>Mangal Pandey hanged / revolt started</td><td>April 8, 1857 (greased cartridges)</td></tr>
+      <tr><td>Delhi Chalo campaign started</td><td>May 10, 1857</td></tr>
+      <tr><td>Colloid particle size range</td><td>1 nm – 100 nm</td></tr>
+      <tr><td>GoI Act 1919 — Dyarchy introduced at</td><td>Provinces</td></tr>
+      <tr><td>GoI Act 1935 — Dyarchy at</td><td>Centre (reversed); provincial autonomy</td></tr>
+      <tr><td>Ajanta caves total</td><td>29 + 1 unfinished (all Buddhist)</td></tr>
+      <tr><td>Ellora — Kailash Temple cave</td><td>Cave 16</td></tr>
+      <tr><td>India's employment structure (Independence)</td><td>~75% in agriculture</td></tr>
+      <tr><td>Pandit Ravi Shankar's gharana</td><td>Maihar Gharana</td></tr>
+      <tr><td>Ravi Shankar's Grammy year</td><td>1967</td></tr>
+      <tr><td>Ravi Shankar's Bharat Ratna year</td><td>1999</td></tr>
+      <tr><td>Chlorophyll's metal</td><td>Magnesium</td></tr>
+      <tr><td>Champaran Satyagraha year/place</td><td>1917, Bihar (Tinkathia system)</td></tr>
+      <tr><td>Ahmedabad Mill Strike settlement</td><td>35% wage hike (1918)</td></tr>
+      <tr><td>Kheda Satyagraha issue</td><td>Tax waiver due to crop failure (1918)</td></tr>
+      <tr><td>Hirakud Dam river</td><td>Mahanadi (Odisha) — longest dam</td></tr>
+      <tr><td>Bhakra Nangal Dam river</td><td>Sutlej — largest/highest gravity dam</td></tr>
+      <tr><td>Tehri Dam river</td><td>Bhagirathi — highest dam in India</td></tr>
+      <tr><td>Wood's Dispatch year</td><td>1854 ("Magna Carta of Indian Education")</td></tr>
+      <tr><td>Macaulay's Minute year</td><td>1835 (Downward Filtration Theory)</td></tr>
+      <tr><td>Moon lacks atmosphere due to</td><td>Lack of gravity (1/6th of Earth's)</td></tr>
+      <tr><td>Article 323A/B relate to</td><td>Tribunals (added by 42nd Amendment)</td></tr>
+      <tr><td>L. Chandra Kumar case</td><td>Tribunal orders challengeable in High Court</td></tr>
+      <tr><td>Manganese largest reserves in</td><td>Odisha (NOT Andhra Pradesh)</td></tr>
+      <tr><td>GNP formula</td><td>GDP + NFIA</td></tr>
+      <tr><td>Constituent Assembly first meeting</td><td>December 9, 1946</td></tr>
+      <tr><td>Objective Resolution moved / adopted</td><td>Dec 13, 1946 / Jan 22, 1947</td></tr>
+      <tr><td>National Flag adopted</td><td>July 22, 1947</td></tr>
+      <tr><td>National Anthem/Song adopted</td><td>January 24, 1950</td></tr>
+      <tr><td>Republic Day 2026 theme</td><td>150 years of Vande Mataram</td></tr>
+      <tr><td>RD 2026 — Best Marching (Services)</td><td>Indian Navy</td></tr>
+      <tr><td>RD 2026 — Best Marching (CAPF/Police)</td><td>Delhi Police</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec orange">💡 Topper Tips — Blitz Lecture 15 Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>Goru Bihu</strong></span> = cattle worship (Day 1 of Rangali Bihu) — NOT sky lamps! Read festival names carefully</li>
+          <li>Art. 323A/323B = <span class="hl-g"><strong>Tribunals</strong></span>, added by <strong>42nd Amendment</strong> — often confused with Elections/UT/States parts</li>
+          <li>1919 Act = Dyarchy at <strong>Provinces</strong>; 1935 Act = Dyarchy at <strong>Centre</strong> (opposite!) — a classic trap</li>
+          <li>Indirect tax = <span class="hl-p"><strong>Regressive</strong></span> (same rate for all); Direct tax = <strong>Progressive</strong> (rises with income)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Bhakra Nangal (largest/highest gravity dam) ≠ Tehri (highest dam overall) ≠ Hirakud (longest dam) — three different superlatives!</li>
+          <li>GDP + NFIA = <span class="hl"><strong>GNP</strong></span> — remember Net Factor Income from Abroad</li>
+          <li>Wood's Dispatch (1854) REJECTED Macaulay's (1835) Downward Filtration Theory — promoted vernacular at lower levels</li>
+          <li>El Niño = weak monsoon/drought trigger; La Niña = heavy rainfall — opposite effects!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF BLITZ LECTURE 15 NOTES</div>
+      <strong>Mixed PYQ Series | All Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
