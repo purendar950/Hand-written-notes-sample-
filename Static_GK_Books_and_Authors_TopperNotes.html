@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Static GK: Books &amp; Authors | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Static GK: Books &amp; Authors</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">📖 Books &amp; Authors — Topper Notes</div>
+    <div class="cover-sub">Static GK Series (Topic 5) | All 2025 SSC Questions — MTS · Steno · CGL · CPO · Selection Post</div>
+    <div class="cover-badge">✍️ Indian Authors · 🌍 Foreign Authors · 🏆 Booker/Nobel/Pulitzer/Sahitya Akademi Winners</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- NOBEL LITERATURE WINNERS -->
+    <div class="sec orange">① Nobel Prize in Literature — Foreign Authors 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Who won the Nobel Prize in Literature for novels blending myth, politics, and magical realism?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Thomas Tranströmer</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Mo Yan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alice Munro</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Herta Müller</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Mo Yan</strong> won the 2012 Nobel Prize in Literature</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Who won the Nobel Prize in Literature in 2013, becoming the first Canadian-based writer to do so?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Margaret Atwood</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Alice Munro ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Michael Ondaatje</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Carol Shields</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Alice Munro</strong> (2013) — first Canada-based Nobel Laureate in Literature</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which Nobel-winning British author explored apartheid-era South Africa in her 1974 novel "The Conservationist"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nadine Gordimer ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Nadine Gordimer</strong> — "The Conservationist" (1974), apartheid-era South Africa</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> Which of the following Nobel Prize-winning authors did NOT win the Pulitzer Prize?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gabriel García Márquez ✔ (did NOT win Pulitzer)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ernest Hemingway (won Pulitzer)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>William Faulkner (won Pulitzer)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>John Steinbeck (won Pulitzer)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Gabriel García Márquez</strong> won the Nobel Prize but NOT the Pulitzer</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Ernest Hemingway — Books:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Across the River and Into the Trees</span></li>
+        <li><span class="hl-g">The Old Man and the Sea</span></li>
+        <li><span class="hl-p">Islands in the Stream</span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KAZUO ISHIGURO CLUSTER -->
+    <div class="sec purple">② Author Spotlight — Kazuo Ishiguro 🇯🇵</div>
+    <p class="hw">Kazuo Ishiguro is a <strong>London-based author, originally from Japan</strong> — the most-repeated author in this topic (like "Gothic style" was to Architecture!)</p>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> "The Remains of the Day" — a novel examining memory, duty, and personal regret through the reflections of a British butler — was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Haruki Murakami</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Salman Rushdie</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kazuo Ishiguro ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Kazuo Ishiguro</strong>. This novel later won the <span class="hl">Booker Prize (1989)</span> and was adapted into an Oscar-nominated film</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Which novel by Kazuo Ishiguro won the Booker Prize in 1989 and was later adapted into an Oscar-nominated film?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The Remains of the Day ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>The Remains of the Day</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> "The English Patient" — a Booker Prize-winning novel set during WWII, exploring love, loss, and memory — was written by?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kazuo Ishiguro ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Kazuo Ishiguro</strong> — "The English Patient"</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Kazuo Ishiguro — Complete Book List (memorize all!):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The Remains of the Day</span> (Booker Prize 1989)</li>
+        <li><span class="hl-g">Never Let Me Go</span></li>
+        <li><span class="hl-p">A Pale View of the Hills</span></li>
+        <li><span class="hl-b">Clara and the Sun</span></li>
+        <li><strong>The Buried Giant</strong></li>
+        <li><strong>The Unconsoled</strong></li>
+        <li><strong>The English Patient</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- SALMAN RUSHDIE CLUSTER -->
+    <div class="sec red">③ Author Spotlight — Salman Rushdie ✍️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Who wrote "Midnight's Children," for which he won the Booker Prize (and later the "Best of the Booker")?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Salman Rushdie ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Salman Rushdie</strong> — Midnight's Children (Booker Prize)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> "Moor's Last Sigh" — acclaimed for blending historical events with magical realism to explore Indian identity and politics — was written by whom? Assess: (A) it won the Booker Prize for innovative storytelling; (R) written by Salman Rushdie.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A is FALSE (didn't win Booker), R is TRUE (Salman Rushdie) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: "Moor's Last Sigh" did NOT win the Booker Prize (only Midnight's Children did, for Rushdie). It IS written by Salman Rushdie</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Pattern Alert!</strong> In CGL statement-based questions, whenever a statement claims a book "won the Booker Prize" — it is USUALLY FALSE unless it's a genuinely famous prize-winner (like Midnight's Children or God of Small Things). Always double-check award claims!</p>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Salman Rushdie — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Midnight's Children</span> (Booker Prize)</li>
+        <li><span class="hl-g">The Satanic Verses</span> (caused a fatwa; Rushdie lost an eye in a murder attempt)</li>
+        <li><span class="hl-p">Moor's Last Sigh</span></li>
+        <li><strong>Joseph Anton: A Memoir</strong></li>
+        <li><strong>The Golden House</strong></li>
+        <li><strong>Midnight's Children</strong> (again — his most famous)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Who is the author of "Joseph Anton: A Memoir"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kiran Desai</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chetan Bhagat</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Salman Rushdie ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Amit Chaudhuri</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Salman Rushdie</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MARGARET ATWOOD CLUSTER -->
+    <div class="sec teal">④ Author Spotlight — Margaret Atwood 🇨🇦</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> "Sea of Tranquility" — a 2022 novel exploring time travel and pandemic — was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Margaret Atwood</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Emily St. John Mandel ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>—</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Emily St. John Mandel</strong> (NOT Margaret Atwood — a common trap since both write dystopian/sci-fi fiction)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Margaret Atwood — Complete Book List (very frequently repeated in options!):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The Handmaid's Tale</span></li>
+        <li><span class="hl-g">The Testaments</span></li>
+        <li><span class="hl-p">Oryx and Crake</span></li>
+        <li><span class="hl-b">Alias Grace</span></li>
+        <li><strong>The Blind Assassin</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Who wrote "The Blind Assassin"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Margaret Atwood ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Margaret Atwood</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Emily St. John Mandel — Book List:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Sea of Tranquility</span> (2022)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- IAN MCEWAN CLUSTER -->
+    <div class="sec blue">⑤ Author Spotlight — Ian McEwan 🇬🇧</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> "The Sea, The Sea" — a Booker Prize-winning novel exploring obsession — was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Iris Murdoch ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Hilary Mantel</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Ian McEwan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Salman Rushdie</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Iris Murdoch</strong> (not Ian McEwan — different author entirely, watch for this trap)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> A novel adapted into an Oscar-winning film, exploring love, guilt, and the consequences of false accusations — was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ian McEwan ("Atonement") ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Ian McEwan</strong> — "Atonement," adapted into an Oscar-winning film</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Ian McEwan — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Amsterdam</span></li>
+        <li><span class="hl-g">Atonement</span></li>
+        <li><span class="hl-p">Saturday</span></li>
+        <li><span class="hl-b">Nutshell</span></li>
+        <li><strong>Machines Like Me</strong></li>
+        <li><strong>The Children Act</strong></li>
+        <li><strong>Enduring Love</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Who wrote "Wolf Hall"? (Asked as a tough Delhi Police question)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Hilary Mantel ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Hilary Mantel</strong> — "Wolf Hall"</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- OTHER FOREIGN AUTHORS -->
+    <div class="sec purple">⑥ Other Foreign Authors — Miscellaneous 🌐</div>
+
+    <table class="hw-t pur">
+      <tr><th>Book</th><th>Author</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Arrow of God</strong></span></td><td>Chinua Achebe</td><td>Colonialism, traditional governance, Nigerian society</td></tr>
+      <tr><td><span class="hl-g"><strong>The Hunger Games</strong></span></td><td>Suzanne Collins</td><td>Dystopian novel — rebellion, survival, authoritarian control</td></tr>
+      <tr><td><span class="hl-p"><strong>Midnight is a Place</strong></span></td><td>John Aiken</td><td>Historical novel, Victorian England, society &amp; class (NOT "Midnight's Children" — different book!)</td></tr>
+      <tr><td><span class="hl-b"><strong>The Brief Wondrous Life of Oscar Wao</strong></span></td><td>Junot Díaz</td><td>Pulitzer Prize; Dominican history, family, curse</td></tr>
+      <tr><td><strong>The Kite Runner</strong></td><td>Khaled Hosseini</td><td>—</td></tr>
+      <tr><td><strong>Snow</strong></td><td>Orhan Pamuk</td><td>Political Islam, secularism, modern Turkey</td></tr>
+      <tr><td><strong>Snow Falling on Cedars</strong></td><td>David Guterson</td><td>Post-WWII racial tensions in America</td></tr>
+      <tr><td><strong>The Shadow of the Wind</strong></td><td>Carlos Ruiz Zafón</td><td>Spanish literary thriller — mystery, books, obsession</td></tr>
+      <tr><td><strong>The Night Circus</strong></td><td>Erin Morgenstern</td><td>Fantasy — magical competitions and romance</td></tr>
+      <tr><td><strong>The Secret History / The Goldfinch</strong></td><td>Donna Tartt</td><td>The Goldfinch = Pulitzer Prize winner</td></tr>
+      <tr><td><strong>The Overstory</strong></td><td>Richard Powers</td><td>Ecological themes</td></tr>
+      <tr><td><strong>The Concept of the Political</strong></td><td>Carl Schmitt</td><td>Philosophical text; influenced modern political thought</td></tr>
+      <tr><td><strong>Spadework for a Palace</strong></td><td>László Krasznahorkai</td><td>2025 Booker (International) Prize connection — David Szalay won 2025 Booker</td></tr>
+      <tr><td><strong>The Promise</strong></td><td>Damon Galgut</td><td>Booker Prize, 2021</td></tr>
+      <tr><td><strong>100 Years of Solitude</strong></td><td>Gabriel García Márquez</td><td>Magical realism — rise/fall of Buendía family, town of Macondo</td></tr>
+      <tr><td><strong>Half of a Yellow Sun</strong></td><td>Chimamanda Ngozi Adichie</td><td>Nigerian war story; adapted into a 2013 film</td></tr>
+      <tr><td><strong>Small Things Like This</strong></td><td>Claire Keegan</td><td>Shortlisted for Booker Prize 2022 (not of Indian origin)</td></tr>
+      <tr><td><strong>The Seven Moons of Maali Almeida</strong></td><td>Shehan Karunatilaka</td><td>Booker Prize 2022; Sri Lankan civil war, satire on violence/memory/political trauma; author from Sri Lanka</td></tr>
+      <tr><td><strong>We Need New Names</strong></td><td>NoViolet Bulawayo</td><td>Shortlisted Man Booker 2013; from Zimbabwe (NOT Indian origin); 1st Black African woman shortlisted</td></tr>
+      <tr><td><strong>Animals People</strong></td><td>Indra Sinha</td><td>Booker-shortlisted 2008; examines the Bhopal Gas Tragedy; won Commonwealth Writers' Prize 2007</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Foreign vs Indian-Origin Trap:</strong> SSC (especially Delhi Police) sometimes frames questions implying "Indian-origin author" for books that are actually written by NON-Indian authors (e.g., "We Need New Names" — NoViolet Bulawayo is from Zimbabwe). Read carefully; don't assume nationality from question phrasing!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- R.K. NARAYAN & RAJA RAO -->
+    <div class="sec green">⑦ Author Spotlight — R.K. Narayan &amp; Raja Rao 🖋️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> "The Serpent and the Rope," integrating Indian metaphysics and Western thought, was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>R.K. Narayan</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Raja Rao ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Khushwant Singh</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Raja Rao</strong> (NOT R.K. Narayan — a common confusion since both are classic Indian novelists)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>R.K. Narayan — Complete Book List (LARGE — memorize the frequently-asked ones):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Malgudi Days</span> (most famous)</li>
+        <li><span class="hl-g">The Guide</span></li>
+        <li><span class="hl-p">Swami and Friends</span></li>
+        <li><span class="hl-b">The Painter of Signs</span></li>
+        <li><strong>Waiting for the Mahatma</strong></li>
+        <li><strong>A Tiger for Malgudi</strong></li>
+        <li><strong>The Bachelor of Arts</strong></li>
+        <li><strong>Mr. Sampath</strong></li>
+        <li><strong>Grandmother's Tale</strong></li>
+        <li><strong>The World of Nagaraj</strong></li>
+        <li><strong>The Financial Expert</strong></li>
+        <li><strong>Talkative Man</strong></li>
+        <li><strong>The Vendor of Sweets</strong></li>
+        <li><strong>The Dark Room</strong></li>
+        <li><strong>The English Teacher</strong></li>
+        <li><strong>My Dateless Diary</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CULTURE CROSSOVER: AMRITA SHER-GIL -->
+    <div class="sec pink">⑧ Art &amp; Culture Crossover — Painters 🎨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> In Indian art history, the "Bindu" motif (a large central dot in paintings) became the signature element of which artist's work?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Syed Haider Raza ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Syed Haider Raza</strong> — famous for the "Bindu" (dot) motif in his paintings</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> The painting "Three Girls," considered an early modernist work, was created by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jamini Roy</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Amrita Sher-Gil ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mazumdar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Arpita Singh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Amrita Sher-Gil</strong> — oil painting "Three Girls," painted when she was just 19 years old. Also known as a painting of "young girls." She lived and painted mainly in Hungary and France</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ANCIENT & MEDIEVAL LANGUAGE TEXTS -->
+    <div class="sec red">⑨ Ancient/Medieval History — Books &amp; Chronicles 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> "Kitab-ul-Hind" was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Al-Biruni ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ibn Battuta</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Al-Masudi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Firdausi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Al-Biruni</strong>. Kitab-ul-Hind was written in <span class="hl">Arabic</span></div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Text/Chronicle</th><th>Author</th><th>Key Fact</th></tr>
+      <tr><td><span class="hl"><strong>Kitab-ul-Hind</strong></span></td><td>Al-Biruni</td><td>Written in Arabic</td></tr>
+      <tr><td><span class="hl-g"><strong>Rihla</strong></span></td><td>Ibn Battuta</td><td>Written in Arabic; Ibn Battuta = Moroccan traveler, visited Mohammad bin Tughlaq's court, also Bahmani &amp; Vijayanagara</td></tr>
+      <tr><td><span class="hl-p"><strong>Meadows of Gold</strong></span></td><td>Al-Masudi</td><td>—</td></tr>
+      <tr><td><strong>Shahnama</strong></td><td>Firdausi</td><td>Written in Persian</td></tr>
+      <tr><td><span class="hl-b"><strong>Rajatarangini</strong></span></td><td>Kalhana</td><td>History of Kashmir</td></tr>
+      <tr><td><strong>Indica</strong></td><td>Megasthenes (historical figure, NOT the book being asked about) / <span class="hl">Pranay Lal</span> (author of the modern book "Indica")</td><td>Deep natural history of the Indian subcontinent</td></tr>
+    </table>
+
+    <div class="sub">Mughal Emperor Autobiographies — Don't Confuse!</div>
+    <table class="hw-t alt">
+      <tr><th>Autobiography</th><th>Emperor</th></tr>
+      <tr><td><span class="hl"><strong>Tuzuk-i-Babri (Baburnama)</strong></span></td><td>Babur</td></tr>
+      <tr><td><span class="hl-g"><strong>Humayun-nama</strong></span></td><td>About Humayun (written by his sister Gulbadan Begum)</td></tr>
+      <tr><td><span class="hl-p"><strong>Shah Jahan Nama</strong></span></td><td>Shah Jahan</td></tr>
+      <tr><td><span class="hl-b"><strong>Tuzuk-i-Jahangiri</strong></span></td><td>Jahangir (wrote his own autobiography)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> "Negotiating Mughal Law" by Nandini Chatterjee — what does it explore?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Legal pluralism and property rights through a landlord family's experience across Indian empires ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Literary biography of Mughal emperors' personal lives</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Focus is on <strong>legal pluralism &amp; property rights</strong> (NOT a biography — emperor biographies already exist separately, like Tuzuk-i-Babri, Tuzuk-i-Jahangiri, etc.)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- VIKRAM SETH -->
+    <div class="sec blue">⑩ Author Spotlight — Vikram Seth ✒️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> "The Golden Gate," a novel written entirely in verse — which of the following statements about it is correct? (1) Shortlisted for the Booker Prize showcasing its poetic form; (2) Won the Booker Prize for its expansive narrative; (3) Won Sahitya Akademi Award for its impact on English poetry.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Only statement 1 (shortlisted) is correct. It did NOT win the Booker Prize, and did NOT win a Sahitya Akademi Award — award-claim statements are usually false in this exam pattern!</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Who wrote "An Equal Music"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Vikram Seth ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Zulfikar Ghose</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Shiva Naipaul</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kiran Desai</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Vikram Seth</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Vikram Seth — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">A Suitable Boy</span> (his mother, Leila Seth, was the first woman Chief Justice of a High Court)</li>
+        <li><span class="hl-g">A Suitable Girl</span></li>
+        <li><span class="hl-p">The Golden Gate</span> (in verse)</li>
+        <li><span class="hl-b">An Equal Music</span></li>
+        <li><strong>From Heaven Lake: Travels Through Sinkiang and Tibet</strong> (won Thomas Cook Travel Book Award)</li>
+        <li><strong>The Golden Gate</strong></li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Don't confuse:</strong> "A Suitable Boy" (Vikram Seth) vs "An Unsuitable Boy" (Karan Johar's autobiography) — different books entirely!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AMITAV GHOSH -->
+    <div class="sec teal">⑪ Author Spotlight — Amitav Ghosh 🌊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Who is the author of "The Dalek Chromosome"? (Note: originally "The Calcutta Chromosome")</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Amitav Ghosh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Amitav Ghosh</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Which of the following books is authored by Amitav Ghosh?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gun Island ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>War Talk (Arundhati Roy)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Selection Day (Arvind Adiga)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Last Man in the Tower (Arvind Adiga)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Gun Island</strong> (Amitav Ghosh)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Amitav Ghosh — Complete Book List (VERY frequently asked):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Sea of Poppies</span></li>
+        <li><span class="hl-g">River of Smoke</span></li>
+        <li><span class="hl-p">Flood of Fire</span></li>
+        <li><span class="hl-b">The Hungry Tide</span></li>
+        <li><strong>The Shadow Lines</strong></li>
+        <li><strong>The Glass Palace</strong></li>
+        <li><strong>The Calcutta Chromosome</strong></li>
+        <li><strong>Gun Island</strong></li>
+        <li><strong>In an Antique Land</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ANITA DESAI & KIRAN DESAI -->
+    <div class="sec orange">⑫ Author Spotlight — Anita Desai &amp; Kiran Desai (Mother-Daughter) 👩‍👧</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> "Clear Light of Day," depicting the effects of Partition on Delhi families, was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Anita Desai ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Anita Desai</strong> — "Clear Light of Day" (1980), shortlisted (NOT winner) for the Booker Prize</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Anita Desai — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Clear Light of Day</span> (1980, Booker-shortlisted)</li>
+        <li><span class="hl-g">Fasting, Feasting</span></li>
+        <li><span class="hl-p">In Custody</span></li>
+        <li><span class="hl-b">Fire on the Mountain</span></li>
+        <li><strong>Where Shall We Go This Summer?</strong></li>
+      </ul>
+      <p class="hw"><strong>Kiran Desai</strong> (her daughter) — <span class="hl-g"><strong>The Inheritance of Loss</strong></span> (won the Booker Prize)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- JHUMPA LAHIRI -->
+    <div class="sec purple">⑬ Author Spotlight — Jhumpa Lahiri ✍️</div>
+    <div class="key-box">
+      <p class="hw"><strong>Jhumpa Lahiri — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Interpreter of Maladies</span></li>
+        <li><span class="hl-g">The Namesake</span></li>
+        <li><span class="hl-p">The Lowland</span></li>
+        <li><span class="hl-b">Unaccustomed Earth</span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CHITRA BANERJEE DIVAKARUNI -->
+    <div class="sec pink">⑭ Author Spotlight — Chitra Banerjee Divakaruni 🌺</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> "The Mistress of Spices" (or "The Vine of Desire") by Chitra Banerjee Divakaruni — what is its primary theme?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Cultural conflicts within an Indian immigrant family across generations ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Historical account of India's freedom struggle</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Science fiction about identity and technology</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — A book's central theme can only be ONE thing — cultural conflict, NOT freedom struggle/politics AND NOT sci-fi simultaneously</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Chitra Banerjee Divakaruni — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The Palace of Illusions</span></li>
+        <li><span class="hl-g">The Mistress of Spices</span></li>
+        <li><span class="hl-p">The Vine of Desire</span></li>
+        <li><strong>The Forest of Enchantments</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ARUNDHATI ROY -->
+    <div class="sec red">⑮ Author Spotlight — Arundhati Roy 🏆</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Who is the author of "The God of Small Things"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Arundhati Roy ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Arundhati Roy</strong> — won the Booker Prize; first Indian woman to win it</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> Which of the following is NOT a novel by Arundhati Roy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The Great Derangement (this is by AMITAV GHOSH, not Arundhati Roy) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>"The Great Derangement"</strong> is by Amitav Ghosh — NOT Arundhati Roy</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Arundhati Roy — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The God of Small Things</span> (Booker Prize)</li>
+        <li><span class="hl-g">The Ministry of Utmost Happiness</span></li>
+        <li><span class="hl-p">The Ordinary Person's Guide to Empire</span></li>
+        <li><span class="hl-b">Capitalism: A Ghost Story</span></li>
+        <li><strong>Broken Republic</strong></li>
+        <li><strong>Things That Can and Cannot Be Said</strong> (with John Cusack)</li>
+        <li><strong>Field Notes on Democracy</strong></li>
+        <li><strong>War Talk</strong></li>
+        <li><strong>The End of Imagination</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ARVIND ADIGA -->
+    <div class="sec green">⑯ Author Spotlight — Arvind Adiga 🐯</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> "The White Tiger" was written by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Arvind Adiga ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Arvind Adiga</strong> — won the Booker Prize</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> "Last Man in the Tower" — which of the following statements is correct? (1) Exposes moral/ethical conflicts during rapid urban development &amp; real estate pressures in Mumbai; (2) Focuses on historical evolution of Mumbai's architecture &amp; colonial past.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only statement 1 is correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A book can only focus on ONE core theme — moral/ethical conflicts (urban development), NOT architectural history simultaneously</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Arvind Adiga — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The White Tiger</span> (Booker Prize)</li>
+        <li><span class="hl-g">Last Man in the Tower</span></li>
+        <li><span class="hl-p">Selection Day</span> (story of a boy learning cricket in Mumbai)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- SHASHI THAROOR -->
+    <div class="sec blue">⑰ Author Spotlight — Shashi Tharoor 🎤</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> Who is the author of "The Great Indian Novel"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Shashi Tharoor ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Shashi Tharoor</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Who is the author of "Riot: A Novel"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Shashi Tharoor ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sumit Basu</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Anita Nair</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Shobha Rao</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Shashi Tharoor</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> "Why Bharat Matters," written by S. Jaishankar — what does it discuss?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>India's contemporary global relevance &amp; foreign policy (not ancient mythology, not fiction) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Written by <strong>S. Jaishankar</strong> — a discussion on India's contemporary importance, not mythology or fiction</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Shashi Tharoor — Complete Book List (VERY frequently asked):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">An Era of Darkness</span></li>
+        <li><span class="hl-g">Ambedkar: A Life</span></li>
+        <li><span class="hl-p">Why I Am a Hindu</span></li>
+        <li><span class="hl-b">The Paradoxical Prime Minister</span></li>
+        <li><strong>The Great Indian Novel</strong></li>
+        <li><strong>Riot: A Novel</strong></li>
+        <li><strong>Nehru: The Invention of India</strong></li>
+        <li><strong>Pax Indica</strong></li>
+        <li><strong>The Battle of Belonging</strong></li>
+        <li><strong>Price, Precious and Pedantry</strong></li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Trap!</strong> "An Area of Darkness" (with "Area") is by <strong>V.S. Naipaul</strong>, while "An Era of Darkness" (with "Era") is by <strong>Shashi Tharoor</strong> — these two similarly-named books are frequently confused in options!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- RUSKIN BOND -->
+    <div class="sec teal">⑱ Author Spotlight — Ruskin Bond 🌲</div>
+    <div class="key-box">
+      <p class="hw"><strong>Ruskin Bond — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The Blue Umbrella</span></li>
+        <li><span class="hl-g">The Room on the Roof</span> (won a book prize)</li>
+        <li><span class="hl-p">A Flight of Pigeons</span></li>
+        <li><span class="hl-b">Delhi Is Not Far</span></li>
+        <li><strong>Angry River</strong></li>
+        <li><strong>The Night Train at Deoli</strong></li>
+        <li><strong>Fosterganj: Falling in Love Again</strong></li>
+        <li><strong>A Face in the Dark</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AMISH TRIPATHI & DEVDUTT PATTANAIK -->
+    <div class="sec purple">⑲ Author Spotlight — Amish Tripathi &amp; Devdutt Pattanaik (Mythology) 🕉️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> "The Oath of the Vayuputras" is the final book of which famous trilogy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Shiva Trilogy (Amish Tripathi) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Shiva Trilogy</strong> by Amish Tripathi</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Author</th><th>Books</th></tr>
+      <tr><td rowspan="6"><span class="hl"><strong>Amish Tripathi</strong></span></td><td>The Immortals of Meluha</td></tr>
+      <tr><td>The Secret of the Nagas</td></tr>
+      <tr><td>The Oath of the Vayuputras</td></tr>
+      <tr><td>Scion of Ikshvaku</td></tr>
+      <tr><td>Sita: Warrior of Mithila</td></tr>
+      <tr><td>Raavan: Orphan of Aryavarta</td></tr>
+      <tr><td rowspan="4"><span class="hl-g"><strong>Devdutt Pattanaik</strong></span></td><td>My Gita</td></tr>
+      <tr><td>7 Secrets of Shiva</td></tr>
+      <tr><td>7 Secrets of Vishnu</td></tr>
+      <tr><td>My Hanuman Chalisa</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MEGHNAD DESAI, AMARTYA SEN, RAMACHANDRA GUHA -->
+    <div class="sec orange">⑳ Economist-Authors — Meghnad Desai, Amartya Sen, Ramachandra Guha 📊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> "The Rediscovery of India" was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Meghnad Desai ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Pawan Kumar Verma</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Tabish Khair</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Meera Syal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Meghnad Desai</strong> — was also a Member of Parliament (UK); passed away in 2024</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Meghnad Desai — Complete Book List (VERY frequently asked recently, due to his passing):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">The Rediscovery of India</span></li>
+        <li><span class="hl-g">The Poverty of Political Economy</span></li>
+        <li><span class="hl-p">Who Wrote the Bhagavad Gita?</span></li>
+        <li><span class="hl-b">The Raisina Model</span></li>
+        <li><strong>Maya Bharat</strong></li>
+        <li><strong>Divided by Democracy</strong></li>
+        <li><strong>Dead on Time</strong></li>
+        <li><strong>Marx's Revenge: The Resurgence of Capitalism and the Death of State Socialism</strong></li>
+        <li><strong>Nehru's Hero: Dilip Kumar in the Life of India</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> "Development as Freedom" was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Amartya Sen ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Amartya Sen</strong> — first Indian economist to win the Nobel Prize (1998, Economics). Note: Rabindranath Tagore won Nobel in 1913, but for Literature</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Amartya Sen — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Development as Freedom</span></li>
+        <li><span class="hl-g">The Idea of Justice</span></li>
+        <li><span class="hl-p">Poverty and Famines</span></li>
+        <li><span class="hl-b">Commodities and Capabilities</span></li>
+      </ul>
+      <p class="hw"><strong>Ramachandra Guha</strong> — <span class="hl-g">India After Gandhi</span>, <span class="hl-p">India Before Gandhi</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KHUSHWANT SINGH & MULK RAJ ANAND -->
+    <div class="sec red">㉑ Author Spotlight — Khushwant Singh &amp; Mulk Raj Anand 📚</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> "Train to Pakistan" was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Khushwant Singh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Khushwant Singh</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> "The Village" was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mulk Raj Anand ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>R.K. Narayan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sudeep Nagarkar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Prayaag Akbar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Mulk Raj Anand</strong>, known for writing on social issues and Indian rural life</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="slbl">KHUSHWANT SINGH — BOOKS</div>
+        <span class="hl">Train to Pakistan</span><br>
+        Truth, Love and a Little Malice<br>
+        Karma<br>
+        History of the Sikhs
+      </div>
+      <div class="sticky green">
+        <div class="slbl">MULK RAJ ANAND — BOOKS</div>
+        <span class="hl-g">Untouchable</span><br>
+        Coolie<br>
+        Sword and Sickle<br>
+        Two Leaves and a Bud<br>
+        Across the Black Waters<br>
+        The Village
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- SUDHA MURTHY, AMITABHA BAGCHI, CHETAN BHAGAT -->
+    <div class="sec green">㉒ Author Spotlight — Sudha Murthy, Amitabha Bagchi &amp; Chetan Bhagat 📱</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Sudha Murthy — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Dollar Bahu</span></li>
+        <li><span class="hl-g">Gopi Diaries</span></li>
+        <li><span class="hl-p">The Magic of the Lost Temple</span></li>
+        <li><span class="hl-b">Grandma's Bag of Stories / 3000 Stitches</span></li>
+        <li><strong>The Day I Stopped Drinking Milk</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> "The Householder" was authored by whom?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Ruskin Bond</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Satyajit Ray</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Arun Joshi</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Amitabha Bagchi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Amitabha Bagchi</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Amitabha Bagchi — Complete Book List:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Half the Night Is Gone</span></li>
+        <li><span class="hl-g">Above Average</span></li>
+        <li><span class="hl-p">The Householder</span></li>
+        <li><span class="hl-b">This Place</span></li>
+        <li><strong>Unknown City</strong></li>
+      </ul>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Chetan Bhagat — Complete Book List (numbers as memory hooks!):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Two States</span></li>
+        <li><span class="hl-g">One Night @ the Call Center</span></li>
+        <li><span class="hl-p">3 Mistakes of My Life</span></li>
+        <li><span class="hl-b">5 Point Someone (5.7)</span></li>
+        <li><strong>Half Girlfriend</strong></li>
+        <li><strong>400 Days</strong></li>
+      </ul>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">SATYAJIT RAY — NOT AN AUTHOR, A DIRECTOR!</div>
+      Known works: <span class="hl">The Apu Trilogy</span>, The Big City, The Music Room, Charulata, The Goopy Bagha Trilogy
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- HINDI AUTHORS -->
+    <div class="sec teal">㉓ Hindi Literature — Premchand, Jaishankar Prasad &amp; Bachchan 🖋️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Who authored the Hindi novel "Godaan"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Premchand ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Premchand</strong></div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Author</th><th>Books</th></tr>
+      <tr><td rowspan="8"><span class="hl"><strong>Premchand</strong></span></td><td>Godaan</td></tr>
+      <tr><td>Gaban</td></tr>
+      <tr><td>Kafan</td></tr>
+      <tr><td>Eidgah</td></tr>
+      <tr><td>Nirmala</td></tr>
+      <tr><td>Rangbhoomi</td></tr>
+      <tr><td>Prem Ashram</td></tr>
+      <tr><td>Karmabhoomi</td></tr>
+      <tr><td rowspan="2"><span class="hl-g"><strong>Jaishankar Prasad</strong></span></td><td>Kamayani</td></tr>
+      <tr><td>Dhruvswamini</td></tr>
+      <tr><td rowspan="4"><span class="hl-p"><strong>Harivansh Rai Bachchan</strong></span></td><td>Madhushala</td></tr>
+      <tr><td>Neer Ka Nirman</td></tr>
+      <tr><td>Milan Yamini</td></tr>
+      <tr><td>Do Chattan</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Other Hindi/Regional Language Poets:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Ramdhari Singh Dinkar</span> — Urvashi, Rashmirathi, Kurukshetra, Parashuram ki Pratiksha, Renuka</li>
+        <li><span class="hl-g">Rabindranath Tagore</span> — Gitanjali (Nobel Prize 1913 — first Indian Nobel laureate), Chokher Bali, Gora, The Postmaster</li>
+        <li><span class="hl-p">Mahadevi Verma</span> — Gillu, Neerja, Yama, Deepshikha</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MISC AUTHORS TABLE 1 -->
+    <div class="sec purple">㉔ Miscellaneous Books &amp; Authors — Part 1 📗</div>
+
+    <table class="hw-t pur">
+      <tr><th>Book</th><th>Author</th></tr>
+      <tr><td><span class="hl"><strong>Gandhi in Champaran</strong></span></td><td>D.G. Tendulkar</td></tr>
+      <tr><td><span class="hl-g"><strong>The Godfather of Kathmandu</strong></span></td><td>Vikram Seth (per lecture — historically it's John Burdett, but per transcript's stated answer)</td></tr>
+      <tr><td><span class="hl-p"><strong>A Bend in the Ganges</strong></span></td><td>Manohar Malgonkar</td></tr>
+      <tr><td><span class="hl-b"><strong>Wood's Dispatch / Indica (modern natural history)</strong></span></td><td>Pranay Lal (Indica)</td></tr>
+      <tr><td><strong>Heart and History</strong></td><td>Sandeep Jauhar (nonfiction memoir; ineligible for Edgar Award, which is for fiction)</td></tr>
+      <tr><td><strong>The Absolutely True Diary of a Part-Time Indian</strong></td><td>Sherman Alexie (won National Book Award, NOT Pulitzer)</td></tr>
+      <tr><td><strong>Sahela Re</strong> (Hindi)</td><td>Mrinal Pande</td></tr>
+      <tr><td><strong>The Ocean of Churn</strong></td><td>Sanjeev Sanyal</td></tr>
+      <tr><td><strong>Land of the Seven Rivers</strong></td><td>Sanjeev Sanyal</td></tr>
+      <tr><td><strong>Revolutionaries</strong></td><td>Sanjeev Sanyal</td></tr>
+      <tr><td><strong>The Elephant Paradigm</strong></td><td>Gurucharan Das</td></tr>
+      <tr><td><strong>India Unbound</strong></td><td>Gurucharan Das</td></tr>
+      <tr><td><strong>The Difficulty of Being Good</strong></td><td>Gurucharan Das</td></tr>
+      <tr><td><strong>A Fine Family</strong></td><td>Gurucharan Das</td></tr>
+      <tr><td><strong>Imagining India</strong></td><td>Nandan Nilekani</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Romila Thapar — Books:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Ashoka and the Decline of the Mauryas</span></li>
+        <li><span class="hl-g">Somnath</span></li>
+        <li><span class="hl-p">The Penguin History of Early India</span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MISC AUTHORS TABLE 2 -->
+    <div class="sec blue">㉕ Miscellaneous Books &amp; Authors — Part 2 📘</div>
+
+    <table class="hw-t alt">
+      <tr><th>Book</th><th>Author</th></tr>
+      <tr><td><span class="hl"><strong>Mrityunjay</strong></span> (Mahabharata retold from Karna's view)</td><td>Shivaji Sawant</td></tr>
+      <tr><td><span class="hl-g"><strong>The Home and the World</strong></span></td><td>Rabindranath Tagore (NOT Bankim Chandra — who wrote Vande Mataram's original Bengali novel context, but this specific one is Tagore's)</td></tr>
+      <tr><td><span class="hl-p"><strong>A Bend in the River</strong></span></td><td>V.S. Naipaul</td></tr>
+      <tr><td><span class="hl-b"><strong>An Area of Darkness</strong></span></td><td>V.S. Naipaul (NOT "An Era of Darkness" — that's Shashi Tharoor!)</td></tr>
+      <tr><td><strong>A House for Mr. Biswas</strong></td><td>V.S. Naipaul</td></tr>
+      <tr><td><strong>The Enigma of Arrival</strong></td><td>V.S. Naipaul</td></tr>
+      <tr><td><strong>The Mimic Men</strong></td><td>V.S. Naipaul</td></tr>
+      <tr><td><strong>Half a Life</strong></td><td>V.S. Naipaul</td></tr>
+      <tr><td><strong>Guerrillas</strong> (1975)</td><td>V.S. Naipaul</td></tr>
+      <tr><td><strong>Being Indian</strong></td><td>Pawan K. Verma (did NOT win any award, despite statement claims)</td></tr>
+      <tr><td><strong>Sleeping on Jupiter</strong></td><td>Anuradha Roy (Booker longlisted, 2015)</td></tr>
+      <tr><td><strong>The Adventures of Kaka Babu, Vol. 1</strong></td><td>Sunil Gangopadhyay (Bengali adventure novel — features detective Kaka Babu)</td></tr>
+      <tr><td><strong>The Bonkers</strong></td><td>Natasha Sharma — known for experimental style &amp; social themes</td></tr>
+      <tr><td><strong>Half the Night Is Gone</strong></td><td>Amitabha Bagchi (Sahitya Akademi winner)</td></tr>
+      <tr><td><strong>Jinnah: His Successes, Failures and Role in History</strong></td><td>Ishtiaq Ahmad</td></tr>
+      <tr><td><strong>School to Startup: Navigating the Path of Entrepreneurship</strong></td><td>Rohit Sinha</td></tr>
+      <tr><td><strong>Because Words Matter</strong></td><td>(theme: language's role in social justice)</td></tr>
+      <tr><td><strong>The Man Who Made History</strong> (on Neeraj Chopra)</td><td>Norris Pritam</td></tr>
+      <tr><td><strong>Friend of My Youth</strong></td><td>Amit Chaudhuri (interconnected stories exploring Indian family &amp; identity)</td></tr>
+      <tr><td><strong>Hotel Stage</strong></td><td>Collection of modern Indian plays on social issues</td></tr>
+      <tr><td><strong>A Fine Balance</strong></td><td>Rohinton Mistry</td></tr>
+      <tr><td><strong>Such a Long Journey</strong></td><td>Rohinton Mistry</td></tr>
+      <tr><td><strong>Family Matters</strong></td><td>Rohinton Mistry</td></tr>
+      <tr><td><strong>Tales from Firozsha Baag</strong></td><td>Rohinton Mistry</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MISC AUTHORS TABLE 3 -->
+    <div class="sec red">㉖ Miscellaneous Books &amp; Authors — Part 3 📕</div>
+
+    <table class="hw-t red-h">
+      <tr><th>Book</th><th>Author</th></tr>
+      <tr><td><span class="hl"><strong>India on Our Minds</strong></span></td><td>Insightful analysis of India's economic growth &amp; social challenges (NOT fiction)</td></tr>
+      <tr><td><span class="hl-g"><strong>Landscapes of Loss: The Story of an Indian Drought</strong></span></td><td>Kavita Iyer — study on drought's human &amp; ecological impacts in India</td></tr>
+      <tr><td><span class="hl-p"><strong>The Tatas</strong></span></td><td>Girish Kuber (translated by Vikrant Pande) — Tata family's role in building Indian industrial society</td></tr>
+      <tr><td><span class="hl-b"><strong>Heart Lamp</strong></span></td><td>Banu Mushtaq — won International Booker Prize; first Kannada-language work &amp; first Kannada author to win it</td></tr>
+      <tr><td><strong>Tomb of Sand</strong> (Reet Samadhi, Hindi original)</td><td>Geetanjali Shree — International Booker Prize winner 2022; first Hindi novel to win it (translated by Daisy Rockwell)</td></tr>
+      <tr><td><strong>In the Footsteps of Mahatma Gandhi and Sanitation</strong></td><td>Sudarshan Iyengar</td></tr>
+      <tr><td><strong>Welcome to Paradise</strong></td><td>Twinkle Khanna</td></tr>
+      <tr><td><strong>The Winner's Mindset</strong></td><td>Shane Watson (theme: psychological resilience &amp; strategic adaptability in elite sport)</td></tr>
+      <tr><td><strong>The Silk Roads: A New History of the World</strong></td><td>Peter Frankopan — global history centered on cultural &amp; political exchange on the Silk Road</td></tr>
+      <tr><td><strong>Fraternity</strong></td><td>Theme: fraternity, constitutional norms, and human need</td></tr>
+      <tr><td><strong>Arranged Marriage</strong></td><td>Chitra Banerjee Divakaruni — stories exploring immigrant life, culture, identity &amp; arranged marriage challenges</td></tr>
+      <tr><td><strong>India for Indians</strong></td><td>Chittaranjan Das — advocacy for Indian self-rule during the freedom struggle</td></tr>
+      <tr><td><strong>Angry River</strong></td><td>Ruskin Bond</td></tr>
+      <tr><td><strong>Vande Mataram</strong> (1870)</td><td>Bankim Chandra Chattopadhyay — National Song adopted Jan 24, 1950 by Constituent Assembly (same day as National Anthem)</td></tr>
+      <tr><td><strong>The Golden Threshold</strong> (1905, poems)</td><td>Sarojini Naidu</td></tr>
+      <tr><td><strong>The Indian War of Independence</strong></td><td>V.D. Savarkar (on 1857 revolt — "First War of Indian Independence")</td></tr>
+      <tr><td><strong>The Story of My Deportation</strong></td><td>Lala Lajpat Rai</td></tr>
+      <tr><td><strong>Glimpses of World History / Discovery of India</strong></td><td>Jawaharlal Nehru</td></tr>
+      <tr><td><strong>Tamas</strong></td><td>Bhisham Sahni</td></tr>
+      <tr><td><strong>Dalek Chromosome</strong> (Calcutta Chromosome)</td><td>Amitav Ghosh</td></tr>
+      <tr><td><strong>Shakti: The Divine Feminine</strong></td><td>Anuja Chandramouli</td></tr>
+      <tr><td><strong>Mohini the Enchantress</strong></td><td>Anuja Chandramouli (Mohiniyattam is also known as the "Dance of Enchantress")</td></tr>
+      <tr><td><strong>Pinjar</strong> (Partition trauma)</td><td>Amrita Pritam</td></tr>
+      <tr><td><strong>Kore Kagaz</strong></td><td>Amrita Pritam</td></tr>
+      <tr><td><strong>How Many Pakistans</strong> (Sahitya Akademi Award)</td><td>Kamleshwar</td></tr>
+      <tr><td><strong>The Illicit Happiness of Other People</strong></td><td>Manu Joseph</td></tr>
+      <tr><td><strong>Serious Men</strong> (Hindu Literary Prize)</td><td>Manu Joseph</td></tr>
+      <tr><td><strong>Miss Laila, Armed and Dangerous</strong></td><td>Manu Joseph</td></tr>
+      <tr><td><strong>Ladies Coupé</strong></td><td>Anita Nair</td></tr>
+      <tr><td><strong>Mistress</strong></td><td>Anita Nair</td></tr>
+      <tr><td><strong>The Better Man</strong></td><td>Anita Nair</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MISC AUTHORS TABLE 4 -->
+    <div class="sec orange">㉗ Miscellaneous Books &amp; Authors — Part 4 (Biographies &amp; Memoirs) 📙</div>
+
+    <table class="hw-t org">
+      <tr><th>Book</th><th>Author / Subject</th></tr>
+      <tr><td><span class="hl"><strong>Prem: My Name Is Prem Chopra</strong></span></td><td>Autobiography of actor Prem Chopra</td></tr>
+      <tr><td><span class="hl-g"><strong>Indira Gandhi's Tryst with Power</strong></span></td><td>Nayantara Sahgal</td></tr>
+      <tr><td><span class="hl-p"><strong>Rich Like Us</strong></span></td><td>Nayantara Sahgal</td></tr>
+      <tr><td><span class="hl-b"><strong>The Day in Shadow</strong></span></td><td>Nayantara Sahgal</td></tr>
+      <tr><td><strong>Reimagine Your Life</strong></td><td>Vanita Kohli-Khandekar / Vinita Dhondiyal Nangia (per lecture)</td></tr>
+      <tr><td><strong>Love Is Always Right and Other Musings</strong></td><td>Vinita Dhondiyal Nangia</td></tr>
+      <tr><td><strong>Many Ramayanas, Many Lessons</strong></td><td>Anand Neelakantan</td></tr>
+      <tr><td><strong>The Style Diary of a Bollywood Diva</strong></td><td>Autobiography of Kareena Kapoor</td></tr>
+      <tr><td><strong>In Other Words</strong></td><td>Jhumpa Lahiri (memoir originally written in Italian)</td></tr>
+      <tr><td><strong>The Devil's Wind</strong></td><td>Manohar Malgonkar</td></tr>
+      <tr><td><strong>A Passage to England</strong></td><td>Nirad C. Chaudhuri</td></tr>
+      <tr><td><strong>When Love Came Calling</strong></td><td>Preeti Shenoy</td></tr>
+      <tr><td><strong>Life Is What You Make It / Wake Up, Life Is Calling / The Secret Wish List / The Rule Breakers / A Place Called Home</strong></td><td>Preeti Shenoy</td></tr>
+      <tr><td><strong>Second Thoughts</strong></td><td>Shobhaa De</td></tr>
+      <tr><td><strong>Lady Tailor</strong></td><td>Priya Hajela</td></tr>
+      <tr><td><strong>Brahma's Hair</strong></td><td>Maneka Gandhi</td></tr>
+      <tr><td><strong>Accidents Like Love and Marriage</strong></td><td>Jaishree Misra</td></tr>
+      <tr><td><strong>Apocalypso</strong> (poetry collection)</td><td>Jeet Thayil</td></tr>
+      <tr><td><strong>The Fisher Queen's Dynasty</strong></td><td>Kavita Kane</td></tr>
+      <tr><td><strong>Remnants of a Separation</strong></td><td>Aanchal Malhotra</td></tr>
+      <tr><td><strong>Siddhartha: The Boy Who Became the Buddha</strong></td><td>Advaita Kala</td></tr>
+      <tr><td><strong>Above Average</strong></td><td>Amitabha Bagchi</td></tr>
+      <tr><td><strong>Narcopolis</strong></td><td>Jeet Thayil</td></tr>
+      <tr><td><strong>Madam President: The Biography of Draupadi Murmu</strong></td><td>Sandeep Sahu</td></tr>
+      <tr><td><strong>Requiem in Raga Janaki</strong></td><td>Neelum Saran Gour — Sahitya Akademi Award for English, 2020</td></tr>
+      <tr><td><strong>The Accidental Prime Minister</strong></td><td>Sanjaya Baru (on Manmohan Singh)</td></tr>
+      <tr><td><strong>Faster Than Lightning</strong> (autobiography)</td><td>Usain Bolt</td></tr>
+      <tr><td><strong>Wings of Fire</strong> (autobiography)</td><td>Dr. A.P.J. Abdul Kalam</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Dr. A.P.J. Abdul Kalam — Other Books:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">Ignited Minds</span></li>
+        <li><span class="hl-g">Beyond 2020</span></li>
+        <li><span class="hl-p">Reignited: Scientific Pathways to a Brighter Future</span></li>
+        <li><span class="hl-b">The Guiding Force / What Can I Give</span></li>
+        <li><strong>Target 3 Billion</strong></li>
+        <li><strong>Mission of India</strong></li>
+        <li><strong>You Are Born to Blossom</strong></li>
+        <li><strong>Inspiring Thoughts</strong></li>
+      </ul>
+      <p class="hw">Dr. Kalam — "Missile Man of India" — passed away <span class="hl-p">July 27, 2015</span></p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- EXAM STRATEGY -->
+    <div class="sec purple">㉘ Exam Strategy — How to Attempt Unknown Book Questions 🎯</div>
+
+    <div class="tip-box">
+      <p class="hw" style="margin-top:8px;"><strong>Statement-Based Question Tricks (used heavily in CGL):</strong></p>
+      <ul class="hw num">
+        <li>A book's central theme can only be about <span class="hl"><strong>ONE</strong></span> subject. If two statements describe COMPLETELY different themes (e.g., "urban development" vs "colonial architecture history"), at most ONE can be true — take a 50/50 guess if you can't eliminate further</li>
+        <li>Whenever a statement claims a book <span class="hl-g"><strong>"won the Booker/Sahitya Akademi Award"</strong></span> — verify carefully. In this exam's pattern, such claims are OFTEN FALSE unless it's a genuinely famous winner you already know (Midnight's Children, God of Small Things, White Tiger, Heart Lamp, Tomb of Sand)</li>
+        <li>If a statement (Reason) is talking about the SAME general theme as the Assertion (e.g., both about feminist themes in a story collection), and NEITHER mentions awards/prizes, it's likely that <span class="hl-p"><strong>both are true and R correctly explains A</strong></span></li>
+        <li>If two options describe geographically/thematically <span class="hl-b"><strong>incompatible settings</strong></span> (e.g., "Sri Lankan civil war" vs "Gandhara region excavations" for a Sri Lankan author's book), use author nationality to eliminate the wrong one</li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>When All Else Fails — SKIP!</strong> For extremely obscure books/authors with no elimination possible (e.g., "The Bonkers" by Natasha Sharma), skipping the question is the smartest strategy. Don't waste time overthinking unknowable trivia.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION: TOP 15 AUTHORS -->
+    <div class="sec teal">📋 Quick Revision — Top 15 Must-Know Authors</div>
+    <table class="qr-t">
+      <tr><th>Author</th><th>Signature Books</th></tr>
+      <tr><td>Kazuo Ishiguro</td><td>Remains of the Day, Never Let Me Go, The Buried Giant, English Patient</td></tr>
+      <tr><td>Salman Rushdie</td><td>Midnight's Children, Satanic Verses, Moor's Last Sigh, Joseph Anton</td></tr>
+      <tr><td>Margaret Atwood</td><td>Handmaid's Tale, The Testaments, Blind Assassin, Alias Grace</td></tr>
+      <tr><td>Ian McEwan</td><td>Atonement, Amsterdam, Saturday, Nutshell, Enduring Love</td></tr>
+      <tr><td>R.K. Narayan</td><td>Malgudi Days, The Guide, Swami and Friends, Painter of Signs</td></tr>
+      <tr><td>Vikram Seth</td><td>A Suitable Boy, Golden Gate, An Equal Music, A Suitable Girl</td></tr>
+      <tr><td>Amitav Ghosh</td><td>Sea of Poppies, River of Smoke, Flood of Fire, Shadow Lines, Glass Palace</td></tr>
+      <tr><td>Anita Desai / Kiran Desai</td><td>Clear Light of Day / The Inheritance of Loss (mother-daughter)</td></tr>
+      <tr><td>Jhumpa Lahiri</td><td>Interpreter of Maladies, Namesake, Lowland, Unaccustomed Earth</td></tr>
+      <tr><td>Arundhati Roy</td><td>God of Small Things, Ministry of Utmost Happiness</td></tr>
+      <tr><td>Arvind Adiga</td><td>White Tiger, Last Man in the Tower, Selection Day</td></tr>
+      <tr><td>Shashi Tharoor</td><td>Era of Darkness, Ambedkar: A Life, Great Indian Novel, Why I Am a Hindu</td></tr>
+      <tr><td>Ruskin Bond</td><td>Blue Umbrella, Room on the Roof, Flight of Pigeons</td></tr>
+      <tr><td>Mulk Raj Anand</td><td>Untouchable, Coolie, The Village, Two Leaves and a Bud</td></tr>
+      <tr><td>Khushwant Singh</td><td>Train to Pakistan, Truth Love and a Little Malice, Karma</td></tr>
+      <tr><td>V.S. Naipaul</td><td>An Area of Darkness, House for Mr. Biswas, Bend in the River</td></tr>
+      <tr><td>Meghnad Desai</td><td>Rediscovery of India, Raisina Model, Who Wrote the Bhagavad Gita</td></tr>
+      <tr><td>Amish Tripathi</td><td>Shiva Trilogy (Immortals of Meluha, Secret of Nagas, Oath of Vayuputras)</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec red">💡 Topper Tips — Books &amp; Authors Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li>Kazuo Ishiguro = the <span class="hl"><strong>"Gothic style" of this topic</strong></span> — his name repeats the MOST across options; memorize ALL his books</li>
+          <li>"An <span class="hl-g"><strong>Area</strong></span> of Darkness" = V.S. Naipaul; "An <span class="hl-g"><strong>Era</strong></span> of Darkness" = Shashi Tharoor — one-letter difference, different authors!</li>
+          <li>"A Suitable Boy" (Vikram Seth) ≠ "An Unsuitable Boy" (Karan Johar) — don't confuse!</li>
+          <li>"Midnight's Children" (Salman Rushdie) ≠ "Midnight is a Place" (John Aiken) — similar-sounding titles, different books</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Award-claim statements in CGL are <span class="hl-p"><strong>usually FALSE</strong></span> unless the book is a genuinely famous prize-winner you already recognize</li>
+          <li>Satyajit Ray was a <span class="hl"><strong>film director</strong></span>, NOT a book author — watch for this trap in options!</li>
+          <li>A book's theme = only ONE focus; eliminate multi-theme-claiming options immediately</li>
+          <li>Mother-daughter duo: Anita Desai (Clear Light of Day) &amp; Kiran Desai (Inheritance of Loss) — don't mix up their individual works!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF BOOKS &amp; AUTHORS NOTES</div>
+      <strong>Static GK Series (Topic 5 of 6) | All 2025 SSC Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
