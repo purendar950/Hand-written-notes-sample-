@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLIT सीरीज — लेक्चर 7 | टॉपर नोट्स (हिंदी)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Tiro+Devanagari+Hindi:ital@0;1&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --paper:#fffef5;
+  --rule:#c8daf0;
+  --ink:#1c1c2e;
+  --red:#d32f2f;
+  --blue:#1565c0;
+  --green:#2e7d32;
+  --orange:#e65100;
+  --purple:#6a1b9a;
+  --pink:#c2185b;
+  --yellow-hl:#fff176;
+  --green-hl:#b9f6ca;
+  --pink-hl:#fce4ec;
+  --blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;
+  --line-height:34px;
+}
+
+body{
+  background:#e8e0d0;
+  font-family:'Tiro Devanagari Hindi', 'Kalam', cursive;
+  color:var(--ink);
+  padding:20px 12px 60px;
+  font-size:16px;
+}
+
+/* TOOLBAR */
+.toolbar{
+  position:sticky; top:0; z-index:200;
+  background:#2c3e50;
+  border-radius:10px;
+  padding:10px 14px;
+  display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+  margin-bottom:18px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+.toolbar-title{
+  color:#f39c12;
+  font-family:'Caveat Brush',cursive;
+  font-size:1.1rem;
+  margin-right:auto;
+}
+.btn{
+  border:none; border-radius:8px; padding:8px 16px;
+  font-family:'Kalam',cursive; font-size:0.9rem; font-weight:700;
+  cursor:pointer; display:flex; align-items:center; gap:6px;
+  transition:transform 0.15s;
+}
+.btn:active{transform:scale(0.96)}
+.btn-pdf{background:#e74c3c;color:white}
+.btn-print{background:#27ae60;color:white}
+.btn-dark{background:#8e44ad;color:white}
+
+/* NOTEBOOK PAGE */
+.page{
+  background:var(--paper);
+  max-width:820px; margin:0 auto;
+  border-radius:4px;
+  box-shadow:3px 3px 20px rgba(0,0,0,0.25);
+  overflow:hidden; position:relative;
+}
+.page::before{
+  content:'';
+  position:absolute; top:0; left:22px; bottom:0; width:2px;
+  background:var(--margin-line); z-index:10;
+}
+.ruled{
+  background-image:repeating-linear-gradient(
+    transparent, transparent calc(var(--line-height) - 1px),
+    var(--rule) calc(var(--line-height) - 1px), var(--rule) var(--line-height)
+  );
+  background-size:100% var(--line-height);
+  padding:20px 28px 40px 52px;
+  position:relative;
+}
+
+/* HOLES */
+.holes{
+  position:absolute; left:0; top:0; bottom:0; width:22px;
+  display:flex; flex-direction:column; justify-content:space-around;
+  padding:60px 0; z-index:20;
+}
+.hole{
+  width:14px; height:14px;
+  background:#e8e0d0; border-radius:50%;
+  border:1px solid #c0b8a8; margin-left:4px;
+}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#1565c0 100%);
+  color:white; padding:40px 30px 36px 52px; text-align:center;
+}
+.cover-title{
+  font-family:'Caveat Brush',cursive;
+  font-size:2.4rem; color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,0.3); line-height:1.3;
+}
+.cover-sub{
+  font-family:'Tiro Devanagari Hindi',cursive;
+  font-size:1.1rem; color:#b3e5fc; margin-top:10px; line-height:1.6;
+}
+.cover-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3);
+  border-radius:20px; padding:6px 18px; margin-top:14px;
+  font-size:0.9rem; color:#e8f5e9;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+}
+.stars{font-size:1.2rem;letter-spacing:3px;color:#ffd54f;margin-top:10px}
+
+/* SECTION TITLE */
+.section-title{
+  font-family:'Caveat Brush',cursive;
+  font-size:1.5rem; margin:30px 0 8px;
+  display:flex; align-items:center; gap:10px;
+  line-height:1.4;
+}
+.section-title.red{color:var(--red);border-bottom:3px solid var(--red)}
+.section-title.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.section-title.green{color:var(--green);border-bottom:3px solid var(--green)}
+.section-title.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.section-title.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.section-title.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+
+/* SUB TITLE */
+.sub-title{
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:1rem; font-weight:700; color:var(--blue);
+  margin:16px 0 4px; display:flex; align-items:center; gap:6px;
+}
+.sub-title::before{content:'→';color:var(--orange);font-family:sans-serif}
+
+/* PARAGRAPH */
+p.hw{
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.95rem; line-height:var(--line-height);
+  color:var(--ink); margin:2px 0;
+}
+.hw-blue{color:var(--blue)}
+.hw-red{color:var(--red)}
+.hw-green{color:var(--green)}
+.hw-orange{color:var(--orange)}
+.hw-purple{color:var(--purple)}
+
+/* HIGHLIGHTS */
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw-list{list-style:none;padding:0;margin:4px 0}
+ul.hw-list li{
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.93rem; line-height:var(--line-height);
+  padding-left:24px; position:relative;
+}
+ul.hw-list li::before{
+  content:'★'; position:absolute; left:0;
+  color:var(--orange); font-size:0.75rem; top:8px; font-family:sans-serif;
+}
+ul.hw-list.check li::before{content:'✔';color:var(--green);font-family:sans-serif}
+ul.hw-list.arrow li::before{content:'➤';color:var(--blue);font-size:0.65rem;font-family:sans-serif}
+ul.hw-list.cross li::before{content:'✘';color:var(--red);font-size:0.75rem;font-family:sans-serif}
+ul.hw-list.dot li::before{content:'●';color:var(--purple);font-size:0.6rem;top:10px;font-family:sans-serif}
+
+/* STICKY */
+.sticky{
+  background:#fff9c4; border-left:4px solid #f9a825;
+  border-radius:0 8px 8px 0; padding:10px 14px;
+  margin:12px 0;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.95rem; position:relative;
+  box-shadow:2px 3px 8px rgba(0,0,0,0.12);
+  transform:rotate(-0.4deg); line-height:1.7;
+}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky-label{
+  font-family:'Caveat Brush',cursive;
+  font-size:0.8rem; letter-spacing:1px; opacity:0.6; margin-bottom:4px;
+}
+
+/* TABLE */
+.hw-table{
+  width:100%; border-collapse:collapse;
+  margin:12px 0;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.88rem;
+}
+.hw-table th{
+  background:#283593; color:#ffd54f;
+  padding:8px 10px; text-align:left;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.92rem; border:2px solid #1a237e;
+}
+.hw-table td{
+  padding:7px 10px; border:1px solid #c5cae9;
+  vertical-align:top; line-height:1.6;
+}
+.hw-table tr:nth-child(even) td{background:#f3f4ff}
+.hw-table tr:hover td{background:#fffde7}
+
+/* IMP BOX */
+.imp-box{
+  border:2px solid var(--red); border-radius:8px;
+  padding:10px 14px; margin:12px 0;
+  position:relative; background:#fff5f5;
+}
+.imp-box::before{
+  content:'⚠ परीक्षा ट्रैप!';
+  position:absolute; top:-12px; left:12px;
+  background:#d32f2f; color:white;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.78rem; padding:2px 10px; border-radius:4px;
+}
+
+/* TRICK BOX */
+.trick-box{
+  border:2px dashed var(--purple); border-radius:8px;
+  padding:10px 14px; margin:12px 0;
+  background:#f3e5f5; position:relative;
+}
+.trick-box::before{
+  content:'🧠 याद करने की तरकीब';
+  position:absolute; top:-12px; left:12px;
+  background:#6a1b9a; color:white;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.78rem; padding:2px 10px; border-radius:4px;
+}
+
+/* FORMULA BOX */
+.formula-box{
+  border:2px solid var(--blue); border-radius:8px;
+  padding:10px 14px; margin:12px 0;
+  background:#e3f2fd; position:relative;
+}
+.formula-box::before{
+  content:'📐 सूत्र';
+  position:absolute; top:-12px; left:12px;
+  background:#1565c0; color:white;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.78rem; padding:2px 10px; border-radius:4px;
+}
+
+/* MCQ */
+.mcq-block{
+  border:1px solid #90a4ae; border-radius:8px;
+  margin:12px 0; overflow:hidden;
+  box-shadow:1px 2px 6px rgba(0,0,0,0.08);
+}
+.mcq-q-head{
+  background:#37474f; color:#ffd54f;
+  padding:8px 14px;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.95rem; line-height:1.5;
+}
+.mcq-q-head .qno{color:#80cbc4;margin-right:6px;font-size:0.85rem;font-family:'Caveat',cursive}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{
+  display:flex; gap:8px; align-items:flex-start;
+  padding:4px 0;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.88rem; line-height:1.5;
+}
+.opt-c{
+  min-width:22px; height:22px;
+  border-radius:50%; border:2px solid #90a4ae;
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.72rem; font-weight:700; flex-shrink:0;
+  font-family:'Caveat',cursive;
+}
+.mcq-opt.correct .opt-c{background:#2e7d32;border-color:#2e7d32;color:white}
+.mcq-opt.correct{color:#1b5e20;font-weight:700}
+.mcq-ans-box{
+  background:#e8f5e9; border-top:1px solid #a5d6a7;
+  padding:6px 14px;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.85rem; color:#1b5e20; line-height:1.6;
+}
+
+/* DIVIDER */
+.divider{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.chapter-break{
+  text-align:center;
+  font-family:'Caveat Brush',cursive;
+  font-size:0.8rem; color:#90a4ae;
+  letter-spacing:3px; margin:4px 0 24px;
+}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:540px){.two-col{grid-template-columns:1fr}}
+
+/* NUM BADGE */
+.num-badge{
+  background:white; border:2px solid #3f51b5;
+  border-radius:8px; padding:10px; text-align:center;
+  box-shadow:2px 2px 6px rgba(0,0,0,0.1);
+}
+.num-badge .big{
+  font-family:'Caveat Brush',cursive;
+  font-size:1.8rem; color:var(--orange); line-height:1.1;
+}
+.num-badge .lbl{
+  font-size:0.78rem; color:#546e7a; margin-top:2px;
+  font-family:'Tiro Devanagari Hindi',sans-serif; line-height:1.4;
+}
+
+/* QUICK REVISION TABLE */
+.qr-table{
+  width:100%; border-collapse:collapse;
+  margin:12px 0;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.85rem;
+}
+.qr-table th{
+  background:#e65100; color:white;
+  padding:7px 10px;
+  font-family:'Tiro Devanagari Hindi',sans-serif;
+  font-size:0.9rem; border:1px solid #bf360c;
+}
+.qr-table td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.6}
+.qr-table tr:nth-child(even) td{background:#fff3e0}
+.qr-table td:first-child{color:var(--blue);font-weight:700}
+.qr-table td:last-child{color:var(--green)}
+
+/* DARK MODE */
+body.dark{background:#1a1a2e}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 33px,#1e3a5f 33px,#1e3a5f 34px)}
+body.dark .cover{background:linear-gradient(135deg,#0d0d1a,#1a1a3e)}
+body.dark .hw-table td{border-color:#2d4a6e;color:#e0e0e0}
+body.dark .hw-table tr:nth-child(even) td{background:#1e2d4a}
+body.dark p.hw,body.dark ul.hw-list li{color:#d0d8e8}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp-box{background:#2d1515}
+body.dark .trick-box{background:#1e1429}
+body.dark .formula-box{background:#0d2040}
+body.dark .num-badge{background:#1e2d4a}
+body.dark .mcq-block{border-color:#2d4a6e}
+body.dark .qr-table td{color:#d0d8e8}
+body.dark .qr-table td:first-child{color:#82b1ff}
+body.dark .qr-table td:last-child{color:#a5d6a7}
+body.dark .qr-table tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:white!important;padding:0}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .ruled{padding:16px 24px 24px 48px}
+  .section-title{break-before:avoid}
+  .mcq-block,.sticky,.imp-box,.trick-box,.formula-box{break-inside:avoid}
+  .hw-table th{background:#283593!important;color:#ffd54f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📒 BLIT लेक्चर 7 — हिंदी टॉपर नोट्स</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ प्रिंट / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 डार्क मोड</button>
+</div>
+
+<!-- NOTEBOOK PAGE -->
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-title">📖 BLIT सीरीज — लेक्चर 7</div>
+    <div class="cover-sub">सम्पूर्ण नोट्स — भौतिकी · राजव्यवस्था · इतिहास · विज्ञान · अर्थशास्त्र · भूगोल</div>
+    <div class="cover-badge">📚 SSC CGL · UPSC · राज्य परीक्षाएं · 2025–26</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- Q1: गतिज ऊर्जा -->
+    <div class="section-title red">① भौतिकी — गतिज ऊर्जा ⚡</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q1.</span> गति 1.5 गुना बढ़ाने पर गतिज ऊर्जा कितनी हो जाएगी?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>1.5 गुना</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>2 गुना</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>2.25 गुना ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>3 गुना</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: C — 2.25 गुना (= 9/4 × मूल गतिज ऊर्जा)</div>
+    </div>
+
+    <div class="formula-box">
+      <p class="hw"><strong>गतिज ऊर्जा (KE) = ½mv²</strong></p>
+      <p class="hw">नई गति = 1.5v = <strong>3/2 × v</strong></p>
+      <p class="hw">नई KE = ½m × (3/2 v)² = ½m × <strong>9/4</strong> × v² = <span class="hl"><strong>9/4 × मूल KE = 2.25 गुना</strong></span></p>
+    </div>
+
+    <div class="sub-title">ऊर्जा के प्रकार</div>
+    <table class="hw-table">
+      <tr><th>ऊर्जा का प्रकार</th><th>परिभाषा</th><th>उदाहरण</th></tr>
+      <tr><td><span style="color:var(--red);font-weight:700">गतिज ऊर्जा</span></td><td>गति के कारण ऊर्जा</td><td>चलती गोली, बहता पानी</td></tr>
+      <tr><td><span style="color:var(--blue);font-weight:700">स्थितिज ऊर्जा</span></td><td>स्थिति के कारण ऊर्जा</td><td>बाँध में पानी, तना हुआ धनुष</td></tr>
+      <tr><td><span style="color:var(--green);font-weight:700">यांत्रिक ऊर्जा</span></td><td>गतिज + स्थितिज</td><td>कोई भी गतिमान वस्तु</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="sticky-label">ऊर्जा रूपांतरण</div>
+        यांत्रिक → विद्युत: <strong>जनरेटर/डायनेमो</strong><br>
+        विद्युत → यांत्रिक: <strong>मोटर</strong>
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">मुक्त पतन में ऊर्जा</div>
+        ऊपर: स्थितिज = अधिकतम, गतिज = शून्य<br>
+        बीच में: स्थितिज = गतिज (बराबर)<br>
+        नीचे: गतिज = अधिकतम, स्थितिज = शून्य
+      </div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="sticky-label">संवेग के पदों में गतिज ऊर्जा</div>
+      <strong>KE = p²/2m</strong> &nbsp; (जहाँ p = रैखिक संवेग)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q2: ध्वनि तरंगें -->
+    <div class="section-title blue">② भौतिकी — ध्वनि तरंगें 🔊</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q2.</span> संपीडन = उच्च दाब, विरलन = निम्न दाब। ध्वनि = माध्यम में _____ के परिवर्तन की गति।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>तीव्रता</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>घनत्व ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>तापमान</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>दाब</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — घनत्व</div>
+    </div>
+
+    <p class="hw">ध्वनि तरंगें <span class="hl"><strong>अनुदैर्ध्य तरंगें</strong></span> होती हैं — कण तरंग की दिशा में ही आगे-पीछे कंपन करते हैं।</p>
+
+    <table class="hw-table">
+      <tr><th>शब्द</th><th>अर्थ</th><th>ग्राफ में</th></tr>
+      <tr><td><strong>संपीडन (Compression)</strong></td><td>उच्च दाब, अधिक घनत्व</td><td style="color:var(--red);font-weight:700">शृंग (Crest)</td></tr>
+      <tr><td><strong>विरलन (Rarefaction)</strong></td><td>निम्न दाब, कम घनत्व</td><td style="color:var(--blue);font-weight:700">गर्त (Trough)</td></tr>
+    </table>
+
+    <div class="sub-title">ध्वनि तरंग के गुण</div>
+    <ul class="hw-list check">
+      <li><span class="hl-p"><strong>निर्वात में नहीं</strong></span> चल सकती</li>
+      <li><strong>ध्रुवीकृत नहीं</strong> हो सकती (केवल अनुप्रस्थ तरंगें ध्रुवीकृत होती हैं)</li>
+      <li>चाल: <span class="hl"><strong>ठोस → द्रव → गैस</strong></span> (ठोस में सर्वाधिक)</li>
+      <li>ध्वनि का परावर्तन = <strong>प्रतिध्वनि (Echo)</strong></li>
+      <li>बार-बार परावर्तन = <span class="hl-g"><strong>अनुरणन (Reverberation)</strong></span></li>
+    </ul>
+
+    <div class="trick-box">
+      <span class="hw-purple"><strong>P-तरंगें</strong> = अनुदैर्ध्य = ध्वनि जैसी (संपीडन &amp; विरलन)</span><br>
+      <span class="hw-blue"><strong>S-तरंगें</strong> = अनुप्रस्थ = प्रकाश जैसी</span>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q3: संवैधानिक संशोधन -->
+    <div class="section-title orange">③ राजव्यवस्था — संवैधानिक संशोधन 🏛️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q3.</span> राज्यसभा में संवैधानिक संशोधन विधेयक पर मतदान के लिए क्या आवश्यक है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>सामान्य बहुमत</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>पूर्ण बहुमत</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>विशेष बहुमत ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>कुल सदस्यों का 2/3</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: C — दोनों सदनों में विशेष बहुमत</div>
+    </div>
+
+    <p class="hw"><span class="hl"><strong>अनुच्छेद 368, भाग XX</strong></span> — <strong>दक्षिण अफ्रीका</strong> से उधार लिया गया।</p>
+
+    <table class="hw-table">
+      <tr><th>प्रकार</th><th>कब आवश्यक</th><th>बहुमत</th></tr>
+      <tr><td><strong>विशेष बहुमत</strong></td><td>मूल अधिकार, DPSP, अधिकांश संशोधन</td><td>कुल सदस्यों का &gt;50% + उपस्थित एवं मतदान करने वालों का 2/3</td></tr>
+      <tr><td><strong>विशेष बहुमत + राज्य अनुसमर्थन</strong></td><td>राष्ट्रपति चुनाव, SC/HC, 7वीं अनुसूची, अनु. 368</td><td>संसद में विशेष बहुमत + <span class="hl">कम से कम आधे राज्यों (14/28) में</span> सामान्य बहुमत</td></tr>
+      <tr><td><strong>सामान्य बहुमत</strong></td><td>सामान्य विषय (अनु. 368 के अंतर्गत नहीं)</td><td>उपस्थित एवं मतदान करने वालों का &gt;50%</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>महत्वपूर्ण नियम:</strong> <span class="hl">किसी भी सदन</span> में पेश हो सकता है | राष्ट्रपति की पूर्व अनुशंसा नहीं चाहिए | गतिरोध पर <strong>संयुक्त बैठक नहीं</strong> | राष्ट्रपति <span class="hl-g"><strong>अनुमति देने के लिए बाध्य</strong></span></p>
+    </div>
+
+    <div class="sub-title">राज्यसभा के तथ्य (अनुच्छेद 80)</div>
+    <div class="two-col">
+      <div class="num-badge"><div class="big">250</div><div class="lbl">अधिकतम सदस्य (238 निर्वाचित + 12 मनोनीत)</div></div>
+      <div class="num-badge"><div class="big">31</div><div class="lbl">उत्तर प्रदेश की सीटें — सर्वाधिक प्रतिनिधित्व</div></div>
+    </div>
+
+    <ul class="hw-list arrow">
+      <li>12 मनोनीत: <span class="hl"><strong>साहित्य, विज्ञान, कला, समाज सेवा</strong></span> — (<strong>आयरलैंड</strong> से उधार)</li>
+      <li>प्रत्येक सदस्य: <strong>6 वर्ष</strong> का कार्यकाल | हर <strong>2 वर्ष</strong> में 1/3 सेवानिवृत्त</li>
+      <li>मतदान: <strong>आनुपातिक प्रतिनिधित्व + एकल संक्रमणीय मत</strong></li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">राज्यसभा की विशेष शक्तियाँ</div>
+      <strong>अनु. 249</strong> — राज्य सूची के विषय पर राष्ट्रीय हित में संसद को कानून बनाने की अनुमति<br>
+      <strong>अनु. 312</strong> — नई अखिल भारतीय सेवाएं बनाने की शक्ति (IAS, IPS, IFoS)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q4: चैत्य गुफाएं -->
+    <div class="section-title green">④ कला एवं संस्कृति — बौद्ध गुफाएं 🪨</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q4.</span> प्रारंभिक बौद्धकाल की सभी चैत्य गुफाओं में कौन-सी सामान्य संरचनात्मक विशेषता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>कोई प्रमुख आसन नहीं</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>अर्धवृत्ताकार मेहराब और लकड़ी की खूंटियां</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>सामने के प्रवेश पर स्तूप</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>हॉल के पीछे स्तूप ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: D — अर्धवृत्ताकार हॉल के पिछले सिरे पर स्तूप</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>गुफा प्रकार</th><th>उद्देश्य</th></tr>
+      <tr><td><strong>चैत्य</strong></td><td>पूजा स्थल; भीतर <span class="hl">स्तूप</span> होता है</td></tr>
+      <tr><td><strong>विहार</strong></td><td>बौद्ध भिक्षुओं का निवास स्थान</td></tr>
+    </table>
+
+    <ul class="hw-list dot">
+      <li>कन्हेरी, कार्ले, नासिक गुफाएं (मुख्यतः महाराष्ट्र)</li>
+      <li><span class="hl-g"><strong>भाजे गुफाएं</strong></span> — लकड़ी की खूंटियां (सातवाहन काल)</li>
+    </ul>
+
+    <div class="trick-box">
+      <strong>परीक्षा टिप:</strong> "पीछे स्तूप" बनाम "आगे स्तूप" → हमेशा <span class="hl"><strong>पीछे स्तूप</strong></span> सही उत्तर है। हॉल अर्धवृत्ताकार (apsidal) होता है — स्तूप उसी गोल सिरे पर।
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q5: दांडी मार्च -->
+    <div class="section-title purple">⑤ इतिहास — दांडी मार्च और सविनय अवज्ञा आंदोलन 🧂</div>
+
+    <p class="hw"><strong>Q5.</strong> गांधीजी और उनके अनुयायियों ने दांडी में क्या किया? → <span class="hl"><strong>समुद्री जल से नमक बनाया</strong></span>, ब्रिटिश नमक कानून तोड़ा → सविनय अवज्ञा आंदोलन (CDM) की शुरुआत</p>
+
+    <div class="sub-title">घटनाक्रम</div>
+    <table class="hw-table">
+      <tr><th>वर्ष/तिथि</th><th>घटना</th></tr>
+      <tr><td>1928</td><td>साइमन कमीशन — कोई भारतीय सदस्य नहीं — व्यापक विरोध</td></tr>
+      <tr><td>1929</td><td>लाहौर अधिवेशन — अध्यक्ष: <span class="hl"><strong>जवाहरलाल नेहरू</strong></span> — पूर्ण स्वराज घोषित — 26 जनवरी 1930 = प्रथम स्वतंत्रता दिवस (<strong>रावी नदी</strong> के तट पर)</td></tr>
+      <tr><td><span class="hl-p"><strong>12 मार्च 1930</strong></span></td><td>दांडी मार्च शुरू — <strong>साबरमती आश्रम, अहमदाबाद</strong> से</td></tr>
+      <tr><td><span class="hl-g"><strong>6 अप्रैल 1930</strong></span></td><td>दांडी पहुंचे — नमक बनाया</td></tr>
+      <tr><td>1931</td><td>गांधी-इरविन समझौता</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="num-badge"><div class="big">385 किमी</div><div class="lbl">दांडी मार्च की दूरी</div></div>
+      <div class="num-badge"><div class="big">78</div><div class="lbl">साथ चले अनुयायी</div></div>
+    </div>
+
+    <p class="hw hw-blue"><strong>दांडी</strong> — <span class="hl">नवसारी जिला, गुजरात</span> में स्थित है।</p>
+
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="sticky-label">इरविन सहमत हुए ✔</div>
+        व्यक्तिगत उपयोग के लिए नमक बनाने की अनुमति<br>
+        अहिंसक कैदियों की रिहाई
+      </div>
+      <div class="sticky red">
+        <div class="sticky-label">इरविन ने मना किया ✘</div>
+        भगत सिंह, सुखदेव, राजगुरु की फांसी नहीं रोकी<br>
+        पुलिस अत्याचारों की जांच नहीं
+      </div>
+    </div>
+
+    <div class="sub-title">तीन गोलमेज सम्मेलन</div>
+    <table class="hw-table">
+      <tr><th>सम्मेलन</th><th>कांग्रेस की भागीदारी?</th><th>विशेष तथ्य</th></tr>
+      <tr><td>प्रथम GTC</td><td style="color:var(--red)">❌ नहीं</td><td>—</td></tr>
+      <tr><td><span class="hl"><strong>द्वितीय GTC (1931)</strong></span></td><td style="color:var(--green)">✅ गांधीजी शामिल</td><td><strong>गांधीजी केवल इसी में शामिल</strong></td></tr>
+      <tr><td>तृतीय GTC</td><td style="color:var(--red)">❌ नहीं</td><td>—</td></tr>
+    </table>
+
+    <div class="sub-title">विभिन्न क्षेत्रों में CDM नेता</div>
+    <table class="hw-table">
+      <tr><th>क्षेत्र</th><th>नेता</th><th>विशेष</th></tr>
+      <tr><td>उत्तर-पश्चिम सीमांत</td><td><span class="hl"><strong>खान अब्दुल गफ्फार खान</strong></span> (सीमांत गांधी)</td><td>लाल कुर्ती आंदोलन; खुदाई खिदमतगार</td></tr>
+      <tr><td>दक्षिण (मद्रास)</td><td><strong>सी. राजगोपालाचारी</strong></td><td>नमक सत्याग्रह का नेतृत्व</td></tr>
+      <tr><td>अखिल भारत</td><td>सरोजिनी नायडू, कमलादेवी</td><td>गांधीजी से महिलाओं को CDM में शामिल करने का आग्रह</td></tr>
+    </table>
+
+    <div class="sticky pink">
+      <div class="sticky-label">पोट्टि श्रीरामुलु</div>
+      मार्च में शामिल हुए | 1953 में मृत्यु → <strong>आंध्र प्रदेश</strong> का गठन (प्रथम भाषाई राज्य)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q6: भारत रत्न -->
+    <div class="section-title pink">⑥ कला एवं संस्कृति — संगीतकारों को भारत रत्न 🎵</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q6.</span> भारत रत्न पाने वाले प्रथम भारतीय संगीतकार कौन थे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>लता मंगेशकर</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>रवि शंकर</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>एम. एस. सुब्बुलक्ष्मी ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>बिस्मिल्लाह खान</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: C — एम. एस. सुब्बुलक्ष्मी (1998)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>संगीतकार</th><th>वर्ष</th><th>विशेष तथ्य</th></tr>
+      <tr><td><span class="hl-g"><strong>एम. एस. सुब्बुलक्ष्मी</strong></span></td><td><strong>1998</strong></td><td>प्रथम संगीतकार | कर्नाटक संगीत की रानी | रेमन मैग्सेसे 1974 | UNGA में प्रदर्शन करने वाली प्रथम महिला 1966</td></tr>
+      <tr><td>पंडित रवि शंकर</td><td>1999</td><td>सितार वादक | पुस्तकें: <em>My Music My Life</em>, <em>Ragamala</em></td></tr>
+      <tr><td>लता मंगेशकर</td><td>2001</td><td>बिस्मिल्लाह खान के साथ एक ही वर्ष</td></tr>
+      <tr><td>उस्ताद बिस्मिल्लाह खान</td><td>2001</td><td>शहनाई वादक | स्वतंत्रता दिवस पर लाल किले पर | शहनाई = <span class="hl">मंगल वाद्य</span></td></tr>
+      <tr><td>पंडित भीमसेन जोशी</td><td>2009</td><td><span class="hl-b">किराना घराना</span></td></tr>
+    </table>
+
+    <div class="sub-title">कर्नाटक संगीत के महान</div>
+    <ul class="hw-list arrow">
+      <li><strong>कर्नाटक संगीत के जनक:</strong> <span class="hl">पुरंदरदास</span></li>
+      <li><strong>कर्नाटक संगीत की त्रिमूर्ति:</strong> <span class="hl-g">त्यागराज, मुथुस्वामी दीक्षितर, श्यामा शास्त्री</span></li>
+    </ul>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q7: कोशिका -->
+    <div class="section-title red">⑦ जीव विज्ञान — प्रोकैरियोटिक बनाम यूकैरियोटिक कोशिका 🔬</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q7.</span> प्रोकैरियोटिक और यूकैरियोटिक कोशिकाओं में प्रमुख संरचनात्मक अंतर क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>DNA की उपस्थिति</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>माइटोकॉन्ड्रिया की उपस्थिति ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>राइबोसोम की उपस्थिति</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>प्लाज्मा झिल्ली की उपस्थिति</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — माइटोकॉन्ड्रिया यूकैरियोट में होता है, प्रोकैरियोट में नहीं</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>विशेषता</th><th>प्रोकैरियोटिक</th><th>यूकैरियोटिक</th></tr>
+      <tr><td><strong>केन्द्रक</strong></td><td>परिभाषित केन्द्रक नहीं (<span class="hl">न्यूक्लियॉइड</span>)</td><td>सुपरिभाषित केन्द्रक</td></tr>
+      <tr><td><strong>माइटोकॉन्ड्रिया</strong></td><td style="color:var(--red)"><strong>अनुपस्थित ❌</strong></td><td style="color:var(--green)"><strong>उपस्थित ✅</strong></td></tr>
+      <tr><td><strong>राइबोसोम</strong></td><td>उपस्थित (70S)</td><td>उपस्थित (80S)</td></tr>
+      <tr><td><strong>DNA, प्लाज्मा झिल्ली</strong></td><td style="color:var(--green)">उपस्थित ✅</td><td style="color:var(--green)">उपस्थित ✅</td></tr>
+      <tr><td><strong>उदाहरण</strong></td><td>जीवाणु (Bacteria)</td><td>पौधे, जंतु, कवक</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="sticky-label">कोशिका झिल्ली</div>
+        50% प्रोटीन + 50% वसा<br>
+        <strong>सभी जीवों</strong> में पाई जाती है<br>
+        जीवित और <strong>अर्धपारगम्य</strong>
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">कोशिका भित्ति</div>
+        पूर्णतः पारगम्य और <strong>निर्जीव</strong><br>
+        जीवाणु: <span class="hl">पेप्टिडोग्लाइकन</span><br>
+        पौधे: सेल्यूलोज | कवक: <span class="hl-g">काइटिन</span>
+      </div>
+    </div>
+
+    <div class="sub-title">DNA प्रतिकृति (अर्ध-रक्षणात्मक)</div>
+    <p class="hw hw-purple"><strong>हेलीकेस</strong> (खोलना) → <strong>प्राइमेज</strong> (प्राइमर) → <strong>पॉलीमरेज</strong> (नई श्रृंखला) → <strong>लाइगेज</strong> (जोड़ना)</p>
+    <p class="hw">खोजकर्ता: <span class="hl">फ्रेडरिक मीशर</span> | द्विकुण्डली संरचना: <span class="hl-g"><strong>वाटसन &amp; क्रिक</strong></span></p>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q8: अनुच्छेद 359 -->
+    <div class="section-title blue">⑧ राजव्यवस्था — आपात उपबंध 🚨</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q8.</span> आपातकाल में "मूल अधिकारों के प्रवर्तन के लिए न्यायालय जाने के अधिकार" को कौन-से अनुच्छेद के तहत निलंबित किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>अनुच्छेद 301</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>अनुच्छेद 359 ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>अनुच्छेद 108</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>अनुच्छेद 312</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — अनुच्छेद 359 (जर्मनी के वाइमर संविधान से उधार)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>अनुच्छेद</th><th>प्रावधान</th></tr>
+      <tr><td><span class="hl-p"><strong>अनुच्छेद 358</strong></span></td><td>आपातकाल (युद्ध/बाहरी आक्रमण) घोषित होते ही <strong>अनुच्छेद 19 के 6 अधिकार स्वतः निलंबित</strong></td></tr>
+      <tr><td><span class="hl"><strong>अनुच्छेद 359</strong></span></td><td>राष्ट्रपति के आदेश से <strong>न्यायालय जाने का अधिकार निलंबित</strong> (अनु. 20 &amp; 21 को छोड़कर)</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>अनुच्छेद 20 &amp; 21 को कभी भी निलंबित नहीं किया जा सकता — आपातकाल में भी नहीं!</strong></p>
+    </div>
+
+    <div class="sub-title">अन्य महत्वपूर्ण अनुच्छेद</div>
+    <ul class="hw-list arrow">
+      <li><strong>अनु. 301:</strong> व्यापार, वाणिज्य और समागम की स्वतंत्रता</li>
+      <li><strong>अनु. 108:</strong> <span class="hl">संयुक्त बैठक</span> — ऑस्ट्रेलिया से उधार | केवल साधारण विधेयकों के लिए | <span class="hl-g"><strong>लोकसभा अध्यक्ष</strong></span> की अध्यक्षता | सामान्य बहुमत से पारित | राष्ट्रपति बुलाता है</li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">संयुक्त बैठक — केवल 3 बार हुई</div>
+      1. ड्रग निषेध विधेयक &nbsp; 2. बैंकिंग सेवा आयोग विधेयक &nbsp; 3. आतंकवाद निवारण अधिनियम (POTA)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q9: मांग का नियम -->
+    <div class="section-title orange">⑨ अर्थशास्त्र — मांग का नियम 📈</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q9.</span> कीमत बढ़ने पर माँग की मात्रा पर क्या प्रभाव पड़ता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>बढ़ती है</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>घटती है ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>समान रहती है</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>पहले बढ़ती फिर घटती है</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — कीमत ↑ → माँग ↓ (व्युत्क्रम संबंध)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="sticky-label">मांग के नियम के अपवाद</div>
+        <strong>वेबलेन वस्तुएं:</strong> विलासिता — कीमत ↑ तो माँग ↑<br>
+        <strong>गिफिन वस्तुएं:</strong> हीन आवश्यक वस्तुएं — कीमत ↑ तो माँग ↑
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">पूर्ति का नियम</div>
+        कीमत ↑ → पूर्ति ↑ (सीधा संबंध)<br>
+        <strong>साम्यावस्था</strong> = जहाँ माँग और पूर्ति वक्र मिलते हैं
+      </div>
+    </div>
+
+    <div class="sub-title">महत्वपूर्ण आर्थिक वक्र</div>
+    <table class="hw-table">
+      <tr><th>वक्र</th><th>आकार</th><th>क्या दर्शाता है</th></tr>
+      <tr><td><strong>फिलिप्स वक्र</strong></td><td>नीचे की ओर झुका</td><td>मुद्रास्फीति और बेरोजगारी का व्युत्क्रम संबंध</td></tr>
+      <tr><td><strong>लैफर वक्र</strong></td><td>घंटी के आकार का</td><td>कर दर बनाम कर राजस्व — एक बिंदु तक बढ़ता फिर घटता है</td></tr>
+      <tr><td><strong>लोरेंज वक्र</strong></td><td>धनुषाकार वक्र</td><td>आय असमानता — 45° रेखा = पूर्ण समानता | अधिक वक्र = अधिक असमानता</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">गिनी गुणांक</div>
+      <strong>0 = पूर्ण समानता</strong> | <strong>1 = पूर्ण असमानता</strong> | लोरेंज वक्र से परिकलित
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q10: हीलियम और रेडियोएक्टिविटी -->
+    <div class="section-title green">⑩ विज्ञान — हीलियम, उत्कृष्ट गैसें और रेडियोधर्मिता ☢️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q10.</span> पृथ्वी पर हीलियम का प्राथमिक स्रोत (प्राकृतिक गैस भंडारों में संचित) कौन-सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>ज्वालामुखीय गतिविधि</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>यूरेनियम और थोरियम का रेडियोधर्मी क्षय ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>सौर वायु</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>वायुमंडलीय प्रक्रियाएं</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — अल्फा क्षय में हीलियम नाभिक निकलता है → यूरेनियम/थोरियम के क्षय से</div>
+    </div>
+
+    <p class="hw">हीलियम की खोज: <span class="hl"><strong>पियरे जानसेन &amp; नॉर्मन लॉकियर</strong></span> ने सूर्यग्रहण के दौरान <span class="hl-g"><strong>गुंटूर, आंध्र प्रदेश, भारत (1868)</strong></span> में</p>
+    <p class="hw">बाद में <strong>विलियम रैमसे</strong> ने संश्लेषित किया (अधिकांश उत्कृष्ट गैसों के खोजकर्ता)</p>
+
+    <div class="trick-box">
+      <strong>उत्कृष्ट गैसें याद करने की तरकीब:</strong> <span class="hl">"लंबे रहो हेमा नेहा करीना"</span><br>
+      <span class="hw-blue">He (हीलियम) — Ne (नियॉन) — Ar (आर्गन) — Kr (क्रिप्टॉन) — Xe (ज़ेनॉन) — Rn (रेडॉन)</span>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>क्षय प्रकार</th><th>परमाणु क्रमांक में परिवर्तन</th><th>परमाणु द्रव्यमान में परिवर्तन</th></tr>
+      <tr><td><strong>अल्फा क्षय</strong></td><td style="color:var(--red)">2 से घटता है</td><td style="color:var(--red)">4 से घटता है</td></tr>
+      <tr><td><strong>बीटा माइनस</strong></td><td style="color:var(--green)">1 से बढ़ता है</td><td>कोई परिवर्तन नहीं</td></tr>
+      <tr><td><strong>बीटा प्लस</strong></td><td style="color:var(--red)">1 से घटता है</td><td>कोई परिवर्तन नहीं</td></tr>
+      <tr><td><strong>गामा क्षय</strong></td><td>कोई परिवर्तन नहीं</td><td>कोई परिवर्तन नहीं (केवल ऊर्जा)</td></tr>
+    </table>
+
+    <div class="sub-title">रेडियोधर्मिता के महत्वपूर्ण तथ्य</div>
+    <ul class="hw-list arrow">
+      <li>इकाई: <span class="hl"><strong>बेक्वेरल</strong></span> (हेनरी बेक्वेरल ने रेडियोधर्मिता खोजी)</li>
+      <li>"रेडियोधर्मिता" शब्द दिया: <strong>मेडम क्यूरी</strong></li>
+      <li>मेडम क्यूरी &amp; पियरे क्यूरी ने खोजा: <span class="hl-g"><strong>रेडियम और पोलोनियम</strong></span></li>
+      <li>मेडम क्यूरी: <span class="hl"><strong>2 नोबेल पुरस्कार</strong></span> पाने वाली एकमात्र महिला (1903 भौतिकी + 1911 रसायन)</li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">भारत का फास्ट ब्रीडर रिएक्टर</div>
+      स्थान: <strong>कलपक्कम, तमिलनाडु</strong> (रूस की सहायता से निर्मित)<br>
+      विशेषता: <strong>उपभोग से अधिक ईंधन उत्पन्न करता है!</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q11: ग्रह -->
+    <div class="section-title purple">⑪ भूगोल — ग्रह और सौरमंडल 🪐</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q11.</span> मंगल ग्रह के लाल रंग का प्राथमिक कारण क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>ज्वालामुखी की राख</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>सतह पर आयरन ऑक्साइड (जंग) ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>लाल वायुमंडलीय धूल</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>लाल शैवाल</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — आयरन ऑक्साइड (जंग) = लाल ग्रह</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>ग्रह</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td><strong>बुध</strong></td><td>सूर्य के सबसे निकट | परिक्रमण = 88 दिन (सर्वाधिक कक्षीय गति) | कोई उपग्रह नहीं</td></tr>
+      <tr><td><span class="hl-p"><strong>शुक्र</strong></span></td><td>पृथ्वी की जुड़वाँ बहन | सुबह का तारा &amp; शाम का तारा | <span class="hl">सबसे चमकीला ग्रह</span> | H₂SO₄ बादल | सबसे लंबा घूर्णन = 243 दिन | पूर्व→पश्चिम घूर्णन</td></tr>
+      <tr><td><strong>पृथ्वी</strong></td><td>नीला ग्रह (71% जल) | सघनतम ग्रह | 1 चंद्रमा</td></tr>
+      <tr><td><span class="hl"><strong>मंगल</strong></span></td><td>लाल ग्रह (आयरन ऑक्साइड) | 2 उपग्रह: <strong>फोबोस &amp; डेइमोस</strong> | क्षुद्रग्रह पट्टी मंगल के बाद</td></tr>
+      <tr><td><strong>बृहस्पति</strong></td><td>सबसे बड़ा ग्रह | गैलीलियन उपग्रह: <span class="hl-g">Io, Europa, Callisto, Ganymede</span> (Ganymede = सौरमंडल का सबसे बड़ा उपग्रह)</td></tr>
+      <tr><td><strong>शनि</strong></td><td>वलय: <strong>कैसिनी</strong> ने खोजे | अंतराल: हाइजेन्स ने | <span class="hl">सबसे कम घनत्व</span> | सबसे बड़ा उपग्रह = टाइटन</td></tr>
+      <tr><td><span class="hl-g"><strong>अरुण (Uranus)</strong></span></td><td>हरा ग्रह | लुढ़कता ग्रह (अक्ष &gt;90° झुका) | पूर्व→पश्चिम घूर्णन | खोजकर्ता: <strong>विलियम हर्शेल</strong></td></tr>
+      <tr><td><strong>वरुण (Neptune)</strong></td><td><strong>गणितीय गणनाओं</strong> से खोजा गया — <strong>अर्बेन ले वेरियर</strong> | परिक्रमण = 165 वर्ष</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>पूर्व→पश्चिम घूर्णन:</strong> <span class="hl">केवल शुक्र &amp; अरुण</span> (बाकी सभी से विपरीत)</p>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q12: राष्ट्रपति -->
+    <div class="section-title red">⑫ राजव्यवस्था — राष्ट्रपति एवं उपराष्ट्रपति 🏛️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q12.</span> राष्ट्रपति पद रिक्त होने पर नया चुनाव कितने समय में होना चाहिए?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>3 महीने</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>6 महीने ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>1 वर्ष</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>90 दिन</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — 6 महीने (अनुच्छेद 62)</div>
+    </div>
+
+    <div class="sub-title">इस्तीफा देने का क्रम</div>
+    <ul class="hw-list arrow">
+      <li>राष्ट्रपति → <span class="hl"><strong>उपराष्ट्रपति</strong></span> को इस्तीफा देते हैं</li>
+      <li>उपराष्ट्रपति → <strong>राष्ट्रपति</strong> को इस्तीफा देते हैं</li>
+      <li>लोकसभा अध्यक्ष → <strong>उपाध्यक्ष</strong> को | उपाध्यक्ष → <strong>अध्यक्ष</strong> को</li>
+    </ul>
+
+    <div class="sticky pink">
+      <div class="sticky-label">कार्यकाल में निधन वाले राष्ट्रपति</div>
+      <strong>डॉ. ज़ाकिर हुसैन</strong> → VV गिरि (कार्यवाहक) → VV गिरि चुनाव लड़े → मुख्य न्यायाधीश <strong>एम. हिदायतुल्ला</strong> (कार्यवाहक)<br>
+      <strong>फखरुद्दीन अली अहमद</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q13 & 14: योजनाएं और बजट -->
+    <div class="section-title orange">⑬–⑭ अर्थशास्त्र — सरकारी योजनाएं &amp; बजट 💰</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q13.</span> PM किसान मानधन योजना में निश्चित मासिक पेंशन कितनी है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>₹1,000</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>₹2,000</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>₹3,000 ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>₹5,000</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: C — ₹3,000/माह (₹36,000/वर्ष) 60 वर्ष के बाद</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>विशेषता</th><th>PM किसान मानधन</th><th>PM श्रम योगी मानधन</th></tr>
+      <tr><td><strong>लाभार्थी</strong></td><td>लघु &amp; सीमांत किसान (जमीन &lt; 2 हेक्टेयर)</td><td>असंगठित क्षेत्र के कामगार</td></tr>
+      <tr><td><strong>मंत्रालय</strong></td><td><span class="hl">कृषि मंत्रालय</span></td><td>श्रम मंत्रालय</td></tr>
+      <tr><td><strong>आयु</strong></td><td>18 से 40 वर्ष</td><td>18 से 40 वर्ष</td></tr>
+      <tr><td><strong>पेंशन</strong></td><td style="color:var(--green);font-weight:700">₹3,000/माह (60 के बाद)</td><td style="color:var(--green);font-weight:700">₹3,000/माह (60 के बाद)</td></tr>
+    </table>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q14.</span> सरकार की कुल आय कुल व्यय से अधिक हो तो बजट का प्रकार?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>संतुलित बजट</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>अधिशेष बजट ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>घाटे का बजट</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>प्राथमिक घाटा</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — अधिशेष बजट</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>प्रकार</th><th>सूत्र / स्थिति</th></tr>
+      <tr><td>संतुलित बजट</td><td>आय = व्यय</td></tr>
+      <tr><td><strong>अधिशेष बजट</strong></td><td style="color:var(--green)"><strong>आय &gt; व्यय</strong></td></tr>
+      <tr><td>घाटे का बजट</td><td style="color:var(--red)">व्यय &gt; आय</td></tr>
+      <tr><td><span class="hl"><strong>राजकोषीय घाटा</strong></span></td><td>कुल व्यय − कुल प्राप्तियाँ <strong>(उधार को छोड़कर)</strong></td></tr>
+      <tr><td>प्राथमिक घाटा</td><td>राजकोषीय घाटा − ब्याज भुगतान</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q15: जनजातीय विद्रोह -->
+    <div class="section-title green">⑮ इतिहास — जनजातीय विद्रोह 🏹</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q15.</span> संथाल जनजाति मुख्यतः किस क्षेत्र में केंद्रित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt correct"><div class="opt-c">A</div>झारखंड, ओडिशा और पश्चिम बंगाल ✔</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>मध्य प्रदेश और छत्तीसगढ़</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>राजस्थान और गुजरात</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>पूर्वोत्तर भारत</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: A — झारखंड, ओडिशा और पश्चिम बंगाल</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>विद्रोह</th><th>नेता</th><th>वर्ष</th><th>प्रमुख तथ्य</th></tr>
+      <tr><td><strong>संथाल विद्रोह</strong></td><td><span class="hl"><strong>सिधू &amp; कान्हू मुर्मू</strong></span> (+ चाँद &amp; भैरव)</td><td>1855</td><td>क्षेत्र: दामन-ए-कोह (राजमहल पहाड़ियाँ)</td></tr>
+      <tr><td><strong>मुंडा उलगुलान</strong></td><td><span class="hl-g"><strong>बिरसा मुंडा</strong></span></td><td>1899–1900</td><td>खुंटकट्टी व्यवस्था बहाली; दिकू (बाहरी) भगाओ</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">बिरसा मुंडा का जन्मदिन</div>
+      <strong>15 नवंबर</strong> = <span class="hl"><strong>जनजातीय गौरव दिवस</strong></span> (Janjatiya Gaurav Diwas)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q16: पर्यावरण -->
+    <div class="section-title blue">⑯ पर्यावरण — अंतर्राष्ट्रीय सम्मेलन 🌍</div>
+
+    <p class="hw"><strong>Q16.</strong> विश्व ओजोन दिवस की थीम किस संधि की सफलता उजागर करती है? → <span class="hl"><strong>मॉन्ट्रियल प्रोटोकॉल (1987)</strong></span></p>
+    <p class="hw"><strong>विश्व ओजोन दिवस:</strong> <span class="hl-g">16 सितंबर</span> (इसी दिन 1987 में मॉन्ट्रियल प्रोटोकॉल पर हस्ताक्षर हुए)</p>
+
+    <table class="hw-table">
+      <tr><th>सम्मेलन/प्रोटोकॉल</th><th>वर्ष</th><th>विषय</th></tr>
+      <tr><td><strong>मॉन्ट्रियल प्रोटोकॉल</strong></td><td>1987</td><td>ओजोन क्षयकारी पदार्थों (CFC, HCFC) को चरणबद्ध रूप से समाप्त करना</td></tr>
+      <tr><td><strong>क्योटो प्रोटोकॉल</strong></td><td>1997</td><td>विकसित देशों के लिए <span class="hl">पहले कानूनी रूप से बाध्यकारी</span> GHG लक्ष्य; कार्बन व्यापार</td></tr>
+      <tr><td><strong>पेरिस समझौता</strong></td><td>2015 (COP 21)</td><td>विकसित एवं विकासशील दोनों देशों के लिए GHG लक्ष्य</td></tr>
+      <tr><td><strong>नागोया प्रोटोकॉल</strong></td><td>—</td><td>जैव विविधता अभिसमय (CBD) — आनुवंशिक संसाधनों से लाभ का समान बँटवारा</td></tr>
+      <tr><td><strong>मिनामाता अभिसमय</strong></td><td>—</td><td>पारा प्रदूषण (मिनामाता = जापान का शहर)</td></tr>
+      <tr><td><strong>स्टॉकहोम अभिसमय</strong></td><td>—</td><td>स्थायी कार्बनिक प्रदूषक (POPs)</td></tr>
+      <tr><td><strong>बेसल अभिसमय</strong></td><td>1989</td><td>खतरनाक अपशिष्ट का सीमापार आवागमन प्रतिबंधित</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="num-badge"><div class="big">COP 30</div><div class="lbl">बेलेम, ब्राजील</div></div>
+      <div class="num-badge"><div class="big">COP 31</div><div class="lbl">तुर्की (आगामी)</div></div>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q17: भू-राजस्व -->
+    <div class="section-title orange">⑰ इतिहास — भू-राजस्व व्यवस्थाएं 🌾</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q17.</span> कार्नवालिस ने स्थायी बंदोबस्त किस क्षेत्र में लागू किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt correct"><div class="opt-c">A</div>बंगाल, बिहार और ओडिशा ✔</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>बॉम्बे और मद्रास</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>मध्य भारत</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>पंजाब</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: A — बंगाल, बिहार और ओडिशा</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>व्यवस्था</th><th>क्षेत्र</th><th>विशेषता</th><th>किसने लागू किया</th></tr>
+      <tr><td><strong>स्थायी बंदोबस्त (1793)</strong> (जमींदारी)</td><td><span class="hl">बंगाल, बिहार, ओडिशा</span></td><td>निश्चित राजस्व; जमींदार बिचौलिए; सूर्यास्त कानून</td><td><span class="hl-g"><strong>कार्नवालिस</strong></span></td></tr>
+      <tr><td><strong>रैयतवारी</strong></td><td>बॉम्बे &amp; मद्रास (दक्षिण)</td><td>सीधे रैयत (किसान) से राजस्व; रिकार्डियन सिद्धांत</td><td><strong>मुनरो &amp; रीड (1820)</strong></td></tr>
+      <tr><td><strong>महालवारी</strong></td><td>उत्तर &amp; मध्य भारत</td><td>महल (गाँवों के समूह) से राजस्व</td><td><strong>होल्ट मैकेंजी + विलियम बेंटिक (1822)</strong></td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">कार्नवालिस की उपाधियाँ</div>
+      <strong>भारत में सिविल सेवा के जनक</strong> + <strong>भारत में आधुनिक पुलिस व्यवस्था के जनक</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q18: धातुएं -->
+    <div class="section-title red">⑱ रसायन विज्ञान — धातुएं &amp; विद्युत लेपन ⚗️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q18.</span> आभूषणों के विद्युत लेपन में सस्ती धातुओं पर कौन-सी धातुओं का लेप किया जाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>एल्युमिनियम</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>लोहा</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>तांबा</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>चांदी और सोना ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: D — चांदी और सोना</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>धातु</th><th>जंग/परत</th><th>विशेष नोट</th></tr>
+      <tr><td><strong>सोना</strong></td><td>बहुत कम क्रियाशील</td><td><span class="hl">अम्लराज (Aqua Regia)</span> में घुलता है (3 भाग HCl + 1 भाग HNO₃ = शाही जल)</td></tr>
+      <tr><td><strong>चांदी</strong></td><td><span class="hl-p">काली परत = सिल्वर सल्फाइड (Ag₂S)</span></td><td>सामान्यतः संक्षारित नहीं होती</td></tr>
+      <tr><td><strong>तांबा</strong></td><td>हरी परत = <span class="hl-g">कॉपर कार्बोनेट (मैलाकाइट)</span></td><td>—</td></tr>
+      <tr><td><strong>लोहा</strong></td><td>लाल/भूरी परत = <span class="hl">आयरन ऑक्साइड (Fe₂O₃) = जंग</span></td><td>अयस्क: मैग्नेटाइट, हेमेटाइट, लिमोनाइट, सिडेराइट</td></tr>
+      <tr><td><strong>एल्युमिनियम</strong></td><td>अयस्क = बॉक्साइट</td><td>—</td></tr>
+      <tr><td><strong>पारा</strong></td><td>अयस्क = <span class="hl-b">सिनेबार (HgS)</span></td><td>कमरे के तापमान पर तरल धातु | अमलगम = पारा युक्त मिश्र धातु</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q19: उत्सर्जन -->
+    <div class="section-title green">⑲ जीव विज्ञान — जंतुओं में उत्सर्जन 🦅</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q19.</span> कौन-सा जंतु अर्धठोस यूरिक अम्ल का उत्सर्जन करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>मछली</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>पक्षी ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>स्तनधारी</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>उभयचर</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — पक्षी (और सरीसृप) — अर्धठोस — जल संरक्षण के लिए</div>
+    </div>
+
+    <div class="two-col">
+      <table class="hw-table" style="margin:0">
+        <tr><th>जंतु</th><th>प्रकार</th><th>पदार्थ</th></tr>
+        <tr><td><strong>मछली</strong></td><td>अमोनोटेलिक</td><td style="color:var(--blue)">अमोनिया</td></tr>
+        <tr><td><strong>स्तनधारी</strong></td><td>यूरियोटेलिक</td><td style="color:var(--green)">यूरिया</td></tr>
+        <tr><td><span class="hl"><strong>पक्षी &amp; सरीसृप</strong></span></td><td>यूरिकोटेलिक</td><td style="color:var(--red);font-weight:700">यूरिक अम्ल (अर्धठोस)</td></tr>
+        <tr><td><strong>उभयचर</strong></td><td>दोनों</td><td>जल में अमोनिया + थल पर यूरिया</td></tr>
+      </table>
+      <table class="hw-table" style="margin:0">
+        <tr><th>जंतु</th><th>हृदय कक्ष</th></tr>
+        <tr><td>मछली</td><td style="font-weight:700">2</td></tr>
+        <tr><td>उभयचर</td><td style="font-weight:700">3</td></tr>
+        <tr><td>सरीसृप</td><td style="font-weight:700">3</td></tr>
+        <tr><td><span class="hl-p"><strong>मगरमच्छ</strong></span></td><td style="color:var(--red);font-weight:700">4 ← अपवाद!</td></tr>
+        <tr><td>पक्षी &amp; स्तनधारी</td><td style="font-weight:700">4</td></tr>
+      </table>
+    </div>
+
+    <p class="hw hw-purple"><strong>मूत्र पीला क्यों होता है?</strong> → <span class="hl">यूरोक्रोम वर्णक</span> के कारण</p>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q20: एल नीनो / ला नीना -->
+    <div class="section-title blue">⑳ भूगोल — एल नीनो एवं ला नीना 🌊</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q20.</span> ला नीना घटना किस महासागरीय परिस्थिति के कारण होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>प्रशांत महासागर का असामान्य गर्म होना</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>व्यापारिक हवाओं का प्रबल होना → पूर्वी प्रशांत का ठंडा होना ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>व्यापारिक हवाओं का कमजोर होना</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>हिंद महासागर का गर्म होना</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — ला नीना = व्यापारिक हवाएं प्रबल → पूर्वी प्रशांत ठंडा</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="sticky-label">एल नीनो (छोटा लड़का / क्राइस्ट चाइल्ड)</div>
+        व्यापारिक हवाएं <strong>कमजोर</strong> होती हैं<br>
+        दक्षिण अमेरिका के पास गर्म पानी<br>
+        अपवेलिंग नहीं → मत्स्य उद्योग चौपट<br>
+        भारत: <strong>देर से और कमजोर मानसून</strong><br>
+        ऑस्ट्रेलिया: <strong>सूखा</strong>
+      </div>
+      <div class="sticky blue">
+        <div class="sticky-label">ला नीना (छोटी लड़की)</div>
+        व्यापारिक हवाएं <strong>प्रबल</strong> होती हैं<br>
+        पूर्वी प्रशांत ठंडा<br>
+        भारत: <strong>अच्छा, शक्तिशाली मानसून</strong><br>
+        ऑस्ट्रेलिया: <strong>भारी वर्षा</strong>
+      </div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>घटना</th><th>विवरण</th></tr>
+      <tr><td><strong>IOD (हिंद महासागर द्विध्रुव)</strong></td><td>हिंद महासागर के पश्चिम और पूर्व में समुद्र सतह तापमान का अंतर</td></tr>
+      <tr><td><strong>MJO (मैडेन-जूलियन दोलन)</strong></td><td>मानसून को प्रभावित करने वाला बड़े पैमाने का वायुमंडलीय प्रतिरूप</td></tr>
+      <tr><td><strong>ENSO</strong></td><td>एल नीनो + दक्षिणी दोलन (संयुक्त)</td></tr>
+      <tr><td><strong>ध्रुवीय भँवर (Polar Vortex)</strong></td><td>ध्रुवों पर ऊपरी वायुमंडल में ठंडी प्रबल हवाएं; दक्षिण खिसकने पर उत्तरी अमेरिका में बर्फीला तूफान</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q21: संवैधानिक संशोधन -->
+    <div class="section-title orange">㉑ राजव्यवस्था — प्रमुख संवैधानिक संशोधन 📜</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q21.</span> किस संशोधन ने मंत्रिपरिषद को लोकसभा के प्रति सामूहिक रूप से उत्तरदायी बनाया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>42वाँ संशोधन</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>44वाँ संशोधन</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>52वाँ संशोधन</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>पहले से ही संविधान में था (कोई संशोधन नहीं) ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: D — अनुच्छेद 75, खंड 3 — मूल संविधान में ही था!</div>
+    </div>
+
+    <div class="imp-box">
+      <p class="hw"><strong>अनुच्छेद 75, खंड 3:</strong> लोकसभा के प्रति सामूहिक उत्तरदायित्व — <span class="hl">हमेशा से संविधान में — कोई संशोधन नहीं!</span></p>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>संशोधन</th><th>प्रमुख प्रावधान</th></tr>
+      <tr><td><span class="hl"><strong>42वाँ (लघु संविधान)</strong></span></td><td>राष्ट्रपति के लिए मंत्रिपरिषद की सलाह बाध्यकारी | मूल कर्तव्य जोड़े | 4 नए DPSP</td></tr>
+      <tr><td><strong>44वाँ संशोधन</strong></td><td>राष्ट्रपति सलाह एक बार लौटा सकते हैं | <span class="hl-g">"सशस्त्र विद्रोह" ने "आंतरिक अशांति" की जगह ली</span> | संविधान में "कैबिनेट" शब्द पहली बार | संपत्ति का अधिकार MR से हटा</td></tr>
+      <tr><td><strong>52वाँ (1985)</strong></td><td><span class="hl-p"><strong>10वीं अनुसूची — दल-बदल विरोधी कानून</strong></span></td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q22: पृथ्वी की आंतरिक संरचना -->
+    <div class="section-title purple">㉒ भूगोल — पृथ्वी की आंतरिक संरचना 🌏</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q22.</span> गुटेनबर्ग असातत्य (Gutenberg Discontinuity) ~2900 किमी पर किन्हें अलग करता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>ऊपरी व निचली भूपर्पटी</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>भूपर्पटी और मेंटल</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>मेंटल और बाह्य क्रोड ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>बाह्य क्रोड और आंतरिक क्रोड</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: C — मेंटल और बाह्य क्रोड (~2900 किमी)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>असातत्य</th><th>किन्हें अलग करता है</th><th>गहराई</th></tr>
+      <tr><td><strong>कोनराड</strong></td><td>ऊपरी भूपर्पटी &amp; निचली भूपर्पटी</td><td>—</td></tr>
+      <tr><td><span class="hl-b"><strong>मोहोरोविचिक (मोहो)</strong></span></td><td>भूपर्पटी &amp; मेंटल</td><td>~35 किमी (महाद्वीपीय)</td></tr>
+      <tr><td><span class="hl"><strong>गुटेनबर्ग</strong></span></td><td><strong>मेंटल &amp; बाह्य क्रोड</strong></td><td><strong>~2900 किमी</strong></td></tr>
+      <tr><td><strong>लेहमैन</strong></td><td>बाह्य क्रोड &amp; आंतरिक क्रोड</td><td>~5100 किमी</td></tr>
+    </table>
+
+    <div class="sub-title">प्लेट सीमाएं</div>
+    <table class="hw-table">
+      <tr><th>सीमा</th><th>गति</th><th>परिणाम</th></tr>
+      <tr><td><strong>अपसारी</strong></td><td>प्लेटें दूर जाती हैं</td><td>मध्य-महासागरीय कटक (जैसे मध्य अटलांटिक कटक = विश्व की सबसे लंबी स्थलाकृति)</td></tr>
+      <tr><td><strong>अभिसारी</strong></td><td>प्लेटें पास आती हैं</td><td>अवमज्जन क्षेत्र; भूपर्पटी नष्ट</td></tr>
+      <tr><td><strong>रूपांतर/संरक्षक</strong></td><td>प्लेटें एक-दूसरे के पास खिसकती हैं</td><td>भूपर्पटी न बनती न नष्ट होती (जैसे <span class="hl-g">सैन एंड्रियास भ्रंश</span>)</td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="sticky-label">पृथ्वी की परतें</div>
+      भूपर्पटी: महाद्वीपीय = <strong>सियाल</strong> (Si+Al) | महासागरीय = <strong>सीमा</strong> (Si+Mg)<br>
+      क्रोड: <span class="hl"><strong>निफे</strong></span> (Ni+Fe) | स्थलमंडल = भूपर्पटी + ऊपरी ठोस मेंटल (~200 किमी)<br>
+      <strong>दुर्बलतामंडल</strong> = आंशिक रूप से पिघला ऊपरी मेंटल (~400 किमी) — प्लेटें इसी पर सरकती हैं
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- Q23: राष्ट्रीय उद्यान -->
+    <div class="section-title green">㉓ भूगोल — राष्ट्रीय उद्यान &amp; वन्यजीव 🐯</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q23.</span> दुधवा राष्ट्रीय उद्यान कहाँ स्थित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>उत्तराखंड</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>उत्तर प्रदेश ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>मध्य प्रदेश</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>असम</div>
+      </div>
+      <div class="mcq-ans-box">✅ उत्तर: B — लखीमपुर खीरी, उत्तर प्रदेश (UP का सबसे बड़ा जिला)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>राज्य</th><th>प्रमुख राष्ट्रीय उद्यान</th></tr>
+      <tr><td><strong>उत्तर प्रदेश</strong></td><td><span class="hl">दुधवा NP</span> (लखीमपुर खीरी)</td></tr>
+      <tr><td><strong>उत्तराखंड</strong></td><td><span class="hl-g"><strong>जिम कॉर्बेट</strong></span> (भारत का प्रथम राष्ट्रीय उद्यान, 1936 | प्रोजेक्ट टाइगर 1973) | फूलों की घाटी | नंदा देवी | राजाजी</td></tr>
+      <tr><td><strong>मध्य प्रदेश</strong></td><td><span class="hl-p">भारत में सर्वाधिक राष्ट्रीय उद्यान</span> — कान्हा, बांधवगढ़, पेंच, पन्ना, सतपुड़ा, माधव, वन विहार</td></tr>
+      <tr><td><strong>राजस्थान</strong></td><td>रणथंभौर | सरिस्का | मरुभूमि NP | <span class="hl">केवलादेव घना</span> (रामसर + मॉन्ट्रो रेकॉर्ड) | <strong>कुनो NP</strong> (दक्षिण अफ्रीका &amp; नामीबिया से चीते)</td></tr>
+      <tr><td><strong>केरल</strong></td><td>साइलेंट वैली NP</td></tr>
+      <tr><td><strong>मणिपुर</strong></td><td><span class="hl-b">लोकताक झील</span> (रामसर + मॉन्ट्रो रेकॉर्ड)</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>मॉन्ट्रो रेकॉर्ड (भारत):</strong> <span class="hl">केवलादेव (राजस्थान)</span> + <span class="hl">लोकताक झील (मणिपुर)</span> — गंभीर रूप से क्षरित आर्द्रभूमि</p>
+    </div>
+
+    <div class="sub-title">भारत की रामसर स्थलें</div>
+    <ul class="hw-list arrow">
+      <li>कुल: <span class="hl"><strong>100</strong></span> रामसर स्थलें</li>
+      <li>100वाँ: <strong>सुरहा ताल, बलिया (UP)</strong></li>
+      <li>99वाँ: <strong>शेखा झील पक्षी अभयारण्य, अलीगढ़ (UP)</strong></li>
+      <li>98वाँ: <strong>पटना पक्षी अभयारण्य, एटाह (UP)</strong></li>
+      <li>भारत की पहली रामसर स्थल: <span class="hl-g"><strong>चिलका झील, ओडिशा</strong></span></li>
+    </ul>
+
+    <div class="trick-box">
+      <strong>UP की हैट्रिक!</strong> अंतिम 3 रामसर स्थलें (98वीं, 99वीं, 100वीं) तीनों <span class="hl">उत्तर प्रदेश</span> से
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="section-title red">📋 त्वरित पुनरावृत्ति — लेक्चर 7 फ्लैश टेबल</div>
+
+    <table class="qr-table">
+      <tr><th>विषय</th><th>मुख्य उत्तर</th></tr>
+      <tr><td>गति 1.5 गुना → KE</td><td>2.25 गुना (9/4) | KE = ½mv²</td></tr>
+      <tr><td>ध्वनि तरंगें</td><td>अनुदैर्ध्य | निर्वात में नहीं | ध्रुवीकृत नहीं</td></tr>
+      <tr><td>संपीडन = ग्राफ में</td><td>शृंग (Crest) | विरलन = गर्त (Trough)</td></tr>
+      <tr><td>संवैधानिक संशोधन अनुच्छेद</td><td>368, भाग XX (दक्षिण अफ्रीका से)</td></tr>
+      <tr><td>राज्यसभा अधिकतम सदस्य</td><td>250 (238+12) | UP = 31 सीटें</td></tr>
+      <tr><td>12 मनोनीत — किससे?</td><td>साहित्य, विज्ञान, कला, समाज सेवा (आयरलैंड से)</td></tr>
+      <tr><td>चैत्य गुफा — सामान्य विशेषता</td><td>हॉल के पीछे स्तूप (अर्धवृत्ताकार हॉल)</td></tr>
+      <tr><td>दांडी मार्च — तिथि और दूरी</td><td>12 मार्च 1930 | 385 किमी | 78 अनुयायी | नवसारी, गुजरात</td></tr>
+      <tr><td>गांधी-इरविन समझौता</td><td>1931 | गांधीजी केवल 2nd GTC में</td></tr>
+      <tr><td>सीमांत गांधी</td><td>खान अब्दुल गफ्फार खान | खुदाई खिदमतगार | लाल कुर्ती आंदोलन</td></tr>
+      <tr><td>प्रथम संगीतकार भारत रत्न</td><td>एम.एस. सुब्बुलक्ष्मी 1998 | रेमन मैग्सेसे 1974 | UNGA 1966</td></tr>
+      <tr><td>कर्नाटक संगीत के जनक</td><td>पुरंदरदास | त्रिमूर्ति: त्यागराज, दीक्षितर, शयामा शास्त्री</td></tr>
+      <tr><td>प्रोकैरियोट बनाम यूकैरियोट</td><td>प्रोकैरियोट में माइटोकॉन्ड्रिया नहीं | जीवाणु = 70S, यूकैरियोट = 80S</td></tr>
+      <tr><td>कोशिका भित्ति — जीवाणु / कवक</td><td>पेप्टिडोग्लाइकन / काइटिन</td></tr>
+      <tr><td>अनु. 358 बनाम 359</td><td>358 = अनु. 19 स्वतः निलंबित | 359 = न्यायालय जाने का अधिकार (20 &amp; 21 छोड़कर)</td></tr>
+      <tr><td>संयुक्त बैठक — अनु. 108</td><td>ऑस्ट्रेलिया से | 3 बार हुई | लोकसभा अध्यक्ष की अध्यक्षता</td></tr>
+      <tr><td>गिफिन और वेबलेन वस्तुएं</td><td>मांग के नियम के अपवाद — कीमत↑ तो माँग↑</td></tr>
+      <tr><td>गिनी गुणांक</td><td>0 = पूर्ण समानता | 1 = पूर्ण असमानता</td></tr>
+      <tr><td>हीलियम खोजकर्ता</td><td>पियरे जानसेन + नॉर्मन लॉकियर | गुंटूर, भारत 1868</td></tr>
+      <tr><td>मेडम क्यूरी</td><td>"रेडियोधर्मिता" शब्द दिया | रेडियम &amp; पोलोनियम | 2 नोबेल</td></tr>
+      <tr><td>अल्फा क्षय</td><td>परमाणु क्रमांक −2, द्रव्यमान −4</td></tr>
+      <tr><td>भारत का फास्ट ब्रीडर रिएक्टर</td><td>कलपक्कम, तमिलनाडु</td></tr>
+      <tr><td>शुक्र — विशेष तथ्य</td><td>सबसे चमकीला | सबसे लंबा घूर्णन 243 दिन | पूर्व→पश्चिम | सुबह+शाम का तारा</td></tr>
+      <tr><td>बृहस्पति के उपग्रह</td><td>गैलीलियन: Io, Europa, Callisto, Ganymede (Ganymede = सबसे बड़ा उपग्रह)</td></tr>
+      <tr><td>राष्ट्रपति पद रिक्ति — समयसीमा</td><td>6 महीने (अनुच्छेद 62) | उपराष्ट्रपति को इस्तीफा</td></tr>
+      <tr><td>PM किसान मानधन</td><td>₹3,000/माह 60 के बाद | किसान &lt;2 हेक्टेयर | कृषि मंत्रालय</td></tr>
+      <tr><td>राजकोषीय घाटा सूत्र</td><td>कुल व्यय − कुल प्राप्तियाँ (उधार छोड़कर)</td></tr>
+      <tr><td>संथाल विद्रोह नेता</td><td>सिधू &amp; कान्हू मुर्मू | 1855 | दामन-ए-कोह</td></tr>
+      <tr><td>बिरसा मुंडा जन्मदिन</td><td>15 नवंबर = जनजातीय गौरव दिवस</td></tr>
+      <tr><td>विश्व ओजोन दिवस</td><td>16 सितंबर | मॉन्ट्रियल प्रोटोकॉल 1987</td></tr>
+      <tr><td>मिनामाता / स्टॉकहोम / बेसल</td><td>पारा / POPs / खतरनाक अपशिष्ट 1989</td></tr>
+      <tr><td>स्थायी बंदोबस्त</td><td>बंगाल, बिहार, ओडिशा | कार्नवालिस | जमींदारी</td></tr>
+      <tr><td>रैयतवारी / महालवारी</td><td>बॉम्बे+मद्रास / उत्तर &amp; मध्य भारत</td></tr>
+      <tr><td>कार्नवालिस की उपाधियाँ</td><td>सिविल सेवा के जनक + आधुनिक पुलिस के जनक</td></tr>
+      <tr><td>अम्लराज (Aqua Regia)</td><td>3 भाग HCl + 1 भाग HNO₃ = शाही जल = सोना घोलता है</td></tr>
+      <tr><td>पक्षियों का उत्सर्जन</td><td>यूरिक अम्ल (अर्धठोस) | मछली = अमोनिया | स्तनधारी = यूरिया</td></tr>
+      <tr><td>मगरमच्छ हृदय</td><td>4 कक्ष — सरीसृपों में अपवाद</td></tr>
+      <tr><td>एल नीनो बनाम ला नीना</td><td>एल नीनो = व्यापारिक हवाएं कमजोर | ला नीना = व्यापारिक हवाएं प्रबल</td></tr>
+      <tr><td>42/44/52वाँ संशोधन</td><td>लघु संविधान / सशस्त्र विद्रोह; कैबिनेट शब्द / दल-बदल (10वीं अनुसूची)</td></tr>
+      <tr><td>गुटेनबर्ग असातत्य</td><td>मेंटल &amp; बाह्य क्रोड | ~2900 किमी</td></tr>
+      <tr><td>सैन एंड्रियास भ्रंश</td><td>रूपांतर सीमा | प्रशांत + उत्तरी अमेरिकी प्लेट</td></tr>
+      <tr><td>स्थलमंडल / दुर्बलतामंडल</td><td>~200 किमी तक / ~400 किमी तक (प्लेटें इस पर सरकती हैं)</td></tr>
+      <tr><td>दुधवा NP</td><td>लखीमपुर खीरी, UP</td></tr>
+      <tr><td>भारत का प्रथम राष्ट्रीय उद्यान</td><td>जिम कॉर्बेट, उत्तराखंड (1936) | प्रोजेक्ट टाइगर 1973</td></tr>
+      <tr><td>100वाँ रामसर स्थल</td><td>सुरहा ताल, बलिया, UP | प्रथम = चिलका झील, ओडिशा</td></tr>
+      <tr><td>मॉन्ट्रो रेकॉर्ड (भारत)</td><td>केवलादेव (राजस्थान) + लोकताक झील (मणिपुर)</td></tr>
+    </table>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="sticky-label">📚 लेक्चर 7 नोट्स समाप्त</div>
+      <strong>सभी 23 प्रश्न कवर किए ✅ | परीक्षा से पहले इस टेबल को रोज दोहराएं!</strong>
+    </div>
+
+  </div><!-- end .ruled -->
+</div><!-- end .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ लाइट मोड' : '🌙 डार्क मोड';
+}
+</script>
+</body>
+</html>
