@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — SSC GD Static GK | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — SSC GD Static GK Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">🌐 Static GK — Topper Notes</div>
+    <div class="cover-sub">SSC GD Series | International Organizations · Classical Music · Folk Dances &amp; Festivals</div>
+    <div class="cover-badge">🌍 BRICS/SCO/BIMSTEC/SAARC/ASEAN · 🎻 Music &amp; Instruments · 💃 Folk Dances · 🎉 Festivals — State-wise</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- BRICS -->
+    <div class="sec orange">① BRICS — Summits, Members &amp; Institutions 🌍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Where was the third BRICS summit held in 2011?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Moscow</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Sanya, China ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>New Delhi</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Yekaterinburg</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 3rd BRICS Summit held in <strong>Sanya, China (2011)</strong>. The 1st summit was in Yekaterinburg, Russia</div>
+    </div>
+
+    <div class="sub">BRICS — Summit Timeline &amp; Key Facts</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">2009</span> BRIC formed by <strong>Brazil, Russia, India, China</strong> — 1st Summit at <span class="hl">Yekaterinburg, Russia</span></div>
+      <div class="tl-item"><span class="yr">2010</span> <span class="hl-g"><strong>South Africa</strong></span> joins → becomes "BRICS" — 2nd Summit held in <strong>Brazil</strong></div>
+      <div class="tl-item"><span class="yr">2011</span> 3rd Summit — <span class="hl-p"><strong>Sanya, China</strong></span></div>
+      <div class="tl-item"><span class="yr">2012</span> 4th Summit — <strong>India (New Delhi)</strong></div>
+      <div class="tl-item"><span class="yr">2014</span> <span class="hl-b"><strong>Fortaleza Agreement</strong></span> — created the New Development Bank &amp; the Contingent Reserve Arrangement (CRA), corpus = <strong>$100 billion</strong></div>
+      <div class="tl-item"><span class="yr">2016</span> 8th Summit — <span class="hl"><strong>Goa, India</strong></span></div>
+      <div class="tl-item"><span class="yr">2021</span> 13th Summit — <strong>New Delhi, India</strong> (virtual). India took over BRICS chairmanship from Russia this year</div>
+      <div class="tl-item"><span class="yr">2024</span> BRICS → <span class="hl-g"><strong>"BRICS Plus"</strong></span> — new members: UAE, Saudi Arabia, Iran, Indonesia, Egypt, Ethiopia</div>
+      <div class="tl-item"><span class="yr">2025</span> 17th Summit — <span class="hl-p"><strong>Rio de Janeiro, Brazil</strong></span></div>
+      <div class="tl-item"><span class="yr">2026</span> 18th Summit — <span class="hl-b"><strong>New Delhi, India</strong></span> (upcoming)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>BRICS — Institutions:</strong></p>
+      <ul class="hw arr">
+        <li>BRICS has <span class="hl">NO permanent headquarters</span> of its own (important trap!)</li>
+        <li><strong>New Development Bank (NDB)</strong> — HQ: <span class="hl-g">Shanghai, China</span></li>
+        <li><strong>Contingent Reserve Arrangement (CRA)</strong> — created by the <span class="hl-p">2014 Fortaleza Agreement</span>; corpus = $100 billion</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Where was the 8th BRICS Summit held in 2016?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Goa, India ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goa, India — 8th BRICS Summit, 2016</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which country hosted the 4th BRICS Summit in 2012?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>India (New Delhi) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: India, New Delhi — 4th BRICS Summit, 2012</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> In which country was the 2nd BRICS Summit held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Brazil (2010) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Brazil, 2010 — 2nd BRICS Summit (same year South Africa joined)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Where was the 17th BRICS Summit held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Rio de Janeiro, Brazil ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rio de Janeiro, Brazil — 17th BRICS Summit</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Where was the 13th BRICS Summit held in 2021?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Moscow</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>New Delhi, India ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Beijing</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Brasilia</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>New Delhi, India</strong> — 2021 was also the year India took over the BRICS chairmanship from Russia (chairmanship rotates: Brazil → Russia → India → China → South Africa)</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Teacher's Note:</strong> "In which year did India take over BRICS chairmanship from Russia?" is a purely factual/random question — hard to memorize reliably. Category 2 (low-priority) — note it down but don't over-invest time.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SCO -->
+    <div class="sec red">② Shanghai Cooperation Organisation (SCO) 🇨🇳</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> The Secretary-General of the SCO is appointed for how many years?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2 years</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>3 years ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>5 years</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>4 years</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — SCO Secretary-General appointed for <strong>3 years</strong></div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td><strong>Established</strong></td><td><span class="hl">2001</span></td></tr>
+      <tr><td><strong>Headquarters</strong></td><td><span class="hl-g">Beijing, China</span> (NOT Shanghai — that's just the founding city!)</td></tr>
+      <tr><td><strong>India &amp; Pakistan joined</strong></td><td><span class="hl-p">2017</span> (both together; India was NOT a founding member)</td></tr>
+      <tr><td><strong>RATS</strong> (Regional Anti-Terrorist Structure) HQ</td><td><span class="hl-b">Tashkent, Uzbekistan</span></td></tr>
+      <tr><td><strong>Latest member</strong></td><td><span class="hl">Belarus</span> (joined 2024)</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Name Trap!</strong> SCO is named after <span class="hl"><strong>Shanghai</strong></span> (founding city, 2001) but its <strong>headquarters is in Beijing</strong>, not Shanghai! (Shanghai IS home to the BRICS New Development Bank — don't mix them up.)</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Who is the latest member of the SCO?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Belarus (2024) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Belarus — joined SCO in 2024, the latest member</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> The SCO was established in which city, and in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Shanghai, 2001 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Shanghai, 2001 — SCO established (headquarters later placed in Beijing, not Shanghai)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- BIMSTEC / SAARC / ASEAN -->
+    <div class="sec blue">③ BIMSTEC, SAARC &amp; ASEAN — Regional Groupings 🤝</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Through which declaration was the sub-regional grouping that later evolved into BIMSTEC established (1997)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bangkok Declaration (1997) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bangkok Declaration, 1997 — created what evolved into BIMSTEC. Headquarters (Secretariat): <strong>Dhaka, Bangladesh</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which BIMSTEC summit led to the decision to establish the permanent secretariat (in Dhaka)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1st Summit</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2nd Summit</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>3rd Summit ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>4th Summit</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>3rd BIMSTEC Summit</strong>, held at Naypyidaw (capital of Myanmar), decided to establish the secretariat in Dhaka, Bangladesh</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Grouping</th><th>Full Form</th><th>Formed</th><th>HQ</th><th>Members</th></tr>
+      <tr><td><span class="hl"><strong>BIMSTEC</strong></span></td><td>Bay of Bengal Initiative for Multi-Sectoral Technical &amp; Economic Cooperation</td><td>1997 (Bangkok Declaration)</td><td><span class="hl-g">Dhaka, Bangladesh</span></td><td>Bangladesh, India, Myanmar, Sri Lanka, Thailand, Nepal, Bhutan (7)</td></tr>
+      <tr><td><span class="hl-b"><strong>SAARC</strong></span></td><td>South Asian Association for Regional Cooperation</td><td><span class="hl-p">1985, Dhaka</span></td><td><strong>Kathmandu, Nepal</strong></td><td>India, Pakistan, Afghanistan, Nepal, Bhutan, Sri Lanka, Maldives, Bangladesh (8)</td></tr>
+      <tr><td><span class="hl"><strong>ASEAN</strong></span></td><td>Association of Southeast Asian Nations</td><td><span class="hl-g">1967, Bangkok, Thailand</span></td><td><strong>Jakarta, Indonesia</strong></td><td>10 Southeast Asian nations incl. Singapore</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>SAARC Formation vs HQ Trap:</strong> SAARC was <span class="hl"><strong>formed in Dhaka, Bangladesh (1985)</strong></span> but its <strong>headquarters is in Kathmandu, Nepal</strong> — formation city ≠ headquarters city!</p>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>SAARC's 8 Members:</strong> India, Pakistan, Afghanistan, Nepal, Bhutan, Sri Lanka, Maldives, <span class="hl">Bangladesh</span> (the one everyone forgets last!)
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Which country is a member of ASEAN?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Singapore ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Singapore — ASEAN member. ASEAN formed 1967 in Bangkok, Thailand; HQ = Jakarta, Indonesia</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- UN / ISA -->
+    <div class="sec purple">④ United Nations &amp; International Solar Alliance 🌞</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> The UNSC has how many non-permanent members?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>5</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>10 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>15</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>8</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>10 non-permanent members</strong>, elected for a 2-year term. There are also 5 permanent members (P5)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>UNSC — P5 (Permanent Members):</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">China</span> · <span class="hl-g">France</span> · <span class="hl-b">Russia</span> · <span class="hl-p">UK</span> · <strong>USA</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> The Secretary-General of the UN is appointed for how many years?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>5 years ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 5 years. Current UN Secretary-General: <strong>António Guterres</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Which international organization is associated with the "Towards 1000" Strategy?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>WTO</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>International Court of Justice</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>International Solar Alliance (ISA) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>UNEP</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>International Solar Alliance</strong>. Launched at COP26</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>ISA "Towards 1000" Strategy — the FOUR 1000s:</strong></p>
+      <ul class="hw arr">
+        <li>Raise <span class="hl"><strong>$1000 billion</strong></span> in investment for solar energy</li>
+        <li>Provide clean energy access to <span class="hl-g"><strong>1000 million people</strong></span></li>
+        <li>Install <span class="hl-p"><strong>1000 gigawatts</strong></span> of solar energy capacity</li>
+        <li>Mitigate <span class="hl-b"><strong>1000 million tonnes</strong></span> of CO₂ emissions</li>
+      </ul>
+      <p class="hw">Headquarters: <strong>Gurugram, Haryana, India</strong></p>
+    </div>
+
+    <div class="sticky purple">
+      <div class="slbl">OTHER HQ TO REMEMBER</div>
+      WTO HQ = <span class="hl"><strong>Geneva, Switzerland</strong></span><br>
+      International Court of Justice HQ = <span class="hl-g"><strong>The Hague, Netherlands</strong></span><br>
+      ISA HQ = <span class="hl-p"><strong>Gurugram, Haryana</strong></span><br>
+      SAARC HQ = <strong>Kathmandu, Nepal</strong>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- CLASSICAL MUSIC & INSTRUMENTS -->
+    <div class="sec teal">⑤ Classical Music &amp; Musical Instruments 🎻</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Which of the following is a solid musical instrument shaped like a pot, made of baked clay, found in Kashmir?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Noot ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kasale</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Esraj</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Pepa</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Noot</strong> (from Kashmir), shaped like a pot (similar to Ghatam). It's a <span class="hl">Ghan Vadya</span> (solid instrument)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Natya Shastra — 4 Categories of Musical Instruments:</strong></p>
+      <table class="hw-t grn">
+        <tr><th>Category</th><th>Meaning</th><th>Examples</th></tr>
+        <tr><td><span class="hl"><strong>Tat Vadya</strong></span></td><td>String instruments</td><td>Tanpura, Sarod, Santoor, Sitar</td></tr>
+        <tr><td><span class="hl-g"><strong>Sushir Vadya</strong></span></td><td>Wind instruments</td><td>Shehnai, Nadaswaram, Trumpet</td></tr>
+        <tr><td><span class="hl-p"><strong>Ghan Vadya</strong></span></td><td>Solid instruments</td><td>Noot, Ghatam, Manjira</td></tr>
+        <tr><td><span class="hl-b"><strong>Avanaddha Vadya</strong></span></td><td>Percussion (stretched membrane)</td><td>Mridangam, Pakhawaj, Dholak</td></tr>
+      </table>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which musical instrument is shown as a wind instrument similar to Shehnai (asked with figure)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nadaswaram ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Jantar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Trumpet</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mridangam</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Nadaswaram</strong> — wind instrument, similar in type to Shehnai. Mridangam is a percussion (dholak-type) instrument</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Who composed the treatise on music "Swaramela Kalanidhi"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Matanga</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sharangdev</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Haripal</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ramamatya ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Ramamatya</strong> composed "Swaramela Kalanidhi"</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which thaat is associated with Raga Yaman in Hindustani music?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kafi Thaat</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bilawal Thaat</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kalyan Thaat ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bhairav Thaat</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Raga Yaman is associated with <strong>Kalyan Thaat</strong>. Total number of main thaats in Hindustani music = <span class="hl">7</span></div>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">🧠 <strong>Exam Tip:</strong> Study each raga's associated <em>thaat</em> AND its <em>time of day of performance</em> — both have been asked frequently in recent exams.</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Which musical instrument typically accompanies the Gaur (Gaur Maria / Bison Horn) dance?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dhol, Harmonium, Manjira ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dhol, Harmonium &amp; Manjira accompany the Gaur / Gaur Maria / Bison Horn Maria dance</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which stringed traditional instrument, found across North India, provides the basic Shruti and Swara to the performer?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tanpura ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tanpura — a string (Tat Vadya) instrument that provides basic Shruti and Swara</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> Which indigenous wind instrument is also known as "Nayanam"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nadaswaram ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Nadaswaram — also known as Nayanam</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> Who is known as the "God of Ghatam" for popularizing the earthen pot instrument Ghatam?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bhimsen Joshi</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>T.H. Vinayakram (Vikku Vinayakram) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pandit Shiv Kumar Sharma</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>T.M. Krishna</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>T.H. Vinayakram</strong> (aka "Vikku Vinayakram") — "God of Ghatam"</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Person</th><th>Instrument / Gharana</th></tr>
+      <tr><td><span class="hl"><strong>T.H. Vinayakram (Vikku)</strong></span></td><td>Ghatam — "God of Ghatam"</td></tr>
+      <tr><td><span class="hl-g"><strong>Pandit Shiv Kumar Sharma / Bhajan Sopori</strong></span></td><td>Santoor</td></tr>
+      <tr><td><span class="hl-p"><strong>Pandit Bhimsen Joshi / Gangubai Hangal</strong></span></td><td>Kirana Gharana (founder: Abdul Karim Khan)</td></tr>
+      <tr><td><span class="hl-b"><strong>T.M. Krishna</strong></span></td><td>Carnatic music vocalist</td></tr>
+      <tr><td><strong>Ali Akbar Khan</strong></td><td>Sarod — son of Alauddin Khan (founder, Maihar Gharana)</td></tr>
+      <tr><td><strong>Ustad Amjad Ali Khan</strong></td><td>Sarod — titled "Sarod Samrat" (Supreme Emperor of Sarod)</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> Which traditional Rajasthani instrument is a long bronze trumpet, made in two parts, with a funnel-shaped opening?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Trumpet (Rajasthani bronze trumpet) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Timki</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sarod</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Santoor</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — This bronze trumpet is answered by elimination: Santoor &amp; Sarod are string instruments (no funnel shape), so the answer must be the Trumpet</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> "Ting Tang" is a traditional Mizo instrument, known as the Mizo version of which instrument?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Guitar ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Guitar — Ting Tang is the Mizo version of the guitar</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> Silnen and Bubjal, used in Ladakh, are which types of musical instruments?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Cymbals</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Drums ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Flutes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bells</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Silnen &amp; Bubjal are <strong>drums</strong> used in Ladakh. (Jaanjh = cymbals — a related but different instrument to remember)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> "Lemlawi" is an instrument belonging to which state's traditional instrument family (Jew's harp type)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mizoram ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mizoram — Lemlawi, a traditional Jew's-harp-family instrument</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> "Kali", a wind instrument used in Assam, is considered a more developed version of which instrument?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Cymbal</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Shehnai ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Drum</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Guitar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Kali (Assam)</strong> is considered a more developed version of the <strong>Shehnai</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q29.</span> In 1875, Dwarkanath Ghosh created his version of an Indian hand-pumped instrument. What was it?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Harmonium ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Harmonium — created by Dwarkanath Ghosh in 1875 (Indian hand-pumped version)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q30.</span> Why is Raga Tarangini considered important in Hindustani music history?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>It uses only Southern (Sadan) ragas</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It introduces tabla and harmonium</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>It uses many ragas still named and in use today ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Uses many ragas still in use today. (Option about "ONLY Southern ragas" uses an extreme keyword "only" → eliminate as likely false)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q31.</span> "Toor" is a cylindrical musical instrument made of clay, with leather surface on both sides. What type is it?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>String</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Drum ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Cymbal</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Wind</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Toor is a type of <strong>drum</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q32.</span> Which duo received two Oscars in 2019 for composing/scoring the music of "Slumdog Millionaire"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A.R. Rahman ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A.R. Rahman — Oscar winner for Slumdog Millionaire's music</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CHESS FIDE -->
+    <div class="sec red">⑥ Chess — FIDE 🏆</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q33.</span> What does FIDE stand for?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Federation of International Dance &amp; Entertainment</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Fédération Internationale des Échecs ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>—</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — FIDE = <strong>Fédération Internationale des Échecs</strong> (International Chess Federation), the biggest chess governing body</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>FIDE — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Established: <span class="hl"><strong>1924</strong></span></li>
+        <li>Headquarters: <span class="hl-g"><strong>Lausanne, Switzerland</strong></span> (same city as the <strong>International Olympic Committee</strong> HQ!)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- WEST BENGAL / UTTARAKHAND -->
+    <div class="sec green">⑦ Folk Dances &amp; Songs — West Bengal &amp; Uttarakhand 💃</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q34.</span> "Hurkiya Baul" is a traditional folk song — which Indian state does it belong to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bihar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mizoram</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Uttarakhand ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>West Bengal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Hurkiya Baul</strong> is from <strong>Uttarakhand</strong>. Careful: plain "Baul" (without "Hurkiya") is a West Bengal folk song genre — the word "Hurkiya" changes the state entirely!</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Word-Trap:</strong> "Baul" alone = West Bengal. "Hurkiya Baul" = Uttarakhand. Read the FULL term carefully in exam questions — one extra word can change the state!</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q35.</span> The Rath Yatra at Mahesh — the second oldest chariot festival in India — is celebrated in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>West Bengal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: West Bengal — "Mahesh" is a place name in West Bengal where this Rath Yatra is held (NOT Puri/Odisha, which hosts the more famous Jagannath Rath Yatra)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q36.</span> The traditional dance style "Gadia" (Gaudiya) dance is practiced in which Indian state/UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Haryana</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>J&amp;K</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>West Bengal ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Andhra Pradesh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Gadia (Gaudiya) dance</strong> — West Bengal</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q37.</span> Gajan folk songs, depicting a dialogue between gods, are traditionally associated with which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>West Bengal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: West Bengal — Gajan folk songs</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q38.</span> "Gambhira" (a mask dance style) belongs to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>West Bengal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: West Bengal — Gambhira</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q39.</span> By another name, what is Holi known as in West Bengal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dol Purnima ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dol Purnima — West Bengal's name for Holi</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Uttarakhand — Folk Dances</th><th>Detail</th></tr>
+      <tr><td><span class="hl"><strong>Choliya</strong></span></td><td>Traditional sword/martial folk dance</td></tr>
+      <tr><td><span class="hl-g"><strong>Khuded (folk song, not dance)</strong></span></td><td>Traditional folk song from Uttarakhand</td></tr>
+      <tr><td><strong>Hurkiya Baul</strong></td><td>Traditional folk song genre</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q40.</span> Which state is known for the Choliya folk dance (not Kolkali or Salpuri)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Uttarakhand — Choliya ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Uttarakhand — Choliya (Salpuri is from Odisha; Kolkali is a stick dance from Kerala)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q41.</span> "Khuded" is a folk song from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rajasthan</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Assam</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Karnataka</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Uttarakhand ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Khuded</strong>, a folk SONG (not dance), from Uttarakhand</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- GOA -->
+    <div class="sec purple">⑧ Folk Dances — Goa 🏖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q42.</span> "Dashavatar" is a folk dance of which Indian state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Goa ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Goa — Dashavatar folk dance</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Goa — Other Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Fugdi</strong></span> · <span class="hl-g"><strong>Dhakni Fugdi</strong></span> · <span class="hl-p"><strong>Kunbi</strong></span> · <strong>Shigmo</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CHHATTISGARH -->
+    <div class="sec red">⑨ Folk Dances &amp; Festivals — Chhattisgarh 🎭</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Chhattisgarh — Folk Dances (memory trick: "Aksar Sua Karma Gadia Panthi Raut Nacha Pandavani"):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Sua (Suva)</strong></span> — Parrot dance</li>
+        <li><span class="hl-g"><strong>Karma</strong></span> — dance (linked to Gadia/carrot-shape dance mnemonic)</li>
+        <li><span class="hl-p"><strong>Panthi</strong></span> — dance</li>
+        <li><strong>Raut Nacha</strong> — all-night dance</li>
+        <li><span class="hl-b"><strong>Pandavani</strong></span> — narrates tales from the <em>Mahabharata</em>; famous exponent: <strong>Teejan Bai</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q43.</span> Tales from the Mahabharata are traditionally narrated through which performance art form (Chhattisgarh)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Pandavani ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pandavani — narrates Mahabharata tales; most famous exponent: <strong>Teejan Bai</strong></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q44.</span> During which festival is Gaur (Gaur Maria / Bison Horn Maria) dance predominantly performed, and where?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Diwali</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Holi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Navratri</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Baisakhi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Gaur dance is performed during <strong>Holi</strong>, mainly in <span class="hl">MP &amp; Chhattisgarh</span>. Also called <strong>Gaur Maria</strong> or <strong>Bison Horn Maria dance</strong> (dancers wear horns resembling the Indian bison)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q45.</span> Where does the Hareli festival take place?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Chhattisgarh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Chhattisgarh — Hareli festival</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Chhattisgarh — Festivals:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl"><strong>Bastar Dussehra</strong></span> (held in the Bastar district)</li>
+        <li><strong>Madai Festival</strong></li>
+        <li><strong>Pola Festival</strong></li>
+        <li><span class="hl-g"><strong>Goncha Festival</strong></span></li>
+        <li><strong>Hareli</strong></li>
+      </ul>
+      <p class="hw">Note: <span class="hl-p"><strong>Phagg</strong></span> folk songs (spring season) are practiced in Chhattisgarh AND Haryana</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ASSAM -->
+    <div class="sec teal">⑩ Folk Dances, Songs &amp; Festivals — Assam 🌾</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q46.</span> "Devdhani" dance is performed for which deity, and from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Assam — for Goddess Mansa (snake goddess) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Assam — Devdhani, performed for <strong>Goddess Mansa</strong> (the snake goddess). Ojapali is ALSO for Mansa Devi, but Devdhani remains the PRIMARY dance associated with her</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Assam — Folk Dances (memory: Bihu ki Bahu ne apni maid ko Bihu se peeta):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Bihu</strong></span> — the flagship folk dance/festival</li>
+        <li><span class="hl-g"><strong>Bagurumba</strong></span> — performed by the <strong>Bodo</strong> community, also called "Butterfly Dance"; recently earned a Guinness World Record (PM Modi attended)</li>
+        <li><span class="hl-p"><strong>Bhortal</strong></span> dance</li>
+        <li><strong>Ojapali</strong> dance (also for Mansa Devi)</li>
+        <li><span class="hl-b"><strong>Jhumur</strong></span> — performed in the tea gardens of Assam</li>
+        <li><strong>Devdhani</strong> — for Goddess Mansa</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q47.</span> Which folk dance from the North East is performed by the Bodo community and is also known as the "Butterfly Dance"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bagurumba ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bagurumba — performed by the Bodo community of Assam, also called "Butterfly Dance"; recently set a Guinness World Record</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q48.</span> Which dance is associated with the state of Assam — Kayang, Chakyarkatu, Gadia Marta, or Bhortal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kayang (Himachal)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chakyarkatu (Kerala)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Gadia Marta (Chhattisgarh)</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Bhortal ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Bhortal</strong> is from Assam (solve by elimination: Kayang = Himachal; Chakyarkatu = Kerala)</div>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>Assam — Bihu Types</th><th>Timing</th><th>Key Detail</th></tr>
+      <tr><td><span class="hl"><strong>Bohag Bihu (Rangali Bihu)</strong></span></td><td>Mid-April</td><td>New Year — celebrates spring</td></tr>
+      <tr><td><span class="hl-g"><strong>Kati Bihu</strong></span></td><td>Mid-October</td><td>Prayer for good harvest</td></tr>
+      <tr><td><span class="hl-p"><strong>Magh Bihu</strong></span></td><td>Mid-January</td><td>Harvest festival, bonfires</td></tr>
+    </table>
+
+    <div class="sub">Rangali Bihu — 3 Days</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Day 1</span> <strong>Goru Bihu</strong> — cattle/livestock worshipped, bathed</div>
+      <div class="tl-item"><span class="yr">Day 2</span> <span class="hl"><strong>Manuh Bihu</strong></span> — humans celebrate; people meet each other</div>
+      <div class="tl-item"><span class="yr">Day 2/3</span> <span class="hl-g"><strong>Kutumb Bihu</strong></span> — people visit relatives &amp; exchange gifts (this is the specific answer for "exchange gifts")</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q49.</span> On the festival day when people traditionally visit relatives and exchange gifts during Bihu, what is this day called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Goru Bihu</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Manuh Bihu</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kutumb Bihu ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bohag Bihu</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Kutumb Bihu</strong> — specifically about visiting relatives &amp; exchanging gifts</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Assam — Festivals (memory: "Ali Aye Ligang, Ambubachi, Majuli"):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Ali Aye Ligang</strong></span> dance/festival</li>
+        <li><span class="hl-g"><strong>Ambubachi Fair</strong></span> — held at the Kamakhya (Maa Kamakhya Devi) Temple; recently concluded on <span class="hl-p">June 26</span></li>
+        <li><strong>Majuli Festival</strong> — held on Majuli, the <span class="hl-b">world's largest riverine island</span>, formed by the Brahmaputra River</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q50.</span> Where is the Majuli Festival held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Assam — Majuli Island (world's largest riverine island, formed by the Brahmaputra) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Assam — Majuli, the world's largest riverine island, created by the Brahmaputra River</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- HIMACHAL PRADESH -->
+    <div class="sec blue">⑪ Folk Dances &amp; Festivals — Himachal Pradesh ⛰️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q51.</span> A viral Himachali festival, starting with "R," where fairies are believed to descend — what is it called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Rohtang / "Roleng" Festival (Fairy Festival) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The "Roleng" Festival — associated with fairies; the "Roneya" dance is performed there</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Himachal Pradesh — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Naati</strong></span> — most popular; fast-paced, vigorous, performed by men &amp; women in a circle</li>
+        <li><span class="hl-g"><strong>Chham</strong></span> — a mask dance</li>
+        <li><strong>Dangi</strong> dance</li>
+        <li><span class="hl-p"><strong>Kayang</strong></span> (Kayang-mala) dance</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q52.</span> Which statement best describes the Nati dance of Himachal Pradesh?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A fast-paced, vigorous dance performed by men &amp; women in a circle ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>A sole classical dance form</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>A dance performed only by women</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>A dance using swords and shields</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Naati = fast-paced, vigorous, performed by both men &amp; women in a circle (the most explanatory/accurate option)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- RAJASTHAN -->
+    <div class="sec orange">⑫ Folk Dances &amp; Festivals — Rajasthan 🐫</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q53.</span> The Kalbelia dance is inspired by the movements of which animal?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Peacock</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Snake ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Horse</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Elephant</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Snake</strong> — Kalbelia dance mimics snake movements. Famous exponent: <span class="hl">Gulabo Sapera</span></div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q54.</span> The Ghoomar dance of Rajasthan was initially performed by which tribe?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bhil tribe ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bhil tribe — later, the Rajput community adopted and popularized Ghoomar further</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q55.</span> "Mand" is a semi-classical folk style originating from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Gujarat</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Rajasthan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Punjab</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Haryana</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Mand</strong> — semi-classical folk style, Rajasthan</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q56.</span> The Gangaur festival of Rajasthan is celebrated in honor of which goddess?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Durga</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lakshmi</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Parvati ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Saraswati</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Gangaur festival honors Goddess <strong>Parvati</strong></div>
+    </div>
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- J&K / LADAKH -->
+    <div class="sec pink">⑬ Folk Music &amp; Dance — J&amp;K and Ladakh ❄️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q57.</span> "Chakri," a traditional music form, is associated with which region?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jammu &amp; Kashmir ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jammu &amp; Kashmir — Chakri music</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q58.</span> "Sufiana Kalam" is a classical music style that uses its own ragas known as "Mukam" — to which region does it belong?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kashmir ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kerala</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Telangana</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>West Bengal</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Sufiana Kalam</strong> — Kashmir, uses ragas called "Mukam"</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q59.</span> Which dance form originates from the Union Territory of Ladakh — Jabro, Kathi, Sattriya, or Kachchi Ghodi?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jabro ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kathi (West Bengal)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sattriya (Assam — classical)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Kachchi Ghodi (Rajasthan)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Jabro</strong>, performed by the <span class="hl">Changthang</span> community of Ladakh (solve by elimination: Sattriya = classical dance from Assam, granted classical status in 2000, father: Guru Shankardev; Kachchi Ghodi = Rajasthan; Kathi = West Bengal)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Ladakh — Other Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Cham</strong></span> — mask dance</li>
+        <li><span class="hl-g"><strong>Shondol</strong></span> — the "royal dance" (also called Spau dance) of Ladakh</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KARNATAKA -->
+    <div class="sec green">⑭ Folk Dances &amp; Festivals — Karnataka 🐂</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q60.</span> "Baelta" is a folk dance of which Indian state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Andhra Pradesh</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kerala</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Karnataka ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tamil Nadu</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Baelta</strong> — Karnataka</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q61.</span> The Godachi fair is traditionally celebrated in which Indian state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Karnataka ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gujarat</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Karnataka</strong> (NOT Gujarat — a common trap)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q62.</span> Which Indian state is the origin of Yakshagana?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Karnataka ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Karnataka — Yakshagana. Also from Karnataka: <span class="hl">Dollu Kunitha</span> (a drum dance — memory trick: sounds like "bullock dance")</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Karnataka — More Folk Dances &amp; Festivals:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Dollu Kunitha</strong></span> — drum dance</li>
+        <li><span class="hl-g"><strong>Huli Vesha</strong></span> — "Tiger Dance"</li>
+        <li><strong>Karaga Festival</strong></li>
+        <li><span class="hl-p"><strong>Hampi Festival</strong></span></li>
+        <li><strong>Ugadi</strong> — New Year festival (also in Andhra Pradesh)</li>
+        <li><span class="hl-b"><strong>Kambala</strong></span> — buffalo race festival</li>
+        <li><strong>Maha Mastakabhisheka</strong> — celebrated every 12 years by the Jain community</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q63.</span> Which Karnataka festival involves anointing a Jain deity, held every 12 years?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Maha Mastakabhisheka ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Maha Mastakabhisheka — held every 12 years, by the Jain community</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ANDHRA PRADESH / TELANGANA -->
+    <div class="sec purple">⑮ Folk Dances — Andhra Pradesh &amp; Telangana 💫</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Andhra Pradesh — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Lambadi</strong></span> — performed by the <strong>Banjara tribe</strong></li>
+        <li><span class="hl-g"><strong>Dhimsa</strong></span> — performed in <strong>Araku Valley</strong> (near Visakhapatnam)</li>
+        <li><span class="hl-p"><strong>Butta Bommalu</strong></span> — "basket toys/dolls" dance; performed in <strong>West Godavari</strong> district</li>
+        <li><strong>Dappu</strong> dance</li>
+        <li><span class="hl-b"><strong>Veeranatyam</strong></span> — martial-style dance dedicated to <strong>Lord Shiva</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q64.</span> Which tribe performs the Lambadi folk dance?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Banjara tribe ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Banjara tribe — performs Lambadi (Andhra Pradesh)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q65.</span> Where is the Dhimsa folk dance performed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Araku Valley (near Visakhapatnam, Andhra Pradesh) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Araku Valley, Visakhapatnam — Dhimsa dance</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q66.</span> "Perini Shivatandavam" dance, dedicated to Lord Shiva's tandava, belongs to which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Telangana ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Telangana — Perini Shivatandavam</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- KERALA -->
+    <div class="sec blue">⑯ Folk &amp; Classical Dances — Kerala 🌴</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q67.</span> Which Kerala art form is enshrined in UNESCO's Representative List of the Intangible Cultural Heritage of Humanity — Kummi, Bagurumba, Kutiyattam, or Perini Shivatandavam?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Kummi (Tamil Nadu)</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bagurumba (Assam)</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kutiyattam (Koodiyattam) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Perini Shivatandavam (Telangana)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Kutiyattam</strong> (also called <span class="hl">Koodiyattam</span>) — Kerala; on UNESCO's list. (Kummi = Tamil Nadu; Bagurumba = Assam; Perini Shivatandavam = Telangana)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q68.</span> Which deity is primarily worshipped through the mythology behind Mohiniyattam?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lord Vishnu (as Mohini avatar) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lord Vishnu — took the Mohini (female) avatar to save the Kalash (pot) of nectar (Amrit) from demons during the Samudra Manthan</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Kerala — Dance</th><th>Detail</th></tr>
+      <tr><td><span class="hl"><strong>Mohiniyattam</strong></span></td><td>Classical; mythology of Lord Vishnu's Mohini avatar</td></tr>
+      <tr><td><span class="hl-g"><strong>Kathakali</strong></span></td><td>Classical dance-drama</td></tr>
+      <tr><td><span class="hl-p"><strong>Kutiyattam / Koodiyattam</strong></span></td><td>UNESCO-listed intangible heritage</td></tr>
+      <tr><td><strong>Chakyarkatu (Chakyar Koothu)</strong></td><td>Traditional performance art</td></tr>
+      <tr><td><span class="hl-b"><strong>Kolkali</strong></span></td><td>Stick dance</td></tr>
+      <tr><td><strong>Savalakali (Sabalakin)</strong></td><td>Traditional dance</td></tr>
+    </table>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q69.</span> "Chakyarkatu" belongs to which South Indian state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kerala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kerala — Chakyarkatu (identifiable from the name, a South Indian art form)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q70.</span> "Kolkali" (a stick dance) is from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kerala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kerala — Kolkali stick dance</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q71.</span> Where is the "Savalakali" (Sabalakin) dance from?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kerala ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kerala — Savalakali</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q72.</span> Which institution was founded by V.N. Menon to preserve and promote Kathakali?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Natyashastra Foundation</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Kerala Nritya Academy</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kerala Kalamandalam ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sangeet Kala Kendra</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Kerala Kalamandalam</strong>, founded by V.N. Menon, to preserve &amp; promote Kathakali</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- TAMIL NADU -->
+    <div class="sec red">⑰ Folk Dances &amp; Festivals — Tamil Nadu 🌾</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q73.</span> The dance performed by dancers wearing peacock feathers in temples dedicated to Lord Murugan — what is it called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mayil Attam ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Gambhira (West Bengal)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Pung Cholom (Manipur)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Mayil Attam</strong> ("peacock dance") — honors Lord Murugan (Kartikeya), Tamil Nadu</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q74.</span> "Kummi" folk dance is from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tamil Nadu ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tamil Nadu — Kummi</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q75.</span> "Terukoothu" is a performance-art form based on Mahabharata tales — from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tamil Nadu ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tamil Nadu — Terukoothu, based on Mahabharata tales (similar in theme to Chhattisgarh's Pandavani)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q76.</span> Which traditional sport of Tamil Nadu involves taming a bull, as part of Pongal celebrations?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jallikattu ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jallikattu — bull-taming sport, part of Pongal celebrations. (Kambala = buffalo race, but that's Karnataka)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q77.</span> The Pongal festival is celebrated for how many days, and what are they called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2 days</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>3 days</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>4 days ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>5 days</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>4 days</strong></div>
+    </div>
+
+    <div class="sub">Pongal — 4-Day Breakdown</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">Day 1</span> <span class="hl"><strong>Bhogi Pongal</strong></span> — bonfires lit, Bhog offered at dawn, houses cleaned</div>
+      <div class="tl-item"><span class="yr">Day 2</span> <span class="hl-g"><strong>Thai Pongal (Surya Pongal)</strong></span> — Lord Surya worshipped; the "Pongal" dish (rice + milk boiled in an earthen pot) is prepared — "Pongal" literally means "to boil"</div>
+      <div class="tl-item"><span class="yr">Day 3</span> <span class="hl-p"><strong>Mattu Pongal</strong></span> — cattle/livestock worshipped, bathed, painted, adorned with bells</div>
+      <div class="tl-item"><span class="yr">Day 4</span> <span class="hl-b"><strong>Kanu Pongal (Kaanum Pongal)</strong></span> — families reunite, visit each other</div>
+    </div>
+
+    <div class="trick">
+      🧠 Remember the order: <strong>Bhogi → Surya (Thai) → Mattu → Kanu</strong>
+    </div>
+
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- GUJARAT -->
+    <div class="sec teal">⑱ Folk Dances &amp; Festivals — Gujarat 🕺</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q78.</span> "Tip Tip Barsa Pani" — the "comment"/stick dance — is traditionally performed during which occasions, and from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gujarat — performed during weddings and festivals ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gujarat — this "Stick Dance," performed in the Chorwad region of Gujarat, during weddings and festivals</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q79.</span> "Koda" dance, performed mainly during marriage rituals, is from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gujarat ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Gujarat — Koda dance, performed during marriage rituals</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Gujarat — More Folk Dances &amp; Festivals:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Garba</strong></span> &amp; <span class="hl-g"><strong>Dandiya</strong></span> — the most famous</li>
+        <li><span class="hl-p"><strong>Siddhi Dhammal</strong></span> — performed by the <strong>Siddhi community</strong> (of African descent, settled in Gujarat)</li>
+        <li><strong>Hudo</strong> dance, <strong>Padhar</strong> dance</li>
+        <li>Festivals: <span class="hl-b"><strong>Uttarayan</strong></span>, <strong>Navratri</strong>, <strong>Mura Dance Festival</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q80.</span> What is the primary characteristic of the "Comment" (stick) dance of Gujarat?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Performed with sticks, similar in style to Kolkali (Kerala) and Lambadi ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A stick dance, comparable to Kolkali (Kerala) — performed at weddings and festivals in Gujarat's Chorwad region</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q81.</span> Which musical instrument typically accompanies the Komal (stick) dance of Gujarat?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Dhol and Manjira ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Dhol &amp; Manjira accompany the Komal (stick) dance of Gujarat</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- HARYANA / PUNJAB -->
+    <div class="sec orange">⑲ Folk Dances — Haryana &amp; Punjab 🌾</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Haryana — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Dhammal</strong></span> · <span class="hl-g"><strong>Loor</strong></span> · <strong>Gugga</strong> · <strong>Khoria</strong> · <strong>Sang</strong> · <span class="hl-p"><strong>Phagg</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q82.</span> What is the primary characteristic of Bhangra music?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Fast, energetic beats ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Fast, energetic beats — Bhangra, Punjab</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q83.</span> In Giddha dance (Punjab), what are "Bolis"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Traditional songs performed during the dance ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bolis = traditional songs sung during Giddha dance, performed in Punjab. (This same-pattern question appeared in a 2025 exam)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q84.</span> During which occasions is Giddha commonly performed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Weddings and harvest festivals ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Weddings and harvest festivals — Giddha, Punjab</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q85.</span> On which instrument is the Giddha performance typically given?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Tabla</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Dhol ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Harmonium</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sarangi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Dhol</strong> accompanies Giddha</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q86.</span> Which statement best describes the Gidda dance?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A women's folk dance involving rhythmic clapping and singing (in local dialects) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A women's folk dance featuring rhythmic clapping and singing in local dialects (the most explanatory option — Punjab)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q87.</span> Where did the Giddha dance originate?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Punjab ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Punjab — Giddha</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q88.</span> Where is the most popular center for Hola Mohalla celebrations?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Amritsar</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Anandpur Sahib ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Patiala</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ludhiana</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Anandpur Sahib</strong>, Punjab</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Hola Mohalla — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Celebrated a day after Holi</li>
+        <li>Lasts <span class="hl"><strong>3 days</strong></span></li>
+        <li>Started by <span class="hl-g"><strong>Guru Gobind Singh</strong></span> (10th Sikh Guru) in <strong>1701</strong></li>
+        <li>Martial art performed: <span class="hl-p"><strong>Gatka</strong></span></li>
+        <li>People traditionally drink Lassi after Gatka performances</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MADHYA PRADESH -->
+    <div class="sec green">⑳ Folk Dances — Madhya Pradesh 🌻</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Madhya Pradesh — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Matki</strong></span> dance — popular folk dance</li>
+        <li><span class="hl-g"><strong>Gangor</strong></span> — performed during the Gangor festival</li>
+        <li><strong>Karma</strong> dance</li>
+        <li><span class="hl-p"><strong>Jawara</strong></span> — performed in the <strong>Bundelkhand</strong> region during harvest season for a good harvest; performed mainly by unmarried women</li>
+        <li><span class="hl-b"><strong>Rai</strong></span> dance</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q89.</span> "Jawara" dance is performed mainly by whom, in which region, and for what purpose?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Unmarried women, in the Bundelkhand region, during harvest season for a good harvest ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Performed by unmarried women in Bundelkhand (MP) during harvest season, praying for good harvest</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q90.</span> "Matki" is a popular folk dance of which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Madhya Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Madhya Pradesh — Matki dance</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q91.</span> "Laru Kaaj" is a traditional festival celebrated by which community, in Madhya Pradesh?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Gond tribe ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The Gond tribe of Madhya Pradesh celebrates Laru Kaaj</div>
+    </div>
+
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ODISHA -->
+    <div class="sec red">㉑ Folk Dances — Odisha 🎨</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q92.</span> Which of the following is the most popular traditional dance of the tribes of Kalahandi district, Odisha?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ghumura ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Ghumura — most popular traditional dance in Kalahandi district, Odisha</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Odisha — Folk Dances (memory trick: "Dal Pua Khaya, Gotipua Khaya, Dal Khaya, Danda Nacha Bhag Raha Hai"):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Gotipua</strong></span> — young boys perform Odissi-style dance</li>
+        <li><span class="hl-g"><strong>Danda Nacha</strong></span></li>
+        <li><span class="hl-p"><strong>Bhag Nacha</strong></span></li>
+        <li><strong>Salpuri</strong> dance</li>
+        <li><span class="hl-b"><strong>Ghumura</strong></span> — Kalahandi district</li>
+      </ul>
+    </div>
+
+    <div class="sub">Chhau — 3 Regional Forms</div>
+    <table class="hw-t red-h">
+      <tr><th>Chhau Style</th><th>State</th></tr>
+      <tr><td><span class="hl"><strong>Mayurbhanj Chhau</strong></span></td><td>Odisha</td></tr>
+      <tr><td><span class="hl-g"><strong>Seraikella Chhau</strong></span></td><td>Jharkhand</td></tr>
+      <tr><td><span class="hl-p"><strong>Purulia Chhau</strong></span></td><td>West Bengal</td></tr>
+    </table>
+    <div class="sticky red">
+      <div class="slbl">CHHAU — ALSO NOTE</div>
+      Chhau is a <span class="hl"><strong>semi-martial dance form</strong></span>. Related: <strong>Paika (Pai Ka)</strong> — also a martial dance
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q93.</span> Chhau dance's three regional forms are found in Odisha, Jharkhand and which other state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>West Bengal (Purulia Chhau) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: West Bengal — Purulia Chhau (alongside Mayurbhanj Chhau in Odisha, Seraikella Chhau in Jharkhand)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BIHAR -->
+    <div class="sec blue">㉒ Folk Dances &amp; Festivals — Bihar 🪔</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Bihar — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Videshiya</strong></span> · <span class="hl-g"><strong>Jhijhiya</strong></span> · <strong>Jharniya</strong> · <strong>Jat-Jatin</strong> · <span class="hl-p"><strong>Domkach</strong></span> (also performed in Jharkhand)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q94.</span> For how many days does the Chhath Puja festival last, and to whom is it dedicated?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2 days</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>3 days</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>4 days ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>7 days</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Chhath Puja lasts <strong>4 days</strong>; celebrated in Bihar; dedicated to the <span class="hl"><strong>Sun God</strong></span></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- SIKKIM -->
+    <div class="sec purple">㉓ Folk Dances — Sikkim 🏔️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q95.</span> "Lepcha" dance is a folk dance from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sikkim ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Sikkim — Lepcha dance (performed by the Lepcha community)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Sikkim — More Folk Dances (all performed by the Lepcha community unless noted):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Sinchham</strong></span> — mask dance</li>
+        <li><span class="hl-g"><strong>Yakshham</strong></span></li>
+        <li><span class="hl-p"><strong>Jomal Folk</strong></span> dance</li>
+        <li><strong>Chuft</strong> — festival dance, exclusive to the Lepcha community</li>
+        <li><span class="hl-b"><strong>Maruni</strong></span> dance</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- NAGALAND -->
+    <div class="sec teal">㉔ Folk Dances &amp; Songs — Nagaland 🎋</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q96.</span> "Jiliang" and "Li" are folk songs from which Indian state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Manipur</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Nagaland ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mizoram</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Assam</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Nagaland</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Nagaland — Folk Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Jiliang</strong></span> dance (also a folk song)</li>
+        <li><span class="hl-g"><strong>Paoling Festival Dance</strong></span></li>
+        <li><span class="hl-p"><strong>Seni</strong></span> dance</li>
+        <li><span class="hl-b"><strong>Moatsu</strong></span> — performed by the <strong>Ao tribe</strong>, tied to the Moatsu festival</li>
+        <li>Also performed by the <strong>Angami tribe</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MIZORAM -->
+    <div class="sec orange">㉕ Folk Dances &amp; Festivals — Mizoram 🌸</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q97.</span> "Sawlakin" dance is from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Mizoram ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Mizoram — performed by the Pawi community</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Mizoram — Festivals (memory: "Kut Kut Kut"):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Chapchar Kut</strong></span> — spring festival</li>
+        <li><span class="hl-g"><strong>Mim Kut</strong></span> — "meal" festival</li>
+        <li><span class="hl-p"><strong>Pawl Kut</strong></span> — Thanksgiving / harvest festival</li>
+        <li><strong>Anthurium Festival</strong></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q98.</span> Which Mizoram festival is celebrated as a Thanksgiving feast after clearing forest land?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Pawl Kut ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Pawl Kut — Thanksgiving/harvest festival, Mizoram</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ARUNACHAL / MEGHALAYA / TRIPURA -->
+    <div class="sec red">㉖ Festivals — Arunachal Pradesh, Meghalaya &amp; Tripura 🎊</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q99.</span> The "Dree" festival, celebrated as thanksgiving after clearing forest land, is from which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Arunachal Pradesh ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Arunachal Pradesh — Dree festival</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Arunachal Pradesh — Festivals (memory: "Aruna said: Sir, hold my pin — Mopin, Pangsau"):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Solung</strong></span> Festival</li>
+        <li><span class="hl-g"><strong>Dree</strong></span> Festival</li>
+        <li><span class="hl-p"><strong>Mopin</strong></span> Festival</li>
+        <li><span class="hl-b"><strong>Pangsau</strong></span> Festival</li>
+        <li><strong>Losar</strong> — Tibetan New Year, celebrated from Ladakh to Himachal, Sikkim &amp; Arunachal</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q100.</span> The Losar festival marks the New Year of which culture/community?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tibetan New Year ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Tibetan New Year — celebrated across Ladakh, Himachal, Sikkim, Arunachal Pradesh</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q101.</span> "Behdienkhlam" is a festival of which tribe, and in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jaintia tribe, Meghalaya ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Behdienkhlam — celebrated by the Jaintia tribe of Meghalaya</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Tripura — Festivals:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Kharchi Puja</strong></span></li>
+        <li><span class="hl-g"><strong>Garia Puja</strong></span></li>
+        <li><span class="hl-p"><strong>Kair Puja</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- LAKSHADWEEP -->
+    <div class="sec purple">㉗ Festivals &amp; Dances — Lakshadweep 🏝️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q102.</span> "Ateri Idu" is a cultural festival of which Indian UT?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lakshadweep ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Lakshadweep — Ateri Idu (Atholi Idu) festival</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Lakshadweep — Dances:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Parichakali</strong></span> — a "shield dance," martial in nature</li>
+        <li><span class="hl-g"><strong>Kolkali</strong></span> — a stick dance (Lakshadweep's version)</li>
+        <li><span class="hl-p"><strong>Lava</strong></span> — performed on <strong>Minicoy Island</strong></li>
+      </ul>
+    </div>
+
+
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- MISC: RELIGIOUS FESTIVALS, KATHAK, ORAL TRADITION -->
+    <div class="sec green">㉘ Misc — Religious Festivals, Kathak &amp; Oral Tradition 📿</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q103.</span> During Ramadan, Muslims fast from what time to what time?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>From dawn to sunset ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: From dawn (sunrise) to sunset — the fasting period during Ramadan</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q104.</span> Which festival is celebrated to mark the end of Ramadan?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Muharram</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Eid-ul-Fitr ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Eid-ul-Adha</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Shab-e-Barat</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>Eid-ul-Fitr</strong> marks the end of Ramadan. (Muharram involves Tazia processions, mourning the martyrdom of Prophet Muhammad's grandson — observed mainly by Shia Muslims)</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q105.</span> What is the meaning of the word "Kathak"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"Story" / the act of storytelling ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Kathak means "story" (from "Katha" = story) — referring to the act of storytelling through dance</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q106.</span> What is the main medium of transmission in Indian folk and tribal music?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Oral tradition ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Oral tradition — the primary way Indian folk/tribal music is passed down generations</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q107.</span> Tribal groups like the Santhals, known for vibrant music using flutes and drums, are found in which state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jharkhand ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Jharkhand — home to the Santhal tribe, known for vibrant flute-and-drum music</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q108.</span> In Chhattisgarh, which folk song is associated with the spring season?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Phagg ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Phagg — a spring-season folk song, practiced not just in Chhattisgarh but also in Haryana</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q109.</span> Where is the Harballabh Sangeet Mela held?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Amritsar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chandigarh</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Jalandhar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ludhiana</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Jalandhar, Punjab</strong> — Harballabh Sangeet Mela</div>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q110.</span> In which year did the Jaipur Literature Festival begin?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>2004</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>2005</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>2006 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>2008</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Jaipur Literature Festival began in <strong>2006</strong></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — All Important Years, HQs &amp; Facts</div>
+    <table class="qr-t">
+      <tr><th>Topic / Fact</th><th>Answer / Year</th></tr>
+      <tr><td>3rd BRICS Summit</td><td>Sanya, China (2011)</td></tr>
+      <tr><td>BRICS formed by</td><td>Brazil, Russia, India, China (2009)</td></tr>
+      <tr><td>South Africa joins BRICS</td><td>2010</td></tr>
+      <tr><td>Fortaleza Agreement (NDB + CRA, $100bn)</td><td>2014</td></tr>
+      <tr><td>8th BRICS Summit</td><td>Goa, India (2016)</td></tr>
+      <tr><td>13th BRICS Summit (India takes chairmanship)</td><td>New Delhi (2021)</td></tr>
+      <tr><td>17th BRICS Summit</td><td>Rio de Janeiro, Brazil</td></tr>
+      <tr><td>18th BRICS Summit (upcoming)</td><td>New Delhi, India (2026)</td></tr>
+      <tr><td>BRICS Plus new members</td><td>UAE, Saudi Arabia, Iran, Indonesia, Egypt, Ethiopia</td></tr>
+      <tr><td>New Development Bank HQ</td><td>Shanghai, China</td></tr>
+      <tr><td>SCO established</td><td>Shanghai, 2001</td></tr>
+      <tr><td>SCO HQ</td><td>Beijing, China (NOT Shanghai)</td></tr>
+      <tr><td>India &amp; Pakistan join SCO</td><td>2017</td></tr>
+      <tr><td>SCO Secretary-General term</td><td>3 years</td></tr>
+      <tr><td>RATS (SCO) HQ</td><td>Tashkent, Uzbekistan</td></tr>
+      <tr><td>Latest SCO member</td><td>Belarus (2024)</td></tr>
+      <tr><td>BIMSTEC formed / HQ</td><td>Bangkok Declaration, 1997 / Dhaka, Bangladesh</td></tr>
+      <tr><td>3rd BIMSTEC Summit (secretariat decided)</td><td>Naypyidaw, Myanmar</td></tr>
+      <tr><td>SAARC formed / HQ</td><td>1985, Dhaka / Kathmandu, Nepal</td></tr>
+      <tr><td>ASEAN formed / HQ</td><td>1967, Bangkok / Jakarta, Indonesia</td></tr>
+      <tr><td>UNSC non-permanent members</td><td>10 (2-year term)</td></tr>
+      <tr><td>UN Secretary-General term</td><td>5 years (current: António Guterres)</td></tr>
+      <tr><td>ISA "Towards 1000" Strategy HQ</td><td>Gurugram, Haryana</td></tr>
+      <tr><td>FIDE established / HQ</td><td>1924 / Lausanne, Switzerland</td></tr>
+      <tr><td>Noot instrument</td><td>Kashmir (Ghan Vadya)</td></tr>
+      <tr><td>Natya Shastra instrument categories</td><td>4 (Tat, Sushir, Ghan, Avanaddha)</td></tr>
+      <tr><td>Raga Yaman's thaat</td><td>Kalyan Thaat</td></tr>
+      <tr><td>Total main thaats</td><td>7</td></tr>
+      <tr><td>God of Ghatam</td><td>T.H. Vinayakram (Vikku)</td></tr>
+      <tr><td>Harmonium created by</td><td>Dwarkanath Ghosh, 1875</td></tr>
+      <tr><td>Hurkiya Baul</td><td>Uttarakhand</td></tr>
+      <tr><td>Rath Yatra at Mahesh</td><td>West Bengal</td></tr>
+      <tr><td>Dashavatar dance</td><td>Goa</td></tr>
+      <tr><td>Gaur / Bison Horn Maria dance</td><td>MP &amp; Chhattisgarh, during Holi</td></tr>
+      <tr><td>Pandavani (Mahabharata tales)</td><td>Chhattisgarh (Teejan Bai)</td></tr>
+      <tr><td>Devdhani (Goddess Mansa)</td><td>Assam</td></tr>
+      <tr><td>Bagurumba "Butterfly Dance"</td><td>Assam (Bodo community)</td></tr>
+      <tr><td>Kutumb Bihu (gift exchange)</td><td>Assam</td></tr>
+      <tr><td>Majuli Festival</td><td>Assam (world's largest riverine island)</td></tr>
+      <tr><td>Kalbelia dance (snake-inspired)</td><td>Rajasthan (Gulabo Sapera)</td></tr>
+      <tr><td>Ghoomar — originally performed by</td><td>Bhil tribe, Rajasthan</td></tr>
+      <tr><td>Gangaur festival — honors</td><td>Goddess Parvati, Rajasthan</td></tr>
+      <tr><td>Sufiana Kalam (Mukam ragas)</td><td>Kashmir</td></tr>
+      <tr><td>Jabro dance</td><td>Ladakh (Changthang community)</td></tr>
+      <tr><td>Godachi fair</td><td>Karnataka</td></tr>
+      <tr><td>Yakshagana</td><td>Karnataka</td></tr>
+      <tr><td>Lambadi dance</td><td>Andhra Pradesh (Banjara tribe)</td></tr>
+      <tr><td>Kutiyattam (UNESCO listed)</td><td>Kerala</td></tr>
+      <tr><td>Mayil Attam (Lord Murugan)</td><td>Tamil Nadu</td></tr>
+      <tr><td>Jallikattu</td><td>Tamil Nadu (Pongal)</td></tr>
+      <tr><td>Pongal duration</td><td>4 days (Bhogi, Thai/Surya, Mattu, Kanu)</td></tr>
+      <tr><td>Komal/Comment stick dance</td><td>Gujarat (Chorwad region)</td></tr>
+      <tr><td>Hola Mohalla</td><td>Anandpur Sahib, Punjab (3 days, started 1701)</td></tr>
+      <tr><td>Jawara dance</td><td>Bundelkhand, MP (harvest, unmarried women)</td></tr>
+      <tr><td>Ghumura dance</td><td>Kalahandi, Odisha</td></tr>
+      <tr><td>Chhau (3 forms)</td><td>Mayurbhanj (Odisha), Seraikella (Jharkhand), Purulia (WB)</td></tr>
+      <tr><td>Chhath Puja</td><td>4 days, Bihar, Sun God</td></tr>
+      <tr><td>Lepcha dance</td><td>Sikkim</td></tr>
+      <tr><td>Jiliang &amp; Li folk songs</td><td>Nagaland</td></tr>
+      <tr><td>Pawl Kut (Thanksgiving)</td><td>Mizoram</td></tr>
+      <tr><td>Dree Festival</td><td>Arunachal Pradesh</td></tr>
+      <tr><td>Behdienkhlam</td><td>Jaintia tribe, Meghalaya</td></tr>
+      <tr><td>Ateri Idu festival</td><td>Lakshadweep</td></tr>
+      <tr><td>Jaipur Literature Festival began</td><td>2006</td></tr>
+      <tr><td>Harballabh Sangeet Mela</td><td>Jalandhar, Punjab</td></tr>
+      <tr><td>A.R. Rahman — Oscars (Slumdog Millionaire)</td><td>2019 (2 Oscars)</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — Static GK Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>BRICS has NO permanent HQ</strong></span> — only the New Development Bank has one (Shanghai)</li>
+          <li><span class="hl-g"><strong>SCO's HQ is Beijing, NOT Shanghai</strong></span> — even though it was formed IN Shanghai!</li>
+          <li>SAARC formed in <span class="hl-p"><strong>Dhaka</strong></span> but HQ is <strong>Kathmandu, Nepal</strong> — formation city ≠ HQ city</li>
+          <li>"Baul" = West Bengal, but "<span class="hl-b"><strong>Hurkiya</strong> Baul</span>" = Uttarakhand — read the FULL term!</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Godachi fair = <span class="hl"><strong>Karnataka</strong></span> (NOT Gujarat — common trap)</li>
+          <li>4 Natya Shastra instrument categories: Tat (string), Sushir (wind), Ghan (solid), Avanaddha (percussion)</li>
+          <li>Pongal order: <span class="hl-g"><strong>Bhogi → Surya/Thai → Mattu → Kanu</strong></span></li>
+          <li>"ONLY / ALL" extreme keywords in options = usually the FALSE/wrong choice</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF STATIC GK NOTES</div>
+      <strong>SSC GD Series | All Static GK Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
