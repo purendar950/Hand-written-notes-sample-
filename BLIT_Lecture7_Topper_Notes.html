@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLIT Series — Lecture 7 | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== VARIABLES ===== */
+:root{
+  --paper:#fffef5;
+  --rule:#c8daf0;
+  --ink:#1c1c2e;
+  --red:#d32f2f;
+  --blue:#1565c0;
+  --green:#2e7d32;
+  --orange:#e65100;
+  --purple:#6a1b9a;
+  --pink:#c2185b;
+  --pencil:#5d4037;
+  --yellow-hl:#fff176;
+  --green-hl:#b9f6ca;
+  --pink-hl:#fce4ec;
+  --blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;
+  --line-height:32px;
+}
+
+/* ===== SCREEN BODY ===== */
+body{
+  background:#e8e0d0;
+  font-family:'Kalam',cursive;
+  color:var(--ink);
+  padding:20px 12px 60px;
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar{
+  position:sticky;
+  top:0;
+  z-index:200;
+  background:#2c3e50;
+  border-radius:10px;
+  padding:10px 14px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+.toolbar-title{
+  color:#f39c12;
+  font-family:'Caveat Brush',cursive;
+  font-size:1.1rem;
+  margin-right:auto;
+}
+.btn{
+  border:none;
+  border-radius:8px;
+  padding:8px 16px;
+  font-family:'Kalam',cursive;
+  font-size:0.9rem;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn:active{transform:scale(0.96)}
+.btn-pdf{background:#e74c3c;color:white;box-shadow:0 3px 8px rgba(231,76,60,0.4)}
+.btn-print{background:#27ae60;color:white;box-shadow:0 3px 8px rgba(39,174,96,0.4)}
+.btn-dark{background:#8e44ad;color:white;box-shadow:0 3px 8px rgba(142,68,173,0.4)}
+
+/* ===== NOTEBOOK PAGE ===== */
+.page{
+  background:var(--paper);
+  max-width:820px;
+  margin:0 auto;
+  border-radius:4px;
+  box-shadow:3px 3px 20px rgba(0,0,0,0.25), -1px 0 0 #ddd;
+  padding:0;
+  overflow:hidden;
+  position:relative;
+}
+.page::before{
+  content:'';
+  position:absolute;
+  top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);
+  z-index:10;
+}
+.ruled{
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent calc(var(--line-height) - 1px),
+      var(--rule) calc(var(--line-height) - 1px),
+      var(--rule) var(--line-height)
+    );
+  background-size:100% var(--line-height);
+  padding:20px 28px 40px 52px;
+  min-height:100vh;
+  position:relative;
+}
+
+/* ===== HOLE PUNCHES ===== */
+.holes{
+  position:absolute;
+  left:0;top:0;bottom:0;width:22px;
+  display:flex;flex-direction:column;
+  justify-content:space-around;
+  padding:60px 0;
+  z-index:20;
+}
+.hole{
+  width:14px;height:14px;
+  background:#e8e0d0;
+  border-radius:50%;
+  border:1px solid #c0b8a8;
+  margin-left:4px;
+}
+
+/* ===== COVER ===== */
+.cover{
+  background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#1565c0 100%);
+  color:white;
+  padding:40px 30px 36px 52px;
+  text-align:center;
+  position:relative;
+}
+.cover-title{
+  font-family:'Caveat Brush',cursive;
+  font-size:2.6rem;
+  color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,0.3);
+  line-height:1.2;
+}
+.cover-sub{
+  font-family:'Caveat',cursive;
+  font-size:1.15rem;
+  color:#b3e5fc;
+  margin-top:8px;
+}
+.cover-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,0.15);
+  border:2px solid rgba(255,255,255,0.3);
+  border-radius:20px;
+  padding:6px 18px;
+  margin-top:14px;
+  font-size:0.9rem;
+  color:#e8f5e9;
+}
+.stars{font-size:1.2rem;letter-spacing:3px;color:#ffd54f;margin-top:10px}
+
+/* ===== SECTION TITLES ===== */
+.section-title{
+  font-family:'Caveat Brush',cursive;
+  font-size:1.6rem;
+  margin:30px 0 8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  line-height:var(--line-height);
+}
+.section-title.red{color:var(--red);border-bottom:3px solid var(--red)}
+.section-title.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.section-title.green{color:var(--green);border-bottom:3px solid var(--green)}
+.section-title.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.section-title.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.section-title.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+
+.sub-title{
+  font-family:'Patrick Hand',cursive;
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--blue);
+  margin:16px 0 4px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.sub-title::before{content:'→';color:var(--orange)}
+
+/* ===== HANDWRITTEN TEXT ===== */
+p.hw{
+  font-family:'Kalam',cursive;
+  font-size:0.95rem;
+  line-height:var(--line-height);
+  color:var(--ink);
+  margin:2px 0;
+}
+.hw-blue{color:var(--blue)}
+.hw-red{color:var(--red)}
+.hw-green{color:var(--green)}
+.hw-orange{color:var(--orange)}
+.hw-purple{color:var(--purple)}
+
+/* ===== HIGHLIGHTS ===== */
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* ===== LISTS ===== */
+ul.hw-list{list-style:none;padding:0;margin:4px 0}
+ul.hw-list li{
+  font-family:'Kalam',cursive;
+  font-size:0.93rem;
+  line-height:var(--line-height);
+  padding-left:22px;
+  position:relative;
+}
+ul.hw-list li::before{
+  content:'★';
+  position:absolute;left:0;
+  color:var(--orange);font-size:0.75rem;
+  top:6px;
+}
+ul.hw-list.check li::before{content:'✔';color:var(--green)}
+ul.hw-list.arrow li::before{content:'➤';color:var(--blue);font-size:0.65rem}
+ul.hw-list.cross li::before{content:'✘';color:var(--red);font-size:0.75rem}
+ul.hw-list.dot li::before{content:'●';color:var(--purple);font-size:0.6rem;top:8px}
+
+/* ===== STICKY NOTE ===== */
+.sticky{
+  background:#fff9c4;
+  border-left:4px solid #f9a825;
+  border-radius:0 8px 8px 0;
+  padding:10px 14px;
+  margin:12px 0;
+  font-family:'Caveat',cursive;
+  font-size:1rem;
+  position:relative;
+  box-shadow:2px 3px 8px rgba(0,0,0,0.12);
+  transform:rotate(-0.4deg);
+}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky-label{
+  font-family:'Caveat Brush',cursive;
+  font-size:0.8rem;
+  letter-spacing:1px;
+  opacity:0.6;
+  margin-bottom:4px;
+}
+
+/* ===== TABLE ===== */
+.hw-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+  font-family:'Kalam',cursive;
+  font-size:0.88rem;
+}
+.hw-table th{
+  background:#283593;
+  color:#ffd54f;
+  padding:8px 10px;
+  text-align:left;
+  font-family:'Caveat',cursive;
+  font-size:0.95rem;
+  border:2px solid #1a237e;
+}
+.hw-table td{
+  padding:7px 10px;
+  border:1px solid #c5cae9;
+  vertical-align:top;
+  line-height:1.5;
+}
+.hw-table tr:nth-child(even) td{background:#f3f4ff}
+.hw-table tr:hover td{background:#fffde7}
+
+/* ===== IMPORTANT BOX ===== */
+.imp-box{
+  border:2px solid var(--red);
+  border-radius:8px;
+  padding:10px 14px;
+  margin:12px 0;
+  position:relative;
+  background:#fff5f5;
+}
+.imp-box::before{
+  content:'⚠ EXAM TRAP!';
+  position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:white;
+  font-family:'Caveat Brush',cursive;
+  font-size:0.78rem;
+  padding:2px 10px;
+  border-radius:4px;
+  letter-spacing:1px;
+}
+
+/* ===== MEMORY TRICK BOX ===== */
+.trick-box{
+  border:2px dashed var(--purple);
+  border-radius:8px;
+  padding:10px 14px;
+  margin:12px 0;
+  background:#f3e5f5;
+  position:relative;
+}
+.trick-box::before{
+  content:'🧠 MEMORY TRICK';
+  position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:white;
+  font-family:'Caveat Brush',cursive;
+  font-size:0.78rem;
+  padding:2px 10px;
+  border-radius:4px;
+}
+
+/* ===== FORMULA BOX ===== */
+.formula-box{
+  border:2px solid var(--blue);
+  border-radius:8px;
+  padding:10px 14px;
+  margin:12px 0;
+  background:#e3f2fd;
+  position:relative;
+}
+.formula-box::before{
+  content:'📐 FORMULA';
+  position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:white;
+  font-family:'Caveat Brush',cursive;
+  font-size:0.78rem;
+  padding:2px 10px;
+  border-radius:4px;
+}
+
+/* ===== MCQ BLOCK ===== */
+.mcq-block{
+  border:1px solid #90a4ae;
+  border-radius:8px;
+  margin:12px 0;
+  overflow:hidden;
+  box-shadow:1px 2px 6px rgba(0,0,0,0.08);
+}
+.mcq-q-head{
+  background:#37474f;
+  color:#ffd54f;
+  padding:8px 14px;
+  font-family:'Caveat',cursive;
+  font-size:1rem;
+}
+.mcq-q-head .qno{color:#80cbc4;margin-right:6px;font-size:0.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{
+  display:flex;gap:8px;align-items:flex-start;
+  padding:3px 0;
+  font-family:'Kalam',cursive;font-size:0.88rem;
+}
+.opt-c{
+  min-width:22px;height:22px;
+  border-radius:50%;border:2px solid #90a4ae;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.72rem;font-weight:700;flex-shrink:0;
+  font-family:'Caveat',cursive;
+}
+.mcq-opt.correct .opt-c{background:#2e7d32;border-color:#2e7d32;color:white}
+.mcq-opt.correct{color:#1b5e20;font-weight:700}
+.mcq-ans-box{
+  background:#e8f5e9;border-top:1px solid #a5d6a7;
+  padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:0.82rem;color:#1b5e20;
+}
+
+/* ===== DIVIDER ===== */
+.divider{
+  border:none;
+  border-top:3px dashed #c5cae9;
+  margin:28px 0;
+}
+.chapter-break{
+  text-align:center;
+  font-family:'Caveat Brush',cursive;
+  font-size:0.8rem;
+  color:#90a4ae;
+  letter-spacing:3px;
+  margin:4px 0 24px;
+}
+
+/* ===== TWO COL GRID ===== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:540px){.two-col{grid-template-columns:1fr}}
+
+/* ===== NUMBER BADGE ===== */
+.num-badge{
+  background:white;border:2px solid #3f51b5;
+  border-radius:8px;padding:10px;text-align:center;
+  box-shadow:2px 2px 6px rgba(0,0,0,0.1);
+}
+.num-badge .big{
+  font-family:'Caveat Brush',cursive;
+  font-size:2rem;color:var(--orange);line-height:1;
+}
+.num-badge .lbl{font-size:0.78rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive}
+
+/* ===== QUICK REVISION BAND ===== */
+.qr-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+  font-family:'Kalam',cursive;
+  font-size:0.85rem;
+}
+.qr-table th{
+  background:#e65100;
+  color:white;
+  padding:7px 10px;
+  font-family:'Caveat',cursive;
+  font-size:0.92rem;
+  border:1px solid #bf360c;
+}
+.qr-table td{
+  padding:5px 10px;
+  border:1px solid #ffccbc;
+  vertical-align:top;
+}
+.qr-table tr:nth-child(even) td{background:#fff3e0}
+.qr-table td:first-child{color:var(--blue);font-weight:700}
+.qr-table td:last-child{color:var(--green)}
+
+/* ===== DARK MODE ===== */
+body.dark{background:#1a1a2e}
+body.dark .page{background:#16213e;box-shadow:3px 3px 20px rgba(0,0,0,0.5)}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark .cover{background:linear-gradient(135deg,#0d0d1a,#1a1a3e)}
+body.dark .hw-table td{border-color:#2d4a6e;color:#e0e0e0}
+body.dark .hw-table tr:nth-child(even) td{background:#1e2d4a}
+body.dark p.hw,body.dark ul.hw-list li{color:#d0d8e8}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp-box{background:#2d1515}
+body.dark .trick-box{background:#1e1429}
+body.dark .formula-box{background:#0d2040}
+body.dark .num-badge{background:#1e2d4a;border-color:#3f51b5}
+body.dark .mcq-block{border-color:#2d4a6e}
+body.dark .qr-table td{color:#d0d8e8}
+body.dark .qr-table td:first-child{color:#82b1ff}
+body.dark .qr-table td:last-child{color:#a5d6a7}
+body.dark .qr-table tr:nth-child(even) td{background:#1a2030}
+
+/* ===== PRINT ===== */
+@media print{
+  body{background:white!important;padding:0}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .ruled{padding:16px 24px 24px 48px}
+  .section-title{break-before:avoid}
+  .mcq-block,.sticky,.imp-box,.trick-box,.formula-box{break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .hw-table th{background:#283593!important;color:#ffd54f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOOLBAR ===== -->
+<div class="toolbar">
+  <span class="toolbar-title">📒 BLIT Series — Lecture 7 Topper Notes</span>
+  <button class="btn btn-pdf" onclick="window.print()">💾 Save as PDF</button>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<!-- ===== NOTEBOOK PAGE ===== -->
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-title">📖 BLIT Series — Lecture 7</div>
+    <div class="cover-sub">Complete Notes — Physics · Polity · History · Science · Economy · Geography</div>
+    <div class="cover-badge">📚 SSC CGL · UPSC · State Exams · 2025–26</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- ============ Q1: KINETIC ENERGY ============ -->
+    <div class="section-title red">① Physics — Kinetic Energy ⚡</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q1.</span> Speed increased to 1.5 times → KE becomes?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>1.5 times</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>2 times</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>2.25 times ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>3 times</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: C — 2.25 times (= 9/4 × original KE)</div>
+    </div>
+
+    <div class="formula-box">
+      <p class="hw"><strong>KE = ½mv²</strong></p>
+      <p class="hw">New v = 1.5v = <strong>3/2 × v</strong></p>
+      <p class="hw">New KE = ½m × (3/2 v)² = ½m × <strong>9/4</strong> × v² = <span class="hl"><strong>9/4 × original KE = 2.25 times</strong></span></p>
+    </div>
+
+    <div class="sub-title">Energy Types — Quick Table</div>
+    <table class="hw-table">
+      <tr><th>Energy Type</th><th>Definition</th><th>Example</th></tr>
+      <tr><td><span style="color:var(--red);font-weight:700">Kinetic</span></td><td>Energy due to motion</td><td>Moving bullet, flowing water</td></tr>
+      <tr><td><span style="color:var(--blue);font-weight:700">Potential</span></td><td>Energy due to position</td><td>Water in dam, stretched bow</td></tr>
+      <tr><td><span style="color:var(--green);font-weight:700">Mechanical</span></td><td>KE + PE</td><td>Any moving body</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="sticky-label">ENERGY CONVERSIONS</div>
+        Mechanical → Electrical: <strong>Generator/Dynamo</strong><br>
+        Electrical → Mechanical: <strong>Motor</strong>
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">FREE FALL ENERGY</div>
+        Top: PE = max, KE = 0<br>
+        Mid: PE = KE (equal)<br>
+        Bottom: KE = max, PE = 0
+      </div>
+    </div>
+
+    <div class="sticky purple">
+      <div class="sticky-label">KE IN TERMS OF MOMENTUM</div>
+      <strong>KE = p²/2m</strong> &nbsp; (where p = linear momentum)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q2: SOUND WAVES ============ -->
+    <div class="section-title blue">② Physics — Sound Waves 🔊</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q2.</span> Compression = high pressure, Rarefaction = low pressure. Sound = movement of variations in _____ within medium.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Intensity</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Density ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Temperature</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Pressure</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Density</div>
+    </div>
+
+    <p class="hw">Sound waves are <span class="hl"><strong>Longitudinal waves</strong></span> — particles vibrate back & forth in direction of wave propagation.</p>
+
+    <table class="hw-table">
+      <tr><th>Term</th><th>Meaning</th><th>On Graph</th></tr>
+      <tr><td><strong>Compression</strong></td><td>High pressure, High particle density</td><td style="color:var(--red);font-weight:700">Crest</td></tr>
+      <tr><td><strong>Rarefaction</strong></td><td>Low pressure, Low particle density</td><td style="color:var(--blue);font-weight:700">Trough</td></tr>
+    </table>
+
+    <div class="sub-title">Sound Wave Properties</div>
+    <ul class="hw-list check">
+      <li>Cannot travel in <span class="hl-p"><strong>vacuum</strong></span></li>
+      <li>Cannot be <strong>polarized</strong> (only transverse waves can be)</li>
+      <li>Speed: Highest in <span class="hl"><strong>Solids → Liquids → Gases</strong></span></li>
+      <li>Reflection of sound = <strong>Echo</strong></li>
+      <li>Repeated reflection of sound = <span class="hl-g"><strong>Reverberation</strong></span></li>
+    </ul>
+
+    <div class="trick-box">
+      <span class="hw-purple"><strong>P-waves</strong> = Longitudinal = like sound (Compression &amp; Rarefaction)</span><br>
+      <span class="hw-blue"><strong>S-waves</strong> = Transverse = like light waves</span>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q3: CONSTITUTIONAL AMENDMENT ============ -->
+    <div class="section-title orange">③ Polity — Constitutional Amendment 🏛️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q3.</span> Voting in Rajya Sabha on Constitutional Amendment Bill requires?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Simple majority</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Absolute majority</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>Special majority ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>2/3 of total membership</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: C — Special majority in BOTH Houses</div>
+    </div>
+
+    <p class="hw"><span class="hl"><strong>Article 368, Part XX</strong></span> — Borrowed from <strong>South Africa</strong></p>
+
+    <table class="hw-table">
+      <tr><th>Type</th><th>When Required</th><th>Majority Needed</th></tr>
+      <tr><td><strong>Special Majority</strong></td><td>FRs, DPSPs, most amendments</td><td>&gt;50% total membership + 2/3 present &amp; voting</td></tr>
+      <tr><td><strong>Special Majority + State Ratification</strong></td><td>Presidential election, SC/HC, 7th Schedule, Art 368</td><td>Special majority + Simple majority in ≥ <span class="hl">half the states (14/28)</span></td></tr>
+      <tr><td><strong>Simple Majority</strong></td><td>Ordinary matters (not under Art 368)</td><td>&gt;50% of members present &amp; voting</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>Key Rules:</strong> Can be introduced in <span class="hl">EITHER House</span> | No prior President recommendation | <strong>No Joint Sitting</strong> in deadlock | President <span class="hl-g"><strong>MUST give assent</strong></span> (cannot withhold)</p>
+    </div>
+
+    <div class="sub-title">Rajya Sabha Facts (Article 80)</div>
+    <div class="two-col">
+      <div class="num-badge"><div class="big">250</div><div class="lbl">Max Members (238 elected + 12 nominated)</div></div>
+      <div class="num-badge"><div class="big">31</div><div class="lbl">UP seats — Highest representation</div></div>
+    </div>
+
+    <ul class="hw-list arrow">
+      <li>12 nominated from: <span class="hl"><strong>Literature, Science, Art, Social Service</strong></span> — (Borrowed from <strong>Ireland</strong>)</li>
+      <li>Each member: <strong>6 years</strong> tenure | 1/3 retire every <strong>2 years</strong></li>
+      <li>Voting: <strong>Proportional Representation + Single Transferable Vote</strong></li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">RAJYA SABHA SPECIAL POWERS</div>
+      <strong>Art 249</strong> — Allow Parliament to make law on State List (national interest)<br>
+      <strong>Art 312</strong> — Create new All India Services (IAS, IPS, IFoS)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q4: CHAITYA CAVES ============ -->
+    <div class="section-title green">④ Art & Culture — Buddhist Caves 🪨</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q4.</span> Common structural element in ALL Chaitya caves (Early Buddhist, Western India)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Absence of dominating chair</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Semi-circular arch and wooden pickets</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Stupa at the front entrance</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>Stupa dominating the BACK of the hall ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: D — Stupa at the rear/back of apsidal hall</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Cave Type</th><th>Purpose</th></tr>
+      <tr><td><strong>Chaitya</strong></td><td>Place of worship/prayer; contains a <span class="hl">stupa inside</span></td></tr>
+      <tr><td><strong>Vihara</strong></td><td>Place of residence for Buddhist monks</td></tr>
+    </table>
+
+    <div class="sub-title">Important Cave Sites (mainly Maharashtra)</div>
+    <ul class="hw-list dot">
+      <li>Kanheri Caves | Karle Caves | Nashik Caves</li>
+      <li><span class="hl-g"><strong>Bhaje Caves</strong></span> — has wooden pickets (Satavahana period)</li>
+    </ul>
+
+    <div class="trick-box">
+      <strong>Exam Tip:</strong> When you see "stupa at back" vs "stupa at front" — answer is always <span class="hl"><strong>stupa at back</strong></span>. The hall is apsidal (rounded at one end) = stupa goes at that rounded end.
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q5: DANDI MARCH ============ -->
+    <div class="section-title purple">⑤ History — Dandi March & CDM 🧂</div>
+
+    <p class="hw"><strong>Q5.</strong> What did Gandhi & followers do at Dandi? → <span class="hl"><strong>Made salt from seawater</strong></span>, violating British Salt Law → launching Civil Disobedience Movement (CDM)</p>
+
+    <div class="sub-title">Timeline</div>
+    <table class="hw-table">
+      <tr><th>Year/Date</th><th>Event</th></tr>
+      <tr><td>1928</td><td>Simon Commission — no Indian member — mass opposition</td></tr>
+      <tr><td>1929</td><td>Lahore Session — presided by <span class="hl"><strong>Jawaharlal Nehru</strong></span> — Purna Swaraj declared — 26 Jan 1930 = first Independence Day (flag hoisting on <strong>Ravi River</strong> banks)</td></tr>
+      <tr><td><span class="hl-p"><strong>12 Mar 1930</strong></span></td><td>Dandi March begins from <strong>Sabarmati Ashram, Ahmedabad</strong></td></tr>
+      <tr><td><span class="hl-g"><strong>6 Apr 1930</strong></span></td><td>Reached Dandi — salt made</td></tr>
+      <tr><td>1931</td><td>Gandhi-Irwin Pact</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="num-badge"><div class="big">385 km</div><div class="lbl">Distance of Dandi March</div></div>
+      <div class="num-badge"><div class="big">78</div><div class="lbl">Followers who started</div></div>
+    </div>
+
+    <p class="hw hw-blue"><strong>Dandi</strong> — in <span class="hl">Navsari district, Gujarat</span></p>
+
+    <div class="sub-title">Gandhi-Irwin Pact, 1931</div>
+    <div class="two-col">
+      <div class="sticky green">
+        <div class="sticky-label">IRWIN AGREED ✔</div>
+        Indians can make salt for personal use<br>
+        Release of non-violent prisoners
+      </div>
+      <div class="sticky red">
+        <div class="sticky-label">IRWIN REFUSED ✘</div>
+        No postpone of Bhagat Singh, Sukhdev, Rajguru hanging<br>
+        No inquiry into police atrocities
+      </div>
+    </div>
+
+    <div class="sub-title">Three Round Table Conferences</div>
+    <table class="hw-table">
+      <tr><th>RTC</th><th>Congress?</th><th>Key Fact</th></tr>
+      <tr><td>1st RTC</td><td style="color:var(--red)">❌ Did NOT participate</td><td>—</td></tr>
+      <tr><td><span class="hl"><strong>2nd RTC (1931)</strong></span></td><td style="color:var(--green)">✅ Gandhi participated</td><td><strong>Only RTC with Gandhi</strong></td></tr>
+      <tr><td>3rd RTC</td><td style="color:var(--red)">❌ Did NOT participate</td><td>—</td></tr>
+    </table>
+
+    <div class="sub-title">CDM Regional Leaders</div>
+    <table class="hw-table">
+      <tr><th>Region</th><th>Leader</th><th>Key Event</th></tr>
+      <tr><td>North-West Frontier</td><td><span class="hl"><strong>Khan Abdul Ghaffar Khan</strong></span> (Frontier Gandhi)</td><td>Red Shirt Movement; Khudai Khidmatgar</td></tr>
+      <tr><td>South (Madras)</td><td><strong>C. Rajagopalachari</strong></td><td>Led Salt Satyagraha</td></tr>
+      <tr><td>Pan-India</td><td>Sarojini Naidu, Kamaladevi Chattopadhyay</td><td>Urged Gandhi to include women in CDM</td></tr>
+    </table>
+
+    <div class="sticky pink">
+      <div class="sticky-label">POTTI SRIRAMULU</div>
+      Joined during march | Death in 1953 → led to creation of <strong>Andhra Pradesh</strong> as first linguistic state
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q6: BHARAT RATNA ============ -->
+    <div class="section-title pink">⑥ Art & Culture — Bharat Ratna to Musicians 🎵</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q6.</span> First Indian musician to receive Bharat Ratna?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Lata Mangeshkar</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Ravi Shankar</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>M.S. Subbulakshmi ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Bismillah Khan</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: C — M.S. Subbulakshmi (1998)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Musician</th><th>Year</th><th>Key Facts</th></tr>
+      <tr><td><span class="hl-g"><strong>M.S. Subbulakshmi</strong></span></td><td><strong>1998</strong></td><td>First musician BR | Queen of Carnatic Music | Ramon Magsaysay 1974 | First woman to perform at UNGA 1966</td></tr>
+      <tr><td>Pandit Ravi Shankar</td><td>1999</td><td>Sitar maestro | Books: <em>My Music My Life</em>, <em>Ragamala</em></td></tr>
+      <tr><td>Lata Mangeshkar</td><td>2001</td><td>Same year as Bismillah Khan</td></tr>
+      <tr><td>Ustad Bismillah Khan</td><td>2001</td><td>Shehnai maestro | Played at Red Fort on Independence Day | Shehnai = <span class="hl">Mangal Vadya</span></td></tr>
+      <tr><td>Pandit Bhimsen Joshi</td><td>2009</td><td><span class="hl-b">Kairana Gharana</span></td></tr>
+    </table>
+
+    <div class="sub-title">Carnatic Music Greats</div>
+    <ul class="hw-list arrow">
+      <li><strong>Father of Carnatic Music:</strong> <span class="hl">Purandara Das</span></li>
+      <li><strong>Trinity of Carnatic Music:</strong> <span class="hl-g">Tyagaraja, Muthuswami Dikshitar, Shyama Shastri</span></li>
+    </ul>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q7: CELLS ============ -->
+    <div class="section-title red">⑦ Biology — Prokaryotic vs Eukaryotic Cells 🔬</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q7.</span> Major structural difference between prokaryotic and eukaryotic cells?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Presence of DNA</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Presence of mitochondria ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Presence of ribosomes</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Presence of plasma membrane</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Mitochondria present in eukaryotes, absent in prokaryotes</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Feature</th><th>Prokaryotic</th><th>Eukaryotic</th></tr>
+      <tr><td><strong>Nucleus</strong></td><td>No defined nucleus (<span class="hl">nucleoid</span>)</td><td>Well-defined nucleus</td></tr>
+      <tr><td><strong>Mitochondria</strong></td><td style="color:var(--red)"><strong>Absent ❌</strong></td><td style="color:var(--green)"><strong>Present ✅</strong></td></tr>
+      <tr><td><strong>Ribosomes</strong></td><td>Present (70S)</td><td>Present (80S)</td></tr>
+      <tr><td><strong>DNA, Plasma membrane</strong></td><td style="color:var(--green)">Present ✅</td><td style="color:var(--green)">Present ✅</td></tr>
+      <tr><td><strong>Example</strong></td><td>Bacteria</td><td>Plants, Animals, Fungi</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="sticky-label">CELL MEMBRANE</div>
+        50% Proteins + 50% Lipids<br>
+        Found in <strong>ALL organisms</strong><br>
+        Living & <strong>semipermeable</strong>
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">CELL WALL</div>
+        Freely permeable & <strong>non-living</strong><br>
+        Bacteria: <span class="hl">Peptidoglycan</span><br>
+        Plants: Cellulose | Fungi: <span class="hl-g">Chitin</span>
+      </div>
+    </div>
+
+    <div class="sub-title">DNA Replication (Semi-conservative)</div>
+    <p class="hw hw-purple"><strong>Helicase</strong> (unwinds) → <strong>Primase</strong> (primer) → <strong>Polymerase</strong> (builds new strand) → <strong>Ligase</strong> (joins/glues)</p>
+    <p class="hw">Discovered by: <span class="hl">Frederick Miescher</span> | Double helix: <span class="hl-g"><strong>Watson & Crick</strong></span></p>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q8: ARTICLE 359 ============ -->
+    <div class="section-title blue">⑧ Polity — Emergency Provisions 🚨</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q8.</span> "Moving to court to enforce FRs during Emergency" suspended under which Article?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Article 301</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Article 359 ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Article 108</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Article 312</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Article 359 (Borrowed from Weimar Constitution of Germany)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Article</th><th>What It Does</th></tr>
+      <tr><td><span class="hl-p"><strong>Article 358</strong></span></td><td>Suspends <strong>6 rights under Art 19</strong> automatically when emergency declared (due to war/external aggression <strong>ONLY</strong>)</td></tr>
+      <tr><td><span class="hl"><strong>Article 359</strong></span></td><td>Suspends <strong>right to move court</strong> for all FRs (except Art 20 &amp; 21) by Presidential order</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>Articles 20 &amp; 21 can NEVER be suspended — even during Emergency!</strong></p>
+    </div>
+
+    <div class="sub-title">Other Key Articles</div>
+    <ul class="hw-list arrow">
+      <li><strong>Article 301:</strong> Freedom of trade, commerce, and intercourse</li>
+      <li><strong>Article 108:</strong> <span class="hl">Joint Sitting</span> — from Australian Constitution — Only for ordinary bills (NOT Money Bill / CA Bill) — Presided by <span class="hl-g"><strong>Speaker of Lok Sabha</strong></span> — Passed by simple majority — Called by President</li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">JOINT SITTING — 3 INSTANCES ONLY</div>
+      1. Drug Prohibition Bill &nbsp; 2. Banking Service Commission Bill &nbsp; 3. Prevention of Terrorism Act (POTA)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q9: ECONOMICS ============ -->
+    <div class="section-title orange">⑨ Economy — Law of Demand 📈</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q9.</span> When price increases, quantity demanded?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Increases</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Decreases ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Remains same</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>First increases then decreases</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Price ↑ → Demand ↓ (Inverse relationship)</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="sticky-label">EXCEPTIONS TO LAW OF DEMAND</div>
+        <strong>Veblen Goods:</strong> Luxury/status — demand ↑ with price<br>
+        <strong>Giffen Goods:</strong> Inferior necessity — demand ↑ with price
+      </div>
+      <div class="sticky green">
+        <div class="sticky-label">LAW OF SUPPLY</div>
+        Price ↑ → Supply ↑ (Direct relationship)<br>
+        <strong>Equilibrium</strong> = where demand and supply curves meet
+      </div>
+    </div>
+
+    <div class="sub-title">Important Economic Curves</div>
+    <table class="hw-table">
+      <tr><th>Curve</th><th>Shape</th><th>What it shows</th></tr>
+      <tr><td><strong>Phillips Curve</strong></td><td>Downward sloping</td><td>Inverse relation: inflation ↔ unemployment</td></tr>
+      <tr><td><strong>Laffer Curve</strong></td><td>Bell-shaped</td><td>Tax rate vs tax revenue — rises till a point then falls</td></tr>
+      <tr><td><strong>Lorenz Curve</strong></td><td>Bowed curve</td><td>Income inequality — 45° line = perfect equality | More bow = more inequality</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">GINI COEFFICIENT</div>
+      <strong>0 = Perfect equality</strong> | <strong>1 = Perfect inequality</strong> | Calculated from Lorenz Curve
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q10: HELIUM + RADIOACTIVITY ============ -->
+    <div class="section-title green">⑩ Science — Helium, Noble Gases & Radioactivity ☢️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q10.</span> Primary source of helium on Earth (accumulating in natural gas deposits)?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Volcanic activity</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Radioactive decay of uranium and thorium ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Solar winds</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Atmospheric processes</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Radioactive decay of uranium & thorium (alpha decay releases helium nuclei)</div>
+    </div>
+
+    <p class="hw">Helium first discovered by <span class="hl"><strong>Pierre Janssen & Norman Lockyer</strong></span> during solar eclipse in <span class="hl-g"><strong>Guntur, Andhra Pradesh, India (1868)</strong></span></p>
+    <p class="hw">Later synthesized by <strong>William Ramsey</strong> (associated with most noble gas discoveries)</p>
+
+    <div class="trick-box">
+      <strong>Noble Gases Memory Trick:</strong> <span class="hl">"Long live Hema Neha Kareena"</span><br>
+      <span class="hw-blue">He (Helium) — Ne (Neon) — Ar (Argon) — Kr (Krypton) — Xe (Xenon) — Rn (Radon)</span>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Decay Type</th><th>Change in Atomic No.</th><th>Change in Atomic Mass</th></tr>
+      <tr><td><strong>Alpha decay</strong></td><td style="color:var(--red)">Decreases by 2</td><td style="color:var(--red)">Decreases by 4</td></tr>
+      <tr><td><strong>Beta minus</strong></td><td style="color:var(--green)">Increases by 1</td><td>No change</td></tr>
+      <tr><td><strong>Beta plus</strong></td><td style="color:var(--red)">Decreases by 1</td><td>No change</td></tr>
+      <tr><td><strong>Gamma decay</strong></td><td>No change</td><td>No change (only energy released)</td></tr>
+    </table>
+
+    <div class="sub-title">Radioactivity Facts</div>
+    <ul class="hw-list arrow">
+      <li>Unit: <span class="hl"><strong>Becquerel</strong></span> (after Henri Becquerel who discovered radioactivity)</li>
+      <li>Term "radioactivity" coined by: <strong>Madame Curie</strong></li>
+      <li>Madame Curie & Pierre Curie discovered: <span class="hl-g"><strong>Radium and Polonium</strong></span></li>
+      <li>Madame Curie — Only woman with <span class="hl"><strong>2 Nobel Prizes</strong></span> (1903 Physics + 1911 Chemistry)</li>
+    </ul>
+
+    <div class="sticky blue">
+      <div class="sticky-label">INDIA'S FAST BREEDER REACTOR</div>
+      Location: <strong>Kalpakkam, Tamil Nadu</strong> (built with Russian help)<br>
+      Special: Produces <strong>more fuel than it consumes!</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q11: PLANETS ============ -->
+    <div class="section-title purple">⑪ Geography — Planets & Solar System 🪐</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q11.</span> Primary reason for Mars' reddish color?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Volcanic ash</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Iron oxide (rust) on its surface ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Red atmospheric dust</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Red algae</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Iron oxide (rust) on Mars surface = Red Planet</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Planet</th><th>Key Facts</th></tr>
+      <tr><td><strong>Mercury</strong></td><td>Closest to Sun | Revolution = 88 days (highest orbital speed) | No natural satellite</td></tr>
+      <tr><td><span class="hl-p"><strong>Venus</strong></span></td><td>Twin sister of Earth | Morning Star &amp; Evening Star | <span class="hl">Brightest planet</span> | Lucifer | H₂SO₄ clouds | Longest rotation = 243 days | Rotates East→West</td></tr>
+      <tr><td><strong>Earth</strong></td><td>Blue Planet (71% water) | Densest planet | 1 moon</td></tr>
+      <tr><td><span class="hl"><strong>Mars</strong></span></td><td>Red Planet (Iron oxide) | 2 moons: <strong>Phobos &amp; Deimos</strong> | Asteroid belt after Mars</td></tr>
+      <tr><td><strong>Jupiter</strong></td><td>Largest planet | Galilean moons: <span class="hl-g">Io, Europa, Callisto, Ganymede</span> (Ganymede = largest moon in solar system)</td></tr>
+      <tr><td><strong>Saturn</strong></td><td>Rings discovered by <strong>Cassini</strong> | Gap by Huygens | <span class="hl">Least dense</span> | Largest satellite = Titan</td></tr>
+      <tr><td><span class="hl-g"><strong>Uranus</strong></span></td><td>Green Planet | Rolling planet (tilted &gt;90°) | Rotates East→West | Discovered by <strong>William Herschel</strong></td></tr>
+      <tr><td><strong>Neptune</strong></td><td>Discovered through <strong>mathematical calculations</strong> by <strong>Urbain Le Verrier</strong> | Revolution = 165 years</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>Rotate East→West:</strong> <span class="hl">Venus &amp; Uranus ONLY</span> (opposite to all others)</p>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q12: PRESIDENT ============ -->
+    <div class="section-title red">⑫ Polity — President &amp; Vice President 🏛️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q12.</span> When President's office falls vacant, deadline for new election?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>3 months</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>6 months ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>1 year</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>90 days</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — 6 months (Article 62)</div>
+    </div>
+
+    <div class="sub-title">Resignation Hierarchy</div>
+    <ul class="hw-list arrow">
+      <li>President → resigns to <span class="hl"><strong>Vice President</strong></span></li>
+      <li>Vice President → resigns to <strong>President</strong></li>
+      <li>Speaker of Lok Sabha → resigns to <strong>Deputy Speaker</strong></li>
+      <li>Deputy Speaker → resigns to <strong>Speaker</strong></li>
+    </ul>
+
+    <div class="sticky pink">
+      <div class="sticky-label">PRESIDENTS WHO DIED IN OFFICE</div>
+      <strong>Zakir Hussain</strong> → VV Giri (Acting) → VV Giri ran for President → Chief Justice <strong>M. Hidayatullah</strong> (Acting)<br>
+      <strong>Fakhruddin Ali Ahmed</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q13 & 14: SCHEMES + BUDGET ============ -->
+    <div class="section-title orange">⑬–⑭ Economy — Schemes &amp; Budget 💰</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q13.</span> PM Kisan Maandhan Yojana — fixed monthly pension?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>₹1,000</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>₹2,000</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>₹3,000 ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>₹5,000</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: C — ₹3,000/month (₹36,000/year) after age 60</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Feature</th><th>PM Kisan Maandhan</th><th>PM Shram Yogi Maandhan</th></tr>
+      <tr><td><strong>Target</strong></td><td>Small &amp; Marginal Farmers (land &lt; 2 hectares)</td><td>Unorganized sector workers</td></tr>
+      <tr><td><strong>Ministry</strong></td><td><span class="hl">Ministry of Agriculture</span></td><td>Ministry of Labour</td></tr>
+      <tr><td><strong>Age</strong></td><td>18 to 40 years</td><td>18 to 40 years</td></tr>
+      <tr><td><strong>Pension</strong></td><td style="color:var(--green);font-weight:700">₹3,000/month after 60</td><td style="color:var(--green);font-weight:700">₹3,000/month after 60</td></tr>
+    </table>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q14.</span> Government's total revenue MORE than total expenditure =?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Balanced budget</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Surplus budget ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Deficit budget</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Primary deficit</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Surplus budget</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Term</th><th>Formula</th></tr>
+      <tr><td>Balanced Budget</td><td>Revenue = Expenditure</td></tr>
+      <tr><td><strong>Surplus Budget</strong></td><td style="color:var(--green)"><strong>Revenue &gt; Expenditure</strong></td></tr>
+      <tr><td>Deficit Budget</td><td style="color:var(--red)">Expenditure &gt; Revenue</td></tr>
+      <tr><td><span class="hl"><strong>Fiscal Deficit</strong></span></td><td>Total Expenditure − Total Receipts <strong>EXCLUDING borrowings</strong></td></tr>
+      <tr><td>Primary Deficit</td><td>Fiscal Deficit − Interest Payments</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q15: TRIBES ============ -->
+    <div class="section-title green">⑮ History — Tribal Uprisings 🏹</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q15.</span> Santhal tribe primarily concentrated in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt correct"><div class="opt-c">A</div>Jharkhand, Odisha, and West Bengal ✔</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>MP and Chhattisgarh</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Rajasthan and Gujarat</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Northeast India</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: A — Jharkhand, Odisha, and West Bengal</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Uprising</th><th>Leader(s)</th><th>Year</th><th>Key Facts</th></tr>
+      <tr><td><strong>Santhal Rebellion</strong></td><td><span class="hl"><strong>Sidhu &amp; Kanhu Murmu</strong></span> (+ Chand &amp; Bhairav)</td><td>1855</td><td>Region: Damin-i-Koh (Rajmahal Hills)</td></tr>
+      <tr><td><strong>Munda Uprising (Ulgulan)</strong></td><td><span class="hl-g"><strong>Birsa Munda</strong></span></td><td>1899–1900</td><td>Restore Khuntkatti system; throw out Diku (outsiders)</td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">BIRSA MUNDA BIRTHDAY</div>
+      <strong>15 November</strong> = celebrated as <span class="hl"><strong>Janjatiya Gaurav Diwas</strong></span> (Tribal Pride Day)
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q16: ENVIRONMENT ============ -->
+    <div class="section-title blue">⑯ Environment — International Conventions 🌍</div>
+
+    <p class="hw"><strong>Q16.</strong> World Ozone Day themes highlight which treaty? → <span class="hl"><strong>Montreal Protocol (1987)</strong></span></p>
+    <p class="hw"><strong>World Ozone Day:</strong> <span class="hl-g">16 September</span> (Montreal Protocol signed this day in 1987)</p>
+
+    <table class="hw-table">
+      <tr><th>Convention/Protocol</th><th>Year</th><th>About</th></tr>
+      <tr><td><strong>Montreal Protocol</strong></td><td>1987</td><td>Phase out ozone-depleting substances (CFCs, HCFCs)</td></tr>
+      <tr><td><strong>Kyoto Protocol</strong></td><td>1997</td><td>First <span class="hl">legally binding</span> GHG targets for developed countries; introduced Carbon Trading</td></tr>
+      <tr><td><strong>Paris Agreement</strong></td><td>2015 (COP 21)</td><td>GHG targets for BOTH developed AND developing countries</td></tr>
+      <tr><td><strong>Nagoya Protocol</strong></td><td>—</td><td>Convention on Biological Diversity (CBD) — benefit sharing from genetic resources</td></tr>
+      <tr><td><strong>Minamata Convention</strong></td><td>—</td><td>Mercury pollution (Minamata = city in Japan)</td></tr>
+      <tr><td><strong>Stockholm Convention</strong></td><td>—</td><td>Persistent Organic Pollutants (POPs)</td></tr>
+      <tr><td><strong>Basel Convention</strong></td><td>1989</td><td>Restrict transboundary movement of hazardous waste</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="num-badge"><div class="big">COP 30</div><div class="lbl">Belém, Brazil</div></div>
+      <div class="num-badge"><div class="big">COP 31</div><div class="lbl">Turkey (upcoming)</div></div>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q17: LAND REVENUE ============ -->
+    <div class="section-title orange">⑰ History — Land Revenue Systems 🌾</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q17.</span> Permanent Settlement introduced by Cornwallis in which region?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt correct"><div class="opt-c">A</div>Bengal, Bihar, and Odisha ✔</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Bombay and Madras</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Central India</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Punjab</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: A — Bengal, Bihar, and Odisha</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>System</th><th>Also Called</th><th>Region</th><th>Key Feature</th><th>By Whom</th></tr>
+      <tr><td><strong>Permanent Settlement (1793)</strong></td><td>Zamindari System</td><td><span class="hl">Bengal, Bihar, Odisha</span></td><td>Fixed revenue; Zamindars as intermediaries; Sunset Law</td><td><span class="hl-g"><strong>Cornwallis</strong></span></td></tr>
+      <tr><td><strong>Ryotwari System</strong></td><td>—</td><td>Bombay &amp; Madras (South)</td><td>Revenue from Ryot (farmer) directly; Ricardian theory</td><td><strong>Munro &amp; Read (1820)</strong></td></tr>
+      <tr><td><strong>Mahalwari System</strong></td><td>—</td><td>North &amp; Central India</td><td>Revenue from Mahal (group of villages)</td><td><strong>Holt Mackenzie + William Bentinck (1822)</strong></td></tr>
+    </table>
+
+    <div class="sticky purple">
+      <div class="sticky-label">CORNWALLIS TITLES</div>
+      <strong>Father of Civil Service in India</strong> + <strong>Father of Modern Police System in India</strong>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q18: METALS ============ -->
+    <div class="section-title red">⑱ Chemistry — Metals &amp; Electroplating ⚗️</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q18.</span> Metals used to coat cheaper metals in electroplating for ornaments?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Aluminum</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Iron</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Copper</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>Silver and Gold ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: D — Silver and Gold</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Metal</th><th>Coating/Tarnish</th><th>Note</th></tr>
+      <tr><td><strong>Gold</strong></td><td>Very less reactive</td><td>Dissolves in <span class="hl">Aqua Regia</span> (3 parts HCl + 1 part HNO₃ = Royal Water)</td></tr>
+      <tr><td><strong>Silver</strong></td><td><span class="hl-p">Black coating = Silver Sulphide (Ag₂S)</span></td><td>Generally doesn't corrode</td></tr>
+      <tr><td><strong>Copper</strong></td><td>Green = <span class="hl-g">Copper Carbonate (Malachite)</span></td><td>—</td></tr>
+      <tr><td><strong>Iron</strong></td><td>Reddish/brown = <span class="hl">Iron Oxide (Fe₂O₃) = Rusting</span></td><td>Ores: Magnetite, Hematite, Limonite, Siderite</td></tr>
+      <tr><td><strong>Aluminum</strong></td><td>Ore = Bauxite</td><td>—</td></tr>
+      <tr><td><strong>Mercury</strong></td><td>Ore = <span class="hl-b">Cinnabar (HgS)</span></td><td>Liquid metal at room temp | Amalgam = alloy containing mercury</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q19: EXCRETION ============ -->
+    <div class="section-title green">⑲ Biology — Excretion in Animals 🦅</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q19.</span> Which animal excretes uric acid in semi-solid state?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Fish</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Birds ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Mammals</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Amphibians</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Birds (and Reptiles) — Uricotelic — Semi-solid to conserve water</div>
+    </div>
+
+    <div class="two-col">
+      <table class="hw-table" style="margin:0">
+        <tr><th>Animal</th><th>Type</th><th>Substance</th></tr>
+        <tr><td><strong>Fish</strong></td><td>Ammonotelic</td><td style="color:var(--blue)">Ammonia</td></tr>
+        <tr><td><strong>Mammals</strong></td><td>Ureotelic</td><td style="color:var(--green)">Urea</td></tr>
+        <tr><td><span class="hl"><strong>Birds &amp; Reptiles</strong></span></td><td>Uricotelic</td><td style="color:var(--red);font-weight:700">Uric acid (semi-solid)</td></tr>
+        <tr><td><strong>Amphibians</strong></td><td>Both</td><td>Ammonia (water) + Urea (land)</td></tr>
+      </table>
+      <table class="hw-table" style="margin:0">
+        <tr><th>Animal</th><th>Heart Chambers</th></tr>
+        <tr><td>Fish</td><td style="font-weight:700">2</td></tr>
+        <tr><td>Amphibians</td><td style="font-weight:700">3</td></tr>
+        <tr><td>Reptiles</td><td style="font-weight:700">3</td></tr>
+        <tr><td><span class="hl-p"><strong>Crocodile</strong></span></td><td style="color:var(--red);font-weight:700">4 ← EXCEPTION!</td></tr>
+        <tr><td>Birds &amp; Mammals</td><td style="font-weight:700">4</td></tr>
+      </table>
+    </div>
+
+    <p class="hw hw-purple"><strong>Urine is yellow because of:</strong> <span class="hl">Urochrome pigment</span></p>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q20: EL NINO / LA NINA ============ -->
+    <div class="section-title blue">⑳ Geography — El Niño &amp; La Niña 🌊</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q20.</span> La Niña occurs due to?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Abnormal warming of Pacific Ocean</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Strengthening of trade winds causing cooling of eastern Pacific ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Weakening of trade winds</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Warming of Indian Ocean</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — La Niña = strengthened trade winds → cool eastern Pacific</div>
+    </div>
+
+    <div class="two-col">
+      <div class="sticky red">
+        <div class="sticky-label">EL NIÑO (Little Boy / Christ Child)</div>
+        Trade winds <strong>WEAKEN</strong><br>
+        Warm water backs up near South America<br>
+        No upwelling → fishing collapses<br>
+        India: <strong>Late &amp; weak monsoon</strong><br>
+        Australia: <strong>Drought</strong>
+      </div>
+      <div class="sticky blue">
+        <div class="sticky-label">LA NIÑA (Little Girl)</div>
+        Trade winds <strong>STRENGTHEN</strong><br>
+        Cool eastern Pacific<br>
+        India: <strong>Good, strong monsoon</strong><br>
+        Australia: <strong>Heavy rainfall</strong>
+      </div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Phenomenon</th><th>About</th></tr>
+      <tr><td><strong>IOD</strong></td><td>Indian Ocean Dipole — difference in sea surface temp: western vs eastern Indian Ocean</td></tr>
+      <tr><td><strong>MJO</strong></td><td>Madden Julian Oscillation — large-scale atmospheric pattern affecting monsoon</td></tr>
+      <tr><td><strong>ENSO</strong></td><td>El Niño + Southern Oscillation (combined)</td></tr>
+      <tr><td><strong>Polar Vortex</strong></td><td>Cold strong winds spinning around poles; when it shifts south → blizzards in North America</td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q21: CONSTITUTIONAL AMENDMENTS ============ -->
+    <div class="section-title orange">㉑ Polity — Key Constitutional Amendments 📜</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q21.</span> Which amendment made Council of Ministers collectively responsible to Lok Sabha?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>42nd Amendment</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>44th Amendment</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>52nd Amendment</div>
+        <div class="mcq-opt correct"><div class="opt-c">D</div>Always in Constitution (not an amendment) ✔</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: D — Article 75, Clause 3 — originally in the Constitution!</div>
+    </div>
+
+    <div class="imp-box">
+      <p class="hw"><strong>Article 75, Clause 3:</strong> Collective responsibility to Lok Sabha — <span class="hl">ALWAYS there — NO amendment needed!</span></p>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Amendment</th><th>Key Provisions</th></tr>
+      <tr><td><span class="hl"><strong>42nd (Mini Constitution)</strong></span></td><td>CoM advice binding on President | Added Fundamental Duties | 4 new DPSPs</td></tr>
+      <tr><td><strong>44th Amendment</strong></td><td>President can return CoM advice once | <span class="hl-g">"Armed rebellion" replaces "internal disturbance"</span> in Art 352 | Word "Cabinet" first added | Right to property removed from FRs</td></tr>
+      <tr><td><strong>52nd (1985)</strong></td><td>Added <span class="hl-p"><strong>10th Schedule — Anti-Defection Law</strong></span></td></tr>
+    </table>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q22: EARTH STRUCTURE ============ -->
+    <div class="section-title purple">㉒ Geography — Earth's Interior 🌏</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q22.</span> Gutenberg Discontinuity at ~2900 km separates?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Upper crust and lower crust</div>
+        <div class="mcq-opt"><div class="opt-c">B</div>Crust and mantle</div>
+        <div class="mcq-opt correct"><div class="opt-c">C</div>Mantle and outer core ✔</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Outer core and inner core</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: C — Mantle and outer core (~2900 km)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>Discontinuity</th><th>Separates</th><th>Depth</th></tr>
+      <tr><td><strong>Conrad</strong></td><td>Upper crust &amp; Lower crust</td><td>—</td></tr>
+      <tr><td><span class="hl-b"><strong>Mohorovičić (Moho)</strong></span></td><td>Crust &amp; Mantle</td><td>~35 km (continental)</td></tr>
+      <tr><td><span class="hl"><strong>Gutenberg</strong></span></td><td><strong>Mantle &amp; Outer core</strong></td><td><strong>~2900 km</strong></td></tr>
+      <tr><td><strong>Lehmann</strong></td><td>Outer core &amp; Inner core</td><td>~5100 km</td></tr>
+    </table>
+
+    <div class="sub-title">Plate Boundaries</div>
+    <table class="hw-table">
+      <tr><th>Boundary</th><th>Movement</th><th>Result</th></tr>
+      <tr><td><strong>Divergent</strong></td><td>Plates move apart</td><td>Mid-oceanic ridges (e.g. Mid-Atlantic Ridge = world's longest landform)</td></tr>
+      <tr><td><strong>Convergent</strong></td><td>Plates come together</td><td>Subduction zone; crust destroyed</td></tr>
+      <tr><td><strong>Transform/Conservative</strong></td><td>Plates slide past each other</td><td>Crust neither created nor destroyed (e.g. <span class="hl-g">San Andreas Fault</span>)</td></tr>
+    </table>
+
+    <div class="sticky blue">
+      <div class="sticky-label">EARTH LAYERS</div>
+      Crust: Continental = <strong>Sial</strong> (Silica + Aluminium) | Oceanic = <strong>Sima</strong> (Silica + Magnesium)<br>
+      Core: <span class="hl"><strong>Nife</strong></span> (Nickel + Iron) | Lithosphere = Crust + Upper solid mantle (~200 km)<br>
+      <strong>Asthenosphere</strong> = partially molten upper mantle (~400 km) — lithospheric plates slide over this
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ Q23: NATIONAL PARKS ============ -->
+    <div class="section-title green">㉓ Geography — National Parks &amp; Wildlife 🐯</div>
+
+    <div class="mcq-block">
+      <div class="mcq-q-head"><span class="qno">Q23.</span> Dudhwa National Park is located in?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt"><div class="opt-c">A</div>Uttarakhand</div>
+        <div class="mcq-opt correct"><div class="opt-c">B</div>Uttar Pradesh ✔</div>
+        <div class="mcq-opt"><div class="opt-c">C</div>Madhya Pradesh</div>
+        <div class="mcq-opt"><div class="opt-c">D</div>Assam</div>
+      </div>
+      <div class="mcq-ans-box">✅ Answer: B — Lakhimpur Kheri (largest district of UP)</div>
+    </div>
+
+    <table class="hw-table">
+      <tr><th>State</th><th>National Parks</th></tr>
+      <tr><td><strong>Uttar Pradesh</strong></td><td><span class="hl">Dudhwa NP</span> (Lakhimpur Kheri)</td></tr>
+      <tr><td><strong>Uttarakhand</strong></td><td><span class="hl-g"><strong>Jim Corbett</strong></span> (India's first NP, 1936 | Project Tiger 1973) | Valley of Flowers | Nanda Devi | Rajaji</td></tr>
+      <tr><td><strong>Madhya Pradesh</strong></td><td><span class="hl-p">MOST national parks in India</span> — Kanha, Bandhavgarh, Pench, Panna, Satpura, Madhav, Van Vihar</td></tr>
+      <tr><td><strong>Rajasthan</strong></td><td>Ranthambore | Sariska | Desert NP | <span class="hl">Keoladeo Ghana</span> (Ramsar + Montreux Record) | <strong>Kuno NP</strong> (cheetahs from South Africa &amp; Namibia)</td></tr>
+      <tr><td><strong>Kerala</strong></td><td>Silent Valley NP</td></tr>
+      <tr><td><strong>Manipur</strong></td><td><span class="hl-b">Loktak Lake</span> (Ramsar + Montreux Record)</td></tr>
+    </table>
+
+    <div class="imp-box">
+      <p class="hw"><strong>Montreux Record (India):</strong> <span class="hl">Keoladeo (Rajasthan)</span> + <span class="hl">Loktak Lake (Manipur)</span> — wetlands experiencing significant degradation</p>
+    </div>
+
+    <div class="sub-title">India's Ramsar Sites</div>
+    <ul class="hw-list arrow">
+      <li>Total: <span class="hl"><strong>100</strong></span> Ramsar sites</li>
+      <li>100th: <strong>Surat Tal, Ballia (UP)</strong></li>
+      <li>99th: <strong>Shekha Lake Bird Sanctuary, Aligarh (UP)</strong></li>
+      <li>98th: <strong>Patna Bird Sanctuary, Etah (UP)</strong></li>
+      <li>First Ramsar site in India: <span class="hl-g"><strong>Chilika Lake, Odisha</strong></span></li>
+    </ul>
+
+    <div class="trick-box">
+      <strong>UP Hat-trick!</strong> Last 3 Ramsar sites (98th, 99th, 100th) all from <span class="hl">Uttar Pradesh</span>
+    </div>
+
+    <hr class="divider"><div class="chapter-break">✦ ✦ ✦</div>
+
+    <!-- ============ QUICK REVISION TABLE ============ -->
+    <div class="section-title red">📋 Quick Revision — Lecture 7 Flash Table</div>
+
+    <table class="qr-table">
+      <tr><th>Topic</th><th>Key Answer</th></tr>
+      <tr><td>KE when speed becomes 1.5x</td><td>2.25 times (9/4) | KE = ½mv²</td></tr>
+      <tr><td>Sound waves — type</td><td>Longitudinal | Cannot travel in vacuum | Cannot be polarized</td></tr>
+      <tr><td>Compression on graph</td><td>Crest | Rarefaction = Trough</td></tr>
+      <tr><td>Constitutional Amendment — Article</td><td>368, Part XX (from South Africa)</td></tr>
+      <tr><td>Rajya Sabha max members</td><td>250 (238 elected + 12 nominated) | UP = 31 seats</td></tr>
+      <tr><td>12 Nominated members — from</td><td>Literature, Science, Art, Social Service (Ireland)</td></tr>
+      <tr><td>Chaitya caves — common feature</td><td>Stupa at the BACK of hall (apsidal)</td></tr>
+      <tr><td>Dandi March — date &amp; distance</td><td>12 March 1930 | 385 km | 78 followers | Navsari, Gujarat</td></tr>
+      <tr><td>Gandhi-Irwin Pact</td><td>1931 | Gandhi attended 2nd RTC only</td></tr>
+      <tr><td>Frontier Gandhi</td><td>Khan Abdul Ghaffar Khan | Khudai Khidmatgar | Red Shirt Movement</td></tr>
+      <tr><td>First musician — Bharat Ratna</td><td>M.S. Subbulakshmi 1998 | Ramon Magsaysay 1974 | UNGA 1966</td></tr>
+      <tr><td>Carnatic Music father</td><td>Purandara Das | Trinity: Tyagaraja, Dikshitar, Shyama Shastri</td></tr>
+      <tr><td>Prokaryote vs Eukaryote</td><td>Mitochondria absent in prokaryotes | Bacteria = 70S, Eukaryote = 80S</td></tr>
+      <tr><td>Cell wall — bacteria / fungi</td><td>Peptidoglycan / Chitin</td></tr>
+      <tr><td>Article 358 vs 359</td><td>358 = Art 19 suspended automatically | 359 = right to move court (except 20 &amp; 21)</td></tr>
+      <tr><td>Joint Sitting — Article 108</td><td>From Australia | 3 times | Speaker of Lok Sabha presides</td></tr>
+      <tr><td>Giffen &amp; Veblen Goods</td><td>Exceptions to law of demand — price ↑, demand ↑</td></tr>
+      <tr><td>Gini Coefficient</td><td>0 = perfect equality | 1 = perfect inequality</td></tr>
+      <tr><td>Helium — discoverers</td><td>Pierre Janssen + Norman Lockyer | Guntur, India 1868</td></tr>
+      <tr><td>Madame Curie</td><td>Coined "radioactivity" | Discovered Radium &amp; Polonium | 2 Nobel Prizes</td></tr>
+      <tr><td>Alpha decay</td><td>Atomic no. −2, Mass −4</td></tr>
+      <tr><td>Fast Breeder Reactor</td><td>Kalpakkam, Tamil Nadu</td></tr>
+      <tr><td>Venus — special facts</td><td>Brightest planet | Longest rotation 243 days | Rotates East→West | Morning &amp; Evening Star</td></tr>
+      <tr><td>Jupiter moons</td><td>Galilean: Io, Europa, Callisto, Ganymede (largest moon = Ganymede)</td></tr>
+      <tr><td>President — vacancy deadline</td><td>6 months (Article 62) | Resigns to VP</td></tr>
+      <tr><td>PM Kisan Maandhan</td><td>₹3,000/month after 60 | Farmers &lt;2 hectares | Ministry of Agriculture</td></tr>
+      <tr><td>Fiscal Deficit formula</td><td>Total Expenditure − Total Receipts excluding borrowings</td></tr>
+      <tr><td>Santhal Rebellion leaders</td><td>Sidhu &amp; Kanhu Murmu | 1855 | Damin-i-Koh</td></tr>
+      <tr><td>Birsa Munda birthday</td><td>15 November = Janjatiya Gaurav Diwas</td></tr>
+      <tr><td>World Ozone Day</td><td>16 September | Montreal Protocol 1987</td></tr>
+      <tr><td>Minamata / Stockholm / Basel</td><td>Mercury / POPs / Hazardous waste 1989</td></tr>
+      <tr><td>Permanent Settlement</td><td>Bengal, Bihar, Odisha | Cornwallis | Zamindari</td></tr>
+      <tr><td>Ryotwari / Mahalwari</td><td>Bombay+Madras / North &amp; Central India</td></tr>
+      <tr><td>Cornwallis titles</td><td>Father of Civil Service + Modern Police in India</td></tr>
+      <tr><td>Aqua Regia</td><td>3 parts HCl + 1 part HNO₃ = Royal Water = dissolves gold</td></tr>
+      <tr><td>Birds excretion</td><td>Uric acid (semi-solid) | Fish = Ammonia | Mammals = Urea</td></tr>
+      <tr><td>Crocodile heart</td><td>4 chambers — exception among reptiles</td></tr>
+      <tr><td>El Niño vs La Niña</td><td>El Niño = trade winds weaken | La Niña = trade winds strengthen</td></tr>
+      <tr><td>42nd / 44th / 52nd Amendment</td><td>Mini Constitution / Armed rebellion; Cabinet word / Anti-Defection (10th Schedule)</td></tr>
+      <tr><td>Gutenberg Discontinuity</td><td>Mantle &amp; Outer core | ~2900 km</td></tr>
+      <tr><td>San Andreas Fault</td><td>Transform boundary | Pacific + North American plate</td></tr>
+      <tr><td>Lithosphere / Asthenosphere</td><td>Up to 200 km / Up to ~400 km (plates slide over asthenosphere)</td></tr>
+      <tr><td>Dudhwa NP</td><td>Lakhimpur Kheri, UP</td></tr>
+      <tr><td>India's first NP</td><td>Jim Corbett, Uttarakhand (1936) | Project Tiger 1973</td></tr>
+      <tr><td>100th Ramsar site</td><td>Surat Tal, Ballia, UP | First = Chilika Lake, Odisha</td></tr>
+      <tr><td>Montreux Record (India)</td><td>Keoladeo (Rajasthan) + Loktak Lake (Manipur)</td></tr>
+    </table>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="sticky-label">📚 END OF LECTURE 7 NOTES</div>
+      <strong>All 23 Questions Covered ✅ | Revise this table daily before exam!</strong>
+    </div>
+
+  </div><!-- end .ruled -->
+</div><!-- end .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+
+</body>
+</html>
