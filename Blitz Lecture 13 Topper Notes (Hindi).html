@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Blitz Lecture 13 | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;--red:#d32f2f;--blue:#1565c0;--green:#2e7d32;--orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;--teal:#00695c;--yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;--margin-line:#ef9a9a;--lh:32px}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+@media print{body{background:#fff!important;padding:0}body::before{display:none}.toolbar{display:none!important}.page{box-shadow:none;border-radius:0;max-width:100%}.mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}.hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}.hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Blitz Lecture 13 Notes (Hindi)</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+<div class="page">
+  <div class="holes"><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div></div>
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">📝 Blitz Lecture 13 — Topper Notes (Hindi)</div>
+    <div class="cover-sub">संपूर्ण संरचित नोट्स | सभी 25 प्रश्न और विस्तृत व्याख्या</div>
+    <div class="cover-badge">🧬 जीव विज्ञान · 🏏 खेल · 🌿 पर्यावरण · 🌍 भूगोल · ⚖️ राजव्यवस्था · 💰 अर्थव्यवस्था · 📜 इतिहास</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+  <div class="ruled">
+
+
+    <!-- Q1: OLIGOSACCHARIDES -->
+    <div class="sec orange">① जीव विज्ञान — कार्बोहाइड्रेट का वर्गीकरण 🧬</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> ओलिगोसैकेराइड क्या हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हाइड्रोलिसिस पर एक मोनोसैकेराइड यूनिट देने वाले कार्बोहाइड्रेट</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>हाइड्रोलिसिस पर 10 से अधिक मोनोसैकेराइड यूनिट देने वाले कार्बोहाइड्रेट</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>हाइड्रोलिसिस पर 2 से 10 मोनोसैकेराइड यूनिट देने वाले कार्बोहाइड्रेट ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोई भी मोनोसैकेराइड यूनिट नहीं देने वाले कार्बोहाइड्रेट</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — ओलिगोसैकेराइड 2-10 मोनोसैकेराइड यूनिट देते हैं | 1 यूनिट = मोनोसैकेराइड | >10 यूनिट = पॉलीसैकेराइड</div>
+    </div>
+
+    <div class="sub">कार्बोहाइड्रेट का वर्गीकरण</div>
+    <table class="hw-t org">
+      <tr><th>प्रकार</th><th>मोनोसैकेराइड यूनिट</th><th>उदाहरण</th></tr>
+      <tr><td><span class="hl"><strong>मोनोसैकेराइड</strong></span></td><td>1 यूनिट</td><td>ग्लूकोज, फ्रुक्टोज</td></tr>
+      <tr><td><span class="hl-g"><strong>ओलिगोसैकेराइड</strong></span></td><td>2 से 10 यूनिट</td><td>सुक्रोज, लैक्टोज, माल्टोज</td></tr>
+      <tr><td><span class="hl-p"><strong>पॉलीसैकेराइड</strong></span></td><td>> 10 यूनिट</td><td>स्टार्च, सेल्यूलोज, ग्लाइकोजन</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky blue">
+        <div class="slbl">खाद्य स्रोतों में शुगर</div>
+        <strong>अनाज/गेहूं</strong> → <span class="hl"><strong>माल्टोज</strong></span><br>
+        <strong>दूध</strong> → <span class="hl-g"><strong>लैक्टोज</strong></span> (लैक्टोज इंटॉलरेंस!)<br>
+        <strong>फल</strong> → <span class="hl-p"><strong>फ्रुक्टोज</strong></span> (फल शुगर)
+      </div>
+      <div class="sticky green">
+        <div class="slbl">शरीर में प्रोटीन</div>
+        <strong>बाल और नाखून</strong> → <span class="hl"><strong>केराटिन</strong></span><br>
+        केराटिन = संरचनात्मक प्रोटीन
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q2: HOCKEY GOAL POST -->
+    <div class="sec purple">② खेल — हॉकी गोल पोस्ट की ऊंचाई 🏑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> हॉकी में गोल पोस्ट के बारे में कौन सा कथन सही है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ऊंचाई: 2.14 मीटर, चौड़ाई: 3.66 मीटर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>ऊंचाई: 2.14 मीटर, चौड़ाई: 3.56 मीटर</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>ऊंचाई: 2.24 मीटर, चौड़ाई: 3.66 मीटर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>ऊंचाई: 2.24 मीटर, चौड़ाई: 3.56 मीटर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — हॉकी गोल पोस्ट = 2.14m ऊंचाई × 3.66m चौड़ाई | खिलाड़ी: 11 प्रति टीम</div>
+    </div>
+
+    <div class="sub">भारतीय हॉकी — ओलंपिक गौरव</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1928–1956</span> <span class="hl"><strong>6 गोल्ड मेडल (लगातार)</strong></span> — ओलंपिक में सबसे सफल टीम!</div>
+      <div class="tl-item"><span class="yr">1964</span> गोल्ड मेडल — टोक्यो ओलंपिक</div>
+      <div class="tl-item"><span class="yr">1980</span> <span class="hl-g"><strong>आखिरी गोल्ड मेडल</strong></span> — मॉस्को ओलंपिक</div>
+      <div class="tl-item"><span class="yr">2020 & 2024</span> <span class="hl-p"><strong>ब्रॉन्ज मेडल (लगातार)</strong></span> — हाल की सफलता!</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q3: KUNO NATIONAL PARK -->
+    <div class="sec green">③ पर्यावरण — कुनो नेशनल पार्क और चीता 🌿</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> कुनो नेशनल पार्क किस प्रोजेक्ट के लिए प्रसिद्ध है? यह किस राज्य में है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रोजेक्ट टाइगर, राजस्थान</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>प्रोजेक्ट लायन, गुजरात</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>चीता रीइंट्रोडक्शन प्रोग्राम, मध्य प्रदेश ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>प्रोजेक्ट एलिफेंट, कर्नाटक</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — कुनो NP मध्य प्रदेश में | चीता दक्षिण अफ्रीका और नामीबिया से लाए गए</div>
+    </div>
+
+    <div class="sub">चीता — मुख्य तथ्य</div>
+    <table class="hw-t grn">
+      <tr><th>पहलू</th><th>जानकारी</th></tr>
+      <tr><td><strong>IUCN स्थिति</strong></td><td><span class="hl"><strong>वल्नरेबल</strong></span></td></tr>
+      <tr><td><strong>भारत से विलुप्त</strong></td><td><span class="hl-p"><strong>1952</strong></span></td></tr>
+      <tr><td><strong>पुनः लाए गए</strong></td><td><span class="hl-g">दक्षिण अफ्रीका और नामीबिया से</span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">प्रोजेक्ट टाइगर</div>
+        शुरू: <span class="hl"><strong>1973</strong></span><br>
+        पहला NP: <span class="hl-g"><strong>जिम कॉर्बेट</strong></span> (1936 में स्थापित)
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">माधव NP (खबरों में)</div>
+        बना <span class="hl"><strong>58वां टाइगर रिजर्व</strong></span><br>
+        मध्य प्रदेश में 9वां
+      </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q4: PENINSULAR PLATEAU vs HIMALAYAS -->
+    <div class="sec blue">④ भूगोल — प्रायद्वीपीय पठार बनाम हिमालय 🌍</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> प्रायद्वीपीय पठार हिमालय क्षेत्र से भौगोलिक स्थिरता के मामले में कैसे भिन्न है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>प्रायद्वीपीय पठार युवा और स्थिर है</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>प्रायद्वीपीय पठार प्राचीन और स्थिर; हिमालय युवा और परिवर्तनशील ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दोनों समान रूप से स्थिर हैं</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>हिमालय पठार से अधिक स्थिर है</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — पठार = प्राचीन + स्थिर | हिमालय = युवा + सक्रिय (कन्वर्जेंट प्लेट बाउंड्री)</div>
+    </div>
+
+    <div class="sub">भूआकृतिक बल — एंडोजेनिक बनाम एक्सोजेनिक</div>
+    <table class="hw-t alt">
+      <tr><th>श्रेणी</th><th>बल</th><th>मुख्य बिंदु</th></tr>
+      <tr><td><span class="hl"><strong>एंडोजेनिक</strong></span> (आंतरिक)</td><td>ओरोजेनिक, एपेरोजेनिक, ज्वालामुखी, भूकंप</td><td>प्लेट टेक्टॉनिक्स</td></tr>
+      <tr><td><span class="hl-g"><strong>एक्सोजेनिक</strong></span> (बाहरी)</td><td>अपक्षय, अपरद, द्रव्यमान गति</td><td>प्राथमिक ऊर्जा = <strong>सूर्य</strong> | द्रव्यमान गति = <strong>गुरुत्वाकर्षण</strong></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky">
+        <div class="slbl">सामूहिक शब्द</div>
+        <strong>एंडोजेनिक</strong> → <span class="hl"><strong>डिस्ट्रॉफिज्म</strong></span><br>
+        <strong>एक्सोजेनिक</strong> → <span class="hl-g"><strong>डिन्यूडेशन</strong></span>
+      </div>
+      <div class="sticky blue">
+        <div class="slbl">महत्वपूर्ण बिंदु</div>
+        अपक्षय द्रव्यमान गति के लिए <span class="hl-p"><strong>अनिवार्य नहीं</strong></span>!
+      </div>
+    </div>
+
+    <div class="sub">प्लेट टेक्टॉनिक्स — मुख्य योगदानकर्ता</div>
+    <table class="hw-t pur">
+      <tr><th>व्यक्ति</th><th>योगदान</th></tr>
+      <tr><td><span class="hl"><strong>मैकेंजी और पार्कर</strong></span></td><td>प्लेट टेक्टॉनिक थ्योरी प्रस्तावित</td></tr>
+      <tr><td><span class="hl-g"><strong>आर्थर होम्स</strong></span></td><td>कन्वेक्शन करंट थ्योरी (1930) — प्लेटें क्यों चलती हैं</td></tr>
+      <tr><td><span class="hl-p"><strong>हैरी हेस</strong></span></td><td>सी फ्लोर स्प्रेडिंग थ्योरी</td></tr>
+      <tr><td><span class="hl-b"><strong>अल्फ्रेड वेगनर</strong></span></td><td>कॉन्टिनेंटल ड्रिफ्ट थ्योरी (1912)</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q18: OBJECTIVES RESOLUTION -->
+    <div class="sec red">⑱ राजव्यवस्था — संविधान सभा और उद्देश्य प्रस्ताव 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> उद्देश्य प्रस्ताव संविधान सभा में किसके द्वारा प्रस्तुत किया गया था?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जवाहरलाल नेहरू ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>सरदार पटेल</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बी.आर. आंबेडकर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>डॉ. राजेंद्र प्रसाद</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — नेहरू ने 13 दिसंबर 1946 को उद्देश्य प्रस्ताव प्रस्तुत किया | 22 जनवरी 1947 को अपनाया गया</div>
+    </div>
+
+    <div class="sub">संविधान सभा — गठन</div>
+    <table class="hw-t red-h">
+      <tr><th>पहलू</th><th>जानकारी</th></tr>
+      <tr><td><strong>आधार</strong></td><td><span class="hl"><strong>कैबिनेट मिशन योजना</strong></span> (1946)</td></tr>
+      <tr><td><strong>कुल सदस्य</strong></td><td>389 (296 ब्रिटिश भारत + 93 रियासतें)</td></tr>
+      <tr><td><strong>पहली बैठक</strong></td><td><span class="hl-g"><strong>9 दिसंबर 1946</strong></span></td></tr>
+      <tr><td><strong>अस्थायी अध्यक्ष</strong></td><td><span class="hl-p"><strong>सच्चिदानंद सिन्हा</strong></span></td></tr>
+      <tr><td><strong>स्थायी अध्यक्ष</strong></td><td><span class="hl-b"><strong>डॉ. राजेंद्र प्रसाद</strong></span></td></tr>
+      <tr><td><strong>संविधान सलाहकार</strong></td><td><span class="hl"><strong>बी.एन. राऊ</strong></span></td></tr>
+    </table>
+
+    <div class="sub">उद्देश्य प्रस्ताव — समयरेखा</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">9 दिसंबर 1946</span> पहली बैठक | 211 सदस्यों ने भाग लिया | मुस्लिम लीग ने बहिष्कार किया</div>
+      <div class="tl-item"><span class="yr">13 दिसंबर 1946</span> <span class="hl"><strong>नेहरू ने उद्देश्य प्रस्ताव प्रस्तुत किया</strong></span></div>
+      <div class="tl-item"><span class="yr">22 जनवरी 1947</span> उद्देश्य प्रस्ताव <span class="hl-g"><strong>अपनाया गया</strong></span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>उद्देश्य प्रस्ताव = प्रस्तावना का आधार</strong> (प्रस्तावना स्वयं नहीं)</p>
+    </div>
+
+    <div class="sub">महत्वपूर्ण समितियां</div>
+    <table class="hw-t pur">
+      <tr><th>समिति</th><th>अध्यक्ष</th></tr>
+      <tr><td><span class="hl"><strong>संघ/राज्य शक्ति समिति</strong></span></td><td><span class="hl"><strong>नेहरू</strong></span></td></tr>
+      <tr><td><span class="hl-g"><strong>प्रारूप समिति</strong></span></td><td><span class="hl-g"><strong>बी.आर. आंबेडकर</strong></span></td></tr>
+      <tr><td><span class="hl-p"><strong>मौलिक अधिकार सलाहकार समिति</strong></span></td><td><span class="hl-p"><strong>सरदार पटेल</strong></span></td></tr>
+      <tr><td><span class="hl-b"><strong>स्टीयरिंग समिति</strong></span></td><td><span class="hl-b"><strong>डॉ. राजेंद्र प्रसाद</strong></span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q19: WRIT - QUO WARRANTO -->
+    <div class="sec blue">⑲ राजव्यवस्था — रिट (अनुच्छेद 32 और 226) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> वह रिट जो किसी व्यक्ति द्वारा सार्वजनिक पद धारण करने की वैधता की जांच करती है:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>हेबियस कॉर्पस</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मैंडमस</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सर्टियोरारी</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>क्वो वारंटो ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — क्वो वारंटो = "किस अधिकार से" | सार्वजनिक पद अवैध रूप से धारण करने की जांच</div>
+    </div>
+
+    <div class="sub">पांच रिट</div>
+    <table class="hw-t alt">
+      <tr><th>रिट</th><th>अर्थ</th><th>उद्देश्य</th></tr>
+      <tr><td><span class="hl"><strong>हेबियस कॉर्पस</strong></span></td><td>"शरीर प्रस्तुत करो"</td><td>अवैध हिरासत के खिलाफ</td></tr>
+      <tr><td><span class="hl-g"><strong>मैंडमस</strong></span></td><td>"हम आदेश देते हैं"</td><td>अनिवार्य सार्वजनिक कर्तव्य कराना</td></tr>
+      <tr><td><span class="hl-b"><strong>सर्टियोरारी</strong></span></td><td>"प्रमाणित किया जाए"</td><td>निम्न न्यायालय का आदेश रद्द करना</td></tr>
+      <tr><td><span class="hl-p"><strong>निषेध</strong></span></td><td>"निषेध करना"</td><td>निम्न न्यायालय को सीमा से बाहर जाने से रोकना</td></tr>
+      <tr><td><span class="hl"><strong>क्वो वारंटो</strong></span></td><td>"किस अधिकार से"</td><td>सार्वजनिक पद अवैध रूप से धारण करने को चुनौती</td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky"><div class="slbl">SC बनाम HC</div>SC (अनुच्छेद 32): केवल FR | HC (अनुच्छेद 226): FR + कानूनी अधिकार</div>
+      <div class="sticky blue"><div class="slbl">उधार लिया गया</div>रिट <span class="hl"><strong>UK</strong></span> से उधार लिए गए</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q20: TOLKAPPIYAM -->
+    <div class="sec purple">⑳ प्राचीन इतिहास — संगम साहित्य 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> प्रसिद्ध तमिल व्याकरण ग्रंथ तोल्काप्पियम, संगम काल का सबसे पुराना जीवित कार्य, किसने लिखा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>अगस्त्य</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>तोल्काप्पियार ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>इलंगो आडिगल</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>तिरुवल्लुवर</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — तोल्काप्पियार ने तोल्काप्पियम लिखा | सबसे पुराना तमिल ग्रंथ | संगम काल (ईसा पूर्व 3री शताब्दी - ईस्वी 3री शताब्दी)</div>
+    </div>
+
+    <div class="sub">संगम काल</div>
+    <table class="hw-t pur">
+      <tr><th>पहलू</th><th>जानकारी</th></tr>
+      <tr><td><strong>अवधि</strong></td><td><span class="hl"><strong>ईसा पूर्व 3री शताब्दी से ईस्वी 3री शताब्दी</strong></span></td></tr>
+      <tr><td><strong>तीन संगम</strong></td><td>1ला और 3रा <span class="hl-g"><strong>मदुरै</strong></span> में | 2रा <span class="hl-p"><strong>कपाटपुरम</strong></span> में</td></tr>
+      <tr><td><strong>सबसे पुराना तमिल ग्रंथ</strong></td><td><span class="hl-b"><strong>तोल्काप्पियम</strong></span> - तोल्काप्पियार द्वारा</td></tr>
+    </table>
+
+    <div class="sub">महत्वपूर्ण संगम कृतियां</div>
+    <table class="hw-t teal-h">
+      <tr><th>कृति</th><th>लेखक</th><th>मुख्य बिंदु</th></tr>
+      <tr><td><span class="hl"><strong>शिलप्पदिकारम</strong></span></td><td><span class="hl"><strong>इलंगो आडिगल</strong></span></td><td>कन्नगी = पवित्रता की देवी</td></tr>
+      <tr><td><span class="hl-g"><strong>मणिमेकलै</strong></span></td><td><span class="hl-g"><strong>सट्टनार</strong></span></td><td>महाकाव्य</td></tr>
+      <tr><td><span class="hl-b"><strong>तिरुक्कुरल</strong></span></td><td><span class="hl-b"><strong>तिरुवल्लुवर</strong></span></td><td>1330 द्विपदी | "सार्वभौमिक वेद"</td></tr>
+    </table>
+
+    <div class="sub">संगम राज्य</div>
+    <table class="hw-t org">
+      <tr><th>राज्य</th><th>राजधानी</th><th>प्रतीक</th></tr>
+      <tr><td><span class="hl"><strong>चेर</strong></span></td><td>वंजी (करूर)</td><td>धनुष और बाण</td></tr>
+      <tr><td><span class="hl-g"><strong>पांड्य</strong></span></td><td>मदुरै</td><td>मछली</td></tr>
+      <tr><td><span class="hl-b"><strong>चोल</strong></span></td><td>उरैयूर</td><td>बाघ</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q21: BHARAT MATA PAINTING -->
+    <div class="sec pink">㉑ आधुनिक इतिहास — कला और राष्ट्रवाद 🎨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> प्रतिष्ठित कलाकृति भारत माता, जो भारत को दिव्य माता के रूप में चित्रित करती है, किसने चित्रित की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>अवनींद्रनाथ ठाकुर ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>नंदलाल बोस</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जामिनी राय</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आशित हलदार</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — अवनींद्रनाथ ठाकुर ने 1905 में भारत माता चित्रित की | बंग विभाजन के दौरान</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>भारत माता (1905) — चार हाथ:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>किताबें</strong></span> — ज्ञान</li>
+        <li><span class="hl-g"><strong>वस्त्र</strong></span> — समृद्धि</li>
+        <li><span class="hl-p"><strong>धान/फसलें</strong></span> — भोजन</li>
+        <li><span class="hl-b"><strong>माला</strong></span> — आशीर्वाद</li>
+      </ul>
+    </div>
+
+    <div class="sub">कलाकार</div>
+    <table class="hw-t alt">
+      <tr><th>कलाकार</th><th>योगदान</th></tr>
+      <tr><td><span class="hl"><strong>अवनींद्रनाथ ठाकुर</strong></span></td><td>भारत माता (1905) | इंडियन सोसाइटी ऑफ ओरिएंटल आर्ट (1927)</td></tr>
+      <tr><td><span class="hl-g"><strong>नंदलाल बोस</strong></span></td><td><span class="hl-p"><strong>भारतीय संविधान</strong></span> को सजाया</td></tr>
+    </table>
+
+    <div class="sub">दिल्ली दरबार</div>
+    <table class="hw-t grn">
+      <tr><th>दरबार</th><th>वर्ष</th><th>वायसराय</th></tr>
+      <tr><td><strong>1ला</strong></td><td>1877</td><td><span class="hl"><strong>लॉर्ड लिटन</strong></span></td></tr>
+      <tr><td><strong>2रा</strong></td><td>1903</td><td><span class="hl-g"><strong>लॉर्ड कर्जन</strong></span></td></tr>
+      <tr><td><strong>3रा</strong></td><td>1911</td><td><span class="hl-p"><strong>लॉर्ड हार्डिंग II</strong></span> | राजधानी दिल्ली स्थानांतरण | बंग विभाजन रद्द</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q22: DECCAN TRAPS -->
+    <div class="sec teal">㉒ भूगोल — चट्टानें और डेक्कन ट्रैप्स 🪨</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> भारत का डेक्कन ट्रैप्स क्षेत्र मुख्य रूप से किस प्रकार की चट्टानों से बना है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>बेसाल्ट (आग्नेय) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>संगमरमर (कायांतरित)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बलुआ पत्थर (अवसादी)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नीस (कायांतरित)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — डेक्कन ट्रैप्स = बेसाल्ट (आग्नेय) | फ्लड बेसाल्ट ज्वालामुखीवाद</div>
+    </div>
+
+    <div class="sub">चट्टान प्रकार</div>
+    <table class="hw-t teal-h">
+      <tr><th>चट्टान प्रकार</th><th>बनने की प्रक्रिया</th><th>उदाहरण</th></tr>
+      <tr><td><span class="hl"><strong>आग्नेय</strong></span></td><td>मैग्मा/लावा का ठोस होना</td><td><span class="hl"><strong>बेसाल्ट, ग्रेनाइट</strong></span></td></tr>
+      <tr><td><span class="hl-g"><strong>अवसादी</strong></span></td><td>तलछट का जमाव</td><td>बलुआ पत्थर, चूना पत्थर, कोयला | <span class="hl-p"><strong>जीवाश्म यहां मिलते हैं</strong></span></td></tr>
+      <tr><td><span class="hl-b"><strong>कायांतरित</strong></span></td><td>पुनर्क्रिस्टलीकरण (PVT परिवर्तन)</td><td>संगमरमर, नीस, क्वार्टजाइट</td></tr>
+    </table>
+
+    <div class="sub">चट्टान परिवर्तन</div>
+    <table class="hw-t org">
+      <tr><th>मूल</th><th>→</th><th>कायांतरित</th></tr>
+      <tr><td><span class="hl"><strong>चूना पत्थर</strong></span></td><td>→</td><td><span class="hl-g"><strong>संगमरमर</strong></span></td></tr>
+      <tr><td><span class="hl-b"><strong>बलुआ पत्थर</strong></span></td><td>→</td><td><span class="hl-p"><strong>क्वार्टजाइट</strong></span></td></tr>
+      <tr><td><span class="hl"><strong>ग्रेनाइट</strong></span></td><td>→</td><td><span class="hl-g"><strong>नीस</strong></span></td></tr>
+    </table>
+
+    <div class="two-col">
+      <div class="sticky"><div class="slbl">पर्पट संरचना</div>महाद्वीपीय: <span class="hl"><strong>ग्रेनाइट</strong></span> | महासागरीय: <span class="hl-g"><strong>बेसाल्ट</strong></span></div>
+      <div class="sticky blue"><div class="slbl">पेट्रोलॉजी</div>चट्टानों का अध्ययन</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q23: ALLAHABAD SESSION 1930 -->
+    <div class="sec red">㉓ आधुनिक इतिहास — मुस्लिम लीग और पाकिस्तान 🇵🇰</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> 1930 में मुस्लिम लीग के इलाहाबाद सत्र की अध्यक्षता किसने की जिसने पाकिस्तान की मांग की?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मुहम्मद इकबाल ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>मुहम्मद अली जिन्ना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>आगा खान</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>नवाब सलीमुल्लाह</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — इकबाल ने 1930 इलाहाबाद सत्र की अध्यक्षता की | पाकिस्तान की पहली परिकल्पना</div>
+    </div>
+
+    <div class="sub">मुस्लिम लीग — गठन</div>
+    <table class="hw-t red-h">
+      <tr><th>पहलू</th><th>जानकारी</th></tr>
+      <tr><td><strong>स्थापना</strong></td><td><span class="hl"><strong>1906</strong></span> में <span class="hl-g"><strong>ढाका</strong></span> में</td></tr>
+      <tr><td><strong>संस्थापक</strong></td><td><span class="hl-p"><strong>आगा खान + नवाब सलीमुल्लाह</strong></span></td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>"पाकिस्तान" शब्द <span class="hl"><strong>चौधरी रहमत अली</strong></span> ने <span class="hl-g"><strong>1933</strong></span> में गढ़ा</strong></p>
+      <ul class="hw arr">
+        <li><strong>P</strong> = पंजाब</li>
+        <li><strong>A</strong> = अफगान (NWFP)</li>
+        <li><strong>K</strong> = कश्मीर</li>
+        <li><strong>S</strong> = सिंध</li>
+        <li><strong>TAN</strong> = बलूचिस्तान</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- Q10: BARC -->
+    <div class="sec green">⑩ विज्ञान और प्रौद्योगिकी — परमाणु ऊर्जा संयंत्र ⚛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> BARC (भाभा परमाणु अनुसंधान केंद्र) किस शहर में है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>मुंबई (ट्रॉम्बे) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>चेन्नई</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>दिल्ली</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>कोलकाता</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — BARC ट्रॉम्बे, मुंबई में | डॉ. होमी भाभा के नाम पर</div>
+    </div>
+
+    <div class="sub">भारत में परमाणु ऊर्जा संयंत्र</div>
+    <table class="hw-t grn">
+      <tr><th>संयंत्र</th><th>राज्य</th><th>मुख्य बिंदु</th></tr>
+      <tr><td><span class="hl"><strong>तारापुर</strong></span></td><td>महाराष्ट्र</td><td><span class="hl-g"><strong>पहला परमाणु संयंत्र (1969)</strong></span></td></tr>
+      <tr><td><strong>कल्पक्कम</strong></td><td>तमिलनाडु</td><td>फास्ट ब्रीडर टेस्ट रिएक्टर</td></tr>
+      <tr><td><strong>कुडनकुलम</strong></td><td>तमिलनाडु</td><td>भारत-रूस सहयोग</td></tr>
+      <tr><td><strong>नरोरा</strong></td><td>उत्तर प्रदेश</td><td>—</td></tr>
+      <tr><td><strong>काकरापार</strong></td><td>गुजरात</td><td>—</td></tr>
+      <tr><td><strong>कैगा</strong></td><td>कर्नाटक</td><td>—</td></tr>
+      <tr><td><strong>रावतभाटा</strong></td><td>राजस्थान</td><td>—</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- Q17: BRASS CITY -->
+    <div class="sec orange">⑰ भूगोल — शहर और उनकी प्रसिद्धि 🏙️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> कौन सा शहर भारत का पीतल शहर (Brass City) कहलाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>जयपुर</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>मुरादाबाद ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>जोधपुर</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>अलीगढ़</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — मुरादाबाद = पीतल शहर | अलीगढ़ = ताले | मिर्जापुर = कालीन</div>
+    </div>
+
+    <div class="sub">भारतीय शहर — प्रसिद्ध उपाधियां</div>
+    <table class="hw-t org">
+      <tr><th>शहर</th><th>उपाधि</th></tr>
+      <tr><td><span class="hl"><strong>मुरादाबाद</strong></span></td><td><span class="hl-g"><strong>पीतल शहर</strong></span></td></tr>
+      <tr><td><strong>जयपुर</strong></td><td><span class="hl-p"><strong>गुलाबी शहर</strong></span></td></tr>
+      <tr><td><strong>उदयपुर</strong></td><td><span class="hl"><strong>झीलों का शहर</strong></span></td></tr>
+      <tr><td><strong>अहमदाबाद</strong></td><td><span class="hl-g"><strong>भारत का मैनचेस्टर</strong></span></td></tr>
+      <tr><td><strong>जमशेदपुर</strong></td><td><span class="hl-b"><strong>स्टील सिटी</strong></span></td></tr>
+      <tr><td><strong>अलीगढ़</strong></td><td><span class="hl"><strong>तालों</strong></span> के लिए प्रसिद्ध</td></tr>
+      <tr><td><strong>मिर्जापुर</strong></td><td><span class="hl-p"><strong>कालीनों</strong></span> के लिए प्रसिद्ध</td></tr>
+    </table>
+
+    <div class="sub">SEBI और SIDBI</div>
+    <table class="hw-t alt">
+      <tr><th>संस्था</th><th>स्थापना</th><th>मुख्यालय</th></tr>
+      <tr><td><span class="hl"><strong>SEBI</strong></span></td><td>1988 (वैधानिक 1992)</td><td>मुंबई | अध्यक्ष: तुहिन कांता पांडे</td></tr>
+      <tr><td><span class="hl-g"><strong>SIDBI</strong></span></td><td>1990</td><td><span class="hl-p"><strong>लखनऊ</strong></span></td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 त्वरित संशोधन — महत्वपूर्ण वर्ष</div>
+    <table class="qr-t">
+      <tr><th>घटना</th><th>वर्ष</th></tr>
+      <tr><td>चीता भारत से विलुप्त</td><td>1952</td></tr>
+      <tr><td>प्रोजेक्ट टाइगर शुरू</td><td>1973</td></tr>
+      <tr><td>जिम कॉर्बेट NP स्थापित (पहला NP)</td><td>1936</td></tr>
+      <tr><td>भूमि छत अधिनियम</td><td>1976</td></tr>
+      <tr><td>संपत्ति का अधिकार FR से हटाया गया</td><td>1978</td></tr>
+      <tr><td>पहला परमाणु संयंत्र (तारापुर)</td><td>1969</td></tr>
+      <tr><td>SEBI स्थापित</td><td>1988</td></tr>
+      <tr><td>SEBI वैधानिक दर्जा</td><td>1992</td></tr>
+      <tr><td>SIDBI स्थापित</td><td>1990</td></tr>
+      <tr><td>संविधान सभा की पहली बैठक</td><td>9 दिसंबर 1946</td></tr>
+      <tr><td>उद्देश्य प्रस्ताव प्रस्तुत</td><td>13 दिसंबर 1946</td></tr>
+      <tr><td>उद्देश्य प्रस्ताव अपनाया गया</td><td>22 जनवरी 1947</td></tr>
+      <tr><td>राष्ट्रीय ध्वज अपनाया गया</td><td>22 जुलाई 1947</td></tr>
+      <tr><td>संविधान अपनाया गया</td><td>26 नवंबर 1949</td></tr>
+      <tr><td>संविधान लागू हुआ</td><td>26 जनवरी 1950</td></tr>
+      <tr><td>बंग विभाजन की घोषणा</td><td>जुलाई 1905</td></tr>
+      <tr><td>बंग विभाजन लागू</td><td>अक्टूबर 1905</td></tr>
+      <tr><td>बंग विभाजन रद्द</td><td>1911</td></tr>
+      <tr><td>राजधानी दिल्ली स्थानांतरित</td><td>1912</td></tr>
+      <tr><td>मुस्लिम लीग की स्थापना</td><td>1906</td></tr>
+      <tr><td>इलाहाबाद सत्र (इकबाल पाकिस्तान की मांग)</td><td>1930</td></tr>
+      <tr><td>"पाकिस्तान" शब्द रहमत अली ने गढ़ा</td><td>1933</td></tr>
+      <tr><td>भारत माता चित्रित</td><td>1905</td></tr>
+      <tr><td>वाशिंगटन कंसेंसस</td><td>1989</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 टॉपर टिप्स — परीक्षा के लिए याद रखो!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>M1 = नैरो मनी</strong></span> | <span class="hl-g"><strong>M3 = ब्रॉड मनी</strong></span></li>
+          <li><span class="hl-p"><strong>डेक्कन ट्रैप्स = बेसाल्ट (आग्नेय)</strong></span></li>
+          <li><span class="hl-b"><strong>कुनो NP = चीता</strong></span> | मध्य प्रदेश</li>
+          <li>तोल्काप्पियम = सबसे पुराना तमिल ग्रंथ | तोल्काप्पियार द्वारा</li>
+          <li>भारत माता = अवनींद्रनाथ ठाकुर (1905)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 5">
+          <li><span class="hl"><strong>क्वो वारंटो</strong></span> = सार्वजनिक पद का अवैध धारण</li>
+          <li>उद्देश्य प्रस्ताव = प्रस्तावना का आधार</li>
+          <li>GOI 1935 = संघीय PSC प्रस्तावित</li>
+          <li>पठार = प्राचीन + स्थिर | हिमालय = युवा + सक्रिय</li>
+          <li>क्वाड = अनौपचारिक | NATO = संधि-आधारित</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>ध्यान दें — चरम शब्द:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>"केवल" / "हमेशा" / "कभी नहीं" / "केवल"</strong></span> = MCQ में आमतौर पर गलत</li>
+      </ul>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 ब्लिट्ज लेक्चर 13 नोट्स समाप्त</div>
+      <strong>सभी 25 प्रश्न कवर ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
