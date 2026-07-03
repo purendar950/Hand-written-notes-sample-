@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Hot Topics: 1857 Revolt | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Hot Topics: 1857 Revolt Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy — Hot Topics Series</div>
+    <div class="cover-title">⚔️ The Revolt of 1857 — Topper Notes</div>
+    <div class="cover-sub">Causes · Timeline · Leaders · Suppression · Aftermath · Why It Failed</div>
+    <div class="cover-badge">🎖️ Sepoy Mutiny · 🏰 Doctrine of Lapse · 👑 Bahadur Shah II · 📜 GOI Act 1858</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- BACKGROUND -->
+    <div class="sec red">① Background — Governor-General &amp; Key Policies 🏛️</div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Setting the Stage:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Lord Canning</strong></span> was the Governor-General when the 1857 Revolt broke out</li>
+        <li>Revolt of 1857 is also called the <span class="hl-g"><strong>"Sepoy Mutiny"</strong></span> — because it was primarily soldiers (sepoys) who revolted</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Which Act, introduced under Canning, required Bengal Army soldiers to serve overseas — violating Hindu religious beliefs about crossing the sea?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>General Service Enlistment Act ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>General Service Enlistment Act</strong> — Bengal Army soldiers (mostly Hindu) were told they might need to serve overseas. Crossing the sea ("Kala Pani") was believed to destroy one's religion at the time — this fueled resentment among sepoys</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- DOCTRINE OF LAPSE -->
+    <div class="sec orange">② Doctrine of Lapse — Dalhousie's Annexation Policy 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Who introduced the Doctrine of Lapse, and in which year?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lord Dalhousie, 1848 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Lord Dalhousie</strong> introduced the Doctrine of Lapse in <span class="hl">1848</span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Doctrine of Lapse — Core Rule:</strong></p>
+      <ul class="hw arr">
+        <li>If a ruler died <span class="hl">without a "natural" (biological) heir</span>, the British would NOT recognize an adopted son's right to the throne</li>
+        <li>The British reserved full discretion on whether to grant succession rights at all</li>
+        <li>If rights were denied → the kingdom would be <span class="hl-g"><strong>annexed directly by the British</strong></span></li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>British Strategy — "Small loan trick":</strong> Just like a con artist first builds trust with small favors before taking a big one and disappearing, the British first offered princely states protection via <span class="hl">Subsidiary Alliance</span> (no problems initially), then later used the Doctrine of Lapse to annex them outright.
+    </div>
+
+    <div class="sub">Doctrine of Lapse — States Annexed (Chronological)</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">1848</span> <span class="hl"><strong>Satara</strong></span> — first state annexed under Doctrine of Lapse</div>
+      <div class="tl-item"><span class="yr">1849</span> <span class="hl-g"><strong>Sambalpur &amp; Jaitpur</strong></span></div>
+      <div class="tl-item"><span class="yr">1852</span> <span class="hl-p"><strong>Udaipur</strong></span></div>
+      <div class="tl-item"><span class="yr">1853</span> <span class="hl-b"><strong>Jhansi</strong></span></div>
+      <div class="tl-item"><span class="yr">1856</span> <strong>Awadh</strong> — annexed on grounds of "misgovernance" (NOT Doctrine of Lapse directly)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AWADH ANNEXATION -->
+    <div class="sec purple">③ Annexation of Awadh — Nawab Wajid Ali Shah 🕌</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Who was the last Nawab of Awadh, and on what grounds was Awadh annexed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nawab Wajid Ali Shah; annexed on grounds of misgovernance, 1856 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Wajid Ali Shah</strong> — last Nawab of Awadh. Awadh accepted the <span class="hl">Subsidiary Alliance in 1801</span>, stationing a permanent British force there. Dalhousie later prepared a report alleging poor governance, and Awadh was annexed in <strong>1856</strong> citing <strong>misgovernance</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Famous Story — Wajid Ali Shah &amp; Begum Hazrat Mahal:</strong></p>
+      <ul class="hw arr">
+        <li>Dalhousie called Awadh <span class="hl">"a cherry ready to drop into the mouth of the British"</span></li>
+        <li>Wajid Ali Shah was taken away and imprisoned in <span class="hl-g"><strong>Kolkata</strong></span></li>
+        <li>His wife, <span class="hl-p"><strong>Begum Hazrat Mahal</strong></span>, stayed back in Lucknow and later <strong>led the 1857 rebellion from Lucknow</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- IMMEDIATE CAUSE -->
+    <div class="sec red">④ Immediate Cause — The Enfield Rifle Cartridge Controversy 🔫</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> What was the immediate/spark cause of the 1857 Revolt?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Introduction of the Enfield Rifle — greased cartridges rumored to contain cow &amp; pig fat ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The new <strong>Enfield Rifle</strong> used cartridges that had to be bitten open with the mouth. Rumors spread that the cartridge grease contained <span class="hl">cow fat</span> (sacred to Hindus) and <span class="hl-g">pig fat</span> (forbidden in Islam) — outraging soldiers of both religions</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Racial &amp; Structural Tensions (Underlying Causes):</strong></p>
+      <ul class="hw arr">
+        <li>Racial discrimination between British officers and Indian sepoys within the same army</li>
+        <li>Combination of religious, economic (land annexation), and military grievances created a "simmering" resentment — the cartridge issue was the spark that ignited it</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- OUTBREAK TIMELINE -->
+    <div class="sec teal">⑤ Outbreak — Mangal Pandey &amp; the Spread of Revolt 🔥</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Mangal Pandey belonged to which regiment, and what did he do?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>34th Bengal Native Infantry — killed his officer in anger over the cartridge issue ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Mangal Pandey</strong>, 34th Native Infantry (Bengal Native Infantry), killed his officer on <span class="hl">March 29, 1857</span>, enraged by the cartridge controversy. He was hanged on <span class="hl-g">April 8, 1857</span></div>
+    </div>
+
+    <div class="sub">1857 Revolt — Full Outbreak Timeline</div>
+    <div class="tl">
+      <div class="tl-item"><span class="yr">March 29, 1857</span> Mangal Pandey (34th Native Infantry) kills his officer over the cartridge issue</div>
+      <div class="tl-item"><span class="yr">April 8, 1857</span> Mangal Pandey is <span class="hl"><strong>hanged</strong></span>; news spreads rapidly among other regiments</div>
+      <div class="tl-item"><span class="yr">April 24, 1857</span> Soldiers of the <span class="hl-g"><strong>3rd Native Cavalry</strong></span> (Meerut) refuse to use the new cartridges</div>
+      <div class="tl-item"><span class="yr">May 9, 1857</span> ~90 soldiers refuse the cartridges; <strong>85 are dismissed and sentenced to 10 years imprisonment</strong></div>
+      <div class="tl-item"><span class="yr">May 10, 1857</span> Enraged soldiers <span class="hl-p"><strong>free their imprisoned comrades</strong></span> and begin marching toward <strong>Delhi</strong> — this date marks the formal start of the widespread revolt</div>
+      <div class="tl-item"><span class="yr">May 1857</span> Rebels reach the <span class="hl-b"><strong>Red Fort, Delhi</strong></span> and declare <strong>Bahadur Shah II (Bahadur Shah Zafar)</strong> as their ruler, rejecting British authority</div>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Historical Irony:</strong> The Treaty of Allahabad (after the Battle of Buxar, 1765) had already brought the Mughals under British influence/pension. Yet in 1857, rebels still rallied around the aging <strong>Bahadur Shah II</strong> as a unifying symbolic ruler — showing his continued legitimacy in Indian eyes despite being powerless.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- DELHI LEADERSHIP -->
+    <div class="sec purple">⑥ Delhi — Bahadur Shah II &amp; General Bakht Khan 👑</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> Who was the symbolic leader of the revolt at Delhi, and who was the actual military commander leading operations there?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Symbolic: Bahadur Shah II (Zafar); Actual command: General Bakht Khan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Bahadur Shah II</strong> was declared the ruler/symbolic leader (he was old and not administratively capable). The actual military leadership was with <span class="hl"><strong>General Bakht Khan</strong></span>, who was <strong>81 years old</strong> and commanded operations from Delhi</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- LEADERS BY REGION -->
+    <div class="sec orange">⑦ Leaders of the Revolt — Region-wise ⚔️</div>
+
+    <table class="hw-t org">
+      <tr><th>Region</th><th>Leader</th><th>Background</th></tr>
+      <tr><td><span class="hl"><strong>Delhi</strong></span></td><td>Bahadur Shah II (Zafar) / General Bakht Khan</td><td>Symbolic Mughal ruler / actual military commander (age 81)</td></tr>
+      <tr><td><span class="hl-g"><strong>Lucknow</strong></span></td><td>Begum Hazrat Mahal</td><td>Wife of Nawab Wajid Ali Shah; led rebellion after Awadh's annexation</td></tr>
+      <tr><td><span class="hl-p"><strong>Kanpur</strong></span></td><td>Nana Saheb</td><td>Adopted son denied throne rights under Doctrine of Lapse (see below)</td></tr>
+      <tr><td><span class="hl-b"><strong>Jhansi</strong></span></td><td>Rani Lakshmibai (born Manikarnika Tambe)</td><td>Adopted son also denied succession under Doctrine of Lapse</td></tr>
+      <tr><td><strong>Bihar (Arrah)</strong></td><td>Kunwar Singh</td><td>A local zamindar (landlord)</td></tr>
+      <tr><td><strong>Bareilly</strong></td><td>Khan Bahadur Khan</td><td>From the Rohilla community/tribe (Meerut region)</td></tr>
+      <tr><td><strong>Faizabad</strong></td><td>Maulvi Ahmadullah Shah</td><td>Religious leader turned military commander</td></tr>
+      <tr><td><strong>Uttar Pradesh (Baraut area)</strong></td><td>Shah Mal</td><td>Local leader, organized peasant resistance</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Nana Saheb — Background Story:</strong></p>
+      <ul class="hw arr">
+        <li>Nana Saheb was the adopted son of <span class="hl"><strong>Peshwa Baji Rao II</strong></span></li>
+        <li>Baji Rao II's father figure connection traces back to <span class="hl-g"><strong>Raghunath Rao</strong></span>, who signed the <strong>Treaty of Surat</strong> with the British, offering Salsette &amp; Bassein in exchange for British help becoming Peshwa</li>
+        <li>Raghunath Rao was defeated by <strong>Nana Fadnavis</strong>; subsequent treaties followed: <span class="hl-p">Treaty of Purandar (1776)</span> → <strong>Treaty of Vadgaon</strong> → <strong>Treaty of Salbai</strong></li>
+        <li>Like other rebel leaders, Nana Saheb's personal grievance stemmed from the British denying his adoptive succession rights under the <strong>Doctrine of Lapse</strong></li>
+      </ul>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Rani Lakshmibai — Background Story:</strong></p>
+      <ul class="hw arr">
+        <li>Original name: <span class="hl"><strong>Manikarnika Tambe</strong></span> ("Manu"); her father served under Peshwa Baji Rao II</li>
+        <li>Led the resistance from <span class="hl-g"><strong>Jhansi</strong></span>, denied succession rights for her adopted son</li>
+        <li>Her memorial/samadhi is located at <span class="hl-p"><strong>Phool Bagh, Gwalior</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- SUPPRESSION -->
+    <div class="sec red">⑧ Suppression of the Revolt — British Officers by Region 🛡️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> Who recaptured Delhi from the rebels for the British?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>John Nicholson ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>John Nicholson</strong> led the British recapture of Delhi</div>
+    </div>
+
+    <table class="hw-t red-h">
+      <tr><th>Region</th><th>British Officer (Suppressor)</th><th>Key Note</th></tr>
+      <tr><td><span class="hl"><strong>Delhi</strong></span></td><td>John Nicholson</td><td>Recaptured Delhi from the rebels</td></tr>
+      <tr><td><span class="hl-g"><strong>Lucknow</strong></span></td><td>Henry Lawrence</td><td>Led operations against Begum Hazrat Mahal's forces</td></tr>
+      <tr><td><span class="hl-p"><strong>Kanpur</strong></span></td><td>Colin Campbell</td><td>Remember via Kanpur's famous "Bell Tower/Clock Tower" landmark at the railway station</td></tr>
+      <tr><td><span class="hl-b"><strong>Jhansi</strong></span></td><td>Hugh Rose</td><td>Praised Rani Lakshmibai as "the only man fighting" among the rebels — a comment on her exceptional bravery</td></tr>
+      <tr><td><strong>Gwalior</strong></td><td>—</td><td>Revolt finally crushed here in <span class="hl">1858</span></td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 <strong>Memory Hook — Kanpur/Colin Campbell:</strong> Kanpur's largest railway station has a famous Bell/Clock Tower — helps recall <strong>Colin Campbell</strong> as the officer who suppressed the revolt there.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- END OF MUGHAL RULE & COMPANY RULE -->
+    <div class="sec purple">⑨ End of Mughal Rule &amp; the Government of India Act, 1858 📜</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> What happened to Bahadur Shah II after the revolt was crushed?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Exiled to Rangoon Prison, Burma (Myanmar); the Mughal Empire was formally abolished ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Bahadur Shah II was exiled to <span class="hl"><strong>Rangoon (Rangoon Prison), Burma (present-day Myanmar)</strong></span> — living on a pension. This marked the <strong>formal end of the Mughal Empire</strong>, similar to how the Peshwa's rule had ended after the Third Anglo-Maratha War</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>East India Company — Timeline Recap (Before Its Abolition):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">1599</span> — Company formed in England</li>
+        <li><span class="hl-g">1600</span> — Charter granted by Queen Elizabeth I for exclusive trade rights with India</li>
+        <li><span class="hl-p">1608</span> — Hawkins arrives in India (first trade attempt)</li>
+        <li><span class="hl-b">1615</span> — Thomas Roe arrives (secures trading rights from Jahangir)</li>
+        <li><strong>1757</strong> — Battle of Plassey (start of political dominance)</li>
+        <li><strong>1858</strong> — Company rule formally ends — nearly <span class="hl">100 years of political dominance</span> from Plassey, over <span class="hl-g">250 years since its founding</span></li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Which Act abolished East India Company rule and transferred power directly to the British Crown?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Government of India Act, 1858 (also called the "Queen's Proclamation") ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Government of India Act, 1858</strong> — ended East India Company rule; established direct rule by the British Crown (<span class="hl">Queen Victoria</span>, with <strong>Lord Canning</strong> becoming the first Viceroy of India)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Government of India Act, 1858 — Key Provisions:</strong></p>
+      <ul class="hw arr">
+        <li>Abolished the <span class="hl">East India Company</span></li>
+        <li>Converted the post of <span class="hl-g">Governor-General of India</span> into <strong>Viceroy</strong> — <strong>Canning</strong> became the first Viceroy</li>
+        <li>Created the post of <span class="hl-p"><strong>Secretary of State for India</strong></span>, assisted by a <strong>15-member Council</strong></li>
+        <li>Abolished the <strong>Board of Control</strong> and <strong>Court of Directors</strong> (previously established by the Regulating Act of 1773 and modified via the Charter Act of 1833)</li>
+        <li>Established <span class="hl-b">direct Crown rule</span> — this is why 1858 marks the end of Company rule and start of the "British Raj" proper</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- PEEL COMMISSION -->
+    <div class="sec teal">⑩ Aftermath — Peel Commission &amp; Army Reforms 🎖️</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> Which commission recommended increasing the ratio of British soldiers to Indian soldiers in the army, to prevent another uprising?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Peel Commission ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Peel Commission</strong> — recommended fewer Indian soldiers and more British soldiers in the army, reasoning that a predominantly Indian army had enabled the 1857 revolt</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- WHY IT FAILED -->
+    <div class="sec green">⑪ Why the 1857 Revolt Failed — Analysis 🔍</div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Who termed the 1857 Revolt the "First War of Independence," and why do many historians dispute this label?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>V.D. Savarkar; historians dispute it due to lack of unified national purpose ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>V.D. Savarkar</strong> called it the "First War of Independence." Many historians disagree because each leader fought for a <span class="hl">regional/personal cause</span>, not a unified national vision of independence</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Reasons for Failure — Lack of Unity:</strong></p>
+      <ul class="hw arr">
+        <li>Rani Lakshmibai fought for <span class="hl">Jhansi</span> specifically</li>
+        <li>Begum Hazrat Mahal fought for the <span class="hl-g">Awadh/Lucknow</span> region</li>
+        <li>Nana Saheb fought to reclaim <span class="hl-p">Maratha/Peshwa</span> interests</li>
+        <li>No coordinated national leadership, no common political ideology, no shared long-term vision of "independence" as a unified concept</li>
+      </ul>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Reasons for Failure — Limited Support &amp; Geographic Spread:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Zamindars (landlords) and the upper class largely did NOT support</span> the revolt — many believed continued British rule would bring "civilization," education, and modernization</li>
+        <li>The revolt was concentrated mainly in <span class="hl-g"><strong>North India</strong></span> (Delhi, Lucknow, Kanpur, Jhansi, Bareilly, Bihar) — <strong>South India saw virtually no involvement</strong></li>
+        <li>No true "all-India" character despite the popular label</li>
+      </ul>
+    </div>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Balanced Perspective:</strong> While the "British brought civilization/education" argument has some historical basis for context (Europe was in its scientific/industrial rise — Newton, later Einstein — while India was fragmented by regional/Mughal conflicts), it does NOT excuse colonial exploitation. Modern research (e.g., Oxfam-style wealth-drain reports) has documented the scale of British extraction from India.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec red">📋 Quick Revision — All Key Facts (1857 Revolt)</div>
+    <table class="qr-t">
+      <tr><th>Topic / Fact</th><th>Answer</th></tr>
+      <tr><td>Governor-General during 1857 Revolt</td><td>Lord Canning</td></tr>
+      <tr><td>Also known as</td><td>Sepoy Mutiny</td></tr>
+      <tr><td>General Service Enlistment Act — issue</td><td>Overseas service requirement (violated religious beliefs)</td></tr>
+      <tr><td>Doctrine of Lapse introduced by / year</td><td>Lord Dalhousie / 1848</td></tr>
+      <tr><td>First state annexed under Doctrine of Lapse</td><td>Satara (1848)</td></tr>
+      <tr><td>States annexed (order)</td><td>Satara (1848) → Sambalpur/Jaitpur (1849) → Udaipur (1852) → Jhansi (1853)</td></tr>
+      <tr><td>Last Nawab of Awadh</td><td>Wajid Ali Shah</td></tr>
+      <tr><td>Awadh annexed — year / grounds</td><td>1856 / Misgovernance</td></tr>
+      <tr><td>Wajid Ali Shah's wife (led Lucknow revolt)</td><td>Begum Hazrat Mahal</td></tr>
+      <tr><td>Immediate cause of revolt</td><td>Enfield Rifle greased cartridges (cow/pig fat rumor)</td></tr>
+      <tr><td>Mangal Pandey's regiment</td><td>34th Native Infantry (Bengal)</td></tr>
+      <tr><td>Mangal Pandey kills officer</td><td>March 29, 1857</td></tr>
+      <tr><td>Mangal Pandey hanged</td><td>April 8, 1857</td></tr>
+      <tr><td>3rd Native Cavalry refuses cartridges</td><td>April 24, 1857</td></tr>
+      <tr><td>90 soldiers refuse; 85 dismissed/jailed</td><td>May 9, 1857</td></tr>
+      <tr><td>March to Delhi begins</td><td>May 10, 1857</td></tr>
+      <tr><td>Symbolic ruler declared at Red Fort</td><td>Bahadur Shah II (Zafar)</td></tr>
+      <tr><td>Actual military commander at Delhi</td><td>General Bakht Khan (age 81)</td></tr>
+      <tr><td>Leader — Lucknow</td><td>Begum Hazrat Mahal</td></tr>
+      <tr><td>Leader — Kanpur</td><td>Nana Saheb</td></tr>
+      <tr><td>Leader — Jhansi</td><td>Rani Lakshmibai (Manikarnika Tambe)</td></tr>
+      <tr><td>Leader — Bihar (Arrah)</td><td>Kunwar Singh</td></tr>
+      <tr><td>Leader — Bareilly</td><td>Khan Bahadur Khan (Rohilla)</td></tr>
+      <tr><td>Leader — Faizabad</td><td>Maulvi Ahmadullah Shah</td></tr>
+      <tr><td>Rani Lakshmibai's memorial location</td><td>Phool Bagh, Gwalior</td></tr>
+      <tr><td>Suppressor — Delhi</td><td>John Nicholson</td></tr>
+      <tr><td>Suppressor — Lucknow</td><td>Henry Lawrence</td></tr>
+      <tr><td>Suppressor — Kanpur</td><td>Colin Campbell</td></tr>
+      <tr><td>Suppressor — Jhansi</td><td>Hugh Rose</td></tr>
+      <tr><td>Revolt finally crushed at</td><td>Gwalior, 1858</td></tr>
+      <tr><td>Bahadur Shah II — fate</td><td>Exiled to Rangoon, Burma; Mughal Empire ends</td></tr>
+      <tr><td>Act that ended Company rule</td><td>Government of India Act, 1858 (Queen's Proclamation)</td></tr>
+      <tr><td>Monarch at time of Crown rule</td><td>Queen Victoria</td></tr>
+      <tr><td>First Viceroy of India</td><td>Lord Canning</td></tr>
+      <tr><td>Commission on army composition post-1857</td><td>Peel Commission</td></tr>
+      <tr><td>East India Company founded</td><td>1599</td></tr>
+      <tr><td>Battle of Plassey</td><td>1757</td></tr>
+      <tr><td>"First War of Independence" — coined by</td><td>V.D. Savarkar</td></tr>
+      <tr><td>Geographic spread of revolt</td><td>Mainly North India — NOT South India</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec teal">💡 Topper Tips — 1857 Revolt Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>Doctrine of Lapse ≠ Awadh's annexation grounds</strong></span> — Awadh was annexed citing "misgovernance," NOT Doctrine of Lapse directly (a common trap!)</li>
+          <li>Mangal Pandey killed his officer on <span class="hl-g"><strong>March 29</strong></span>, was hanged on <strong>April 8</strong> — don't swap these dates</li>
+          <li>Symbolic leader at Delhi = <span class="hl-p"><strong>Bahadur Shah II</strong></span>; actual military commander = <strong>General Bakht Khan</strong> — two different roles!</li>
+          <li>Nana Saheb AND Rani Lakshmibai both had personal grievances tied to the <span class="hl-b"><strong>Doctrine of Lapse</strong></span> (denied adoption-based succession)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Leader-Suppressor pairs by region: Delhi (Nicholson), Lucknow (Lawrence), Kanpur (Campbell), Jhansi (Hugh Rose) — memorize as pairs!</li>
+          <li>The revolt was <span class="hl"><strong>NOT all-India</strong></span> — concentrated in North India; South India was largely uninvolved</li>
+          <li>East India Company existed since <strong>1599</strong>, but political dominance began only after <strong>Battle of Plassey, 1757</strong> — nearly 100 years of dominance ended by <strong>1858</strong></li>
+          <li>V.D. Savarkar's "First War of Independence" label is <span class="hl-g"><strong>disputed</strong></span> by historians due to lack of unified national purpose</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF 1857 REVOLT — HOT TOPICS NOTES</div>
+      <strong>Causes · Timeline · Leaders · Suppression · Aftermath — All Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
