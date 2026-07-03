@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Blitz Lecture 16 | Topper Notes (Hindi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;--red:#d32f2f;--blue:#1565c0;--green:#2e7d32;--orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;--teal:#00695c;--yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;--margin-line:#ef9a9a;--lh:32px}
+body{font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;position:relative;min-height:100vh;background-color:#5c4a32}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);background-color:#8B6914;opacity:0.40;z-index:-1;pointer-events:none}
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;background:var(--margin-line);z-index:10}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+.cover{background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ परीक्षा में सावधानी!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 याद रखने की ट्रिक';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 फॉर्मूला';position:absolute;top:-12px;left:12px;background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 मुख्य तथ्य';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 परीक्षा टिप';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 करंट अफेयर्स';position:absolute;top:-12px;left:12px;background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+@media print{body{background:#fff!important;padding:0}body::before{display:none}.toolbar{display:none!important}.page{box-shadow:none;border-radius:0;max-width:100%}.mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}.hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}.hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Blitz Lecture 16 Notes (Hindi)</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+<div class="page">
+  <div class="holes"><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div></div>
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy — Blitz Series</div>
+    <div class="cover-title">⚡ Blitz Lecture 16 — Topper Notes (Hindi)</div>
+    <div class="cover-sub">मिश्रित PYQ सीरीज़ | राजव्यवस्था · जीव विज्ञान · भौतिकी · भूगोल · इतिहास · अर्थव्यवस्था · संस्कृति</div>
+    <div class="cover-badge">🏛️ राजव्यवस्था · ⚛️ भौतिकी · 🧬 जीव विज्ञान · 🌍 भूगोल · 📜 इतिहास · 💰 अर्थव्यवस्था · 🎭 संस्कृति</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+  <div class="ruled">
+
+
+    <!-- उपराष्ट्रपति / संघ कार्यपालिका -->
+    <div class="sec red">① राजव्यवस्था — उपराष्ट्रपति एवं संघ कार्यपालिका ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> भारत का उपराष्ट्रपति सरकार की किस शाखा का हिस्सा है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>केवल विधायिका</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>केवल कार्यपालिका</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>न्यायपालिका</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>दोनों कार्यपालिका और विधायिका ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — उपराष्ट्रपति <strong>संघ कार्यपालिका</strong> का हिस्सा है (भाग V, अध्याय I: राष्ट्रपति, उपराष्ट्रपति, प्रधानमंत्री, मंत्रिपरिषद, महाधिवक्ता) और <strong>विधायिका</strong> का भी, क्योंकि वे <span class="hl">राज्यसभा के पदेन सभापति</span> होते हैं</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>उपराष्ट्रपति — मुख्य अनुच्छेद:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">अनुच्छेद 63–71</span> — उपराष्ट्रपति संबंधी प्रावधान</li>
+        <li><span class="hl-g">अनुच्छेद 72</span> — राष्ट्रपति की क्षमादान शक्ति</li>
+        <li><span class="hl-p">अनुच्छेद 71</span> — राष्ट्रपति/उपराष्ट्रपति के चुनाव विवादों पर सर्वोच्च न्यायालय को <strong>अनन्य अधिकारिता</strong> (अनुच्छेद 131 की मूल अधिकारिता जैसी विशिष्टता)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- रसधानी (वेक्यूल) -->
+    <div class="sec green">② जीव विज्ञान — रसधानी एवं कोशिकांग 🧫</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> रसधानी (Vacuole) के बारे में कौन सा कथन सही नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"जंतु कोशिकाओं में रसधानी सामान्यतः पादप कोशिकाओं से बड़ी होती है" — यह गलत है ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गलत — रसधानी वास्तव में <strong>पादप कोशिकाओं में बड़ी</strong> होती है, जो कोशिका आयतन का <span class="hl">50–90%</span> भाग घेरती है (एक बड़ी, स्थायी रसधानी)। जंतु कोशिकाओं में कई छोटी, अस्थायी रसधानियां होती हैं</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>विशेषता</th><th>पादप कोशिका रसधानी</th><th>जंतु कोशिका रसधानी</th></tr>
+      <tr><td>आकार</td><td><span class="hl"><strong>बड़ी</strong></span> (कोशिका आयतन का 50-90%)</td><td>छोटी</td></tr>
+      <tr><td>संख्या</td><td>एक</td><td>अनेक</td></tr>
+      <tr><td>अवधि</td><td><span class="hl-g">स्थायी</span></td><td>अस्थायी</td></tr>
+      <tr><td>कार्य</td><td>दृढ़ता एवं स्फीति प्रदान करती है</td><td>—</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>विभज्योतक (मेरिस्टेमेटिक) ऊतक में रसधानी नहीं होती</strong> — लेकिन इसमें स्पष्ट केंद्रक और घना कोशिकाद्रव्य होता है। यह बार-बार पूछा जाने वाला तथ्य है!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- संवैधानिक अनुसूचियां -->
+    <div class="sec blue">③ राजव्यवस्था — संवैधानिक अनुसूचियां 📋</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> संविधान की अनुसूचियों के संबंध में कौन सा पैराग्राफ सही ढंग से मेल खाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>10वीं अनुसूची — दल-बदल विरोधी कानून ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>11वीं अनुसूची — पंचायतों की शक्तियां/जिम्मेदारियां (यह सही है, पर अन्य से गलत जोड़ा गया)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>12वीं अनुसूची — राष्ट्रपति/उपराष्ट्रपति चुनाव (गलत — 12वीं नगरपालिकाओं से संबंधित है)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>10वीं अनुसूची — संवैधानिक रूप से मान्यता प्राप्त भाषाएं (गलत — यह 8वीं अनुसूची है)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>10वीं अनुसूची = दल-बदल विरोधी कानून</strong>, जो <span class="hl">52वें संशोधन</span> द्वारा जोड़ी गई</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>अनुसूची</th><th>विषय</th></tr>
+      <tr><td><span class="hl"><strong>7वीं</strong></span></td><td>संघ, राज्य एवं समवर्ती सूची</td></tr>
+      <tr><td><span class="hl-g"><strong>8वीं</strong></span></td><td>मान्यता प्राप्त (राजभाषा) भाषाएं</td></tr>
+      <tr><td><span class="hl-p"><strong>9वीं</strong></span></td><td>भूमि सुधार कानून (1973 से पहले न्यायिक समीक्षा से मुक्त); 1st संशोधन, 1951 द्वारा जोड़ी गई</td></tr>
+      <tr><td><span class="hl-b"><strong>10वीं</strong></span></td><td>दल-बदल विरोधी कानून (52वां संशोधन)</td></tr>
+      <tr><td><strong>11वीं</strong></td><td>पंचायतें — शक्तियां एवं जिम्मेदारियां (73वां संशोधन)</td></tr>
+      <tr><td><strong>12वीं</strong></td><td>नगरपालिकाएं (74वां संशोधन)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>दल-बदल विरोधी कानून — विस्तृत जानकारी:</strong></p>
+      <ul class="hw arr">
+        <li>अंतिम निर्णय अधिकार: <span class="hl">पीठासीन अधिकारी/अध्यक्ष</span> — लेकिन <strong>न्यायिक समीक्षा</strong> के अधीन (<em>किहोतो होलोहान बनाम जचिल्हू</em> मामले के अनुसार)</li>
+        <li>अपवाद: <span class="hl-g">विलय</span> (<strong>91वें संशोधन</strong> द्वारा जोड़ा गया) — अगर किसी दल के 2/3 सदस्य दूसरे दल में विलय करते हैं, तो यह दल-बदल नहीं है</li>
+        <li>अनुच्छेद 75(1A) — मंत्रिपरिषद की संख्या लोकसभा की <strong>15%</strong> तक सीमित (राज्यों के लिए भी अनुच्छेद 164(1A) — विधानसभा में समान प्रावधान)</li>
+        <li>अनुच्छेद 75(1B) — दल-बदल के तहत अयोग्य घोषित मंत्री को मंत्रिपद से भी हटाया जाता है</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> 9वीं अनुसूची किस विषय से संबंधित है, और न्यायिक समीक्षा से इसका क्या संबंध है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>भूमि सुधार कानून; 1973 (केशवानंद भारती मामला) के बाद जोड़े गए कानून न्यायिक समीक्षा के अधीन हैं; उससे पहले वाले मुक्त हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 9वीं अनुसूची — भूमि सुधार कानून (1st संशोधन, 1951, नेहरू के समय)। <span class="hl"><strong>I.R. कोएल्हो मामला (2007)</strong></span> के अनुसार, केशवानंद भारती (1973) के बाद जोड़े गए कानून न्यायिक समीक्षा के अधीन हैं, क्योंकि न्यायिक समीक्षा <strong>मूल संरचना</strong> की विशेषता है</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- गोथिक वास्तुकला -->
+    <div class="sec purple">④ कला एवं संस्कृति — गोथिक वास्तुकला 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> रिब्ड वॉल्ट, नुकीले मेहराब, फ्लाइंग बट्रेस, और रंगीन कांच की खिड़कियां — किस वास्तुकला शैली की विशेषता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मुगल</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>दक्कन</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>इंडो-इस्लामिक</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>गोथिक ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>गोथिक</strong> वास्तुकला — रिब्ड वॉल्ट, नुकीले मेहराब, फ्लाइंग बट्रेस, रंगीन कांच की खिड़कियां (रंगीन कांच, कभी-कभी चित्रित)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- विद्युत चुंबकीय प्रेरण -->
+    <div class="sec teal">⑤ भौतिकी — विद्युत चुंबकीय प्रेरण एवं चुंबकत्व ⚡</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> लंबाई L का एक संचालक छड़ एकसमान चुंबकीय क्षेत्र B के लंबवत वेग V से गति करता है। इसमें प्रेरित EMF क्या होगा?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>V/BL</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>BVL ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>B/VL</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>BV/L</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: B — <strong>EMI (विद्युत चुंबकीय प्रेरण)</strong>, जिसकी खोज <span class="hl">माइकल फैराडे ने 1831 में</span> की थी। प्रेरित EMF = B×V×L, जिसे <strong>फ्लेमिंग के दाएं हाथ के नियम</strong> से निकाला जाता है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>फ्लेमिंग के नियम — भ्रमित न हों!</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">दाएं हाथ का नियम</span> — प्रेरित EMF/करंट निकालने के लिए (विद्युत चुंबकीय प्रेरण)</li>
+        <li><span class="hl-g">बाएं हाथ का नियम</span> — चुंबकीय क्षेत्र में करंट प्रवाहित संचालक पर बल निकालने के लिए</li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>फ्लेमिंग का बाएं हाथ का नियम — "पिता, माता, बच्चा":</strong> अंगूठा = <span class="hl">बल (पिता)</span>, पहली अंगुली = <span class="hl-g">चुंबकीय क्षेत्र (माता)</span>, मध्य अंगुली = <span class="hl-p">करंट (बच्चा)</span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> विद्युत और चुंबकीय क्षेत्र के संयुक्त प्रभाव से आवेशित कण पर लगने वाले बल को क्या कहते हैं?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>लॉरेंज़ बल ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>लॉरेंज़ बल</strong> (अर्थशास्त्र में पढ़े जाने वाले "लॉरेंज़ कर्व" से भ्रमित न हों — नाम समान-ध्वनि वाले हैं!)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>सोलेनॉइड — मुख्य तथ्य:</strong></p>
+      <ul class="hw arr">
+        <li>चुंबकीय क्षेत्र रेखाएं कभी नहीं काटती; ये <span class="hl">बंद लूप</span> बनाती हैं</li>
+        <li>सोलेनॉइड के अंदर: क्षेत्र <span class="hl-g"><strong>एकसमान और अधिकतम</strong></span> होता है</li>
+        <li>बाहर: क्षेत्र वृत्ताकार होता है, दूरी के साथ घटता है</li>
+        <li>सोलेनॉइड के अंदर <strong>नरम लोहे की छड़</strong> डालने से यह <span class="hl-p"><strong>विद्युतचुंबक</strong></span> बन जाता है</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- सांविधिक बनाम संवैधानिक निकाय -->
+    <div class="sec orange">⑥ राजव्यवस्था — सांविधिक बनाम संवैधानिक निकाय 🏢</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> निम्नलिखित में से कौन सा आयोग भारत में सांविधिक निकाय नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>NCST (अनुसूचित जनजाति आयोग) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>NCST एक संवैधानिक निकाय है</strong> (अनुच्छेद 338A), सांविधिक नहीं</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>निकाय</th><th>प्रकार</th><th>आधार</th></tr>
+      <tr><td><span class="hl"><strong>NCSC</strong></span> (अनुसूचित जाति)</td><td>संवैधानिक</td><td>अनुच्छेद 338</td></tr>
+      <tr><td><span class="hl-g"><strong>NCST</strong></span> (अनुसूचित जनजाति)</td><td>संवैधानिक</td><td>अनुच्छेद 338A (<strong>89वें संशोधन, 2003</strong> द्वारा NCSC से अलग किया गया)</td></tr>
+      <tr><td><span class="hl-p"><strong>NCBC</strong></span> (पिछड़ा वर्ग)</td><td>संवैधानिक</td><td>अनुच्छेद 338B</td></tr>
+      <tr><td><span class="hl-b"><strong>NHRC</strong></span></td><td><strong>सांविधिक</strong></td><td>मानव अधिकार संरक्षण अधिनियम, 1993 (अध्यक्ष का कार्यकाल: 3 वर्ष या 70 वर्ष की आयु, जो भी पहले हो)</td></tr>
+      <tr><td><strong>NCW</strong> (महिला)</td><td><strong>सांविधिक</strong></td><td>राष्ट्रीय महिला आयोग अधिनियम, 1992</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>ध्यान दें!</strong> 65वें संशोधन से पहले SC/ST के लिए एक संयुक्त आयोग/विशेष अधिकारी था। 65वें संशोधन ने उन्हें एक संयुक्त आयोग बनाया। 89वें संशोधन (2003) ने अंततः उन्हें अलग-अलग NCSC (338) और NCST (338A) में विभाजित किया।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- घाघरा नदी प्रणाली -->
+    <div class="sec red">⑦ भूगोल — घाघरा नदी प्रणाली एवं गंगा की सहायक नदियां 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> घाघरा नदी के बारे में कथनों पर विचार करें: (1) यह हिमालय में मापचा चुंगो ग्लेशियर से निकलती है; (2) मैदानों में प्रवेश करने से पहले शिशापानी में गहरी गॉर्ज बनाती है; (3) शारदा नदी से मिलने के बाद इलाहाबाद में गंगा से मिलती है।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>केवल 1 और 2 सही हैं ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>तीनों सही</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>केवल 1 सही</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>केवल 2 और 3</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — कथन 1 और 2 सही हैं। कथन 3 गलत है — घाघरा गंगा से <span class="hl"><strong>छपरा, बिहार</strong></span> में मिलती है (इलाहाबाद में नहीं)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>गंगा नदी प्रणाली — सहायक नदियां:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">बायां किनारा</span>: रामगंगा, गोमती, घाघरा, गंडक, कोसी, महानंदा</li>
+        <li><span class="hl-g">दायां किनारा</span>: यमुना, सोन, पुनपुन</li>
+        <li><strong>वितरिका</strong> (सहायक नदी नहीं): हुगली (भागीरथी-हुगली) — इसकी सहायक नदी है <strong>दामोदर</strong> (छोटा नागपुर पठार में रिफ्ट वैली से बहती है, बंगाल की खाड़ी में)</li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>गॉर्ज बनाम कैन्यन:</strong> <span class="hl">गॉर्ज</span> में बहते पानी की अपरदन क्रिया से खड़ी चट्टानें बनती हैं (जैसे घाघरा पर शिशापानी)। <strong>कैन्यन</strong> में सीढ़ीनुमा दीवारें होती हैं। दोनों ही अपरदनकारी भू-आकृतियां हैं।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- टेनिस -->
+    <div class="sec green">⑧ खेल — टेनिस शब्दावली 🎾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> "ड्यूस" शब्द किस खेल से संबंधित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>टेनिस ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>टेनिस</strong> — जब दोनों खिलाड़ी/टीमों के अंक बराबर होते हैं (जैसे 40-40) तो ड्यूस होता है</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- रास बिहारी बोस -->
+    <div class="sec blue">⑨ आधुनिक इतिहास — रास बिहारी बोस एवं INA 🎖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> रास बिहारी बोस के बारे में निम्नलिखित में से कौन सा कथन सही नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"वे स्वतंत्र भारत की भारतीय सेना के पहले सेनाध्यक्ष थे" — गलत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: गलत — स्वतंत्र भारत के पहले सेनाध्यक्ष <strong>के.एम. करियप्पा</strong> थे, रास बिहारी बोस नहीं</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>रास बिहारी बोस — सत्यापित तथ्य:</strong></p>
+      <ul class="hw chk">
+        <li>टोक्यो में <span class="hl">भारतीय स्वातंत्र्य संघ</span> की स्थापना की, 1942</li>
+        <li><span class="hl-g">गदर आंदोलन</span> में महत्वपूर्ण व्यक्ति</li>
+        <li><span class="hl-p">आजाद हिंद फौज</span> की स्थापना से जुड़े (वास्तविक संस्थापक: <strong>मोहन सिंह</strong>)</li>
+        <li><span class="hl-b"><strong>ऑर्डर ऑफ द राइजिंग सन</strong></span> (जापान) से सम्मानित</li>
+      </ul>
+      <p class="hw"><strong>भारतीय सेना दिवस</strong> = <span class="hl">15 जनवरी</span> (जिस दिन के.एम. करियप्पा भारत के पहले सेनाध्यक्ष बने)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- अर्थशास्त्र: उत्पादन के नियम -->
+    <div class="sec purple">⑩ अर्थशास्त्र — मांग का नियम, ह्रासमान प्रतिफल एवं परिवर्तनीय अनुपात 📉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> मिलान करें: "एक निश्चित बिंदु के बाद, इनपुट बढ़ाने से सीमांत उत्पाद में गिरावट आती है" — यह कौन सा नियम है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>ह्रासमान सीमांत उत्पाद का नियम ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>ह्रासमान सीमांत उत्पाद का नियम</strong> — जैसे-जैसे इनपुट बढ़ता है, सीमांत उत्पाद पहले बढ़ता है, फिर एक निश्चित बिंदु के बाद घटने लगता है</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>नियम</th><th>कथन</th></tr>
+      <tr><td><span class="hl"><strong>मांग का नियम</strong></span></td><td>कीमत और मांग विपरीत दिशाओं में चलते हैं</td></tr>
+      <tr><td><span class="hl-g"><strong>ह्रासमान सीमांत उत्पाद का नियम</strong></span></td><td>एक बिंदु के बाद, इनपुट बढ़ाने पर → सीमांत उत्पाद घटता है</td></tr>
+      <tr><td><span class="hl-p"><strong>परिवर्तनीय अनुपात का नियम</strong></span></td><td>सीमांत उत्पाद पहले इनपुट के साथ बढ़ता है, फिर घटता है</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AQI / पर्यावरण -->
+    <div class="sec teal">⑪ भूगोल/पर्यावरण — वायु गुणवत्ता सूचकांक (AQI) 🌫️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> अभिकथन (A): पराली जलाने का भारत में AQI स्तर पर कोई महत्वपूर्ण प्रभाव नहीं पड़ता। कारण (R): यह एक नियंत्रित अभ्यास है जो महत्वपूर्ण प्रदूषक नहीं छोड़ता।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>A और R दोनों गलत हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: दोनों कथन अतिशयोक्तिपूर्ण भाषा का उपयोग करते हैं ("कोई महत्वपूर्ण प्रभाव नहीं," "महत्वपूर्ण प्रदूषक नहीं छोड़ता") — पराली जलाने से AQI पर वास्तव में महत्वपूर्ण प्रभाव पड़ता है और यह प्रमुख प्रदूषक छोड़ता है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>AQI — 8 प्राथमिक प्रदूषक (CPCB के अनुसार):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">PM 2.5</span> और <span class="hl-g">PM 10</span> — सूक्ष्म कणिका पदार्थ (PM 2.5 छोटा है और श्वसन तंत्र में गहराई तक प्रवेश करने के कारण अधिक खतरनाक है)</li>
+        <li>नाइट्रोजन डाइऑक्साइड (NO₂), सल्फर डाइऑक्साइड (SO₂), कार्बन मोनोऑक्साइड (CO), ओज़ोन (O₃), अमोनिया (NH₃), सीसा (Pb)</li>
+      </ul>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>AQI रेंज</th><th>श्रेणी</th></tr>
+      <tr><td>0–50</td><td><span class="hl">अच्छा</span></td></tr>
+      <tr><td>51–100</td><td><span class="hl-g">संतोषजनक</span></td></tr>
+      <tr><td>101–200</td><td>मध्यम प्रदूषित</td></tr>
+      <tr><td>201–300</td><td><span class="hl-p">खराब</span></td></tr>
+      <tr><td>301–400</td><td><span class="hl-b">बहुत खराब</span></td></tr>
+      <tr><td>400+</td><td><strong>गंभीर</strong></td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>अतिशयोक्ति शब्द जाल:</strong> अभिकथन-कारण प्रश्नों में "कोई महत्वपूर्ण प्रभाव नहीं," "महत्वपूर्ण प्रदूषक नहीं छोड़ता," "पूरी तरह से," "कभी नहीं" जैसे शब्द सामान्यतः गलत होने के संकेत होते हैं!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- जनसंख्या पिरामिड -->
+    <div class="sec red">⑫ भूगोल — जनसंख्या पिरामिड 👥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> तेजी से बढ़ती जनसंख्या के लिए जनसंख्या पिरामिड किस आकार का होता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>उल्टा त्रिकोण</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वृत्ताकार</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>त्रिकोणीय ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>आयताकार (स्थिर)</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: C — <strong>त्रिकोणीय</strong> आकार (चौड़ा आधार बच्चों का, ऊपर वृद्धों की ओर संकुचित) — तेज़ वृद्धि का संकेत</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>जनसंख्या पिरामिड आकार:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>त्रिकोणीय</strong></span> — तेजी से बढ़ती जनसंख्या (चौड़ा आधार = अधिक बच्चे)</li>
+        <li><span class="hl-g"><strong>आयताकार/बेल आकार</strong></span> — स्थिर जनसंख्या (भारत इस ओर बढ़ रहा है)</li>
+      </ul>
+      <p class="hw"><strong>भारत की जनसंख्या वृद्धि के चरण:</strong> 1911-1921 (स्थिर) → 1921-1951 (स्थिर वृद्धि) → <span class="hl-p">1951-1981 (जनसंख्या विस्फोट)</span> → 1981 के बाद (स्थिरता की ओर)</p>
+      <p class="hw">प्रतिस्थापन स्तर प्रजनन दर = <span class="hl-b"><strong>2.1</strong></span> बच्चे/महिला (भारत की वर्तमान दर इससे कम है, ~1.9)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- लोक गीत मिलान -->
+    <div class="sec orange">⑬ कला एवं संस्कृति — लोक गीत मिलान 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> कॉलम A (लोक गीत) का कॉलम B (विवरण) से मिलान करें: सोहर, चकरी, लामन, कजरी।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>सोहर=जन्म उत्सव गीत; चकरी=कश्मीरी समूह गीत (रबाब/सारंगी/तुम्बकनारी); लामन=हिमाचल के पहाड़ी प्रेम गीत; कजरी=यूपी-बिहार महिलाओं का अर्धवृत्त गीत ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: 2-4-1-3 पैटर्न (लेक्चर के अनुसार) — हर गीत का सही क्षेत्र/अवसर से मिलान</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>लोक गीत</th><th>क्षेत्र</th><th>अवसर/शैली</th></tr>
+      <tr><td><span class="hl"><strong>सोहर</strong></span></td><td>यूपी, बिहार</td><td>जन्म उत्सव के अवसर पर गाया जाता है</td></tr>
+      <tr><td><span class="hl-g"><strong>चकरी</strong></span></td><td>जम्मू एवं कश्मीर</td><td>रबाब, सारंगी, तुम्बकनारी (4 तत्व) के साथ समूह गीत</td></tr>
+      <tr><td><span class="hl-p"><strong>लामन</strong></span></td><td>हिमाचल प्रदेश</td><td>पहाड़ियों पर लड़कों-लड़कियों द्वारा गाया जाने वाला गूंजता प्रेम गीत</td></tr>
+      <tr><td><span class="hl-b"><strong>कजरी</strong></span></td><td>यूपी, बिहार</td><td>अर्धवृत्त में गाया जाने वाला महिलाओं का रात्रिभर चलने वाला गीत</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BNSS -->
+    <div class="sec green">⑭ राजव्यवस्था — BNSS (नया आपराधिक कानून) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> BNSS (भारतीय नागरिक सुरक्षा संहिता) के बारे में कथनों पर विचार करें: (1) मामूली अपराधों के लिए सजा के रूप में सामुदायिक सेवा की शुरुआत; (2) संक्षिप्त सुनवाई का दायरा केवल गंभीर अपराधों तक सीमित; (3) अपराधियों के समाज में पुनर्मिलन का सकारात्मक दृष्टिकोण।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>तीनों सही हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तीनों कथन BNSS के प्रावधानों का सही वर्णन करते हैं (CrPC की जगह नई आपराधिक प्रक्रिया संहिता)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>निष्कासन तर्क:</strong> यदि तीन में से दो कथन स्पष्ट रूप से सही/सत्य हैं, और प्रश्न विकल्पों में से चुनने की मांग करता है, तो तीसरा विकल्प भी "कोई अन्य चारा न होने" के कारण सही होने की संभावना रखता है — विशेषकर जब कोई विरोधाभासी जानकारी न हो।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- संघ सूची -->
+    <div class="sec red">⑮ राजव्यवस्था — संघ सूची (सातवीं अनुसूची) 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> संघ सूची की प्रविष्टियों के आधार पर निम्नलिखित में से कौन सा/से कथन सही है/हैं? (1) केंद्र/राज्य सरकारों द्वारा आयोजित लॉटरी पर संसद को विशेष विधायी शक्ति है; (2) सहकारी समितियों का निगमन/विनियमन संघ सूची में है; (3) RBI, विदेशी मुद्रा, मुद्रा संघ के विधायी क्षेत्र में हैं; (4) संसद उन निगमों पर कानून बना सकती है जो एक राज्य तक सीमित नहीं हैं (विश्वविद्यालयों को छोड़कर)।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1, 3, 4 सही हैं (2 गलत है — सहकारी समितियां राज्य सूची का विषय हैं) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: कथन 1, 3, 4 सही हैं। कथन 2 गलत है — <strong>सहकारी समितियां</strong> <span class="hl">राज्य सूची</span> में आती हैं, संघ सूची में नहीं</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>सातवीं अनुसूची — सूचियां:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">संघ सूची</span> — केवल संसद कानून बनाती है (जैसे केंद्र/राज्य लॉटरी, RBI, विदेशी मुद्रा, मुद्रा, अंतर-राज्य निगम)</li>
+        <li><span class="hl-g">राज्य सूची</span> — केवल राज्य विधानमंडल (जैसे सहकारी समितियां)</li>
+        <li><span class="hl-p">समवर्ती सूची</span> — दोनों कानून बना सकते हैं; टकराव होने पर <strong>संसद का कानून प्रबल</strong> होता है, जब तक राज्य का कानून <strong>अनुच्छेद 200</strong> के तहत राष्ट्रपति की सहमति के लिए आरक्षित न हो ("पूर्वता का सिद्धांत")</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">🧠 <strong>परीक्षा रणनीति टिप:</strong> विकल्पों को हटाते समय, केवल तभी हटाएं जब आप तथ्य के बारे में आश्वस्त हों। यदि अनिश्चित हैं, तो न हटाएं — गलत निष्कासन से गलत अनुमान लगाना विकल्प खुला छोड़ने से बुरा है।</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- पश्चिमी तटीय मैदान -->
+    <div class="sec blue">⑯ भूगोल — पश्चिमी तटीय मैदान 🏖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> निम्नलिखित में से कौन सी पश्चिमी तटीय मैदान की विशेष पहचान है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>मैंग्रोव वन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>अधिक वर्षा</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>बड़े डेल्टा</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>लैगून और बैकवाटर ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>लैगून और बैकवाटर</strong> (जैसे केरल में अष्टमुडी झील, वेंबनाड झील) मुख्य पहचान विशेषता है। अधिक वर्षा होती है लेकिन विशिष्ट नहीं; बड़े डेल्टा पूर्वी तटीय मैदान की विशेषता है; मैंग्रोव मुख्यतः पूर्व में पाए जाते हैं</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>विशेषता</th><th>पश्चिमी तटीय मैदान</th><th>पूर्वी तटीय मैदान</th></tr>
+      <tr><td>चौड़ाई</td><td><span class="hl">संकरा</span></td><td><span class="hl-g">चौड़ा</span></td></tr>
+      <tr><td>प्रकृति</td><td>निमग्न (Submerging)</td><td>उन्मग्न (Emerging)</td></tr>
+      <tr><td>प्रमुख विशेषता</td><td>अपरदनकारी</td><td>निक्षेपणकारी</td></tr>
+      <tr><td>नदी मुहाना</td><td>एस्चुअरी (लैगून/बैकवाटर)</td><td>डेल्टा</td></tr>
+      <tr><td>उदाहरण</td><td>अष्टमुडी झील, वेंबनाड झील (केरल)</td><td>चिल्का झील (ओडिशा), पुलिकट झील, कोल्लेरू झील (मीठे पानी की)</td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 <strong>अंतर क्यों?</strong> प्रायद्वीपीय पठार पूर्व की ओर झुका है, इसलिए अधिकांश नदियां पूर्व में बहती हैं और मिट्टी जमा करती हैं → पूर्वी तट पर डेल्टा बनते हैं। पश्चिमी तट पर नदियां छोटी और तेज़ बहती हैं → डेल्टा नहीं, एस्चुअरी बनाती हैं।
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- बैंकिंग -->
+    <div class="sec green">⑰ अर्थशास्त्र — बैंकिंग, OMO एवं बैंक दर 🏦</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> कौन सा कथन सही है? (1) बैंक की मुख्य देनदारी उसके पास जमा राशि है; (2) ओपन मार्केट ऑपरेशन में सरकारी बॉन्ड की खरीद-बिक्री शामिल है; (3) बैंक दर वह दर है जिस पर RBI व्यावसायिक बैंकों को उधार देता है।</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>तीनों सही हैं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: तीनों कथन सही हैं</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>बैंक की देनदारियां बनाम संपत्तियां:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">देनदारियां</span> = जमा राशि (मांग जमा + सावधि/मियादी जमा)</li>
+        <li><span class="hl-g">संपत्तियां</span> = बैंक द्वारा दिए गए ऋण</li>
+        <li>ऋण पर अर्जित ब्याज और जमा पर दिए गए ब्याज के बीच का अंतर = <strong>स्प्रेड</strong> (बैंक का लाभ)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> क्या बैंक दर के लिए संपार्श्विक (कॉलेटरल) की आवश्यकता होती है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>नहीं, इसके लिए संपार्श्विक की आवश्यकता नहीं होती — इसलिए बैंक दर रेपो दर से अधिक होती है ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: बैंक दर उधार के लिए <strong>कोई संपार्श्विक नहीं</strong> चाहिए — इसलिए यह रेपो दर (जिसमें संपार्श्विक, जैसे सरकारी प्रतिभूतियां, आवश्यक हैं) से <strong>अधिक</strong> ब्याज दर रखती है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>ओपन मार्केट ऑपरेशन (OMO) — 2 प्रकार:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">आउटराइट परचेज़</span> — सरकारी प्रतिभूतियों की खरीद-बिक्री। मुद्रास्फीति के दौरान बेचना (तरलता कम करना); मंदी में खरीदना (तरलता बढ़ाना)</li>
+        <li><span class="hl-g">रेपो</span> — अल्पकालिक, संपार्श्विक आधारित उधार</li>
+      </ul>
+      <p class="hw"><strong>स्टैगफ्लेशन</strong> = स्थिर अर्थव्यवस्था + मुद्रास्फीति + उच्च बेरोजगारी (फिलिप्स कर्व के विपरीत, जो मानता है कि मुद्रास्फीति और बेरोजगारी विपरीत दिशा में चलते हैं)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- गुर्जर-प्रतिहार -->
+    <div class="sec purple">⑱ प्राचीन/मध्यकालीन इतिहास — गुर्जर-प्रतिहार वंश 🗡️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> किस प्रतिहार शासक ने उत्तर-पश्चिमी भारत में अरब आक्रमणों को सफलतापूर्वक विफल किया?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>नागभट्ट प्रथम ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>नागभट्ट प्रथम</strong> — गुर्जर-प्रतिहार वंश के संस्थापक; अरब (उमय्यद खलीफा) आक्रमणों को रोका</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>गुर्जर-प्रतिहार — मुख्य तथ्य:</strong></p>
+      <ul class="hw arr">
+        <li>राष्ट्रकूटों और पालों के विरुद्ध <span class="hl">त्रिपक्षीय संघर्ष (कन्नौज त्रिकोण)</span> लड़ा (9वीं सदी के अंत में शुरू)</li>
+        <li>संस्थापक: <span class="hl-g">नागभट्ट प्रथम</span></li>
+        <li><span class="hl-p">मिहिर भोज</span> — वंश का "वास्तविक संस्थापक" (सबसे शक्तिशाली/समेकित करने वाला शासक) माना जाता है</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- मुगल प्रशासन -->
+    <div class="sec teal">⑲ मध्यकालीन इतिहास — मुगल प्रशासन की शब्दावली 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> मुगल प्रशासन के संदर्भ में "शेखजादा" या "हिंदुस्तानी" कौन थे?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>तुर्की मूल के मध्य एशियाई सरदार</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>राजपूत धर्मांतरित</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>फारसी-प्रशिक्षित अधिकारी</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>मुगल शासन के अधीन प्रशासनिक पद रखने वाले स्वदेशी मुसलमान (धर्मांतरित) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: D — <strong>शेखजादा/हिंदुस्तानी</strong> भारतीय मूल के मुसलमान थे, जो सामान्यतः हिंदू धर्म से धर्मांतरित थे और मुगल प्रशासनिक पदों पर थे</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- पीएम मित्रा योजना -->
+    <div class="sec orange">⑳ करंट अफेयर्स/अर्थव्यवस्था — पीएम मित्रा योजना एवं GI टैग 🧵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> पीएम मित्रा योजना निम्नलिखित में से किस उद्देश्य पर केंद्रित है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>कपड़ा निर्यात बढ़ाना और बड़े कपड़ा पार्क स्थापित करना ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>कपड़ा निर्यात बढ़ाना</strong> और मेगा कपड़ा पार्क स्थापित करना — यह <span class="hl">वस्त्र मंत्रालय</span> की योजना है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>पीएम मित्रा — 7 मेगा कपड़ा पार्क (स्थान):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">तमिलनाडु</span> · <span class="hl-g">तेलंगाना (वारंगल)</span> · <span class="hl-p">गुजरात (नवसारी)</span> · <span class="hl-b">कर्नाटक (कलबुर्गी)</span></li>
+        <li><strong>मध्य प्रदेश</strong> · <strong>उत्तर प्रदेश (लखनऊ)</strong> · <strong>महाराष्ट्र (अमरावती)</strong></li>
+      </ul>
+      <p class="hw">एक ही स्थान पर कताई, बुनाई, रंगाई, वस्त्र निर्माण संभव बनाना ("फार्म से फाइबर से फैक्ट्री से फैशन से फॉरेन")</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> ग्रामीण कारीगरों द्वारा बनाए गए स्थानीय उत्पादों को GI (भौगोलिक संकेत) टैग देने का एक प्रमुख लाभ क्या है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>पारंपरिक ज्ञान को संरक्षित करने और ग्रामीण आय बढ़ाने में मदद करता है ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: <strong>पारंपरिक ज्ञान संरक्षित करता है, ग्रामीण आय बढ़ाता है</strong> — GI टैग किसी उत्पाद की लोकप्रियता/मांग बढ़ाते हैं (जैसे दार्जिलिंग चाय भारत का पहला GI-टैग प्राप्त उत्पाद था, 2004)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- हैप्पीनेस इंडेक्स -->
+    <div class="sec red">㉑ करंट अफेयर्स — विश्व खुशहाली सूचकांक 😊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> निम्नलिखित में से कौन सा हैप्पीनेस इंडेक्स का सीधा उद्देश्य/परिणाम नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>जनसंख्या वृद्धि की निगरानी करना ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>शिक्षा नीति बनाना</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>स्वास्थ्य सेवाओं में सुधार</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>सामाजिक सेवाओं को बढ़ाना</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>जनसंख्या वृद्धि की निगरानी करना</strong> हैप्पीनेस इंडेक्स का सीधा उपयोग नहीं है (यह एक जनसांख्यिकीय उपकरण है, कल्याण मापन से असंबंधित)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>विश्व खुशहाली रिपोर्ट — मुख्य तथ्य:</strong></p>
+      <ul class="hw arr">
+        <li>जारीकर्ता: <span class="hl">संयुक्त राष्ट्र सतत विकास समाधान नेटवर्क</span> (क्रॉस-रेफरेंस: ऑक्सफोर्ड वेलबीइंग रिसर्च, गैलप इंस्टिट्यूट)</li>
+        <li>टॉप 3: <span class="hl-g">फिनलैंड → आइसलैंड → डेनमार्क</span> ("FID")</li>
+        <li>भारत की रैंक: <span class="hl-p"><strong>116वीं</strong></span></li>
+        <li>अंतिम 3: <strong>अफगानिस्तान</strong> (अंतिम), सिएरा लियोन (दूसरा अंतिम), मलावी (तीसरा अंतिम)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- सूर्यातप -->
+    <div class="sec blue">㉒ भूगोल — सूर्यातप एवं सौर विकिरण ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> निम्नलिखित में से कौन सा पृथ्वी पर सूर्यातप की विविधता को प्रभावित करने वाला प्राथमिक कारक नहीं है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>पृथ्वी का घूर्णन</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>वातावरण की पारदर्शिता</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>सूर्य की किरणों का झुकाव कोण</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>(दिए गए विकल्पों में जो कारक सूर्यातप से असंबंधित है) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: घूर्णन, वातावरण की पारदर्शिता, और सूर्य किरणों का कोण — यह सभी सूर्यातप को प्रभावित करने वाले वास्तविक कारक हैं; जल निकायों की उपस्थिति भी महत्वपूर्ण है — उत्तर एक असंबंधित विकर्षक विकल्प को बाहर करता है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>सूर्यातप — मुख्य तथ्य:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">सूर्यातप</span> = आने वाला सौर विकिरण (छोटी तरंगदैर्घ्य)। <span class="hl-g">पार्थिव विकिरण</span> = बाहर जाने वाला (लंबी तरंगदैर्घ्य) — ग्रीनहाउस गैसों द्वारा फंसाया जाता है</li>
+        <li>ग्रीनहाउस गैसें (योगदान के अनुसार): <span class="hl-p">जल वाष्प</span> &gt; CO₂ &gt; मीथेन &gt; N₂O</li>
+        <li><strong>अधिकतम सूर्यातप भूमध्य रेखा पर नहीं है</strong> — यह इसके थोड़ा ऊपर/नीचे है (भूमध्य रेखा पर अधिक बादल/वर्षा, जिससे वातावरण की पारदर्शिता कम होती है)</li>
+        <li><span class="hl-b">कर्क रेखा (23.5°N)</span> / <span class="hl-b">मकर रेखा (23.5°S)</span> से आगे, प्रत्यक्ष/लंबवत किरणें कभी नहीं पड़तीं — केवल तिरछी किरणें (अधिक क्षेत्र कवर करती हैं, प्रति इकाई क्षेत्र कम ऊष्मा)</li>
+        <li><strong>आर्कटिक/अंटार्कटिक वृत्त (66.5°N/S)</strong> — दिन/रात 6 महीने तक चल सकते हैं</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- मानव प्रजनन -->
+    <div class="sec green">㉓ जीव विज्ञान — मानव प्रजनन एवं गर्भावस्था 👶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> गर्भावस्था के दौरान मानव विकास के कालानुक्रमिक क्रम को कौन सा क्रम सही ढंग से दर्शाता है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>युग्मनज (जाइगोट) → भ्रूण (एम्ब्रियो) → गर्भस्थ शिशु (फीटस) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>भ्रूण → युग्मनज → गर्भस्थ शिशु</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>गर्भस्थ शिशु → युग्मनज → भ्रूण</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: A — <strong>युग्मनज → भ्रूण → गर्भस्थ शिशु</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>मानव प्रजनन — प्रक्रिया प्रवाह:</strong></p>
+      <ul class="hw arr">
+        <li>शुक्राणु <span class="hl">गर्भाशय ग्रीवा (सर्विक्स)</span> से प्रवेश करता है (HPV — ह्यूमन पैपिलोमा वायरस — गर्भाशय ग्रीवा के कैंसर का कारण बनता है)</li>
+        <li>अंडा (सबसे बड़ी मानव कोशिका) <span class="hl-g">अंडाशय</span> से निकलता है; शुक्राणु = सबसे छोटी मानव कोशिका</li>
+        <li><strong>निषेचन</strong> <span class="hl-p"><strong>फैलोपियन ट्यूब</strong></span> में होता है → <strong>युग्मनज</strong> बनता है</li>
+        <li>युग्मनज <span class="hl-b">गर्भाशय</span> की मोटी हुई परत में प्रत्यारोपित होता है → <strong>भ्रूण</strong> में विकसित होता है → फिर <strong>गर्भस्थ शिशु</strong></li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>गर्भाशय (यूटरस) बनाम मूत्रवाहिनी (यूरेटर) — भ्रमित न हों!</strong> <span class="hl">मूत्रवाहिनी</span> = गुर्दे से मूत्राशय तक की नलियां (उत्सर्जन तंत्र)। <span class="hl-g">गर्भाशय</span> = महिला प्रजनन अंग जहां भ्रूण विकसित होता है। दोनों पूरी तरह अलग तंत्र हैं!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- कर्नाटक संगीत वाद्य -->
+    <div class="sec purple">㉔ कला एवं संस्कृति — कर्नाटक संगीत वाद्य यंत्र 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> कर्नाटक संगीत वाद्यों के बारे में कथनों का मूल्यांकन करें और सही विकल्प चुनें: क्या मृदंगम "राग को रेखांकित करने के लिए उपयोग किया जाने वाला मेलोडिक पर्कशन वाद्य" है?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>गलत — मृदंगम का उपयोग लयबद्ध संगत के लिए होता है, राग को रेखांकित करने के लिए नहीं ✔</div>
+      </div>
+      <div class="mcq-ans">✅ उत्तर: मृदंगम का राग को रेखांकित करने से कोई संबंध नहीं है — यह पूर्णतः एक <strong>लयबद्ध पर्कशन वाद्य</strong> (अवनद्ध वाद्य) है</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>नाट्यशास्त्र — 4 वाद्य श्रेणियां (पुनरावलोकन):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">तत् वाद्य</span> — तार वाले वाद्य</li>
+        <li><span class="hl-g">घन वाद्य</span> — ठोस वाद्य</li>
+        <li><span class="hl-p">सुशिर वाद्य</span> — वायु वाद्य (जैसे नादस्वरम — दक्षिण भारतीय मंदिरों/शादियों में बजाया जाने वाला डबल-रीड वाद्य)</li>
+        <li><span class="hl-b">अवनद्ध वाद्य</span> — फैली हुई झिल्ली वाला पर्कशन वाद्य (जैसे <strong>मृदंगम</strong>, ढोलक) — बजाने, हिलाने या रगड़ने पर आवाज उत्पन्न करता है</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- पोक्सो एक्ट -->
+    <div class="sec red">㉕ राजव्यवस्था — पोक्सो अधिनियम 👧</div>
+    <div class="ca-box">
+      <p class="hw"><strong>पोक्सो अधिनियम (बाल यौन अपराध संरक्षण), 2012:</strong></p>
+      <ul class="hw chk">
+        <li><span class="hl">18 वर्ष से कम</span> उम्र के बच्चों के विरुद्ध यौन अपराधों से संबंधित</li>
+        <li><span class="hl-g">लिंग-निष्पक्ष</span> — पीड़ित के लिंग की परवाह किए बिना लागू होता है</li>
+        <li>उकसाने वाले/षड्यंत्रकारी को अपराधी के <strong>समान सजा</strong> मिलती है</li>
+        <li>न्यूनतम सजा: <span class="hl-p"><strong>7 वर्ष का कारावास</strong></span></li>
+        <li>पीड़ित की पहचान <strong>गुप्त</strong> रखी जाती है</li>
+        <li>मुकदमे <strong>विशेष (फास्ट-ट्रैक) न्यायालयों</strong> के माध्यम से चलाए जाते हैं</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- त्वरित संशोधन -->
+    <div class="sec teal">📋 त्वरित संशोधन — मुख्य तथ्य (Blitz Lecture 16)</div>
+    <table class="qr-t">
+      <tr><th>विषय / तथ्य</th><th>उत्तर</th></tr>
+      <tr><td>उपराष्ट्रपति किस शाखा का हिस्सा है</td><td>दोनों कार्यपालिका और विधायिका</td></tr>
+      <tr><td>उपराष्ट्रपति संबंधी अनुच्छेद</td><td>63–71</td></tr>
+      <tr><td>राष्ट्रपति/उपराष्ट्रपति चुनाव विवाद — SC अनन्य अधिकारिता</td><td>अनुच्छेद 71</td></tr>
+      <tr><td>पादप कोशिका रसधानी का आकार</td><td>कोशिका आयतन का 50-90%</td></tr>
+      <tr><td>विभज्योतक ऊतक में रसधानी</td><td>अनुपस्थित</td></tr>
+      <tr><td>10वीं अनुसूची</td><td>दल-बदल विरोधी कानून (52वां संशोधन)</td></tr>
+      <tr><td>8वीं अनुसूची</td><td>मान्यता प्राप्त भाषाएं</td></tr>
+      <tr><td>9वीं अनुसूची</td><td>भूमि सुधार (1st संशोधन, 1951)</td></tr>
+      <tr><td>दल-बदल का विलय अपवाद</td><td>91वां संशोधन (2/3 दल विलय)</td></tr>
+      <tr><td>किहोतो होलोहान मामला</td><td>अध्यक्ष का निर्णय न्यायिक समीक्षा के अधीन</td></tr>
+      <tr><td>I.R. कोएल्हो मामला (2007)</td><td>9वीं अनुसूची के 1973 बाद के कानून न्यायिक समीक्षा के अधीन</td></tr>
+      <tr><td>गोथिक वास्तुकला की विशेषताएं</td><td>रिब्ड वॉल्ट, नुकीले मेहराब, फ्लाइंग बट्रेस, रंगीन कांच</td></tr>
+      <tr><td>विद्युत चुंबकीय प्रेरण के खोजकर्ता</td><td>माइकल फैराडे, 1831</td></tr>
+      <tr><td>प्रेरित EMF फॉर्मूला</td><td>BVL (फ्लेमिंग का दायां हाथ नियम)</td></tr>
+      <tr><td>संचालक पर बल</td><td>फ्लेमिंग का बायां हाथ नियम</td></tr>
+      <tr><td>आवेशित कण पर बल (E+B क्षेत्र)</td><td>लॉरेंज़ बल</td></tr>
+      <tr><td>NCST संवैधानिक अनुच्छेद</td><td>338A (89वें संशोधन, 2003 द्वारा अलग)</td></tr>
+      <tr><td>NHRC — सांविधिक आधार</td><td>मानव अधिकार संरक्षण अधिनियम, 1993</td></tr>
+      <tr><td>घाघरा गंगा से मिलती है</td><td>छपरा, बिहार (इलाहाबाद में नहीं)</td></tr>
+      <tr><td>ड्यूस — संबंधित खेल</td><td>टेनिस</td></tr>
+      <tr><td>भारत के पहले सेनाध्यक्ष (स्वतंत्र भारत)</td><td>के.एम. करियप्पा</td></tr>
+      <tr><td>भारतीय सेना दिवस</td><td>15 जनवरी</td></tr>
+      <tr><td>आजाद हिंद फौज के संस्थापक</td><td>मोहन सिंह</td></tr>
+      <tr><td>AQI जारीकर्ता</td><td>CPCB (केंद्रीय प्रदूषण नियंत्रण बोर्ड)</td></tr>
+      <tr><td>AQI 0-50 श्रेणी</td><td>अच्छा</td></tr>
+      <tr><td>जनसंख्या पिरामिड — तेज़ वृद्धि आकार</td><td>त्रिकोणीय</td></tr>
+      <tr><td>भारत की प्रतिस्थापन प्रजनन दर</td><td>2.1 (वर्तमान ~1.9)</td></tr>
+      <tr><td>भारत का जनसंख्या विस्फोट काल</td><td>1951-1981</td></tr>
+      <tr><td>सहकारी समितियां — कौन सी सूची</td><td>राज्य सूची (संघ सूची नहीं)</td></tr>
+      <tr><td>पूर्वता का सिद्धांत — अनुच्छेद</td><td>अनुच्छेद 200 (राज्यपाल विधेयक राष्ट्रपति के लिए आरक्षित करता है)</td></tr>
+      <tr><td>पश्चिमी तटीय मैदान की विशेषता</td><td>लैगून और बैकवाटर</td></tr>
+      <tr><td>पूर्वी तटीय मैदान की विशेषता</td><td>बड़े डेल्टा</td></tr>
+      <tr><td>बैंक दर बनाम रेपो दर</td><td>बैंक दर = कोई संपार्श्विक नहीं, अधिक दर; रेपो = संपार्श्विक आधारित</td></tr>
+      <tr><td>स्टैगफ्लेशन परिभाषा</td><td>स्थिर अर्थव्यवस्था + मुद्रास्फीति + उच्च बेरोजगारी</td></tr>
+      <tr><td>नागभट्ट प्रथम</td><td>गुर्जर-प्रतिहार के संस्थापक; अरब आक्रमण विफल किया</td></tr>
+      <tr><td>मिहिर भोज</td><td>गुर्जर-प्रतिहार वंश के "वास्तविक संस्थापक"</td></tr>
+      <tr><td>शेखजादा/हिंदुस्तानी (मुगल काल)</td><td>प्रशासनिक पदों पर स्वदेशी मुस्लिम धर्मांतरित</td></tr>
+      <tr><td>पीएम मित्रा — मंत्रालय</td><td>वस्त्र मंत्रालय (7 मेगा कपड़ा पार्क)</td></tr>
+      <tr><td>पहला भारतीय GI टैग प्राप्त उत्पाद</td><td>दार्जिलिंग चाय (2004)</td></tr>
+      <tr><td>हैप्पीनेस इंडेक्स — जारीकर्ता</td><td>संयुक्त राष्ट्र सतत विकास समाधान नेटवर्क</td></tr>
+      <tr><td>हैप्पीनेस इंडेक्स — भारत की रैंक</td><td>116वीं</td></tr>
+      <tr><td>हैप्पीनेस इंडेक्स — टॉप 3</td><td>फिनलैंड, आइसलैंड, डेनमार्क</td></tr>
+      <tr><td>अधिकतम सूर्यातप स्थान</td><td>भूमध्य रेखा के थोड़ा ऊपर/नीचे (भूमध्य रेखा पर नहीं)</td></tr>
+      <tr><td>निषेचन कहां होता है</td><td>फैलोपियन ट्यूब</td></tr>
+      <tr><td>गर्भावस्था क्रम</td><td>युग्मनज → भ्रूण → गर्भस्थ शिशु</td></tr>
+      <tr><td>मृदंगम वाद्य प्रकार</td><td>अवनद्ध वाद्य (पर्कशन, मेलोडिक नहीं)</td></tr>
+      <tr><td>पोक्सो अधिनियम वर्ष</td><td>2012</td></tr>
+      <tr><td>पोक्सो न्यूनतम सजा</td><td>7 वर्ष कारावास</td></tr>
+    </table>
+
+    <!-- परीक्षा टिप्स -->
+    <div class="sec orange">💡 टॉपर टिप्स — Blitz Lecture 16 के लिए याद रखो!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>रसधानी पादप कोशिकाओं में बड़ी</strong></span> होती है (50-90% आयतन), जंतु कोशिकाओं में नहीं — यह अक्सर उल्टा पूछा जाने वाला जाल है</li>
+          <li>10वीं अनुसूची = दल-बदल विरोधी; 8वीं = भाषाएं; 9वीं = भूमि सुधार; 11वीं = पंचायतें; 12वीं = नगरपालिकाएं — इन्हें मिलाएं नहीं!</li>
+          <li>फ्लेमिंग का <span class="hl-g"><strong>दायां</strong></span> हाथ नियम = प्रेरित EMF; फ्लेमिंग का <strong>बायां</strong> हाथ नियम = संचालक पर बल</li>
+          <li>NCST/NCSC/NCBC <span class="hl-p"><strong>संवैधानिक</strong></span> निकाय हैं (अनुच्छेद 338/338A/338B); NHRC/NCW <strong>सांविधिक</strong> हैं</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>घाघरा गंगा से <span class="hl"><strong>छपरा, बिहार</strong></span> में मिलती है — इलाहाबाद में नहीं (सामान्य जाल)</li>
+          <li>अधिकतम सूर्यातप <span class="hl-g"><strong>भूमध्य रेखा पर नहीं</strong></span> है — यह इसके थोड़ा ऊपर/नीचे है, क्योंकि भूमध्य रेखा पर बादलों के कारण वातावरण की पारदर्शिता कम होती है</li>
+          <li>सहकारी समितियां = <strong>राज्य सूची</strong> का विषय (अक्सर संघ सूची समझ ली जाती हैं)</li>
+          <li>अभिकथन-कारण कथनों में अतिशयोक्तिपूर्ण शब्द ("कोई प्रभाव नहीं," "नहीं छोड़ता," "कभी नहीं," "पूरी तरह से") सामान्यतः गलत होते हैं</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 Blitz Lecture 16 नोट्स समाप्त</div>
+      <strong>मिश्रित PYQ सीरीज़ | सभी प्रश्न कवर किए गए ✅ | अभ्यास करो, मॉक दो, टॉप करो! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
