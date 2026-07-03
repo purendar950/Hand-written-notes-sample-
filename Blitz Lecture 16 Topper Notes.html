@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — Blitz Lecture 16 | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139,109,56,0.15) 35px, rgba(139,109,56,0.15) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(100,80,40,0.1) 35px, rgba(100,80,40,0.1) 70px);
+  background-color:#8B6914;
+  opacity:0.40;
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+
+/* COVER */
+.cover{
+  background:linear-gradient(135deg,#0d1117 0%,#161b22 45%,#21262d 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);
+  pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.9rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;
+  display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);
+  margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.arr li::before{content:'➤';color:var(--blue);font-size:.62rem;top:9px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+ul.hw.num{counter-reset:li}
+ul.hw.num li::before{counter-increment:li;content:counter(li)'.';color:var(--blue);font-weight:700;font-size:.88rem;top:5px}
+
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;
+  font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.red-h th{background:#b71c1c;color:#ffebee}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;
+  background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;
+  font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;
+  background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.formula{border:2px solid var(--blue);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e3f2fd;position:relative}
+.formula::before{content:'📐 FORMULA';position:absolute;top:-12px;left:12px;
+  background:#1565c0;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;
+  background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;
+  background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.ca-box{border:2px solid var(--orange);border-radius:8px;padding:10px 14px;
+  margin:12px 0;background:#fff3e0;position:relative}
+.ca-box::before{content:'📰 CURRENT AFFAIRS';position:absolute;top:-12px;left:12px;
+  background:#e65100;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;
+  align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:6px 14px;
+  font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+
+/* DIVIDER */
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* QR TABLE */
+.qr-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.84rem}
+.qr-t th{background:#e65100;color:#fff;padding:7px 10px;font-family:'Caveat',cursive;font-size:.9rem;border:1px solid #bf360c}
+.qr-t td{padding:5px 10px;border:1px solid #ffccbc;vertical-align:top;line-height:1.5}
+.qr-t tr:nth-child(even) td{background:#fff3e0}
+.qr-t td:first-child{color:var(--blue);font-weight:700}
+.qr-t td:last-child{color:var(--green)}
+
+/* TIMELINE */
+.tl{padding-left:18px;border-left:3px solid #c5cae9;margin:12px 0}
+.tl-item{position:relative;padding:5px 0 5px 20px;font-family:'Kalam',cursive;font-size:.88rem;line-height:1.55}
+.tl-item::before{content:'';position:absolute;left:-9px;top:12px;width:14px;height:14px;
+  border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tl-item .yr{font-family:'Caveat Brush',cursive;font-size:1rem;color:var(--orange);margin-right:6px}
+
+/* DARK */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:0.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td,body.dark .tl-item{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .formula{background:#0d2040}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .ca-box{background:#1e1000}
+body.dark .num-b{background:#1e2d4a}
+body.dark .qr-t td{color:#d0d8e8}
+body.dark .qr-t td:first-child{color:#82b1ff}
+body.dark .qr-t td:last-child{color:#a5d6a7}
+body.dark .qr-t tr:nth-child(even) td{background:#1a2030}
+
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.formula,.key-box,.tip-box,.ca-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📝 Parmar Academy — Blitz Lecture 16 Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes">
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    <div class="hole"></div><div class="hole"></div>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy</div>
+    <div class="cover-title">⚡ Blitz Lecture 16 — Topper Notes</div>
+    <div class="cover-sub">Mixed PYQ Series | Polity · Biology · Physics · Geography · History · Economics · Culture</div>
+    <div class="cover-badge">🏛️ Polity · ⚛️ Physics · 🧬 Biology · 🌍 Geography · 📜 History · 💰 Economy · 🎭 Culture</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+
+    <!-- VICE PRESIDENT / UNION EXECUTIVE -->
+    <div class="sec red">① Polity — Vice President &amp; Union Executive ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q1.</span> Which branch of government is the Vice President of India a part of?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Legislative only</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Executive only</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Judicial</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Both Executive and Legislative ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — VP is part of the <strong>Union Executive</strong> (Part V, Chapter I: President, VP, PM, Council of Ministers, Attorney General) AND the <strong>Legislature</strong>, since he is the <span class="hl">ex-officio Chairperson of the Rajya Sabha</span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Vice President — Key Articles:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Articles 63–71</span> — Vice President provisions</li>
+        <li><span class="hl-g">Article 72</span> — Pardoning power of the President</li>
+        <li><span class="hl-p">Article 71</span> — Supreme Court has <strong>exclusive jurisdiction</strong> over disputes regarding election of President/VP (similar exclusivity as Art 131's original jurisdiction)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- VACUOLES -->
+    <div class="sec green">② Biology — Vacuoles &amp; Cell Organelles 🧫</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q2.</span> Which statement is NOT correct regarding vacuoles?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"Vacuoles are generally larger in animal cells than in plant cells" — this is FALSE ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: FALSE — vacuoles are actually <strong>LARGER in plant cells</strong>, occupying <span class="hl">50–90%</span> of cell volume (single large vacuole, permanent). Animal cells have multiple SMALLER, temporary vacuoles</div>
+    </div>
+
+    <table class="hw-t grn">
+      <tr><th>Feature</th><th>Plant Cell Vacuole</th><th>Animal Cell Vacuole</th></tr>
+      <tr><td>Size</td><td><span class="hl"><strong>Large</strong></span> (50-90% of cell volume)</td><td>Small</td></tr>
+      <tr><td>Number</td><td>Single</td><td>Multiple</td></tr>
+      <tr><td>Duration</td><td><span class="hl-g">Permanent</span></td><td>Temporary</td></tr>
+      <tr><td>Function</td><td>Provides rigidity &amp; turgidity</td><td>—</td></tr>
+    </table>
+    <div class="trick">
+      🧠 <strong>Meristematic tissue LACKS vacuoles</strong> — but has a prominent nucleus and dense cytoplasm. This is a frequently repeated fact!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CONSTITUTIONAL SCHEDULES -->
+    <div class="sec blue">③ Polity — Constitutional Schedules 📋</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q3.</span> Which of the following paragraphs is correctly matched with respect to the Schedules of the Constitution?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>10th Schedule — Anti-Defection Law ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>11th Schedule — Powers/Responsibilities of Panchayats (this is actually correct too, but paired wrongly with others)</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>12th Schedule — Election of President/VP (WRONG — 12th is Municipalities)</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>10th Schedule — Constitutionally recognized languages (WRONG — that's the 8th Schedule)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>10th Schedule = Anti-Defection Law</strong>, added by the <span class="hl">52nd Amendment</span></div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Schedule</th><th>Subject</th></tr>
+      <tr><td><span class="hl"><strong>7th</strong></span></td><td>Union, State &amp; Concurrent Lists</td></tr>
+      <tr><td><span class="hl-g"><strong>8th</strong></span></td><td>Recognized (Official) Languages</td></tr>
+      <tr><td><span class="hl-p"><strong>9th</strong></span></td><td>Land reform laws (immune from judicial review pre-1973); added by 1st Amendment, 1951</td></tr>
+      <tr><td><span class="hl-b"><strong>10th</strong></span></td><td>Anti-Defection Law (52nd Amendment)</td></tr>
+      <tr><td><strong>11th</strong></td><td>Panchayats — powers &amp; responsibilities (73rd Amendment)</td></tr>
+      <tr><td><strong>12th</strong></td><td>Municipalities (74th Amendment)</td></tr>
+    </table>
+
+    <div class="key-box">
+      <p class="hw"><strong>Anti-Defection Law — Deep Dive:</strong></p>
+      <ul class="hw arr">
+        <li>Final decision authority: <span class="hl">Presiding Officer/Speaker</span> — but subject to <strong>judicial review</strong> (per <em>Kihoto Hollohan vs. Zachillhu</em> case)</li>
+        <li>Exception: <span class="hl-g">Merger</span> (added by <strong>91st Amendment</strong>) — if 2/3rd of a party merges with another, it's NOT defection</li>
+        <li>Art 75(1A) — caps Council of Ministers at <strong>15%</strong> of Lok Sabha strength (also mirrored for states via Art 164(1A) — Legislative Assembly)</li>
+        <li>Art 75(1B) — a minister disqualified under defection is also removed from the ministry</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q4.</span> The 9th Schedule deals with which subject, and what is its relation to judicial review?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Land reform laws; laws added AFTER 1973 (Kesavananda Bharati case) are subject to judicial review; those before are immune ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 9th Schedule — land reform laws (1st Amendment, 1951, under Nehru). Per the <span class="hl"><strong>I.R. Coelho case (2007)</strong></span>, laws inserted post-Kesavananda Bharati (1973) ARE subject to judicial review, as judicial review is a <strong>basic structure</strong> feature</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- GOTHIC ARCHITECTURE -->
+    <div class="sec purple">④ Art &amp; Culture — Gothic Architecture 🏛️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q5.</span> Which architectural style is best described by: ribbed vaults, pointed arches, flying buttresses, and stained-glass windows?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mughal</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Deccan</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Indo-Islamic</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Gothic ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Gothic</strong> architecture — ribbed vaults, pointed arches, flying buttresses, stained-glass windows (with colored glass, sometimes painted)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ELECTROMAGNETIC INDUCTION -->
+    <div class="sec teal">⑤ Physics — Electromagnetic Induction &amp; Magnetism ⚡</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q6.</span> A conductor rod of length L moves with velocity V perpendicular to a uniform magnetic field B. What is the induced EMF across it?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>V/BL</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>BVL ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>B/VL</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>BV/L</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — <strong>EMI (Electromagnetic Induction)</strong>, discovered by <span class="hl">Michael Faraday in 1831</span>. Induced EMF = B×V×L, found using <strong>Fleming's Right-Hand Rule</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Fleming's Rules — Don't Confuse!</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Right-Hand Rule</span> — finds INDUCED EMF/current (Electromagnetic Induction)</li>
+        <li><span class="hl-g">Left-Hand Rule</span> — finds FORCE on a current-carrying conductor in a magnetic field</li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Fleming's Left-Hand Rule — "Father, Mother, Child":</strong> Thumb = <span class="hl">Force (Father)</span>, First finger = <span class="hl-g">Magnetic field (Mother)</span>, Middle finger = <span class="hl-p">Current (Child)</span>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q7.</span> What is the force exerted on a charged particle by combined electric and magnetic fields called?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Lorentz Force ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Lorentz Force</strong> (not to be confused with the "Lorenz curve" studied in Economics — similar-sounding names!)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Solenoid — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Magnetic field lines never intersect; they form <span class="hl">closed loops</span></li>
+        <li>Inside a solenoid: field is <span class="hl-g"><strong>uniform and maximum</strong></span></li>
+        <li>Outside: field is circular, decreasing with distance</li>
+        <li>Inserting a <strong>soft iron rod</strong> inside a solenoid turns it into an <span class="hl-p"><strong>Electromagnet</strong></span></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- STATUTORY VS CONSTITUTIONAL BODIES -->
+    <div class="sec orange">⑥ Polity — Statutory vs Constitutional Bodies 🏢</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q8.</span> Which of the following commissions is NOT a statutory body in India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>NCST (National Commission for Scheduled Tribes) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>NCST is a CONSTITUTIONAL body</strong> (Article 338A), NOT statutory</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Body</th><th>Type</th><th>Basis</th></tr>
+      <tr><td><span class="hl"><strong>NCSC</strong></span> (Scheduled Castes)</td><td>Constitutional</td><td>Article 338</td></tr>
+      <tr><td><span class="hl-g"><strong>NCST</strong></span> (Scheduled Tribes)</td><td>Constitutional</td><td>Article 338A (separated from NCSC by <strong>89th Amendment, 2003</strong>)</td></tr>
+      <tr><td><span class="hl-p"><strong>NCBC</strong></span> (Backward Classes)</td><td>Constitutional</td><td>Article 338B</td></tr>
+      <tr><td><span class="hl-b"><strong>NHRC</strong></span></td><td><strong>Statutory</strong></td><td>Protection of Human Rights Act, 1993 (Chairperson term: 3 years OR till age 70, whichever is earlier)</td></tr>
+      <tr><td><strong>NCW</strong> (Women)</td><td><strong>Statutory</strong></td><td>National Commission for Women Act, 1992</td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Trap!</strong> Before the 65th Amendment, SC/ST had a single combined Commission/Special Officer. 65th Amendment made them a joint Commission. 89th Amendment (2003) FINALLY split them into separate NCSC (338) &amp; NCST (338A).</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- GHAGHRA RIVER SYSTEM -->
+    <div class="sec red">⑦ Geography — Ghaghra River System &amp; Ganga Tributaries 🌊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q9.</span> Consider the statements about the Ghaghra River: (1) Originates from the Mapcha Chungo Glacier in the Himalayas; (2) Forms a deep gorge at Shishapani before entering the plains; (3) Merges with the Ganga at Allahabad after receiving the Sharda River.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Only 1 and 2 are correct ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>All three correct</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Only 1 correct</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Only 2 and 3</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Statements 1 &amp; 2 are correct. Statement 3 is WRONG — Ghaghra merges with the Ganga at <span class="hl"><strong>Chapra, Bihar</strong></span> (NOT Allahabad)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Ganga River System — Tributaries:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Left Bank</span>: Ramganga, Gomti, Ghaghra, Gandak, Kosi, Mahananda</li>
+        <li><span class="hl-g">Right Bank</span>: Yamuna, Son, Punpun</li>
+        <li><strong>Distributary</strong> (not tributary): Hooghly (Bhagirathi-Hooghly) — its tributary is <strong>Damodar</strong> (flows through a rift valley in the Chota Nagpur Plateau, into the Bay of Bengal)</li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Gorge vs Canyon:</strong> A <span class="hl">Gorge</span> has steep cliffs formed by erosional action of running water (e.g., Shishapani on Ghaghra). A <strong>Canyon</strong> has stepped walls. Both are erosional landforms.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- TENNIS / SPORTS -->
+    <div class="sec green">⑧ Sports — Tennis Terminology 🎾</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q10.</span> The term "Deuce" is associated with which sport?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tennis ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Tennis</strong> — Deuce occurs when both players/teams have equal points (e.g., 40-40)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- RASH BEHARI BOSE -->
+    <div class="sec blue">⑨ Modern History — Rash Behari Bose &amp; INA 🎖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q11.</span> Which of the following is NOT true about Rash Behari Bose?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>"He was Independent India's first Commander-in-Chief of the Indian Army" — FALSE ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: FALSE — Independent India's first C-in-C was <strong>K.M. Cariappa</strong>, NOT Rash Behari Bose</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Rash Behari Bose — Verified Facts:</strong></p>
+      <ul class="hw chk">
+        <li>Founded the <span class="hl">Indian Independence League</span> in Tokyo, 1942</li>
+        <li>Important figure in the <span class="hl-g">Ghadar Movement</span></li>
+        <li>Associated with the founding of the <span class="hl-p">Azad Hind Fauj</span> (actual founder: <strong>Mohan Singh</strong>)</li>
+        <li>Awarded the <span class="hl-b"><strong>Order of the Rising Sun</strong></span> (Japan)</li>
+      </ul>
+      <p class="hw"><strong>Indian Army Day</strong> = <span class="hl">January 15</span> (day K.M. Cariappa became the first Indian C-in-C)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ECONOMICS: LAWS OF PRODUCTION -->
+    <div class="sec purple">⑩ Economics — Law of Demand, Diminishing Returns &amp; Variable Proportions 📉</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q12.</span> Match: "After a certain point, increasing input leads to declining marginal product" — which law is this?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Law of Diminishing Marginal Product ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Law of Diminishing Marginal Product</strong> — as input increases, marginal product rises initially, then declines after a certain point</div>
+    </div>
+
+    <table class="hw-t pur">
+      <tr><th>Law</th><th>Statement</th></tr>
+      <tr><td><span class="hl"><strong>Law of Demand</strong></span></td><td>Price &amp; demand move in opposite directions</td></tr>
+      <tr><td><span class="hl-g"><strong>Law of Diminishing Marginal Product</strong></span></td><td>Beyond a point, increasing input → declining marginal product</td></tr>
+      <tr><td><span class="hl-p"><strong>Law of Variable Proportions</strong></span></td><td>Marginal product initially RISES with input usage, then FALLS</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- AQI / ENVIRONMENT -->
+    <div class="sec teal">⑪ Geography/Environment — Air Quality Index (AQI) 🌫️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q13.</span> Assertion (A): Stubble burning has no significant impact on AQI levels in India. Reason (R): It is a controlled practice that does not release substantial pollutants.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Both A and R are FALSE ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Both statements use extreme absolute language ("no significant impact," "does not release substantial pollutants") — stubble burning DOES significantly impact AQI and DOES release major pollutants</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>AQI — 8 Primary Pollutants (per CPCB):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">PM 2.5</span> &amp; <span class="hl-g">PM 10</span> — fine particulate matter (PM 2.5 is smaller and MORE dangerous — penetrates deep into respiratory system)</li>
+        <li>Nitrogen Dioxide (NO₂), Sulfur Dioxide (SO₂), Carbon Monoxide (CO), Ozone (O₃), Ammonia (NH₃), Lead (Pb)</li>
+      </ul>
+    </div>
+
+    <table class="hw-t teal-h">
+      <tr><th>AQI Range</th><th>Category</th></tr>
+      <tr><td>0–50</td><td><span class="hl">Good</span></td></tr>
+      <tr><td>51–100</td><td><span class="hl-g">Satisfactory</span></td></tr>
+      <tr><td>101–200</td><td>Moderately Polluted</td></tr>
+      <tr><td>201–300</td><td><span class="hl-p">Poor</span></td></tr>
+      <tr><td>301–400</td><td><span class="hl-b">Very Poor</span></td></tr>
+      <tr><td>400+</td><td><strong>Severe</strong></td></tr>
+    </table>
+
+    <div class="imp">
+      <p class="hw" style="margin-top:10px;"><strong>Extreme Keyword Trap:</strong> Words like "no significant impact," "does not release substantial pollutants," "completely," "never" in Assertion-Reason questions are usually FALSE indicators!</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- POPULATION PYRAMID -->
+    <div class="sec red">⑫ Geography — Population Pyramids 👥</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q14.</span> What shape does a population pyramid take for a rapidly growing population?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Inverted triangle</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Circular</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Triangular ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rectangular (stable)</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — <strong>Triangular</strong> shape (wide base of children, narrowing toward the top/elderly) — indicates rapid growth</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Population Pyramid Shapes:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl"><strong>Triangular</strong></span> — rapidly growing population (broad base = many children)</li>
+        <li><span class="hl-g"><strong>Rectangular/Bell-shaped</strong></span> — stable population (India moving toward this)</li>
+      </ul>
+      <p class="hw"><strong>India's Population Growth Phases:</strong> 1911-1921 (Stagnant) → 1921-1951 (Steady increase) → <span class="hl-p">1951-1981 (Population EXPLOSION)</span> → 1981-onward (moving toward stability)</p>
+      <p class="hw">Replacement level fertility rate = <span class="hl-b"><strong>2.1</strong></span> children/woman (India's current rate is below this, ~1.9)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- FOLK SONGS MATCHING -->
+    <div class="sec orange">⑬ Art &amp; Culture — Folk Songs Matching 🎵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q15.</span> Match Column A (folk song) with Column B (description): Sohar, Chakri, Laman, Kajri.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Sohar=Birth celebration songs; Chakri=Kashmiri group song (Rabab/Sarangi/Tumbaknari); Laman=Himachal love songs on hilltops; Kajri=UP-Bihar women's semicircle song ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: 2-4-1-3 pattern (per lecture) — each song matched to its correct region/occasion</div>
+    </div>
+
+    <table class="hw-t org">
+      <tr><th>Folk Song</th><th>Region</th><th>Occasion/Style</th></tr>
+      <tr><td><span class="hl"><strong>Sohar</strong></span></td><td>UP, Bihar</td><td>Sung during birth celebrations</td></tr>
+      <tr><td><span class="hl-g"><strong>Chakri</strong></span></td><td>Jammu &amp; Kashmir</td><td>Group song with Rabab, Sarangi, Tumbaknari (4 elements)</td></tr>
+      <tr><td><span class="hl-p"><strong>Laman</strong></span></td><td>Himachal Pradesh</td><td>Echoed love songs sung by girls/boys on hilltops</td></tr>
+      <tr><td><span class="hl-b"><strong>Kajri</strong></span></td><td>UP, Bihar</td><td>All-night women's song, sung in a semi-circle</td></tr>
+    </table>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BNSS -->
+    <div class="sec green">⑭ Polity — BNSS (New Criminal Laws) ⚖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q16.</span> Consider the statements about BNSS (Bharatiya Nagarik Suraksha Sanhita): (1) Introduces community service as punishment for minor offences; (2) Scope of summary trials limited to only serious offences; (3) Positive approach aims to ensure societal reintegration of offenders.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>All three are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: All three statements correctly describe BNSS provisions (the new criminal procedure code replacing CrPC)</div>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Elimination Logic:</strong> If 2 out of 3 statements are clearly correct/true, and a question demands you choose among combinations, the 3rd option often has "no other choice" but to be correct too — especially when no contradicting information exists.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- UNION LIST -->
+    <div class="sec red">⑮ Polity — Union List (Seventh Schedule) 📜</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q17.</span> Which of the following statements based on Union List entries is/are correct? (1) Parliament has exclusive power to legislate on lotteries by Central/State govts; (2) Cooperative societies incorporation/regulation are in the Union List; (3) RBI, foreign exchange, currency are under Union's legislative domain; (4) Parliament can make laws on corporations not limited to one state (excluding universities).</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1, 3, 4 are correct (2 is wrong — cooperative societies are a STATE subject) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Statements 1, 3, 4 are correct. Statement 2 is WRONG — <strong>cooperative societies</strong> fall under the <span class="hl">STATE List</span>, not Union List</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Seventh Schedule — Lists:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Union List</span> — only Parliament legislates (e.g., lotteries by Centre/State, RBI, foreign exchange, currency, inter-state corporations)</li>
+        <li><span class="hl-g">State List</span> — only State Legislature (e.g., cooperative societies)</li>
+        <li><span class="hl-p">Concurrent List</span> — both can legislate; if conflict, <strong>Parliament's law prevails</strong> UNLESS the State law was reserved for President's assent under <strong>Article 200</strong> ("Doctrine of Precedence")</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <p class="hw">🧠 <strong>Exam Strategy Tip:</strong> When eliminating options, only remove a choice if you're CONFIDENT about the fact. If unsure, don't eliminate — guessing wrongly by false elimination is worse than leaving the option open.</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- WESTERN COASTAL PLAINS -->
+    <div class="sec blue">⑯ Geography — Western Coastal Plains 🏖️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q18.</span> Which of the following is a characteristic feature of the Western Coastal Plains?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mangrove forests</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>High rainfall</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Large deltas</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Lagoons and backwaters ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Lagoons and backwaters</strong> (e.g., Ashtamudi Lake, Vembanad Lake in Kerala) are the defining CHARACTERISTIC feature. High rainfall occurs but isn't uniquely characteristic; large deltas are an EASTERN Coastal Plains feature; mangroves are mainly found in the East</div>
+    </div>
+
+    <table class="hw-t alt">
+      <tr><th>Feature</th><th>Western Coastal Plains</th><th>Eastern Coastal Plains</th></tr>
+      <tr><td>Width</td><td><span class="hl">Narrow</span></td><td><span class="hl-g">Wide</span></td></tr>
+      <tr><td>Nature</td><td>Submerging</td><td>Emerging</td></tr>
+      <tr><td>Dominant Feature</td><td>Erosional</td><td>Depositional</td></tr>
+      <tr><td>River Mouths</td><td>Estuaries (Lagoons/Backwaters)</td><td>Deltas</td></tr>
+      <tr><td>Examples</td><td>Ashtamudi Lake, Vembanad Lake (Kerala)</td><td>Chilika Lake (Odisha), Pulicat Lake, Kolleru Lake (freshwater)</td></tr>
+    </table>
+
+    <div class="trick">
+      🧠 <strong>Why the difference?</strong> The Peninsular Plateau tilts EASTWARD, so most rivers flow east and deposit silt → forming deltas on the Eastern coast. Rivers on the Western coast are short and fast-flowing → forming estuaries, not deltas.
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- BANKING -->
+    <div class="sec green">⑰ Economics — Banking, OMO &amp; Bank Rate 🏦</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q19.</span> Which statement is correct? (1) A bank's main liability is the deposits it holds; (2) Open market operations involve buying/selling government bonds; (3) Bank rate is the rate at which RBI lends to commercial banks.</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>All three are correct ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: All three statements are correct</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Bank Liabilities vs Assets:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Liabilities</span> = Deposits (demand deposits + time/term deposits)</li>
+        <li><span class="hl-g">Assets</span> = Loans given by the bank</li>
+        <li>Difference between interest earned (on loans) and interest paid (on deposits) = <strong>Spread</strong> (bank's profit)</li>
+      </ul>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q20.</span> Does the Bank Rate require collateral?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>No, it does NOT require collateral — that's why Bank Rate is HIGHER than Repo Rate ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>No collateral</strong> required for Bank Rate lending — hence it carries a HIGHER interest rate than the Repo Rate (which DOES require collateral, e.g., government securities)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Open Market Operations (OMO) — 2 Types:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Outright Purchase</span> — selling/buying govt securities. SELL during inflation (absorb liquidity); BUY during recession (inject liquidity, generate demand)</li>
+        <li><span class="hl-g">Repo</span> — short-term, collateral-based borrowing</li>
+      </ul>
+      <p class="hw"><strong>Stagflation</strong> = Stagnant economy + Inflation + High unemployment (violates the Phillips Curve, which assumes inflation &amp; unemployment move inversely)</p>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- GURJARA-PRATIHARA -->
+    <div class="sec purple">⑱ Ancient/Medieval History — Gurjara-Pratihara Dynasty 🗡️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q21.</span> Which Pratihara ruler successfully repelled Arab invasions in North-Western India?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Nagabhatta I ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Nagabhatta I</strong> — founder of the Gurjara-Pratihara dynasty; stopped Arab (Umayyad Caliphate) invasions</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Gurjara-Pratihara — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Fought the <span class="hl">Tripartite Struggle (Kannauj Triangle)</span> against the Rashtrakutas and the Palas (started late 9th century AD)</li>
+        <li>Founder: <span class="hl-g">Nagabhatta I</span></li>
+        <li><span class="hl-p">Mihir Bhoja</span> — considered the "real founder" (most powerful/consolidating ruler) of the dynasty</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- MUGHAL ADMINISTRATION -->
+    <div class="sec teal">⑲ Medieval History — Mughal Administration Terms 👑</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q22.</span> In the context of Mughal administration, who were "Sheikhzadas" or "Hindustani"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Central Asian nobles of Turkish origin</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajput converts</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Persian-trained officers</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Indigenous Muslims (converts) who held administrative posts under Mughal rule ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — <strong>Sheikhzadas/Hindustani</strong> were Indian-origin Muslims, generally converts from Hinduism, who held Mughal administrative positions</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- PM MITRA SCHEME -->
+    <div class="sec orange">⑳ Current Affairs/Economy — PM MITRA Scheme &amp; GI Tags 🧵</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q23.</span> The PM MITRA scheme is focused on which of the following objectives?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Enhancing textile exports and setting up large textile parks ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Enhancing textile exports</strong> and setting up mega textile parks — a scheme of the <span class="hl">Ministry of Textiles</span></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>PM MITRA — 7 Mega Textile Parks (Locations):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Tamil Nadu</span> · <span class="hl-g">Telangana (Warangal)</span> · <span class="hl-p">Gujarat (Navsari)</span> · <span class="hl-b">Karnataka (Kalaburagi)</span></li>
+        <li><strong>Madhya Pradesh</strong> · <strong>Uttar Pradesh (Lucknow)</strong> · <strong>Maharashtra (Amravati)</strong></li>
+      </ul>
+      <p class="hw">Aims to enable spinning, weaving, dyeing, garmenting — all at ONE location ("Farm to Fibre to Factory to Fashion to Foreign")</p>
+    </div>
+
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q24.</span> What is one of the major benefits of providing a GI (Geographical Indication) tag to local products made by rural artisans?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Helps preserve traditional knowledge and boost rural income ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: <strong>Preserves traditional knowledge, boosts rural income</strong> — GI tags increase a product's popularity/demand (e.g., Darjeeling Tea was India's FIRST GI-tagged product, 2004)</div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- HAPPINESS INDEX -->
+    <div class="sec red">㉑ Current Affairs — World Happiness Index 😊</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q25.</span> Which of the following is NOT a direct outcome/purpose of the Happiness Index?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Monitoring population growth ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Creating education policy</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Improving healthcare services</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Enhancing social services</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Monitoring population growth</strong> is NOT a direct application of the Happiness Index (that's a demographic tool, unrelated to well-being measurement)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>World Happiness Report — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li>Released by: <span class="hl">UN Sustainable Development Solutions Network</span> (also cross-referenced: Oxford Wellbeing Research, Gallup Institute)</li>
+        <li>Top 3: <span class="hl-g">Finland → Iceland → Denmark</span> ("FID")</li>
+        <li>India's Rank: <span class="hl-p"><strong>116th</strong></span></li>
+        <li>Bottom 3: <strong>Afghanistan</strong> (last), Sierra Leone (2nd last), Malawi (3rd last)</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- INSOLATION -->
+    <div class="sec blue">㉒ Geography — Insolation &amp; Solar Radiation ☀️</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q26.</span> Which of the following is NOT a primary factor affecting the variation of insolation on Earth?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rotation of the Earth</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Transparency of the atmosphere</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Angle of inclination of the sun's rays</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>(whichever factor is unrelated to insolation, per the given options) ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: Rotation, atmospheric transparency, and angle of sun's rays ARE genuine factors affecting insolation; presence of water bodies also matters — the answer excludes an unrelated distractor option</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Insolation — Key Facts:</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Insolation</span> = Incoming Solar Radiation (short wavelength). <span class="hl-g">Terrestrial Radiation</span> = outgoing (long wavelength) — trapped by greenhouse gases</li>
+        <li>Greenhouse gases (by contribution): <span class="hl-p">Water vapour</span> &gt; CO₂ &gt; Methane &gt; N₂O</li>
+        <li><strong>Maximum insolation is NOT at the Equator</strong> — it's slightly above/below it (Equator has high cloud cover/rainfall, reducing atmospheric transparency)</li>
+        <li>Beyond <span class="hl-b">Tropic of Cancer (23.5°N)</span> / <span class="hl-b">Tropic of Capricorn (23.5°S)</span>, direct/vertical rays never fall — only slanting rays (cover more area, less heating per unit area)</li>
+        <li><strong>Arctic/Antarctic Circle (66.5°N/S)</strong> — day/night can last up to 6 months</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- HUMAN REPRODUCTION -->
+    <div class="sec green">㉓ Biology — Human Reproduction &amp; Gestation 👶</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q27.</span> Which sequence correctly represents the chronological order of human development during gestation?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Zygote → Embryo → Fetus ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Embryo → Zygote → Fetus</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fetus → Zygote → Embryo</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>—</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — <strong>Zygote → Embryo → Fetus</strong></div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Human Reproduction — Process Flow:</strong></p>
+      <ul class="hw arr">
+        <li>Sperm enters through the <span class="hl">cervix</span> (HPV — Human Papilloma Virus — causes cervical cancer)</li>
+        <li>Egg (largest human cell) released from the <span class="hl-g">ovary</span>; Sperm = smallest human cell</li>
+        <li><strong>Fertilization</strong> occurs in the <span class="hl-p"><strong>Fallopian tube</strong></span> → forms the <strong>Zygote</strong></li>
+        <li>Zygote implants in the thickened lining of the <span class="hl-b">Uterus</span> → develops into <strong>Embryo</strong> → then <strong>Fetus</strong></li>
+      </ul>
+    </div>
+
+    <div class="trick">
+      🧠 <strong>Uterus vs Ureter — Don't Confuse!</strong> <span class="hl">Ureters</span> = tubes from kidneys to the urinary bladder (excretory system). <span class="hl-g">Uterus</span> = female reproductive organ where the embryo develops. Completely different systems!
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- CARNATIC MUSIC INSTRUMENTS -->
+    <div class="sec purple">㉔ Art &amp; Culture — Carnatic Music Instruments 🥁</div>
+    <div class="mcq">
+      <div class="mcq-h"><span class="qno">Q28.</span> Evaluate the statements about Carnatic music instruments and choose the correct option: Is the Mridangam a "melodic percussion instrument used to outline the Raga"?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>FALSE — Mridangam is used for RHYTHMIC accompaniment, NOT to outline Raga ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: The Mridangam has nothing to do with outlining a Raga — it's purely a <strong>rhythmic percussion instrument</strong> (Avanaddha Vadya)</div>
+    </div>
+
+    <div class="key-box">
+      <p class="hw"><strong>Natya Shastra — 4 Instrument Categories (Recap):</strong></p>
+      <ul class="hw arr">
+        <li><span class="hl">Tat Vadya</span> — String instruments</li>
+        <li><span class="hl-g">Ghan Vadya</span> — Solid instruments</li>
+        <li><span class="hl-p">Sushir Vadya</span> — Wind instruments (e.g., Nadaswaram — double-reed, played in South Indian temples/weddings)</li>
+        <li><span class="hl-b">Avanaddha Vadya</span> — Percussion with stretched membrane (e.g., <strong>Mridangam</strong>, Dholak) — produces sound when struck/shaken/rubbed</li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- POCSO ACT -->
+    <div class="sec red">㉕ Polity — POCSO Act 👧</div>
+    <div class="ca-box">
+      <p class="hw"><strong>POCSO Act (Protection of Children from Sexual Offences), 2012:</strong></p>
+      <ul class="hw chk">
+        <li>Deals with sexual offences against children <span class="hl">below 18 years</span> of age</li>
+        <li><span class="hl-g">Gender-neutral</span> — applies regardless of the victim's gender</li>
+        <li>The abettor/instigator receives the <strong>same punishment</strong> as the offender</li>
+        <li>Minimum punishment: <span class="hl-p"><strong>7 years imprisonment</strong></span></li>
+        <li>Victim's identity is kept <strong>confidential</strong></li>
+        <li>Trials are conducted through <strong>Special (Fast-Track) Courts</strong></li>
+      </ul>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- QUICK REVISION TABLE -->
+    <div class="sec teal">📋 Quick Revision — All Key Facts (Blitz Lecture 16)</div>
+    <table class="qr-t">
+      <tr><th>Topic / Fact</th><th>Answer</th></tr>
+      <tr><td>VP is part of which branch(es)</td><td>Both Executive and Legislative</td></tr>
+      <tr><td>VP Articles range</td><td>63–71</td></tr>
+      <tr><td>Exclusive SC jurisdiction on President/VP election disputes</td><td>Article 71</td></tr>
+      <tr><td>Plant cell vacuole size</td><td>50-90% of cell volume</td></tr>
+      <tr><td>Meristematic tissue vacuole</td><td>Absent</td></tr>
+      <tr><td>10th Schedule</td><td>Anti-Defection Law (52nd Amendment)</td></tr>
+      <tr><td>8th Schedule</td><td>Recognized Languages</td></tr>
+      <tr><td>9th Schedule</td><td>Land Reforms (1st Amendment, 1951)</td></tr>
+      <tr><td>Merger exception to defection</td><td>91st Amendment (2/3rd party merger)</td></tr>
+      <tr><td>Kihoto Hollohan case</td><td>Speaker's decision subject to judicial review</td></tr>
+      <tr><td>I.R. Coelho case (2007)</td><td>9th Schedule laws post-1973 subject to judicial review</td></tr>
+      <tr><td>Gothic architecture features</td><td>Ribbed vaults, pointed arches, flying buttresses, stained glass</td></tr>
+      <tr><td>Electromagnetic Induction discovered by</td><td>Michael Faraday, 1831</td></tr>
+      <tr><td>Induced EMF formula</td><td>BVL (Fleming's Right-Hand Rule)</td></tr>
+      <tr><td>Force on current-carrying conductor</td><td>Fleming's Left-Hand Rule</td></tr>
+      <tr><td>Force on charged particle (E+B fields)</td><td>Lorentz Force</td></tr>
+      <tr><td>NCST constitutional article</td><td>338A (separated by 89th Amendment, 2003)</td></tr>
+      <tr><td>NHRC — statutory basis</td><td>Protection of Human Rights Act, 1993</td></tr>
+      <tr><td>Ghaghra merges with Ganga at</td><td>Chapra, Bihar (NOT Allahabad)</td></tr>
+      <tr><td>Deuce — associated sport</td><td>Tennis</td></tr>
+      <tr><td>India's first C-in-C (Independent India)</td><td>K.M. Cariappa</td></tr>
+      <tr><td>Indian Army Day</td><td>January 15</td></tr>
+      <tr><td>Azad Hind Fauj founder</td><td>Mohan Singh</td></tr>
+      <tr><td>AQI released by</td><td>CPCB (Central Pollution Control Board)</td></tr>
+      <tr><td>AQI 0-50 category</td><td>Good</td></tr>
+      <tr><td>Population pyramid — rapid growth shape</td><td>Triangular</td></tr>
+      <tr><td>India's replacement fertility level</td><td>2.1 (current ~1.9)</td></tr>
+      <tr><td>India's population explosion period</td><td>1951-1981</td></tr>
+      <tr><td>Cooperative societies — which List</td><td>State List (NOT Union List)</td></tr>
+      <tr><td>Doctrine of Precedence — Article</td><td>Article 200 (Governor reserves bill for President)</td></tr>
+      <tr><td>Western Coastal Plains feature</td><td>Lagoons and backwaters</td></tr>
+      <tr><td>Eastern Coastal Plains feature</td><td>Large deltas</td></tr>
+      <tr><td>Bank Rate vs Repo Rate</td><td>Bank Rate = no collateral, higher rate; Repo = collateral-based</td></tr>
+      <tr><td>Stagflation definition</td><td>Stagnant economy + inflation + high unemployment</td></tr>
+      <tr><td>Nagabhatta I</td><td>Founder, Gurjara-Pratihara; repelled Arab invasions</td></tr>
+      <tr><td>Mihir Bhoja</td><td>"Real founder" of Gurjara-Pratihara dynasty</td></tr>
+      <tr><td>Sheikhzadas/Hindustani (Mughal era)</td><td>Indigenous Muslim converts in admin posts</td></tr>
+      <tr><td>PM MITRA — Ministry</td><td>Ministry of Textiles (7 mega textile parks)</td></tr>
+      <tr><td>First Indian product to get GI tag</td><td>Darjeeling Tea (2004)</td></tr>
+      <tr><td>Happiness Index — released by</td><td>UN Sustainable Development Solutions Network</td></tr>
+      <tr><td>Happiness Index — India's rank</td><td>116th</td></tr>
+      <tr><td>Happiness Index — Top 3</td><td>Finland, Iceland, Denmark</td></tr>
+      <tr><td>Max insolation location</td><td>Slightly above/below Equator (NOT at Equator)</td></tr>
+      <tr><td>Fertilization occurs in</td><td>Fallopian tube</td></tr>
+      <tr><td>Gestation order</td><td>Zygote → Embryo → Fetus</td></tr>
+      <tr><td>Mridangam instrument type</td><td>Avanaddha Vadya (percussion, NOT melodic)</td></tr>
+      <tr><td>POCSO Act year</td><td>2012</td></tr>
+      <tr><td>POCSO minimum punishment</td><td>7 years imprisonment</td></tr>
+    </table>
+
+    <!-- EXAM TIPS -->
+    <div class="sec orange">💡 Topper Tips — Blitz Lecture 16 Ke Liye Yaad Rakho!</div>
+    <div class="two-col">
+      <div class="tip-box">
+        <ul class="hw num">
+          <li><span class="hl"><strong>Vacuoles are LARGER in plant cells</strong></span> (50-90% of volume), NOT animal cells — a frequently reversed trap</li>
+          <li>10th Schedule = Anti-Defection; 8th = Languages; 9th = Land Reforms; 11th = Panchayats; 12th = Municipalities — don't mix these up!</li>
+          <li>Fleming's <span class="hl-g"><strong>Right</strong></span>-Hand Rule = Induced EMF; Fleming's <strong>Left</strong>-Hand Rule = Force on conductor</li>
+          <li>NCST/NCSC/NCBC are <span class="hl-p"><strong>constitutional</strong></span> bodies (Art 338/338A/338B); NHRC/NCW are <strong>statutory</strong></li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <ul class="hw num" style="counter-reset:li 4">
+          <li>Ghaghra meets Ganga at <span class="hl"><strong>Chapra, Bihar</strong></span> — NOT Allahabad (common trap)</li>
+          <li>Max insolation is <span class="hl-g"><strong>NOT at the Equator</strong></span> — it's just above/below it, due to cloud cover reducing atmospheric transparency at the Equator itself</li>
+          <li>Cooperative societies = <strong>State List</strong> subject (frequently mistaken for Union List)</li>
+          <li>Extreme absolute words ("no impact," "does not release," "never," "completely") in Assertion-Reason statements are usually FALSE</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sticky green" style="margin-top:20px;text-align:center">
+      <div class="slbl">📚 END OF BLITZ LECTURE 16 NOTES</div>
+      <strong>Mixed PYQ Series | All Questions Covered ✅ | Practice karo, Mock do, Top karo! 🎯</strong>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
