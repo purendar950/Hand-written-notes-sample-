@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>President &amp; Vice President of India — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.85rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.1rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.45rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:380px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.45rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.15rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:0.95rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">UPSC<br>POLITY</div>
+    <div class="tag">Indian Polity — Union Executive</div>
+    <h1>President &amp; Vice President of India</h1>
+    <h2>Articles 52 – 72</h2>
+    <div class="sub">Election • Qualification • Impeachment • Pardoning Power</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Art 52–55</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">📜 Art 56–61</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🗳️ Vacancy &amp; Presidents</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🎗️ Vice President</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">⚖️ Pardoning Power</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M8 32 L8 8 L32 8 L32 32" fill="#eaf2fb"/><line x1="8" y1="14" x2="32" y2="14"/><line x1="8" y1="20" x2="32" y2="20"/><line x1="8" y1="26" x2="32" y2="26"/></g></svg>
+    <svg class="doodle" style="top:250px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><rect x="8" y="16" width="24" height="16" rx="2" fill="#ffe08a"/><circle cx="20" cy="10" r="5"/><line x1="20" y1="15" x2="20" y2="16"/></g></svg>
+    <svg class="doodle" style="top:540px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:820px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><ellipse cx="20" cy="20" rx="15" ry="15" fill="#fff"/><path d="M20 5 L20 35 M5 20 L35 20"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><path d="M8 8 L32 32 M32 8 L8 32"/></g></svg>
+
+    <h3 class="sec">The President — Articles 52 to 55</h3>
+    <p><strong>Article 52</strong>: <span class="hl">"There shall be a President of India."</span> This is the very first thing the Constitution establishes about the office.</p>
+    <p><strong>Article 53</strong>: <span class="red">Executive Power of the Union</span> — all the executive power of the Union is vested in the President.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Articles 52–55 at a Glance</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="30" text-anchor="middle" class="dtxt-sm">52: There shall be</text>
+        <text x="73" y="41" text-anchor="middle" class="dtxt-xs">a President of India</text>
+        <line x1="138" y1="26" x2="162" y2="26" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrA)"/>
+        <rect x="164" y="8" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="26" text-anchor="middle" class="dtxt-sm">53: Executive</text>
+        <text x="228" y="38" text-anchor="middle" class="dtxt-xs">Power of the Union</text>
+        <line x1="228" y1="44" x2="228" y2="66" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrA)"/>
+        <rect x="164" y="68" width="128" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="228" y="86" text-anchor="middle" class="dtxt-sm-red">54: Electoral College</text>
+        <line x1="164" y1="86" x2="140" y2="86" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrA)"/>
+        <rect x="8" y="68" width="128" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="72" y="86" text-anchor="middle" class="dtxt-sm-red">55: Manner of</text>
+        <text x="72" y="98" text-anchor="middle" class="dtxt-sm-red">Election</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Article 54 — Election: The Electoral College</h4>
+    <p>Article 54 tells us <strong>who</strong> participates in the President's election — the <span class="hl">Electoral College</span>: elected <strong>MPs</strong> and elected <strong>MLAs</strong> only.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      <strong>Nominated</strong> members of Parliament (like nominated Rajya Sabha members) do <strong>NOT</strong> participate in the President's election — only <strong>elected</strong> MPs and MLAs form the Electoral College.
+    </div>
+
+    <h4 class="subsec">Article 55 — Manner of Election</h4>
+    <p>Article 55 tells us <strong>how</strong> they are elected — the manner is <span class="hl red ring">Proportional Representation with Single Transferable Vote (PR-STV)</span>.</p>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>54 = WHO (Electoral College) → 55 = HOW (Manner: Proportional Representation + Single Transferable Vote)</div>
+
+    <h4 class="subsec">Where Was It Borrowed From?</h4>
+    <ul>
+      <li>The <strong>offices</strong> of President and Vice President were borrowed from the <span class="hl">USA</span></li>
+      <li>The <strong>manner/procedure of election</strong> (PR-STV) was borrowed from <span class="hl">Ireland</span></li>
+    </ul>
+
+    <p>This election is <strong>indirect</strong> — the people of India don't vote directly; their elected representatives (MPs/MLAs) vote on their behalf. Voting happens by <span class="red">secret ballot</span> — nobody, not even one's own party, needs to be told who was voted for.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Nomination for the presidential election requires <strong>50 proposers and 50 seconders</strong> — 50 people must propose the candidate's name, and 50 more must back (second) it.
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:10px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="6" y="10" width="28" height="22" rx="2" fill="#eaf2fb"/><line x1="6" y1="16" x2="34" y2="16"/><circle cx="12" cy="13" r="1.2" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:290px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M14 20 L18 24 L27 14"/></g></svg>
+    <svg class="doodle" style="top:580px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="14" rx="2" fill="#ffd0d3"/><line x1="20" y1="18" x2="20" y2="8"/><circle cx="20" cy="6" r="2" fill="#8a1414" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:880px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M20 4 L23 15 L34 15 L25 22 L28 33 L20 26 L12 33 L15 22 L6 15 L17 15 Z" fill="#fff2a0"/></g></svg>
+    <svg class="doodle" style="top:1150px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+
+    <h3 class="sec">Art 56–61: Term, Qualification &amp; Impeachment</h3>
+
+    <h4 class="subsec">Article 58 — Qualification for Election as President</h4>
+    <ul>
+      <li>Must be a <strong>citizen of India</strong></li>
+      <li>Must be at least <span class="hl">35 years of age</span></li>
+      <li>Must have the qualifications required to be elected as a member of the <strong>Lok Sabha</strong> (the Lok Sabha itself requires 25 years, but for President the age is separately fixed at 35)</li>
+    </ul>
+
+    <h4 class="subsec">Article 56 — Term of Office</h4>
+    <p>The President's term is <span class="hl">5 years</span>. If a vacancy arises due to death, resignation, or removal, and a new President is elected, they too serve a full fresh term of 5 years.</p>
+
+    <div class="sticky blue"><b>💡 Eligibility for Re-election</b>A President can be re-elected <strong>any number of times</strong> — unlike the USA, where a president can serve a maximum of only two terms.</div>
+
+    <h4 class="subsec">Article 59 — Conditions of Office</h4>
+    <p>The President must <span class="red">not be a Member of Parliament or a State Legislature</span>. If already an MP/MLA, they must resign that seat before assuming the presidency.</p>
+
+    <h4 class="subsec">Article 60 — Oath or Affirmation</h4>
+    <p>The oath of the President is administered by the <span class="hl">Chief Justice of India (CJI)</span>, and in the CJI's absence, by the <strong>senior-most judge</strong> of the Supreme Court available.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: Order of Articles 56–61</div>
+      <svg class="diagram-svg" viewBox="0 0 300 150">
+        <defs><marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="4" y="10" width="90" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="49" y="31" text-anchor="middle" class="dtxt-xs">56: Term (5 yrs)</text>
+        <line x1="94" y1="27" x2="106" y2="27" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="108" y="10" width="90" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="153" y="31" text-anchor="middle" class="dtxt-xs">58: Qualification</text>
+        <line x1="198" y1="27" x2="210" y2="27" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="212" y="10" width="86" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="255" y="31" text-anchor="middle" class="dtxt-xs">59: Conditions</text>
+        <line x1="255" y1="44" x2="255" y2="62" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="212" y="64" width="86" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="255" y="85" text-anchor="middle" class="dtxt-xs">60: Oath (CJI)</text>
+        <line x1="212" y1="81" x2="198" y2="81" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="4" y="64" width="90" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="1.8"/>
+        <text x="49" y="85" text-anchor="middle" class="dtxt-sm-red">61: Impeachment</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Article 61 — Procedure for Impeachment</h4>
+    <p>Impeachment means <span class="hl">removal of the President</span>. This system was borrowed from the <strong>USA Constitution</strong>. The ground for impeachment is <span class="red">violation of the Constitution</span>.</p>
+
+    <ol>
+      <li>The impeachment motion can be initiated in <strong>either the Lok Sabha or the Rajya Sabha</strong>.</li>
+      <li>It must be signed by <span class="hl">1/4th of the total members</span> of whichever House it originates in, and a <strong>14-day prior notice</strong> must be given.</li>
+      <li>It must then be passed by a <span class="hl">special majority</span> — majority of the total membership of the House <em>and</em> 2/3rd of members present and voting (whichever is the bigger number is what's needed).</li>
+      <li>It then goes to the other House, which <strong>investigates the charges</strong> — this makes the whole process <span class="red">quasi-judicial</span> (the second House does judiciary-like work of examining charges, without actually being a court).</li>
+      <li>The other House must also pass it by a <strong>special majority</strong>.</li>
+      <li>The President has the <strong>full right to represent himself</strong> and explain why he should not be impeached.</li>
+    </ol>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Quasi-judicial = "half-baked" judiciary work — the second House is doing judiciary-like work (examining charges) but it isn't actually a court.
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Sequence to remember: There shall be a President (52) → Executive Power (53) → Electoral College (54) → Manner of Election (55) → Term (56) → Qualification (58) → Conditions (59) → Oath (60) → Impeachment (61).
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="10" y="16" width="20" height="14" rx="2" fill="#eaf2fb"/><path d="M14 16 L14 10 Q20 4 26 10 L26 16"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 12 L20 21 L26 25"/></g></svg>
+    <svg class="doodle" style="top:860px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><path d="M20 34 L20 16 Q10 16 10 8 Q20 8 20 16 Q20 8 30 8 Q30 16 20 16"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Electoral College vs Impeachment</h3>
+    <p>A very important comparison — <span class="red">who participates in the President's election</span> is NOT the same group as <span class="red">who participates in the President's impeachment</span>.</p>
+
+    <table>
+      <tr><th>Point</th><th>Electoral College (Election)</th><th>Impeachment (Removal)</th></tr>
+      <tr><td><strong>Members</strong></td><td class="imp">Only elected MPs + elected MLAs</td><td class="imp">All MPs — elected AND nominated</td></tr>
+      <tr><td><strong>MLAs' role</strong></td><td>Yes, MLAs participate</td><td>No role for MLAs at all</td></tr>
+    </table>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't assume the same people who elect the President also impeach him! Election Electoral College = elected MPs + elected MLAs. Impeachment = ALL MPs (elected + nominated), no MLAs whatsoever.
+    </div>
+
+    <p>MLAs come from Legislative Assemblies of all <strong>28 states</strong>, plus the Union Territories of <span class="hl">Delhi and Puducherry</span> (which have their own Legislative Assemblies mentioned in the Constitution). Jammu &amp; Kashmir has a Legislative Assembly too, but it is not yet mentioned in the Constitution for this purpose.</p>
+
+    <h4 class="subsec">Article 62 — Filling a Vacancy</h4>
+    <p>A vacancy in the President's office can be created by <strong>death, resignation, or removal</strong>. The resignation is given to the <span class="hl">Vice President</span> (e.g., Jagdeep Dhankhar's resignation was given to Droupadi Murmu).</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Filling a Presidential Vacancy</div>
+      <svg class="diagram-svg" viewBox="0 0 300 180">
+        <defs><marker id="arrC" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="80" y="6" width="140" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="28" text-anchor="middle" class="dtxt-sm-red">Vacancy Created</text>
+        <line x1="150" y1="42" x2="150" y2="64" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="20" y="66" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="80" y="84" text-anchor="middle" class="dtxt-sm">VP available →</text>
+        <text x="80" y="97" text-anchor="middle" class="dtxt-sm">Acting President</text>
+        <rect x="160" y="66" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="220" y="84" text-anchor="middle" class="dtxt-sm">No VP →</text>
+        <text x="220" y="97" text-anchor="middle" class="dtxt-sm">CJI takes over</text>
+        <line x1="80" y1="106" x2="80" y2="128" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <line x1="220" y1="106" x2="150" y2="128" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="60" y="130" width="180" height="36" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="150" y="152" text-anchor="middle" class="dtxt-sm">New election within 6 months</text>
+      </svg>
+    </div>
+
+    <p>Once the President is gone, the sitting <strong>Vice President becomes the Acting President</strong> (a temporary role), and a fresh election must be held <span class="hl">within six months</span> of the vacancy. If there is no Vice President either, the <strong>CJI</strong> takes over as Acting President.</p>
+
+    <div class="quotebox">📖 Example: When Zakir Hussain died in office, VP V.V. Giri became Acting President. When V.V. Giri resigned to contest the permanent presidential election himself, CJI M. Hidayatullah became Acting President — and after the new President took office, Hidayatullah went back to being CJI.</div>
+
+    <h4 class="subsec">Quota &amp; Value of Votes</h4>
+    <ul>
+      <li><strong>Winning quota</strong> = Total valid votes ÷ (1 + number of vacancies), then add 1 — for the President's election there is only ONE vacancy, so the divisor is simply "1+1"</li>
+      <li><strong>Value of an MLA's vote</strong> = (population of that state ÷ total number of elected MLAs in that state) × 1/1000</li>
+      <li><strong>Value of an MP's vote</strong> = total value of all MLAs' votes (across all states) ÷ total number of elected MPs (no need to further divide by 1/1000 here)</li>
+    </ul>
+
+    <h4 class="subsec">List of Presidents of India</h4>
+    <div class="chain">
+      <span class="chip">Rajendra Prasad '50-'62</span><span class="arrow">→</span>
+      <span class="chip">S. Radhakrishnan</span><span class="arrow">→</span>
+      <span class="chip">Zakir Hussain†</span><span class="arrow">→</span>
+      <span class="chip">V.V. Giri</span><span class="arrow">→</span>
+      <span class="chip">Fakhruddin Ali Ahmed</span><span class="arrow">→</span>
+      <span class="chip">Neelam Sanjiva Reddy</span><span class="arrow">→</span>
+      <span class="chip">Giani Zail Singh</span><span class="arrow">→</span>
+      <span class="chip">R. Venkataraman</span><span class="arrow">→</span>
+      <span class="chip">Shankar Dayal Sharma</span><span class="arrow">→</span>
+      <span class="chip">K.R. Narayanan</span><span class="arrow">→</span>
+      <span class="chip">A.P.J. Abdul Kalam</span><span class="arrow">→</span>
+      <span class="chip">Pratibha Patil</span><span class="arrow">→</span>
+      <span class="chip">Pranab Mukherjee</span><span class="arrow">→</span>
+      <span class="chip">Ram Nath Kovind</span><span class="arrow">→</span>
+      <span class="chip">Droupadi Murmu</span>
+    </div>
+
+    <div class="sticky pink"><b>🧠 Memory Trick</b>Dr. Rajendra Prasad served <strong>two terms (1950–1962)</strong> — the <strong>only</strong> President to serve two terms so far, and the longest-serving President. The 1975 Emergency (internal disturbance) was imposed during V.V. Giri &amp; Fakhruddin Ali Ahmed's period. Droupadi Murmu is the <strong>first tribal President</strong> and the second woman President (after Pratibha Patil).</div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="8" y="10" width="24" height="20" rx="2" fill="#eaf2fb"/><line x1="8" y1="16" x2="32" y2="16"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><path d="M8 8 L32 32 M32 8 L8 32"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">The Vice President — Articles 63 to 71</h3>
+    <p><strong>Article 63</strong>: There shall be a Vice President of India. He is the <span class="hl">ex-officio Chairman of the Council of States (Rajya Sabha)</span> — meaning whoever becomes Vice President automatically becomes Rajya Sabha Chairman; there is no separate selection for that post.</p>
+
+    <p>During a <strong>casual vacancy</strong> of the President's office, the Vice President <span class="red">acts as President</span> and discharges the President's functions.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: Vice President — Key Facts</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="70" y="6" width="160" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="28" text-anchor="middle" class="dtxt-sm-red">63: Vice President</text>
+        <line x1="150" y1="42" x2="150" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <rect x="20" y="62" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="80" y="80" text-anchor="middle" class="dtxt-sm">Ex-officio</text>
+        <text x="80" y="93" text-anchor="middle" class="dtxt-sm">RS Chairman</text>
+        <rect x="160" y="62" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="220" y="80" text-anchor="middle" class="dtxt-sm">Acts as President</text>
+        <text x="220" y="93" text-anchor="middle" class="dtxt-sm">(casual vacancy)</text>
+        <line x1="150" y1="104" x2="150" y2="122" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <rect x="50" y="124" width="200" height="40" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="150" y="142" text-anchor="middle" class="dtxt-sm">Election: Indirect,</text>
+        <text x="150" y="155" text-anchor="middle" class="dtxt-sm">All MPs (elected+nominated), PR-STV</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Election of Vice President</h4>
+    <p>Also <span class="hl">indirect</span>, also by <strong>Proportional Representation + Single Transferable Vote</strong>. The Electoral College here is <span class="red">all Members of Parliament</span> — both elected AND nominated. <strong>MLAs have no role</strong> in this election.</p>
+
+    <h4 class="subsec">Article 67 — Term &amp; Resignation</h4>
+    <p>The Vice President's term is <span class="hl">5 years</span>. If he wishes to resign, he resigns to the <strong>President</strong> (the President, by contrast, resigns to the Vice President).</p>
+
+    <h4 class="subsec">Removal of the Vice President</h4>
+    <ul>
+      <li>The removal resolution can be initiated <strong>only in the Rajya Sabha</strong> (since he is its ex-officio Chairman)</li>
+      <li>It needs an <span class="hl">effective majority</span> in the Rajya Sabha (majority of the current effective strength, i.e., total minus vacancies)</li>
+      <li>It then goes to the <strong>Lok Sabha</strong>, where only a <span class="hl">simple majority</span> is needed</li>
+      <li>A <strong>14-day prior notice</strong> is required, just like for the President</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Unlike the President's impeachment (which can start in either House), the <strong>Vice President's removal resolution can only start in the Rajya Sabha</strong> — because he's the Rajya Sabha's own ex-officio Chairman!
+    </div>
+
+    <h4 class="subsec">Article 68 &amp; Article 70/71</h4>
+    <p><strong>Article 68</strong> covers the time for holding an election to fill a Vice President vacancy and the term of office. <strong>Article 70</strong> covers discharge of the President's functions in other contingencies (when the President is absent, not vacant). <strong>Article 71</strong> says any dispute regarding the election of the President or Vice President is decided by the <span class="hl">Supreme Court</span>, whose decision is final.</p>
+
+    <p>Who administers the Vice President's oath? The <strong>President</strong> does.</p>
+
+    <div class="sticky green"><b>🧠 Memory Trick</b>V.V. Giri was the <strong>first</strong> Vice President to resign (to contest the presidential election). Jagdeep Dhankhar is the <strong>third</strong> Vice President to resign.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      <strong>Hamid Ansari</strong> is the longest-serving Vice President — both he and <strong>S. Radhakrishnan</strong> served two terms (10 years each), but Ansari edges ahead when counting exact number of days.
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="8" y="8" width="24" height="24" rx="3" fill="#eaf2fb"/><line x1="8" y1="16" x2="32" y2="16"/><line x1="16" y1="16" x2="16" y2="32"/><line x1="24" y1="16" x2="24" y2="32"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><path d="M4 8 C14 6 18 20 30 24"/><path d="M22 20 L31 25 L27 15"/></g></svg>
+
+    <h3 class="sec">Article 72 — Pardoning Power of the President</h3>
+    <p>The President has the power to grant pardons under Article 72. There are <span class="hl">five forms</span> of this power:</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Five Forms of Pardoning Power</div>
+      <svg class="diagram-svg" viewBox="0 0 300 250">
+        <defs><marker id="arrE" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <ellipse cx="150" cy="30" rx="70" ry="24" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="36" text-anchor="middle" class="dtxt-big">ARTICLE 72</text>
+        <path d="M110 50 Q80 65 60 78" fill="none" stroke="#c31f1f" stroke-width="1.8" marker-end="url(#arrE)"/>
+        <path d="M150 54 Q150 66 150 78" fill="none" stroke="#c31f1f" stroke-width="1.8" marker-end="url(#arrE)"/>
+        <path d="M190 50 Q220 65 240 78" fill="none" stroke="#c31f1f" stroke-width="1.8" marker-end="url(#arrE)"/>
+        <ellipse cx="55" cy="98" rx="50" ry="24" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="55" y="94" text-anchor="middle" class="dtxt-sm">Pardon</text>
+        <text x="55" y="106" text-anchor="middle" class="dtxt-xs">Full acquittal</text>
+        <ellipse cx="150" cy="98" rx="50" ry="24" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="94" text-anchor="middle" class="dtxt-sm">Commutation</text>
+        <text x="150" y="106" text-anchor="middle" class="dtxt-xs">Change form</text>
+        <ellipse cx="245" cy="98" rx="50" ry="24" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="245" y="94" text-anchor="middle" class="dtxt-sm">Remission</text>
+        <text x="245" y="106" text-anchor="middle" class="dtxt-xs">Reduce duration</text>
+        <ellipse cx="100" cy="180" rx="55" ry="26" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="100" y="176" text-anchor="middle" class="dtxt-sm">Respite</text>
+        <text x="100" y="189" text-anchor="middle" class="dtxt-xs">Reduce (health etc.)</text>
+        <ellipse cx="210" cy="180" rx="55" ry="26" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="210" y="176" text-anchor="middle" class="dtxt-sm">Reprieve</text>
+        <text x="210" y="189" text-anchor="middle" class="dtxt-xs">Temporary hold</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Form</th><th>Meaning</th></tr>
+      <tr><td class="imp">Pardon</td><td>Complete acquittal — fully absolves the person of all charges</td></tr>
+      <tr><td class="imp">Commutation</td><td>Changing the <strong>form</strong> of punishment (e.g., death sentence → life imprisonment)</td></tr>
+      <tr><td class="imp">Remission</td><td>Form stays the same, only the <strong>duration</strong> is reduced (e.g., life imprisonment → 10 years)</td></tr>
+      <tr><td class="imp">Respite</td><td>Reducing the term of punishment due to <strong>special conditions</strong> (e.g., deteriorating health)</td></tr>
+      <tr><td class="imp">Reprieve</td><td>A <strong>temporary hold/stay</strong> on the execution of a punishment</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Commutation changes the <strong>FORM</strong> (death → life). Remission changes only the <strong>DURATION</strong>, not the form (life imprisonment → 10 years). Don't mix the two up!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Respite (reduction due to special/health conditions) is often confused with Remission (a general reduction in duration) — Respite is specifically tied to a special circumstance like health.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Art 52-55:</strong> President exists, Executive Power, Electoral College (elected MPs+MLAs), Manner (PR-STV, from Ireland)</li>
+      <li><strong>Art 56-61:</strong> Term (5 yrs, unlimited re-election), Qualification (35 yrs, citizen, Lok Sabha eligible), Conditions (no MP/MLA), Oath (by CJI), Impeachment (violation of Constitution, either House, special majority, quasi-judicial)</li>
+      <li><strong>Art 62:</strong> Vacancy filled within 6 months; VP or CJI acts as President meanwhile</li>
+      <li><strong>Art 63-71:</strong> VP is ex-officio RS Chairman; election by all MPs (elected+nominated), no MLAs; removal starts only in RS</li>
+      <li><strong>Art 72:</strong> Pardon, Commutation, Remission, Respite, Reprieve</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Remember the story chain in one breath: <strong>52 President exists → 53 Executive Power → 54 Electoral College → 55 Manner of Election → 56 Term → 58 Qualification → 59 Conditions → 60 Oath → 61 Impeachment → 62 Vacancy → 63-71 Vice President → 72 Pardoning Power.</strong>
+    </div>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Polity • SSC / UPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
