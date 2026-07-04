@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Viceroys of India — Canning to Mountbatten (Part 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.85rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- BRAND BADGE ---------- */
+  .brand-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .brand-badge .bd-1{color:#ffffff;}
+  .brand-badge .bd-2{color:#3ddc84;}
+  .footer-brand{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-brand .bd-1{color:#ffffff;}
+  .footer-brand .bd-2{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.05rem;
+    font-weight:700;
+    padding:9px 12px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.3deg);}
+  #page2{transform:rotate(0.25deg);}
+  #page3{transform:rotate(-0.2deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.25deg);}
+  #page6{transform:rotate(0.2deg);}
+  #page7{transform:rotate(-0.3deg);}
+  #page8{transform:rotate(0.25deg);}
+  #page9{transform:rotate(-0.2deg);}
+  #page10{transform:rotate(0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.45rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.9rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:380px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.45rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.1rem;}
+    h4.subsec{font-size:1.15rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:0.88rem; padding:8px 9px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>CGL</div>
+    <div class="tag">Modern Indian History • Part 2</div>
+    <h1>Viceroys of India</h1>
+    <h2>Canning to Mountbatten (1856–1948)</h2>
+    <div class="sub">Continued from <b>Part 1: Governor General &amp; Viceroy of India</b> &nbsp;|&nbsp; For <b>SSC CGL, CHSL, UP Police Constable &amp; other exams</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="brand-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="bd-1">Study</span><span class="bd-2">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">👑 Canning</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">🕵️ Mayo &amp; Lytton</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🏭 Ripon &amp; Dufferin</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">✂️ Curzon</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🕌 Minto II &amp; Hardinge II</button>
+    <button class="tab-btn" id="tab6" onclick="showPage(6)">⚖️ Chelmsford</button>
+    <button class="tab-btn" id="tab7" onclick="showPage(7)">📖 Reading</button>
+    <button class="tab-btn" id="tab8" onclick="showPage(8)">🎯 Irwin &amp; Willingdon</button>
+    <button class="tab-btn" id="tab9" onclick="showPage(9)">🎖️ Linlithgow</button>
+    <button class="tab-btn" id="tab10" onclick="showPage(10)">🕊️ Wavell &amp; Mountbatten</button>
+  </div>
+
+  <!-- ============ PAGE 1 : CANNING & LAWRENCE ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:560px; left:8px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:850px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+
+    <h3 class="sec">Lord Canning (1856–1862)</h3>
+    <p>The <span class="hl">Revolt of 1857</span> — also called the <strong>"First War of Independence"</strong> by <strong>V. D. Savarkar</strong> — broke out during Canning's tenure.</p>
+
+    <ul>
+      <li>As a result of the revolt, the <strong>East India Company's rule was abolished</strong>.</li>
+      <li>The <strong>Government of India Act, 1858</strong> was passed, transferring power directly to the British Crown.</li>
+      <li>Canning served as <strong>Governor General from 1856–1858</strong>, and then became the <strong class="ring">first Viceroy of India (1858–1862)</strong> under this new Act.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: 1857 Revolt → Canning Becomes Viceroy</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrC" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="60" y="6" width="180" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="27" text-anchor="middle" class="dtxt-sm">Revolt of 1857 ("1st War of Independence")</text>
+        <line x1="150" y1="40" x2="150" y2="62" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="75" y="64" width="150" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="85" text-anchor="middle" class="dtxt-sm">East India Company abolished</text>
+        <line x1="150" y1="98" x2="150" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="70" y="122" width="160" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="143" text-anchor="middle" class="dtxt-sm">Govt of India Act, 1858</text>
+        <line x1="150" y1="156" x2="150" y2="178" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="75" y="180" width="150" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="201" text-anchor="middle" class="dtxt-sm-red">Canning: 1st Viceroy</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Lord Lawrence (after Canning &amp; Elgin)</h4>
+    <p>Elgin succeeded Canning but is <strong>not exam-important</strong>. Lawrence's tenure is also <strong>not exam-important</strong>; the <strong>Bhutan War</strong> took place during his time.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      One person, two titles: Canning was both the <strong>last Governor General (1856–58)</strong> and the <strong>first Viceroy (1858–62)</strong> of India!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't assume Canning became Viceroy the moment the Revolt started in 1857 — the title changed only after the <strong>Government of India Act, 1858</strong> was passed.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Chain it: <strong>"1857 Revolt → 1858 Act → Canning Crowned Viceroy"</strong> — the Revolt causes the Act, and the Act causes the title change.
+    </div>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 Why did Company Rule end? (tap to expand)</span>
+      <div class="toggle-content">
+        After the <strong>1857 Revolt</strong>, the British government decided it could no longer let the East India Company govern directly — administration passed straight to the <strong>British Crown</strong> via the <strong>Government of India Act, 1858</strong>.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 1 of 10</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 : MAYO & LYTTON ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:6px; left:7px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2"><path d="M20 4 C12 4 7 10 7 17 C7 26 20 36 20 36 C20 36 33 26 33 17 C33 10 28 4 20 4 Z" fill="#ffd0d3"/><circle cx="20" cy="16" r="4" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:560px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:840px; left:6px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="13" fill="#a5760f" font-family="Kalam,cursive" stroke="none">₹</text></g></svg>
+
+    <h3 class="sec">Lord Mayo</h3>
+    <ul>
+      <li>The <strong>Statistical Survey of India</strong> was created during his time.</li>
+      <li>The <strong>Census of 1872</strong> took place during his tenure — it was <span class="hl">incomplete and unsynchronized</span> (not conducted uniformly across all of India).</li>
+      <li>Mayo visited <strong>Port Blair</strong> (Andaman) to inspect the conditions of prisoners there.</li>
+      <li>He was <strong class="ring">assassinated at Port Blair</strong> by <strong>Sher Ali Afridi</strong>, a Pathan convict.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 2: Mayo's Fateful Visit to Port Blair</div>
+      <svg class="diagram-svg" viewBox="0 0 260 200">
+        <path d="M60 20 Q40 60 55 100 Q45 140 80 175 Q120 195 160 175 Q200 150 190 100 Q210 60 175 30 Q160 10 60 20 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2"/>
+        <circle cx="130" cy="95" r="5" fill="#c31f1f"/>
+        <text x="130" y="80" text-anchor="middle" class="dtxt-sm-red">Port Blair</text>
+        <text x="130" y="118" text-anchor="middle" class="dtxt-xs">Mayo assassinated by</text>
+        <text x="130" y="130" text-anchor="middle" class="dtxt-xs">Sher Ali Afridi</text>
+      </svg>
+    </div>
+
+    <div class="sticky pink"><b>📌 Sad but exam-important</b>Mayo went to Port Blair to check on prisoners' conditions — and was killed there while doing so.</div>
+
+    <h3 class="sec">Lord Lytton (1876–1880)</h3>
+    <p>Considered <span class="hl">one of the worst Viceroys of India</span> — he treated Indians as subordinates.</p>
+    <ul>
+      <li><strong>Vernacular Press Act, 1878</strong> — local-language newspapers needed British government permission before publishing anything.</li>
+      <li><strong>Arms Act, 1878</strong> — only Indians needed a license to keep arms (Europeans were exempt).</li>
+      <li><strong>First Delhi Durbar, 1877</strong> — organized for the coronation of <strong>Queen Victoria</strong>, held despite a severe ongoing famine.</li>
+      <li><strong>Second Afghan War</strong> took place during his tenure.</li>
+    </ul>
+
+    <table>
+      <tr><th>Delhi Durbar</th><th>Year</th><th>Viceroy</th><th>Occasion</th></tr>
+      <tr><td class="imp">1st</td><td class="imp">1877</td><td class="imp">Lytton</td><td class="imp">Queen Victoria's coronation</td></tr>
+      <tr><td>2nd</td><td>1903</td><td>—</td><td>—</td></tr>
+      <tr><td>3rd</td><td>1911</td><td>—</td><td>—</td></tr>
+    </table>
+
+    <div class="sticky yellow"><b>📌 Quick Fact</b><strong>Amrit Bazar Patrika</strong> (publisher <strong>Shishir Kumar Ghosh</strong>) converted overnight into an English-language paper — to escape the Vernacular Press Act!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Lytton = <strong>Press + Arms + Durbar + Afghan War</strong> — four things to remember for exams.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Vernacular Press Act</strong> (1878, targets local-language press) with the <strong>Arms Act</strong> (1878, targets weapon licensing) — same year, same Viceroy, different targets!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      A famine was raging, yet Lytton still held a lavish Delhi Durbar in 1877 — remember him as the Viceroy who put British pomp above Indian suffering.
+    </div>
+
+    <div class="pagecount">Page 2 of 10</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 : RIPON & DUFFERIN ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="6" y="20" width="28" height="14" fill="#eadfc4"/><path d="M10 20 L10 10 L16 16 L16 8 L22 16 L22 10 L28 18 L28 20 Z" fill="#eadfc4"/><line x1="6" y1="34" x2="34" y2="34"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:850px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:7px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+
+    <h3 class="sec">Lord Ripon (1880–1884)</h3>
+    <p>Known for cleaning up Lytton's controversial policies and doing good work for Indians.</p>
+    <ul>
+      <li><strong>Repealed the Vernacular Press Act.</strong></li>
+      <li><strong>Repealed the Arms Act.</strong></li>
+      <li><strong>First Factory Act, 1881</strong> — improved conditions for factory workers, including children and women (limited working hours, fixed wages).</li>
+      <li><strong>Hunter Education Commission</strong> — an education commission formed to review the education system (a different commission from the later one on the Jallianwala Bagh massacre).</li>
+      <li><strong>Ilbert Bill controversy, 1883</strong> — drafted by <strong>C.P. Ilbert</strong>; would have allowed <span class="hl">Indian judges to try Europeans</span> (previously, only European judges could try Europeans). Faced heavy British protest in both India and Britain and had to be <strong>withdrawn</strong>.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">📖 Flashback — Wood's Despatch, Dalhousie's time (tap to expand)</span>
+      <div class="toggle-content">
+        An education commission called the <strong>Wood's Despatch</strong> (chaired by <strong>Charles Wood</strong>) was passed during <strong>Lord Dalhousie's</strong> tenure. It is known as the <strong>"Magna Carta of Indian Education."</strong> It rejected the <strong>Downward Filtration Theory</strong> (from Macaulay's Minute, introduced under Bentinck), and instead promoted vernacular languages at the <strong>primary level</strong>, Anglo-vernacular education at the <strong>middle level</strong>, and English only at the <strong>higher level</strong>. The <strong>Hunter Education Commission</strong> during Ripon's time was formed to review this system.
+      </div>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Reviewing India's Education Policy</div>
+      <svg class="diagram-svg" viewBox="0 0 280 140">
+        <defs><marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="10" y="10" width="120" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="70" y="30" text-anchor="middle" class="dtxt-sm">Wood's Despatch</text>
+        <text x="70" y="44" text-anchor="middle" class="dtxt-xs">(Dalhousie's time)</text>
+        <line x1="130" y1="33" x2="160" y2="33" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrR)"/>
+        <text x="145" y="26" text-anchor="middle" class="dtxt-xs">reviewed by</text>
+        <rect x="162" y="10" width="110" height="46" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="217" y="30" text-anchor="middle" class="dtxt-sm-red">Hunter Education</text>
+        <text x="217" y="44" text-anchor="middle" class="dtxt-sm-red">Commission (Ripon)</text>
+      </svg>
+    </div>
+
+    <h3 class="sec">Lord Dufferin</h3>
+    <ul>
+      <li>The <strong>Indian National Congress</strong> was formed during his tenure.</li>
+      <li>Dufferin famously called the Congress a <span class="hl">"factory of sedition."</span></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Ripon undid Lytton's damage: <strong>Vernacular Press Act repealed + Arms Act repealed + Factory Act (1881) + Hunter Education Commission</strong> — all pro-Indian moves!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Ilbert Bill</strong> (1883, judicial equality attempt — withdrawn) with Ripon's <strong>successful</strong> repeal of the Vernacular Press Act — one bill failed due to British protest, the other reform succeeded.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Ripon = "good," Lytton = "bad" — both carried the title "Lord," but only Ripon's actions actually earned Indians' respect.
+    </div>
+
+    <div class="pagecount">Page 3 of 10</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 : CURZON ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M10 6 Q6 20 12 34" fill="#eaf2fb"/><path d="M12 34 Q20 20 30 6" stroke-dasharray="3 3" stroke="#c31f1f"/><path d="M30 6 Q34 20 28 34" fill="#f3ead0"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 8 L36 16 L20 24 L4 16 Z" fill="#eadfc4"/><line x1="12" y1="19" x2="12" y2="28"/><path d="M8 28 Q12 32 16 28"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:850px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:8px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+
+    <h3 class="sec">Lord Curzon (1899–1905)</h3>
+    <ul>
+      <li><strong class="ring">Partition of Bengal, 1905</strong> — his most well-known and controversial act.</li>
+      <li><strong>Indian Universities Act</strong> — aimed at curbing anti-British activities among university youth.</li>
+      <li><strong>Kolkata Corporation Act.</strong></li>
+      <li><strong>Curzon-Kitchener controversy</strong> — Lord Kitchener (commander of the British Army in India) argued that army matters should be resolved by the army itself, not the Viceroy.</li>
+      <li><strong>Younghusband Mission</strong> sent to <span class="hl">Tibet</span> — to prevent feared Russian influence/attack on India through that route.</li>
+      <li>His tenure ended in <strong>1905</strong>, right after the Partition of Bengal.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 4: Partition of Bengal, 1905</div>
+      <svg class="diagram-svg" viewBox="0 0 240 200">
+        <path d="M110 10 Q80 20 70 60 Q55 90 60 120 Q55 160 90 185 Q120 195 150 180" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="75" y1="95" x2="165" y2="95" stroke="#c31f1f" stroke-width="2.4" stroke-dasharray="6 4"/>
+        <path d="M150 180 Q185 160 180 120 Q190 90 165 60 Q150 20 110 10" fill="#eaf2fb" stroke="#3a2b1c" stroke-width="2"/>
+        <text x="110" y="55" text-anchor="middle" class="dtxt-sm">East Bengal</text>
+        <text x="110" y="150" text-anchor="middle" class="dtxt-sm">West Bengal</text>
+        <text x="120" y="88" text-anchor="middle" class="dtxt-sm-red">Divided, 1905</text>
+      </svg>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Curzon's 5 big things: <strong>Partition of Bengal (1905), Indian Universities Act, Kolkata Corporation Act, Curzon-Kitchener controversy, Younghusband Mission to Tibet.</strong>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the <strong>Curzon-Kitchener controversy</strong> (about army control) with the <strong>Partition of Bengal</strong> (about administrative division) — two completely separate issues from the same tenure.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Curzon" sounds like "cursed" — remember him as the Viceroy people still "curse" (criticize) for the divisive Partition of Bengal.
+    </div>
+
+    <div class="pagecount">Page 4 of 10</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 : MINTO II & HARDINGE II ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:560px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 8 L36 16 L20 24 L4 16 Z" fill="#eadfc4"/><line x1="12" y1="19" x2="12" y2="28"/><path d="M8 28 Q12 32 16 28"/></g></svg>
+    <svg class="doodle" style="top:850px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+
+    <h3 class="sec">Lord Minto II (1905–1910)</h3>
+    <p>The <span class="hl">Muslim League</span> was formed during his tenure, in <strong>1906</strong>, in <strong>Dhaka</strong>. Founders: the <strong>Aga Khan</strong> and <strong>Nawab Salimullah</strong>.</p>
+
+    <h3 class="sec">Lord Hardinge II (1910–1916)</h3>
+    <ul>
+      <li><strong class="ring">Third Delhi Durbar</strong> organized during his time (the second had been held in 1903).</li>
+      <li>Held for the coronation of <strong>King George V</strong>.</li>
+      <li>At this Durbar, it was announced that India's capital would shift from <strong>Kolkata to Delhi</strong>.</li>
+      <li>The proclamation was made in <strong>1911</strong>; the capital was officially shifted in <strong>1912</strong>.</li>
+      <li>Reason given for the capital shift: to <span class="hl">appease Muslims</span>.</li>
+    </ul>
+
+    <table>
+      <tr><th>Delhi Durbar</th><th>Year</th><th>Viceroy</th><th>Occasion</th></tr>
+      <tr><td>1st</td><td>1877</td><td>Lytton</td><td>Queen Victoria's coronation</td></tr>
+      <tr><td>2nd</td><td>1903</td><td>—</td><td>—</td></tr>
+      <tr><td class="imp">3rd</td><td class="imp">1911</td><td class="imp">Hardinge II</td><td class="imp">King George V's coronation</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Capital Shifts to Delhi</div>
+      <svg class="diagram-svg" viewBox="0 0 280 130">
+        <defs><marker id="arrCap" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="10" y="10" width="115" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="67" y="30" text-anchor="middle" class="dtxt-sm">3rd Delhi Durbar</text>
+        <text x="67" y="44" text-anchor="middle" class="dtxt-xs">1911, proclamation</text>
+        <line x1="125" y1="33" x2="155" y2="33" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrCap)"/>
+        <rect x="157" y="10" width="115" height="46" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="214" y="30" text-anchor="middle" class="dtxt-sm-red">Capital shifted</text>
+        <text x="214" y="44" text-anchor="middle" class="dtxt-sm-red">Kolkata → Delhi, 1912</text>
+      </svg>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Minto II → <strong>Muslim League (1906, Dhaka)</strong>; Hardinge II → <strong>3rd Delhi Durbar (1911) + Capital shift to Delhi (1912)</strong>.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the year of the <strong>proclamation</strong> (1911, at the Delhi Durbar) with the year the capital <strong>actually shifted</strong> (1912) — they're one year apart!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Remember the order: <strong>Curzon → Minto II → Hardinge II</strong> — "C-M-H." Minto II gives you the Muslim League; Hardinge II gives you the Capital shift.
+    </div>
+
+    <div class="pagecount">Page 5 of 10</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="showPage(6)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 6 : CHELMSFORD ============ -->
+  <div class="page" id="page6">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="16" cy="14" r="7" fill="#eadfc4"/><rect x="12" y="14" width="8" height="4" fill="#eadfc4"/><line x1="20" y1="18" x2="32" y2="18"/><line x1="26" y1="18" x2="26" y2="24"/><line x1="30" y1="18" x2="30" y2="22"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:850px; left:8px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+
+    <h3 class="sec">Lord Chelmsford (1916–1921)</h3>
+    <ul>
+      <li><strong>Lucknow Pact, 1916</strong> — joint demands presented to the British by the <strong>Indian National Congress and the Muslim League</strong>; extremists were re-admitted into Congress (reunion of moderates and extremists); presided over by <strong>Ambika Charan Majumdar</strong>.</li>
+      <li><strong>Home Rule League, 1916</strong> — formed by <strong>Annie Besant and Bal Gangadhar Tilak</strong> (Tilak died in 1920).</li>
+      <li><strong class="ring">Government of India Act, 1919</strong> — also known as the <strong>Montagu-Chelmsford Reforms</strong>, named after Edwin Montagu (Secretary of State for India) and Lord Chelmsford (Viceroy).</li>
+      <li><strong>Rowlatt Act, 1919</strong> — allowed imprisonment without trial, appeal, or lawyer, for up to two years; Gandhiji called it the <span class="hl">"Black Act."</span></li>
+      <li><strong>Rowlatt Satyagraha</strong> launched by Gandhiji; <strong>Saifuddin Kitchlew and Dr. Satyapal</strong> were arrested (April 1919).</li>
+      <li><strong>Jallianwala Bagh massacre, 13 April 1919</strong> — occurred during Baisakhi, while people protested the arrests.</li>
+      <li><strong>Khilafat Movement</strong> began, 1919.</li>
+      <li><strong>Non-Cooperation Movement</strong> launched, 1920.</li>
+    </ul>
+
+    <div class="chain">
+      <span class="chip">1916 Lucknow Pact &amp; Home Rule League</span><span class="arrow">→</span>
+      <span class="chip">1919 GoI Act</span><span class="arrow">→</span>
+      <span class="chip">1919 Rowlatt Act</span><span class="arrow">→</span>
+      <span class="chip">1919 Jallianwala Bagh</span><span class="arrow">→</span>
+      <span class="chip">1919 Khilafat</span><span class="arrow">→</span>
+      <span class="chip">1920 Non-Cooperation</span>
+    </div>
+
+    <div class="sticky blue"><b>📖 Quick Note</b>The post of <strong>Secretary of State for India</strong> was created by the <strong>Government of India Act, 1858</strong>. Montagu held this post when the 1919 Act was passed — hence "Montagu-Chelmsford Reforms."</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Chelmsford's tenure (1916–1921) is packed: <strong>Lucknow Pact + Home Rule League (1916) → GoI Act 1919 → Rowlatt Act 1919 → Jallianwala Bagh 1919 → Khilafat 1919 → Non-Cooperation 1920.</strong>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Rowlatt Act</strong> (1919, repressive law, no trial) with the <strong>Government of India Act 1919</strong> (Montagu-Chelmsford Reforms, expanding self-government) — both passed the same year, for opposite purposes!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Just like the <strong>Morley-Minto Reforms</strong> were named after Secretary of State Morley and Viceroy Minto, the <strong>Montagu-Chelmsford Reforms</strong> are named after Secretary of State <strong>Montagu</strong> and Viceroy <strong>Chelmsford</strong>.
+    </div>
+
+    <div class="pagecount">Page 6 of 10</div>
+    <div class="navbtns"><button onclick="showPage(5)">← Previous</button><button onclick="showPage(7)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 7 : READING ============ -->
+  <div class="page" id="page7">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:850px; left:7px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+
+    <h3 class="sec">Lord Reading (1921–1926)</h3>
+    <ul>
+      <li><strong class="ring">Chauri Chaura incident, 1922.</strong></li>
+      <li>Gandhiji <strong>withdrew the Non-Cooperation Movement</strong> in 1922 following Chauri Chaura.</li>
+      <li>Gandhiji returned the title of <strong>"Kaiser-e-Hind"</strong> in protest.</li>
+      <li><strong>Rabindranath Tagore</strong> had earlier given up his knighthood after the Jallianwala Bagh massacre.</li>
+      <li>A <strong>Hunter Commission</strong> reviewed the Jallianwala Bagh massacre; it held <strong>General R.E.H. Dyer</strong> responsible but prescribed <span class="hl">no punishment</span> for him.</li>
+      <li>After the withdrawal of the Non-Cooperation Movement, Congress split into <strong>"pro-changers"</strong> and <strong>"no-changers."</strong></li>
+      <li>The pro-changers formed the <strong>Swaraj Party</strong>, known as the All India Khilafat Swaraj Party.</li>
+      <li><strong>Kanpur (Bolshevik) Conspiracy Case, 1924.</strong></li>
+      <li>The <strong>Communist Party of India (CPI)</strong> was formed in Tashkent, Uzbekistan in 1920 by <strong>M.N. Roy</strong>, and formally organized at an all-India conference in <strong>Kanpur in 1925</strong>.</li>
+      <li><strong>Kakori train robbery, 1925.</strong></li>
+      <li><strong>Hindustan Republican Association (HRA)</strong> formed, 1924.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 6: After the Non-Cooperation Movement</div>
+      <svg class="diagram-svg" viewBox="0 0 300 180">
+        <defs><marker id="arrRd" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="75" y="6" width="150" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="27" text-anchor="middle" class="dtxt-sm">1922: Chauri Chaura → NCM withdrawn</text>
+        <line x1="150" y1="40" x2="150" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrRd)"/>
+        <rect x="90" y="62" width="120" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="83" text-anchor="middle" class="dtxt-sm-red">Congress splits</text>
+        <line x1="105" y1="98" x2="85" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrRd)"/>
+        <line x1="195" y1="98" x2="215" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrRd)"/>
+        <rect x="15" y="122" width="140" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="85" y="140" text-anchor="middle" class="dtxt-sm">Pro-changers</text>
+        <text x="85" y="152" text-anchor="middle" class="dtxt-xs">→ Swaraj Party</text>
+        <rect x="160" y="122" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="225" y="140" text-anchor="middle" class="dtxt-sm">No-changers</text>
+        <text x="225" y="152" text-anchor="middle" class="dtxt-xs">continue as before</text>
+      </svg>
+    </div>
+
+    <div class="sticky pink"><b>📌 Don't Mix Up</b>Two Hunter Commissions exist: one on <strong>Education</strong> (Ripon's time) and one on the <strong>Jallianwala Bagh massacre</strong> (Reading's time, held Dyer responsible but no punishment)!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      <strong>1924 → HRA formed + Kanpur Conspiracy Case; 1925 → CPI formalized in Kanpur + Kakori train robbery</strong> — remember it year-wise.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't think Gandhiji withdrew the Non-Cooperation Movement out of exhaustion — it was specifically due to the <strong>violence at Chauri Chaura in 1922</strong>.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Pro-changers" (wanted to change strategy, formed the Swaraj Party) vs "no-changers" (wanted to continue as before) — the <strong>names literally tell you their stance!</strong>
+    </div>
+
+    <div class="pagecount">Page 7 of 10</div>
+    <div class="navbtns"><button onclick="showPage(6)">← Previous</button><button onclick="showPage(8)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 8 : IRWIN & WILLINGDON ============ -->
+  <div class="page" id="page8">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+    <svg class="doodle" style="top:850px; left:6px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+
+    <h3 class="sec">Lord Irwin (1926–1931)</h3>
+    <ul>
+      <li><strong class="ring">Simon Commission</strong> arrived in India, <strong>1928</strong>.</li>
+      <li><strong>Lala Lajpat Rai</strong> died during protests against the Simon Commission.</li>
+      <li><strong>John Saunders</strong> was assassinated in revenge, by <strong>Bhagat Singh, Sukhdev, and Rajguru</strong>, 1928.</li>
+      <li><strong>Lahore Session of Congress, 1929.</strong></li>
+      <li><strong>First Round Table Conference, 1930.</strong></li>
+      <li><strong>Gandhi-Irwin Pact, 1931.</strong></li>
+      <li><strong>Second Round Table Conference</strong> began in 1931 — the <span class="hl">only RTC in which Gandhiji/Congress participated</span> (its proceedings extended into Willingdon's tenure).</li>
+    </ul>
+
+    <h3 class="sec">Lord Willingdon (1931–1936)</h3>
+    <ul>
+      <li>Second Round Table Conference concluded (Gandhiji and Congress participated).</li>
+      <li><strong>Communal Award</strong> announced by <strong>Ramsay MacDonald</strong> — granted separate electorates to the Dalits (Depressed Classes).</li>
+      <li>Gandhiji went on a <strong>fast unto death</strong> in protest of the Communal Award.</li>
+      <li><strong>Poona Pact</strong> signed between <strong>Gandhiji and Ambedkar</strong> as a result.</li>
+      <li><strong>Government of India Act, 1935</strong> came into force — called for an <strong>All India Federation</strong> (never materialized) and a <strong>Federal Court</strong> (established 1937, later replaced by the Supreme Court of India).</li>
+      <li><strong>All India Kisan Sabha</strong> formed, 1936, by <strong>Sahajanand Saraswati</strong>.</li>
+      <li><strong>Congress Socialist Party</strong> formed, 1934, by <strong>Acharya Narendra Dev, Minoo Masani, and Jayaprakash Narayan</strong> (formed after the Lucknow session of Congress).</li>
+    </ul>
+
+    <div class="chain">
+      <span class="chip">1928 Simon Commission</span><span class="arrow">→</span>
+      <span class="chip">1929 Lahore Session</span><span class="arrow">→</span>
+      <span class="chip">1930 1st RTC</span><span class="arrow">→</span>
+      <span class="chip">1931 Gandhi-Irwin Pact</span><span class="arrow">→</span>
+      <span class="chip">1931 2nd RTC</span><span class="arrow">→</span>
+      <span class="chip">Communal Award</span><span class="arrow">→</span>
+      <span class="chip">Poona Pact</span><span class="arrow">→</span>
+      <span class="chip">1935 GoI Act</span>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Only the <strong>Second Round Table Conference (1931)</strong> had Gandhiji/Congress participation — the First (1930) did not!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Communal Award</strong> (separate electorates for Dalits, opposed by Gandhiji) with the <strong>Poona Pact</strong> (the compromise reached afterward between Gandhiji and Ambedkar).
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Both key 1931 events span two Viceroys: the <strong>Gandhi-Irwin Pact and First RTC</strong> closed under Irwin, while the <strong>Second RTC</strong> (same year, later months) carried into Willingdon's tenure — simple logic: if both happened in 1931, the second one must be near year-end, under the new Viceroy.
+    </div>
+
+    <div class="pagecount">Page 8 of 10</div>
+    <div class="navbtns"><button onclick="showPage(7)">← Previous</button><button onclick="showPage(9)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 9 : LINLITHGOW ============ -->
+  <div class="page" id="page9">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:850px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 8 L36 16 L20 24 L4 16 Z" fill="#eadfc4"/><line x1="12" y1="19" x2="12" y2="28"/><path d="M8 28 Q12 32 16 28"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+
+    <h3 class="sec">Lord Linlithgow (1936–1944)</h3>
+    <p>An <span class="hl ring">8-year tenure</span> — the longest of all the Viceroys studied so far.</p>
+    <ul>
+      <li><strong>First General Elections</strong> held, 1937 (as provided for under the Government of India Act, 1935).</li>
+      <li><strong>Haripura Session</strong> of Congress, 1938; <strong>Tripuri Session</strong>, 1939 — after which <strong>Subhash Chandra Bose resigned</strong> from Congress.</li>
+      <li>Bose formed the <strong>All India Forward Bloc</strong>, 1939, within the Congress.</li>
+      <li><strong>National Planning Committee</strong> formed, 1938, by Subhash Chandra Bose; its first head was <strong>Jawaharlal Nehru</strong>.</li>
+      <li><strong>August Offer, 1940</strong> — rejected by Congress.</li>
+      <li><strong>Individual Satyagraha</strong> launched in response; <strong>Acharya Vinoba Bhave</strong> was the first Individual Satyagrahi, <strong>Jawaharlal Nehru</strong> the second.</li>
+      <li><strong>Cripps Mission</strong> arrived in India, 1942.</li>
+      <li><strong>Quit India Movement</strong> launched in response to the failure of the Cripps Mission, 1942.</li>
+      <li>Gandhiji gave the slogan <span class="hl">"Do or Die"</span> during the Quit India Movement.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 7: Linlithgow's Timeline (1936–1944)</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrL" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="85" y="6" width="130" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="25" text-anchor="middle" class="dtxt-sm">1937: 1st Elections</text>
+        <line x1="150" y1="36" x2="150" y2="54" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="65" y="56" width="170" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="75" text-anchor="middle" class="dtxt-sm">1938-39: Bose resigns → Forward Bloc</text>
+        <line x1="150" y1="86" x2="150" y2="104" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="80" y="106" width="140" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="125" text-anchor="middle" class="dtxt-sm">1940: August Offer rejected</text>
+        <line x1="150" y1="136" x2="150" y2="154" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="70" y="156" width="160" height="30" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="175" text-anchor="middle" class="dtxt-sm-red">Individual Satyagraha</text>
+        <line x1="150" y1="186" x2="150" y2="200" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <text x="150" y="215" text-anchor="middle" class="dtxt-xs">1942: Cripps Mission fails → Quit India</text>
+      </svg>
+    </div>
+
+    <div class="sticky green"><b>🧠 Remember</b>Linlithgow's tenure is <strong>8 years</strong>, not the usual 5 — easy to mix him up with a 5-year Viceroy if you forget this!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Cause-and-effect chain: <strong>August Offer rejected → Individual Satyagraha</strong>; <strong>Cripps Mission fails → Quit India Movement.</strong>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>National Planning Committee</strong> (1938, formed by Bose, headed by Nehru) with the <strong>All India Forward Bloc</strong> (1939, formed by Bose after leaving the Congress presidency) — two different bodies, one year apart.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Bose resigned after the <strong>Tripuri Session (1939)</strong> and formed the Forward Bloc that same year — "Tripuri to Trouble" (he left Congress and started his own bloc).
+    </div>
+
+    <div class="pagecount">Page 9 of 10</div>
+    <div class="navbtns"><button onclick="showPage(8)">← Previous</button><button onclick="showPage(10)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 10 : WAVELL, MOUNTBATTEN & RECAP ============ -->
+  <div class="page" id="page10">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:250px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:520px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M10 6 Q6 20 12 34" fill="#eaf2fb"/><path d="M12 34 Q20 20 30 6" stroke-dasharray="3 3" stroke="#c31f1f"/><path d="M30 6 Q34 20 28 34" fill="#f3ead0"/></g></svg>
+    <svg class="doodle" style="top:800px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 A6 4 0 0 0 12 22 Z"/><path d="M32 12 L28 22 A6 4 0 0 0 36 22 Z"/><line x1="14" y1="34" x2="26" y2="34"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6"><rect x="6" y="8" width="28" height="24" fill="#f2ead0" stroke="#3a2b1c"/><line x1="9" y1="14" x2="31" y2="14" stroke-width="2"/><line x1="9" y1="19" x2="31" y2="19"/><line x1="9" y1="23" x2="22" y2="23"/><line x1="9" y1="27" x2="26" y2="27"/></g></svg>
+
+    <h3 class="sec">Lord Wavell (1944–1947)</h3>
+    <ul>
+      <li><strong>Wavell Plan</strong> proposed, 1945.</li>
+      <li><strong>Shimla Conference</strong> held, 1945 — prisoners jailed during the Quit India Movement were released and called to Shimla to discuss the plan.</li>
+      <li><strong>Cabinet Mission Plan</strong> came to India, 1946.</li>
+      <li><strong class="ring">Jinnah announced Direct Action Day, 16 August 1946</strong> — led to widespread riots and violence.</li>
+    </ul>
+
+    <div class="sticky orange"><b>📌 Aside — Vinoba Bhave</b>Acharya Vinoba Bhave, associated with the <strong>Bhoodan Movement</strong> (started 1951, from Pochampalli, Telangana), received the <strong>first Ramon Magsaysay Award in 1958</strong>.</div>
+
+    <h3 class="sec">Lord Mountbatten (1947–1948)</h3>
+    <ul>
+      <li><span class="hl">Last Viceroy of India (1947–1948).</span></li>
+      <li>Brought the <strong>Mountbatten Plan</strong>, also known as the <strong>Partition Plan</strong>.</li>
+      <li>The <strong>Boundary Commission</strong>, headed by <strong>Sir Cyril Radcliffe</strong>, demarcated the boundary between India and Pakistan (the same line today also separates India and Bangladesh).</li>
+      <li>After independence in 1947, Mountbatten was retained, out of respect, as the <strong>first Governor General of independent India</strong>.</li>
+      <li><strong class="ring">C. Rajagopalachari</strong> succeeded him as the <span class="hl">first, last, and only Indian</span> to become Governor General of India.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 8: The Road to Independence &amp; Partition</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrW" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="70" y="6" width="160" height="28" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt-sm">1945: Wavell Plan &amp; Shimla Conf.</text>
+        <line x1="150" y1="34" x2="150" y2="52" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrW)"/>
+        <rect x="80" y="54" width="140" height="28" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="72" text-anchor="middle" class="dtxt-sm">1946: Cabinet Mission Plan</text>
+        <line x1="150" y1="82" x2="150" y2="100" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrW)"/>
+        <rect x="75" y="102" width="150" height="28" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="120" text-anchor="middle" class="dtxt-sm-red">Direct Action Day, Aug 1946</text>
+        <line x1="150" y1="130" x2="150" y2="148" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrW)"/>
+        <rect x="90" y="150" width="120" height="28" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="168" text-anchor="middle" class="dtxt-sm">1947: Independence</text>
+        <line x1="150" y1="178" x2="150" y2="196" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrW)"/>
+        <text x="150" y="210" text-anchor="middle" class="dtxt-xs">Mountbatten Plan → Partition (Radcliffe Line)</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">🧠 Memory Trick — Remembering the Viceroy Order</h4>
+    <p>Imagine reading in a <strong>Ford car</strong> — that's <strong>Reading (1921–26)</strong>, following <strong>Chelmsford (1916–21)</strong>. While reading, you drift into a dream where <strong>Lakshya Sen wins</strong> — that covers <strong>Irwin's era (1926–31)</strong>, another 5 years added on. Then a <strong>"Don"</strong> (a Malaysian Don) arrives and says <strong>"go now"</strong> — sounds like <strong>"Willingdon" (1931–36)</strong>, because his "wave" is coming. Then comes <strong class="scribble">Linlithgow (1936–44)</strong> — but this one lasts <strong>8 years</strong>, not 5. Finally, <strong>Wavell (1944–47)</strong> — his very name sounds like "wave," closing the wave-themed chain right before independence.</p>
+
+    <div class="chain">
+      <span class="chip">Chelmsford 1916–21</span><span class="arrow">→</span>
+      <span class="chip">Reading 1921–26</span><span class="arrow">→</span>
+      <span class="chip">Irwin 1926–31</span><span class="arrow">→</span>
+      <span class="chip">Willingdon 1931–36</span><span class="arrow">→</span>
+      <span class="chip">Linlithgow 1936–44 (8 yrs)</span><span class="arrow">→</span>
+      <span class="chip">Wavell 1944–47</span>
+    </div>
+
+    <h4 class="subsec">⭐ Full Recap — Viceroys of India</h4>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1858–62</span> — Canning (1st Viceroy)</div>
+      <div class="tl-item"><span class="tl-date">1876–80</span> — Lytton</div>
+      <div class="tl-item"><span class="tl-date">1880–84</span> — Ripon</div>
+      <div class="tl-item"><span class="tl-date">1899–1905</span> — Curzon</div>
+      <div class="tl-item"><span class="tl-date">1905–10</span> — Minto II</div>
+      <div class="tl-item"><span class="tl-date">1910–16</span> — Hardinge II</div>
+      <div class="tl-item"><span class="tl-date">1916–21</span> — Chelmsford</div>
+      <div class="tl-item"><span class="tl-date">1921–26</span> — Reading</div>
+      <div class="tl-item"><span class="tl-date">1926–31</span> — Irwin</div>
+      <div class="tl-item"><span class="tl-date">1931–36</span> — Willingdon</div>
+      <div class="tl-item"><span class="tl-date">1936–44</span> — Linlithgow</div>
+      <div class="tl-item"><span class="tl-date">1944–47</span> — Wavell</div>
+      <div class="tl-item"><span class="tl-date">1947–48</span> — Mountbatten (last Viceroy)</div>
+    </div>
+
+    <div class="tl-big">C. Rajagopalachari — first, last &amp; only Indian Governor General of India!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Order to memorize: <strong>Canning → Lawrence → Mayo → Lytton → Ripon → Dufferin → Curzon → Minto II → Hardinge II → Chelmsford → Reading → Irwin → Willingdon → Linlithgow → Wavell → Mountbatten.</strong>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse <strong>Governor General of India</strong> (title before 1858, and briefly again for Mountbatten/Rajagopalachari after 1947) with <strong>Viceroy</strong> (title used 1858–1947, under Crown Rule).
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      <strong>Wavell</strong> = "wave will" (come) — his name is the mnemonic's punchline: the "wave" the joke built up to, right before independence arrived in 1947!
+    </div>
+
+    <div class="pagecount">Page 10 of 10</div>
+    <div class="navbtns"><button onclick="showPage(9)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Modern Indian History • Viceroys of India (Canning to Mountbatten) • Part 2 • SSC CGL / CHSL / UP Police Constable Notes<br>
+    <a class="footer-brand" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="bd-1">Study</span><span class="bd-2">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+  const TOTAL_PAGES = 10;
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=TOTAL_PAGES;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=TOTAL_PAGES;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
