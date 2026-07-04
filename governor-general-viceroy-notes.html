@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Governor General &amp; Viceroy of India — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.0rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- BRAND BADGE ---------- */
+  .brand-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .brand-badge .bd-1{color:#ffffff;}
+  .brand-badge .bd-2{color:#3ddc84;}
+  .footer-brand{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-brand .bd-1{color:#ffffff;}
+  .footer-brand .bd-2{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.1rem;
+    font-weight:700;
+    padding:9px 13px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.3deg);}
+  #page2{transform:rotate(0.25deg);}
+  #page3{transform:rotate(-0.2deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.25deg);}
+  #page6{transform:rotate(0.2deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.45rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.9rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:380px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.55rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.15rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:0.95rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>CGL</div>
+    <div class="tag">Modern Indian History</div>
+    <h1>Governor General &amp; Viceroy of India</h1>
+    <h2>From Governors to Crown Rule</h2>
+    <div class="sub">For <b>SSC CGL, CHSL, UP Police Constable &amp; other exams</b> &nbsp;|&nbsp; Author: <b>Parmar Clips</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="brand-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="bd-1">Study</span><span class="bd-2">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Key Terms</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">⚔️ Hastings &amp; Cornwallis</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">📜 Shore &amp; Wellesley</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🗺️ Minto &amp; Hastings</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🎓 Bentinck–Hardinge</button>
+    <button class="tab-btn" id="tab6" onclick="showPage(6)">🚂 Dalhousie &amp; Summary</button>
+  </div>
+
+  <!-- ============ PAGE 1 : KEY TERMS ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+    <svg class="doodle" style="top:560px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#1d3f7a" stroke-width="2" stroke-linecap="round"><path d="M30 6 C20 10 10 20 8 34"/><path d="M30 6 C26 12 22 14 18 18"/><path d="M30 6 C24 8 20 12 16 16"/></g></svg>
+    <svg class="doodle" style="top:850px; left:8px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:1120px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+
+    <h3 class="sec">Understanding Key Terms</h3>
+    <p>British India had <strong>three main administrative units</strong> — the <span class="hl">Three Presidencies</span>: <strong>Bengal, Bombay, and Madras</strong>.</p>
+    <p><strong>Bengal</strong> was the most important presidency, housing <span class="hl ring">40% of British India's population</span>.</p>
+
+    <h4 class="subsec">Governor of Bengal</h4>
+    <p>The initial administrative head of Bengal. First Governor of Bengal: <strong>Robert Clive</strong> (served twice).</p>
+
+    <h4 class="subsec">Governor General of Bengal</h4>
+    <ul>
+      <li>Created by the <em>Regulating Act of 1773</em> to control corruption within the East India Company.</li>
+      <li>The Governor of Bengal was elevated to Governor General of Bengal.</li>
+      <li>Governors of Bombay and Madras were made <strong>subordinate</strong> to the Governor General of Bengal.</li>
+      <li>First Governor General of Bengal: <strong class="ring">Warren Hastings</strong> (also the last Governor of Bengal).</li>
+    </ul>
+
+    <h4 class="subsec">Governor General of India</h4>
+    <ul>
+      <li>Created by the <em>Charter Act of 1833</em> (also known as the <strong>St. Helena Act</strong>).</li>
+      <li>The Governor General of Bengal was elevated to Governor General of India.</li>
+      <li>First Governor General of India: <strong class="ring">William Bentinck</strong> (also the last Governor General of Bengal).</li>
+    </ul>
+
+    <h4 class="subsec">Viceroy</h4>
+    <ul>
+      <li>After the Revolt of 1857, the East India Company's rule ended, and <strong>Crown Rule</strong> was established by the <em>Government of India Act of 1858</em>.</li>
+      <li>The title of Governor General of India was changed to <strong>Viceroy</strong>.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Evolution of the Top Post</div>
+      <svg class="diagram-svg" viewBox="0 0 300 300">
+        <defs><marker id="arrK" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="55" y="6" width="190" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt">Governor of Bengal</text>
+        <text x="150" y="38" text-anchor="middle" class="dtxt-xs">First: Robert Clive</text>
+        <line x1="150" y1="46" x2="150" y2="68" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrK)"/>
+        <text x="158" y="62" class="dtxt-xs">Regulating Act 1773</text>
+        <rect x="45" y="70" width="210" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="88" text-anchor="middle" class="dtxt">Governor General of Bengal</text>
+        <text x="150" y="102" text-anchor="middle" class="dtxt-xs">First: Warren Hastings</text>
+        <line x1="150" y1="110" x2="150" y2="132" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrK)"/>
+        <text x="158" y="126" class="dtxt-xs">Charter Act 1833</text>
+        <rect x="40" y="134" width="220" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="152" text-anchor="middle" class="dtxt">Governor General of India</text>
+        <text x="150" y="166" text-anchor="middle" class="dtxt-xs">First: William Bentinck</text>
+        <line x1="150" y1="174" x2="150" y2="196" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrK)"/>
+        <text x="158" y="190" class="dtxt-xs">Govt of India Act 1858</text>
+        <rect x="70" y="198" width="160" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="216" text-anchor="middle" class="dtxt">VICEROY of India</text>
+        <text x="150" y="230" text-anchor="middle" class="dtxt-xs">Title used under Crown Rule</text>
+        <text x="150" y="256" text-anchor="middle" class="dtxt-sm-red">(after the 1857 Revolt)</text>
+      </svg>
+    </div>
+
+    <div class="sticky yellow"><b>📌 Quick Fact</b>Robert Clive was the first Governor of Bengal and served <strong>twice</strong> in that role.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Match Act → Title created: <strong>Regulating Act 1773 → Governor General of Bengal</strong>; <strong>Charter Act 1833 → Governor General of India</strong>; <strong>Govt of India Act 1858 → Viceroy</strong>.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse <strong>"Governor of Bengal"</strong> with <strong>"Governor General of Bengal"</strong> — Warren Hastings was both the <em>last Governor</em> of Bengal AND the <em>first Governor General</em> of Bengal!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "1773 Regulate → 1833 Elevate → 1858 Crown-ate": Regulating Act regulated corruption, Charter Act elevated the post to all-India level, and the Govt of India Act crowned the post as Viceroy.
+    </div>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 Why were these posts created? (tap to expand)</span>
+      <div class="toggle-content">
+        The <strong>Regulating Act of 1773</strong> created the Governor General of Bengal specifically to <strong>control corruption</strong> within the East India Company, and made the Governors of <strong>Bombay and Madras subordinate</strong> to this new post — bringing all three Presidencies under one central authority for the first time.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 1 of 6</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 : HASTINGS & CORNWALLIS ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#1d3f7a" stroke-width="2" stroke-linecap="round"><path d="M30 6 C20 10 10 20 8 34"/><path d="M30 6 C26 12 22 14 18 18"/><path d="M30 6 C24 8 20 12 16 16"/></g></svg>
+    <svg class="doodle" style="top:300px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 4 L32 10 L32 20 C32 30 20 36 20 36 C20 36 8 30 8 20 L8 10 Z" fill="#eaf2fb"/><line x1="20" y1="10" x2="20" y2="28"/></g></svg>
+    <svg class="doodle" style="top:590px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+    <svg class="doodle" style="top:880px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:1150px; left:6px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Warren Hastings (1773–1785)</h3>
+    <p><strong class="ring">First Governor General of Bengal.</strong></p>
+
+    <h4 class="subsec">Key Acts</h4>
+    <ul>
+      <li>Regulating Act of 1773.</li>
+      <li>Pitt's India Act of 1784.</li>
+    </ul>
+
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>First Anglo-Maratha War — ended with the <strong>Treaty of Salbai</strong>.</li>
+      <li>Second Anglo-Mysore War — ended with the <strong>Treaty of Mangalore</strong>. <strong>Hyder Ali</strong> was the ruler of Mysore during this war.</li>
+    </ul>
+
+    <h4 class="subsec">Other</h4>
+    <p>Establishment of the <span class="hl">Asiatic Society of Bengal</span> in <strong>1784</strong> by <strong>William Jones</strong>. Objective: translate Indian literature into English.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: Warren Hastings — Mind Map</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrH" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M120 110 Q95 80 85 55" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrH)"/>
+        <path d="M200 110 Q225 80 235 55" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrH)"/>
+        <path d="M160 150 Q160 175 160 198" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrH)"/>
+        <ellipse cx="160" cy="130" rx="75" ry="24" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="160" y="126" text-anchor="middle" class="dtxt-sm-red">Warren Hastings</text>
+        <text x="160" y="139" text-anchor="middle" class="dtxt-xs">(1773–1785)</text>
+        <ellipse cx="70" cy="36" rx="65" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="28" text-anchor="middle" class="dtxt">Acts</text>
+        <text x="70" y="41" text-anchor="middle" class="dtxt-xs">Regulating Act 1773</text>
+        <text x="70" y="52" text-anchor="middle" class="dtxt-xs">Pitt's India Act 1784</text>
+        <ellipse cx="252" cy="36" rx="66" ry="34" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="252" y="24" text-anchor="middle" class="dtxt">Wars</text>
+        <text x="252" y="37" text-anchor="middle" class="dtxt-xs">1st Anglo-Maratha</text>
+        <text x="252" y="47" text-anchor="middle" class="dtxt-xs">(Tr. of Salbai)</text>
+        <text x="252" y="57" text-anchor="middle" class="dtxt-xs">2nd Anglo-Mysore vs Hyder Ali</text>
+        <rect x="90" y="200" width="140" height="46" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="160" y="217" text-anchor="middle" class="dtxt">Asiatic Society</text>
+        <text x="160" y="229" text-anchor="middle" class="dtxt-xs">1784, William Jones</text>
+        <text x="160" y="240" text-anchor="middle" class="dtxt-xs">Translate Indian lit. to English</text>
+      </svg>
+    </div>
+
+    <div class="sticky pink"><b>📌 Note</b>The <strong>Second Anglo-Mysore War</strong> ended with the Treaty of Mangalore — Hyder Ali ruled Mysore at the time.</div>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">👤 Warren Hastings' wars — treaty recap (tap to expand)</span>
+      <div class="toggle-content">
+        <strong>First Anglo-Maratha War</strong> ended with the <strong>Treaty of Salbai</strong>. The <strong>Second Anglo-Mysore War</strong>, fought against <strong>Hyder Ali</strong> (ruler of Mysore), ended with the <strong>Treaty of Mangalore</strong>.
+      </div>
+    </div>
+
+    <h3 class="sec">Lord Cornwallis (1786–1793)</h3>
+
+    <h4 class="subsec">Key Reforms</h4>
+    <ul>
+      <li>Introduced the <span class="hl">Permanent Settlement</span> (also known as the <strong>Zamindari System</strong>) in <strong>1793</strong> in the Bengal region.</li>
+      <li>Known as the <strong>Father of Indian Civil Services</strong> — introduced a merit-based civil services system.</li>
+      <li>Introduced the <strong>Cornwallis Code</strong>, which brought judicial reforms and <strong>separated revenue administration from civil jurisdiction</strong>.</li>
+    </ul>
+
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>Third Anglo-Mysore War — ended with the <strong>Treaty of Seringapatam</strong>.</li>
+    </ul>
+
+    <h4 class="subsec">Other</h4>
+    <p>Died in India; his tomb is in <strong class="scribble">Ghazipur</strong>.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Cornwallis = 3 C's: <strong>Civil services</strong> (merit-based), <strong>Cornwallis Code</strong> (judicial reform), and <strong>Permanent Settlement</strong> (Zamindari, Bengal, 1793).
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse Cornwallis's <strong>Permanent Settlement</strong> (Zamindari, Bengal, 1793) with the <strong>Ryotwari</strong> or <strong>Mahalwari</strong> systems introduced later by other Governors-General.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Cornwallis died in India and is buried in <strong>Ghazipur</strong> — he stayed "permanently" in India, just like his Permanent Settlement was meant to last forever!
+    </div>
+
+    <div class="pagecount">Page 2 of 6</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 : SHORE & WELLESLEY ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:6px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:250px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="13" fill="#a5760f" font-family="Kalam,cursive" stroke="none">₹</text></g></svg>
+    <svg class="doodle" style="top:540px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 4 L32 10 L32 20 C32 30 20 36 20 36 C20 36 8 30 8 20 L8 10 Z" fill="#eaf2fb"/><line x1="20" y1="10" x2="20" y2="28"/></g></svg>
+    <svg class="doodle" style="top:830px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+    <svg class="doodle" style="top:1100px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#ffe08a"/><circle cx="14" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><path d="M13 24 Q20 31 27 24" stroke-linecap="round"/></g></svg>
+
+    <h3 class="sec">John Shore (1793–1798)</h3>
+    <p>Not considered important for exam purposes.</p>
+
+    <h3 class="sec">Lord Wellesley (1798–1805)</h3>
+
+    <h4 class="subsec">Key Policy — Subsidiary Alliance (1798)</h4>
+    <ul>
+      <li>Objective: <span class="hl">prevent French (Napoleonic) influence</span> by making Indian rulers dependent on the British.</li>
+      <li>Provisions: stationing a British Resident, disbanding native armies, maintaining British forces — in exchange for protection.</li>
+      <li>First to adopt: <strong>Nizam of Hyderabad (1798)</strong>.</li>
+      <li>Other adopters: <strong>Mysore (1799)</strong>, <strong>Awadh (1801)</strong>.</li>
+    </ul>
+
+    <table>
+      <tr><th>Adopter of Subsidiary Alliance</th><th>Year</th></tr>
+      <tr><td>Nizam of Hyderabad</td><td class="imp">1798 (first)</td></tr>
+      <tr><td>Mysore</td><td>1799</td></tr>
+      <tr><td>Awadh</td><td>1801</td></tr>
+    </table>
+
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>Fourth Anglo-Mysore War (1799) — led to the death of <strong>Tipu Sultan</strong>.</li>
+      <li>Second Anglo-Maratha War (1803–1805).</li>
+    </ul>
+
+    <h4 class="subsec">Treaties</h4>
+    <ul>
+      <li>Treaty of Bassein (1802) between <strong>Baji Rao II</strong> and the British.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Subsidiary Alliance — Mind Map</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrS" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M110 105 Q90 78 82 55" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrS)"/>
+        <path d="M210 105 Q230 78 238 55" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrS)"/>
+        <path d="M110 150 Q90 178 82 200" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrS)"/>
+        <path d="M210 150 Q230 178 238 200" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrS)"/>
+        <ellipse cx="160" cy="128" rx="80" ry="24" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="160" y="124" text-anchor="middle" class="dtxt-sm-red">Subsidiary Alliance</text>
+        <text x="160" y="137" text-anchor="middle" class="dtxt-xs">1798, Lord Wellesley</text>
+        <ellipse cx="65" cy="36" rx="62" ry="28" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="65" y="32" text-anchor="middle" class="dtxt-sm">British Resident</text>
+        <text x="65" y="44" text-anchor="middle" class="dtxt-xs">stationed at court</text>
+        <ellipse cx="255" cy="36" rx="62" ry="28" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="255" y="32" text-anchor="middle" class="dtxt-sm">Native armies</text>
+        <text x="255" y="44" text-anchor="middle" class="dtxt-xs">disbanded</text>
+        <ellipse cx="65" cy="222" rx="62" ry="28" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="65" y="218" text-anchor="middle" class="dtxt-sm">British forces</text>
+        <text x="65" y="230" text-anchor="middle" class="dtxt-xs">maintained by ruler</text>
+        <ellipse cx="255" cy="222" rx="62" ry="28" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="255" y="218" text-anchor="middle" class="dtxt-sm">Protection</text>
+        <text x="255" y="230" text-anchor="middle" class="dtxt-xs">given in return</text>
+      </svg>
+    </div>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">👤 Treaty of Bassein, 1802 (tap to expand)</span>
+      <div class="toggle-content">
+        Signed in <strong>1802</strong> between <strong>Baji Rao II</strong> (Maratha Peshwa) and the British. This period also overlapped with the <strong>Second Anglo-Maratha War (1803–1805)</strong>.
+      </div>
+    </div>
+
+    <div class="sticky blue"><b>📖 Quick Note</b>The <strong>Fourth Anglo-Mysore War (1799)</strong> ended Tipu Sultan's rule — the same year Mysore adopted the Subsidiary Alliance.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Subsidiary Alliance adoption order by year: <strong>Hyderabad (1798) → Mysore (1799) → Awadh (1801)</strong>.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Subsidiary Alliance</strong> (Wellesley, 1798 — dependency, not annexation) with the <strong>Doctrine of Lapse</strong> (Dalhousie, 1848 — annexation on no heir). Different Governors-General, different tools!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Tipu Sultan died in the <strong>Fourth Anglo-Mysore War (1799)</strong> — the very same year Mysore accepted the Subsidiary Alliance. One war, two outcomes!
+    </div>
+
+    <div class="pagecount">Page 3 of 6</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 : MINTO & LORD HASTINGS ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:6px; left:7px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2"><path d="M20 4 C12 4 7 10 7 17 C7 26 20 36 20 36 C20 36 33 26 33 17 C33 10 28 4 20 4 Z" fill="#ffd0d3"/><circle cx="20" cy="16" r="4" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:270px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:560px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="13" fill="#a5760f" font-family="Kalam,cursive" stroke="none">₹</text></g></svg>
+    <svg class="doodle" style="top:850px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+    <svg class="doodle" style="top:1120px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+
+    <h3 class="sec">Lord Minto I (1807–1813)</h3>
+
+    <h4 class="subsec">Treaties</h4>
+    <ul>
+      <li>Treaty of Amritsar (1809) signed between <strong>Maharaja Ranjit Singh</strong> and the British.</li>
+      <li>The <span class="hl">Sutlej River</span> was declared the boundary.</li>
+    </ul>
+
+    <h3 class="sec">Lord Hastings (1813–1823)</h3>
+
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>Third Anglo-Maratha War (1817–1819).</li>
+      <li>Anglo-Nepal War — ended with the <strong>Treaty of Sugauli</strong>.</li>
+    </ul>
+
+    <h4 class="subsec">Land Revenue Systems</h4>
+    <ul>
+      <li><strong>Ryotwari System</strong> — introduced in <strong>1820</strong> in Madras and other regions. Introduced by <strong>Munro and Read</strong>. Direct revenue collection from peasants (Ryots).</li>
+      <li><strong>Mahalwari System</strong> — introduced in <strong>1822</strong> in Punjab and NWFP regions. Introduced by <strong>Holt Mackenzie and William Bentinck</strong>. Revenue collected from groups of villages (Mahals).</li>
+    </ul>
+
+    <table>
+      <tr><th>System</th><th>Year</th><th>Region</th><th>Introduced By</th><th>Basis of Collection</th></tr>
+      <tr><td>Ryotwari</td><td>1820</td><td>Madras &amp; other regions</td><td>Munro &amp; Read</td><td>Individual peasants (Ryots)</td></tr>
+      <tr><td>Mahalwari</td><td>1822</td><td>Punjab &amp; NWFP</td><td>Holt Mackenzie &amp; William Bentinck</td><td>Groups of villages (Mahals)</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 4: Ryotwari vs Mahalwari Regions</div>
+      <svg class="diagram-svg" viewBox="0 0 280 240">
+        <path d="M140 8 Q95 12 78 55 Q60 95 68 135 Q60 175 95 205 Q140 225 180 205 Q220 175 212 135 Q235 95 205 55 Q195 18 140 8 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <line x1="60" y1="90" x2="225" y2="90" stroke="#8a1414" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle cx="120" cy="50" r="4" fill="#1d3f7a"/>
+        <text x="120" y="38" text-anchor="middle" class="dtxt-sm">Punjab / NWFP</text>
+        <text x="120" y="70" text-anchor="middle" class="dtxt-xs">Mahalwari, 1822</text>
+        <circle cx="140" cy="175" r="4" fill="#c31f1f"/>
+        <text x="140" y="192" text-anchor="middle" class="dtxt-sm-red">Madras</text>
+        <text x="140" y="205" text-anchor="middle" class="dtxt-xs">Ryotwari, 1820</text>
+      </svg>
+    </div>
+
+    <div class="sticky blue"><b>📖 Quick Note</b>Treaty of Amritsar (1809) fixed the <strong>Sutlej River</strong> as the boundary between British territory and Ranjit Singh's kingdom.</div>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">📖 Anglo-Nepal War &amp; Treaty of Sugauli (tap to expand)</span>
+      <div class="toggle-content">
+        Fought under <strong>Lord Hastings (1813–1823)</strong>, the <strong>Anglo-Nepal War</strong> ended with the <strong>Treaty of Sugauli</strong>.
+      </div>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Name tells you the system: <strong>Ryotwari</strong> = collection from <strong>Ryots</strong> (individual peasants); <strong>Mahalwari</strong> = collection from <strong>Mahals</strong> (village groups).
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up who introduced what: <strong>Munro &amp; Read → Ryotwari</strong>; <strong>Holt Mackenzie &amp; William Bentinck → Mahalwari</strong>.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Year order: <strong>Ryotwari (1820) before Mahalwari (1822)</strong> — just remember "20 comes before 22"!
+    </div>
+
+    <div class="pagecount">Page 4 of 6</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 : BENTINCK TO HARDINGE ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c99400" stroke-width="2" stroke-linecap="round"><path d="M20 6 C12 6 7 12 8 19 C8.5 24 12 26 13 30 L27 30 C28 26 31.5 24 32 19 C33 12 28 6 20 6 Z" fill="#fff2a0"/><path d="M15 34 L25 34 M16 37 L24 37"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:560px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="36"/><path d="M10 6 L30 12 L10 18 Z" fill="#c31f1f" stroke="#8f1616"/></g></svg>
+    <svg class="doodle" style="top:850px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><rect x="9" y="10" width="22" height="20" rx="2" fill="#f2d9a0"/><ellipse cx="9" cy="10" rx="3" ry="3" fill="#e8c98a"/><ellipse cx="31" cy="30" rx="3" ry="3" fill="#e8c98a"/></g></svg>
+    <svg class="doodle" style="top:1130px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#fff2a0"/><line x1="20" y1="20" x2="20" y2="11" stroke-linecap="round"/><line x1="20" y1="20" x2="26" y2="22" stroke-linecap="round"/></g></svg>
+
+    <h3 class="sec">William Bentinck (1828–1835)</h3>
+    <p><strong class="ring">First Governor General of India.</strong></p>
+
+    <h4 class="subsec">Social Reforms</h4>
+    <ul>
+      <li>Abolition of <span class="hl">Sati</span> (with efforts from <strong>Raja Ram Mohan Roy</strong>).</li>
+      <li>Suppression of the <strong>Thuggee</strong> system.</li>
+    </ul>
+
+    <h4 class="subsec">Administrative Reforms</h4>
+    <ul>
+      <li>Abolished Provincial and Circuit Courts (introduced by Cornwallis).</li>
+    </ul>
+
+    <h4 class="subsec">Education</h4>
+    <ul>
+      <li><strong>Macaulay's Minute (1835)</strong> introduced, promoting English education — based on the <strong>Downward Filtration Theory</strong>.</li>
+      <li>Sometimes called the <strong>Father of English Education in India</strong>.</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Bentinck's Reforms — Before → After</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="110" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="63" y="29" text-anchor="middle" class="dtxt-sm">Sati practiced</text>
+        <line x1="120" y1="25" x2="172" y2="25" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="182" y="8" width="110" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="237" y="29" text-anchor="middle" class="dtxt-sm-red">Sati Abolished</text>
+        <rect x="8" y="90" width="110" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="63" y="111" text-anchor="middle" class="dtxt-sm">Thuggee active</text>
+        <line x1="120" y1="107" x2="172" y2="107" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="182" y="90" width="110" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="237" y="111" text-anchor="middle" class="dtxt-sm-red">Thuggee suppressed</text>
+        <rect x="8" y="172" width="110" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="63" y="190" text-anchor="middle" class="dtxt-sm">No English</text>
+        <text x="63" y="201" text-anchor="middle" class="dtxt-xs">medium education</text>
+        <line x1="120" y1="192" x2="172" y2="192" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="182" y="172" width="110" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="237" y="187" text-anchor="middle" class="dtxt-sm-red">Macaulay's Minute</text>
+        <text x="237" y="199" text-anchor="middle" class="dtxt-xs">1835, English education</text>
+      </svg>
+    </div>
+
+    <div class="sticky yellow"><b>📌 Downward Filtration Theory</b>Educate a small English-speaking elite class, who would then "filter down" knowledge to the masses — the idea behind Macaulay's Minute, 1835.</div>
+
+    <h3 class="sec">Charles Metcalfe (1835–1836)</h3>
+    <p>Known as the <span class="hl">Liberator of Indian Press</span>. Repealed the <strong>1823 Ordinance</strong> that restricted press freedom.</p>
+
+    <h3 class="sec">Lord Auckland (1836–1842)</h3>
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>First Anglo-Afghan War.</li>
+    </ul>
+    <h4 class="subsec">Other</h4>
+    <p>Maharaja <strong>Ranjit Singh</strong> died during his tenure.</p>
+
+    <h3 class="sec">Lord Hardinge I (1844–1848)</h3>
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>First Anglo-Sikh War.</li>
+    </ul>
+    <h4 class="subsec">Treaties</h4>
+    <ul>
+      <li>Treaty of Lahore (after the First Anglo-Sikh War).</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Bentinck = 3 reforms: <strong>Sati abolished</strong> + <strong>Thuggee suppressed</strong> + <strong>Macaulay's Minute</strong> (English education) — earning him the title "Father of English Education in India"!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Remember <strong>Charles Metcalfe</strong> only for one thing in this topic — the <strong>"Liberator of Indian Press"</strong> who repealed the 1823 Ordinance. Don't attach other reforms to him.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Ranjit Singh died during <strong>Auckland's</strong> tenure — right around the <strong>First Anglo-Afghan War</strong>. Punjab's strongman gone, British attention moved to Afghanistan next!
+    </div>
+
+    <div class="toggle-box" id="tb5">
+      <span class="toggle-btn" onclick="toggleBox('tb5')">📖 Macaulay's Minute &amp; Downward Filtration Theory (tap to expand)</span>
+      <div class="toggle-content">
+        Introduced in <strong>1835</strong> under Bentinck, Macaulay's Minute promoted <strong>English education</strong>, based on the <strong>Downward Filtration Theory</strong> — educate a small elite in English, and knowledge would filter down to the rest of society.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 5 of 6</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="showPage(6)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 6 : DALHOUSIE & SUMMARY ============ -->
+  <div class="page" id="page6">
+
+    <svg class="doodle" style="top:6px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><rect x="6" y="14" width="28" height="14" rx="3" fill="#c31f1f"/><circle cx="13" cy="30" r="3" fill="#3a2b1c" stroke="none"/><circle cx="27" cy="30" r="3" fill="#3a2b1c" stroke="none"/><line x1="6" y1="20" x2="34" y2="20"/></g></svg>
+    <svg class="doodle" style="top:260px; left:8px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><line x1="20" y1="4" x2="20" y2="36"/><line x1="10" y1="10" x2="30" y2="10"/><path d="M10 10 Q20 16 30 10" stroke="#1d3f7a"/></g></svg>
+    <svg class="doodle" style="top:520px; left:6px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="13" fill="#a5760f" font-family="Kalam,cursive" stroke="none">₹</text></g></svg>
+    <svg class="doodle" style="top:800px; left:5px;" viewBox="0 0 40 40"><g fill="#ffd23f" stroke="#a5760f" stroke-width="1.8" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z"/><line x1="6" y1="26" x2="34" y2="26" stroke="#a5760f" stroke-width="2"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+
+    <h3 class="sec">Lord Dalhousie (1848–1856)</h3>
+
+    <h4 class="subsec">Key Policy (Negative) — Doctrine of Lapse</h4>
+    <p>Introduced in <span class="hl ring">1848</span>. Policy: if an Indian ruler died <strong>without a natural heir</strong>, their kingdom would be <strong>annexed</strong> by the British.</p>
+
+    <table>
+      <tr><th>State Annexed (in order)</th><th>Year</th></tr>
+      <tr><td>Satara</td><td>1848</td></tr>
+      <tr><td>Jaitpur and Sambalpur</td><td>1849</td></tr>
+      <tr><td>Udaipur</td><td>1852</td></tr>
+      <tr><td>Jhansi</td><td>1853</td></tr>
+      <tr><td>Nagpur</td><td>1854</td></tr>
+      <tr><td class="imp">Awadh</td><td class="imp">1856</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">Satara 1848</span><span class="arrow">→</span>
+      <span class="chip">Jaitpur &amp; Sambalpur 1849</span><span class="arrow">→</span>
+      <span class="chip">Udaipur 1852</span><span class="arrow">→</span>
+      <span class="chip">Jhansi 1853</span><span class="arrow">→</span>
+      <span class="chip">Nagpur 1854</span><span class="arrow">→</span>
+      <span class="chip">Awadh 1856</span>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 6: Doctrine of Lapse — Flowchart</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrDL" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="65" y="6" width="170" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="27" text-anchor="middle" class="dtxt-sm">Indian ruler dies without heir</text>
+        <line x1="150" y1="40" x2="150" y2="62" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrDL)"/>
+        <rect x="55" y="64" width="190" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="85" text-anchor="middle" class="dtxt-sm">Adopted heir not recognized</text>
+        <line x1="150" y1="98" x2="150" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrDL)"/>
+        <rect x="75" y="122" width="150" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="143" text-anchor="middle" class="dtxt-sm-red">Kingdom Annexed</text>
+        <text x="150" y="176" text-anchor="middle" class="dtxt-xs">e.g. Satara, Jhansi, Nagpur, Awadh...</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Key Reforms (Positive)</h4>
+    <ul>
+      <li>Introduced <strong>telegraph lines</strong>.</li>
+      <li>First <span class="hl">train service</span> started in <strong>1853</strong> (Bombay to Thane).</li>
+      <li>Established the <strong>Public Works Department (PWD)</strong>.</li>
+      <li>Introduced <strong>postal reforms</strong>.</li>
+      <li>Drafted the <strong>Widow Remarriage Act</strong> (passed during <strong>Canning's</strong> tenure).</li>
+    </ul>
+
+    <h4 class="subsec">Wars</h4>
+    <ul>
+      <li>Second Anglo-Sikh War.</li>
+    </ul>
+
+    <div class="sticky pink"><b>📌 Exam Trap</b>Dalhousie only <strong>drafted</strong> the Widow Remarriage Act — it was actually <strong>passed during Lord Canning's tenure</strong>.</div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't credit Dalhousie for <strong>passing</strong> the Widow Remarriage Act — he only <strong>drafted</strong> it; it was passed during <strong>Lord Canning's</strong> tenure!
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Doctrine of Lapse annexation order by year: <strong>1848 Satara → 1849 Jaitpur &amp; Sambalpur → 1852 Udaipur → 1853 Jhansi → 1854 Nagpur → 1856 Awadh</strong>.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Dalhousie = both Positive + Negative: <strong>Telegraph, Trains (1853), PWD, Post</strong> (progress) vs <strong>Doctrine of Lapse</strong> (annexation) — India's most "productive but controversial" Governor-General!
+    </div>
+
+    <h3 class="sec">Summary</h3>
+    <p>The British administration in India evolved through different phases, marked by changes in the title and powers of its chief representative. Initially, Governors managed individual presidencies. The <em>Regulating Act of 1773</em> centralized power by creating the Governor General of Bengal, making <strong>Warren Hastings</strong> the first to hold this expanded role. The <em>Charter Act of 1833</em> further consolidated authority, establishing the Governor General of India, with <strong>William Bentinck</strong> as the first. Finally, the <em>Government of India Act of 1858</em>, following the 1857 Revolt, replaced the Governor General with the Viceroy, signifying direct Crown rule.</p>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1773</span> — Regulating Act — created Governor General of Bengal (first: Warren Hastings)</div>
+      <div class="tl-item"><span class="tl-date">1833</span> — Charter Act — created Governor General of India (first: William Bentinck)</div>
+      <div class="tl-item"><span class="tl-date">1858</span> — Government of India Act — replaced Governor General with Viceroy; Crown Rule begins</div>
+    </div>
+
+    <div class="tl-big">1773 → 1833 → 1858: Bengal → India → Viceroy</div>
+
+    <div class="toggle-box" id="tb6">
+      <span class="toggle-btn" onclick="toggleBox('tb6')">📖 Full Governance Evolution Recap (tap to expand)</span>
+      <div class="toggle-content">
+        <strong>Regulating Act, 1773</strong> — created the post of Governor General of Bengal (first: Warren Hastings)<br>
+        <strong>Charter Act, 1833</strong> — created the Governor General of INDIA (first: William Bentinck)<br>
+        <strong>Government of India Act, 1858</strong> — Governor General became Viceroy; Crown Rule begins
+      </div>
+    </div>
+
+    <div class="sticky yellow"><b>🔑 Keywords</b>Governor General • Viceroy • British India • Regulating Act • Doctrine of Lapse</div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Three Presidencies:</strong> Bengal, Bombay, Madras — Bengal had 40% of the population.</li>
+      <li><strong>1773:</strong> Regulating Act → Governor General of Bengal (first: Warren Hastings).</li>
+      <li><strong>1833:</strong> Charter Act (St. Helena Act) → Governor General of India (first: William Bentinck).</li>
+      <li><strong>1858:</strong> Government of India Act → Governor General became Viceroy; Crown Rule begins.</li>
+      <li>Key policies to remember: <strong>Permanent Settlement (1793)</strong>, <strong>Subsidiary Alliance (1798)</strong>, <strong>Ryotwari (1820)</strong>, <strong>Mahalwari (1822)</strong>, <strong>Doctrine of Lapse (1848)</strong>.</li>
+    </ul>
+
+    <div class="pagecount">Page 6 of 6</div>
+    <div class="navbtns"><button onclick="showPage(5)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Modern Indian History • Governor General &amp; Viceroy of India • SSC CGL / CHSL / UP Police Constable Notes<br>
+    <a class="footer-brand" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="bd-1">Study</span><span class="bd-2">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+  const TOTAL_PAGES = 6;
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=TOTAL_PAGES;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=TOTAL_PAGES;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
