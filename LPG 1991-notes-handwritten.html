@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>New Industrial Policy, 1991 — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.0rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.5rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Indian Economy — Economic Reforms</div>
+    <h1>New Industrial Policy, 1991</h1>
+    <h2>Background • De-licensing • Disinvestment • FDI • LPG</h2>
+    <div class="sub">India's <b>latest</b> industrial policy — no new one introduced since 1991 &nbsp;|&nbsp; born out of the <b>1990 Balance of Payments crisis</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/Exam_Zen" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Exam</span><span class="tg-planner">Zen</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">⚖️ Background</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">🏭 De-licensing</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">💰 FDI</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">📜 MRTP→FEMA</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🌍 LPG Summary</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="10" x2="28" y2="10"/><line x1="12" y1="15" x2="28" y2="15"/><line x1="20" y1="10" x2="20" y2="33"/><line x1="14" y1="33" x2="26" y2="20"/></g></svg>
+    <svg class="doodle" style="top:250px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="18" width="10" height="16" fill="#eadfc4"/><rect x="20" y="10" width="10" height="24" fill="#f2d9a0"/><path d="M22 10 L22 4 L26 7 L26 10"/><path d="M12 18 L12 12 L15 15 L15 18"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.4"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><line x1="20" y1="11" x2="20" y2="23" stroke-linecap="round"/><circle cx="20" cy="28" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:830px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><ellipse cx="20" cy="30" rx="12" ry="4" fill="#ffd23f"/><ellipse cx="20" cy="24" rx="12" ry="4" fill="#ffe08a"/><ellipse cx="20" cy="18" rx="12" ry="4" fill="#ffd23f"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Why Reforms in 1991?</h3>
+    <p>The New Industrial Policy, <span class="hl red ring">1991</span> is India's <strong>latest</strong> industrial policy — no new industrial policy has been introduced since then. In <span class="hl">1990</span>, India faced a <strong>Balance of Payments (BoP) crisis</strong>. This forced a rethink: the economy's "over-caring parent" (the government) realised that over-caring wouldn't work anymore, and the economy had to be <strong>reformed</strong>.</p>
+
+    <div class="sticky blue">
+      <b>💡 Understand it like this...</b>
+      Think of the government as an over-protective parent who controlled almost everything in the economy — like a parent who won't let a grown child make any decisions. The 1990 BoP crisis was the wake-up call: over-caring wasn't working, so the "parent" had to loosen its grip and let the economy grow on its own.
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: The Four Pillars of NIP 1991</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M100 58 Q130 92 128 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M225 58 Q195 92 194 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M95 202 Q125 174 128 160" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M228 202 Q198 174 194 160" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <ellipse cx="70" cy="38" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="34" text-anchor="middle" class="dtxt">De-reservation</text>
+        <text x="70" y="48" text-anchor="middle" class="dtxt-sm">of Public Sector</text>
+        <ellipse cx="250" cy="38" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="250" y="34" text-anchor="middle" class="dtxt">De-licensing</text>
+        <text x="250" y="48" text-anchor="middle" class="dtxt-sm">License Raj ends</text>
+        <ellipse cx="62" cy="222" rx="60" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="62" y="218" text-anchor="middle" class="dtxt">Disinvestment</text>
+        <text x="62" y="231" text-anchor="middle" class="dtxt-sm">of Public Sector</text>
+        <ellipse cx="258" cy="222" rx="60" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="258" y="215" text-anchor="middle" class="dtxt">FDI</text>
+        <text x="258" y="228" text-anchor="middle" class="dtxt-sm">Liberalization</text>
+        <ellipse cx="160" cy="140" rx="58" ry="34" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="134" text-anchor="middle" class="dtxt-big">NIP</text>
+        <text x="160" y="153" text-anchor="middle" class="dtxt-big">1991</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">1️⃣ De-reservation of the Public Sector</h4>
+    <p>The government said: <em>"now we have to remove our hands from our child."</em> Meaning — the government <strong>reduced its shareholding</strong> and brought in the <strong>private sector</strong>. Sectors that were earlier reserved <span class="red">exclusively</span> for the public sector were reduced.</p>
+
+    <p>However, the public sector's <strong>pre-eminent place</strong> was continued in <span class="hl red ring v2">five core areas</span>:</p>
+    <table>
+      <tr><th>#</th><th>Core Sector (Public Sector Pre-eminent)</th></tr>
+      <tr><td>1</td><td>Arms &amp; Ammunition</td></tr>
+      <tr><td>2</td><td>Atomic Energy</td></tr>
+      <tr><td>3</td><td>Mineral Oils</td></tr>
+      <tr><td>4</td><td>Rail Transport</td></tr>
+      <tr><td>5</td><td>Mining</td></tr>
+    </table>
+
+    <p>But <strong>today</strong>, if we talk about it, monopoly remains in <span class="hl red">only two sectors</span> — <strong class="scribble">Atomic Energy</strong> and <strong class="scribble">Railway Operations</strong>. The rest have since been opened up further.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>1991 position</strong> (5 core sectors kept pre-eminent for the public sector) with the <strong>current position</strong> (monopoly today survives in only 2 — Atomic Energy &amp; Railway Operations). Things have opened up further since 1991!
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Remember the 5 core sectors as: <strong>Arms, Atomic, Mineral oils, Rail, Mining (A-A-M-R-M)</strong>. Of these, only <strong>Atomic Energy</strong> and <strong>Railway Operations</strong> remain public-sector monopolies today.
+    </div>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 The Big Picture (tap to expand)</span>
+      <div class="toggle-content">
+        De-reservation, De-licensing, Disinvestment, and FDI Liberalization together tell us one thing: the government was moving towards <strong>privatization</strong> — private players were now allowed where only the public sector stood before.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="18" width="10" height="16" fill="#eadfc4"/><rect x="20" y="10" width="10" height="24" fill="#f2d9a0"/><path d="M22 10 L22 4 L26 7 L26 10"/><path d="M12 18 L12 12 L15 15 L15 18"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2.2"><circle cx="20" cy="20" r="10"/><line x1="20" y1="4" x2="20" y2="10"/><line x1="20" y1="30" x2="20" y2="36"/><line x1="4" y1="20" x2="10" y2="20"/><line x1="30" y1="20" x2="36" y2="20"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="27" y1="27" x2="31" y2="31"/><line x1="9" y1="31" x2="13" y2="27"/><line x1="27" y1="13" x2="31" y2="9"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.4" stroke-linecap="round"><path d="M4 30 C14 26 18 12 30 8"/><path d="M22 8 L31 7 L27 17"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.4"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><line x1="20" y1="11" x2="20" y2="23" stroke-linecap="round"/><circle cx="20" cy="28" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">De-licensing &amp; Disinvestment</h3>
+
+    <h4 class="subsec">2️⃣ De-licensing — License Raj Abolished</h4>
+    <p>The <strong>License Raj</strong>, in place since <span class="hl red ring">1956</span>, was abolished. There was <strong>abolition of industrial licensing</strong> for all projects <em>except</em> for a <strong>short list of industries</strong>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🏭 Fig 2: End of the License Raj</div>
+      <svg class="diagram-svg" viewBox="0 0 300 210">
+        <defs><marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="65" y="6" width="170" height="42" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt">License Raj (since 1956)</text>
+        <text x="150" y="38" text-anchor="middle" class="dtxt-xs">Government license needed for industry</text>
+        <line x1="90" y1="10" x2="210" y2="44" stroke="#c31f1f" stroke-width="2.4"/>
+        <line x1="210" y1="10" x2="90" y2="44" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="64" text-anchor="middle" class="dtxt-sm-red">ABOLISHED — NIP 1991</text>
+        <line x1="150" y1="68" x2="150" y2="96" stroke="#3a2b1c" stroke-width="2.2" marker-end="url(#arrD)"/>
+        <rect x="55" y="98" width="190" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="116" text-anchor="middle" class="dtxt">Licensing removed for</text>
+        <text x="150" y="130" text-anchor="middle" class="dtxt">ALL projects</text>
+        <line x1="150" y1="138" x2="150" y2="160" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <rect x="35" y="162" width="230" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="150" y="180" text-anchor="middle" class="dtxt-sm">EXCEPT: a short list of</text>
+        <text x="150" y="193" text-anchor="middle" class="dtxt-sm">industries (still licensed)</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">3️⃣ Disinvestment of the Public Sector</h4>
+    <p>Disinvestment is correlated with de-licensing — both point towards the same underlying trend: <strong class="scribble">privatization</strong>. The government began <strong>selling off part of its stake</strong> in public sector enterprises, reducing its own shareholding.</p>
+
+    <div class="chain">
+      <span class="chip">De-reservation</span><span class="arrow">→</span>
+      <span class="chip">De-licensing</span><span class="arrow">→</span>
+      <span class="chip">Disinvestment</span><span class="arrow">→</span>
+      <span class="chip">Privatization</span>
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Three "D's" of NIP 1991 → De-reservation, De-licensing, Disinvestment — all roads lead to one destination: Privatization!</div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't treat de-licensing and disinvestment as the same thing! <strong>De-licensing</strong> = removing the requirement of a government license to start/run an industry. <strong>Disinvestment</strong> = government reducing/selling its own ownership stake in public sector companies. Related, but not identical.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Whenever you see "De-" in NIP 1991 — De-reservation, De-licensing — think <strong>"government stepping back."</strong> Disinvestment is the government "cashing out" its own stake — same direction, different action.
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="10" x2="28" y2="10"/><line x1="12" y1="15" x2="28" y2="15"/><line x1="20" y1="10" x2="20" y2="33"/><line x1="14" y1="33" x2="26" y2="20"/></g></svg>
+    <svg class="doodle" style="top:270px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><ellipse cx="20" cy="30" rx="12" ry="4" fill="#ffd23f"/><ellipse cx="20" cy="24" rx="12" ry="4" fill="#ffe08a"/><ellipse cx="20" cy="18" rx="12" ry="4" fill="#ffd23f"/></g></svg>
+    <svg class="doodle" style="top:600px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.4" stroke-linecap="round"><path d="M4 30 C14 26 18 12 30 8"/><path d="M22 8 L31 7 L27 17"/></g></svg>
+    <svg class="doodle" style="top:920px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Liberalization of Foreign Investment</h3>
+    <p>NIP 1991 was the <strong>first industrial policy</strong> in which <strong>foreign companies were allowed to have a majority stake</strong> in India. Until then, this had never happened — foreign investment could now be more than domestic ownership in specific priority industries.</p>
+
+    <h4 class="subsec">4️⃣ FDI Caps Introduced in 1991</h4>
+    <ul>
+      <li>For <span class="hl red ring">47 high priority industries</span> — FDI up to <strong>51%</strong> was allowed</li>
+      <li>For <strong>export trading houses</strong> — FDI up to <strong>74%</strong> was allowed</li>
+    </ul>
+
+    <div class="sticky pink"><b>💡 Why 51%?</b>If you hold 51% share in a company, you are its owner — you control it. Earlier, the government wasn't willing to hand over that "owner" status to foreign companies. In 1991, for the first time, it allowed this in high-priority industries.</div>
+
+    <div class="diagram-card">
+      <div class="cap">📈 Fig 3: FDI Ceilings — Then vs Now</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <line x1="40" y1="190" x2="280" y2="190" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="40" y1="190" x2="40" y2="20" stroke="#3a2b1c" stroke-width="2"/>
+        <rect x="60" y="120" width="46" height="70" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="83" y="112" text-anchor="middle" class="dtxt-sm-red">51%</text>
+        <text x="83" y="205" text-anchor="middle" class="dtxt-xs">47 High-Priority</text>
+        <text x="83" y="215" text-anchor="middle" class="dtxt-xs">Industries (1991)</text>
+        <rect x="130" y="88" width="46" height="102" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="153" y="80" text-anchor="middle" class="dtxt-sm-red">74%</text>
+        <text x="153" y="205" text-anchor="middle" class="dtxt-xs">Export Trading</text>
+        <text x="153" y="215" text-anchor="middle" class="dtxt-xs">Houses (1991)</text>
+        <rect x="200" y="34" width="46" height="156" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="223" y="26" text-anchor="middle" class="dtxt-sm-red">100%</text>
+        <text x="223" y="205" text-anchor="middle" class="dtxt-xs">e.g. Space Sector</text>
+        <text x="223" y="215" text-anchor="middle" class="dtxt-xs">(Today, Automatic Route)</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">FDI Today</h4>
+    <p>Today, there are numerous sectors in the economy where the government allows <span class="hl">100% FDI</span> — for example, the <strong>space sector</strong> allows 100% FDI through the <strong>automatic route</strong>. There are many other sectors where FDI is allowed through the automatic route (like 74%), and for the rest, <strong>government approval</strong> is required.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Three FDI numbers to lock in: <strong>51%</strong> (47 high-priority industries, 1991), <strong>74%</strong> (export trading houses, 1991), <strong>100%</strong> (many sectors today, e.g. space — via automatic route).
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't assume the <strong>automatic route</strong> applies to all FDI everywhere. It applies only up to the specified caps in permitted sectors — beyond those caps, or in other sectors, <strong>government approval</strong> is still required.
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="20" height="26" rx="2" fill="#eadfc4"/><line x1="14" y1="14" x2="26" y2="14"/><line x1="14" y1="19" x2="26" y2="19"/><line x1="14" y1="24" x2="22" y2="24"/></g></svg>
+    <svg class="doodle" style="top:290px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2.2"><circle cx="20" cy="20" r="10"/><line x1="20" y1="4" x2="20" y2="10"/><line x1="20" y1="30" x2="20" y2="36"/><line x1="4" y1="20" x2="10" y2="20"/><line x1="30" y1="20" x2="36" y2="20"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="27" y1="27" x2="31" y2="31"/><line x1="9" y1="31" x2="13" y2="27"/><line x1="27" y1="13" x2="31" y2="9"/></g></svg>
+    <svg class="doodle" style="top:640px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><ellipse cx="20" cy="30" rx="12" ry="4" fill="#ffd23f"/><ellipse cx="20" cy="24" rx="12" ry="4" fill="#ffe08a"/><ellipse cx="20" cy="18" rx="12" ry="4" fill="#ffd23f"/></g></svg>
+    <svg class="doodle" style="top:980px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.4"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><line x1="20" y1="11" x2="20" y2="23" stroke-linecap="round"/><circle cx="20" cy="28" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">Rewriting the Rulebook: FTA, MRTP, FERA</h3>
+
+    <h4 class="subsec">5️⃣ Foreign Technology Agreement (FTA)</h4>
+    <p>There was <strong>automatic approval</strong> for technology-related agreements — companies no longer needed to go through a lengthy approval process for foreign technology tie-ups.</p>
+
+    <h4 class="subsec">6️⃣ MRTP Act Amended — Monopoly Curbs Removed</h4>
+    <p>The <strong>MRTP Act</strong> (which restricted monopoly) was amended to <span class="red">remove the threshold limit</span>. Earlier, if a company had a turnover of <span class="hl red ring v2">Rs 500 crore or more</span>, the government kept continuous checks and balances on it — a "scanner" watching for anything wrong.</p>
+
+    <div class="sticky orange"><b>🏢 The Tata Example</b>Companies like Tata had turnover well above Rs 500 crore — which should have been a matter of pride. Instead, the government kept a scanner on them even as they tried to expand, discouraging growth. It was, in effect, "shooting ourselves in the foot."</div>
+
+    <div class="quotebox">💬 Big companies expanding their business faced heavy government documentation just because they crossed the Rs 500 crore mark — the realisation: this policy was hurting our own growth.</div>
+
+    <p>This restriction was removed, and the <strong>MRTP Act was replaced by the Competition Act, 2002</strong>.</p>
+
+    <h4 class="subsec">7️⃣ FERA (1971) → FEMA (1999)</h4>
+    <p>The <strong>Foreign Exchange Regulation Act (FERA), 1971</strong> became the <strong>Foreign Exchange Management Act (FEMA)</strong> in <span class="hl red ring">1999</span>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: Old Laws → New Laws</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrE" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="10" y="16" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="70" y="36" text-anchor="middle" class="dtxt-sm">MRTP Act</text>
+        <text x="70" y="49" text-anchor="middle" class="dtxt-xs">(monopoly control)</text>
+        <line x1="130" y1="36" x2="168" y2="36" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrE)"/>
+        <rect x="170" y="16" width="120" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="230" y="36" text-anchor="middle" class="dtxt-sm-red">Competition Act</text>
+        <text x="230" y="49" text-anchor="middle" class="dtxt-xs">2002</text>
+
+        <rect x="10" y="130" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="70" y="150" text-anchor="middle" class="dtxt-sm">FERA</text>
+        <text x="70" y="163" text-anchor="middle" class="dtxt-xs">1971</text>
+        <line x1="130" y1="150" x2="168" y2="150" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrE)"/>
+        <rect x="170" y="130" width="120" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="230" y="150" text-anchor="middle" class="dtxt-sm-red">FEMA</text>
+        <text x="230" y="163" text-anchor="middle" class="dtxt-xs">1999</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Old Act</th><th>Replaced/Renamed As</th></tr>
+      <tr><td>MRTP Act (monopoly control, 500 crore threshold)</td><td class="imp">Competition Act, 2002</td></tr>
+      <tr><td>FERA, 1971</td><td class="imp">FEMA, 1999</td></tr>
+    </table>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the two! <strong>MRTP Act → Competition Act (2002)</strong> deals with <em>monopoly / restrictive trade practices</em>. <strong>FERA → FEMA (1999)</strong> deals with <em>foreign exchange regulation</em>. Two different problems, two different laws.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "MRTP got Competition" (2002) and "FERA became FEMA" (1999) — say it like a rhyme: <strong>Competition beats Monopoly, Management beats Regulation.</strong>
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="10" x2="28" y2="10"/><line x1="12" y1="15" x2="28" y2="15"/><line x1="20" y1="10" x2="20" y2="33"/><line x1="14" y1="33" x2="26" y2="20"/></g></svg>
+    <svg class="doodle" style="top:270px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#cdeccb"/><path d="M20 5 A15 15 0 0 1 20 35" stroke="#1f7a4d" fill="none"/><path d="M8 12 L32 28 M8 28 L32 12" stroke="#3a3a3a" stroke-width="1.4" opacity="0.5"/></g></svg>
+    <svg class="doodle" style="top:640px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><ellipse cx="20" cy="30" rx="12" ry="4" fill="#ffd23f"/><ellipse cx="20" cy="24" rx="12" ry="4" fill="#ffe08a"/><ellipse cx="20" cy="18" rx="12" ry="4" fill="#ffd23f"/></g></svg>
+    <svg class="doodle" style="top:980px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">The Big Picture: L-P-G</h3>
+    <p>All these changes — de-reservation, de-licensing, disinvestment, FDI liberalization, FTA, and the MRTP/FERA reforms — tell us about one overarching theme: <strong class="scribble">privatization</strong>. Together with foreign investment coming in (<strong>liberalization</strong>) and India integrating its domestic economy with the rest of the world (<strong>globalization</strong>), these form the famous <span class="hl red ring">LPG framework</span> of India's 1991 reforms.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: L-P-G Mind Map</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrF" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M100 58 Q130 92 128 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrF)"/>
+        <path d="M225 58 Q195 92 194 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrF)"/>
+        <path d="M160 202 Q160 180 160 162" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrF)"/>
+        <ellipse cx="70" cy="38" rx="62" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="32" text-anchor="middle" class="dtxt">Liberalization</text>
+        <text x="70" y="46" text-anchor="middle" class="dtxt-sm">De-licensing, FDI</text>
+        <ellipse cx="250" cy="38" rx="62" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="250" y="32" text-anchor="middle" class="dtxt">Privatization</text>
+        <text x="250" y="46" text-anchor="middle" class="dtxt-sm">De-reservation,</text>
+        <text x="250" y="58" text-anchor="middle" class="dtxt-sm">Disinvestment</text>
+        <ellipse cx="160" cy="222" rx="70" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="160" y="216" text-anchor="middle" class="dtxt">Globalization</text>
+        <text x="160" y="230" text-anchor="middle" class="dtxt-sm">Integrating with</text>
+        <text x="160" y="242" text-anchor="middle" class="dtxt-sm">world economy</text>
+        <ellipse cx="160" cy="130" rx="52" ry="30" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="126" text-anchor="middle" class="dtxt-big">L P G</text>
+        <text x="160" y="142" text-anchor="middle" class="dtxt-sm-red">Reforms 1991</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Timeline — Reform Milestones</h4>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1990</span><br>Balance of Payments (BoP) crisis hits India.</div>
+      <div class="tl-item"><span class="tl-date">1991</span><br>New Industrial Policy launched — de-reservation, de-licensing, disinvestment, FDI liberalization (51% / 74%), FTA automatic approval, MRTP threshold removed.</div>
+      <div class="tl-item"><span class="tl-date">1999</span><br>FERA (1971) replaced by FEMA.</div>
+      <div class="tl-item"><span class="tl-date">2002</span><br>MRTP Act replaced by the Competition Act.</div>
+    </div>
+    <div class="tl-big">🗓️ 1991 = the year Liberalization, Privatization &amp; Globalization began in India!</div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Trigger:</strong> 1990 Balance of Payments crisis</li>
+      <li><strong>Policy:</strong> New Industrial Policy, 1991 (India's latest — none since)</li>
+      <li><strong>De-reservation:</strong> Public sector pre-eminent in 5 sectors (arms, atomic energy, mineral oils, rail, mining); today monopoly only in 2 (atomic energy, railways)</li>
+      <li><strong>De-licensing:</strong> License Raj (1956) abolished, except a short list of industries</li>
+      <li><strong>Disinvestment:</strong> correlated with de-licensing → both signal privatization</li>
+      <li><strong>FDI:</strong> 51% in 47 high-priority industries; 74% for export trading houses; 100% in many sectors today (e.g. space, via automatic route)</li>
+      <li><strong>FTA:</strong> automatic approval for technology agreements</li>
+      <li><strong>MRTP Act</strong> (500 crore threshold removed) → replaced by <strong>Competition Act, 2002</strong></li>
+      <li><strong>FERA, 1971</strong> → became <strong>FEMA, 1999</strong></li>
+      <li><strong>Overall theme:</strong> Liberalization + Privatization + Globalization = <span class="hl">LPG</span></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      If asked "what does NIP 1991 represent?" — just say three words: <strong>Liberalization, Privatization, Globalization (LPG).</strong>
+    </div>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Economy • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/Exam_Zen" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Exam</span><span class="tg-planner">Zen</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
