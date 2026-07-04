@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Constitutional, Statutory &amp; Executive Bodies — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.7rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.25;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.05rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:380px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.3rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.1rem;}
+    h4.subsec{font-size:1.15rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:0.9rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">UPSC<br>POLITY</div>
+    <div class="tag">Indian Polity — Bodies of the State</div>
+    <h1>Constitutional, Statutory &amp; Executive Bodies</h1>
+    <h2>Finance Commission • PSC • Election Commission • NHRC • CVC • Lokpal &amp; More</h2>
+    <div class="sub">Three types of bodies: <b>Constitutional</b> (has Articles) • <b>Statutory</b> (created by an Act) • <b>Executive</b> (created by resolution)</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Types &amp; Finance Comm.</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">📋 Public Service Comm.</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🗳️ Election Comm. &amp; NCs</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">⚖️ Statutory Bodies</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🏢 Executive Bodies</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M8 32 L8 8 L32 8 L32 32" fill="#eaf2fb"/><line x1="8" y1="14" x2="32" y2="14"/><line x1="8" y1="20" x2="32" y2="20"/><line x1="8" y1="26" x2="32" y2="26"/></g></svg>
+    <svg class="doodle" style="top:260px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><rect x="8" y="16" width="24" height="16" rx="2" fill="#ffe08a"/><circle cx="20" cy="10" r="5"/><line x1="20" y1="15" x2="20" y2="16"/></g></svg>
+    <svg class="doodle" style="top:540px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:820px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><ellipse cx="20" cy="20" rx="15" ry="15" fill="#fff"/><path d="M20 5 L20 35 M5 20 L35 20"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 12 L20 21 L26 25"/></g></svg>
+
+    <h3 class="sec">Three Types of Bodies</h3>
+    <p>Every important body of the Indian State falls into one of three types:</p>
+    <table>
+      <tr><th>Type</th><th>How It's Created</th></tr>
+      <tr><td class="imp">Constitutional</td><td>Has one or more <strong>Articles</strong> of the Constitution dedicated to it</td></tr>
+      <tr><td class="imp">Statutory</td><td>Created through an <strong>Act</strong> of Parliament/Legislature</td></tr>
+      <tr><td class="imp">Executive</td><td>Created by an <strong>Executive Resolution</strong> — neither in the Constitution nor by an Act</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Three Types of Bodies</div>
+      <svg class="diagram-svg" viewBox="0 0 320 240">
+        <defs><marker id="arrA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M110 55 Q140 90 138 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M230 55 Q200 90 202 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M170 200 Q170 180 170 162" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <ellipse cx="80" cy="35" rx="65" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="80" y="30" text-anchor="middle" class="dtxt">Constitutional</text>
+        <text x="80" y="43" text-anchor="middle" class="dtxt-sm">EC, UPSC, CAG,</text>
+        <text x="80" y="54" text-anchor="middle" class="dtxt-sm">Finance Comm., AG</text>
+        <ellipse cx="260" cy="35" rx="60" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="260" y="30" text-anchor="middle" class="dtxt">Statutory</text>
+        <text x="260" y="43" text-anchor="middle" class="dtxt-sm">NHRC, CIC,</text>
+        <text x="260" y="54" text-anchor="middle" class="dtxt-sm">NCW, Lokpal</text>
+        <ellipse cx="170" cy="222" rx="66" ry="30" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="170" y="216" text-anchor="middle" class="dtxt-sm-red">Executive</text>
+        <text x="170" y="229" text-anchor="middle" class="dtxt-sm-red">CBI, Law Comm.,</text>
+        <text x="170" y="240" text-anchor="middle" class="dtxt-sm-red">NITI Aayog</text>
+        <ellipse cx="170" cy="135" rx="52" ry="30" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2.4"/>
+        <text x="170" y="140" text-anchor="middle" class="dtxt">3 TYPES</text>
+      </svg>
+    </div>
+
+    <p>Bodies like <span class="hl">Election Commission, UPSC, State PSCs, GST Council, National Commission for SC (NCSC), National Commission for ST (NCST), CAG, and Attorney General (AG)</span> are all <strong>Constitutional bodies</strong>.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Quick test: "Is there an Article for it?" → Constitutional. "Is there an Act for it?" → Statutory. "Neither?" → Executive.
+    </div>
+
+    <h4 class="subsec">The Finance Commission — Article 280</h4>
+    <p>Composition: <span class="hl">1 Chairman + 4 other Members</span>. The Chairman is <strong>not necessarily the Finance Minister</strong> — he/she must have knowledge of <strong>public affairs</strong>. Members are <span class="red">re-eligible for appointment</span> (they can be reappointed to the same office).</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      The <strong>qualifications</strong> of Finance Commission members are <strong>not laid down in the Constitution itself</strong> — the Constitution left it to <strong>Parliament</strong> to prescribe them by law.
+    </div>
+
+    <h4 class="subsec">Finance Commission Chairmen</h4>
+    <div class="chain">
+      <span class="chip">1st: K.C. Niyogi</span><span class="arrow">→</span>
+      <span class="chip">14th: Y.V. Reddy</span><span class="arrow">→</span>
+      <span class="chip">15th: N.K. Singh</span><span class="arrow">→</span>
+      <span class="chip">16th: Arvind Panagariya</span>
+    </div>
+    <p>Members of the 16th Finance Commission: <span class="hl">Ajay Narayan Jha, Annie George Mathew, Manoj Panda, Soumya Kanti Ghosh</span>.</p>
+
+    <h4 class="subsec">Article 281 — Recommendations</h4>
+    <p>The Finance Commission's recommendations go to the <span class="hl">President</span> (through Parliament, for Centre-related matters) or to the <span class="hl">Governor</span> (through the State Legislature, for State-related matters). It recommends how the <span class="red">net proceeds of taxes</span> (tax collected minus cost of collection) should be <strong>distributed between the Centre and the States</strong>.</p>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Article 280 = Composition/Definition. Article 281 = Recommendations (to whom + about what — net proceeds of taxes).</div>
+
+    <p>Article <span class="hl">279A</span> establishes the <strong>GST Council</strong>, whose Chairman is the <strong>Union Finance Minister</strong>. The GST Council is also a constitutional body.</p>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:10px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="6" y="10" width="28" height="22" rx="2" fill="#eaf2fb"/><line x1="6" y1="16" x2="34" y2="16"/><circle cx="12" cy="13" r="1.2" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2.2" stroke-linecap="round"><path d="M8 30 L20 10 L32 30 Z" fill="#cdeccb"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linecap="round"><path d="M8 8 L32 32 M32 8 L8 32"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M20 4 L23 15 L34 15 L25 22 L28 33 L20 26 L12 33 L15 22 L6 15 L17 15 Z" fill="#fff2a0"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Public Service Commission — Part XIV</h3>
+    <p>The Public Service Commission is dealt with in <span class="hl">Part XIV, Articles 315 to 323</span>.</p>
+
+    <h4 class="subsec">Article 315 — PSC of the Union and States</h4>
+    <p>This does not mean one single commission serves everyone — it just means the <strong>same Part/framework</strong> covers both. In reality there is a <span class="hl">UPSC</span> (Union Public Service Commission) and separate <span class="hl">State PSCs</span> for each state.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: Articles 315–323 — What Each Covers</div>
+      <svg class="diagram-svg" viewBox="0 0 300 210">
+        <defs><marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="26" text-anchor="middle" class="dtxt-sm">315: UPSC &amp; State</text>
+        <text x="73" y="38" text-anchor="middle" class="dtxt-xs">PSCs (framework)</text>
+        <line x1="138" y1="26" x2="162" y2="26" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="164" y="8" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="26" text-anchor="middle" class="dtxt-sm">Appointment,</text>
+        <text x="228" y="38" text-anchor="middle" class="dtxt-xs">Term, Removal</text>
+        <line x1="228" y1="44" x2="228" y2="66" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="164" y="68" width="128" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="228" y="86" text-anchor="middle" class="dtxt-sm-red">Prohibition on</text>
+        <text x="228" y="98" text-anchor="middle" class="dtxt-sm-red">re-employment</text>
+        <line x1="164" y1="86" x2="140" y2="86" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="8" y="68" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="72" y="86" text-anchor="middle" class="dtxt-sm">Function:</text>
+        <text x="72" y="98" text-anchor="middle" class="dtxt-sm">Conducting exams</text>
+        <line x1="72" y1="104" x2="72" y2="126" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="8" y="128" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="72" y="146" text-anchor="middle" class="dtxt-sm">Parliament can</text>
+        <text x="72" y="158" text-anchor="middle" class="dtxt-sm">extend functions</text>
+        <line x1="136" y1="146" x2="160" y2="146" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="164" y="128" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="146" text-anchor="middle" class="dtxt-sm">323: Reports to</text>
+        <text x="228" y="158" text-anchor="middle" class="dtxt-xs">President/Governor</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">What Part XIV Covers</h4>
+    <ul>
+      <li>Appointment and term of office of members</li>
+      <li>Removal and suspension of a member</li>
+      <li>Power to make regulations regarding conditions of service</li>
+      <li><strong>Prohibition</strong> on a member holding certain offices after ceasing to be a member</li>
+      <li>Function: <span class="hl">conducting examinations</span></li>
+      <li>Power of <strong>Parliament</strong> to extend the functions of the PSC</li>
+      <li><strong>Article 323</strong>: Reports — given to the <span class="red">President</span> (for UPSC) or the <span class="red">Governor</span> (for State PSC)</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      "Prohibition on holding office" only lets a member move <strong>forward</strong>, never backward — e.g., a State PSC Chairman can become a UPSC member or UPSC Chairman, but a UPSC Chairman/member <strong>cannot go back</strong> to being a State PSC Chairman or member.
+    </div>
+
+    <h4 class="subsec">Term of Office</h4>
+    <table>
+      <tr><th>Body</th><th>Term</th></tr>
+      <tr><td>UPSC (and CAG)</td><td class="imp">6 years or 65 years of age, whichever is earlier</td></tr>
+      <tr><td>State PSC / Joint PSC</td><td class="imp">6 years or 62 years of age, whichever is earlier</td></tr>
+    </table>
+
+    <div class="sticky pink"><b>🧠 Memory Trick</b>UPSC &amp; CAG both retire at "6 years or 65" — same number twice helps you remember both together!</div>
+
+    <h4 class="subsec">Joint Public Service Commission (JPSC)</h4>
+    <p>A <span class="hl">Joint PSC</span> can be created by the <strong>President</strong> (at the request of two or more states, under Article 315(2)) to serve those states together — it is set up by presidential order rather than existing automatically like the UPSC/State PSCs.</p>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      The Finance Commission is a <strong>quasi-judicial body</strong> too — just like the impeachment process, it involves examining/evaluating claims (Centre vs States' share of taxes) without being a full court.
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="10" y="16" width="20" height="14" rx="2" fill="#eaf2fb"/><path d="M14 16 L14 10 Q20 4 26 10 L26 16"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="14" rx="2" fill="#ffd0d3"/><line x1="20" y1="18" x2="20" y2="8"/><circle cx="20" cy="6" r="2" fill="#8a1414" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:860px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><circle cx="14" cy="14" r="6"/><circle cx="26" cy="14" r="6"/><path d="M8 30 Q14 22 20 30 Q26 22 32 30"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Election Commission — Part XV</h3>
+    <p>The Election Commission of India (ECI) is covered in <span class="hl">Part XV, Articles 324 to 329</span>.</p>
+
+    <h4 class="subsec">Article 324 — Elections Conducted by ECI</h4>
+    <p>The ECI conducts elections to the offices of <strong>President and Vice President</strong>, and to the <strong>Lok Sabha, Rajya Sabha, State Legislative Assembly, and State Legislative Council</strong>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Many think the <strong>State Election Commission</strong> conducts Legislative Assembly/Council elections — it doesn't! Those are conducted by the <strong>Election Commission of India</strong>. Only <strong>Panchayat and Municipality</strong> elections are conducted through the local-body machinery.
+    </div>
+
+    <h4 class="subsec">Other Key Articles (325–329)</h4>
+    <ul>
+      <li><strong>Article 325</strong>: No person is ineligible for inclusion in a special electoral roll, or can claim inclusion in a special roll, on grounds of religion, race, or caste</li>
+      <li><strong>Article 326</strong>: Elections held on the basis of <span class="hl">adult suffrage</span> — every citizen above <strong>18 years</strong> of age can vote</li>
+      <li><strong>Article 327</strong>: Power of <strong>Parliament</strong> to make provisions for elections to Parliament and State Legislatures</li>
+      <li><strong>Article 328</strong>: Power of a <strong>State Legislature</strong> to make provisions for elections to that State's own legislature</li>
+      <li><strong>Article 329</strong>: Courts <span class="red">cannot interfere</span> in electoral matters</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Election Commission Snapshot</div>
+      <svg class="diagram-svg" viewBox="0 0 300 170">
+        <defs><marker id="arrC" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="70" y="6" width="160" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="28" text-anchor="middle" class="dtxt-sm-red">324: Elections Conducted</text>
+        <line x1="150" y1="42" x2="150" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="10" y="62" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="75" y="80" text-anchor="middle" class="dtxt-sm">Pres/VP, LS/RS,</text>
+        <text x="75" y="92" text-anchor="middle" class="dtxt-sm">Assembly/Council</text>
+        <rect x="160" y="62" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="225" y="80" text-anchor="middle" class="dtxt-sm">Panchayat/</text>
+        <text x="225" y="92" text-anchor="middle" class="dtxt-sm">Municipality → Local body</text>
+        <line x1="150" y1="98" x2="150" y2="116" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="50" y="118" width="200" height="36" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="150" y="140" text-anchor="middle" class="dtxt-sm">329: Courts cannot interfere</text>
+      </svg>
+    </div>
+
+    <p>Current Chief Election Commissioner: <span class="hl">Gyanesh Kumar</span>. Other Election Commissioners: <strong>Sukhbir Singh Sandhu</strong> and <strong>Vivek Joshi</strong>. First CEC: <span class="hl">Sukumar Sen</span>.</p>
+
+    <h4 class="subsec">National Commissions for SC / ST / OBC</h4>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">Originally (Art 338)</span> — There was a <strong>Special Officer for SC and ST</strong>, not a commission.</div>
+      <div class="tl-item"><span class="tl-date">65th Amendment</span> — Converted the Special Officer into a full <strong>National Commission</strong> (still combined, for both SC and ST).</div>
+      <div class="tl-item"><span class="tl-date">89th Amendment, 2003</span> — <strong>Bifurcated</strong> it into two separate commissions: <span class="hl">NCSC at Article 338</span> and <span class="hl">NCST at Article 338A</span>.</div>
+      <div class="tl-item"><span class="tl-date">102nd Amendment, 2018</span> — Gave the <strong>National Commission for Backward Classes</strong> (until then a statutory body) <strong>constitutional status</strong> under <span class="hl">Article 338B</span>.</div>
+    </div>
+
+    <div class="quotebox">📖 The first Backward Classes Commission was chaired by Kaka Kalelkar; the second, by B.P. Mandal. The 1992 Indira Sawhney case (also called the "Mandal case") introduced the concept of creamy layer and non-creamy layer within OBCs.</div>
+
+    <div class="sticky orange"><b>🧠 Memory Trick</b>Special Officer → (65th Amdt) → Commission → (89th Amdt, 2003) → NCSC (338) + NCST (338A) → (102nd Amdt, 2018) → NCBC gets constitutional status (338B)!</div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="8" y="10" width="24" height="20" rx="2" fill="#eaf2fb"/><path d="M8 10 L20 2 L32 10"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><path d="M8 8 L32 32 M32 8 L8 32"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Statutory Bodies</h3>
+    <p>Statutory bodies are created through a <span class="hl">law/Act</span>, not the Constitution.</p>
+
+    <h4 class="subsec">National Human Rights Commission (NHRC)</h4>
+    <p>Created under the <span class="hl">Protection of Human Rights Act, 1993</span>. Composition: <strong>1 + 5</strong> — a Chairperson plus five full-time members. The Chairperson must be a <strong>retired CJI or a (retired) judge</strong>. Term: originally <span class="red">5 years</span>, reduced in <strong>2019</strong> to <span class="hl">3 years or until age 70</span>, whichever is earlier.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: Statutory Bodies at a Glance</div>
+      <svg class="diagram-svg" viewBox="0 0 300 200">
+        <defs><marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="130" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="26" text-anchor="middle" class="dtxt-sm">NHRC</text>
+        <text x="73" y="39" text-anchor="middle" class="dtxt-xs">Human Rights Act, 1993</text>
+        <rect x="164" y="8" width="128" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="26" text-anchor="middle" class="dtxt-sm">CIC</text>
+        <text x="228" y="39" text-anchor="middle" class="dtxt-xs">RTI Act, 2005</text>
+        <rect x="8" y="70" width="130" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="88" text-anchor="middle" class="dtxt-sm">NCW</text>
+        <text x="73" y="101" text-anchor="middle" class="dtxt-xs">Act of 1990</text>
+        <rect x="164" y="70" width="128" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="228" y="88" text-anchor="middle" class="dtxt-sm-red">CVC</text>
+        <text x="228" y="101" text-anchor="middle" class="dtxt-xs">Executive(1964)→Statutory(2003)</text>
+        <line x1="150" y1="115" x2="150" y2="135" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <rect x="60" y="137" width="180" height="36" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="150" y="159" text-anchor="middle" class="dtxt-sm">Appointment/Removal: President</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Central Information Commission (CIC)</h4>
+    <p>Created under the <span class="hl">Right to Information (RTI) Act, 2005</span>.</p>
+
+    <h4 class="subsec">National Commission for Women (NCW)</h4>
+    <p>Created under an <span class="hl">Act of 1990</span>.</p>
+
+    <h4 class="subsec">Central Vigilance Commission (CVC)</h4>
+    <p>The CVC was originally an <span class="red">Executive body</span> — created in <strong>1964 by an Executive Resolution</strong>, based on the recommendations of the <strong>Santhanam Committee</strong>. It got <strong>statutory status only in 2003</strong>.</p>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      CVC's journey: <strong>1964 Executive body (Santhanam Committee) → 2003 Statutory body.</strong> It "graduated" from executive to statutory — unlike the SC/ST commission which went from officer to commission to constitutional!
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      For all these bodies (NHRC, CIC, NCW, CVC), the <strong>appointment and removal of members is done by the President</strong>.
+    </div>
+
+    <p>Separately, the Constitution also provides a <span class="hl">Special Officer for Linguistic Minorities</span> under <strong>Part XVII</strong>, and lays down <strong>Emergency Provisions</strong> in <strong>Part XVIII</strong>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse a body's <strong>origin story</strong> — CVC started executive and became statutory; SC/ST protection started as an "officer" and became constitutional. Track each one's specific journey rather than assuming they all follow the same path.
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="8" y="8" width="24" height="24" rx="3" fill="#eaf2fb"/><line x1="8" y1="16" x2="32" y2="16"/><line x1="16" y1="16" x2="16" y2="32"/><line x1="24" y1="16" x2="24" y2="32"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><path d="M4 8 C14 6 18 20 30 24"/><path d="M22 20 L31 25 L27 15"/></g></svg>
+
+    <h3 class="sec">Executive Bodies &amp; The Statutory Lokpal</h3>
+    <p>Executive bodies are <span class="red">neither mentioned in the Constitution nor created by any Act</span> — they exist purely by executive decision.</p>
+
+    <h4 class="subsec">Central Bureau of Investigation (CBI)</h4>
+    <p>The CBI is an <span class="hl">Executive body</span>. It derives its powers from the <strong>Delhi Special Police Establishment Act, 1946</strong> — but the CBI itself was not directly created by that Act; it operates under the powers that Act provides.</p>
+
+    <h4 class="subsec">Law Commission</h4>
+    <p>Also an <span class="hl">Executive body</span>. Post-independence, the first Law Commission's Chairman was <strong>M.C. Setalvad</strong>, who was also <strong>India's first Attorney General</strong>. (In the pre-independence era, Thomas Babington Macaulay had chaired an earlier Law Commission.)</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Executive Bodies</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrE" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="130" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="26" text-anchor="middle" class="dtxt-sm">CBI</text>
+        <text x="73" y="39" text-anchor="middle" class="dtxt-xs">DSPE Act, 1946 (powers)</text>
+        <rect x="164" y="8" width="128" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="26" text-anchor="middle" class="dtxt-sm">Law Commission</text>
+        <text x="228" y="39" text-anchor="middle" class="dtxt-xs">1st (post-Ind.): Setalvad</text>
+        <rect x="86" y="70" width="128" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="88" text-anchor="middle" class="dtxt-sm-red">NITI Aayog</text>
+        <text x="150" y="101" text-anchor="middle" class="dtxt-xs">1 Jan 2015, replaced Planning Comm.</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">NITI Aayog</h4>
+    <p>Also <span class="hl">Executive</span> — neither in the Constitution nor created by an Act. Full form: <strong>National Institution for Transforming India</strong>. Formed on <span class="red">1 January 2015</span>, replacing the Planning Commission.</p>
+    <ul>
+      <li><strong>Chairman:</strong> Prime Minister</li>
+      <li><strong>Vice-Chairperson:</strong> selected by the PM — currently <strong>Suman Bery</strong></li>
+      <li><strong>CEO:</strong> <strong>B.V.R. Subrahmanyam</strong></li>
+      <li><strong>Governing Council:</strong> Chief Ministers of all States and UTs (with a legislature); Lieutenant Governors of UTs that don't have a Chief Minister</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      "NITI Aayog CEO" is a favourite one-liner question — memorise it directly: <strong>B.V.R. Subrahmanyam</strong>.
+    </div>
+
+    <h4 class="subsec">Lokpal &amp; Lokayukta — Statutory</h4>
+    <p>The <span class="hl">Lokpal and Lokayuktas Act, 2013</span> created the Lokpal (at the Centre) and Lokayuktas (in the States) — this makes them <span class="red">Statutory</span> bodies. They investigate corruption and, notably, can reach even the level of the <strong>Prime Minister and Chief Ministers</strong> — a wider scope than the CBI or CVC.</p>
+
+    <p>Composition of Lokpal: <span class="hl">1 + 8</span> — a Chairperson plus eight members, of whom <strong>50% must be judicial members</strong>, and the other 50% drawn from SC/ST/OBC, minority, and women's backgrounds.</p>
+
+    <div class="chain">
+      <span class="chip">First Lokpal: Pinaki Chandra Ghosh</span><span class="arrow">→</span>
+      <span class="chip">Current: A.M. Khanwilkar</span>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't lump the Lokpal in with Executive bodies just because it fights corruption like the CBI/CVC — it is <strong>Statutory</strong>, created by the Lokpal and Lokayuktas Act, 2013.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <table>
+      <tr><th>Body</th><th>Type</th><th>Source</th></tr>
+      <tr><td>Finance Commission, UPSC, ECI, NCSC, NCST, NCBC</td><td class="imp">Constitutional</td><td>Article 280, 315, 324, 338, 338A, 338B</td></tr>
+      <tr><td>NHRC, CIC, NCW, CVC, Lokpal</td><td class="imp">Statutory</td><td>Respective Acts</td></tr>
+      <tr><td>CBI, Law Commission, NITI Aayog</td><td class="imp">Executive</td><td>No Article, no Act</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Article = Constitutional, Act = Statutory, neither = Executive" — apply this single test to classify ANY body you're asked about!
+    </div>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Polity • SSC / UPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
