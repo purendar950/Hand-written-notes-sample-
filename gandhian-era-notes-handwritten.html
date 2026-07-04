@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Gandhian Era — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Modern Indian History</div>
+    <h1>The Gandhian Era</h1>
+    <h2>South Africa • Return to India • First Satyagrahas</h2>
+    <div class="sub">Mohandas Karamchand Gandhi was the central figure of Indian politics from <b>1915 to 1947</b> — hence, <b>"the Gandhian Era."</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🌍 South Africa</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">⚖️ 3 Satyagrahas</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🇮🇳 Return to India</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🌾 Champaran</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🏭 Kheda &amp; Beyond</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:260px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26 L34 26 L29 34 L11 34 Z" fill="#bfe3f5"/><line x1="20" y1="26" x2="20" y2="8"/><path d="M20 9 L30 16 L20 20 Z" fill="#eaf2fb"/></g></svg>
+    <svg class="doodle" style="top:800px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 Q12 26 16 22 Z" fill="#eadfc4"/><path d="M32 12 L28 22 Q36 26 40 22 Z" fill="#eadfc4"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c99400" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="9" fill="#ffe08a"/><line x1="20" y1="2" x2="20" y2="7"/><line x1="20" y1="33" x2="20" y2="38"/><line x1="2" y1="20" x2="7" y2="20"/><line x1="33" y1="20" x2="38" y2="20"/><line x1="7" y1="7" x2="10.5" y2="10.5"/><line x1="29.5" y1="29.5" x2="33" y2="33"/></g></svg>
+
+    <h3 class="sec">Gandhiji — Early Life &amp; the Journey to South Africa</h3>
+    <p>The period <span class="hl">1915 to 1947</span> is called the <strong>Gandhian Era</strong>, because Mahatma Gandhi was the central figure of the entire Indian political scene through this time. But his real political training ground lay years earlier — in <strong>South Africa</strong>.</p>
+
+    <h4 class="subsec">Basic Details</h4>
+    <table>
+      <tr><th>Field</th><th>Detail</th></tr>
+      <tr><td>Full Name</td><td>Mohandas Karamchand Gandhi</td></tr>
+      <tr><td class="imp">Born</td><td class="imp"><span class="hl ring">2 October 1869</span></td></tr>
+      <tr><td>Birthplace</td><td>Porbandar, Kutch region, Gujarat</td></tr>
+      <tr><td>Father</td><td>Karamchand Gandhi</td></tr>
+      <tr><td>Mother</td><td>Putlibai Gandhi</td></tr>
+    </table>
+
+    <div class="sticky yellow"><b>💡 Naming Convention</b>In Gujarat &amp; Maharashtra, the father's name is placed in the middle — just like <strong>Sachin Ramesh Tendulkar</strong> (Ramesh = father's name). So: Mohandas <em>Karamchand</em> Gandhi!</div>
+
+    <p>Gandhiji studied <strong>law in England</strong>. On returning, he came to <strong>Bombay</strong> — but could not establish a successful law practice there. Around this time, a client named <strong>Abdullah</strong>, a local merchant based in South Africa, had a legal case — and Gandhiji travelled to South Africa to handle it, roughly dated around <span class="hl">1898</span> (though, per the lecture, he had actually visited the region even earlier than this particular case). <em>(Note: "Africa" here always means the country South Africa, not the whole continent.)</em></p>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">👤 Who was Abdullah? (tap to expand)</span>
+      <div class="toggle-content">Abdullah was a local Indian merchant settled in South Africa. His legal case is what first took the young barrister Gandhiji to South Africa — a stay that lasted roughly two decades, during which Gandhiji tested and perfected <strong>Satyagraha</strong> and the <strong>hunger strike</strong>, years before bringing these tools back to India.</div>
+    </div>
+
+    <p>It was in South Africa that Gandhiji <strong class="scribble">first developed and used Satyagraha and the hunger strike</strong> — techniques he later brought to India after 1915.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Gandhiji's Institutions in South Africa</div>
+      <svg class="diagram-svg" viewBox="0 0 320 288">
+        <defs><marker id="arrP1" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M148 112 Q112 88 90 68" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrP1)"/>
+        <path d="M182 112 Q218 88 240 68" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrP1)"/>
+        <path d="M148 176 Q112 200 90 220" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrP1)"/>
+        <path d="M182 176 Q218 200 240 220" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrP1)"/>
+        <ellipse cx="160" cy="144" rx="66" ry="36" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="139" text-anchor="middle" class="dtxt-big">GANDHIJI IN</text>
+        <text x="160" y="156" text-anchor="middle" class="dtxt-big">SOUTH AFRICA</text>
+        <ellipse cx="70" cy="40" rx="66" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="36" text-anchor="middle" class="dtxt">Natal Indian Congress</text>
+        <text x="70" y="49" text-anchor="middle" class="dtxt-sm">~1894/95</text>
+        <ellipse cx="252" cy="40" rx="64" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="252" y="36" text-anchor="middle" class="dtxt">Indian Opinion</text>
+        <text x="252" y="49" text-anchor="middle" class="dtxt-sm">newspaper, 1903</text>
+        <ellipse cx="70" cy="248" rx="62" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="244" text-anchor="middle" class="dtxt">Phoenix Farm</text>
+        <text x="70" y="257" text-anchor="middle" class="dtxt-sm">1904</text>
+        <ellipse cx="252" cy="248" rx="62" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="252" y="244" text-anchor="middle" class="dtxt">Tolstoy Farm</text>
+        <text x="252" y="257" text-anchor="middle" class="dtxt-sm">1910</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Institutions, Timeline &amp; Influences</h4>
+    <div class="chain">
+      <span class="chip">Porbandar 1869</span><span class="arrow">→</span>
+      <span class="chip">Law, England</span><span class="arrow">→</span>
+      <span class="chip">Bombay</span><span class="arrow">→</span>
+      <span class="chip">South Africa ~1898</span><span class="arrow">→</span>
+      <span class="chip">Natal Ind. Cong. '94/95</span><span class="arrow">→</span>
+      <span class="chip">Indian Opinion '03</span><span class="arrow">→</span>
+      <span class="chip">Phoenix Farm '04</span><span class="arrow">→</span>
+      <span class="chip">Tolstoy Farm '10</span>
+    </div>
+    <ul>
+      <li>Founded the <strong class="ring v2">Natal Indian Congress</strong> — a protest against the racial discrimination faced by Indians/Asians in South Africa</li>
+      <li>Published the <strong>Indian Opinion</strong> newspaper, started in 1903</li>
+      <li>Wrote <strong>Hind Swaraj</strong> during his South Africa years</li>
+      <li>Established <strong>Phoenix Farm</strong> in 1904</li>
+      <li>Established <strong>Tolstoy Farm</strong> in 1910 — deeply influenced by <strong>Leo Tolstoy</strong> and <strong>John Ruskin</strong></li>
+      <li>Developed the new technique of <strong>Satyagraha</strong> on these farms, inspired by John Ruskin's book <em>"Unto This Last."</em></li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Phoenix Farm (1904) and Tolstoy Farm (1910) are often swapped in exams — <strong>Phoenix came first</strong>, Tolstoy Farm <strong>six years later</strong>!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "P before T, 4 before 10" — <strong>P</strong>hoenix Farm (19<strong>04</strong>) comes before <strong>T</strong>olstoy Farm (19<strong>10</strong>).
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Order to remember: Natal Indian Congress (~'94/95) → Indian Opinion (1903) → Phoenix Farm (1904) → Tolstoy Farm (1910) — the dates only move forward!
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#fff8e6"/><line x1="20" y1="20" x2="20" y2="11" stroke-linecap="round"/><line x1="20" y1="20" x2="26" y2="22" stroke-linecap="round"/><circle cx="20" cy="20" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="12" width="32" height="16" rx="3" fill="#eadfc4"/><line x1="12" y1="12" x2="12" y2="28"/><line x1="22" y1="12" x2="22" y2="28"/><circle cx="12" cy="30" r="2.2" fill="#3a2b1c" stroke="none"/><circle cx="28" cy="30" r="2.2" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="6" width="22" height="28" rx="2" fill="#f3ead0"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="18" x2="27" y2="18"/><line x1="13" y1="23" x2="22" y2="23"/><circle cx="24" cy="29" r="3" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linecap="round"><path d="M20 6 C12 6 7 12 8 19 C8.5 24 12 26 13 30 L27 30 C28 26 31.5 24 32 19 C33 12 28 6 20 6 Z" fill="#fff2a0"/><path d="M15 34 L25 34 M16 37 L24 37"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="10" width="30" height="21" fill="#f3ead0"/><line x1="9" y1="15" x2="31" y2="15"/><line x1="9" y1="19" x2="23" y2="19"/><line x1="9" y1="23" x2="27" y2="23"/><line x1="9" y1="27" x2="20" y2="27"/></g></svg>
+
+    <h3 class="sec">Racial Discrimination &amp; Three Satyagraha Campaigns</h3>
+    <p>Discrimination against Asians (mainly Indians) in South Africa was <span class="hl">rampant</span>. Consider what Indians/Asians actually faced there:</p>
+    <ul>
+      <li>Asians were not allowed to go out after <strong class="scribble">9:00 p.m.</strong> — only white South Africans could move about safely at night</li>
+      <li>Asians were confined to specific regions; they could not live anywhere else</li>
+      <li>Asians could not board the <strong>first-class compartment</strong> on trains</li>
+    </ul>
+    <p>Gandhiji himself experienced this: travelling on the Natal route with a valid <strong>first-class ticket</strong>, he was still thrown out of the first-class compartment by an officer, simply because he was Asian.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: Discrimination → Three Satyagraha Campaigns</div>
+      <svg class="diagram-svg" viewBox="0 0 300 230">
+        <defs><marker id="arrP2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="55" y="6" width="190" height="42" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt-sm">Racial discrimination in SA:</text>
+        <text x="150" y="39" text-anchor="middle" class="dtxt-xs">curfew, train, region restrictions</text>
+        <line x1="150" y1="48" x2="150" y2="70" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP2)"/>
+        <rect x="4" y="72" width="90" height="56" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="49" y="90" text-anchor="middle" class="dtxt-xs">Registration</text>
+        <text x="49" y="102" text-anchor="middle" class="dtxt-xs">Certificates</text>
+        <text x="49" y="114" text-anchor="middle" class="dtxt-xs">(burned)</text>
+        <rect x="105" y="72" width="90" height="56" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="90" text-anchor="middle" class="dtxt-xs">Indian marriages</text>
+        <text x="150" y="102" text-anchor="middle" class="dtxt-xs">declared</text>
+        <text x="150" y="114" text-anchor="middle" class="dtxt-xs">"illegal"</text>
+        <rect x="206" y="72" width="90" height="56" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="251" y="90" text-anchor="middle" class="dtxt-xs">Indian</text>
+        <text x="251" y="102" text-anchor="middle" class="dtxt-xs">migration</text>
+        <text x="251" y="114" text-anchor="middle" class="dtxt-xs">restricted</text>
+        <line x1="49" y1="128" x2="135" y2="164" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrP2)"/>
+        <line x1="150" y1="128" x2="150" y2="164" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrP2)"/>
+        <line x1="251" y1="128" x2="165" y2="164" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrP2)"/>
+        <rect x="55" y="166" width="190" height="50" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.4"/>
+        <text x="150" y="188" text-anchor="middle" class="dtxt">Gandhiji's Satyagraha</text>
+        <text x="150" y="204" text-anchor="middle" class="dtxt">Campaigns in South Africa</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">The Three Campaigns (all fought in South Africa)</h4>
+    <ol>
+      <li><strong>Satyagraha against Registration Certificates</strong> — every Indian/Asian had to carry a registration certificate (like today's Aadhaar card); without it, one could be jailed. Gandhiji led a Satyagraha here and <strong>publicly burned</strong> such certificates.</li>
+      <li><strong>Campaign against Indian marriages being declared illegal</strong> — the British declared any Indian marriage not conducted according to Christian religious custom as illegal.</li>
+      <li><strong>Campaign against restriction of Indian migration</strong> — Indians were not allowed to freely migrate from one place to another.</li>
+    </ol>
+
+    <div class="chain">
+      <span class="chip">Registration Certificates</span><span class="arrow">→</span>
+      <span class="chip">Marriages "illegal"</span><span class="arrow">→</span>
+      <span class="chip">Migration restricted</span>
+    </div>
+
+    <div class="sticky blue"><b>💡 Understand it like this...</b>The registration certificate worked just like today's <strong>Aadhaar card</strong> — compulsory to carry, and if you didn't have one, you could be jailed. Gandhiji's response? Burn the certificates in public, in full view of the authorities!</div>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">📖 Gandhiji's Ideological Roots (tap to expand)</span>
+      <div class="toggle-content">Gandhiji was deeply influenced by <strong>Leo Tolstoy</strong> (hence, Tolstoy Farm) and by <strong>John Ruskin</strong> — his Satyagraha technique itself was inspired by Ruskin's book <em>"Unto This Last."</em> During these South Africa years, he also wrote <strong>Hind Swaraj</strong>.</div>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      All three campaigns — Registration Certificates, Marriage Legality, Migration Restriction — happened in <strong>South Africa</strong>, not India. A favourite exam trap!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't assume Satyagraha began in India! Gandhiji tested it <strong>first in South Africa</strong> — against registration certificates, marriage laws, and migration restrictions — and only brought it to India after 1915.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Remember <strong>"R-M-M"</strong> for the three South Africa campaigns: <strong>R</strong>egistration certificates, <strong>M</strong>arriages (declared illegal), <strong>M</strong>igration (restricted).
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><line x1="10" y1="6" x2="10" y2="34"/><path d="M10 8 L30 14 L10 20 Z" fill="#ffd0d3"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#fff8e6"/><line x1="20" y1="20" x2="20" y2="11" stroke-linecap="round"/><line x1="20" y1="20" x2="26" y2="22" stroke-linecap="round"/><circle cx="20" cy="20" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="3" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="24"/><circle cx="20" cy="32" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">Return to India &amp; the Road to 1917</h3>
+    <p>Gandhiji arrived in India on <span class="hl ring">9 January 1915</span> — a date now celebrated as <strong>Pravasi Bharatiya Divas</strong> (NRI Day). But he did not enter the political scene directly.</p>
+
+    <div class="sticky pink"><b>🎉 Fun Fact</b>9 January is celebrated every year as <strong>Pravasi Bharatiya Divas</strong> — precisely because this is the day Gandhiji returned to India from South Africa in 1915!</div>
+
+    <h4 class="subsec">Gokhale's Advice</h4>
+    <p><strong>Gopal Krishna Gokhale</strong>, Gandhiji's political guru, advised him <em>not</em> to get directly involved in any movement or Satyagraha right away. Instead: first travel across India for a year, and learn about the country.</p>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">👤 Gopal Krishna Gokhale (tap to expand)</span>
+      <div class="toggle-content">Gokhale founded the <strong class="scribble">Servants of India Society</strong> in <span class="hl">1905</span> to help people. He was also the political mentor of <strong>Muhammad Ali Jinnah</strong>.</div>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: From Arrival to First Movement</div>
+      <svg class="diagram-svg" viewBox="0 0 260 270">
+        <defs><marker id="arrP3" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#1a3fb0"/></marker></defs>
+        <rect x="30" y="6" width="200" height="42" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="130" y="24" text-anchor="middle" class="dtxt-sm-red">9 Jan 1915</text>
+        <text x="130" y="40" text-anchor="middle" class="dtxt-xs">Gandhiji lands in India</text>
+        <line x1="130" y1="48" x2="130" y2="72" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrP3)"/>
+        <rect x="15" y="74" width="230" height="52" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="130" y="94" text-anchor="middle" class="dtxt-sm">Gokhale's advice:</text>
+        <text x="130" y="110" text-anchor="middle" class="dtxt-xs">tour India a year, learn first</text>
+        <line x1="130" y1="126" x2="130" y2="150" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrP3)"/>
+        <rect x="30" y="152" width="200" height="46" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="130" y="172" text-anchor="middle" class="dtxt-sm">1916 — BHU, Varanasi</text>
+        <text x="130" y="188" text-anchor="middle" class="dtxt-xs">First public appearance</text>
+        <line x1="130" y1="198" x2="130" y2="222" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrP3)"/>
+        <rect x="15" y="224" width="230" height="42" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="130" y="242" text-anchor="middle" class="dtxt-sm-red">1917 — Champaran</text>
+        <text x="130" y="258" text-anchor="middle" class="dtxt-xs">First Satyagraha in India begins!</text>
+      </svg>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">9 Jan 1915</span><br>Gandhiji arrives in India from South Africa.</div>
+      <div class="tl-item">Gopal Krishna Gokhale advises him to tour India for a year and learn about it first, rather than jumping into a movement.</div>
+      <div class="tl-item"><span class="tl-date">1916</span><br>Gandhiji's <strong>first public appearance</strong> — at the inauguration of <strong>Banaras Hindu University (BHU)</strong>, founded by <strong>Madan Mohan Malaviya</strong>.</div>
+      <div class="tl-item"><span class="tl-date">1917</span><br>Gandhiji launches his <strong>first movement in India</strong> — the Champaran Satyagraha.</div>
+    </div>
+    <div class="tl-big">🗓️ 9 JAN 1915 → 1917: two years of learning before the first movement!</div>
+
+    <h4 class="subsec">Key People</h4>
+    <table>
+      <tr><th>Person</th><th>Role</th></tr>
+      <tr><td>Gopal Krishna Gokhale</td><td>Political guru; founded Servants of India Society (1905); also Jinnah's mentor</td></tr>
+      <tr><td>Madan Mohan Malaviya</td><td>Founder of BHU; university inaugurated in 1916</td></tr>
+    </table>
+
+    <p><em>(Note: some accounts also mention Gandhiji's presence at the Indian National Congress session of 1901 as an early appearance, though he launched no movement until 1917.)</em></p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Gandhiji arrived on 9 Jan 1915 but his first movement came only in 1917 — a full <strong>two-year gap</strong> of learning India first, exactly as Gokhale advised!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't assume Gandhiji jumped straight into a movement on arrival! His first <strong>public appearance</strong> was BHU in 1916; his first <strong>movement</strong> (Champaran) was only in 1917 — two different milestones.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Go-khale said Go and see India first!" — a quick way to remember Gokhale's advice to tour the country before acting.
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><line x1="20" y1="34" x2="20" y2="12"/><path d="M20 20 C10 16 8 6 8 6 C8 6 16 8 20 20 Z" fill="#cdeccb"/><path d="M20 16 C30 12 32 4 32 4 C32 4 24 6 20 16 Z" fill="#cdeccb"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="6" width="22" height="28" rx="2" fill="#f3ead0"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="18" x2="27" y2="18"/><line x1="13" y1="23" x2="22" y2="23"/><circle cx="24" cy="29" r="3" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+
+    <h3 class="sec">Champaran Satyagraha — Gandhiji's First Satyagraha in India</h3>
+    <p>Between <span class="hl">1917 and 1918</span>, Gandhiji led three important movements back-to-back. The first was the <strong class="ring">Champaran Satyagraha</strong>, in <span class="hl">1917</span> — his very first Satyagraha in India.</p>
+
+    <h4 class="subsec">Why Champaran?</h4>
+    <p>Champaran is in <strong>Bihar</strong>. Farmers here were forced to cultivate <strong>indigo</strong> on at least <strong class="scribble">3/20th</strong> of their land — a system called <span class="hl">Tinkathia</span> ("Tinkathia" literally means 3/20th).</p>
+    <ul>
+      <li>By the late 1890s, cheap <strong>German synthetic dyes</strong> had flooded the market — factory-made, and far cheaper than natural indigo</li>
+      <li>Natural indigo grown by British planters could no longer compete, or cover costs, in the European market</li>
+      <li>So the British forcibly declared that farmers <em>must</em> cultivate indigo on part of their land — the Tinkathia system</li>
+    </ul>
+
+    <div class="sticky orange"><b>📖 Did you know?</b>This wasn't the only indigo-related revolt worth remembering — an earlier <strong>Indigo uprising of 1859</strong> had already begun in the <strong>Nadia district of West Bengal</strong>. And in the Champaran Satyagraha, we see early glimpses of the kind of civil disobedience that would later define the full <strong>Civil Disobedience Movement of 1930</strong>.</div>
+
+    <div class="diagram-card">
+      <div class="cap">🌱 Fig 4: The Tinkathia System</div>
+      <svg class="diagram-svg" viewBox="0 0 300 210">
+        <text x="150" y="16" text-anchor="middle" class="dtxt">One Farmer's Land = 20 "Kathas"</text>
+        <g stroke="#3a2b1c" stroke-width="1.3">
+          <rect x="65" y="26" width="26" height="26" fill="#a8d4ee"/>
+          <rect x="91" y="26" width="26" height="26" fill="#a8d4ee"/>
+          <rect x="117" y="26" width="26" height="26" fill="#a8d4ee"/>
+          <rect x="143" y="26" width="26" height="26" fill="#f3ead0"/>
+          <rect x="169" y="26" width="26" height="26" fill="#f3ead0"/>
+          <rect x="65" y="52" width="26" height="26" fill="#f3ead0"/>
+          <rect x="91" y="52" width="26" height="26" fill="#f3ead0"/>
+          <rect x="117" y="52" width="26" height="26" fill="#f3ead0"/>
+          <rect x="143" y="52" width="26" height="26" fill="#f3ead0"/>
+          <rect x="169" y="52" width="26" height="26" fill="#f3ead0"/>
+          <rect x="65" y="78" width="26" height="26" fill="#f3ead0"/>
+          <rect x="91" y="78" width="26" height="26" fill="#f3ead0"/>
+          <rect x="117" y="78" width="26" height="26" fill="#f3ead0"/>
+          <rect x="143" y="78" width="26" height="26" fill="#f3ead0"/>
+          <rect x="169" y="78" width="26" height="26" fill="#f3ead0"/>
+          <rect x="65" y="104" width="26" height="26" fill="#f3ead0"/>
+          <rect x="91" y="104" width="26" height="26" fill="#f3ead0"/>
+          <rect x="117" y="104" width="26" height="26" fill="#f3ead0"/>
+          <rect x="143" y="104" width="26" height="26" fill="#f3ead0"/>
+          <rect x="169" y="104" width="26" height="26" fill="#f3ead0"/>
+        </g>
+        <rect x="65" y="26" width="130" height="104" fill="none" stroke="#3a2b1c" stroke-width="2.4"/>
+        <text x="150" y="148" text-anchor="middle" class="dtxt-sm-red">TINKATHIA = 3/20 kathas</text>
+        <text x="150" y="163" text-anchor="middle" class="dtxt-xs">forced indigo cultivation (blue)</text>
+        <text x="150" y="178" text-anchor="middle" class="dtxt-xs">remaining 17/20 = farmer's own crop</text>
+      </svg>
+    </div>
+
+    <div class="chain">
+      <span class="chip">German dyes cheap</span><span class="arrow">→</span>
+      <span class="chip">Natural indigo unprofitable</span><span class="arrow">→</span>
+      <span class="chip">Tinkathia forced (3/20 land)</span><span class="arrow">→</span>
+      <span class="chip">Champaran Satyagraha '17</span><span class="arrow">→</span>
+      <span class="chip">Champaran Agrarian Act</span>
+    </div>
+
+    <h4 class="subsec">Champaran Agrarian Act — What Changed</h4>
+    <table>
+      <tr><th>Before</th><th>After the Act</th></tr>
+      <tr><td>Tinkathia (forced indigo on 3/20th land)</td><td class="imp">Abolished</td></tr>
+      <tr><td>Abwab (extra taxes: house tax, grazing tax, irrigation tax — imposed since Mughal times)</td><td class="imp">Suspended</td></tr>
+    </table>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">📖 What exactly was Abwab? (tap to expand)</span>
+      <div class="toggle-content">"<strong>Abwab</strong>" refers to any tax collected beyond the normal tax — a practice going back to <strong>Mughal times</strong>. Examples included house tax, grazing tax, and irrigation tax. The Champaran Agrarian Act suspended Abwab collections along with abolishing Tinkathia.</div>
+    </div>
+
+    <h4 class="subsec">People Involved in Champaran</h4>
+    <table>
+      <tr><th>Person</th><th>Note</th></tr>
+      <tr><td>Mahatma Gandhi</td><td>Led the Satyagraha</td></tr>
+      <tr><td>Rajendra Prasad</td><td>Participant; later independent India's <strong>first President</strong></td></tr>
+      <tr><td>Mazharul Haq</td><td>Participant</td></tr>
+      <tr><td>J. B. Kripalani</td><td>Participant; later moved India's <strong>first no-confidence motion</strong> (against Nehru — it did not pass)</td></tr>
+    </table>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Champaran (1917) = Gandhiji's <strong>first Satyagraha</strong> in India — but it was <em>not</em> an all-India movement, only limited to Bihar!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Tinkathia ≠ Abwab! <strong>Tinkathia</strong> = forced indigo cultivation on 3/20th of land. <strong>Abwab</strong> = extra taxes (house/grazing/irrigation) beyond the normal tax. The Champaran Agrarian Act dealt with both, separately.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Tin-kathia" → think of the number <strong>3</strong> ("teen" in Hindi) out of <strong>20</strong> — forced indigo on 3/20th of the land!
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="28" height="16" fill="#eadfc4"/><rect x="10" y="6" width="6" height="12" fill="#eadfc4"/><path d="M10 6 C10 2 16 2 16 6"/><rect x="20" y="11" width="5" height="7" fill="#eadfc4"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><ellipse cx="20" cy="30" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="23" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="16" rx="14" ry="5" fill="#ffe08a"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 28 L8 14 L15 21 L20 10 L25 21 L32 14 L34 28 Z" fill="#ffd23f"/><line x1="6" y1="28" x2="34" y2="28"/><circle cx="20" cy="10" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="1.8" stroke-linecap="round"><path d="M4 30 L36 30"/><path d="M14 30 L18 18 M22 30 L20 16 M28 30 L26 20"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 C12 6 7 12 7 19 C7 28 20 36 20 36 C20 36 33 28 33 19 C33 12 28 6 20 6 Z" fill="#ffd0d3"/><circle cx="20" cy="18" r="4" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">Ahmedabad Mill Strike, Kheda &amp; Bardoli Satyagraha</h3>
+
+    <h4 class="subsec">Ahmedabad Mill Strike (1918) — First Hunger Strike</h4>
+    <p>The <strong>First World War (1914–1918)</strong> had pushed up prices sharply — even though the British-led Allied Powers won the war, the cost to Britain was enormous, and the effects of inflation were felt directly in India too.</p>
+    <ul>
+      <li>Mill workers demanded a <span class="hl">50%</span> wage increase, in line with inflation</li>
+      <li>Mill owners offered only <span class="hl">20%</span></li>
+      <li><strong>Anusuya Sarabhai</strong> — sister of mill owner <strong>Ambalal Sarabhai</strong> — invited Gandhiji to Ahmedabad in <span class="hl ring">1918</span></li>
+      <li>This became Gandhiji's <strong class="scribble">first hunger strike</strong></li>
+    </ul>
+
+    <div class="toggle-box" id="tb5">
+      <span class="toggle-btn" onclick="toggleBox('tb5')">👩 Anusuya &amp; Ambalal Sarabhai (tap to expand)</span>
+      <div class="toggle-content">Anusuya Sarabhai, who invited Gandhiji to intervene, was the <strong>sister</strong> of mill owner Ambalal Sarabhai — meaning Gandhiji was, in effect, mediating a dispute between a mill owner and his own sister's cause!</div>
+    </div>
+
+    <div class="sticky green"><b>🎉 Fun Fact</b>Anusuya Sarabhai sided with the mill <strong>workers</strong>, even though her own brother Ambalal Sarabhai was one of the mill <strong>owners</strong> she was up against!</div>
+
+    <h4 class="subsec">Kheda Satyagraha (1918) — First Non-Cooperation Movement</h4>
+    <p>Kheda is in <strong>Gujarat</strong>. Under British rule, farmers had to pay land revenue — but if their produce fell below <span class="hl">one-fourth</span> of the normal amount, no revenue was payable at all.</p>
+    <ul>
+      <li>Crop failure (drought) meant many farmers' produce fell well below the taxable threshold</li>
+      <li>Farmers demanded a full waiver of that year's revenue</li>
+      <li>The British insisted normal production had occurred, and refused any waiver</li>
+      <li>Gandhiji led the <strong class="scribble">Kheda Satyagraha</strong> in support of these farmers</li>
+    </ul>
+    <p>This is considered Gandhiji's <strong class="ring v3">first Non-Cooperation Movement</strong>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 5: Gujarat — Where It All Happened</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <path d="M120 12 Q80 20 65 55 Q45 90 60 125 Q50 160 85 190 Q130 210 170 195 Q210 180 205 145 Q225 110 200 75 Q195 35 155 18 Q140 10 120 12 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <circle cx="105" cy="70" r="5" fill="#c31f1f"/>
+        <text x="105" y="58" text-anchor="middle" class="dtxt-sm">Ahmedabad</text>
+        <text x="105" y="90" text-anchor="middle" class="dtxt-xs">Mill Strike, 1918</text>
+        <circle cx="150" cy="112" r="5" fill="#c31f1f"/>
+        <text x="185" y="108" text-anchor="start" class="dtxt-sm">Kheda</text>
+        <text x="185" y="122" text-anchor="start" class="dtxt-xs">Satyagraha, 1918</text>
+        <circle cx="115" cy="158" r="5" fill="#c31f1f"/>
+        <text x="115" y="178" text-anchor="middle" class="dtxt-sm">Bardoli</text>
+        <text x="115" y="192" text-anchor="middle" class="dtxt-xs">Satyagraha 1928 (Patel)</text>
+        <text x="140" y="210" text-anchor="middle" class="dtxt-xs">All in Gujarat — all about tax/wage justice</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Bardoli Satyagraha (1928)</h4>
+    <p>Bardoli, also in Gujarat, saw a similar land-tax Satyagraha in <span class="hl">1928</span> — but this one was <em>not</em> led by Gandhiji. It was led by <strong>Sardar Vallabhbhai Patel</strong>, who earned the title <span class="hl">"Sardar"</span> here, bestowed on him by the women participants of the movement.</p>
+
+    <h4 class="subsec">Gandhiji's Movements — The "Firsts"</h4>
+    <table>
+      <tr><th>Movement</th><th>Year</th><th>Place</th><th>Known As</th></tr>
+      <tr><td>Champaran Satyagraha</td><td class="imp">1917</td><td>Bihar</td><td>First Satyagraha in India</td></tr>
+      <tr><td>Ahmedabad Mill Strike</td><td class="imp">1918</td><td>Gujarat</td><td>First hunger strike</td></tr>
+      <tr><td>Kheda Satyagraha</td><td class="imp">1918</td><td>Gujarat</td><td>First Non-Cooperation Movement</td></tr>
+      <tr><td>Bardoli Satyagraha</td><td class="imp">1928</td><td>Gujarat</td><td>Led by Sardar Patel, not Gandhi</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">Champaran '17</span><span class="arrow">→</span>
+      <span class="chip">Ahmedabad '18</span><span class="arrow">→</span>
+      <span class="chip">Kheda '18</span><span class="arrow">→</span>
+      <span class="chip">Bardoli '28</span>
+    </div>
+
+    <div class="quotebox">📝 CGL Mains asked: "Which was Gandhiji's first Satyagraha AND first hunger strike?" — options included Champaran, Ahmedabad, Kheda &amp; the Rowlatt Satyagraha.</div>
+
+    <p>The honest answer is actually <strong>both</strong> Champaran and Ahmedabad — Champaran (limited to Bihar, not an all-India movement) was the first Satyagraha, while the Ahmedabad Mill Strike was the first hunger strike.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Three "firsts" to learn together: <strong>Champaran</strong> = first Satyagraha, <strong>Ahmedabad</strong> = first hunger strike, <strong>Kheda</strong> = first Non-Cooperation Movement.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Bardoli Satyagraha (1928) was <em>not</em> led by Gandhiji — it was <strong>Sardar Vallabhbhai Patel</strong> who led it, earning his title "Sardar" there!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Remember the order <strong>A-K-B</strong>: <strong>A</strong>hmedabad (1918, wages) → <strong>K</strong>heda (1918, land tax) → <strong>B</strong>ardoli (1928, land tax, Patel).
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Gandhian Era:</strong> 1915–1947</li>
+      <li><strong>South Africa institutions:</strong> Natal Indian Congress ('94/95), Indian Opinion (1903), Phoenix Farm (1904), Tolstoy Farm (1910)</li>
+      <li><strong>Three South Africa campaigns:</strong> Registration Certificates, Marriages, Migration</li>
+      <li><strong>Arrival in India:</strong> 9 January 1915 (Pravasi Bharatiya Divas)</li>
+      <li><strong>First movement in India:</strong> Champaran Satyagraha (1917)</li>
+      <li><strong>First hunger strike:</strong> Ahmedabad Mill Strike (1918)</li>
+      <li><strong>First Non-Cooperation Movement:</strong> Kheda Satyagraha (1918)</li>
+      <li><strong>Bardoli Satyagraha (1928):</strong> led by Sardar Patel, not Gandhiji</li>
+    </ul>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Modern Indian History • The Gandhian Era • SSC / UPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
