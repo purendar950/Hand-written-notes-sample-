@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Directive Principles of State Policy — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.95rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.1rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.45rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:380px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.5rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.15rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:0.95rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">UPSC<br>POLITY</div>
+    <div class="tag">Indian Polity — Part IV</div>
+    <h1>Directive Principles of State Policy</h1>
+    <h2>Articles 36 – 51 | The "Conscience of the Constitution"</h2>
+    <div class="sub">Borrowed from the <b>Irish Constitution</b> &nbsp;|&nbsp; Non-justiciable but <b>fundamental in governance</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Basics &amp; Origin</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">📜 Art 36–40</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">⚖️ Art 41–44</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🌱 Art 45–51</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🧩 Classification</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M8 32 L8 8 L32 8 L32 32" fill="#eaf2fb"/><line x1="8" y1="14" x2="32" y2="14"/><line x1="8" y1="20" x2="32" y2="20"/><line x1="8" y1="26" x2="32" y2="26"/></g></svg>
+    <svg class="doodle" style="top:230px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><path d="M20 4 L20 30"/><path d="M6 10 L20 4 L34 10"/><path d="M6 10 L6 20 Q13 26 20 20 L20 10"/><path d="M20 10 L20 20 Q27 26 34 20 L34 10"/><line x1="10" y1="34" x2="30" y2="34"/></g></svg>
+    <svg class="doodle" style="top:520px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="9" y="14" width="22" height="16" rx="2" fill="#d8c8a0"/><path d="M9 14 L20 5 L31 14"/><circle cx="20" cy="22" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 12 L20 21 L26 25"/></g></svg>
+
+    <h3 class="sec">What Is DPSP &amp; Where Did It Come From?</h3>
+    <p><strong>Part IV, Articles 36 to 51</strong> of the Constitution contain the <strong>Directive Principles of State Policy</strong>. This entire part — like the <strong>election of the President</strong> — was <span class="hl ring">borrowed from the Constitution of Ireland</span>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Fundamental Rights vs DPSP</div>
+      <svg class="diagram-svg" viewBox="0 0 300 200">
+        <defs><marker id="arrA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#1a3fb0"/></marker></defs>
+        <rect x="10" y="14" width="120" height="54" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="36" text-anchor="middle" class="dtxt">Fundamental</text>
+        <text x="70" y="50" text-anchor="middle" class="dtxt">Rights</text>
+        <text x="70" y="63" text-anchor="middle" class="dtxt-xs">(Political Democracy)</text>
+        <rect x="170" y="14" width="120" height="54" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="230" y="36" text-anchor="middle" class="dtxt">DPSP</text>
+        <text x="230" y="50" text-anchor="middle" class="dtxt-xs">(Social + Economic</text>
+        <text x="230" y="61" text-anchor="middle" class="dtxt-xs">Democracy)</text>
+        <text x="150" y="45" text-anchor="middle" class="dtxt-sm-red">+</text>
+        <line x1="70" y1="72" x2="70" y2="100" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="230" y1="72" x2="230" y2="100" stroke="#3a2b1c" stroke-width="2"/>
+        <text x="70" y="90" text-anchor="middle" class="dtxt-sm">Justiciable</text>
+        <text x="230" y="90" text-anchor="middle" class="dtxt-sm-red">Non-justiciable</text>
+        <rect x="60" y="112" width="180" height="40" rx="8" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2.2"/>
+        <text x="150" y="130" text-anchor="middle" class="dtxt">"Conscience of the</text>
+        <text x="150" y="144" text-anchor="middle" class="dtxt">Constitution"</text>
+        <line x1="100" y1="112" x2="90" y2="72" stroke="#1f7a4d" stroke-width="1.6" marker-end="url(#arrA)"/>
+        <line x1="200" y1="112" x2="210" y2="72" stroke="#1f7a4d" stroke-width="1.6" marker-end="url(#arrA)"/>
+        <text x="150" y="176" text-anchor="middle" class="dtxt-xs">— Granville Austin &amp; K.C. Wheare</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Nature of DPSP</h4>
+    <ul>
+      <li>DPSPs impose a <strong>positive obligation</strong> on the State (unlike some Fundamental Rights, which are largely negative/restraining) — the State is directed to <em>do</em> something.</li>
+      <li>They are <span class="red">non-justiciable</span> — meaning you <strong>cannot go to court</strong> to enforce them; there is no legal remedy if the State fails to apply them.</li>
+      <li>Their purpose is to <strong>establish a welfare State</strong> and to build <span class="hl">social and economic democracy</span> — while our Fundamental Rights were aimed at establishing <strong>political democracy</strong>.</li>
+    </ul>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>FR = Political Democracy. DPSP = Social &amp; Economic Democracy. Together they are the "conscience of the Constitution."</div>
+
+    <h4 class="subsec">Ambedkar's Remarks</h4>
+    <p>Dr. B. R. Ambedkar called the Directive Principles <span class="hl red ring v2">"novel features"</span> of the Constitution. He also observed that these Directive Principles are similar in nature to the <strong>"Instrument of Instructions"</strong> that was issued to the Governor-General/Governors under the <strong>Government of India Act, 1935</strong> — instructing them on how to work for the people's welfare.</p>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 What was the "Instrument of Instructions"? (tap to expand)</span>
+      <div class="toggle-content">
+        Under the <strong>Government of India Act, 1935</strong>, the Governor-General and Governors were given an "Instrument of Instructions" — guidance on how they should exercise their powers for public welfare. Ambedkar noted DPSPs continue that same spirit in the new Constitution.
+      </div>
+    </div>
+
+    <div class="quotebox">💬 "DPSP is like a cheque payable by the bank at its own convenience." — K.C. Wheare</div>
+    <p>This means: you <strong>cannot claim</strong> these rights as a matter of legal right. The State (the "bank") applies them <em>at its own convenience</em> — if it wants to, it will; if not, it won't. <strong>Granville Austin</strong> (along with K.C. Wheare) together described Fundamental Rights and DPSP as the <span class="hl">"conscience of the Constitution."</span></p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't think DPSPs are "useless" just because they're non-justiciable — Article 37 itself says they are <strong>"fundamental in the governance of the country"</strong> and it is the State's <strong>duty</strong> to apply them while making laws.
+    </div>
+
+    <h4 class="subsec">Parallel with Part III (Fundamental Rights)</h4>
+    <p>Just like <strong>Article 12</strong> (definition of "State") and <strong>Article 13</strong> (laws inconsistent with FRs are void) come before the actual Fundamental Rights (Art 14–35), DPSP too opens the same way:</p>
+    <div class="chain">
+      <span class="chip">Art 36: Definition of State</span><span class="arrow">→</span>
+      <span class="chip">Art 37: Non-justiciable, but fundamental</span><span class="arrow">→</span>
+      <span class="chip">Art 38 onwards: actual Principles</span>
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Art 12 (defines State) : Art 13 (voids inconsistent laws) :: Art 36 (defines State) : Art 37 (non-justiciable but fundamental). Same pattern in both Parts!
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Remember the two names for DPSP's core idea in one line: <strong>Non-justiciable</strong> (K.C. Wheare's "cheque at the bank's convenience") + <strong>"Conscience of the Constitution"</strong> (Granville Austin / K.C. Wheare) + <strong>"Novel features"</strong> (Ambedkar).
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:10px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="6" y="10" width="28" height="22" rx="2" fill="#eaf2fb"/><line x1="6" y1="16" x2="34" y2="16"/><circle cx="12" cy="13" r="1.2" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2.2" stroke-linecap="round"><path d="M8 30 L20 10 L32 30 Z" fill="#cdeccb"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linecap="round"><path d="M8 8 L32 32 M32 8 L8 32"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M20 4 L23 15 L34 15 L25 22 L28 33 L20 26 L12 33 L15 22 L6 15 L17 15 Z" fill="#fff2a0"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Art 36–40: The Story Begins</h3>
+    <p><strong>Article 36</strong> gives the <span class="hl">Definition of "State"</span> (same meaning as under Article 12). <strong>Article 37</strong> says the principles are <span class="red">non-justiciable</span>, but still <strong>fundamental in the governance</strong> of the country, and it is the duty of the State to apply them in making laws.</p>
+
+    <p><strong>Article 38</strong>: The State shall strive to promote the <span class="hl">welfare of the people</span> by securing a social order in which justice — social, economic and political — informs all institutions of national life. (Clause 2, added later, says the State shall minimise inequalities in income, status, facilities and opportunities.)</p>
+
+    <div class="sticky blue">
+      <b>💡 Story to remember everything</b>
+      To do good for the people, there was an <strong>LDC (Lower Division Clerk)</strong> who used to work in a <strong>PHC (Public Health Centre)</strong>. Just remember the keyword <span class="hl">LDC–PHC</span> — that's your anchor for Article 39 and everything that follows!
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: The LDC-PHC Story Begins (Art 38→40)</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="10" y="8" width="120" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="70" y="24" text-anchor="middle" class="dtxt-sm">38: Welfare of</text>
+        <text x="70" y="37" text-anchor="middle" class="dtxt-sm">the people (state)</text>
+        <line x1="70" y1="48" x2="70" y2="70" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="10" y="72" width="120" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="70" y="88" text-anchor="middle" class="dtxt-sm-red">39: LDC-PHC</text>
+        <text x="70" y="101" text-anchor="middle" class="dtxt-xs">6 clauses (a-f)</text>
+        <line x1="130" y1="92" x2="170" y2="92" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="172" y="72" width="118" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="231" y="88" text-anchor="middle" class="dtxt-sm">39A: Free legal</text>
+        <text x="231" y="101" text-anchor="middle" class="dtxt-sm">aid to the poor</text>
+        <line x1="231" y1="112" x2="231" y2="134" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrB)"/>
+        <rect x="172" y="136" width="118" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="231" y="152" text-anchor="middle" class="dtxt-sm">40: Organise</text>
+        <text x="231" y="165" text-anchor="middle" class="dtxt-sm">Village Panchayats</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Article 39 — The Six "LDC-PHC" Clauses</h4>
+    <p>The LDC-PHC decided to do good for the people. He first resolved their fighting by giving them <strong>free legal aid</strong>, then called a <strong>Panchayat</strong>. Article 39 lays down six principles of policy:</p>
+    <table>
+      <tr><th>Letter</th><th>Principle</th></tr>
+      <tr><td class="imp">L</td><td>Adequate means of <strong>Livelihood</strong> for all citizens, equally</td></tr>
+      <tr><td class="imp">D</td><td><strong>Distribution</strong> of material resources of the community for the common good</td></tr>
+      <tr><td class="imp">C</td><td>Operation of the economic system should not result in <strong>Concentration</strong> of wealth</td></tr>
+      <tr><td class="imp">P</td><td><strong>Equal Pay</strong> for equal work, for both men and women</td></tr>
+      <tr><td class="imp">H</td><td><strong>Health</strong> and strength of workers (men, women, children) not abused</td></tr>
+      <tr><td class="imp">C</td><td><strong>Children</strong> given opportunities and facilities to develop in a healthy manner (added as clause (f))</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Six clauses of Article 39 = <strong>L-D-C P-H-C</strong> → the same "LDC PHC" keyword tells you both the story character AND the six sub-clauses of Article 39!
+    </div>
+
+    <h4 class="subsec">Article 39A — Free Legal Aid to the Poor</h4>
+    <p>To help the people, the LDC-PHC first <strong>resolved their cases</strong> by giving them free legal aid. Article 39A directs the State to provide <span class="hl">free legal aid to the poor</span>, so that justice is not denied to any citizen due to economic disability.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Article <strong>39A</strong> = Free Legal Aid to the Poor. It sits right between Article 39 and Article 40 — don't confuse its number with Article 43A (participation of workers) which comes later!
+    </div>
+
+    <h4 class="subsec">Article 40 — Organisation of Panchayats</h4>
+    <p>Next, the LDC-PHC formed a <strong>Panchayat</strong>, calling the whole village together to discuss their problems — lack of work, lack of education, no one helping each other. Article 40 directs the State to <span class="hl">organise Village Panchayats</span> and give them powers of self-government.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Article 40 (Panchayats) is a <strong>Directive Principle</strong>, not a Fundamental Right — the actual detailed Panchayati Raj structure came much later through the <strong>73rd Amendment (Part IX)</strong>.
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="10" y="16" width="20" height="14" rx="2" fill="#eaf2fb"/><path d="M14 16 L14 10 Q20 4 26 10 L26 16"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:560px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="14" rx="2" fill="#ffd0d3"/><line x1="20" y1="18" x2="20" y2="8"/><circle cx="20" cy="6" r="2" fill="#8a1414" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:860px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><circle cx="14" cy="14" r="6"/><circle cx="26" cy="14" r="6"/><path d="M8 30 Q14 22 20 30 Q26 22 32 30"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Art 41–44: Work, Wages &amp; the UCC</h3>
+    <p>The villagers told the LDC-PHC: <em>"There's no work, our children aren't educated, no one helps us."</em> So the character kept working on their problems, one by one.</p>
+
+    <h4 class="subsec">Article 41 — Right to Work, Education, Public Assistance</h4>
+    <p>The State shall, within its economic capacity, make effective provision for securing the <span class="hl">right to work, to education</span>, and to <strong>public assistance</strong> in cases of unemployment, old age, sickness, disablement and other undeserved want.</p>
+
+    <h4 class="subsec">Article 42 — Just, Humane Work Conditions &amp; Maternity Relief</h4>
+    <p>Where the villagers were working, the conditions were bad — 15-hour days! Article 42 directs the State to secure <strong>just and humane conditions of work</strong> and <span class="hl">maternity relief</span> — so a woman who is pregnant or has recently given birth gets both leave and support.</p>
+
+    <div class="sticky pink"><b>🧠 Memory Trick</b>Article 42 = "Just & Humane conditions of work AND Maternity relief" — two ideas bundled into ONE article!</div>
+
+    <h4 class="subsec">Article 43 — Living Wage</h4>
+    <p>The conditions were fine, but was the pay enough to live on? Article 43 directs the State to secure to all workers a <span class="hl">living wage</span> and a decent standard of life, along with conditions ensuring leisure and social/cultural opportunities.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: The Story Chain — Art 41 to 43B</div>
+      <svg class="diagram-svg" viewBox="0 0 300 210">
+        <defs><marker id="arrC" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="8" width="130" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="73" y="30" text-anchor="middle" class="dtxt-sm">41: Right to Work,</text>
+        <text x="73" y="41" text-anchor="middle" class="dtxt-xs">Education, Assistance</text>
+        <line x1="138" y1="26" x2="162" y2="26" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="164" y="8" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="26" text-anchor="middle" class="dtxt-sm">42: Just &amp; Humane</text>
+        <text x="228" y="38" text-anchor="middle" class="dtxt-xs">Work + Maternity Relief</text>
+        <line x1="228" y1="44" x2="228" y2="66" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="164" y="68" width="128" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="228" y="90" text-anchor="middle" class="dtxt-sm-red">43: Living Wage</text>
+        <line x1="164" y1="86" x2="140" y2="86" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="8" y="68" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="72" y="86" text-anchor="middle" class="dtxt-sm">43A: Workers'</text>
+        <text x="72" y="98" text-anchor="middle" class="dtxt-xs">participation in Mgmt</text>
+        <line x1="72" y1="104" x2="72" y2="126" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="8" y="128" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="72" y="146" text-anchor="middle" class="dtxt-sm">43B: Cooperative</text>
+        <text x="72" y="158" text-anchor="middle" class="dtxt-xs">Societies</text>
+        <line x1="136" y1="146" x2="160" y2="146" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrC)"/>
+        <rect x="164" y="128" width="128" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="228" y="146" text-anchor="middle" class="dtxt-sm">44: Uniform</text>
+        <text x="228" y="158" text-anchor="middle" class="dtxt-xs">Civil Code</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Article 43A — Participation of Workers in Management</h4>
+    <p>The LDC-PHC ensured one more thing: that workers get a say for the long run. Article 43A directs the State to take steps to secure the <span class="hl">participation of workers in the management</span> of industries, establishments or other organisations.</p>
+
+    <h4 class="subsec">Article 43B — Promotion of Cooperative Societies</h4>
+    <p>Article 43B directs the State to promote the <span class="hl">voluntary formation, autonomous functioning, democratic control and professional management of Cooperative Societies</span>.</p>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      43 → 43A → 43B is one continuous family: <strong>Living Wage → Workers' Participation in Management → Cooperative Societies.</strong> All about workers' economic dignity!
+    </div>
+
+    <h4 class="subsec">Article 44 — Uniform Civil Code</h4>
+    <p>Article 44 directs the State to secure a <span class="hl">Uniform Civil Code</span> for all citizens throughout the territory of India.</p>
+
+    <div class="sticky orange"><b>🧠 Memory Trick</b>4 = 4 looks perfectly equal on both sides → "44" = <strong>Uniform</strong> Civil Code!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Article 43A and 43B were both <strong>added later by Constitutional Amendments</strong> (see Page 5) — they were not in the original 1950 Constitution.
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M10 34 Q10 22 20 22 Q30 22 30 34"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><ellipse cx="20" cy="22" rx="13" ry="9" fill="#fff"/><path d="M9 20 Q6 14 10 10 Q13 15 15 18"/><path d="M31 20 Q34 14 30 10 Q27 15 25 18"/><circle cx="15" cy="20" r="1.2" fill="#3a2b1c" stroke="none"/><circle cx="25" cy="20" r="1.2" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:600px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><path d="M20 34 L20 16 Q10 16 10 8 Q20 8 20 16 Q20 8 30 8 Q30 16 20 16"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><rect x="10" y="12" width="20" height="20" rx="2" fill="#e8d9b0"/><path d="M10 12 L20 4 L30 12"/><rect x="16" y="20" width="8" height="12" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1414" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 12 L20 21 L26 25"/></g></svg>
+
+    <h3 class="sec">Art 45–51: From Children to World Peace</h3>
+    <p>The LDC-PHC wanted to do good for the children next — but he realised the children of the <strong>SC/ST community</strong> in his area needed help first.</p>
+
+    <h4 class="subsec">Article 45 — Early Childhood Care and Education</h4>
+    <p>Originally, Article 45 provided for free and compulsory education for children aged <strong>6 to 14 years</strong>. The <span class="hl">86th Constitutional Amendment, 2002</span> moved that right into <strong>Article 21A</strong> as a Fundamental Right, and <strong>changed the subject matter of Article 45</strong> to <span class="hl red ring">Early Childhood Care and Education for children below 6 years</span>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse Article 45 (now: Early Childhood Care, <strong>0–6 years</strong>) with Article 21A (Right to Education, <strong>6–14 years</strong>, a Fundamental Right, added by the same 86th Amendment)!
+    </div>
+
+    <h4 class="subsec">Article 46 — Promotion of SC/ST &amp; Weaker Sections</h4>
+    <p>The State shall promote with special care the <span class="hl">educational and economic interests of the SC/ST</span> and other weaker sections, and protect them from social injustice and exploitation.</p>
+
+    <h4 class="subsec">Article 47 — Nutrition, Public Health &amp; Prohibition</h4>
+    <p>He noticed the SC/ST community didn't pay attention to their health and drank a lot of toxic alcohol. So Article 47 directs the State to raise the <span class="hl">level of nutrition and standard of living</span>, improve <strong>public health</strong>, and bring about <strong>prohibition of intoxicating drinks and drugs</strong> injurious to health.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: The Story Chain — Art 45 to 51</div>
+      <svg class="diagram-svg" viewBox="0 0 300 250">
+        <defs><marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="8" y="6" width="86" height="38" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="51" y="22" text-anchor="middle" class="dtxt-xs">45: Early</text>
+        <text x="51" y="33" text-anchor="middle" class="dtxt-xs">Childhood (0-6)</text>
+        <line x1="94" y1="25" x2="108" y2="25" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="110" y="6" width="86" height="38" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="153" y="22" text-anchor="middle" class="dtxt-xs">46: SC/ST</text>
+        <text x="153" y="33" text-anchor="middle" class="dtxt-xs">upliftment</text>
+        <line x1="196" y1="25" x2="210" y2="25" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="212" y="6" width="86" height="38" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="255" y="22" text-anchor="middle" class="dtxt-xs">47: Nutrition,</text>
+        <text x="255" y="33" text-anchor="middle" class="dtxt-xs">Health, Prohibition</text>
+        <line x1="255" y1="44" x2="255" y2="62" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="212" y="64" width="86" height="38" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="1.8"/>
+        <text x="255" y="80" text-anchor="middle" class="dtxt-xs">48: Agriculture</text>
+        <text x="255" y="91" text-anchor="middle" class="dtxt-xs">&amp; Animal Husbandry</text>
+        <line x1="212" y1="83" x2="198" y2="83" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="110" y="64" width="86" height="38" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="1.8"/>
+        <text x="153" y="83" text-anchor="middle" class="dtxt-xs">48A: Protect</text>
+        <text x="153" y="94" text-anchor="middle" class="dtxt-xs">Environment</text>
+        <line x1="153" y1="102" x2="153" y2="120" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="110" y="122" width="86" height="38" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="153" y="141" text-anchor="middle" class="dtxt-xs">49: Protect</text>
+        <text x="153" y="152" text-anchor="middle" class="dtxt-xs">Monuments</text>
+        <line x1="110" y1="141" x2="96" y2="141" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="8" y="122" width="86" height="38" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/>
+        <text x="51" y="138" text-anchor="middle" class="dtxt-xs">50: Separation</text>
+        <text x="51" y="149" text-anchor="middle" class="dtxt-xs">Judiciary-Executive</text>
+        <line x1="51" y1="160" x2="51" y2="182" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrD)"/>
+        <rect x="8" y="184" width="180" height="38" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="1.8"/>
+        <text x="98" y="200" text-anchor="middle" class="dtxt-sm-red">51: International</text>
+        <text x="98" y="212" text-anchor="middle" class="dtxt-sm-red">Peace &amp; Security</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Article 48 — Agriculture &amp; Animal Husbandry</h4>
+    <p>As an alternative to alcohol, he promoted <span class="hl">milk, agriculture and animal husbandry</span>. Article 48 directs the State to organise agriculture and animal husbandry on modern, scientific lines, and in particular take steps for preserving and improving breeds, and prohibiting the <strong>slaughter of cows, calves, and other milch and draught cattle</strong>.</p>
+
+    <h4 class="subsec">Article 48A — Protection of Environment</h4>
+    <p>After drinking milk, protect the environment! Article 48A directs the State to protect and improve the <span class="hl">environment</span> and to safeguard forests and wildlife.</p>
+
+    <h4 class="subsec">Article 49 — Protection of Monuments</h4>
+    <p>Article 49 directs the State to protect <span class="hl">monuments, places and objects of national/artistic/historic importance</span> — our heritage and legacy.</p>
+
+    <h4 class="subsec">Article 50 — Separation of Judiciary from Executive</h4>
+    <p>Article 50 directs the State to take steps to <span class="hl">separate the judiciary from the executive</span> in the public services of the State.</p>
+
+    <h4 class="subsec">Article 51 — Promotion of International Peace and Security</h4>
+    <p>Article 51 directs the State to promote <span class="hl">international peace and security</span>, maintain just and honourable relations between nations, foster respect for international law and treaty obligations, and encourage settlement of international disputes by arbitration.</p>
+
+    <div class="sticky green"><b>🧠 Memory Trick</b>"₹51 ka Prasad" — offer ₹51 worth of prasad so there's peace in the house → Article 51 = International Peace &amp; Security!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Quick recap chain: <strong>45 Early Childhood → 46 SC/ST → 47 Nutrition/Prohibition → 48 Agri/Animal Husbandry → 48A Environment → 49 Monuments → 50 Judiciary-Executive → 51 International Peace.</strong>
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3e96" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><path d="M20 10 L20 20 L27 24"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><rect x="8" y="8" width="24" height="24" rx="3" fill="#eaf2fb"/><line x1="8" y1="16" x2="32" y2="16"/><line x1="16" y1="16" x2="16" y2="32"/><line x1="24" y1="16" x2="24" y2="32"/></g></svg>
+    <svg class="doodle" style="top:620px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:930px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><path d="M4 8 C14 6 18 20 30 24"/><path d="M22 20 L31 25 L27 15"/></g></svg>
+
+    <h3 class="sec">Classification of DPSP &amp; Amendments</h3>
+    <p>DPSPs are classified into <strong>three categories</strong> for convenience of study: <span class="red">Socialistic (Socio-economic)</span>, <span class="red">Gandhian</span>, and <span class="red">Liberal-Intellectual</span>. <span class="scribble">This classification is nowhere in the Constitution itself</span> — we do it purely as per convenience.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Three-Way Classification of DPSP</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrE" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M100 58 Q130 92 128 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrE)"/>
+        <path d="M225 58 Q195 92 194 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrE)"/>
+        <path d="M160 200 Q160 180 160 162" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrE)"/>
+        <ellipse cx="70" cy="38" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="32" text-anchor="middle" class="dtxt">Socialistic</text>
+        <text x="70" y="45" text-anchor="middle" class="dtxt-sm">Art 38, 39, 41,</text>
+        <text x="70" y="56" text-anchor="middle" class="dtxt-sm">42, 43, 43A, 47</text>
+        <ellipse cx="250" cy="38" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="250" y="32" text-anchor="middle" class="dtxt">Gandhian</text>
+        <text x="250" y="45" text-anchor="middle" class="dtxt-sm">Art 40, 43, 46,</text>
+        <text x="250" y="56" text-anchor="middle" class="dtxt-sm">47, 48</text>
+        <ellipse cx="160" cy="222" rx="70" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="160" y="215" text-anchor="middle" class="dtxt">Liberal-Intellectual</text>
+        <text x="160" y="228" text-anchor="middle" class="dtxt-sm">Art 44, 45, 48A,</text>
+        <text x="160" y="240" text-anchor="middle" class="dtxt-sm">49, 50, 51</text>
+        <ellipse cx="160" cy="135" rx="52" ry="30" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="130" text-anchor="middle" class="dtxt-big">DPSP</text>
+        <text x="160" y="146" text-anchor="middle" class="dtxt-sm-red">3 Categories</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Gandhian Articles (Gandhiji's ideology)</h4>
+    <ul>
+      <li><strong>Article 40</strong> — Panchayats (Gandhiji strongly promoted village Panchayats)</li>
+      <li><strong>Article 43</strong> — Living wage / promotion of cottage industries</li>
+      <li><strong>Article 46</strong> — Promotion of SC/ST educational &amp; economic interests</li>
+      <li><strong>Article 47</strong> — Prohibition of intoxicants</li>
+      <li><strong>Article 48</strong> — Agriculture and animal husbandry</li>
+    </ul>
+
+    <h4 class="subsec">Socialistic Articles</h4>
+    <ul>
+      <li><strong>Article 38</strong> — Welfare of the people, work and employment for all, wealth not concentrated in a few hands (equality promoted)</li>
+      <li>Others like 39, 41, 42, 43, 43A, 47 also reflect socio-economic equality goals</li>
+    </ul>
+
+    <h4 class="subsec">Liberal-Intellectual Articles</h4>
+    <ul>
+      <li><strong>Article 44</strong> — Uniform Civil Code</li>
+      <li><strong>Article 45</strong> — Early Childhood Care</li>
+      <li><strong>Article 48A</strong> — Environment</li>
+      <li><strong>Article 49</strong> — Monuments</li>
+      <li><strong>Article 50</strong> — Separation of Judiciary-Executive</li>
+      <li><strong>Article 51</strong> — International Peace and Security</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Questions on "which category does Article X belong to" are rare, but usually easy to reason out — Liberal-Intellectual ones are simply not tied to economics or Gandhian ideas at all.
+    </div>
+
+    <h4 class="subsec">Amendments That Added DPSPs — Only Four!</h4>
+    <p>DPSP provisions have been added through <span class="hl">four Constitutional Amendments: 42nd, 44th, 86th, and 97th.</span></p>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">42nd Amendment (1976)</span> — Added <strong>four</strong> provisions together: Article <strong>39A</strong> (free legal aid to the poor), Article <strong>43A</strong> (participation of workers in management of industries), clause <strong>39(f)</strong> (healthy development of children), and Article <strong>48A</strong> (protection of environment).</div>
+      <div class="tl-item"><span class="tl-date">44th Amendment</span> — Added <strong>clause (2) to Article 38</strong>: the State shall minimise inequalities in income, and endeavour to eliminate inequalities in status, facilities and opportunities.</div>
+      <div class="tl-item"><span class="tl-date">86th Amendment (2002)</span> — Changed the subject matter of <strong>Article 45</strong> to Early Childhood Care and Education for children below 6 years (and added Article 21A as a Fundamental Right for ages 6-14).</div>
+      <div class="tl-item"><span class="tl-date">97th Amendment (2011)</span> — Added <strong>Article 43B</strong>: promotion of cooperative societies.</div>
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>"Make the children of poor labourers protect the environment" → 39A (poor) + 43A (labourers) + 39(f) (children) + 48A (environment) — all from the <strong>42nd Amendment, 1976</strong>!</div>
+
+    <div class="toggle-box" id="tb5">
+      <span class="toggle-btn" onclick="toggleBox('tb5')">📖 Why 43B connects to Article 19(1)(c) (tap to expand)</span>
+      <div class="toggle-content">
+        Article 19(1)(c) already gave citizens the right to form associations or unions. The <strong>97th Amendment</strong> extended this to specifically include the right to form <strong>cooperative societies</strong>, alongside adding the DPSP at Article 43B.
+      </div>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up which amendment added what — remember only <strong>4 amendments</strong> ever added new DPSPs: <strong>42nd → four at once</strong>, <strong>44th → clause in 38</strong>, <strong>86th → changed 45</strong>, <strong>97th → added 43B</strong>.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Part IV, Articles 36–51</strong>, borrowed from the Irish Constitution</li>
+      <li><strong>Non-justiciable</strong> but "fundamental in governance" (Article 37)</li>
+      <li>Aim: Social &amp; Economic Democracy (vs FR's Political Democracy)</li>
+      <li>Ambedkar: "novel features"; K.C. Wheare: "cheque payable at bank's convenience"; Granville Austin &amp; Wheare: "conscience of the Constitution"</li>
+      <li>Three classifications: Socialistic, Gandhian, Liberal-Intellectual</li>
+      <li>Four amendments added new DPSPs: <strong>42nd, 44th, 86th, 97th</strong></li>
+    </ul>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Recall the full run in one breath: <strong>36 State → 37 Non-justiciable → 38 Welfare → 39 LDC-PHC → 39A Legal Aid → 40 Panchayat → 41 Work → 42 Humane+Maternity → 43 Wage → 43A Participation → 43B Cooperative → 44 UCC → 45 Early Childhood → 46 SC/ST → 47 Nutrition/Prohibition → 48 Agri/Animal → 48A Environment → 49 Monuments → 50 Judiciary-Executive → 51 World Peace.</strong>
+    </div>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Polity • SSC / UPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
