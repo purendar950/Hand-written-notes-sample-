@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Revolts Before 1857 — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  #page6{transform:rotate(0.25deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">PRE<br>1857</div>
+    <div class="tag">Modern Indian History</div>
+    <h1>Revolts Before 1857</h1>
+    <h2>The Wider Story Behind the Great Revolt</h2>
+    <div class="sub">Land Revenue Systems • Sanyasi, Paika, Ahom, Pagalpanthi, Kol, Munda, Santhal &amp; Indigo Uprisings <b>(1764–1900)</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🌾 Land Revenue</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">🙏 Sanyasi &amp; Paika</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🐘 Assam &amp; Bengal</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">⛰️ Kol &amp; Munda</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🏹 Santhal &amp; Moplah</button>
+    <button class="tab-btn" id="tab6" onclick="showPage(6)">🌿 Indigo &amp; Legacy</button>
+  </div>
+
+  <!-- ============ PAGE 1 : LAND REVENUE SYSTEMS ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linecap="round"><path d="M20 36 L20 12"/><path d="M20 16 L14 20 M20 20 L26 24 M20 24 L14 28 M20 28 L26 32"/><ellipse cx="20" cy="9" rx="3.4" ry="5.5" fill="#ffd23f" stroke="#a5760f"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2"><ellipse cx="20" cy="27" rx="13" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="20" rx="13" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="13" rx="13" ry="5" fill="#ffe08a"/></g></svg>
+    <svg class="doodle" style="top:600px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="8" y="10" width="24" height="20" rx="2" fill="#f2e6c8"/><path d="M8 10 C5 10 5 14 8 14 M32 10 C35 10 35 14 32 14 M8 26 C5 26 5 30 8 30 M32 26 C35 26 35 30 32 30"/><line x1="13" y1="17" x2="27" y2="17"/><line x1="13" y1="22" x2="24" y2="22"/></g></svg>
+    <svg class="doodle" style="top:900px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linejoin="round"><path d="M6 20 L20 8 L34 20 L34 32 L6 32 Z" fill="#f2d9a0"/><rect x="16" y="22" width="8" height="10" fill="#8a5a2a" stroke="#5a3d20"/></g></svg>
+    <svg class="doodle" style="top:1200px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M10 34 L28 10"/><path d="M28 10 C33 8 35 12 30 15 C25 18 22 15 28 10 Z" fill="#eadfc4"/></g></svg>
+
+    <h3 class="sec">Land Revenue Systems — The Root of Discontent</h3>
+    <p>In the name of "reform," the British began taxing land itself — <strong>land revenue</strong>: a share of whatever a farmer grew had to be paid to the Company. The British devised <strong class="scribble">three separate systems</strong> to collect this revenue: the <strong>Permanent Settlement</strong>, the <strong>Ryotwari</strong> system, and the <strong>Mahalwari</strong> system.</p>
+
+    <h4 class="subsec">1️⃣ Permanent Settlement (Zamindari System)</h4>
+    <p>Introduced by <strong>Cornwallis</strong> in <span class="hl red">1793</span>, in the <strong>Bengal, Bihar &amp; Orissa</strong> region. <strong>Zamindars</strong> (landowners) were appointed as intermediaries between the farmer and the British — the British avoided approaching farmers directly, hoping to keep "goodwill," while the zamindar did the actual, often harsh, collecting.</p>
+    <ul>
+      <li>In return, zamindars received <span class="scribble">hereditary rights</span> over the land — the right to collect revenue passed from father to son, generation after generation.</li>
+      <li>If a zamindar failed to deposit the fixed revenue by the set time, his landholding rights were taken away — this is the famous <span class="hl red ring">Sunset Clause</span> ("Sunset Law").</li>
+      <li>That is why this system is also called the <strong>Zamindari System</strong> / the "landholding system."</li>
+      <li>It is called <strong>PERMANENT</strong> because the revenue amount, once fixed, was never revised again — contrast this with Ryotwari, where revenue was revised every <span class="hl">30 years</span>.</li>
+    </ul>
+    <div class="sticky orange"><b>📌 Did You Know?</b>This hereditary right to collect revenue (passed father to son) is the same pattern behind hereditary landowning castes still found today — like the Deshmukhs &amp; Fadnavis of Maharashtra!</div>
+
+    <h4 class="subsec">2️⃣ Ryotwari System</h4>
+    <p>Introduced by <strong>Munro and Read</strong> in <span class="hl red">1820</span>, in <strong>South India</strong> — mainly the Madras region (today's Tamil Nadu) and parts of Maharashtra. Based on the <em>Ricardian Theory of Rent</em>.</p>
+    <ul>
+      <li>"Ryot" simply means <strong>peasant / farmer</strong>.</li>
+      <li>Unlike the Zamindari system, there was <strong>no middleman</strong> here — the British collected tax <span class="hl">directly from the Ryot</span>.</li>
+      <li>Revenue here was revised every 30 years, not fixed permanently.</li>
+    </ul>
+
+    <h4 class="subsec">3️⃣ Mahalwari System</h4>
+    <p>Introduced in <span class="hl red">1822</span> by <strong>Holt Mackenzie</strong> (who took it to the Bengal region) and <strong>William Bentinck</strong> (who extended it to Punjab).</p>
+    <ul>
+      <li>"Mahal" means a <strong>group of villages</strong>.</li>
+      <li>Revenue was collected from the <span class="hl">village headman</span> — not the zamindar, not the individual farmer.</li>
+      <li>Crucially, the headman was <strong>chosen by the villagers themselves</strong>, not appointed by the British.</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse <strong>who actually collects</strong> the revenue! Permanent Settlement → <strong>Zamindar</strong> collects (indirect). Ryotwari → British collect <strong>directly from the Ryot</strong>. Mahalwari → the <strong>village headman</strong> collects (chosen by villagers, not the British).
+    </div>
+
+    <table>
+      <tr><th>System</th><th>Introduced By</th><th>Year</th><th>Region</th></tr>
+      <tr><td>Permanent Settlement</td><td>Cornwallis</td><td class="imp">1793</td><td>Bengal, Bihar &amp; Orissa</td></tr>
+      <tr><td>Ryotwari</td><td>Munro &amp; Read</td><td class="imp">1820</td><td>South India (Madras; parts of Maharashtra)</td></tr>
+      <tr><td>Mahalwari</td><td>Holt Mackenzie &amp; William Bentinck</td><td class="imp">1822</td><td>Bengal &amp; Punjab</td></tr>
+    </table>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      The exam-favourite triad for all three systems is <strong>Who? When? Where?</strong> — learn the table above by row, not just by name!
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Three Ways to Collect Land Revenue</div>
+      <svg class="diagram-svg" viewBox="0 0 320 210">
+        <defs><marker id="arrLR1" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M112 62 Q75 84 58 106" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrLR1)"/>
+        <path d="M160 70 L160 106" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrLR1)"/>
+        <path d="M208 62 Q245 84 262 106" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrLR1)"/>
+        <ellipse cx="160" cy="38" rx="100" ry="32" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="34" text-anchor="middle" class="dtxt-big">LAND REVENUE</text>
+        <text x="160" y="50" text-anchor="middle" class="dtxt-big">SYSTEMS</text>
+        <rect x="4" y="108" width="104" height="90" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="56" y="124" text-anchor="middle" class="dtxt">PERMANENT</text>
+        <text x="56" y="137" text-anchor="middle" class="dtxt">SETTLEMENT</text>
+        <text x="56" y="151" text-anchor="middle" class="dtxt-sm">Cornwallis, 1793</text>
+        <text x="56" y="164" text-anchor="middle" class="dtxt-xs">Bengal-Bihar-Orissa</text>
+        <text x="56" y="180" text-anchor="middle" class="dtxt-sm-red">Zamindar collects</text>
+        <rect x="112" y="108" width="96" height="90" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="160" y="124" text-anchor="middle" class="dtxt">RYOTWARI</text>
+        <text x="160" y="140" text-anchor="middle" class="dtxt-sm">Munro &amp; Read</text>
+        <text x="160" y="153" text-anchor="middle" class="dtxt-xs">1820 • South India</text>
+        <text x="160" y="166" text-anchor="middle" class="dtxt-xs">Ricardian rent theory</text>
+        <text x="160" y="182" text-anchor="middle" class="dtxt-sm-red">Direct from Ryot</text>
+        <rect x="212" y="108" width="104" height="90" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="264" y="124" text-anchor="middle" class="dtxt">MAHALWARI</text>
+        <text x="264" y="140" text-anchor="middle" class="dtxt-sm">Mackenzie &amp;</text>
+        <text x="264" y="153" text-anchor="middle" class="dtxt-sm">Bentinck, 1822</text>
+        <text x="264" y="167" text-anchor="middle" class="dtxt-xs">Bengal &amp; Punjab</text>
+        <text x="264" y="183" text-anchor="middle" class="dtxt-sm-red">Village headman</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Why Did This Create So Much Anger?</h4>
+    <p>Most of the areas under the Zamindari system were exactly the <strong>Bengal-Bihar-Orissa belt</strong> (today's Bengal, Bihar, Jharkhand &amp; Bangladesh) — which is why the largest number of these early uprisings broke out right here.</p>
+    <ul>
+      <li>Cornwallis also introduced the <strong>police inspector (daroga) system</strong>, so a police daroga would accompany the zamindar to enforce collection.</li>
+      <li>If the harvest was poor, farmers had to borrow from <strong>moneylenders</strong> — often the zamindars themselves, wearing a second hat.</li>
+      <li>Interest rates were so high that farmers could never repay even the interest, let alone the principal.</li>
+      <li>Inability to repay pushed many into <span class="hl red">bonded labour</span>.</li>
+      <li>This deep resentment against zamindars and the British — among both farmers <em>and</em> tribal communities — fed directly into the wave of revolts covered on the next five pages.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">👮 Why Villagers Still Fear the Daroga (tap to expand)</span>
+      <div class="toggle-content">
+        Cornwallis introduced the police inspector (daroga) system to help zamindars enforce collection. Even today, in many villages, people fear the local police daroga more than a senior IPS officer — because it is the daroga who actually shows up in person to collect and enforce, week after week.
+      </div>
+    </div>
+
+    <div class="chain">
+      <span class="chip">Farmer</span><span class="arrow">→</span>
+      <span class="chip">Zamindar + Daroga collect</span><span class="arrow">→</span>
+      <span class="chip">Can't Pay</span><span class="arrow">→</span>
+      <span class="chip">Moneylender (high interest)</span><span class="arrow">→</span>
+      <span class="chip">Bonded Labour</span>
+    </div>
+
+    <div class="sticky blue"><b>💡 Understand it like this...</b>A farmer with a bad harvest tells the zamindar, "I don't have the money." So he borrows from a moneylender instead — often the <em>same</em> zamindar wearing a different hat! The interest is so high he can never repay even the interest, let alone the principal → bonded labour.</div>
+
+    <div class="sticky pink"><b>🧠 Memory Trick</b>The system's own name tells you who pays! <strong>Ryot</strong>wari → the Ryot (peasant) pays directly. <strong>Mahal</strong>wari → the Mahal (village group) pays via its headman. <strong>Zamindari</strong> → the Zamindar is the middleman who actually hands over the money.</div>
+
+    <div class="pagecount">Page 1 of 6</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 : SANYASI-FAKIR & PAIKA REBELLIONS ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><line x1="20" y1="4" x2="20" y2="34"/><path d="M12 34 Q20 30 28 34"/><ellipse cx="20" cy="9" rx="4" ry="3" fill="#f2d9a0" stroke="#5a3d20"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linejoin="round"><path d="M20 6 L28 22 L20 18 L12 22 Z" fill="#d8c8a0"/><line x1="20" y1="22" x2="20" y2="34"/><line x1="12" y1="34" x2="28" y2="34"/></g></svg>
+    <svg class="doodle" style="top:640px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><path d="M20 8 C13 8 9 14 9 20 C9 26 13 30 20 32 C27 30 31 26 31 20 C31 14 27 8 20 8 Z" fill="#f2d9a0"/><circle cx="20" cy="5" r="2.4" fill="#c99400" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:960px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M9 12 L31 12 L27 30 L13 30 Z" fill="none"/><path d="M9 12 C9 8 12 6 20 6 C28 6 31 8 31 12"/></g></svg>
+    <svg class="doodle" style="top:1260px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Sanyasi-Fakir Rebellion &amp; the Paika Rebellion</h3>
+
+    <h4 class="subsec">🙏 The Sanyasi-Fakir Rebellion</h4>
+    <p>After the <span class="hl">Battle of Buxar (1764)</span>, where the British defeated <strong>Shah Alam II, Shuja-ud-Daula &amp; Mir Qasim</strong>, the Company took firm control of Bengal — and with it, the Mughal and Awadh courts.</p>
+    <ul>
+      <li>Wandering <strong>Sanyasis</strong> (Hindu ascetics) and <strong>Fakirs</strong> (Muslim ascetics) had long travelled on pilgrimage with their expenses borne by the local kingdom/court — a form of royal patronage.</li>
+      <li>The British refused to continue this patronage, and instead <span class="scribble">declared them "bandits."</span></li>
+      <li>Angered, they revolted, growing through the <span class="hl red">1770s</span>.</li>
+      <li>Leaders: <strong>Manju Shah</strong>, <strong>Bhawani Pathak</strong>, and <strong>Devi Chaudhurani</strong> (a notable female participant/leader).</li>
+      <li>Region: <strong>Bengal</strong>.</li>
+    </ul>
+    <p>Both events are dramatised in novels by <strong>Bankim Chandra Chatterjee</strong>: <em>Anandmath</em> and <em>Devi Chaudhurani</em>.</p>
+
+    <h4 class="subsec">⚔️ The Paika Rebellion</h4>
+    <p>Year: <span class="hl red">1817</span>. Region: <strong>Khurda, Odisha</strong>. Leader: <strong>Bakshi Jagabandhu Vidyadhar</strong>, military commander of the Khurda Kingdom.</p>
+    <ul>
+      <li>The Odisha (Gajapati) rulers of Khurda had come under British control by accepting the <strong>Subsidiary Alliance</strong>.</li>
+      <li>Subsidiary Alliance: introduced by <strong>Wellesley</strong> in <span class="hl">1798</span>; its terms required the kingdom to <strong>disband its own local army</strong> and accept British troops instead — at the kingdom's expense.</li>
+      <li>The <strong>Nizam of Hyderabad</strong> was the first ruler to accept the Subsidiary Alliance (1798).</li>
+      <li>When Khurda's local <em>paik</em> soldiers were disbanded and replaced, <strong>Bakshi Jagabandhu</strong> led them in revolt (1817).</li>
+      <li>In recent years, the Odisha government has sought to have the Paika Rebellion officially recognised as the <em>"First War of Independence,"</em> but the Central Government has not accepted this, arguing the revolt was fought to restore the Khurda kingdom rather than for a united national independence.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">⚔️ The Carnatic Wars — Dupleix, Coote &amp; Wandiwash (tap to expand)</span>
+      <div class="toggle-content">
+        The Subsidiary Alliance was originally <strong>Dupleix's</strong> brainchild — the French Governor-General who led French forces in the <strong>First &amp; Second Carnatic Wars</strong>. He was recalled after the British complained he was "creating trouble." In the <strong>Third Carnatic War</strong>, the British were led by <strong>Eyre Coote</strong> and the French by <strong>Comte de Lally</strong>. At the <strong>Battle of Wandiwash (1760)</strong>, Coote defeated Lally.
+      </div>
+    </div>
+
+    <table>
+      <tr><th>Revolt</th><th>Leader(s)</th><th>Year</th><th>Region</th></tr>
+      <tr><td>Sanyasi-Fakir Rebellion</td><td>Manju Shah, Bhawani Pathak, Devi Chaudhurani</td><td class="imp">1770s</td><td>Bengal</td></tr>
+      <tr><td>Paika Rebellion</td><td>Bakshi Jagabandhu Vidyadhar</td><td class="imp">1817</td><td>Khurda, Odisha</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: From Buxar to "Bandits"</div>
+      <svg class="diagram-svg" viewBox="0 0 300 300">
+        <defs><marker id="arrFL2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="30" y="6" width="240" height="42" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt">Battle of Buxar — 1764</text>
+        <text x="150" y="38" text-anchor="middle" class="dtxt-xs">Shah Alam II, Shuja-ud-Daula, Mir Qasim defeated</text>
+        <line x1="150" y1="48" x2="150" y2="70" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrFL2)"/>
+        <rect x="25" y="72" width="250" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="92" text-anchor="middle" class="dtxt-sm">British control Bengal &amp; the Mughal/Awadh courts</text>
+        <line x1="150" y1="106" x2="150" y2="128" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrFL2)"/>
+        <rect x="20" y="130" width="260" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="148" text-anchor="middle" class="dtxt-sm">Royal patronage of Sanyasis &amp; Fakirs</text>
+        <text x="150" y="162" text-anchor="middle" class="dtxt-sm">(travel expenses) is stopped</text>
+        <line x1="150" y1="176" x2="150" y2="198" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrFL2)"/>
+        <rect x="55" y="200" width="190" height="34" rx="6" fill="#f8d9d9" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="221" text-anchor="middle" class="dtxt-sm-red">British declare them "bandits"</text>
+        <line x1="150" y1="234" x2="150" y2="256" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrFL2)"/>
+        <rect x="18" y="258" width="264" height="38" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="150" y="277" text-anchor="middle" class="dtxt-big">REVOLT! Bengal, 1770s</text>
+        <text x="150" y="291" text-anchor="middle" class="dtxt-xs">Manju Shah • Bhawani Pathak • Devi Chaudhurani</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      <strong>Subsidiary Alliance</strong> (1798, Wellesley) is <em>not</em> the same as annexation — the kingdom kept its throne, just lost its own army and foreign policy control. It was specifically the <strong>disbanding of Khurda's own soldiers</strong> under this Alliance that sparked the Paika Rebellion.
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Two "novel connections" to remember: <strong>Anandmath</strong> &amp; <strong>Devi Chaudhurani</strong> (both by Bankim Chandra Chatterjee) → <strong>Sanyasi-Fakir Rebellion</strong>. Don't mix this up with <em>Neel Darpan</em> (Page 6), which covers the Indigo Revolt!
+    </div>
+
+    <div class="sticky green"><b>🧠 Memory Trick</b>The Nizam of Hyderabad was FIRST to accept the Subsidiary Alliance (1798) — and Khurda's own paiks lost their livelihood under that very same policy, sparking Bakshi Jagabandhu's revolt two decades later (1817)!</div>
+
+    <div class="pagecount">Page 2 of 6</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 : AHOM REVOLT & PAGALPANTHI ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1d3f7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24 L36 24 L30 30 L10 30 Z" fill="#eadfc4"/><path d="M20 24 L20 8 L30 12 L20 16"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M6 26 C6 14 14 8 20 8 C26 8 34 14 34 26" fill="none"/><path d="M10 26 L10 32 M16 26 L16 34 M24 26 L24 34 M30 26 L30 32"/><line x1="4" y1="26" x2="36" y2="26"/></g></svg>
+    <svg class="doodle" style="top:640px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linejoin="round"><path d="M20 4 L26 16 L20 13 L14 16 Z" fill="#d8c8a0"/><line x1="20" y1="13" x2="20" y2="34"/><path d="M12 34 L28 34"/></g></svg>
+    <svg class="doodle" style="top:960px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#fff8e6"/><line x1="20" y1="20" x2="20" y2="11" stroke-linecap="round"/><line x1="20" y1="20" x2="26" y2="23" stroke-linecap="round"/><circle cx="20" cy="20" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+
+    <h3 class="sec">The Ahom Revolt &amp; the Pagalpanthi</h3>
+
+    <h4 class="subsec">🐘 The Ahom Revolt (Assam)</h4>
+    <p>Led by <strong>Gomdhar Konwar</strong> in <span class="hl red">1828</span>. This followed the <strong>First Anglo-Burmese War (1824–1826)</strong>, which ended with the <span class="hl red ring">Treaty of Yandaboo (1826)</span>.</p>
+    <ul>
+      <li>Before the treaty, the Ahom Kingdom (Assam, and part of today's Bangladesh) was under the influence of the Burmese (Myanmar) empire.</li>
+      <li>Under the Treaty of Yandaboo, this region came under British control, and the British promised they would withdraw.</li>
+      <li>They <span class="scribble">did not leave</span> — two years passed with no withdrawal.</li>
+      <li>Gomdhar Konwar led a revolt against this broken promise in 1828.</li>
+      <li>The Company suppressed the revolt, but — having made an impression — chose not to hold the territory outright: they <strong>returned the territory to the Ahoms</strong> and withdrew.</li>
+    </ul>
+
+    <h4 class="subsec">🕉️ The Pagalpanthi (Bengal)</h4>
+    <p>A movement started around <span class="hl red">1825</span> by <strong>Karam Shah</strong> and his son <strong>Tipu Shah</strong>, in the <strong>Bengal</strong> region.</p>
+    <ul>
+      <li>Tipu Shah established a distinct sect — a bit like how Akbar had once established Din-i-Ilahi: a new set of beliefs not fitting neatly into existing Hindu or Muslim orthodoxy.</li>
+      <li>Karam Shah appealed to both Hindus and Muslims, urging orthodox believers to drop certain rigid practices and pointing out flaws on both sides.</li>
+      <li>People mockingly called them "mad" ("<em>Pagal</em>") — hence <strong>Pagalpanthi</strong>.</li>
+      <li>It is studied here because the movement gradually turned into a revolt against local <strong>landlords</strong>.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">🗡️ Battle of Saraighat, 1671 (tap to expand)</span>
+      <div class="toggle-content">
+        Long before the British arrived, the Ahom Kingdom had already defended itself against the Mughals in a conflict stretching back to the 1620s, climaxing at the <strong>Battle of Saraighat (1671)</strong>. Mughal forces were led by <strong>Ram Singh</strong> (Emperor <strong>Aurangzeb</strong> did not personally take part); Ahom forces were led by <strong>Lachit Borphukan</strong>. The <strong>Mughals were defeated</strong>. In his honour, the National Defence Academy's top cadet trophy is named the <strong>Lachit Borphukan Award</strong>.
+      </div>
+    </div>
+
+    <table>
+      <tr><th>Revolt</th><th>Leader</th><th>Year</th><th>Region</th></tr>
+      <tr><td>Ahom Revolt</td><td>Gomdhar Konwar</td><td class="imp">1828</td><td>Assam</td></tr>
+      <tr><td>Pagalpanthi</td><td>Karam Shah &amp; Tipu Shah</td><td class="imp">1825</td><td>Bengal</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">1671 Saraighat (Ahoms win)</span><span class="arrow">→</span>
+      <span class="chip">1824-26 Anglo-Burmese War</span><span class="arrow">→</span>
+      <span class="chip">1826 Treaty of Yandaboo</span><span class="arrow">→</span>
+      <span class="chip">1828 Gomdhar Konwar's revolt</span>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 3: Two Frontiers of Resistance</div>
+      <svg class="diagram-svg" viewBox="0 0 300 240">
+        <path d="M40 40 Q15 90 35 135 Q18 175 60 205 Q120 230 180 212 Q240 200 270 155 Q290 110 258 75 Q268 35 205 22 Q140 5 90 18 Q55 12 40 40 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <path d="M30 118 Q140 108 275 128" fill="none" stroke="#8a1414" stroke-width="1.4" stroke-dasharray="5 4"/>
+        <text x="222" y="42" text-anchor="middle" class="dtxt-xs">ASSAM side</text>
+        <text x="75" y="208" text-anchor="middle" class="dtxt-xs">BENGAL side</text>
+        <circle cx="200" cy="70" r="5" fill="#c31f1f"/>
+        <text x="200" y="58" text-anchor="middle" class="dtxt-sm">Ahom Kingdom</text>
+        <text x="200" y="88" text-anchor="middle" class="dtxt-xs">Revolt — 1828</text>
+        <circle cx="150" cy="98" r="4" fill="#1d3f7a"/>
+        <text x="122" y="101" text-anchor="end" class="dtxt-xs">Saraighat, 1671</text>
+        <circle cx="90" cy="165" r="5" fill="#c31f1f"/>
+        <text x="90" y="153" text-anchor="middle" class="dtxt-sm">Pagalpanthi</text>
+        <text x="90" y="183" text-anchor="middle" class="dtxt-xs">1825</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>Ahom Revolt</strong> (1828, against the British, led by Gomdhar Konwar) with the <strong>Battle of Saraighat</strong> (1671, against the Mughals, led by Lachit Borphukan) — the same Ahom Kingdom defending itself, but against two completely different invaders, 150+ years apart!
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      The Treaty of Yandaboo (1826) ended the First Anglo-Burmese War and gave the British control of Assam — but they didn't withdraw as promised, which is exactly what sparked Gomdhar Konwar's revolt (1828).
+    </div>
+
+    <div class="sticky blue"><b>📌 Small But Mighty</b>Assam's Ahom Kingdom fought off two very different powers within 157 years — the Mughals (1671, Ahoms won) and the British (1828, revolt suppressed, but the land was later returned)!</div>
+
+    <div class="pagecount">Page 3 of 6</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 : KOL MUTINY & MUNDA REBELLION (ULGULAN) ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 L26 10 L32 15 L16 35 Z" fill="#c9975e"/><path d="M10 30 L16 35 L7 33 Z" fill="#8a5a2a"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><path d="M20 36 L20 14"/><path d="M20 18 C10 14 8 4 8 4 C8 4 16 6 20 18 Z" fill="#bfe3c5"/><path d="M20 22 C30 18 32 8 32 8 C32 8 24 10 20 22 Z" fill="#bfe3c5"/></g></svg>
+    <svg class="doodle" style="top:640px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><ellipse cx="20" cy="22" rx="10" ry="13" fill="#eadfc4"/><line x1="14" y1="14" x2="14" y2="30"/><line x1="26" y1="14" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:960px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linejoin="round"><path d="M4 30 Q20 8 36 30 Z" fill="#c8bda0"/><path d="M4 30 L36 30"/></g></svg>
+    <svg class="doodle" style="top:1260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><path d="M20 8 L23 15 L31 16 L25 21 L27 29 L20 25 L13 29 L15 21 L9 16 L17 15 Z" fill="#ffe08a"/></g></svg>
+
+    <h3 class="sec">Kol Mutiny &amp; the Munda Rebellion (Ulgulan)</h3>
+
+    <h4 class="subsec">⛏️ The Kol Mutiny</h4>
+    <p>Led by <strong>Buddhu Bhagat</strong> in <span class="hl red">1831</span>. A tribal uprising in the <strong>Chota Nagpur Plateau</strong> region, involving the <strong>Ho</strong> and <strong>Munda</strong> tribes.</p>
+
+    <h4 class="subsec">🪓 The Munda Rebellion — "Ulgulan"</h4>
+    <p>The British wanted revenue, and this forest-rich plateau (though its mineral wealth wasn't the British focus at the time — agriculture was) was a target. They wanted to clear tribal forest land for cultivation, so agricultural tax could be earned.</p>
+    <ul>
+      <li>Led by <strong>Birsa Munda</strong>, who led the <strong>Ho and Munda</strong> tribes' uprising.</li>
+      <li>Born <span class="hl">15 November 1875</span>; began leading the movement around the age of 20, i.e. c. <span class="hl">1895</span>.</li>
+      <li>His birthday, 15 November, is now observed as <strong>Tribal Pride Day</strong>.</li>
+      <li>Directed against the <strong>"Diku"</strong> — outsiders, specifically outsider landlords who arrived once agriculture (and zamindari-style revenue collection) came to tribal land.</li>
+      <li>The Munda community upheld the <span class="scribble">Khuntkatti system</span> — collective/joint land ownership, with no single owner: the community would grow, eat and live together with a strong communal bond. The movement also carried a religious dimension, resisting outside religious influence.</li>
+      <li>Also called the <strong>Ulgulan</strong> ("uprising") — commonly explained as a call to overthrow oppressive rule. Many tribal groups still invoke the word today.</li>
+      <li>The uprising began around 1895; Birsa Munda was captured in 1899 and died in jail in <span class="hl red ring">1900</span> — this account attributes his death to slow poisoning by the British.</li>
+    </ul>
+
+    <div class="quotebox">🗣️ <strong>"Ulgulan!"</strong> — the Munda rallying cry, meaning roughly "rise up, overthrow the oppressor" — still invoked by tribal groups today.</div>
+
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1875</span><br>Birsa Munda is born (15 November).</div>
+      <div class="tl-item"><span class="tl-date">~1895</span><br>At around age 20, he begins leading the movement against the Diku and the British.</div>
+      <div class="tl-item"><span class="tl-date">1899</span><br>The Ulgulan is declared; Birsa Munda is captured.</div>
+      <div class="tl-item"><span class="tl-date">1900</span><br>He dies in jail — this account describes it as slow poisoning by the British.</div>
+    </div>
+
+    <table>
+      <tr><th>Revolt</th><th>Leader</th><th>Year</th><th>Tribes Involved</th></tr>
+      <tr><td>Kol Mutiny</td><td>Buddhu Bhagat</td><td class="imp">1831</td><td>Ho &amp; Munda</td></tr>
+      <tr><td>Munda Rebellion (Ulgulan)</td><td>Birsa Munda</td><td class="imp">1895–1900</td><td>Munda &amp; Ho</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">✏️ Fig 4: Khuntkatti vs. the Diku</div>
+      <svg class="diagram-svg" viewBox="0 0 300 235">
+        <defs><marker id="arrDK4" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M65 88 L80 73 L95 88 L95 106 L65 106 Z" fill="#f2d9a0" stroke="#5a3d20" stroke-width="1.8"/>
+        <path d="M138 58 L153 43 L168 58 L168 76 L138 76 Z" fill="#f2d9a0" stroke="#5a3d20" stroke-width="1.8"/>
+        <path d="M195 93 L210 78 L225 93 L225 111 L195 111 Z" fill="#f2d9a0" stroke="#5a3d20" stroke-width="1.8"/>
+        <path d="M118 128 L133 113 L148 128 L148 146 L118 146 Z" fill="#f2d9a0" stroke="#5a3d20" stroke-width="1.8"/>
+        <ellipse cx="145" cy="106" rx="68" ry="48" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="145" y="102" text-anchor="middle" class="dtxt-sm">KHUNTKATTI</text>
+        <text x="145" y="115" text-anchor="middle" class="dtxt-xs">shared land — grow, eat,</text>
+        <text x="145" y="126" text-anchor="middle" class="dtxt-xs">live together</text>
+        <rect x="15" y="182" width="120" height="44" rx="6" fill="#f8d9d9" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="75" y="200" text-anchor="middle" class="dtxt-sm-red">DIKU (outsider</text>
+        <text x="75" y="214" text-anchor="middle" class="dtxt-sm-red">landlord)</text>
+        <path d="M95 182 Q112 158 128 146" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrDK4)"/>
+        <text x="145" y="170" text-anchor="middle" class="dtxt-xs">rent demanded</text>
+        <rect x="150" y="182" width="135" height="44" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="217" y="200" text-anchor="middle" class="dtxt-sm-red">ULGULAN!</text>
+        <text x="217" y="214" text-anchor="middle" class="dtxt-xs">Birsa Munda, 1895-1900</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Modern <strong>Naxalism</strong> is <em>not</em> a continuation of the Kol Mutiny or the Munda Rebellion! Despite the geographic overlap, Naxalism began later and separately, taking its name from <strong>Naxalbari village, West Bengal</strong> — don't link the two in an answer.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Remember Birsa Munda by three 15-Novembers: <strong>BORN</strong> 15 Nov 1875 → the date is now <strong>Tribal Pride Day</strong> → and <strong>Jharkhand</strong> itself was carved out of Bihar on 15 November, <span class="hl">2000</span>!
+    </div>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">🏆 Birsa Munda's Legacy Today (tap to expand)</span>
+      <div class="toggle-content">
+        Birsa Munda is worshipped as a deity ("Bhagwan Birsa Munda") by tribal communities today. Ranchi's airport is named <strong>Birsa Munda Airport</strong> after him, and one of India's largest hockey stadiums also carries his name. His birthday (15 November) is both <strong>Tribal Pride Day</strong> and the date Jharkhand was formed, in 2000.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 4 of 6</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 : SANTHAL REBELLION & MOPLAH REBELLION ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M8 32 C8 16 16 6 16 6 C16 6 24 16 24 32" fill="none"/><line x1="8" y1="24" x2="24" y2="16"/><path d="M24 16 L30 12 L27 20 Z" fill="#3a2b1c"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><line x1="20" y1="36" x2="20" y2="14"/><path d="M20 16 C8 10 6 2 6 2 C6 2 16 4 20 16 Z" fill="#8fbf6a"/><path d="M20 20 C32 14 34 4 34 4 C34 4 24 6 20 20 Z" fill="#8fbf6a"/><ellipse cx="20" cy="10" rx="5" ry="4" fill="#c9975e" stroke="#5a3d20"/></g></svg>
+    <svg class="doodle" style="top:640px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><path d="M10 30 Q20 4 30 30 Z" fill="none"/><path d="M14 30 Q20 10 26 30 Z" fill="#eadfc4"/><line x1="6" y1="30" x2="34" y2="30"/></g></svg>
+    <svg class="doodle" style="top:960px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><ellipse cx="20" cy="20" rx="12" ry="8" fill="#eadfc4"/><line x1="10" y1="20" x2="4" y2="16"/><line x1="10" y1="20" x2="4" y2="24"/><line x1="30" y1="20" x2="36" y2="20"/></g></svg>
+    <svg class="doodle" style="top:1260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#ffe08a"/><circle cx="14" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><path d="M13 24 Q20 31 27 24" stroke-linecap="round"/></g></svg>
+
+    <h3 class="sec">The Santhal Rebellion &amp; the Moplah Rebellion</h3>
+
+    <h4 class="subsec">🏹 The Santhal Rebellion</h4>
+    <p>Studied here among the Tribal Uprisings, though it falls chronologically right before 1857 itself — began in <span class="hl red ring">1855</span>, led by <strong>Sidhu and Kanhu Murmu</strong> (two of four Murmu brothers; the other two aren't essential for exams).</p>
+    <ul>
+      <li>The <strong>Santhal</strong> tribe is India's third-largest tribal group, after the <strong>Bhil</strong> and <strong>Gond</strong> tribes.</li>
+      <li>India's current President, <strong>Droupadi Murmu</strong> — the country's first tribal President — belongs to this tribe.</li>
+      <li>Around <span class="hl">1832</span>, the British demarcated a forest tract of the Chota Nagpur Plateau called <strong>Damin-i-Koh</strong> for cultivation, and brought in the Santhal tribe (believed to trace its origins to the Cambodia/Southeast Asia region) to clear this forest and farm it.</li>
+      <li>Once settled, a zamindar was placed over the Santhals, collecting tax and rent — and the same trap of moneylenders and high interest followed, just as on Page 1.</li>
+      <li>The Santhals fought hard, but had <span class="scribble">only bows and arrows</span> against British artillery — they could not win militarily.</li>
+      <li>The British ultimately overpowered them; local kings and officials also sided with the British.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb5">
+      <span class="toggle-btn" onclick="toggleBox('tb5')">⚔️ Why the Rebellion Ultimately Failed (tap to expand)</span>
+      <div class="toggle-content">
+        The Santhals fought with courage and organisation, but they had no artillery to match the British — only bows and arrows. On top of this military gap, several local kings and officials chose to side with the British rather than the Santhals, which tipped the balance decisively against the rebellion.
+      </div>
+    </div>
+
+    <h4 class="subsec">🕌 The Moplah Rebellion</h4>
+    <p>Year: <span class="hl red">1836</span> (a separate, much larger Moplah uprising also occurred in 1921, studied separately). Region: <strong>Malabar</strong>.</p>
+    <ul>
+      <li>The <strong>Moplah</strong> (Mappila) are a Muslim community of the Malabar region.</li>
+      <li>In 1836, they revolted against <strong>Hindu landlords</strong>.</li>
+    </ul>
+
+    <table>
+      <tr><th>Revolt</th><th>Leader(s)</th><th>Year</th><th>Region</th></tr>
+      <tr><td>Santhal Rebellion</td><td>Sidhu &amp; Kanhu Murmu</td><td class="imp">1855</td><td>Damin-i-Koh, Chota Nagpur</td></tr>
+      <tr><td>Moplah Rebellion</td><td>Moplah community</td><td class="imp">1836</td><td>Malabar</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Two Uprisings, One Pattern</div>
+      <svg class="diagram-svg" viewBox="0 0 300 220">
+        <defs><marker id="arrMM5" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <ellipse cx="150" cy="34" rx="95" ry="26" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="150" y="39" text-anchor="middle" class="dtxt-big">AGRARIAN UNREST</text>
+        <path d="M108 58 Q78 78 68 100" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrMM5)"/>
+        <path d="M192 58 Q222 78 232 100" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrMM5)"/>
+        <rect x="4" y="102" width="140" height="100" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="74" y="120" text-anchor="middle" class="dtxt">SANTHAL</text>
+        <text x="74" y="133" text-anchor="middle" class="dtxt">REBELLION</text>
+        <text x="74" y="148" text-anchor="middle" class="dtxt-sm">Sidhu &amp; Kanhu Murmu</text>
+        <text x="74" y="161" text-anchor="middle" class="dtxt-xs">1855 • Damin-i-Koh,</text>
+        <text x="74" y="173" text-anchor="middle" class="dtxt-xs">Chota Nagpur</text>
+        <text x="74" y="189" text-anchor="middle" class="dtxt-sm-red">vs zamindar+moneylender</text>
+        <rect x="156" y="102" width="140" height="100" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="226" y="120" text-anchor="middle" class="dtxt">MOPLAH</text>
+        <text x="226" y="133" text-anchor="middle" class="dtxt">REBELLION</text>
+        <text x="226" y="150" text-anchor="middle" class="dtxt-sm">Moplah community</text>
+        <text x="226" y="165" text-anchor="middle" class="dtxt-xs">1836 • Malabar</text>
+        <text x="226" y="182" text-anchor="middle" class="dtxt-sm-red">vs Hindu landlords</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      The Santhals were <em>not</em> native to the Damin-i-Koh/Chota Nagpur area — the British brought them in (from a region believed to trace back toward Cambodia) around 1832 specifically to clear the forest for farming.
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Santhal Rebellion (1855) is grouped under Tribal Uprisings even though it falls just two years before 1857 — sort your revision by <strong>theme</strong> (tribal / peasant / religious), not only by strict date order.
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Bhil → Gond → Santhal: that's India's top-3 tribal-population order. And Santhal is the tribe of India's first tribal President, Droupadi Murmu!</div>
+
+    <div class="pagecount">Page 5 of 6</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="showPage(6)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 6 : INDIGO REVOLT & THE ROAD TO 1857 ============ -->
+  <div class="page" id="page6">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><line x1="20" y1="36" x2="20" y2="12"/><path d="M20 14 C10 10 8 2 8 2 C8 2 16 4 20 14 Z" fill="#3a5fae"/><path d="M20 18 C30 14 32 6 32 6 C32 6 24 8 20 18 Z" fill="#3a5fae"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1d3f7a" stroke-width="2" stroke-linecap="round"><path d="M20 6 C13 6 10 14 15 22 C18 27 20 30 20 34 C20 30 22 27 25 22 C30 14 27 6 20 6 Z" fill="#bfe3f5"/></g></svg>
+    <svg class="doodle" style="top:640px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M10 32 L28 8"/><path d="M28 8 C33 6 35 10 30 13 C25 16 22 13 28 8 Z" fill="#eadfc4"/><path d="M10 32 L6 28"/></g></svg>
+    <svg class="doodle" style="top:960px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M6 10 L34 10 L34 30 L6 30 Z" fill="none"/><path d="M6 10 L20 22 L34 10"/></g></svg>
+    <svg class="doodle" style="top:1260px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">The Indigo Revolt &amp; the Road to 1857</h3>
+
+    <p><strong>Indigo</strong> ("neel") is a plant that yields a natural blue dye — no longer common today since synthetic dyes replaced it. The plant demands far more water than rice, and gradually makes the soil <span class="scribble">unfertile</span>. The British wanted it anyway, to sell at a good rate in the European market.</p>
+
+    <h4 class="subsec">🪤 The "Advance Payment" Trap</h4>
+    <ul>
+      <li>Farmers preferred growing wheat and rice for their own food — indigo brought no food and ruined the soil.</li>
+      <li>So the British devised a system: sign an agreement, and <strong>pay the farmer in advance</strong>, before the crop was even planted.</li>
+      <li>Drawn in by the immediate money, cultivators signed without reading or understanding the contract's terms — this was <span class="scribble">a trap</span>: it bound them to keep growing indigo.</li>
+      <li>With no way out, the planters revolted in <span class="hl red">1859</span>.</li>
+    </ul>
+
+    <div class="toggle-box" id="tb6">
+      <span class="toggle-btn" onclick="toggleBox('tb6')">📜 How the "Advance Payment" Trap Worked (tap to expand)</span>
+      <div class="toggle-content">
+        The British signed contracts with farmers and paid them in advance — before the crop was even in the ground. Farmers, drawn by the immediate cash, signed without understanding the contract's actual terms. Once signed, those terms bound them to keep growing indigo season after season, trapping them in a cycle they could not escape.
+      </div>
+    </div>
+
+    <h4 class="subsec">✊ The Revolt &amp; Its Voice</h4>
+    <p>Leaders: <strong>Digambar Biswas</strong> and <strong>Bishnu Biswas</strong>. The revolt was dramatised in the play <span class="hl red ring">Neel Darpan</span> ("Blue/Indigo Mirror") by <strong>Dinabandhu Mitra</strong> — its impact was so great that the <strong>British banned the play</strong>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't attribute <em>Neel Darpan</em> to <strong>Bankim Chandra Chatterjee</strong>! Bankim Chandra wrote <em>Anandmath</em> &amp; <em>Devi Chaudhurani</em> (Sanyasi-Fakir Rebellion, Page 2). <em>Neel Darpan</em> (Indigo Revolt) was written by <strong>Dinabandhu Mitra</strong>.
+    </div>
+
+    <table>
+      <tr><th>Revolt</th><th>Leader(s)</th><th>Year</th><th>Region</th></tr>
+      <tr><td>Indigo Revolt</td><td>Digambar Biswas &amp; Bishnu Biswas</td><td class="imp">1859</td><td>Bengal</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">Contract Signed</span><span class="arrow">→</span>
+      <span class="chip">Advance Paid</span><span class="arrow">→</span>
+      <span class="chip">Forced Cultivation</span><span class="arrow">→</span>
+      <span class="chip">Trapped by Terms</span><span class="arrow">→</span>
+      <span class="chip">Revolt, 1859</span>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 6: The Indigo Trap</div>
+      <svg class="diagram-svg" viewBox="0 0 300 300">
+        <defs><marker id="arrIN6" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="30" y="6" width="240" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt-sm">British sign an "advance payment"</text>
+        <text x="150" y="38" text-anchor="middle" class="dtxt-sm">contract with the farmer</text>
+        <line x1="150" y1="46" x2="150" y2="68" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrIN6)"/>
+        <rect x="20" y="70" width="260" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="88" text-anchor="middle" class="dtxt-sm">Farmer is bound to grow indigo</text>
+        <text x="150" y="102" text-anchor="middle" class="dtxt-sm">instead of food crops (wheat/rice)</text>
+        <line x1="150" y1="110" x2="150" y2="132" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrIN6)"/>
+        <rect x="20" y="134" width="260" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="152" text-anchor="middle" class="dtxt-sm">Heavy water use depletes the soil —</text>
+        <text x="150" y="166" text-anchor="middle" class="dtxt-sm">farmer sees little real profit</text>
+        <line x1="150" y1="174" x2="150" y2="196" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrIN6)"/>
+        <rect x="35" y="198" width="230" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="150" y="221" text-anchor="middle" class="dtxt-big">INDIGO REVOLT, 1859</text>
+        <line x1="150" y1="234" x2="150" y2="256" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrIN6)"/>
+        <rect x="15" y="258" width="270" height="38" rx="6" fill="#f8d9d9" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="276" text-anchor="middle" class="dtxt-sm-red">Neel Darpan exposes it —</text>
+        <text x="150" y="290" text-anchor="middle" class="dtxt-sm-red">British BAN the play</text>
+      </svg>
+    </div>
+
+    <div class="sticky green"><b>📌 Fun Fact</b>Indigo's Bengali name gives <em>Neel Darpan</em> ("Blue/Indigo Mirror") its title — the "mirror" held up to expose the cruelty of forced cultivation.</div>
+
+    <h4 class="subsec">⏳ Putting It All Together — A Century of Unrest</h4>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1764</span><br>Battle of Buxar — the backdrop that eventually leads to the Sanyasi-Fakir Rebellion.</div>
+      <div class="tl-item"><span class="tl-date">1770s</span><br>Sanyasi-Fakir Rebellion — Bengal.</div>
+      <div class="tl-item"><span class="tl-date">1817</span><br>Paika Rebellion — Khurda, Odisha.</div>
+      <div class="tl-item"><span class="tl-date">1825</span><br>Pagalpanthi — Bengal.</div>
+      <div class="tl-item"><span class="tl-date">1828</span><br>Ahom Revolt — Assam.</div>
+      <div class="tl-item"><span class="tl-date">1831</span><br>Kol Mutiny — Chota Nagpur Plateau.</div>
+      <div class="tl-item"><span class="tl-date">1836</span><br>Moplah Rebellion — Malabar.</div>
+      <div class="tl-item"><span class="tl-date">1855</span><br>Santhal Rebellion — Damin-i-Koh.</div>
+      <div class="tl-item"><strong>1857 — THE REVOLT OF 1857</strong></div>
+      <div class="tl-item"><span class="tl-date">1859</span><br>Indigo Revolt — Bengal.</div>
+      <div class="tl-item"><span class="tl-date">1895–1900</span><br>Munda Rebellion (Ulgulan) — Chota Nagpur Plateau.</div>
+    </div>
+    <div class="tl-big">🗓️ A CENTURY OF UNREST: some of these fed directly into 1857, others (like the Indigo Revolt &amp; the Ulgulan) came AFTER it — but the root cause never changed: land, tax &amp; control.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Indigo Revolt (1859) leaders: <strong>Digambar Biswas &amp; Bishnu Biswas</strong>. The exposing play: <strong>Neel Darpan</strong> by <strong>Dinabandhu Mitra</strong> — banned by the British for its impact!
+    </div>
+
+    <div class="pagecount">Page 6 of 6</div>
+    <div class="navbtns"><button onclick="showPage(5)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Modern Indian History • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=6;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=6;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
