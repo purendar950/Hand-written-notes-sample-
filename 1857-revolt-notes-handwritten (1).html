@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Revolt of 1857 — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Modern Indian History</div>
+    <h1>The Revolt of 1857</h1>
+    <h2>Causes • Course • Consequences</h2>
+    <div class="sub">a.k.a. <b>The Sepoy Mutiny</b> &nbsp;|&nbsp; also called <b>"The First War of Independence"</b> (disputed — see Page 5)</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Causes</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">⚡ The Spark</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🚩 Leaders</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🛑 Suppressed</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🤔 Legacy</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:270px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.4"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><line x1="20" y1="11" x2="20" y2="23" stroke-linecap="round"/><circle cx="20" cy="28" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 18 L30 18 L27 32 L11 32 Z" fill="#f2d9a0"/><path d="M30 20 C36 20 36 28 30 28"/><ellipse cx="19" cy="18" rx="11" ry="2.4" fill="#8a5a2a" stroke="#5a3d20"/></g></svg>
+
+    <h3 class="sec">Setting the Stage</h3>
+    <p>Viceroy at the time of the Revolt: <span class="hl navy">Lord Canning</span>. Because it was the soldiers <em>(sepoys)</em> who revolted, 1857 is also known as the <span class="red">Sepoy Mutiny</span>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Causes of the Revolt — Mind Map</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <defs><marker id="arrA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M100 58 Q130 92 128 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M225 58 Q195 92 194 118" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M95 202 Q125 174 128 160" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <path d="M228 202 Q198 174 194 160" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrA)"/>
+        <ellipse cx="70" cy="38" rx="60" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="34" text-anchor="middle" class="dtxt">Political</text>
+        <text x="70" y="48" text-anchor="middle" class="dtxt-sm">Doctrine of Lapse</text>
+        <ellipse cx="250" cy="38" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="250" y="28" text-anchor="middle" class="dtxt">Military</text>
+        <text x="250" y="41" text-anchor="middle" class="dtxt-sm">Overseas Service +</text>
+        <text x="250" y="52" text-anchor="middle" class="dtxt-sm">Racial Bias</text>
+        <ellipse cx="62" cy="222" rx="62" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="62" y="215" text-anchor="middle" class="dtxt">Religious-Social</text>
+        <text x="62" y="228" text-anchor="middle" class="dtxt-sm">Enfield Rifle rumour</text>
+        <ellipse cx="258" cy="222" rx="60" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="258" y="215" text-anchor="middle" class="dtxt">Administrative</text>
+        <text x="258" y="228" text-anchor="middle" class="dtxt-sm">Awadh annexed</text>
+        <ellipse cx="160" cy="140" rx="56" ry="34" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="134" text-anchor="middle" class="dtxt-big">REVOLT</text>
+        <text x="160" y="153" text-anchor="middle" class="dtxt-big">1857</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">1️⃣ General Service Enlistment Act</h4>
+    <p>Introduced by <strong>Canning</strong>. It said the <strong>Bengal Army</strong> (mostly Bengali soldiers) could now be sent for <strong>overseas service</strong>.</p>
+    <ul>
+      <li>"Overseas" = crossing the sea to another country</li>
+      <li>Belief at the time (Hinduism): crossing the sea = <span class="red">loss of one's religion</span></li>
+      <li>Result: deep resentment began building among the sepoys</li>
+    </ul>
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Overseas service → "loss of religion" (as believed then) → Anger in the Army</div>
+
+    <h4 class="subsec">2️⃣ Doctrine of Lapse</h4>
+    <p>Introduced by <strong>Lord Dalhousie</strong> in <span class="hl red ring">1848</span>.</p>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 Recap: Subsidiary Alliance (tap to expand)</span>
+      <div class="toggle-content">
+        Subsidiary Alliance began in <strong>1798</strong>. <strong>Nizam of Hyderabad</strong> was the first to accept it (1798). <strong>Mysore</strong> accepted it in <strong>1799</strong> — after Tipu Sultan was defeated, the British installed the <strong>Wadiyar Dynasty</strong> there.
+      </div>
+    </div>
+
+    <div class="sticky blue">
+      <b>💡 Understand it like this...</b>
+      Clever moneylenders lend a <em>small</em> amount first and repay it <em>instantly</em> — building your trust! Next time, they take a <em>big</em> amount... and vanish. The British played the same game: first the "harmless" Subsidiary Alliance (small trust), then the kingdom-swallowing <strong>Doctrine of Lapse</strong> (the big one)!
+    </div>
+
+    <p><strong>The Rule:</strong> If a ruler died <span class="red">without a natural (biological) heir</span>, his <strong>adopted son got no automatic right</strong> to the throne. The British had full discretion — and usually chose to <strong class="scribble">annex ("lapse")</strong> the kingdom instead.</p>
+    <div class="sticky pink"><b>🧠 Memory Trick</b>"No Blood, No Throne" — the heart of the Doctrine of Lapse!</div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix these two up! <strong>Subsidiary Alliance</strong> = ruler keeps his throne, just accepts British troops &amp; loses foreign policy control. <strong>Doctrine of Lapse</strong> = kingdom is fully annexed if there's no natural heir. Two very different British policies!
+    </div>
+
+    <h4 class="subsec">States Annexed under Doctrine of Lapse</h4>
+    <table>
+      <tr><th>Year</th><th>State</th></tr>
+      <tr><td class="imp">1848</td><td>Satara</td></tr>
+      <tr><td class="imp">1849</td><td>Sambalpur &amp; Jaitpur</td></tr>
+      <tr><td class="imp">1852</td><td>Udaipur</td></tr>
+      <tr><td class="imp">1853</td><td>Jhansi</td></tr>
+    </table>
+    <div class="chain">
+      <span class="chip">Satara '48</span><span class="arrow">→</span>
+      <span class="chip">Sambalpur+Jaitpur '49</span><span class="arrow">→</span>
+      <span class="chip">Udaipur '52</span><span class="arrow">→</span>
+      <span class="chip">Jhansi '53</span>
+    </div>
+
+    <h4 class="subsec">3️⃣ Awadh — "The Ripe Cherry"</h4>
+    <div class="quotebox">🍒 Dalhousie's words: "Awadh is a cherry that will drop, ripe, into our mouth!"</div>
+    <ul>
+      <li>Last Nawab of Awadh: <strong>Wajid Ali Shah</strong> — known for his love of art, music &amp; luxury ("Nawabi shauk"), not administration</li>
+      <li>Awadh had accepted the <strong>Subsidiary Alliance in 1801</strong> → British troops were permanently stationed in his court</li>
+      <li>Dalhousie got a report prepared alleging <strong>"misgovernance"</strong> — mostly for show</li>
+      <li>Result: Awadh <span class="hl red ring v2">annexed in 1856</span>, citing misgovernance</li>
+      <li>Wajid Ali Shah was arrested &amp; imprisoned in <strong>Kolkata</strong></li>
+      <li>His wife, <strong>Begum Hazrat Mahal</strong>, stayed back in Lucknow — and later <span class="green">led the 1857 revolt from there!</span></li>
+    </ul>
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Awadh annexed: <strong>1856</strong> | Reason: <strong>Misgovernance</strong> | Last Nawab: <strong>Wajid Ali Shah</strong> | His wife who led the revolt: <strong>Begum Hazrat Mahal</strong>
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:10px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.4" stroke-linecap="round"><path d="M4 8 C14 6 18 20 30 24"/><path d="M22 20 L31 25 L27 15"/></g></svg>
+    <svg class="doodle" style="top:260px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="14" y="6" width="12" height="22" rx="3" fill="#d8c8a0"/><path d="M14 6 Q20 0 26 6" fill="#c99400"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">Racial Bias &amp; The Enfield Rifle</h3>
+
+    <h4 class="subsec">4️⃣ Racial Discrimination in the Army</h4>
+    <p>The British Indian Army mixed British and Indian soldiers — Indians vastly outnumbered the British. Indian soldiers faced <strong>racial discrimination</strong> (pay, promotions, respect). This resentment kept <em>simmering quietly</em>...</p>
+
+    <h4 class="subsec">5️⃣ The Enfield Rifle — The Spark! (Immediate Cause)</h4>
+    <ul>
+      <li>New <strong>Enfield rifle</strong> introduced — its cartridge had to be <strong>bitten open with the mouth</strong> before loading</li>
+      <li>Rumour spread: cartridges were greased with <span class="red">cow fat</span> (sacred to Hindus) <em>and</em> <span class="red">pig fat</span> (forbidden in Islam)</li>
+      <li>The British officially denied/banned such grease — but the rumour had already spread like wildfire</li>
+    </ul>
+    <div class="quotebox">🔥 Beef offends Hindus. Pork offends Muslims. This cartridge offended <u>everyone</u> — and lit the fire of revolt!</div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: The Cartridge That Offended Everyone</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <defs><marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#1a3fb0"/></marker></defs>
+        <rect x="128" y="55" width="44" height="70" rx="10" fill="#e8d9b0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <path d="M128 55 Q150 38 172 55" fill="#c99400" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="138" y1="130" x2="162" y2="130" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M150 38 Q154 30 160 34 Q156 40 150 38 Z" fill="#fbf6e7" stroke="#c31f1f" stroke-width="1.6"/>
+        <path d="M100 40 L108 55 M200 40 L192 55 M115 20 L120 35 M185 20 L180 35" stroke="#c31f1f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M40 100 Q80 95 122 90" fill="none" stroke="#1a3fb0" stroke-width="2" marker-end="url(#arrB)"/>
+        <text x="8" y="80" class="dtxt-sm">Cow fat</text>
+        <text x="8" y="93" class="dtxt-xs">(offends Hindus)</text>
+        <path d="M260 100 Q220 95 178 90" fill="none" stroke="#1a3fb0" stroke-width="2" marker-end="url(#arrB)"/>
+        <text x="205" y="80" class="dtxt-sm">Pig fat</text>
+        <text x="205" y="93" class="dtxt-xs">(offends Muslims)</text>
+        <text x="150" y="163" text-anchor="middle" class="dtxt-sm-red">Everyone offended!</text>
+        <text x="150" y="180" text-anchor="middle" class="dtxt-sm">→ Sepoys revolt</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the dates! Mangal Pandey was hanged on <strong>8 April</strong>, but the Meerut uprising — the real start of the war — began exactly a month later on <strong>10 May 1857</strong>.
+    </div>
+
+    <h4 class="subsec">📅 Timeline: Spark to Explosion</h4>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">29 March 1857</span><br>Mangal Pandey (34th Bengal Native Infantry, Barrackpore) attacks his officer in anger over the cartridge issue.</div>
+      <div class="tl-item"><span class="tl-date">8 April 1857</span><br>Mangal Pandey is hanged. News spreads fast among soldiers.</div>
+      <div class="tl-item"><span class="tl-date">24 April 1857</span><br>Soldiers of the <strong>3rd Native Cavalry</strong> (Meerut) refuse to use the new cartridges.</div>
+      <div class="tl-item"><span class="tl-date">9 May 1857</span><br>~90 soldiers court-martialed → <strong>85 dismissed</strong> &amp; sentenced to <strong>10 years' imprisonment</strong>.</div>
+      <div class="tl-item">Fellow soldiers revolt and <strong>free their imprisoned comrades</strong> from jail!</div>
+      <div class="tl-item"><span class="tl-date">10 May 1857</span><br>Soldiers march from Meerut towards <strong>Delhi</strong> 🚩</div>
+    </div>
+    <div class="tl-big">🗓️ 10 MAY 1857 = the day the Revolt truly began!</div>
+
+    <h4 class="subsec">Delhi — An Old Ruler, A New Cause</h4>
+    <ul>
+      <li>Since the <strong>Battle of Buxar (1764)</strong> and the <strong>Treaty of Allahabad (1765)</strong>, the Mughal ruler was already living under British influence, on a British pension</li>
+      <li>At the Red Fort, soldiers declared <strong>Bahadur Shah II</strong> (Bahadur Shah Zafar) their ruler — rejecting British authority</li>
+      <li>Bahadur Shah Zafar: old, and not administratively capable</li>
+      <li>Real military command: <strong>General Bakht Khan</strong>, aged <span class="hl">81</span>, led operations from Delhi</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      The General Service Enlistment Act (overseas service) &amp; racial bias are <strong>long-term</strong> military causes; the Enfield Rifle cartridge is the <strong>immediate</strong> cause. Examiners love this distinction!
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#fff8e6"/><line x1="20" y1="20" x2="20" y2="11" stroke-linecap="round"/><line x1="20" y1="20" x2="26" y2="22" stroke-linecap="round"/><circle cx="20" cy="20" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:430px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#ffe08a"/><circle cx="14" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><path d="M13 24 Q20 31 27 24" stroke-linecap="round"/></g></svg>
+    <svg class="doodle" style="top:760px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Leaders of the Revolt — Who Fought From Where?</h3>
+    <table>
+      <tr><th>Centre</th><th>Leader</th></tr>
+      <tr><td>Delhi</td><td>Bahadur Shah II (Zafar) / Gen. Bakht Khan</td></tr>
+      <tr><td>Lucknow</td><td>Begum Hazrat Mahal</td></tr>
+      <tr><td>Kanpur</td><td>Nana Saheb</td></tr>
+      <tr><td>Jhansi</td><td>Rani Lakshmibai</td></tr>
+      <tr><td>Bihar (Arrah)</td><td>Kunwar Singh</td></tr>
+      <tr><td>Bareilly</td><td>Khan Bahadur Khan</td></tr>
+      <tr><td>Faizabad</td><td>Maulvi Ahmadullah Shah</td></tr>
+      <tr><td>UP (Baraut)</td><td>Shah Mal</td></tr>
+    </table>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 3: Where the Revolt Erupted (North India)</div>
+      <svg class="diagram-svg" viewBox="0 0 320 260">
+        <path d="M60 60 Q40 100 55 150 Q45 190 90 220 Q140 245 190 225 Q250 210 270 170 Q300 140 275 100 Q290 60 250 40 Q200 15 150 25 Q95 25 60 60 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <circle cx="108" cy="55" r="5" fill="#c31f1f"/><text x="108" y="44" text-anchor="middle" class="dtxt-sm">Delhi</text>
+        <circle cx="145" cy="42" r="4" fill="#c31f1f"/><text x="150" y="35" text-anchor="start" class="dtxt-xs">Baraut</text>
+        <circle cx="205" cy="52" r="5" fill="#c31f1f"/><text x="205" y="41" text-anchor="middle" class="dtxt-sm">Bareilly</text>
+        <circle cx="215" cy="112" r="5" fill="#c31f1f"/><text x="215" y="132" text-anchor="middle" class="dtxt-sm">Lucknow</text>
+        <circle cx="258" cy="122" r="4" fill="#c31f1f"/><text x="272" y="120" text-anchor="start" class="dtxt-xs">Faizabad</text>
+        <circle cx="168" cy="132" r="5" fill="#c31f1f"/><text x="150" y="152" text-anchor="middle" class="dtxt-sm">Kanpur</text>
+        <circle cx="272" cy="158" r="4" fill="#c31f1f"/><text x="272" y="176" text-anchor="middle" class="dtxt-xs">Arrah, Bihar</text>
+        <circle cx="140" cy="200" r="5" fill="#c31f1f"/><text x="140" y="220" text-anchor="middle" class="dtxt-sm">Jhansi</text>
+      </svg>
+    </div>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">👤 Nana Saheb — full backstory</span>
+      <div class="toggle-content">
+        Adopted son of Peshwa <strong>Bajirao II</strong>. The British refused him his father's pension/rights under the <strong>Doctrine of Lapse</strong> — this fuelled his rebellion.<br><br>
+        <strong>Family history:</strong> Earlier, Raghunath Rao (an earlier Peshwa claimant) signed the <strong>Treaty of Surat (1775)</strong> with the British, offering Salsette &amp; Bassein in return for military help to become Peshwa. <strong>Nana Fadnavis</strong> defeated Raghunath Rao. This was followed by the <strong>Treaty of Purandar (1776)</strong> → <strong>Treaty of Wadgaon (1779)</strong> → <strong>Treaty of Salbai (1782)</strong>.<br>
+        <em>(Reference point: the Third Battle of Panipat had taken place in 1761.)</em>
+      </div>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      <strong>Nana Saheb</strong> (led the Kanpur revolt, adopted son of Peshwa Bajirao II) is <em>not</em> the same person as <strong>Nana Fadnavis</strong> (the Maratha minister who defeated Raghunath Rao decades earlier). Different people, different eras!
+    </div>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">👤 Rani Lakshmibai — full backstory</span>
+      <div class="toggle-content">
+        Real name: <strong>Manikarnika Tambe</strong>, nicknamed <strong>"Manu."</strong> Her father served under Peshwa Bajirao II. Her <strong>adopted son</strong> was denied succession rights under the <strong>Doctrine of Lapse</strong> — so she took up arms and led the revolt from Jhansi.<br><br>
+        🪦 Her memorial (samadhi) stands at <strong>Phool Bagh, Gwalior</strong>.
+      </div>
+    </div>
+
+    <h4 class="subsec">Quick Notes — Other Leaders</h4>
+    <ul>
+      <li><strong>Kunwar Singh</strong> — a zamindar (landlord) from Bihar; led the revolt there despite his old age</li>
+      <li><strong>Khan Bahadur Khan</strong> — belonged to the <strong>Rohilla</strong> community; led the revolt from Bareilly</li>
+      <li><strong>Maulvi Ahmadullah Shah</strong> — led the uprising from Faizabad</li>
+      <li><strong>Shah Mal</strong> — led an uprising in the Baraut area of Uttar Pradesh, near Meerut — a name worth remembering!</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Most-asked pairing in exams: <strong>Jhansi → Rani Lakshmibai</strong> and <strong>Kanpur → Nana Saheb</strong>. Learn the table above centre-wise, not leader-wise!
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.4"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><line x1="20" y1="11" x2="20" y2="23" stroke-linecap="round"/><circle cx="20" cy="28" r="1.8" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:340px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:720px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#ffcf5c"/><path d="M8 32 L15 39 L6 37 Z" fill="#e8b978"/><path d="M26 10 L33 17"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 18 L30 18 L27 32 L11 32 Z" fill="#f2d9a0"/><path d="M30 20 C36 20 36 28 30 28"/><ellipse cx="19" cy="18" rx="11" ry="2.4" fill="#8a5a2a" stroke="#5a3d20"/></g></svg>
+
+    <h3 class="sec">Suppression &amp; the Government of India Act, 1858</h3>
+    <table>
+      <tr><th>Centre</th><th>Suppressed By</th></tr>
+      <tr><td>Delhi</td><td>John Nicholson</td></tr>
+      <tr><td>Lucknow</td><td>Henry Lawrence</td></tr>
+      <tr><td>Kanpur</td><td>Colin Campbell</td></tr>
+      <tr><td>Jhansi</td><td>Hugh Rose</td></tr>
+      <tr><td class="imp">Gwalior — 1858</td><td class="imp">Final stand crushed</td></tr>
+    </table>
+
+    <div class="sticky green"><b>🧠 Memory Trick</b>Kanpur's famous clock tower / "Bell" at the railway station — remember it, and you'll remember <strong>Colin Campbell</strong> suppressed Kanpur!</div>
+
+    <div class="quotebox">🌹 General Hugh Rose, after facing her at Jhansi &amp; Gwalior, called Rani Lakshmibai <em>"the best and bravest"</em> of all rebel leaders — practically saying she was "the only man" among them!</div>
+
+    <h4 class="subsec">The Curtain Falls</h4>
+    <ul>
+      <li>Bahadur Shah II is captured; the <strong>Mughal Empire is formally abolished</strong> — just as the Peshwa title had earlier ended after the Third Anglo-Maratha War</li>
+      <li>Exiled to <strong>Rangoon Prison</strong>, Rangoon, Burma (today's <strong>Myanmar</strong>) — he lived out his days there on a British pension</li>
+    </ul>
+
+    <h4 class="subsec">📜 Government of India Act, 1858</h4>
+    <ol>
+      <li>East India Company <span class="hl red">formally abolished</span></li>
+      <li>Direct rule of the British Crown begins → <strong class="scribble">"Crown Rule"</strong> (also called the <strong>Queen's Proclamation</strong>)
+        <br>— Monarch: <strong>Queen Victoria</strong> &nbsp;|&nbsp; First Viceroy: <strong class="ring v3">Lord Canning</strong></li>
+      <li>Title changed: <strong>Governor-General of India → Viceroy of India</strong></li>
+      <li>New post created: <strong>Secretary of State for India</strong></li>
+      <li>A <strong>15-member Council of India</strong> set up to assist the Secretary of State</li>
+      <li><strong>Board of Control</strong> &amp; <strong>Court of Directors</strong> — both <span class="red">abolished</span></li>
+    </ol>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: Company Rule → Crown Rule</div>
+      <svg class="diagram-svg" viewBox="0 0 300 232">
+        <defs><marker id="arrD" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="70" y="6" width="160" height="42" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="24" text-anchor="middle" class="dtxt">East India Company</text>
+        <text x="150" y="38" text-anchor="middle" class="dtxt-xs">(Board of Control + Court of Directors)</text>
+        <line x1="90" y1="10" x2="220" y2="44" stroke="#c31f1f" stroke-width="2.4"/>
+        <line x1="220" y1="10" x2="90" y2="44" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="64" text-anchor="middle" class="dtxt-sm-red">ABOLISHED</text>
+        <line x1="150" y1="68" x2="150" y2="96" stroke="#3a2b1c" stroke-width="2.2" marker-end="url(#arrD)"/>
+        <text x="158" y="88" class="dtxt-xs">Govt of India Act, 1858</text>
+        <rect x="85" y="98" width="130" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="120" text-anchor="middle" class="dtxt">CROWN RULE</text>
+        <line x1="120" y1="134" x2="70" y2="168" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <line x1="180" y1="134" x2="230" y2="168" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrD)"/>
+        <rect x="4" y="170" width="140" height="56" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="74" y="189" text-anchor="middle" class="dtxt-sm">Governor-General</text>
+        <text x="74" y="202" text-anchor="middle" class="dtxt-sm">→ VICEROY</text>
+        <text x="74" y="215" text-anchor="middle" class="dtxt-xs">(1st: Lord Canning)</text>
+        <rect x="156" y="170" width="140" height="56" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="226" y="186" text-anchor="middle" class="dtxt-sm">NEW: Secretary of</text>
+        <text x="226" y="198" text-anchor="middle" class="dtxt-sm">State for India +</text>
+        <text x="226" y="211" text-anchor="middle" class="dtxt-xs">15-member Council</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Governor-General and Viceroy are the <strong>same post</strong>, just renamed in 1858 — Lord Canning was the last Governor-General <em>and</em> the first Viceroy!
+    </div>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">📖 Evolution of British Governance in India (tap to expand)</span>
+      <div class="toggle-content">
+        <strong>Regulating Act, 1773</strong> — created the post of Governor-General of Bengal (first: Warren Hastings)<br>
+        <strong>Pitt's India Act, 1784</strong> — established the Board of Control<br>
+        <strong>Charter Act, 1833</strong> — created the Governor-General of INDIA (first: William Bentinck); Company's trading rights ended, became purely administrative<br>
+        <strong>Government of India Act, 1858</strong> — Board of Control &amp; Court of Directors abolished; Governor-General became Viceroy; Crown Rule begins
+      </div>
+    </div>
+
+    <div class="sticky yellow"><b>🎖️ Peel Commission</b>Recommended increasing the ratio of British soldiers to Indian soldiers in the army — so a revolt like 1857 could never happen again.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Two bodies were abolished together in 1858 → <strong>Board of Control (1784)</strong> + <strong>Court of Directors</strong> — remember both were scrapped in the same stroke!
+    </div>
+
+    <h4 class="subsec">⏳ The East India Company's Journey</h4>
+    <div class="chain">
+      <span class="chip">1599 Formed</span><span class="arrow">→</span>
+      <span class="chip">1608 Hawkins arrives</span><span class="arrow">→</span>
+      <span class="chip">1615 Sir Thomas Roe arrives</span><span class="arrow">→</span>
+      <span class="chip">1757 Plassey</span><span class="arrow">→</span>
+      <span class="chip">1858 Company ends</span>
+    </div>
+    <p style="font-size:0.9rem;">EIC formed in 1599 with a charter from <strong>Queen Elizabeth I</strong> for exclusive trade with India. From <strong>Plassey (1757) to 1858</strong> is almost exactly <strong>100 years</strong> of Company rule — counting from their first trading days (1608), nearly <strong>150 years</strong> of Company presence in India!</p>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c99400" stroke-width="2" stroke-linecap="round"><path d="M20 6 C12 6 7 12 8 19 C8.5 24 12 26 13 30 L27 30 C28 26 31.5 24 32 19 C33 12 28 6 20 6 Z" fill="#fff2a0"/><path d="M15 34 L25 34 M16 37 L24 37"/></g></svg>
+    <svg class="doodle" style="top:380px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#ffe08a"/><circle cx="14" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><path d="M13 24 Q20 31 27 24" stroke-linecap="round"/></g></svg>
+    <svg class="doodle" style="top:760px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Why Wasn't the Revolt Fully Successful?</h3>
+    <p><strong>V. D. Savarkar</strong> called 1857 <span class="hl ring">"The First War of Independence."</span> But many historians <strong>disagree / negate</strong> this title. Why?</p>
+
+    <h4 class="subsec">Reasons Historians Give</h4>
+    <ol>
+      <li><strong>No unified political vision</strong> — every leader fought for their own region, not a united "India":
+        <ul>
+          <li>Rani Lakshmibai → fighting for Jhansi</li>
+          <li>Begum Hazrat Mahal → fighting for Awadh/Lucknow</li>
+          <li>Nana Saheb → fighting for his Maratha interests</li>
+        </ul>
+      </li>
+      <li>No coordination or common leadership across regions</li>
+      <li><strong>Limited elite support</strong> — many rich zamindars &amp; the upper class actually preferred British rule, believing it would bring more "civilization" and education than what they saw as the disorder of late Mughal rule</li>
+      <li><strong>Not pan-India</strong> — mainly confined to North India (Delhi, Lucknow, Kanpur, Jhansi); little to no impact in South India</li>
+    </ol>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 5: Spread of the Revolt</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <path d="M140 10 Q90 15 70 60 Q50 100 60 140 Q55 180 90 205 Q140 220 175 200 Q220 180 215 140 Q235 100 210 60 Q200 20 140 10 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <line x1="55" y1="115" x2="225" y2="115" stroke="#8a1414" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <circle cx="110" cy="55" r="4" fill="#c31f1f"/>
+        <circle cx="150" cy="45" r="4" fill="#c31f1f"/>
+        <circle cx="90" cy="80" r="4" fill="#c31f1f"/>
+        <circle cx="170" cy="80" r="4" fill="#c31f1f"/>
+        <circle cx="130" cy="95" r="4" fill="#c31f1f"/>
+        <text x="140" y="28" text-anchor="middle" class="dtxt-sm-red">🔥 Revolt zone</text>
+        <text x="140" y="168" text-anchor="middle" class="dtxt-sm">No major impact</text>
+        <text x="140" y="182" text-anchor="middle" class="dtxt-xs">(South India)</text>
+      </svg>
+    </div>
+
+    <div class="sticky blue">
+      <b>📖 Food for thought</b>
+      While Europe was making leaps in science (Newton and others), India was caught in regional conflicts. The British didn't particularly promote science in India (they focused more on spreading Christianity) — but Indians did get exposure to new European ideas of governance. At the same time, a recent Oxfam report highlighted the massive scale of colonial-era wealth drained from India — so the full picture is complex, not one-sided.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Long-term causes:</strong> Political (Doctrine of Lapse), Military (racial discrimination), Religious-Social (Enfield Rifle rumour), Administrative (misgovernance annexations)</li>
+      <li><strong>Immediate cause:</strong> Enfield Rifle cartridges</li>
+      <li><strong>Started:</strong> 10 May 1857, Meerut → Delhi</li>
+      <li><strong>Ended:</strong> 1858, Gwalior</li>
+      <li><strong>Result:</strong> End of East India Company rule → start of Crown Rule (Government of India Act, 1858)</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      If asked "why did the 1857 revolt fail?" — just recall 4 words: <strong>Disunity, No Coordination, Elite Support (to British), Not Pan-India.</strong>
+    </div>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Modern Indian History • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
