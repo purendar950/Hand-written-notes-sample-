@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Delhi Sultanate — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  #page6{transform:rotate(0.25deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Medieval Indian History</div>
+    <h1>The Delhi Sultanate</h1>
+    <h2>Five Dynasties • 1206 – 1526 AD</h2>
+    <div class="sub">Slave (Mamluk) → Khilji → Tughlaq → Sayyid → Lodi &nbsp;|&nbsp; ends with the <b>First Battle of Panipat, 1526</b></div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Slave Dynasty</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">👑 Iltutmish &amp; Razia</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">⚔️ Khilji Rises</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">💰 Alauddin's Reign</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🏰 Tughlaq Era</button>
+    <button class="tab-btn" id="tab6" onclick="showPage(6)">🕌 Sayyid &amp; Lodi</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:250px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30 L6 14 L14 20 L20 8 L26 20 L34 14 L34 30 Z" fill="#ffd23f"/><line x1="6" y1="30" x2="34" y2="30"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="4" width="10" height="30" rx="2" fill="#e8d9b0"/><line x1="15" y1="12" x2="25" y2="12"/><line x1="15" y1="20" x2="25" y2="20"/><line x1="15" y1="28" x2="25" y2="28"/></g></svg>
+    <svg class="doodle" style="top:820px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/><circle cx="20" cy="9" r="2" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="20" r="14"/><line x1="20" y1="20" x2="20" y2="10"/><line x1="20" y1="20" x2="27" y2="24"/></g></svg>
+
+    <h3 class="sec">Setting the Stage — The Delhi Sultanate</h3>
+    <p>Five dynasties ruled the Delhi Sultanate, one after another, from <span class="hl ring">1206 AD</span> to <span class="hl">1526 AD</span>: <strong>Slave (Mamluk)</strong>, then <strong>Khilji</strong>, then <strong>Tughlaq</strong>, then <strong>Sayyid</strong>, then <strong>Lodi</strong>.</p>
+
+    <table>
+      <tr><th>Dynasty</th><th>Time Period</th></tr>
+      <tr><td class="imp">Slave / Mamluk</td><td>1206 – 1290 AD</td></tr>
+      <tr><td class="imp">Khilji</td><td>1290 – 1320 AD</td></tr>
+      <tr><td class="imp">Tughlaq</td><td>1320 – 1414 AD</td></tr>
+      <tr><td class="imp">Sayyid</td><td>1414 – 1451 AD</td></tr>
+      <tr><td class="imp">Lodi</td><td>1451 – 1526 AD</td></tr>
+    </table>
+    <div class="chain">
+      <span class="chip">Slave 1206</span><span class="arrow">→</span>
+      <span class="chip">Khilji 1290</span><span class="arrow">→</span>
+      <span class="chip">Tughlaq 1320</span><span class="arrow">→</span>
+      <span class="chip">Sayyid 1414</span><span class="arrow">→</span>
+      <span class="chip">Lodi 1451–1526</span>
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Remember the order using the first letters: <strong>S-K-T-S-L</strong> — <em>Slave, Khilji, Tughlaq, Sayyid, Lodi</em>. Say it out loud a few times like a chant before the exam!
+    </div>
+
+    <h4 class="subsec">Why "Slave Dynasty"?</h4>
+    <p>It is called the <strong>Slave (Mamluk) Dynasty</strong> because its important rulers were slaves of one another. Most belonged to the <strong>Ilbari tribe</strong> — for example, Qutbuddin Aibak himself belonged to this tribe.</p>
+
+    <h4 class="subsec">1️⃣ Qutbuddin Aibak (1206 – 1210 AD)</h4>
+    <ul>
+      <li>He was a <strong>slave of Muhammad Ghori</strong></li>
+      <li>Ruled for four years, from 1206 to 1210 AD</li>
+      <li>Capital: <span class="hl">Lahore</span></li>
+      <li>Built <strong>Adhai Din Ka Jhonpra</strong> (in Ajmer) and the <strong>Quwwat-ul-Islam</strong> mosque</li>
+      <li>Quwwat-ul-Islam was built using the <strong class="scribble">corbel arch</strong> technique</li>
+      <li>Started construction of the <strong>Qutub Minar</strong>, in memory of his guru, the Sufi saint <strong>Khwaja Qutbuddin Bakhtiyar Kaki</strong></li>
+      <li>Title: <span class="ring">Lakh Baksh</span> (Giver of Lakhs) — because he donated lakhs in charity</li>
+      <li>Died while playing <strong>polo</strong> (a horseback game)</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🏗️ Fig 1: The Qutub Minar — Who Built What?</div>
+      <svg class="diagram-svg" viewBox="0 0 240 250">
+        <defs><marker id="arrQ" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <path d="M100 230 L105 190 L100 150 L104 110 L99 75 L102 45 L98 20 L108 20 L112 45 L115 75 L112 110 L118 150 L114 190 L120 230 Z" fill="#f2e6c4" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="98" y1="150" x2="120" y2="150" stroke="#3a2b1c" stroke-width="1.4"/>
+        <line x1="99" y1="110" x2="118" y2="110" stroke="#3a2b1c" stroke-width="1.4"/>
+        <line x1="99" y1="75" x2="115" y2="75" stroke="#3a2b1c" stroke-width="1.4"/>
+        <line x1="98" y1="45" x2="112" y2="45" stroke="#3a2b1c" stroke-width="1.4"/>
+        <path d="M155 145 L122 148" fill="none" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrQ)"/>
+        <text x="158" y="140" class="dtxt-xs">Storeys 1–4:</text>
+        <text x="158" y="150" class="dtxt-xs">started by Aibak,</text>
+        <text x="158" y="160" class="dtxt-xs">completed by Iltutmish</text>
+        <path d="M60 40 L96 30" fill="none" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrQ)"/>
+        <text x="6" y="26" class="dtxt-xs">Top (5th) storey:</text>
+        <text x="6" y="36" class="dtxt-xs">Firoz Shah Tughlaq</text>
+        <text x="6" y="46" class="dtxt-xs">(after lightning damage)</text>
+        <text x="120" y="245" text-anchor="middle" class="dtxt-sm-red">5 storeys total</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't say "Qutbuddin Aibak built the Qutub Minar" — he only <strong>started</strong> its construction. It was <strong>completed by Iltutmish</strong> (5 storeys total), and the <strong>top storey was rebuilt by Firoz Shah Tughlaq</strong> after it was damaged by lightning.
+    </div>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 Adhai Din Ka Jhonpra — quick note (tap to expand)</span>
+      <div class="toggle-content">
+        The <strong>Adhai Din Ka Jhonpra</strong> is located in <strong>Ajmer</strong>. Along with the Quwwat-ul-Islam mosque in Delhi, it shows Qutbuddin Aibak's early building activity, both using the corbel arch technique typical of this transitional period.
+      </div>
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>"Lakh Baksh" = Lakhs + Baksh (to give) → the sultan who gave away lakhs in charity. Link the title directly to the meaning, don't just memorise the word!</div>
+
+    <div class="pagecount">Page 1 of 6</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><circle cx="20" cy="14" r="6" fill="#ffe08a"/><path d="M20 20 L20 32 M13 24 L27 24 M14 32 L26 32"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="15" r="9" fill="#f2d9a0"/><circle cx="15" cy="15" r="4" fill="#fff"/><circle cx="27" cy="27" r="9" fill="#f2d9a0"/><circle cx="27" cy="27" r="4" fill="#fff"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 30 L32 30 M12 30 L12 14 Q20 6 28 14 L28 30"/></g></svg>
+    <svg class="doodle" style="top:1200px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Iltutmish &amp; Razia Sultan</h3>
+
+    <h4 class="subsec">2️⃣ Iltutmish (1210 – 1236 AD)</h4>
+    <p>Iltutmish was a <strong>slave of Qutbuddin Aibak</strong>, just as Aibak had been a slave of Muhammad Ghori.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🔗 Fig 2: The Slave Succession Chain</div>
+      <svg class="diagram-svg" viewBox="0 0 260 250">
+        <defs><marker id="arrS" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="55" y="6" width="150" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="130" y="27" text-anchor="middle" class="dtxt-sm">Muhammad Ghori</text>
+        <line x1="130" y1="40" x2="130" y2="62" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrS)"/>
+        <text x="140" y="55" class="dtxt-xs">slave of</text>
+        <rect x="55" y="64" width="150" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="130" y="85" text-anchor="middle" class="dtxt-sm">Qutbuddin Aibak</text>
+        <line x1="130" y1="98" x2="130" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrS)"/>
+        <text x="140" y="113" class="dtxt-xs">slave of</text>
+        <rect x="55" y="122" width="150" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="130" y="143" text-anchor="middle" class="dtxt-sm">Iltutmish</text>
+        <line x1="130" y1="156" x2="130" y2="178" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrS)"/>
+        <text x="140" y="171" class="dtxt-xs">daughter of</text>
+        <rect x="55" y="180" width="150" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="130" y="201" text-anchor="middle" class="dtxt-sm-red">Razia Sultan</text>
+        <text x="130" y="232" text-anchor="middle" class="dtxt-xs">(NOT a slave — daughter!)</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li>Shifted the capital from <strong>Lahore to Delhi</strong> — because Qutbuddin Aibak's son was based in Lahore</li>
+      <li>Introduced coins: the silver <strong>Tanka</strong> and the copper <strong>Jital</strong></li>
+      <li>Introduced the <strong class="ring v2">Chahalgani system</strong> — a group of <strong>40 Turkish loyal slaves</strong> given command of the entire administration</li>
+      <li>Introduced the <strong>Iqta system</strong></li>
+      <li>His vizier (Prime Minister) was <strong>Nizam-ul-Mulk</strong></li>
+    </ul>
+
+    <div class="sticky blue">
+      <b>💡 Understand the Iqta system like this...</b>
+      A military commander was given a piece of land (an <em>Iqta</em>). In return, he had to maintain troops and support the Sultan in battles. What did he get? The right to collect <strong>revenue</strong> from that land. The holder was called a <strong>Muqti / Wali</strong>.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Chahalgani = "Chahal" sounds like 40 in Persian → <strong>Group of 40 Turkish slaves</strong> controlling the whole administration for Iltutmish.
+    </div>
+
+    <p>During his reign, <strong>Genghis Khan</strong> invaded the region around India while chasing a man — Iltutmish refused to give that man shelter, and so Genghis Khan did not attack India directly.</p>
+
+    <h4 class="subsec">3️⃣ Razia Sultan (1236 – 1240 AD)</h4>
+    <ul>
+      <li>She was the <strong>daughter of Iltutmish</strong> — not a slave</li>
+      <li>She was the <span class="hl ring">first female Islamic ruler</span> in medieval history, and the only woman ruler of the Delhi Sultanate</li>
+      <li>Ruled for only four years</li>
+    </ul>
+
+    <div class="quotebox">📜 In his book <em>Tabaqat-i-Nasiri</em>, the chronicler <strong>Minhaj-i-Siraj</strong> described Razia Sultan as more capable than even Iltutmish's own sons.</div>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">👤 Razia Sultan's downfall — full story (tap to expand)</span>
+      <div class="toggle-content">
+        Razia took <strong>Yaqut</strong>, an Ethiopian slave, into her close confidence. This upset the <strong>Chahalgani</strong> — she was a woman, and Yaqut was Ethiopian and outside their group. <strong>Altunia</strong>, governor of Bhatinda, refused to accept her authority. Yaqut was killed by Altunia, and Razia was imprisoned. She then married Altunia, and both marched towards Delhi to reclaim the throne, but were defeated — believed to be due to the <strong>Khokhar tribe</strong>. They were imprisoned in the <strong>Fort of Mubarak, Bhatinda</strong>, and died in the region near Haryana in <strong>1240 AD</strong>.
+      </div>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't call Razia Sultan a "slave ruler" — <strong>Aibak</strong> and <strong>Iltutmish</strong> were slaves, but Razia was Iltutmish's <strong>daughter</strong>, not a slave.
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Iltutmish's 3 pillars: <strong>Tanka (silver) + Jital (copper) + Chahalgani (40 slaves) + Iqta system</strong> — and he shifted the capital from Lahore to Delhi. Learn these together as one block.
+    </div>
+
+    <div class="pagecount">Page 2 of 6</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.2" stroke-linecap="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#e0e0e0"/><path d="M8 32 L15 39 L6 37 Z" fill="#8a8a8a"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><circle cx="20" cy="20" r="5" fill="#fff8e6"/></g></svg>
+    <svg class="doodle" style="top:600px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M20 6 L20 30 M12 12 L28 12 M12 12 Q12 24 20 24 M28 12 Q28 24 20 24"/></g></svg>
+    <svg class="doodle" style="top:1200px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">From Balban to the Rise of the Khiljis</h3>
+
+    <p>Between <strong>1240 and 1266 AD</strong>, weak puppet rulers were installed by the Chahalgani whenever it suited them — for example <strong>Muizuddin Bahram Shah</strong>, a son of Iltutmish.</p>
+
+    <h4 class="subsec">4️⃣ Balban (1266 – 1287 AD)</h4>
+    <ul>
+      <li>He himself was a <strong>slave of Iltutmish</strong> and part of the Chahalgani</li>
+      <li>Before becoming Sultan, he was the <strong>Naib</strong> (chief minister) under the earlier ruler, <strong>Nasiruddin Mahmud</strong></li>
+      <li><strong class="scribble">Broke the power of the Chahalgani</strong> to secure his own authority</li>
+      <li>Declared himself <strong>Zill-i-Ilahi</strong> — "Shadow of God"</li>
+      <li>Introduced the customs of <strong>Sijda and Paibos</strong> — subjects had to prostrate and kiss the monarch's feet</li>
+      <li>Claimed descent from the royal family of <strong>Afrasiyab</strong></li>
+      <li>Followed the <strong>"Blood and Iron" policy</strong> — e.g. crushing the rebellion of <strong>Tughril Beg</strong>, the Governor of Bengal</li>
+      <li>Title: <strong>Ulugh Khan</strong></li>
+      <li>Started the Persian festival <strong>Navroz</strong></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Balban's four "power" ideas go together: <strong>broke the Chahalgani → Zill-i-Ilahi → Sijda-Paibos → Blood and Iron policy</strong> — all about strengthening the throne.
+    </div>
+
+    <p>Balban's grandson <strong>Kaiqubad</strong> became the last ruler of the Slave Dynasty (1287–1290 AD). He was killed by <strong>Jalaluddin Khilji</strong>, who then founded the Khilji Dynasty.</p>
+
+    <h4 class="subsec">5️⃣ Khilji Dynasty Begins (1290 – 1320 AD)</h4>
+    <ul>
+      <li><strong>Jalaluddin Khilji</strong> (1290–1296 AD) was the first ruler — nothing else major is studied about him</li>
+      <li>He was killed by his own nephew (who was also married to his daughter) — <strong class="hl ring">Alauddin Khilji</strong></li>
+    </ul>
+
+    <h4 class="subsec">6️⃣ Alauddin Khilji (1296 – 1316 AD)</h4>
+    <ul>
+      <li>Real name: <strong>Ali Gurshasp</strong></li>
+      <li>First expedition: <strong>Gujarat, 1298 AD</strong> — he looted it, and here he found the slave <strong>Malik Kafur</strong>, bought for <strong>1000 dinars</strong> (hence also called "Hazar Dinari")</li>
+      <li>Expedition to <strong>Ranthambore</strong>, and to <strong>Mewar (1303 AD)</strong> — king of Mewar was <strong>Raja Ratan Singh</strong>, capital Chittor</li>
+      <li>Also expeditions to <strong>Malwa</strong> and <strong>Jalore</strong></li>
+    </ul>
+
+    <div class="quotebox">🔥 <strong>Jauhar</strong> — where Rajput women immolated themselves rather than be taken into the Haram (Islamic royal household). The first Jauhar happened at Mewar/Chittor.</div>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">📖 Padmavat — backstory (tap to expand)</span>
+      <div class="toggle-content">
+        The story of Raja Ratan Singh of Mewar, his capital Chittor, and Alauddin Khilji's siege is the subject of the epic poem <strong>Padmavat</strong>, written by <strong>Malik Muhammad Jayasi</strong>.
+      </div>
+    </div>
+
+    <h4 class="subsec">Malik Kafur's Deccan Campaigns</h4>
+    <p>Malik Kafur led all of Alauddin's expeditions into <strong>South India</strong>, plundering (not yet conquering/ruling) the Deccan kingdoms one by one.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 3: Malik Kafur's Deccan Campaigns</div>
+      <svg class="diagram-svg" viewBox="0 0 260 240">
+        <path d="M130 8 Q90 20 80 60 Q60 100 75 140 Q65 180 100 210 Q130 230 165 212 Q205 195 200 155 Q225 115 205 75 Q210 30 130 8 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <circle cx="120" cy="55" r="5" fill="#c31f1f"/><text x="120" y="44" text-anchor="middle" class="dtxt-sm">Devagiri</text><text x="120" y="70" text-anchor="middle" class="dtxt-xs">Yadavas (Ramachandra) 1308</text>
+        <circle cx="150" cy="100" r="5" fill="#c31f1f"/><text x="185" y="98" text-anchor="middle" class="dtxt-sm">Warangal</text><text x="185" y="112" text-anchor="middle" class="dtxt-xs">Kakatiyas (Pratap Dev) 1311</text>
+        <circle cx="110" cy="145" r="5" fill="#c31f1f"/><text x="80" y="150" text-anchor="middle" class="dtxt-sm">Halebidu</text><text x="80" y="164" text-anchor="middle" class="dtxt-xs">Hoysalas (Veer Ballal III) 1308</text>
+        <circle cx="135" cy="195" r="5" fill="#c31f1f"/><text x="135" y="215" text-anchor="middle" class="dtxt-sm">Madurai</text><text x="135" y="228" text-anchor="middle" class="dtxt-xs">Pandyas (Veer Pandya) 1311</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Kingdom</th><th>Ruler</th><th>Year</th></tr>
+      <tr><td>Yadavas of Devagiri</td><td>Raja Ramachandra</td><td>1308 AD</td></tr>
+      <tr><td>Hoysalas of Halebidu / Dwarasamudram</td><td>Veer Ballal III</td><td>1308 AD</td></tr>
+      <tr><td>Kakatiyas of Warangal</td><td>Pratap Dev</td><td>1300 / 1311 AD</td></tr>
+      <tr><td>Pandyas of Madurai</td><td>Veer Pandya</td><td>1311 AD</td></tr>
+    </table>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Malik Kafur only <strong>plundered</strong> the Deccan kingdoms for Alauddin Khilji — he did not establish direct Delhi Sultanate rule there. Real conquest of the Deccan came only in the <strong>Mughal era</strong>.
+    </div>
+
+    <div class="pagecount">Page 3 of 6</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="14" fill="#8a5a0a" stroke="none">₹</text></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="14" y="6" width="12" height="22" rx="3" fill="#d8c8a0"/><path d="M14 6 Q20 0 26 6" fill="#c99400"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:620px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:920px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="6" y="16" width="28" height="10" rx="2" fill="#eadfc4"/><line x1="10" y1="16" x2="10" y2="10"/><line x1="30" y1="16" x2="30" y2="10"/></g></svg>
+    <svg class="doodle" style="top:1220px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Alauddin Khilji — Reforms, Titles &amp; Legacy</h3>
+
+    <h4 class="subsec">Market Reforms</h4>
+    <p>Alauddin paid his soldiers low salaries but kept them happy by strictly controlling market prices.</p>
+    <ul>
+      <li>Three markets were set up: <strong>Grain market</strong>, <strong>Cloth market</strong> (called <span class="hl">Sarai Adil</span>), and the <strong>Slave market</strong></li>
+      <li>Each market was controlled by an officer called a <strong>Shahna</strong></li>
+      <li>Spies called <strong>Barid</strong> and <strong>Munhiyan</strong> checked whether goods were being sold at fixed prices</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🏪 Fig 4: Alauddin's Market Control System</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <defs><marker id="arrM" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="90" y="8" width="100" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="29" text-anchor="middle" class="dtxt-sm-red">Alauddin Khilji</text>
+        <line x1="140" y1="42" x2="140" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrM)"/>
+        <rect x="10" y="62" width="76" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="48" y="83" text-anchor="middle" class="dtxt-xs">Grain Market</text>
+        <rect x="102" y="62" width="76" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="79" text-anchor="middle" class="dtxt-xs">Cloth Market</text>
+        <text x="140" y="91" text-anchor="middle" class="dtxt-xs">(Sarai Adil)</text>
+        <rect x="194" y="62" width="76" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="232" y="83" text-anchor="middle" class="dtxt-xs">Slave Market</text>
+        <line x1="140" y1="96" x2="140" y2="118" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrM)"/>
+        <rect x="90" y="120" width="100" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="139" text-anchor="middle" class="dtxt-sm">Shahna (officer)</text>
+        <line x1="140" y1="150" x2="140" y2="170" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrM)"/>
+        <rect x="70" y="172" width="140" height="34" rx="6" fill="#ffdcab" stroke="#c31f1f" stroke-width="2"/>
+        <text x="140" y="190" text-anchor="middle" class="dtxt-sm">Spies: Barid &amp; Munhiyan</text>
+        <text x="140" y="202" text-anchor="middle" class="dtxt-xs">checked fixed prices</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the roles: the <strong>Shahna</strong> was the officer who ran/regulated the market itself, while <strong>Barid &amp; Munhiyan</strong> were spies who secretly checked whether the fixed prices were actually being followed.
+    </div>
+
+    <h4 class="subsec">Taxes</h4>
+    <ul>
+      <li><strong>Kharaj</strong> — land tax paid by farmers</li>
+      <li><strong>Ghari</strong> — house tax</li>
+      <li><strong>Charai</strong> — pastoral (grazing) tax</li>
+    </ul>
+    <div class="sticky green"><b>🧠 Memory Trick</b>Ghari–Charai–Kharaj = House–Pasture–Land. Three taxes, three types of property!</div>
+
+    <h4 class="subsec">Daag &amp; Chehra System</h4>
+    <p><strong>Daag</strong> = branding of horses (a stamp, to prevent double counting). <strong>Chehra</strong> = the <em>Huliya</em> system — a descriptive roll of each soldier's appearance.</p>
+
+    <h4 class="subsec">Titles &amp; Court</h4>
+    <ul>
+      <li>Title <strong>Sikandar-i-Sani</strong> ("Second Alexander") given by his court poet <strong>Amir Khusrau</strong></li>
+      <li>Amir Khusrau himself was titled <strong>Tuti-i-Hind</strong> ("Parrot of India")</li>
+      <li>Amir Khusrau wrote <strong>Nuh Sipihr</strong> and <strong>Tughlaq Nama</strong>, and is credited with inventing the <strong>sitar</strong></li>
+      <li>Established the department <strong>Diwan-e-Mustakhraj</strong> — for clearing pending/arrear payments</li>
+    </ul>
+
+    <h4 class="subsec">Buildings</h4>
+    <ul>
+      <li><strong>Alai Fort</strong> and <strong>Alai Darwaza</strong> (entrance gateway to the Qutub Minar complex)</li>
+      <li><strong>Hauz Khas</strong></li>
+      <li>Founded the city of <strong>Siri</strong> with <strong>Siri Fort</strong> — the second city of Delhi</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Alauddin Khilji also <strong class="scribble">abolished the Iqta system</strong> that Iltutmish had introduced — remember this "abolish" fact carefully, since it gets reversed later by Firoz Shah Tughlaq!
+    </div>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">👑 The messy succession after Alauddin (tap to expand)</span>
+      <div class="toggle-content">
+        Alauddin had two sons: <strong>Mubarak Shah</strong> and <strong>Shahabuddin Umar</strong>. On Alauddin's death, <strong>Malik Kafur</strong> installed the younger son, Shahabuddin Umar. Mubarak Shah then killed his younger brother and took the throne, aided by <strong>Khusro Khan</strong> — much like Malik Kafur had once aided Alauddin. Khusro Khan then killed Mubarak Shah himself, but was in turn killed by <strong>Ghiyasuddin Tughlaq</strong>, who founded the Tughlaq Dynasty.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 4 of 6</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/><rect x="17" y="24" width="6" height="10" fill="#8a5a2a"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a3a3a" stroke-width="2"><circle cx="20" cy="20" r="15" fill="#ffe08a"/><circle cx="14" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><circle cx="26" cy="17" r="1.6" fill="#3a3a3a" stroke="none"/><path d="M13 25 Q20 19 27 25" stroke-linecap="round"/></g></svg>
+    <svg class="doodle" style="top:620px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:940px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M20 6 L20 30 M12 12 L28 12 M12 12 Q12 24 20 24 M28 12 Q28 24 20 24"/></g></svg>
+    <svg class="doodle" style="top:1240px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">The Tughlaq Dynasty (1320 – 1414 AD)</h3>
+
+    <h4 class="subsec">7️⃣ Ghiyasuddin Tughlaq (1320 – 1325 AD)</h4>
+    <p>Built the city of <strong>Tughlaqabad</strong> and the Tughlaqabad Fort.</p>
+
+    <h4 class="subsec">8️⃣ Muhammad bin Tughlaq — the "Wisest Fool"</h4>
+    <p>Known as <strong>Prince Jauna</strong> or <strong>Ulugh Khan</strong> before becoming Sultan. Called the <span class="hl ring">"Wisest Fool"</span> because his ideas were clever in theory but failed badly in execution.</p>
+
+    <div class="diagram-card">
+      <div class="cap">📉 Fig 5: Three Bold Ideas — All Failed!</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <ellipse cx="140" cy="30" rx="90" ry="24" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="35" text-anchor="middle" class="dtxt-sm-red">Muhammad bin Tughlaq</text>
+        <rect x="10" y="76" width="80" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="50" y="96" text-anchor="middle" class="dtxt-xs">Capital shift:</text>
+        <text x="50" y="107" text-anchor="middle" class="dtxt-xs">Delhi→Daulatabad</text>
+        <text x="50" y="118" text-anchor="middle" class="dtxt-sm-red">FAILED</text>
+        <rect x="100" y="76" width="80" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="96" text-anchor="middle" class="dtxt-xs">Token</text>
+        <text x="140" y="107" text-anchor="middle" class="dtxt-xs">Currency</text>
+        <text x="140" y="118" text-anchor="middle" class="dtxt-sm-red">FAILED</text>
+        <rect x="190" y="76" width="80" height="46" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="230" y="92" text-anchor="middle" class="dtxt-xs">Khorasan &amp;</text>
+        <text x="230" y="103" text-anchor="middle" class="dtxt-xs">Qarachil expeditions</text>
+        <text x="230" y="118" text-anchor="middle" class="dtxt-sm-red">FAILED</text>
+        <line x1="90" y1="45" x2="55" y2="74" stroke="#3a2b1c" stroke-width="1.6"/>
+        <line x1="140" y1="54" x2="140" y2="74" stroke="#3a2b1c" stroke-width="1.6"/>
+        <line x1="190" y1="45" x2="225" y2="74" stroke="#3a2b1c" stroke-width="1.6"/>
+        <text x="140" y="155" text-anchor="middle" class="dtxt-xs">Gardeners, barbers &amp; wine distillers</text>
+        <text x="140" y="168" text-anchor="middle" class="dtxt-xs">given high administrative posts</text>
+        <text x="140" y="182" text-anchor="middle" class="dtxt-xs">(per Ziauddin Barani's Tarikh-i-Firozshahi)</text>
+        <text x="140" y="204" text-anchor="middle" class="dtxt-sm-red">→ "The Wisest Fool"</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li>Shifted the capital from Delhi to <strong>Daulatabad</strong> (Devagiri, earlier ruled by the Yadavas) — to help conquer South India, then reversed the decision when it failed</li>
+      <li>Introduced a <strong>token currency</strong>, which also failed</li>
+      <li>His <strong>Khorasan and Qarachil</strong> expeditions (towards Iran/Himalayan region) failed; disbanding the army raised for it led to looting</li>
+      <li>Per chronicler <strong>Ziauddin Barani</strong>'s <em>Tarikh-i-Firozshahi</em>, he appointed a gardener (<strong>Ladha</strong> and <strong>Peera</strong>), a barber (<strong>Firoz Hajjam</strong>), and a wine distiller (<strong>Aziz Khumar</strong>) to high administrative posts</li>
+      <li>Established the department <strong>Diwan-e-Kohi</strong> — the Department of Agriculture</li>
+    </ul>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Gardner's names: Ladha &amp; Peera — an easy exam-favourite pair to remember by sound.</div>
+
+    <p>During his time, the traveller <strong>Ibn Battuta</strong>, from Morocco, visited India and later wrote the travelogue <strong>Rihla</strong>.</p>
+
+    <h4 class="subsec">9️⃣ Firoz Shah Tughlaq (1351 – 1388 AD)</h4>
+    <p>He worked to clean up the mess left behind by Muhammad bin Tughlaq.</p>
+    <ul>
+      <li>Developed many <strong>canals</strong> — a proper irrigation system for agriculture</li>
+      <li>Separated the <strong>Jaziya</strong> as its own distinct tax</li>
+      <li>Made the <strong class="scribble">Iqta system hereditary</strong> (remember: Alauddin Khilji had earlier abolished it)</li>
+      <li>Founded <strong>Jaunpur</strong> (named after Muhammad bin Tughlaq, i.e. "Jauna," his cousin) and <strong>Firozabad</strong> (named after himself)</li>
+      <li>Established two departments: <strong>Diwan-e-Bandagan</strong> (Department of Slaves) and <strong>Diwan-e-Khairat</strong> (Department of Donations)</li>
+      <li>Built the hospital <strong>Darul Shifa</strong></li>
+      <li>Rebuilt the top storey of the <strong>Qutub Minar</strong> after lightning damage</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Iqta system timeline: <strong>Introduced by Iltutmish → Abolished by Alauddin Khilji → Made hereditary by Firoz Shah Tughlaq.</strong> This exact sequence is a favourite exam question!
+    </div>
+
+    <p>Later, during the reign of <strong>Mahmud Shah Tughlaq</strong>, <strong>Timur</strong> launched repeated invasions that completely destroyed the Tughlaq Dynasty. Timur's own military commander, <strong>Khizr Khan</strong>, then laid the foundation of the <strong>Sayyid Dynasty</strong>.</p>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Wisest Fool" chain: <strong>Daulatabad shift → Token currency → Khorasan/Qarachil expeditions</strong> — three bold, clever-sounding plans, three total failures.
+    </div>
+
+    <div class="pagecount">Page 5 of 6</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="showPage(6)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 6 ============ -->
+  <div class="page" id="page6">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M20 6 C12 6 8 12 9 19 C9.5 24 12 26 13 30 L27 30 C28 26 30.5 24 31 19 C32 12 28 6 20 6 Z" fill="#eadfc4"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.2" stroke-linecap="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#e0e0e0"/><path d="M8 32 L15 39 L6 37 Z" fill="#8a8a8a"/></g></svg>
+    <svg class="doodle" style="top:620px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:940px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/></g></svg>
+    <svg class="doodle" style="top:1240px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Sayyid &amp; Lodi Dynasties — End of the Sultanate</h3>
+
+    <h4 class="subsec">🔟 Sayyid Dynasty (1414 – 1451 AD)</h4>
+    <ul>
+      <li>Founder: <strong>Khizr Khan</strong></li>
+      <li>Members were known as <strong>Kulah-daran</strong>, because they wore a distinctive cone-shaped cap</li>
+      <li>Chronicler <strong>Yahya bin Ahmad Sirhindi</strong> wrote <strong>Tarikh-i-Mubarak Shahi</strong>, describing the Sayyids as descendants of the Prophet Muhammad</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Every court chronicler tended to flatter the ruling dynasty of their time — remember that <strong>Yahya bin Ahmad Sirhindi's claim</strong> about the Sayyids' descent comes from a court chronicle, not an independent historical verification.
+    </div>
+
+    <h4 class="subsec">1️⃣1️⃣ Lodi Dynasty (1451 – 1526 AD) — The Last Dynasty</h4>
+    <ul>
+      <li>Founder: <strong>Bahlol Lodi</strong> (1451–1489 AD), of <strong>Afghan origin</strong></li>
+      <li><strong>Sikandar Lodi</strong> (1489–1517 AD):
+        <ul>
+          <li>Composed poems under the pen name <strong>Gulrukhi</strong></li>
+          <li>Built the city of <strong>Agra</strong> (1504 AD) and made it his capital in 1506 AD</li>
+          <li>Introduced a unit of measurement, <strong>Gaj-i-Sikandari</strong> (equal to 32 digits)</li>
+        </ul>
+      </li>
+      <li>The Lodi Dynasty is known for introducing <strong class="scribble">double-dome architecture</strong> in India</li>
+      <li><strong>Ibrahim Lodi</strong> (1517–1526 AD) — the last ruler of the entire Delhi Sultanate</li>
+    </ul>
+
+    <div class="sticky orange"><b>🧠 Memory Trick</b>Sikandar Lodi = Agra (city) + Gulrukhi (pen name) + Gaj-i-Sikandari (measurement) — three "his-own-name" contributions!</div>
+
+    <h4 class="subsec">The First Battle of Panipat (1526 AD)</h4>
+    <p>Fought between <span class="hl ring">Ibrahim Lodi</span> and <strong>Babur</strong> — <strong>Babur won</strong>, and Ibrahim Lodi was defeated.</p>
+
+    <div class="diagram-card">
+      <div class="cap">⚔️ Fig 6: The First Battle of Panipat, 1526</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <defs><marker id="arrP" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="10" y="10" width="110" height="36" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="65" y="27" text-anchor="middle" class="dtxt-sm">Daulat Khan Lodi</text>
+        <text x="65" y="39" text-anchor="middle" class="dtxt-xs">Governor of Punjab</text>
+        <line x1="65" y1="46" x2="65" y2="66" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP)"/>
+        <text x="70" y="60" class="dtxt-xs">invites</text>
+        <rect x="10" y="68" width="110" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="65" y="87" text-anchor="middle" class="dtxt-sm">Babur</text>
+        <rect x="160" y="10" width="110" height="36" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="215" y="27" text-anchor="middle" class="dtxt-sm-red">Ibrahim Lodi</text>
+        <text x="215" y="39" text-anchor="middle" class="dtxt-xs">last Delhi Sultan</text>
+        <line x1="120" y1="83" x2="160" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP)"/>
+        <text x="215" y="60" text-anchor="middle" class="dtxt-sm">1st Battle of Panipat</text>
+        <line x1="65" y1="98" x2="65" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP)"/>
+        <line x1="215" y1="46" x2="215" y2="120" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP)"/>
+        <rect x="90" y="122" width="100" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="141" text-anchor="middle" class="dtxt-sm">Babur wins</text>
+        <line x1="140" y1="156" x2="140" y2="178" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrP)"/>
+        <rect x="60" y="180" width="160" height="34" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="140" y="200" text-anchor="middle" class="dtxt-sm">Mughal Dynasty begins</text>
+      </svg>
+    </div>
+
+    <div class="quotebox">🗝️ Just as <strong>King Jaichand</strong> once invited <strong>Muhammad Ghori</strong>, <strong>Daulat Khan Lodi</strong> invited <strong>Babur</strong> to defeat Ibrahim Lodi — hoping to gain the throne himself. But just as Ghori had done with Jaichand, Babur did the same to Daulat Khan Lodi — and took the throne for himself instead.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      1526 = <strong>double milestone</strong>: it marks the <strong>end of the Delhi Sultanate</strong> (last ruler: Ibrahim Lodi) AND the <strong>start of the Mughal Dynasty</strong> (Babur) — in the very same battle!
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary — Delhi Sultanate</h4>
+    <div class="chain">
+      <span class="chip">Slave 1206–1290</span><span class="arrow">→</span>
+      <span class="chip">Khilji 1290–1320</span><span class="arrow">→</span>
+      <span class="chip">Tughlaq 1320–1414</span><span class="arrow">→</span>
+      <span class="chip">Sayyid 1414–1451</span><span class="arrow">→</span>
+      <span class="chip">Lodi 1451–1526</span>
+    </div>
+    <ul>
+      <li><strong>Started:</strong> Qutbuddin Aibak, 1206 AD</li>
+      <li><strong>Most powerful ruler:</strong> Alauddin Khilji (1296–1316 AD)</li>
+      <li><strong>"Wisest Fool":</strong> Muhammad bin Tughlaq</li>
+      <li><strong>Ended:</strong> Ibrahim Lodi, defeated at the First Battle of Panipat, 1526 AD</li>
+      <li><strong>Result:</strong> End of the Delhi Sultanate → start of the Mughal Dynasty (Babur)</li>
+    </ul>
+
+    <div class="pagecount">Page 6 of 6</div>
+    <div class="navbtns"><button onclick="showPage(5)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Medieval Indian History • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+  const TOTAL_PAGES = 6;
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=TOTAL_PAGES;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=TOTAL_PAGES;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
