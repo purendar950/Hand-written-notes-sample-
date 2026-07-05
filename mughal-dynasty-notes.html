@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Mughal Dynasty — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  #page6{transform:rotate(0.25deg);}
+  #page7{transform:rotate(-0.3deg);}
+  #page8{transform:rotate(0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Medieval Indian History</div>
+    <h1>The Mughal Dynasty</h1>
+    <h2>Babur to the Later Mughals • 1526 – 1748 AD</h2>
+    <div class="sub">Babur → Humayun → Akbar → Jahangir → Shah Jahan → Aurangzeb → Decline &nbsp;|&nbsp; begins where the Delhi Sultanate ended</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🐎 Babur</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">⚔️ Humayun &amp; Sher Shah</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">👑 Akbar — Power</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🕌 Akbar — Culture</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">💊 Jahangir</button>
+    <button class="tab-btn" id="tab6" onclick="showPage(6)">🕌 Shah Jahan</button>
+    <button class="tab-btn" id="tab7" onclick="showPage(7)">⚔️ Aurangzeb</button>
+    <button class="tab-btn" id="tab8" onclick="showPage(8)">📉 Later Mughals</button>
+  </div>
+
+  <!-- ============ PAGE 1 : BABUR ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M6 30 Q4 20 12 16 L14 8 L18 14 Q26 12 32 20 Q34 26 28 30 Z" fill="#e8d9b0"/><circle cx="26" cy="20" r="1.6" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:270px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:540px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="17" y="4" width="6" height="26" fill="#8a5a2a"/><path d="M23 4 L34 10 L23 16 Z" fill="#c31f1f"/></g></svg>
+    <svg class="doodle" style="top:860px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="6" rx="2" fill="#eadfc4"/><circle cx="12" cy="27" r="4" fill="#3a2b1c" stroke="none"/><circle cx="28" cy="27" r="4" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Babur — Founder of the Mughal Dynasty (1526 – 1530)</h3>
+    <p>Babur was a bright, studious boy from childhood. His original name was <strong>Zahiruddin Muhammad Babur</strong>, and he used the title <strong>Padshah</strong>.</p>
+
+    <ul>
+      <li>At the age of <strong>12</strong>, he sat on the throne of <strong>Farghana</strong> (a region near Afghanistan) — but his own family members drove him out</li>
+      <li>He arrived and settled in <strong>Kabul in 1504</strong>, from where he planned his attack on India</li>
+    </ul>
+
+    <h4 class="subsec">Babur's Four Battles</h4>
+    <table>
+      <tr><th>Battle</th><th>Year</th><th>Opponent</th></tr>
+      <tr><td class="imp">First Battle of Panipat</td><td>1526</td><td>Ibrahim Lodi</td></tr>
+      <tr><td class="imp">Battle of Khanwa</td><td>1527</td><td>Rana Sanga</td></tr>
+      <tr><td class="imp">Battle of Chanderi</td><td>1528</td><td>Medini Rai</td></tr>
+      <tr><td class="imp">Battle of Ghaghra</td><td>1529</td><td>Afghans</td></tr>
+    </table>
+    <div class="chain">
+      <span class="chip">Panipat 1526</span><span class="arrow">→</span>
+      <span class="chip">Khanwa 1527</span><span class="arrow">→</span>
+      <span class="chip">Chanderi 1528</span><span class="arrow">→</span>
+      <span class="chip">Ghaghra 1529</span>
+    </div>
+
+    <h4 class="subsec">The Tulughma Formation</h4>
+    <p>In the <span class="hl ring">First Battle of Panipat (1526)</span>, Babur used <strong>gunpowder on a large scale</strong> for the first time, along with his signature <strong>Tulughma formation</strong>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">⚔️ Fig 1: The Tulughma Formation</div>
+      <svg class="diagram-svg" viewBox="0 0 280 220">
+        <defs><marker id="arrT" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#c31f1f"/></marker></defs>
+        <rect x="105" y="90" width="70" height="40" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="107" text-anchor="middle" class="dtxt-sm-red">Ibrahim Lodi's</text>
+        <text x="140" y="119" text-anchor="middle" class="dtxt-sm-red">army</text>
+        <path d="M20 40 Q70 70 100 95" fill="none" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrT)"/>
+        <text x="8" y="30" class="dtxt-xs">Left flank</text>
+        <path d="M20 190 Q70 155 100 125" fill="none" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrT)"/>
+        <text x="8" y="205" class="dtxt-xs">Right flank (Humayun)</text>
+        <path d="M260 110 L178 110" fill="none" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrT)"/>
+        <text x="200" y="100" class="dtxt-xs">Centre charge</text>
+        <text x="140" y="150" text-anchor="middle" class="dtxt-xs">Hills on the sides —</text>
+        <text x="140" y="162" text-anchor="middle" class="dtxt-xs">no room to flee</text>
+        <text x="140" y="196" text-anchor="middle" class="dtxt-sm-red">Surrounded from 3 sides!</text>
+      </svg>
+    </div>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 How the Tulughma formation worked (tap to expand)</span>
+      <div class="toggle-content">
+        Babur's forces attacked from both flanks first, pushing the enemy towards hills on the sides so they could not run around and escape. The enemy was then forced to charge straight into the centre, where they were attacked from <strong>three sides at once</strong>. The <strong>right flank was led by Babur's eldest son, Humayun</strong>.
+      </div>
+    </div>
+
+    <h4 class="subsec">Writings &amp; Death</h4>
+    <ul>
+      <li>Babur ruled from 1526 and died in <span class="hl">1530</span></li>
+      <li>His autobiography, <strong>Tuzuk-i-Babari</strong>, was originally written in <strong class="scribble">Turkish</strong></li>
+      <li>It was later translated into Persian as the <strong>Baburnama</strong> by <strong>Abdul Rahim Khan-i-Khana</strong> — one of Akbar's Navratnas (nine gems)</li>
+      <li>Babur was first buried in <strong>Agra</strong>, and later re-buried in <strong>Kabul, Afghanistan</strong></li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't say the <strong>Tuzuk-i-Babari</strong> was written in Persian — it was written in <strong>Turkish</strong>. The <strong>Baburnama</strong> is its <strong>Persian translation</strong>, done later by Abdul Rahim Khan-i-Khana.
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>Babur's burial: Agra first, then Kabul. "A" before "K" — Agra before Kabul, just like the alphabet!</div>
+
+    <div class="pagecount">Page 1 of 8</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 : HUMAYUN & SHER SHAH ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M4 30 Q20 34 36 30" /><circle cx="10" cy="28" r="2" fill="#3a2b1c" stroke="none"/><circle cx="20" cy="28" r="2" fill="#3a2b1c" stroke="none"/><circle cx="30" cy="28" r="2" fill="#3a2b1c" stroke="none"/><path d="M4 30 L4 10 M36 30 L36 10" stroke-dasharray="2 3"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><circle cx="20" cy="20" r="14" fill="#ffe08a"/><text x="20" y="25" text-anchor="middle" font-size="14" fill="#8a5a0a" stroke="none">₹</text></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:880px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14" stroke-dasharray="4 3"/><path d="M20 12 L20 20 L26 24"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Humayun &amp; the Sher Shah Suri Interlude</h3>
+
+    <h4 class="subsec">Humayun's First Reign (1530 – 1540)</h4>
+    <p>Before becoming Sultan, Humayun managed the <strong>Kandahar / Kabul</strong> region. His brothers were less capable rulers.</p>
+
+    <h4 class="subsec">Humayun vs Sher Shah Suri</h4>
+    <table>
+      <tr><th>Battle</th><th>Year</th><th>Winner</th></tr>
+      <tr><td class="imp">Battle of Chausa</td><td>1539 AD</td><td>Sher Shah Suri</td></tr>
+      <tr><td class="imp">Battle of Kannauj / Bilgram</td><td>1540 AD</td><td>Sher Shah Suri</td></tr>
+    </table>
+    <p>Defeated and chased, Humayun fled and took refuge with the <strong>Safavid Dynasty</strong> in Iran.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse the <strong>First Battle of Panipat (1526</strong>, Babur vs Ibrahim Lodi) with the <strong>Second Battle of Panipat (1556</strong>, Bairam Khan/Akbar vs Hemu) — thirty years and a whole Sur interlude apart!
+    </div>
+
+    <h4 class="subsec">Sher Shah Suri (r. 1540 – 1545)</h4>
+    <ul>
+      <li>Original name: <strong>Farid Khan</strong>; his father <strong>Hasan Khan</strong> was a Jagirdar in <strong>Sasaram, Bihar</strong></li>
+      <li>His administration was so strong that it was later <strong class="scribble">adopted by Akbar</strong></li>
+      <li>Introduced the currency called the <strong>Rupee</strong></li>
+      <li>Built the <strong>GT (Grand Trunk) Road</strong> — from Chittagong (present-day Bangladesh) to Kabul (also recorded as up to Peshawar)</li>
+      <li>Built <strong>Sarais</strong> (resting places) along the GT Road</li>
+      <li>Issued <strong>Patta</strong> and <strong>Qabuliyat</strong> — agreements between the state and peasants fixing land revenue</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🛣️ Fig 2: Sher Shah's GT Road</div>
+      <svg class="diagram-svg" viewBox="0 0 280 160">
+        <path d="M20 130 Q80 90 140 90 Q200 90 260 40" fill="none" stroke="#8a5a2a" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="20" cy="130" r="5" fill="#c31f1f"/><text x="20" y="148" text-anchor="middle" class="dtxt-sm">Chittagong</text>
+        <circle cx="140" cy="90" r="4" fill="#1d3f7a"/><text x="140" y="78" text-anchor="middle" class="dtxt-xs">Sarai (rest stop)</text>
+        <circle cx="200" cy="65" r="4" fill="#1d3f7a"/><text x="200" y="55" text-anchor="middle" class="dtxt-xs">Sarai (rest stop)</text>
+        <circle cx="260" cy="40" r="5" fill="#c31f1f"/><text x="255" y="25" text-anchor="middle" class="dtxt-sm">Kabul</text>
+      </svg>
+    </div>
+
+    <div class="sticky blue">
+      <b>💡 Understand it like this...</b>
+      Patta &amp; Qabuliyat fixed exactly how much land revenue a peasant owed. This same idea of a <strong>fixed, assessed revenue</strong> later inspired Akbar's <strong>Dahsala (10-year) system</strong> under Todar Mal.
+    </div>
+
+    <h4 class="subsec">Sher Shah's Death (1545)</h4>
+    <p>While attacking the strong walls of <strong>Kalinjar fort</strong> in 1545, a bomb he was using to break the wall exploded near his own feet. He remained alive for a couple of days before dying. He is buried in <strong>Sasaram, Bihar</strong>.</p>
+
+    <div class="quotebox">🎯 If this accident hadn't happened at Kalinjar, the Mughal dynasty might not have continued in India at all — it could have ended with Humayun!</div>
+
+    <h4 class="subsec">Humayun Returns &amp; the Second Battle of Panipat</h4>
+    <ul>
+      <li>Humayun's biography, the <strong>Humayun Nama</strong>, was written by his sister <strong>Gulbadan Begum</strong></li>
+      <li><strong>Humayun's Tomb</strong> in Delhi was commissioned by his wife <strong>Haji Begum</strong> (Bega Begum)</li>
+      <li>Humayun regained the throne in <span class="hl">1555</span> but died in <span class="hl">1556</span>, from a fall down the library stairs — buried in <strong>Delhi</strong></li>
+      <li>13-year-old <strong>Akbar</strong> succeeded him, with <strong>Bairam Khan</strong> as regent</li>
+      <li>Since Sher Shah's Afghans were also weakened, a fresh contest followed: <strong>Bairam Khan (for Akbar) vs Hemu</strong> (Hemchandra Vikramaditya) — the <span class="hl ring">Second Battle of Panipat, 1556</span></li>
+      <li>Akbar's side won; he was crowned at age 13 at <strong>Kalanaur, Punjab</strong></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Humayun's reign has <strong>two parts</strong>: 1530–1540 (before exile) and 1555–1556 (after regaining the throne). In between, it was the Sur Dynasty of Sher Shah Suri.
+    </div>
+
+    <div class="pagecount">Page 2 of 8</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 : AKBAR - POWER ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M6 30 Q4 20 12 16 L14 8 L18 14 Q26 12 32 20 Q34 26 28 30 Z" fill="#e8d9b0"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.2" stroke-linecap="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#e0e0e0"/><path d="M8 32 L15 39 L6 37 Z" fill="#8a8a8a"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:900px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/></g></svg>
+    <svg class="doodle" style="top:1180px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Akbar (1556 – 1605) — Rajputs, Revenue &amp; Ranks</h3>
+    <p>Akbar's original name was <strong>Jalaluddin Muhammad Akbar</strong>.</p>
+
+    <h4 class="subsec">Rajput Policy</h4>
+    <ul>
+      <li>Akbar brought most Rajputs under control through <strong>marriage alliances</strong> or by giving them <strong>high administrative posts</strong></li>
+      <li>He married <strong>Harka Bai</strong> (later known as Jodha Bai), daughter of <strong>Bharmal</strong>, the Kachhwaha Rajput ruler of Amer</li>
+      <li>Harka Bai was given the title <strong>Maryam-uz-Zamani</strong>; her son was <strong>Jahangir</strong></li>
+      <li>One Rajput ruler refused to accept Akbar's suzerainty: <strong class="ring">Rana Sanga</strong> of the <strong>Sisodia</strong> clan (whom Babur had earlier defeated at Khanwa)</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      The <strong>Battle of Haldighati (1576)</strong> was fought against <strong>Maharana Pratap</strong>, grandson of Rana Sanga — not against Akbar personally. Akbar's forces were led by <strong>Man Singh</strong>; the result was <strong>not a decisive victory</strong> for either side, and historians hold differing views.
+    </div>
+
+    <p>Maharana Pratap never surrendered — he kept retreating and living in hiding while rebuilding his forces, effectively escaping Akbar's forces without a clear decisive outcome at Haldighati.</p>
+
+    <h4 class="subsec">Land Revenue: The Dahsala (Zabti) System</h4>
+    <p>Introduced by Akbar's finance minister and Navratna, <strong>Todar Mal</strong>. Land revenue was assessed on a <span class="hl">10-year</span> average basis.</p>
+    <table>
+      <tr><th>Land Type</th><th>Description</th></tr>
+      <tr><td class="imp">Polaj</td><td>Never left fallow — most fertile</td></tr>
+      <tr><td class="imp">Parauti</td><td>Left fallow for 1–2 years</td></tr>
+      <tr><td class="imp">Chachar</td><td>Left fallow for 3–4 years</td></tr>
+      <tr><td class="imp">Banjar</td><td>Completely barren — no cultivation possible</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Polaj → Parauti → Chachar → Banjar = fertile going down to barren, in that exact order.
+    </div>
+
+    <h4 class="subsec">The Mansabdari System (1571)</h4>
+    <p><strong>Mansab</strong> means rank. Ranks were allotted based on how much military force a noble maintained.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🎖️ Fig 3: How the Mansabdari System Worked</div>
+      <svg class="diagram-svg" viewBox="0 0 280 210">
+        <defs><marker id="arrN" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="90" y="6" width="100" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="27" text-anchor="middle" class="dtxt-sm-red">Mansab (Rank)</text>
+        <line x1="140" y1="40" x2="140" y2="60" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrN)"/>
+        <rect x="30" y="62" width="90" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="75" y="83" text-anchor="middle" class="dtxt-sm">Zat (infantry)</text>
+        <rect x="160" y="62" width="90" height="34" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="205" y="83" text-anchor="middle" class="dtxt-sm">Sawar (cavalry)</text>
+        <line x1="140" y1="96" x2="140" y2="118" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrN)"/>
+        <text x="140" y="112" text-anchor="middle" class="dtxt-xs">rank fixed by strength</text>
+        <rect x="30" y="120" width="90" height="40" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="75" y="138" text-anchor="middle" class="dtxt-sm">Salaried</text>
+        <text x="75" y="150" text-anchor="middle" class="dtxt-xs">(paid cash)</text>
+        <rect x="160" y="120" width="90" height="40" rx="6" fill="#ffdcab" stroke="#c31f1f" stroke-width="2"/>
+        <text x="205" y="138" text-anchor="middle" class="dtxt-sm">Jagir</text>
+        <text x="205" y="150" text-anchor="middle" class="dtxt-xs">(revenue rights)</text>
+        <text x="140" y="184" text-anchor="middle" class="dtxt-xs">Range: 10 to 7000 (Akbar) / 10,000 (Aurangzeb)</text>
+        <text x="140" y="198" text-anchor="middle" class="dtxt-xs">Top rank 7000 reserved for Mughal princes</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li><strong>Zat</strong> = infantry maintained; <strong>Sawar</strong> = horsemen/cavalry maintained</li>
+      <li>Based on this, a noble was either <strong>paid a salary</strong> or given <strong>full revenue rights (a jagir)</strong> — making him both a mansabdar and a jagirdar</li>
+      <li>Ranks ranged from 10 up to <span class="hl">7000</span> during Akbar's reign (later up to <span class="hl">10,000</span> under Aurangzeb)</li>
+      <li>The top rank of 7000 was normally reserved for <strong>Mughal princes</strong></li>
+      <li><strong>Raja Man Singh</strong> was given a mansab of 7000 — he was called <strong class="ring v2">Saptahazari</strong></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Mansabdari (1571) is very close in date to Fatehpur Sikri (1570) — examiners often pair these two years together!
+    </div>
+
+    <div class="pagecount">Page 3 of 8</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 : AKBAR - CULTURE ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/><rect x="17" y="24" width="6" height="10" fill="#8a5a2a"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="14" y="6" width="12" height="22" rx="3" fill="#d8c8a0"/><path d="M14 6 Q20 0 26 6" fill="#c99400"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:600px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:920px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2.2" stroke-linecap="round"><path d="M8 30 L14 10 L20 30 M11 22 L17 22"/><path d="M22 30 L28 10 L34 30 M25 22 L31 22"/></g></svg>
+    <svg class="doodle" style="top:1200px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Akbar — Religion, Learning &amp; Architecture</h3>
+
+    <h4 class="subsec">Din-i-Ilahi</h4>
+    <p><strong>Din-i-Ilahi</strong> was a new religion — a blend of the best elements from all religions. <strong class="scribble">Birbal was the only courtier who accepted it</strong>; overall, the religion never gained wide popularity.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Din-i-Ilahi was <strong>not</strong> a popular or widely-adopted faith — remember that <strong>only Birbal</strong> among Akbar's courtiers accepted it.
+    </div>
+
+    <h4 class="subsec">Ibadat Khana &amp; Maktab Khana</h4>
+    <ul>
+      <li><strong>Ibadat Khana</strong> — the hall where religious discourses/discussions took place</li>
+      <li><strong>Maktab Khana</strong> — the translation department</li>
+      <li><strong>Ramayana</strong> translated into Persian by <strong>Abdul Qadir Badauni</strong></li>
+      <li><strong>Mahabharata</strong> translated into Persian by <strong>Badauni and Faizi</strong>, titled <strong>Razmnama</strong></li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Don't mix up <strong>Ibadat Khana</strong> (religious discussion hall) with <strong>Maktab Khana</strong> (translation department) — different buildings, different purposes!
+    </div>
+
+    <h4 class="subsec">Akbarnama &amp; Ain-i-Akbari</h4>
+    <p>Written by <strong>Abul Fazl</strong> (a Navratna), the <strong>Akbarnama</strong> has three volumes:</p>
+    <ol>
+      <li>Akbar's ancestors</li>
+      <li>Akbar's reign / tenure</li>
+      <li>Akbar's administration — known separately as the <strong>Ain-i-Akbari</strong></li>
+    </ol>
+
+    <h4 class="subsec">Architecture</h4>
+    <ul>
+      <li>Built <strong>Fatehpur Sikri</strong> in <span class="hl">1570</span>, in memory of Sheikh <strong>Salim Chishti</strong>, who blessed Akbar with a son (Jahangir)</li>
+      <li>Built the <strong>Buland Darwaza</strong> at Fatehpur Sikri in <strong>1575</strong>, to commemorate his victory in <strong>Gujarat</strong></li>
+      <li>Built the <strong>Panch Mahal</strong> (at Fatehpur Sikri) and the <strong>Agra Fort</strong></li>
+      <li>Capital shifts: <strong>Agra → Fatehpur Sikri (1571) → Lahore (1585) → back to Agra (1598)</strong></li>
+    </ul>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>"Fat Man" — <strong>Fat</strong>ehpur Sikri built in 1570, <strong>Man</strong>sabdari system introduced in 1571. Two big Akbar events, one year apart!</div>
+
+    <div class="diagram-card">
+      <div class="cap">💎 Fig 4: Akbar's Navratnas (Nine Gems)</div>
+      <svg class="diagram-svg" viewBox="0 0 300 260">
+        <ellipse cx="150" cy="130" rx="52" ry="30" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="150" y="126" text-anchor="middle" class="dtxt-sm-red">AKBAR'S</text>
+        <text x="150" y="140" text-anchor="middle" class="dtxt-sm-red">NAVRATNAS</text>
+        <ellipse cx="150" cy="30" rx="55" ry="20" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="150" y="34" text-anchor="middle" class="dtxt-xs">Birbal &amp; Abul Fazl</text>
+        <ellipse cx="260" cy="70" rx="55" ry="20" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="260" y="74" text-anchor="middle" class="dtxt-xs">Todar Mal &amp; Faizi</text>
+        <ellipse cx="260" cy="190" rx="55" ry="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="260" y="188" text-anchor="middle" class="dtxt-xs">Tansen &amp; Abdul</text><text x="260" y="200" text-anchor="middle" class="dtxt-xs">Rahim Khan-i-Khana</text>
+        <ellipse cx="150" cy="230" rx="55" ry="20" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="150" y="234" text-anchor="middle" class="dtxt-xs">Fakir Aziauddin</text>
+        <ellipse cx="40" cy="190" rx="55" ry="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="40" y="188" text-anchor="middle" class="dtxt-xs">Mulla Do Piyaza &amp;</text><text x="40" y="200" text-anchor="middle" class="dtxt-xs">Raja Man Singh</text>
+        <line x1="150" y1="105" x2="150" y2="50" stroke="#c31f1f" stroke-width="1.6"/>
+        <line x1="185" y1="115" x2="230" y2="85" stroke="#c31f1f" stroke-width="1.6"/>
+        <line x1="185" y1="150" x2="230" y2="175" stroke="#c31f1f" stroke-width="1.6"/>
+        <line x1="150" y1="158" x2="150" y2="210" stroke="#c31f1f" stroke-width="1.6"/>
+        <line x1="115" y1="150" x2="70" y2="175" stroke="#c31f1f" stroke-width="1.6"/>
+      </svg>
+    </div>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">👤 Tansen — quick backstory (tap to expand)</span>
+      <div class="toggle-content">
+        Tansen's original name was <strong>Ramtanu Pandey</strong>. He served in the court of <strong>Raja Ramchandra Singh of Gwalior</strong> before Akbar summoned him. Akbar gave him the title <strong>Miyan Tansen</strong>. His own guru was <strong>Swami Haridas</strong>.
+      </div>
+    </div>
+
+    <p>Akbar's last military expedition was to <strong>Khandesh</strong> (part of Ahmednagar, South India) in <span class="hl">1601</span>, which he captured — but he had to turn back when <strong>Jahangir revolted</strong> against him. Akbar died and was buried in <strong>Agra</strong>.</p>
+
+    <div class="pagecount">Page 4 of 8</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 : JAHANGIR ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2"><circle cx="20" cy="14" r="6" fill="#eadfc4"/><path d="M20 20 L20 32 M13 24 L27 24"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#8a1a4a" stroke-width="2" stroke-linecap="round"><path d="M20 8 Q10 8 10 18 Q10 28 20 34 Q30 28 30 18 Q30 8 20 8 Z" fill="#ffd0d3"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:880px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/></g></svg>
+
+    <h3 class="sec">Jahangir (1605 – 1627)</h3>
+    <p>Jahangir's original name was <strong>Nuruddin Muhammad Salim</strong>, also known as <strong>Prince Salim</strong>.</p>
+
+    <div class="diagram-card">
+      <div class="cap">👑 Fig 5: Jahangir's Family &amp; Succession</div>
+      <svg class="diagram-svg" viewBox="0 0 280 200">
+        <rect x="90" y="6" width="100" height="34" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="27" text-anchor="middle" class="dtxt-sm-red">Jahangir</text>
+        <line x1="120" y1="40" x2="60" y2="66" stroke="#3a2b1c" stroke-width="1.8"/>
+        <line x1="160" y1="40" x2="220" y2="66" stroke="#3a2b1c" stroke-width="1.8"/>
+        <rect x="10" y="68" width="100" height="40" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="60" y="86" text-anchor="middle" class="dtxt-xs">Manmati Bai</text>
+        <text x="60" y="98" text-anchor="middle" class="dtxt-xs">(Jagat Gosain)</text>
+        <rect x="170" y="68" width="100" height="40" rx="6" fill="#ffd0d3" stroke="#8a1a4a" stroke-width="2"/>
+        <text x="220" y="86" text-anchor="middle" class="dtxt-xs">Mehrunnisa</text>
+        <text x="220" y="98" text-anchor="middle" class="dtxt-xs">→ Noor Jahan</text>
+        <line x1="60" y1="108" x2="60" y2="130" stroke="#3a2b1c" stroke-width="1.8"/>
+        <rect x="10" y="132" width="100" height="34" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="60" y="153" text-anchor="middle" class="dtxt-sm">Shah Jahan (son)</text>
+        <text x="140" y="150" text-anchor="middle" class="dtxt-xs">real power during</text>
+        <text x="140" y="163" text-anchor="middle" class="dtxt-xs">Jahangir's reign</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li>Jahangir struggled with <strong>addiction</strong>, and did little beyond his marriages</li>
+      <li>His wife <strong>Manmati Bai</strong>, also known as <strong>Jagat Gosain</strong>, was the mother of <strong>Shah Jahan</strong></li>
+      <li>He later married <strong>Mehrunnisa</strong> — after defeating an Afghan in Bihar — who was given the title <strong class="ring v2">Noor Jahan</strong></li>
+    </ul>
+
+    <div class="sticky pink">
+      <b>📌 Real Power</b>
+      Because of Jahangir's addiction, actual administrative control fell largely into <strong>Noor Jahan's</strong> hands.
+    </div>
+
+    <h4 class="subsec">Noor Jahan's Buildings (in Lahore)</h4>
+    <ul>
+      <li><strong>Tomb of Itmad-ud-Daula</strong> (built in memory of her father)</li>
+      <li><strong>Noor Mahal</strong></li>
+    </ul>
+    <p>Jahangir himself is credited with building the <strong>Moti Masjid in Lahore</strong> (one of three Moti Masjids in Mughal architecture — see Shah Jahan's page).</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Shah Jahan was <strong>not</strong> born to Noor Jahan — his mother was Jahangir's earlier wife, <strong>Manmati Bai (Jagat Gosain)</strong>.
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Jahangir's birth name had "Salim" in it — think "Prince Salim" as his personal/pre-throne identity, just like Akbar was "Jalaluddin" before his title.
+    </div>
+
+    <div class="pagecount">Page 5 of 8</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="showPage(6)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 6 : SHAH JAHAN ============ -->
+  <div class="page" id="page6">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="1.8"><path d="M20 34 L20 22 Q10 22 10 12 Q10 4 20 4 Q30 4 30 12 Q30 22 20 22" fill="#eadfc4"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><path d="M20 6 L24 16 L34 16 L26 23 L29 33 L20 27 L11 33 L14 23 L6 16 L16 16 Z" fill="#bfe3f5"/></g></svg>
+    <svg class="doodle" style="top:620px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:940px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.2" stroke-linecap="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#e0e0e0"/><path d="M8 32 L15 39 L6 37 Z" fill="#8a8a8a"/></g></svg>
+    <svg class="doodle" style="top:1240px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Shah Jahan (1628 – 1658)</h3>
+    <p>Shah Jahan's original name was <strong>Prince Khurram</strong>, born to <strong>Manmati Bai</strong> (not Noor Jahan).</p>
+
+    <ul>
+      <li><strong>Mahabat Khan</strong>, Jahangir's military commander, along with Shah Jahan, extended Mughal control in South India, capturing Ahmednagar and other territories</li>
+      <li>Mahabat Khan grew irritated with Noor Jahan's influence and revolted against Jahangir</li>
+      <li>After Jahangir's death, <strong>Shah Jahan and Mahabat Khan together removed Noor Jahan</strong> from power</li>
+    </ul>
+
+    <h4 class="subsec">The Taj Mahal</h4>
+    <p>Shah Jahan's wife, <strong class="hl">Mumtaz Mahal</strong>, died in <span class="hl ring">1631</span>, just three years into his reign. He built the <strong>Taj Mahal</strong> in Agra in her memory.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🕌 Fig 6: The Taj Mahal — Key Facts</div>
+      <svg class="diagram-svg" viewBox="0 0 240 220">
+        <defs><marker id="arrTJ" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <path d="M70 190 L70 120 Q70 90 120 90 Q170 90 170 120 L170 190 Z" fill="#f2e6d8" stroke="#3a2b1c" stroke-width="2"/>
+        <ellipse cx="120" cy="90" rx="34" ry="22" fill="#f2e6d8" stroke="#3a2b1c" stroke-width="2"/>
+        <line x1="55" y1="190" x2="55" y2="110" stroke="#3a2b1c" stroke-width="3"/>
+        <line x1="185" y1="190" x2="185" y2="110" stroke="#3a2b1c" stroke-width="3"/>
+        <path d="M55 110 Q55 100 60 96" fill="none" stroke="#3a2b1c" stroke-width="2"/>
+        <path d="M185 110 Q185 100 180 96" fill="none" stroke="#3a2b1c" stroke-width="2"/>
+        <path d="M60 42 L82 90" fill="none" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrTJ)"/>
+        <text x="10" y="32" class="dtxt-xs">Architect:</text>
+        <text x="10" y="42" class="dtxt-xs">Ustad Ahmad Lahori</text>
+        <path d="M200 42 L150 90" fill="none" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrTJ)"/>
+        <text x="150" y="32" class="dtxt-xs" text-anchor="end">Pietra Dura</text>
+        <text x="150" y="42" class="dtxt-xs" text-anchor="end">inlay work</text>
+        <text x="120" y="212" text-anchor="middle" class="dtxt-sm-red">Built for Mumtaz Mahal (d. 1631)</text>
+      </svg>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse <strong>Ustad Ahmad Lahori</strong> (the architect who built the Taj Mahal) with <strong>Abdul Hamid Lahori</strong> (who wrote the <em>Badshahnama</em>, Shah Jahan's official biography) — very similar names, very different jobs!
+    </div>
+
+    <h4 class="subsec">Other Buildings &amp; Features</h4>
+    <ul>
+      <li><strong>Moti Masjid, Agra</strong> — one of three Moti Masjids: <strong>Lahore (Jahangir)</strong>, <strong>Agra (Shah Jahan)</strong>, <strong>Delhi (Aurangzeb)</strong></li>
+      <li><strong>Diwan-i-Aam</strong> (Hall of Public Audience) and <strong>Diwan-i-Khas</strong> (Hall of Private Audience) in his forts</li>
+      <li>The <strong>Peacock Throne</strong>, embedded with the <strong>Kohinoor diamond</strong>, used over <span class="hl">1,000 kg of gold</span></li>
+      <li><strong>Sheesh Mahal</strong> — a palace decorated with glass/mirror work</li>
+      <li><strong>Pietra Dura</strong> — an inlay-art style using precious/semi-precious stones, seen at the Taj Mahal</li>
+    </ul>
+
+    <div class="sticky green"><b>🧠 Memory Trick</b>Bernier wrote <em>"Travels in the Mogul Empire"</em>; Tavernier wrote <em>"Travels in India"</em> — both French travellers at Shah Jahan's court.</div>
+
+    <h4 class="subsec">War of Succession (1658)</h4>
+    <p>Shah Jahan wanted his eldest son, <strong>Dara Shikoh</strong>, to succeed him. But Dara Shikoh, being of a gentler temperament, was defeated by his brother <strong class="ring v3">Aurangzeb</strong>.</p>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">⚔️ The succession battles (tap to expand)</span>
+      <div class="toggle-content">
+        Three battles were fought in <strong>1658</strong>: the <strong>Battle of Dharmat</strong>, the <strong>Battle of Samugarh</strong>, and the <strong>Battle of Deorai</strong>. Aurangzeb won all three, had <strong>Dara Shikoh killed</strong>, and imprisoned his own father, <strong>Shah Jahan</strong>, before beginning his own rule.
+      </div>
+    </div>
+
+    <div class="pagecount">Page 6 of 8</div>
+    <div class="navbtns"><button onclick="showPage(5)">← Previous</button><button onclick="showPage(7)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 7 : AURANGZEB ============ -->
+  <div class="page" id="page7">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="6" rx="2" fill="#eadfc4"/><circle cx="12" cy="27" r="4" fill="#3a2b1c" stroke="none"/><circle cx="28" cy="27" r="4" fill="#3a2b1c" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:300px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2.2" stroke-linecap="round"><path d="M8 32 L26 10 L33 17 L15 39 Z" fill="#e0e0e0"/><path d="M8 32 L15 39 L6 37 Z" fill="#8a8a8a"/></g></svg>
+    <svg class="doodle" style="top:620px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:940px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M20 6 C12 6 8 12 9 19 C9.5 24 12 26 13 30 L27 30 C28 26 30.5 24 31 19 C32 12 28 6 20 6 Z" fill="#eadfc4"/></g></svg>
+    <svg class="doodle" style="top:1240px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Aurangzeb (1658 – 1707)</h3>
+    <p>Aurangzeb took the title <strong>Alamgir</strong>, and was also given the title <strong>Zinda Pir</strong> ("Living Saint").</p>
+
+    <h4 class="subsec">Religious Policy</h4>
+    <ul>
+      <li>A devout Muslim, he appointed <strong>Muhtasibs</strong> — officials who checked whether people were following Islamic religious codes</li>
+      <li>Issued the <strong class="scribble">Fatwa-i-Alamgiri</strong>, a compilation of Islamic laws for all to follow</li>
+      <li>Forced religious conversions, including on <strong>Kashmiri Pandits</strong>, who resisted</li>
+      <li>When <strong>Guru Tegh Bahadur Ji</strong> refused to convert and support forced conversion, Aurangzeb had him executed</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      <strong>Alamgir</strong> and <strong>Zinda Pir</strong> are two separate titles of Aurangzeb — don't treat them as the same word or mix up which one means "world-seizer" (Alamgir) versus "living saint" (Zinda Pir).
+    </div>
+
+    <h4 class="subsec">Completing the Deccan Conquest</h4>
+    <p>With Ahmednagar, Berar, and Bidar already captured earlier, Aurangzeb captured <strong>Bijapur in 1686</strong> and <strong>Golconda in 1687</strong>.</p>
+
+    <h4 class="subsec">Conflict with the Marathas</h4>
+    <div class="diagram-card">
+      <div class="cap">⚔️ Fig 7: Aurangzeb vs the Marathas — Timeline</div>
+      <svg class="diagram-svg" viewBox="0 0 280 200">
+        <line x1="20" y1="30" x2="20" y2="180" stroke="#1d3f7a" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="20" cy="40" r="5" fill="#c31f1f"/><text x="32" y="36" class="dtxt-xs">1659: Battle of Pratapgad —</text><text x="32" y="47" class="dtxt-xs">Shivaji kills Afzal Khan</text>
+        <circle cx="20" cy="75" r="5" fill="#c31f1f"/><text x="32" y="71" class="dtxt-xs">1664: Shivaji defeats</text><text x="32" y="82" class="dtxt-xs">Shaista Khan</text>
+        <circle cx="20" cy="110" r="5" fill="#c31f1f"/><text x="32" y="106" class="dtxt-xs">1665: Treaty of Purandar —</text><text x="32" y="117" class="dtxt-xs">23 of 35 forts surrendered</text>
+        <circle cx="20" cy="145" r="5" fill="#c31f1f"/><text x="32" y="141" class="dtxt-xs">1674: Shivaji crowned</text><text x="32" y="152" class="dtxt-xs">Chhatrapati at Raigad</text>
+        <circle cx="20" cy="180" r="5" fill="#1f7a4d"/><text x="32" y="176" class="dtxt-xs">Later: Sambhaji resists,</text><text x="32" y="187" class="dtxt-xs">executed by Aurangzeb</text>
+      </svg>
+    </div>
+
+    <div class="sticky orange"><b>🧠 Memory Trick</b>Marathas' two revenue tools: <strong>Chauth</strong> (1/4th of revenue) + <strong>Sardeshmukhi</strong> (extra levy) — guerrilla raids funded by both.</div>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">📖 Treaty of Purandar &amp; Shivaji's escape (tap to expand)</span>
+      <div class="toggle-content">
+        Aurangzeb sent <strong>Raja Jai Singh</strong> to negotiate with Shivaji, resulting in the <strong>Treaty of Purandar (1665)</strong>, under which Shivaji surrendered <strong>23 of his 35 forts</strong>. Aurangzeb later captured Shivaji through deceit, but <strong>Shivaji escaped</strong> without Aurangzeb even realising how. In <strong>1674</strong>, Shivaji crowned himself <strong>Chhatrapati</strong> at the fort of <strong>Raigad</strong>, declaring independence from Mughal suzerainty.
+      </div>
+    </div>
+
+    <p>Shivaji's son <strong>Sambhaji</strong> also refused to accept Mughal suzerainty; when eventually captured, Aurangzeb had him put to death in a brutal manner.</p>
+
+    <h4 class="subsec">Decline &amp; Death</h4>
+    <ul>
+      <li>Aurangzeb spent his last 20+ years camped in the Deccan (Aurangabad, today's <strong>Sambhaji Nagar</strong>), never returning to Delhi — this marks the <strong class="hl ring">beginning of Mughal decline</strong></li>
+      <li>Died in <span class="hl">1707</span>, buried in Aurangabad (Sambhaji Nagar)</li>
+      <li>Built the <strong>Moti Masjid in Delhi</strong></li>
+      <li>His son <strong>Azam Shah</strong> built <strong>Bibi Ka Maqbara</strong> (called the "Mini Taj Mahal") in memory of his mother, <strong>Dilras Banu Begum</strong> (also known as Rabia Durrani)</li>
+    </ul>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Aurangzeb himself admitted his biggest mistake was leaving Delhi for the Deccan — the Marathas never fully submitted, and the empire weakened at its core while he was away.
+    </div>
+
+    <div class="pagecount">Page 7 of 8</div>
+    <div class="navbtns"><button onclick="showPage(6)">← Previous</button><button onclick="showPage(8)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 8 : LATER MUGHALS ============ -->
+  <div class="page" id="page8">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="14" stroke-dasharray="4 3"/><path d="M20 12 L20 20 L26 24"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><path d="M20 6 L24 16 L34 16 L26 23 L29 33 L20 27 L11 33 L14 23 L6 16 L16 16 Z" fill="#bfe3f5"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:880px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><rect x="8" y="18" width="24" height="16" fill="#eadfc4"/><path d="M8 18 L20 8 L32 18"/></g></svg>
+    <svg class="doodle" style="top:1160px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">The Later Mughals &amp; Decline</h3>
+
+    <div class="diagram-card">
+      <div class="cap">📉 Fig 8: Later Mughal Succession</div>
+      <svg class="diagram-svg" viewBox="0 0 280 230">
+        <defs><marker id="arrL" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="70" y="6" width="140" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="25" text-anchor="middle" class="dtxt-sm">Bahadur Shah I (1707–12)</text>
+        <line x1="140" y1="36" x2="140" y2="54" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="70" y="56" width="140" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="75" text-anchor="middle" class="dtxt-sm">Jahandar Shah (1712–13)</text>
+        <line x1="140" y1="86" x2="140" y2="104" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="70" y="106" width="140" height="30" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="140" y="125" text-anchor="middle" class="dtxt-sm">Farrukhsiyar (1713–19)</text>
+        <line x1="140" y1="136" x2="140" y2="154" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <rect x="70" y="156" width="140" height="30" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="175" text-anchor="middle" class="dtxt-sm-red">Muhammad Shah "Rangeela"</text>
+        <text x="140" y="196" text-anchor="middle" class="dtxt-xs">(1719–48)</text>
+        <line x1="140" y1="186" x2="140" y2="204" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrL)"/>
+        <text x="140" y="220" text-anchor="middle" class="dtxt-sm-red">1739: Nadir Shah sacks Delhi</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li><strong>Bahadur Shah I</strong> (1707–1712), also known as <strong>Shah Alam I</strong>, ascended the throne with the help of <strong>Zulfiqar Khan</strong></li>
+      <li><strong>Jahandar Shah</strong> ruled for just one year (1712–1713)</li>
+      <li><strong>Farrukhsiyar</strong> (1713–1719) ascended with the help of the <strong class="ring">Sayyid Brothers</strong> (Hussain Ali Khan Barha &amp; Abdullah Khan Barha) — known as "Kingmakers"</li>
+      <li>Farrukhsiyar issued the <strong>Golden Farman</strong> to the British in <span class="hl">1717</span> (they had cured him of an illness)</li>
+      <li>The Sayyid Brothers later had Farrukhsiyar killed</li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      The <strong>Sayyid Brothers</strong> made Farrukhsiyar king and later killed him — don't assume they stayed in power forever. <strong>Muhammad Shah</strong> had them killed early in his own reign, before they could do the same to him.
+    </div>
+
+    <h4 class="subsec">Muhammad Shah "Rangeela" (1719 – 1748)</h4>
+    <ul>
+      <li>His first major act was having the <strong>Sayyid Brothers killed</strong></li>
+      <li>Known as <strong class="scribble">"Rangeela"</strong> for his colourful, pleasure-loving personality — more interested in enjoyment than governance</li>
+      <li>During his reign, <strong>Nadir Shah</strong> invaded and plundered Delhi in <span class="hl ring">1739</span>, carrying off the <strong>Peacock Throne</strong> along with the <strong>Kohinoor diamond</strong> embedded in it</li>
+    </ul>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>"Rangeela" = colourful/pleasure-loving → neglect of administration → Nadir Shah's 1739 invasion happened right under his watch.</div>
+
+    <h4 class="subsec">Mughal Architecture — One Last Note</h4>
+    <p>The <strong>Char Bagh</strong> style of garden architecture (a four-quadrant garden layout) was developed by the Mughals — seen, for example, at <strong>Humayun's Tomb</strong>.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Bibi Ka Maqbara ("Mini Taj Mahal," built by Azam Shah for his mother) is often confused with the Taj Mahal itself — remember it copies the Taj's design but is a separate, later monument.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary — The Mughal Dynasty</h4>
+    <div class="chain">
+      <span class="chip">Babur 1526</span><span class="arrow">→</span>
+      <span class="chip">Humayun</span><span class="arrow">→</span>
+      <span class="chip">Akbar</span><span class="arrow">→</span>
+      <span class="chip">Jahangir</span><span class="arrow">→</span>
+      <span class="chip">Shah Jahan</span><span class="arrow">→</span>
+      <span class="chip">Aurangzeb</span><span class="arrow">→</span>
+      <span class="chip">Decline (1707+)</span>
+    </div>
+    <ul>
+      <li><strong>Founded:</strong> Babur, First Battle of Panipat, 1526 AD</li>
+      <li><strong>Peak/expansion:</strong> Akbar (Rajput alliances, Mansabdari, Dahsala) &amp; Shah Jahan (architecture)</li>
+      <li><strong>Religious extremism &amp; overreach:</strong> Aurangzeb</li>
+      <li><strong>Turning point of decline:</strong> Aurangzeb's prolonged Deccan campaign against the Marathas</li>
+      <li><strong>Foreign humiliation:</strong> Nadir Shah's sack of Delhi, 1739, under Muhammad Shah "Rangeela"</li>
+    </ul>
+
+    <div class="pagecount">Page 8 of 8</div>
+    <div class="navbtns"><button onclick="showPage(7)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Medieval Indian History • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+  const TOTAL_PAGES = 8;
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=TOTAL_PAGES;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=TOTAL_PAGES;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
