@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>The Gupta Empire &amp; Harsha — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Ancient Indian History</div>
+    <h1>The Gupta Empire &amp; Harsha</h1>
+    <h2>Golden Age • Nine Gems • The Vardhana Dynasty</h2>
+    <div class="sub">From the Gupta <b>Golden Age (320–543 AD)</b> to the rise and fall of <b>Harshavardhana's</b> post-Gupta Vardhana dynasty.</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏛️ Gupta Origins</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">👑 Chandragupta II</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🏯 Admin &amp; Huns</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🛕 Art &amp; Vakatakas</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">⚔️ Harsha's Era</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><ellipse cx="20" cy="30" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="23" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="16" rx="14" ry="5" fill="#ffe08a"/></g></svg>
+    <svg class="doodle" style="top:260px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="6" width="22" height="28" rx="2" fill="#f3ead0"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="18" x2="27" y2="18"/><line x1="13" y1="23" x2="22" y2="23"/><circle cx="24" cy="29" r="3" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="30" rx="8" ry="5" fill="#eadfc4"/><line x1="12" y1="26" x2="32" y2="10"/><ellipse cx="33" cy="9" rx="4" ry="3" fill="#eadfc4"/><line x1="14" y1="24" x2="30" y2="12"/></g></svg>
+    <svg class="doodle" style="top:800px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">The Gupta Empire — Origins, Chandragupta I &amp; Samudragupta</h3>
+    <p>The Gupta Empire lasted from <span class="hl ring">320 AD to 543 AD</span> — a period so prosperous in art, science and literature that it is called the <strong class="scribble">Golden Age</strong> of ancient India. The Gupta Empire was not as extensive as the earlier Maurya Empire, but it still covered a vast area.</p>
+
+    <h4 class="subsec">The Founder — Shri Gupta</h4>
+    <p>The dynasty was founded by <strong>Shri Gupta</strong>. He is believed to have been the son of a Kushan ruler ("Kushansha") — though this detail is rarely tested in exams.</p>
+
+    <div class="sticky yellow"><b>💡 Low-Priority Detail</b>Shri Gupta is believed to be the son of a Kushan ruler (Kushansha) — interesting background, but rarely the subject of exam questions!</div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: From Shri Gupta to Samudragupta</div>
+      <svg class="diagram-svg" viewBox="0 0 260 260">
+        <defs><marker id="arrG1" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="50" y="6" width="160" height="38" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="130" y="22" text-anchor="middle" class="dtxt-sm">Shri Gupta</text>
+        <text x="130" y="36" text-anchor="middle" class="dtxt-xs">Founder of the dynasty</text>
+        <line x1="130" y1="44" x2="130" y2="68" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrG1)"/>
+        <rect x="30" y="70" width="200" height="62" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="130" y="88" text-anchor="middle" class="dtxt-sm-red">Chandragupta I (320-335)</text>
+        <text x="130" y="102" text-anchor="middle" class="dtxt-xs">Title: Maharajadhiraja</text>
+        <text x="130" y="114" text-anchor="middle" class="dtxt-xs">Wife: Kumar Devi (Licchavi)</text>
+        <text x="130" y="126" text-anchor="middle" class="dtxt-xs">Gold coins: Dinars</text>
+        <line x1="130" y1="132" x2="130" y2="156" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrG1)"/>
+        <rect x="20" y="158" width="220" height="76" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="130" y="176" text-anchor="middle" class="dtxt-sm-red">Samudragupta (335-375)</text>
+        <text x="130" y="190" text-anchor="middle" class="dtxt-xs">Prayag Prashasti (by Harisena)</text>
+        <text x="130" y="202" text-anchor="middle" class="dtxt-xs">Won 24 battles</text>
+        <text x="130" y="214" text-anchor="middle" class="dtxt-xs">"Napoleon of India" (V.A. Smith)</text>
+        <text x="130" y="226" text-anchor="middle" class="dtxt-xs">Depicted playing veena on coins</text>
+      </svg>
+    </div>
+
+    <div class="chain">
+      <span class="chip">Shri Gupta (founder)</span><span class="arrow">→</span>
+      <span class="chip">Chandragupta I '320-335</span><span class="arrow">→</span>
+      <span class="chip">Samudragupta '335-375</span>
+    </div>
+
+    <h4 class="subsec">Chandragupta I (320–335 AD)</h4>
+    <ul>
+      <li>Assumed the title <strong>Maharajadhiraja</strong></li>
+      <li>Married <strong>Kumar Devi</strong>, a Licchavi princess</li>
+      <li>Introduced gold coins known as <span class="hl">Dinars</span></li>
+    </ul>
+
+    <h4 class="subsec">Samudragupta (335–375 AD)</h4>
+    <p>Samudragupta succeeded Chandragupta I. An inscription associated with him is the <strong>Prayag Prashasti</strong> ("Prashasti" = praise/eulogy), composed by his court poet <strong>Harisena</strong>.</p>
+    <ul>
+      <li>From the Prayag Prashasti, we learn he won <strong class="ring v2">24 battles</strong></li>
+      <li>Historian <strong>V. A. Smith</strong> (Vincent Arthur Smith) gave him the title <span class="hl">"Napoleon of India"</span></li>
+      <li>He also held the titles <strong>Kaviraja</strong> and <strong>Sarva-rajochchheta</strong> ("Procurator of All Kings")</li>
+      <li>He is depicted <strong>playing the veena</strong> on his coins</li>
+    </ul>
+
+    <div class="toggle-box" id="tb1">
+      <span class="toggle-btn" onclick="toggleBox('tb1')">📖 Samudragupta's Other Titles (tap to expand)</span>
+      <div class="toggle-content">Besides "Napoleon of India," Samudragupta held the titles <strong>Kaviraja</strong> ("king among poets") and <strong>Sarva-rajochchheta</strong>, translated as "Procurator of All Kings." His coins also famously show him <strong>playing the veena</strong> with great ease.</div>
+    </div>
+
+    <h4 class="subsec">Ruler Comparison</h4>
+    <table>
+      <tr><th>Ruler</th><th>Period</th><th>Title(s)</th><th>Key Fact</th></tr>
+      <tr><td>Chandragupta I</td><td class="imp">320–335 AD</td><td>Maharajadhiraja</td><td>Wife: Kumar Devi; introduced Dinars</td></tr>
+      <tr><td>Samudragupta</td><td class="imp">335–375 AD</td><td>Kaviraja, Sarva-rajochchheta</td><td>Prayag Prashasti; 24 battles; "Napoleon of India"</td></tr>
+    </table>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Chandragupta I → Samudragupta → (later) Chandragupta II — don't confuse the numbering; these are three different kings across roughly 95 years!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse Chandragupta I's <strong>Dinars</strong> (his gold coins) with his <strong>title</strong> (Maharajadhiraja) — two completely different things!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Prayag Prashasti" = praise at Prayag — composed by Harisena in <strong>praise</strong> (Prashasti) of Samudragupta's 24 victories, hence the "Napoleon of India" title!
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="6" width="22" height="28" rx="2" fill="#f3ead0"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="18" x2="27" y2="18"/><line x1="13" y1="23" x2="22" y2="23"/><circle cx="24" cy="29" r="3" fill="#c31f1f" stroke="none"/></g></svg>
+
+    <h3 class="sec">Chandragupta II — Vikramaditya &amp; the Nine Gems</h3>
+    <p>Chandragupta II was the son of Samudragupta. He first sidelined his brother <strong>Ramagupta</strong>, then married his brother's wife, <strong>Dhruvadevi</strong>.</p>
+
+    <div class="sticky pink"><b>💡 Context Matters</b>Hearing just "he sidelined his brother and married his wife" makes Chandragupta II sound harsh — but there were fuller reasons behind these events than a short summary can capture!</div>
+
+    <h4 class="subsec">Marriage Alliance with the Vakatakas</h4>
+    <p>Chandragupta II got his daughter, <strong>Prabhavati Gupta</strong>, married to the Vakataka ruler <strong>Rudrasena II</strong>. After Rudrasena II's death, Chandragupta II began to <strong class="scribble">indirectly control the Vakataka Empire</strong> as well.</p>
+
+    <div class="chain">
+      <span class="chip">Chandragupta II</span><span class="arrow">→</span>
+      <span class="chip">sidelines Ramagupta</span><span class="arrow">→</span>
+      <span class="chip">marries Dhruvadevi</span><span class="arrow">→</span>
+      <span class="chip">daughter Prabhavati Gupta</span><span class="arrow">→</span>
+      <span class="chip">m. Rudrasena II (Vakataka)</span>
+    </div>
+
+    <p>Chandragupta II took the title <strong class="ring">Vikramaditya</strong>.</p>
+
+    <h4 class="subsec">Nine Gems (Navaratnas) of His Court</h4>
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: The Navaratnas — Grouped by Field</div>
+      <svg class="diagram-svg" viewBox="0 0 320 280">
+        <defs><marker id="arrG2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#c31f1f"/></marker></defs>
+        <path d="M148 108 Q112 84 90 64" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrG2)"/>
+        <path d="M182 108 Q218 84 240 64" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrG2)"/>
+        <path d="M148 172 Q112 196 90 216" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrG2)"/>
+        <path d="M182 172 Q218 196 240 216" fill="none" stroke="#c31f1f" stroke-width="2" marker-end="url(#arrG2)"/>
+        <ellipse cx="160" cy="140" rx="62" ry="34" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.6"/>
+        <text x="160" y="135" text-anchor="middle" class="dtxt-big">NAVARATNAS</text>
+        <text x="160" y="151" text-anchor="middle" class="dtxt-sm-red">(9 Gems)</text>
+        <ellipse cx="70" cy="40" rx="66" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="34" text-anchor="middle" class="dtxt">Poets</text>
+        <text x="70" y="47" text-anchor="middle" class="dtxt-sm">Kalidasa, Harisena</text>
+        <ellipse cx="252" cy="40" rx="64" ry="32" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="252" y="34" text-anchor="middle" class="dtxt">Science</text>
+        <text x="252" y="47" text-anchor="middle" class="dtxt-sm">Varahamihira, Dhanvantari, Shanku</text>
+        <ellipse cx="70" cy="240" rx="66" ry="34" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="70" y="235" text-anchor="middle" class="dtxt">Reference/Grammar</text>
+        <text x="70" y="248" text-anchor="middle" class="dtxt-sm">Amara Simha, Vararuchi</text>
+        <ellipse cx="252" cy="240" rx="62" ry="34" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="252" y="234" text-anchor="middle" class="dtxt">Mystic Arts</text>
+        <text x="252" y="248" text-anchor="middle" class="dtxt-sm">Vetala Bhatta, Kshapanaka</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Gem</th><th>Role</th></tr>
+      <tr><td>Kalidasa</td><td>Poet &amp; dramatist</td></tr>
+      <tr><td>Harisena</td><td>Court poet</td></tr>
+      <tr><td>Amara Simha</td><td>Lexicographer &amp; librarian</td></tr>
+      <tr><td>Vararuchi</td><td>Grammarian</td></tr>
+      <tr><td>Varahamihira</td><td>Astronomer</td></tr>
+      <tr><td>Dhanvantari</td><td>Physician</td></tr>
+      <tr><td>Shanku</td><td>Architect</td></tr>
+      <tr><td>Vetala Bhatta</td><td>Magician</td></tr>
+      <tr><td>Kshapanaka</td><td>Astrologer</td></tr>
+    </table>
+
+    <div class="toggle-box" id="tb2">
+      <span class="toggle-btn" onclick="toggleBox('tb2')">📖 Kalidasa's Major Works (tap to expand)</span>
+      <div class="toggle-content">Kalidasa, one of the Navaratnas, is known for: <strong>Malavikagnimitram</strong>, <strong>Abhijnanasakuntalam</strong> (a love story), <strong>Meghadutam</strong>, <strong>Raghuvamsha</strong>, <strong>Ritusamhara</strong>, and <strong>Kumarasambhavam</strong>.</div>
+    </div>
+
+    <p>Also during Chandragupta II's reign, the first <strong>Chinese traveller</strong> came to India — <span class="hl">Fa-Hien</span> (Faxian).</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      9 Gems by field: <strong>Poets</strong> (Kalidasa, Harisena), <strong>Reference/Grammar</strong> (Amara Simha, Vararuchi), <strong>Science</strong> (Varahamihira, Dhanvantari, Shanku), <strong>Mystic Arts</strong> (Vetala Bhatta, Kshapanaka).
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse Chandragupta II's title <strong>Vikramaditya</strong> with Chandragupta I's title <strong>Maharajadhiraja</strong> — different titles, different kings, one generation apart!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Marriage chain: Chandragupta II's daughter Prabhavati Gupta → married Rudrasena II (Vakataka) → after his death, Chandragupta II indirectly controlled Vakataka territory too!
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M20 6 L32 11 L32 20 C32 30 26 35 20 37 C14 35 8 30 8 20 L8 11 Z" fill="#cdeccb"/><path d="M14 20 L18 25 L27 14" stroke="#1f7a4d"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="30"/><line x1="8" y1="12" x2="32" y2="12"/><path d="M8 12 L4 22 Q12 26 16 22 Z" fill="#eadfc4"/><path d="M32 12 L28 22 Q36 26 40 22 Z" fill="#eadfc4"/><line x1="14" y1="30" x2="26" y2="30"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2"><ellipse cx="20" cy="30" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="23" rx="14" ry="5" fill="#ffe08a"/><ellipse cx="20" cy="16" rx="14" ry="5" fill="#ffe08a"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><path d="M20 6 C20 6 10 20 10 27 C10 33 15 37 20 37 C25 37 30 33 30 27 C30 20 20 6 20 6 Z" fill="#bfe3f5"/></g></svg>
+
+    <h3 class="sec">Kumaragupta, Skandagupta &amp; Gupta Administration</h3>
+    <h4 class="subsec">Kumaragupta &amp; Skandagupta</h4>
+    <ul>
+      <li><strong>Kumaragupta</strong> built <strong class="ring">Nalanda University</strong></li>
+      <li>The <strong>Huns</strong> first attacked India during Kumaragupta's time</li>
+      <li><strong>Skandagupta</strong> successfully resisted and repelled the Huns' attacks</li>
+      <li>Skandagupta also had the <strong class="ring v2">Sudarshan Lake</strong> repaired — recorded in the <strong>Junagadh Rock Inscription</strong> (the same inscription that tells us about Rudradaman, the Shaka ruler)</li>
+    </ul>
+
+    <div class="toggle-box" id="tb3">
+      <span class="toggle-btn" onclick="toggleBox('tb3')">📖 The Sudarshan Lake Story (tap to expand)</span>
+      <div class="toggle-content">The Sudarshan Lake was originally built by <strong>Pushyagupta Vaishya</strong> (a Mauryan-era governor). The Junagadh Rock Inscription tells us the Shaka ruler <strong>Rudradaman</strong> had it repaired later. Centuries after that, <strong>Skandagupta</strong> repaired it again, following damage during the Hun invasions.</div>
+    </div>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Gupta Administrative Hierarchy</div>
+      <svg class="diagram-svg" viewBox="0 0 260 280">
+        <defs><marker id="arrG3" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#1a3fb0"/></marker></defs>
+        <rect x="30" y="6" width="200" height="46" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="130" y="26" text-anchor="middle" class="dtxt-sm-red">BHUKTI (Province)</text>
+        <text x="130" y="42" text-anchor="middle" class="dtxt-xs">Governed by: Uparika</text>
+        <line x1="130" y1="52" x2="130" y2="76" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrG3)"/>
+        <rect x="30" y="78" width="200" height="46" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="130" y="98" text-anchor="middle" class="dtxt-sm">VISHAYA (District)</text>
+        <text x="130" y="114" text-anchor="middle" class="dtxt-xs">Governed by: Vishayapati</text>
+        <line x1="130" y1="124" x2="130" y2="148" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrG3)"/>
+        <rect x="30" y="150" width="200" height="46" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="130" y="170" text-anchor="middle" class="dtxt-sm">VITHI (Sub-division)</text>
+        <text x="130" y="186" text-anchor="middle" class="dtxt-xs">Governed by: Nagarpati</text>
+        <line x1="130" y1="196" x2="130" y2="220" stroke="#1a3fb0" stroke-width="2.2" marker-end="url(#arrG3)"/>
+        <rect x="30" y="222" width="200" height="46" rx="8" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="130" y="242" text-anchor="middle" class="dtxt-sm-red">VILLAGE (Grama)</text>
+        <text x="130" y="258" text-anchor="middle" class="dtxt-xs">Governed by: Gramika</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Key Officials</h4>
+    <table>
+      <tr><th>Post</th><th>Role</th></tr>
+      <tr><td>Kumaramatya</td><td>Most important official</td></tr>
+      <tr><td>Mahadandanayaka</td><td>Officer of justice (punishment)</td></tr>
+      <tr><td>Sandhivigrahika</td><td>Officer of war and peace</td></tr>
+      <tr><td>Nagara Shreshthi</td><td>Chief banker</td></tr>
+    </table>
+
+    <div class="quotebox">📝 Exam trivia: "Which post did Harisena NOT hold — Kumaramatya, Mahadandanayaka, Sandhivigrahika, or Nagara Shreshthi?"</div>
+    <p>Answer: Harisena did <strong>not</strong> hold the post of <strong>Nagara Shreshthi</strong> (chief banker) — he was the court poet instead.</p>
+
+    <h4 class="subsec">Administration — Decentralised Structure</h4>
+    <p>Gupta administration was quite <strong class="scribble">decentralised</strong>. The empire was divided into <strong>Bhukti</strong> (province, governed by the <strong>Uparika</strong>) → <strong>Vishaya</strong> (district, governed by the <strong>Vishayapati</strong>) → <strong>Vithi</strong> (sub-division, governed by the <strong>Nagarpati</strong>) → <strong>Village</strong> (governed by the <strong>Gramika</strong>).</p>
+
+    <h4 class="subsec">Taxes</h4>
+    <table>
+      <tr><th>Tax</th><th>Meaning</th></tr>
+      <tr><td>Bhaga</td><td class="imp">1/6th of produce (levied since Mauryan/Ashoka era, not new)</td></tr>
+      <tr><td>Bhoga</td><td>Offerings to the king (fruits, flowers, etc.)</td></tr>
+      <tr><td>Bali</td><td>Originally voluntary; later became compulsory</td></tr>
+      <tr><td>Plough tax</td><td>Fee for owning a plough</td></tr>
+      <tr><td>Udakabhaga</td><td>Tax on water</td></tr>
+      <tr><td>Vishti</td><td>Labour obligation — could be paid off with money</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">Bhaga (1/6)</span><span class="arrow">→</span>
+      <span class="chip">Bhoga</span><span class="arrow">→</span>
+      <span class="chip">Bali</span><span class="arrow">→</span>
+      <span class="chip">Plough tax</span><span class="arrow">→</span>
+      <span class="chip">Udakabhaga</span><span class="arrow">→</span>
+      <span class="chip">Vishti</span>
+    </div>
+
+    <div class="sticky blue"><b>💡 Not Quite "Forced"</b>Vishti wasn't literally unpaid forced labour for everyone — if you had money, you could pay your way out of the labour obligation instead!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Kumaragupta built Nalanda; Skandagupta fought the Huns — remember: "K for Knowledge (Nalanda), S for Security (Huns)"!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up who did what to the Sudarshan Lake! <strong>Pushyagupta Vaishya</strong> built it; <strong>Rudradaman</strong> repaired it first; <strong>Skandagupta</strong> repaired it again later — three different people, one lake!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Administrative ladder, top to bottom: <strong>Bhukti</strong> (Uparika) → <strong>Vishaya</strong> (Vishayapati) → <strong>Vithi</strong> (Nagarpati) → <strong>Village</strong> (Gramika)!
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 L28 12 L12 12 Z" fill="#e0847c"/><rect x="14" y="12" width="12" height="18" fill="#f2d9a0"/><line x1="10" y1="30" x2="30" y2="30"/><rect x="17" y="20" width="6" height="10" fill="#c99400"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"><line x1="20" y1="34" x2="20" y2="12"/><path d="M20 20 C10 16 8 6 8 6 C8 6 16 8 20 20 Z" fill="#cdeccb"/><path d="M20 16 C30 12 32 4 32 4 C32 4 24 6 20 16 Z" fill="#cdeccb"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 C12 6 7 12 7 19 C7 28 20 36 20 36 C20 36 33 28 33 19 C33 12 28 6 20 6 Z" fill="#ffd0d3"/><circle cx="20" cy="18" r="4" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Gupta Art, Architecture &amp; the Vakataka Dynasty</h3>
+    <h4 class="subsec">Temples &amp; Sculpture</h4>
+    <ul>
+      <li><strong class="ring">Bhitargaon Temple</strong> (Kanpur, Uttar Pradesh) — India's <span class="hl">oldest brick temple</span>, dedicated to Lord Krishna</li>
+      <li><strong>Dashavatara Temple</strong> — Lalitpur, Uttar Pradesh</li>
+      <li><strong>Varaha idol</strong> — at <strong>Udayagiri</strong>, Vidisha, Madhya Pradesh; Varaha is the boar incarnation of Lord Vishnu, taken to rescue/protect the earth</li>
+      <li><strong>Bagh Caves</strong> — also in Madhya Pradesh, associated with Gupta-era cave art</li>
+    </ul>
+
+    <div class="sticky green"><b>🎉 Fun Fact</b>The Varaha (boar) avatar of Vishnu is shown physically rescuing the Earth — that's the symbolism behind the Udayagiri idol!</div>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 4: Gupta-Era Monuments — Where They Stand</div>
+      <svg class="diagram-svg" viewBox="0 0 280 230">
+        <path d="M110 10 Q70 18 55 50 Q35 85 55 120 Q45 155 80 185 Q125 205 165 190 Q205 175 200 140 Q220 105 195 70 Q190 30 150 15 Q135 8 110 10 Z" fill="#f3ead0" stroke="#3a2b1c" stroke-width="2.2"/>
+        <circle cx="160" cy="60" r="5" fill="#c31f1f"/>
+        <text x="160" y="48" text-anchor="middle" class="dtxt-sm">Bhitargaon</text>
+        <text x="160" y="78" text-anchor="middle" class="dtxt-xs">(Kanpur, UP)</text>
+        <circle cx="175" cy="100" r="5" fill="#c31f1f"/>
+        <text x="205" y="98" text-anchor="start" class="dtxt-sm">Dashavatara</text>
+        <text x="205" y="112" text-anchor="start" class="dtxt-xs">(Lalitpur, UP)</text>
+        <circle cx="95" cy="130" r="5" fill="#c31f1f"/>
+        <text x="95" y="150" text-anchor="middle" class="dtxt-sm">Udayagiri &amp; Bagh</text>
+        <text x="95" y="164" text-anchor="middle" class="dtxt-xs">(Vidisha, MP)</text>
+        <text x="140" y="200" text-anchor="middle" class="dtxt-xs">Gupta-era art spans UP &amp; MP</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Monument</th><th>Location</th><th>Significance</th></tr>
+      <tr><td>Bhitargaon Temple</td><td>Kanpur, UP</td><td>India's oldest brick temple; Krishna</td></tr>
+      <tr><td>Dashavatara Temple</td><td>Lalitpur, UP</td><td>Depicts the 10 avatars of Vishnu</td></tr>
+      <tr><td>Varaha idol</td><td>Udayagiri, Vidisha, MP</td><td>Boar incarnation rescuing the earth</td></tr>
+      <tr><td>Bagh Caves</td><td>Madhya Pradesh</td><td>Gupta-era cave art</td></tr>
+    </table>
+
+    <div class="chain">
+      <span class="chip">Bhitargaon (UP)</span><span class="arrow">→</span>
+      <span class="chip">Dashavatara (UP)</span><span class="arrow">→</span>
+      <span class="chip">Udayagiri (MP)</span><span class="arrow">→</span>
+      <span class="chip">Bagh Caves (MP)</span>
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      <strong>Udayagiri</strong> (Madhya Pradesh, Vidisha — the Varaha idol, Gupta era) is <em>not</em> the same as <strong>Udayagiri-Khandagiri caves</strong> (Odisha — built by King Kharavela)! Same name, different states, different eras!
+    </div>
+
+    <h4 class="subsec">The Vakataka Dynasty</h4>
+    <p>The Vakatakas were contemporaries of the Guptas. Their founder was <strong>Vindhyashakti</strong>; their capital was <strong class="scribble">Pravarapura</strong> (not very significant in itself). The Vakatakas were <strong>feudatories of the Satavahanas</strong>.</p>
+
+    <div class="toggle-box" id="tb4">
+      <span class="toggle-btn" onclick="toggleBox('tb4')">📖 The Vakataka Dynasty (tap to expand)</span>
+      <div class="toggle-content">Founder: <strong>Vindhyashakti</strong>. Capital: <strong>Pravarapura</strong>. The Vakatakas were feudatories of the <strong>Satavahanas</strong>. They were connected to the Guptas by marriage — Chandragupta II's daughter <strong>Prabhavati Gupta</strong> married the Vakataka ruler <strong>Rudrasena II</strong>.</div>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Bhitargaon (UP) = oldest BRICK temple; Dashavatara Temple (UP), Varaha idol at Udayagiri (MP) &amp; Bagh Caves (MP) — remember them state-wise!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Two temples, one state (UP): Bhitargaon (Kanpur) for Krishna, Dashavatara Temple (Lalitpur) for Vishnu's 10 avatars!
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="15" r="9" fill="#ffe08a"/><path d="M14 22 L9 35 L20 29 L31 35 L26 22" fill="#e0847c"/></g></svg>
+    <svg class="doodle" style="top:260px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10 C15 6 8 6 5 8 L5 30 C8 28 15 28 20 32 C25 28 32 28 35 30 L35 8 C32 6 25 6 20 10 Z" fill="#eadfc4"/><line x1="20" y1="10" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><line x1="14" y1="34" x2="30" y2="10"/><line x1="10" y1="14" x2="18" y2="22"/><path d="M28 6 L32 10 L30 12 L26 8 Z" fill="#d8c8a4"/></g></svg>
+    <svg class="doodle" style="top:800px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26 L34 26 L29 34 L11 34 Z" fill="#bfe3f5"/><line x1="20" y1="26" x2="20" y2="8"/><path d="M20 9 L30 16 L20 20 Z" fill="#eaf2fb"/></g></svg>
+    <svg class="doodle" style="top:1080px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><line x1="10" y1="6" x2="10" y2="34"/><path d="M10 8 L30 14 L10 20 Z" fill="#ffd0d3"/></g></svg>
+
+    <h3 class="sec">Post-Gupta Era — Harshavardhana &amp; the Vardhana Dynasty</h3>
+    <p>After the Guptas, several regional dynasties emerged: the <strong>Pushyabhuti/Vardhana</strong> dynasty, the <strong>Maukharis</strong>, the <strong>Gauda</strong> kingdom in Bengal, and the <strong>Maitrakas</strong>. Most exam questions come from the <strong class="scribble">Vardhana (Pushyabhuti) Dynasty</strong>.</p>
+
+    <h4 class="subsec">The Vardhana Dynasty</h4>
+    <ul>
+      <li>Founder: <strong>Pushyabhuti</strong>; capital: <strong>Thanesar</strong> (present-day Haryana)</li>
+      <li>Pushyabhuti's son: <strong>Prabhakaravardhana</strong></li>
+      <li>Prabhakaravardhana had two sons — <strong>Rajyavardhana</strong> and <strong>Harshavardhana</strong> — and a daughter, <strong>Rajyashri</strong></li>
+      <li>Rajyashri married <strong>Grahavarman</strong>, king of the Maukhari dynasty</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: The Vardhana Family &amp; the Rise of Harsha</div>
+      <svg class="diagram-svg" viewBox="0 0 280 250">
+        <defs><marker id="arrG5" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="60" y="6" width="160" height="36" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="140" y="20" text-anchor="middle" class="dtxt-sm">Pushyabhuti (founder)</text>
+        <text x="140" y="34" text-anchor="middle" class="dtxt-xs">Capital: Thanesar</text>
+        <line x1="140" y1="42" x2="140" y2="62" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrG5)"/>
+        <rect x="45" y="64" width="190" height="34" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="140" y="86" text-anchor="middle" class="dtxt-sm">Prabhakaravardhana</text>
+        <line x1="140" y1="98" x2="46" y2="120" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrG5)"/>
+        <line x1="140" y1="98" x2="136" y2="120" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrG5)"/>
+        <line x1="140" y1="98" x2="230" y2="120" stroke="#3a2b1c" stroke-width="1.8" marker-end="url(#arrG5)"/>
+        <rect x="4" y="122" width="84" height="42" rx="7" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="46" y="140" text-anchor="middle" class="dtxt-xs">Rajyavardhana</text>
+        <text x="46" y="154" text-anchor="middle" class="dtxt-xs">(killed by Shashanka)</text>
+        <rect x="94" y="122" width="84" height="42" rx="7" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="136" y="140" text-anchor="middle" class="dtxt-xs">Rajyashri</text>
+        <text x="136" y="154" text-anchor="middle" class="dtxt-xs">m. Grahavarman</text>
+        <rect x="184" y="122" width="92" height="42" rx="7" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.4"/>
+        <text x="230" y="140" text-anchor="middle" class="dtxt-sm-red">Harshavardhana</text>
+        <text x="230" y="154" text-anchor="middle" class="dtxt-xs">defeats Shashanka</text>
+        <line x1="230" y1="164" x2="230" y2="188" stroke="#3a2b1c" stroke-width="2" marker-end="url(#arrG5)"/>
+        <rect x="70" y="190" width="200" height="56" rx="8" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="170" y="208" text-anchor="middle" class="dtxt-sm">Capital moved: Thanesar → Kannauj</text>
+        <text x="170" y="222" text-anchor="middle" class="dtxt-xs">Court poet: Banabhatta</text>
+        <text x="170" y="236" text-anchor="middle" class="dtxt-xs">Defeated by Pulakeshin II (Battle of Narmada)</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">The Chain of Revenge</h4>
+    <p><strong>Shashanka</strong>, king of Gauda, killed Grahavarman. Rajyavardhana set out to avenge this — but Shashanka killed Rajyavardhana too. <strong>Harshavardhana</strong> then defeated Shashanka and began his reign.</p>
+
+    <div class="chain">
+      <span class="chip">Grahavarman killed</span><span class="arrow">→</span>
+      <span class="chip">Rajyavardhana killed</span><span class="arrow">→</span>
+      <span class="chip">Harsha defeats Shashanka</span><span class="arrow">→</span>
+      <span class="chip">Capital: Thanesar→Kannauj</span>
+    </div>
+
+    <div class="toggle-box" id="tb5">
+      <span class="toggle-btn" onclick="toggleBox('tb5')">👤 The Maukhari Dynasty (tap to expand)</span>
+      <div class="toggle-content">Maukhari rulers included <strong>Grahavarman</strong> and <strong>Ishanavarman</strong>. Once no Maukhari heir remained after Grahavarman's death, Harshavardhana made their region's centre, <strong class="hl">Kannauj</strong>, his own capital.</div>
+    </div>
+
+    <div class="sticky orange"><b>🎉 Fun Fact</b>Kannauj was earlier known as <strong>Kanyakubja</strong> — Harsha shifted his capital here from Thanesar once the Maukhari line ended!</div>
+
+    <h4 class="subsec">Harsha's Court &amp; Literary World</h4>
+    <p>Harsha's court poet was <strong>Banabhatta</strong>, who composed <strong>Harshacharita</strong> (Harsha's biography) and <strong>Kadambari</strong>. Harsha himself authored three plays: <strong>Ratnavali</strong>, <strong>Priyadarshika</strong>, and <strong>Nagananda</strong>.</p>
+
+    <table>
+      <tr><th>Work</th><th>Author</th><th>Type</th></tr>
+      <tr><td>Harshacharita</td><td>Banabhatta</td><td>Biography of Harsha</td></tr>
+      <tr><td>Kadambari</td><td>Banabhatta</td><td>Prose romance</td></tr>
+      <tr><td>Ratnavali</td><td>Harsha (himself)</td><td>Play</td></tr>
+      <tr><td>Priyadarshika</td><td>Harsha (himself)</td><td>Play</td></tr>
+      <tr><td>Nagananda</td><td>Harsha (himself)</td><td>Play</td></tr>
+    </table>
+
+    <p>A Chinese traveller, <strong>Hsuan Tsang</strong> (also known as <strong>Xuanzang</strong>), visited India during Harsha's reign and wrote a detailed account of his travels.</p>
+
+    <h4 class="subsec">Harsha vs. Pulakeshin II — the Battle of Narmada</h4>
+    <p>Harsha crossed the <strong>Narmada River</strong> hoping to expand southward, but was defeated by <strong class="ring v3">Pulakeshin II</strong> of the Chalukya dynasty — a clash known as the <span class="hl">Battle of Narmada</span>. This defeat stopped all of Harsha's southward expeditions.</p>
+    <p>Harsha had no son, so his dynasty did not continue after him. His daughter was married into the <strong>Maitraka dynasty</strong> (capital: Vallabhi, Gujarat).</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Harsha's own 3 plays — Ratnavali, Priyadarshika, Nagananda — are separate from Banabhatta's Harshacharita (his biography) and Kadambari!
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't confuse <strong>Harshacharita</strong> (written BY Banabhatta ABOUT Harsha) with Harsha's OWN plays (Ratnavali, Priyadarshika, Nagananda) — different authors entirely!
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Revenge chain: Shashanka kills Grahavarman → kills Rajyavardhana → Harshavardhana defeats Shashanka and takes the throne!
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Gupta Golden Age:</strong> 320–543 AD</li>
+      <li><strong>Chandragupta I:</strong> Maharajadhiraja, wife Kumar Devi, Dinars</li>
+      <li><strong>Samudragupta:</strong> Prayag Prashasti, 24 battles, "Napoleon of India"</li>
+      <li><strong>Chandragupta II:</strong> title Vikramaditya, Navaratnas, Fa-Hien's visit</li>
+      <li><strong>Kumaragupta:</strong> built Nalanda; <strong>Skandagupta:</strong> repelled the Huns, repaired Sudarshan Lake</li>
+      <li><strong>Harshavardhana:</strong> defeated Shashanka, capital at Kannauj, defeated by Pulakeshin II at the Battle of Narmada</li>
+    </ul>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Ancient Indian History • The Gupta Empire &amp; Harsha • SSC / UPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
