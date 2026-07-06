@@ -136,9 +136,39 @@ const TELEGRAM_LINK = 'https://t.me/Exam_Zen_StudySync';
 const EXCLUDED_FILES = ['index.html', 'manager.html', 'config.json'];
 const FOLDER_COLORS = ['#ffd54f','#58a6ff','#3fb950','#f85149','#bc8cff','#ff7b72','#79c0ff','#d2a8ff','#7ee787','#ffa657'];
 
+// ==================== PATH HELPERS ====================
+// Files now live in REAL repo folders, so every file is identified by its full
+// repo-relative path (e.g. "blitz-series/Lecture 1.PDF"). Its folder is the
+// directory portion of that path.
+function baseName(p) { return p.split('/').pop(); }
+function dirName(p) { const i = p.lastIndexOf('/'); return i < 0 ? '' : p.slice(0, i); }
+// Turn a folder name into a URL/filesystem-safe slug used as its real folder name.
+function slugify(name) {
+  return String(name).toLowerCase().trim()
+    .replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+// Encode a path for use in the GitHub Contents API URL (keep "/" separators).
+function encodePath(p) { return p.split('/').map(encodeURIComponent).join('/'); }
+// Skip app files, any dot-file/dir segment (.github, .gitkeep...), and markers.
+function isListablePath(p) {
+  if (EXCLUDED_FILES.includes(p)) return false;
+  if (baseName(p) === '.gitkeep') return false;
+  return !p.split('/').some(seg => seg.startsWith('.'));
+}
+function folderById(id) { return folders.find(f => f.id === id); }
+function folderPathById(id) { const f = folderById(id); return f ? f.path : null; }
+// Build a unique leaf slug + full path for a new folder (chaining parent path).
+function buildFolderPath(name, parentId) {
+  const used = new Set(folders.map(f => f.path));
+  let base = slugify(name) || ('folder-' + Date.now());
+  const prefix = parentId ? (folderPathById(parentId) + '/') : '';
+  let slug = base, i = 2;
+  while (used.has(prefix + slug)) { slug = base + '-' + i; i++; }
+  return prefix + slug;
+}
+
 // ==================== STATE ====================
 let folders = [];
-let fileAssignments = {};
 let hiddenFiles = [];
 let displayNames = {};
 let settings = { siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library', telegramLink: TELEGRAM_LINK };
@@ -195,7 +225,6 @@ async function loadState() {
   const localFolders = localStorage.getItem('mgr_folders');
   if (localFolders) {
     folders = JSON.parse(localFolders);
-    fileAssignments = JSON.parse(localStorage.getItem('mgr_assignments') || '{}');
     hiddenFiles = JSON.parse(localStorage.getItem('mgr_hidden') || '[]');
     displayNames = JSON.parse(localStorage.getItem('mgr_displayNames') || '{}');
     fileOrder = JSON.parse(localStorage.getItem('mgr_fileOrder') || '{}');
@@ -208,7 +237,6 @@ async function loadState() {
 
 function applyConfig(data) {
   folders = data.folders || [];
-  fileAssignments = data.fileAssignments || {};
   hiddenFiles = data.hiddenFiles || [];
   displayNames = data.displayNames || {};
   fileOrder = data.fileOrder || {};
@@ -218,33 +246,36 @@ function applyConfig(data) {
 }
 
 async function loadFiles() {
-  // 1) Live GitHub directory listing (cache-busted) — gives real file sizes.
-  let apiFiles = [];
+  // 1) Live GitHub tree via the Git Trees API with ?recursive=1 — one call
+  //    returns every file in every folder (real subfolders), plus each blob's
+  //    SHA (needed to move files server-side) and byte size.
+  let treeFiles = [];
   try {
     const token = localStorage.getItem('mgr_github_token');
     const headers = token ? { 'Authorization': `token ${token}` } : {};
-    const res = await fetch(API_URL + '?t=' + Date.now(), { headers, cache: 'no-store' });
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/main?recursive=1&t=` + Date.now(), { headers, cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
-      apiFiles = data.filter(f => f.type === 'file' && !EXCLUDED_FILES.includes(f.name) && !f.name.startsWith('.'));
+      treeFiles = (data.tree || [])
+        .filter(e => e.type === 'blob' && isListablePath(e.path))
+        .map(e => ({ name: baseName(e.path), path: e.path, size: e.size || 0, type: 'file', sha: e.sha }));
     }
   } catch(e) { console.error('Files load error:', e); }
 
-  // 2) Supplement with files the published config already knows about
-  //    (assignments, display names, serial order). GitHub's directory listing
-  //    is eventually consistent and can lag a few seconds/minutes behind a
-  //    fresh upload commit — without this merge a just-uploaded file would
-  //    vanish from the manager after a refresh until the listing catches up.
+  // 2) Supplement with files the published config already knows about (display
+  //    names, serial order). GitHub's tree listing is eventually consistent and
+  //    can lag a few seconds behind a fresh commit — without this merge a
+  //    just-uploaded file would vanish from the manager after a refresh until
+  //    the listing catches up.
   const fileMap = {};
-  apiFiles.forEach(f => { fileMap[f.name] = { name: f.name, size: f.size, type: 'file', sha: f.sha }; });
+  treeFiles.forEach(f => { fileMap[f.path] = f; });
   const knownFromConfig = new Set([
-    ...Object.keys(fileAssignments || {}),
     ...Object.keys(displayNames || {}),
     ...Object.keys(fileOrder || {})
   ]);
-  knownFromConfig.forEach(name => {
-    if (!fileMap[name] && !EXCLUDED_FILES.includes(name) && !name.startsWith('.')) {
-      fileMap[name] = { name, size: 0, type: 'file' };
+  knownFromConfig.forEach(p => {
+    if (!fileMap[p] && isListablePath(p)) {
+      fileMap[p] = { name: baseName(p), path: p, size: 0, type: 'file' };
     }
   });
   allFiles = Object.values(fileMap);
@@ -253,7 +284,6 @@ async function loadFiles() {
 // ==================== PERSISTENCE ====================
 function saveLocal() {
   localStorage.setItem('mgr_folders', JSON.stringify(folders));
-  localStorage.setItem('mgr_assignments', JSON.stringify(fileAssignments));
   localStorage.setItem('mgr_hidden', JSON.stringify(hiddenFiles));
   localStorage.setItem('mgr_displayNames', JSON.stringify(displayNames));
   localStorage.setItem('mgr_fileOrder', JSON.stringify(fileOrder));
@@ -281,7 +311,7 @@ async function doPublish() {
   try {
     const configData = {
       folders: folders.filter(f => f.id !== 'root' && f.id !== '__unassigned__'),
-      fileAssignments, displayNames, hiddenFiles, fileOrder,
+      displayNames, hiddenFiles, fileOrder,
       telegramLink: settings.telegramLink || TELEGRAM_LINK,
       siteName: settings.siteName || 'Parmar Railway Notes',
       siteSubtitle: settings.siteSubtitle || 'Hand-Written Notes Library',
@@ -318,6 +348,77 @@ async function doPublish() {
     }
     setStatus('❌ Failed (conflict — try again)');
   } catch(e) { setStatus('❌ Error'); console.error(e); }
+}
+
+// ==================== GIT DATA API (move/rename files physically) ====================
+// Move files inside the repo in ONE atomic commit without re-uploading their
+// contents. We build a new tree from the current one, pointing the new paths at
+// the SAME blob SHAs and deleting the old paths (sha:null), then commit it and
+// advance the branch ref. This is size-independent (works for big PDFs) because
+// no file bytes are transferred — only tree metadata.
+// `moves` = [{ from, to, sha }] (sha = existing blob SHA of the file at `from`).
+// `deletes` = [ path, ... ] (optional extra paths to remove, e.g. .gitkeep).
+async function gitCommitMoves(moves, message, deletes) {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) { setStatus('⚠️ No token'); return false; }
+  const base = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
+  const H = { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' };
+  try {
+    const refRes = await fetch(`${base}/git/ref/heads/main?t=` + Date.now(), { headers: H, cache: 'no-store' });
+    if (!refRes.ok) throw new Error('ref ' + refRes.status);
+    const commitSha = (await refRes.json()).object.sha;
+    const commitRes = await fetch(`${base}/git/commits/${commitSha}`, { headers: H });
+    const baseTree = (await commitRes.json()).tree.sha;
+
+    const tree = [];
+    for (const m of (moves || [])) {
+      tree.push({ path: m.to, mode: '100644', type: 'blob', sha: m.sha });
+      if (m.from !== m.to) tree.push({ path: m.from, mode: '100644', type: 'blob', sha: null });
+    }
+    for (const d of (deletes || [])) tree.push({ path: d, mode: '100644', type: 'blob', sha: null });
+    if (tree.length === 0) return true;
+
+    const treeRes = await fetch(`${base}/git/trees`, { method: 'POST', headers: H, body: JSON.stringify({ base_tree: baseTree, tree }) });
+    if (!treeRes.ok) throw new Error('tree ' + treeRes.status);
+    const newTree = (await treeRes.json()).sha;
+    const newCommitRes = await fetch(`${base}/git/commits`, { method: 'POST', headers: H, body: JSON.stringify({ message: message || 'Move files', tree: newTree, parents: [commitSha] }) });
+    if (!newCommitRes.ok) throw new Error('commit ' + newCommitRes.status);
+    const newCommit = (await newCommitRes.json()).sha;
+    const patchRes = await fetch(`${base}/git/refs/heads/main`, { method: 'PATCH', headers: H, body: JSON.stringify({ sha: newCommit }) });
+    if (!patchRes.ok) throw new Error('ref-update ' + patchRes.status);
+    return true;
+  } catch(e) { console.error('gitCommitMoves failed:', e); setStatus('❌ Move failed: ' + e.message); return false; }
+}
+
+// Recompute a file's target path when moving it into a folder id. '__unassigned__'
+// (or an unknown id) means the repo root, so the file keeps just its base name.
+function pathForFolder(folderId, fileBaseName) {
+  const fp = folderPathById(folderId);
+  return (fp ? fp + '/' : '') + fileBaseName;
+}
+
+// Re-key config maps (displayNames, fileOrder, hiddenFiles) when a file's path
+// changes, so serial numbers / display names / hidden state follow the file.
+function remapConfigKey(oldPath, newPath) {
+  if (oldPath === newPath) return;
+  if (displayNames[oldPath] !== undefined) { displayNames[newPath] = displayNames[oldPath]; delete displayNames[oldPath]; }
+  if (fileOrder[oldPath] !== undefined) { fileOrder[newPath] = fileOrder[oldPath]; delete fileOrder[oldPath]; }
+  const hi = hiddenFiles.indexOf(oldPath);
+  if (hi >= 0) hiddenFiles[hi] = newPath;
+}
+
+// Perform a set of moves: commit them physically, update in-memory file paths
+// and config keys, then publish the new config. `plan` = [{ file, to }] where
+// `file` is an allFiles entry and `to` is the new full path.
+async function performMoves(plan, message) {
+  const doable = plan.filter(p => p.file && p.file.sha && p.file.path !== p.to);
+  if (doable.length === 0) { toast('Nothing to move', 'error'); return false; }
+  setStatus('⏳ Moving...');
+  const ok = await gitCommitMoves(doable.map(p => ({ from: p.file.path, to: p.to, sha: p.file.sha })), message);
+  if (!ok) { toast('Move failed', 'error'); return false; }
+  doable.forEach(p => { remapConfigKey(p.file.path, p.to); p.file.path = p.to; p.file.name = baseName(p.to); });
+  saveAndPublish();
+  return true;
 }
 
 // ==================== HELPERS ====================
@@ -370,9 +471,9 @@ function getFileType(name) {
   return 'FILE';
 }
 
-function getDisplayName(filename) {
-  if (displayNames[filename]) return displayNames[filename];
-  return filename.replace(/\.(html|htm|pdf)$/i, '');
+function getDisplayName(filePath) {
+  if (displayNames[filePath]) return displayNames[filePath];
+  return baseName(filePath).replace(/\.(html|htm|pdf)$/i, '');
 }
 
 function formatSize(bytes) {
@@ -383,12 +484,16 @@ function formatSize(bytes) {
 }
 
 function getFilesInFolder(folderId) {
-  return allFiles.filter(f => fileAssignments[f.name] === folderId);
+  // A file belongs to a folder when its directory equals the folder's path.
+  const fp = folderPathById(folderId);
+  if (fp == null) return [];
+  return allFiles.filter(f => dirName(f.path) === fp);
 }
 
 function getUnassignedFiles() {
-  const assigned = Object.keys(fileAssignments);
-  return allFiles.filter(f => !assigned.includes(f.name));
+  // "Other Files": at the repo root, or in a directory with no matching folder.
+  const folderPaths = new Set(folders.map(f => f.path));
+  return allFiles.filter(f => { const d = dirName(f.path); return d === '' || !folderPaths.has(d); });
 }
 
 function escapeHtml(str) {
@@ -422,13 +527,32 @@ function createFolder() {
   // Fill parent options
   const parentSel = el.querySelector('#cf-parent');
   folders.forEach(f => { const opt = document.createElement('option'); opt.value = f.id; opt.textContent = (f.icon||'📁') + ' ' + f.name; parentSel.appendChild(opt); });
-  el.querySelector('#cf-ok').onclick = () => {
+  el.querySelector('#cf-ok').onclick = async () => {
     const name = el.querySelector('#cf-name').value.trim();
     if (!name) return;
+    const token = localStorage.getItem('mgr_github_token');
+    if (!token) { toast('Set GitHub token first', 'error'); return; }
     const parent = el.querySelector('#cf-parent').value || null;
-    const folder = { id: 'f_' + Date.now(), name, icon: el.querySelector('#cf-icon').value || '📁', color: selectedColor, desc: el.querySelector('#cf-desc').value || '', parent: parent, order: folders.length };
-    folders.push(folder);
+    const path = buildFolderPath(name, parent);
+    const folder = { id: 'f_' + Date.now(), name, icon: el.querySelector('#cf-icon').value || '📁', color: selectedColor, desc: el.querySelector('#cf-desc').value || '', parent: parent, order: folders.length, path };
     el.remove();
+    setStatus('⏳ Creating folder...');
+    // Git can't track an empty directory, so we commit a .gitkeep marker to
+    // physically create the folder in the repo. It's filtered out everywhere.
+    try {
+      const res = await fetch(API_URL + encodePath(path + '/.gitkeep'), {
+        method: 'PUT',
+        headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: `Create folder ${path}`, content: '', branch: 'main' })
+      });
+      if (!res.ok && res.status !== 422) { // 422 = already exists, fine
+        const err = await res.json().catch(() => ({}));
+        toast('Folder create failed: ' + (err.message || res.status), 'error');
+        setStatus('❌ Failed');
+        return;
+      }
+    } catch(e) { toast('Folder create error: ' + e.message, 'error'); return; }
+    folders.push(folder);
     saveAndPublish();
     toast('Folder "' + name + '" created', 'success');
     render();
@@ -447,14 +571,40 @@ function renameFolder(folderId) {
   });
 }
 
-function deleteFolder(folderId) {
-  const folder = folders.find(f => f.id === folderId);
-  if (!folder) return;
-  confirm('Delete Folder', `Are you sure you want to delete "${folder.name}"? Files will be moved to unassigned.`, () => {
-    // Move files to unassigned
-    Object.keys(fileAssignments).forEach(fname => {
-      if (fileAssignments[fname] === folderId) delete fileAssignments[fname];
+// Best-effort delete of a single path (used for .gitkeep markers). Ignores 404.
+async function deleteRepoPathIfExists(path) {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) return;
+  try {
+    const r = await fetch(API_URL + encodePath(path), { headers: { 'Authorization': `token ${token}` }, cache: 'no-store' });
+    if (!r.ok) return;
+    const d = await r.json();
+    await fetch(API_URL + encodePath(path), {
+      method: 'DELETE',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: `Remove ${path}`, sha: d.sha, branch: 'main' })
     });
+  } catch(e) { /* best-effort */ }
+}
+
+function deleteFolder(folderId) {
+  const folder = folderById(folderId);
+  if (!folder) return;
+  const filesIn = getFilesInFolder(folderId);
+  confirm('Delete Folder', `Delete "${escapeHtml(folder.name)}"? Its ${filesIn.length} file(s) will be moved to the repo root (Other Files), not deleted.`, async () => {
+    const token = localStorage.getItem('mgr_github_token');
+    if (!token) { toast('No GitHub token set', 'error'); return; }
+    setStatus('⏳ Deleting folder...');
+    // Physically move the folder's files out to the repo root in one commit.
+    const movable = filesIn.filter(f => f.sha);
+    if (movable.length > 0) {
+      const ok = await gitCommitMoves(movable.map(f => ({ from: f.path, to: baseName(f.path), sha: f.sha })), `Delete folder ${folder.path}`);
+      if (!ok) { toast('Folder delete failed', 'error'); return; }
+    }
+    // Remove the .gitkeep marker so the (now empty) folder disappears from the repo.
+    await deleteRepoPathIfExists(folder.path + '/.gitkeep');
+    // Update in-memory paths + config keys for every file (even config-only ones).
+    filesIn.forEach(f => { const to = baseName(f.path); remapConfigKey(f.path, to); f.path = to; f.name = to; });
     folders = folders.filter(f => f.id !== folderId);
     saveAndPublish();
     toast('Folder deleted', 'success');
@@ -464,65 +614,64 @@ function deleteFolder(folderId) {
 }
 
 // ==================== FILE ACTIONS ====================
-function moveFile(filename) {
+function moveFile(filePath) {
+  const fileObj = allFiles.find(f => f.path === filePath);
   const el = document.createElement('div');
   el.className = 'modal-overlay';
-  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Unassigned</div>';
+  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Other Files (root)</div>';
   folders.forEach(f => {
     listHtml += `<div class="select-folder-item" data-id="${f.id}">${f.icon || '📁'} ${escapeHtml(f.name)}</div>`;
   });
-  el.innerHTML = `<div class="modal-box"><h3>📂 Move File</h3><p>Select destination folder for "${escapeHtml(getDisplayName(filename))}"</p><div class="select-folder-list">${listHtml}</div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button></div></div>`;
+  el.innerHTML = `<div class="modal-box"><h3>📂 Move File</h3><p>Select destination folder for "${escapeHtml(getDisplayName(filePath))}"</p><div class="select-folder-list">${listHtml}</div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button></div></div>`;
   document.body.appendChild(el);
   el.querySelectorAll('.select-folder-item').forEach(item => {
-    item.onclick = () => {
+    item.onclick = async () => {
       const fid = item.dataset.id;
-      if (fid === '__unassigned__') delete fileAssignments[filename];
-      else fileAssignments[filename] = fid;
       el.remove();
-      saveAndPublish();
-      toast('File moved', 'success');
+      const to = pathForFolder(fid, baseName(filePath));
+      const ok = await performMoves([{ file: fileObj, to }], `Move ${baseName(filePath)}`);
+      if (ok) toast('File moved', 'success');
       render();
     };
   });
   el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
-function renameDisplayName(filename) {
-  promptInput('Rename Display Name', 'Display name:', getDisplayName(filename), (newName) => {
-    displayNames[filename] = newName;
+function renameDisplayName(filePath) {
+  promptInput('Rename Display Name', 'Display name:', getDisplayName(filePath), (newName) => {
+    displayNames[filePath] = newName;
     saveAndPublish();
     toast('Display name updated', 'success');
     render();
   });
 }
 
-function toggleFileVisibility(filename) {
-  const idx = hiddenFiles.indexOf(filename);
+function toggleFileVisibility(filePath) {
+  const idx = hiddenFiles.indexOf(filePath);
   if (idx >= 0) { hiddenFiles.splice(idx, 1); toast('File shown', 'success'); }
-  else { hiddenFiles.push(filename); toast('File hidden', 'success'); }
+  else { hiddenFiles.push(filePath); toast('File hidden', 'success'); }
   saveAndPublish();
   render();
 }
 
-async function deleteFileFromRepo(filename) {
-  confirm('Delete File', `Permanently delete "${escapeHtml(filename)}" from the repository? This cannot be undone.`, async () => {
+async function deleteFileFromRepo(filePath) {
+  confirm('Delete File', `Permanently delete "${escapeHtml(filePath)}" from the repository? This cannot be undone.`, async () => {
     const token = localStorage.getItem('mgr_github_token');
     if (!token) { toast('No GitHub token set', 'error'); return; }
     try {
-      const res = await fetch(API_URL + encodeURIComponent(filename), { headers: { 'Authorization': `token ${token}` } });
+      const res = await fetch(API_URL + encodePath(filePath), { headers: { 'Authorization': `token ${token}` } });
       if (!res.ok) { toast('Failed to get file info', 'error'); return; }
       const fileData = await res.json();
-      const delRes = await fetch(API_URL + encodeURIComponent(filename), {
+      const delRes = await fetch(API_URL + encodePath(filePath), {
         method: 'DELETE',
         headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: `Delete ${filename}`, sha: fileData.sha, branch: 'main' })
+        body: JSON.stringify({ message: `Delete ${filePath}`, sha: fileData.sha, branch: 'main' })
       });
       if (delRes.ok) {
-        allFiles = allFiles.filter(f => f.name !== filename);
-        delete fileAssignments[filename];
-        delete displayNames[filename];
-        delete fileOrder[filename];
-        hiddenFiles = hiddenFiles.filter(f => f !== filename);
+        allFiles = allFiles.filter(f => f.path !== filePath);
+        delete displayNames[filePath];
+        delete fileOrder[filePath];
+        hiddenFiles = hiddenFiles.filter(f => f !== filePath);
         saveAndPublish();
         toast('File deleted from repo', 'success');
         render();
@@ -532,16 +681,16 @@ async function deleteFileFromRepo(filename) {
 }
 
 // ==================== BULK ACTIONS ====================
-function toggleSelectFile(filename) {
-  if (selectedFiles.has(filename)) selectedFiles.delete(filename);
-  else selectedFiles.add(filename);
+function toggleSelectFile(filePath) {
+  if (selectedFiles.has(filePath)) selectedFiles.delete(filePath);
+  else selectedFiles.add(filePath);
   render();
 }
 
 function selectAllFiles(fileObjs) {
-  const names = fileObjs.map(f => f.name);
-  if (names.every(n => selectedFiles.has(n))) { selectedFiles.clear(); }
-  else { names.forEach(n => selectedFiles.add(n)); }
+  const paths = fileObjs.map(f => f.path);
+  if (paths.every(p => selectedFiles.has(p))) { selectedFiles.clear(); }
+  else { paths.forEach(p => selectedFiles.add(p)); }
   render();
 }
 
@@ -549,18 +698,21 @@ function bulkMove() {
   if (selectedFiles.size === 0) return;
   const el = document.createElement('div');
   el.className = 'modal-overlay';
-  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Unassigned</div>';
+  let listHtml = '<div class="select-folder-item" data-id="__unassigned__">📂 Other Files (root)</div>';
   folders.forEach(f => { listHtml += `<div class="select-folder-item" data-id="${f.id}">${f.icon || '📁'} ${escapeHtml(f.name)}</div>`; });
   el.innerHTML = `<div class="modal-box"><h3>📂 Move ${selectedFiles.size} File(s)</h3><div class="select-folder-list">${listHtml}</div><div class="modal-actions"><button class="btn" onclick="this.closest('.modal-overlay').remove()">Cancel</button></div></div>`;
   document.body.appendChild(el);
   el.querySelectorAll('.select-folder-item').forEach(item => {
-    item.onclick = () => {
+    item.onclick = async () => {
       const fid = item.dataset.id;
-      selectedFiles.forEach(fname => { if (fid === '__unassigned__') delete fileAssignments[fname]; else fileAssignments[fname] = fid; });
       el.remove();
+      const plan = Array.from(selectedFiles).map(p => {
+        const fileObj = allFiles.find(f => f.path === p);
+        return { file: fileObj, to: pathForFolder(fid, baseName(p)) };
+      });
       selectedFiles.clear();
-      saveAndPublish();
-      toast('Files moved', 'success');
+      const ok = await performMoves(plan, 'Move ' + plan.length + ' file(s)');
+      if (ok) toast('Files moved', 'success');
       render();
     };
   });
@@ -568,7 +720,7 @@ function bulkMove() {
 }
 
 function bulkHide() {
-  selectedFiles.forEach(fname => { if (!hiddenFiles.includes(fname)) hiddenFiles.push(fname); });
+  selectedFiles.forEach(p => { if (!hiddenFiles.includes(p)) hiddenFiles.push(p); });
   selectedFiles.clear();
   saveAndPublish();
   toast('Files hidden', 'success');
@@ -579,20 +731,20 @@ function bulkDelete() {
   confirm('Delete Files', `Delete ${selectedFiles.size} file(s) from the repository? This cannot be undone.`, async () => {
     const token = localStorage.getItem('mgr_github_token');
     if (!token) { toast('No token', 'error'); return; }
-    for (const fname of selectedFiles) {
+    for (const fpath of selectedFiles) {
       try {
-        const res = await fetch(API_URL + encodeURIComponent(fname), { headers: { 'Authorization': `token ${token}` } });
+        const res = await fetch(API_URL + encodePath(fpath), { headers: { 'Authorization': `token ${token}` } });
         if (!res.ok) continue;
         const d = await res.json();
-        await fetch(API_URL + encodeURIComponent(fname), {
+        await fetch(API_URL + encodePath(fpath), {
           method: 'DELETE',
           headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: `Delete ${fname}`, sha: d.sha, branch: 'main' })
+          body: JSON.stringify({ message: `Delete ${fpath}`, sha: d.sha, branch: 'main' })
         });
-        allFiles = allFiles.filter(f => f.name !== fname);
-        delete fileAssignments[fname];
-        delete displayNames[fname];
-        hiddenFiles = hiddenFiles.filter(f => f !== fname);
+        allFiles = allFiles.filter(f => f.path !== fpath);
+        delete displayNames[fpath];
+        delete fileOrder[fpath];
+        hiddenFiles = hiddenFiles.filter(f => f !== fpath);
       } catch(e) {}
     }
     selectedFiles.clear();
@@ -603,17 +755,19 @@ function bulkDelete() {
 }
 
 // ==================== DRAG & DROP FILES + FOLDER REORDER + PREVIEW ====================
-let draggedFileName = null;
-function fileDragStart(e, filename) { draggedFileName = filename; e.dataTransfer.effectAllowed = 'move'; e.target.style.opacity = '0.4'; }
-function fileDragEnd(e) { e.target.style.opacity = '1'; draggedFileName = null; }
+let draggedFilePath = null;
+function fileDragStart(e, filePath) { draggedFilePath = filePath; e.dataTransfer.effectAllowed = 'move'; e.target.style.opacity = '0.4'; }
+function fileDragEnd(e) { e.target.style.opacity = '1'; draggedFilePath = null; }
 function folderDragOver(e) { e.preventDefault(); e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.background = 'rgba(88,166,255,.08)'; }
 function folderDragLeave(e) { e.currentTarget.style.borderColor = ''; e.currentTarget.style.background = ''; }
-function folderDrop(e, folderId) {
+async function folderDrop(e, folderId) {
   e.preventDefault(); e.currentTarget.style.borderColor = ''; e.currentTarget.style.background = '';
-  if (!draggedFileName) return;
-  if (folderId === '__unassigned__') delete fileAssignments[draggedFileName];
-  else fileAssignments[draggedFileName] = folderId;
-  draggedFileName = null; saveAndPublish(); toast('File moved!', 'success'); render();
+  if (!draggedFilePath) return;
+  const p = draggedFilePath; draggedFilePath = null;
+  const fileObj = allFiles.find(f => f.path === p);
+  const ok = await performMoves([{ file: fileObj, to: pathForFolder(folderId, baseName(p)) }], `Move ${baseName(p)}`);
+  if (ok) toast('File moved!', 'success');
+  render();
 }
 let draggedFolderIdx = null;
 function folderReorderDragStart(e, idx) { draggedFolderIdx = idx; e.dataTransfer.effectAllowed = 'move'; e.target.style.opacity = '0.4'; }
@@ -624,46 +778,46 @@ function folderReorderDrop(e, targetIdx) {
   folders.forEach((f, i) => f.order = i); draggedFolderIdx = null;
   saveAndPublish(); toast('Folders reordered', 'success'); render();
 }
-function previewFile(filename) {
-  const url = 'https://' + REPO_OWNER + '.github.io/' + REPO_NAME + '/' + encodeURIComponent(filename);
+function previewFile(filePath) {
+  const url = 'https://' + REPO_OWNER + '.github.io/' + REPO_NAME + '/' + encodePath(filePath);
   const el = document.createElement('div'); el.className = 'modal-overlay';
-  el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;width:100%;max-width:900px;height:80vh;display:flex;flex-direction:column;overflow:hidden"><div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;font-weight:600">${escapeHtml(getDisplayName(filename))}</span><div style="display:flex;gap:8px"><a href="${url}" target="_blank" style="color:var(--blue);font-size:13px;text-decoration:none">Open ↗</a><button class="btn" style="padding:4px 10px;font-size:12px" onclick="this.closest('.modal-overlay').remove()">✕</button></div></div><iframe src="${url}" style="flex:1;border:none;width:100%;background:#fff"></iframe></div>`;
+  el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;width:100%;max-width:900px;height:80vh;display:flex;flex-direction:column;overflow:hidden"><div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;font-weight:600">${escapeHtml(getDisplayName(filePath))}</span><div style="display:flex;gap:8px"><a href="${url}" target="_blank" style="color:var(--blue);font-size:13px;text-decoration:none">Open ↗</a><button class="btn" style="padding:4px 10px;font-size:12px" onclick="this.closest('.modal-overlay').remove()">✕</button></div></div><iframe src="${url}" style="flex:1;border:none;width:100%;background:#fff"></iframe></div>`;
   document.body.appendChild(el); el.onclick = (e) => { if (e.target === el) el.remove(); };
 }
 
 // ==================== FILE SORTING & REORDER ====================
 function sortFilesBy(criteria) {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  if (criteria === 'name') files.sort((a,b) => getDisplayName(a.name).localeCompare(getDisplayName(b.name)));
+  if (criteria === 'name') files.sort((a,b) => getDisplayName(a.path).localeCompare(getDisplayName(b.path)));
   else if (criteria === 'size') files.sort((a,b) => (b.size||0) - (a.size||0));
   else if (criteria === 'type') files.sort((a,b) => a.name.split('.').pop().localeCompare(b.name.split('.').pop()));
-  files.forEach((f, i) => { fileOrder[f.name] = i + 1; });
+  files.forEach((f, i) => { fileOrder[f.path] = i + 1; });
   saveAndPublish(); toast('Sorted by ' + criteria, 'success'); render();
 }
 function autoNumberFiles() {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
-  files.forEach((f, i) => { fileOrder[f.name] = i + 1; });
+  files.sort((a,b) => { const oA = fileOrder[a.path]||9999; const oB = fileOrder[b.path]||9999; return oA-oB; });
+  files.forEach((f, i) => { fileOrder[f.path] = i + 1; });
   saveAndPublish(); toast('Numbered 1 to ' + files.length, 'success'); render();
 }
-function setSerialNumber(filename) {
-  promptInput('Set Serial #', 'Number for "' + getDisplayName(filename) + '":', (fileOrder[filename]||'').toString(), (val) => {
+function setSerialNumber(filePath) {
+  promptInput('Set Serial #', 'Number for "' + getDisplayName(filePath) + '":', (fileOrder[filePath]||'').toString(), (val) => {
     const num = parseInt(val); if (isNaN(num)) { toast('Enter a number', 'error'); return; }
-    fileOrder[filename] = num; saveAndPublish(); toast('Serial # set to ' + num, 'success'); render();
+    fileOrder[filePath] = num; saveAndPublish(); toast('Serial # set to ' + num, 'success'); render();
   });
 }
 function moveFileUp(idx) {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
+  files.sort((a,b) => { const oA = fileOrder[a.path]||9999; const oB = fileOrder[b.path]||9999; return oA-oB; });
   if (idx <= 0) return;
-  const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx-1].name]||idx; fileOrder[files[idx-1].name] = t;
+  const t = fileOrder[files[idx].path]||idx+1; fileOrder[files[idx].path] = fileOrder[files[idx-1].path]||idx; fileOrder[files[idx-1].path] = t;
   saveAndPublish(); render();
 }
 function moveFileDown(idx) {
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a,b) => { const oA = fileOrder[a.name]||9999; const oB = fileOrder[b.name]||9999; return oA-oB; });
+  files.sort((a,b) => { const oA = fileOrder[a.path]||9999; const oB = fileOrder[b.path]||9999; return oA-oB; });
   if (idx >= files.length-1) return;
-  const t = fileOrder[files[idx].name]||idx+1; fileOrder[files[idx].name] = fileOrder[files[idx+1].name]||idx+2; fileOrder[files[idx+1].name] = t;
+  const t = fileOrder[files[idx].path]||idx+1; fileOrder[files[idx].path] = fileOrder[files[idx+1].path]||idx+2; fileOrder[files[idx+1].path] = t;
   saveAndPublish(); render();
 }
 
@@ -679,6 +833,9 @@ async function uploadFiles(files) {
   // the end and never renumber/disorganise files that already have a serial.
   const existingSerials = Object.values(fileOrder).filter(n => typeof n === 'number' && !isNaN(n));
   let nextSerial = (existingSerials.length ? Math.max(...existingSerials) : 0) + 1;
+  // Upload target folder: the folder currently open (into its real path), else
+  // the repo root when uploading from the standalone Upload view.
+  const uploadFolderId = (currentFolder && currentFolder.id !== '__unassigned__') ? currentFolder.id : null;
   for (const item of uploadQueue) {
     item.status = 'uploading';
     render();
@@ -689,15 +846,18 @@ async function uploadFiles(files) {
         reader.onerror = reject;
         reader.readAsDataURL(item.file);
       });
-      // Check if file exists
+      // Destination path INSIDE the folder (e.g. "blitz-series/Lecture 5.PDF").
+      const targetPath = pathForFolder(uploadFolderId, item.name);
+      item.path = targetPath;
+      // Check if a file already exists at that path (so we update, not error).
       let sha = null;
-      const checkRes = await fetch(API_URL + encodeURIComponent(item.name), { headers: { 'Authorization': `token ${token}` } });
+      const checkRes = await fetch(API_URL + encodePath(targetPath), { headers: { 'Authorization': `token ${token}` } });
       if (checkRes.ok) { const d = await checkRes.json(); sha = d.sha; }
-      const body = { message: `Upload ${item.name}`, content: base64, branch: 'main' };
+      const body = { message: `Upload ${targetPath}`, content: base64, branch: 'main' };
       if (sha) body.sha = sha;
       item.progress = 50;
       render();
-      const res = await fetch(API_URL + encodeURIComponent(item.name), {
+      const res = await fetch(API_URL + encodePath(targetPath), {
         method: 'PUT',
         headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -706,17 +866,13 @@ async function uploadFiles(files) {
         item.progress = 100;
         item.status = 'done';
         const d = await res.json();
-        if (!allFiles.find(f => f.name === item.name)) {
-          allFiles.push({ name: item.name, size: item.file.size, type: 'file', sha: d.content.sha });
-        }
-        // Assign to current folder if inside one
-        if (currentFolder && currentFolder.id !== '__unassigned__') {
-          fileAssignments[item.name] = currentFolder.id;
-        }
+        const existing = allFiles.find(f => f.path === targetPath);
+        if (existing) { existing.sha = d.content.sha; existing.size = item.file.size; }
+        else { allFiles.push({ name: baseName(targetPath), path: targetPath, size: item.file.size, type: 'file', sha: d.content.sha }); }
         // Give brand-new files the next serial number. Existing files keep
         // their numbers, so the established order is never disturbed.
-        if (fileOrder[item.name] === undefined) {
-          fileOrder[item.name] = nextSerial++;
+        if (fileOrder[targetPath] === undefined) {
+          fileOrder[targetPath] = nextSerial++;
         }
       } else { item.status = 'error'; item.progress = 0; }
     } catch(e) { item.status = 'error'; item.progress = 0; }
@@ -870,41 +1026,42 @@ function renderFolderView() {
 
   let selectAll = '';
   if (files.length > 0) {
-    const allSel = files.every(f => selectedFiles.has(f.name));
+    const allSel = files.every(f => selectedFiles.has(f.path));
     selectAll = `<div style="margin-bottom:12px;display:flex;align-items:center;gap:8px">
-      <input type="checkbox" class="file-checkbox" ${allSel ? 'checked' : ''} onchange="selectAllFiles(${JSON.stringify(files.map(f=>({name:f.name}))).replace(/"/g,'&quot;')})">
+      <input type="checkbox" class="file-checkbox" ${allSel ? 'checked' : ''} onchange="selectAllFiles(${JSON.stringify(files.map(f=>({path:f.path}))).replace(/"/g,'&quot;')})">
       <span style="font-size:13px;color:var(--muted)">Select All</span>
     </div>`;
   }
 
   let fileRows = files.map((f, idx) => {
     const icon = getFileIcon(f.name);
-    const name = getDisplayName(f.name);
+    const name = getDisplayName(f.path);
     const type = getFileType(f.name);
     const size = formatSize(f.size);
     const typeClass = type === 'PDF' ? 'badge-pdf' : 'badge-html';
-    const isHidden = hiddenFiles.includes(f.name);
-    const isSelected = selectedFiles.has(f.name);
+    const isHidden = hiddenFiles.includes(f.path);
+    const isSelected = selectedFiles.has(f.path);
     const visIcon = isHidden ? '🙈' : '👁️';
-    const serial = fileOrder[f.name] !== undefined ? fileOrder[f.name] : idx + 1;
+    const serial = fileOrder[f.path] !== undefined ? fileOrder[f.path] : idx + 1;
+    const p = f.path.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
     return `<div class="file-row">
       <span style="min-width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:700;color:var(--accent);flex-shrink:0">${serial}</span>
-      <input type="checkbox" class="file-checkbox" ${isSelected ? 'checked' : ''} onchange="toggleSelectFile('${f.name.replace(/'/g,"\\'")}')">
+      <input type="checkbox" class="file-checkbox" ${isSelected ? 'checked' : ''} onchange="toggleSelectFile('${p}')">
       <div class="file-row-icon">${icon}</div>
       <div class="file-row-info">
         <div class="file-row-name">${escapeHtml(name)}${isHidden ? ' <span style="color:var(--muted);font-size:11px">(hidden)</span>' : ''}</div>
-        <div class="file-row-meta">${f.name} ${size ? '• ' + size : ''}</div>
+        <div class="file-row-meta">${escapeHtml(f.name)} ${size ? '• ' + size : ''}</div>
       </div>
       <span class="type-badge ${typeClass}">${type}</span>
       <div class="file-admin-actions">
-        <button onclick="previewFile('${f.name.replace(/'/g,"\\'")}')" title="Preview">👀</button>
+        <button onclick="previewFile('${p}')" title="Preview">👀</button>
         <button onclick="moveFileUp(${idx})" title="Move Up" ${idx===0?'style="opacity:.3"':''}>⬆️</button>
         <button onclick="moveFileDown(${idx})" title="Move Down" ${idx===files.length-1?'style="opacity:.3"':''}>⬇️</button>
-        <button onclick="setSerialNumber('${f.name.replace(/'/g,"\\'")}')" title="Set #">🔢</button>
-        <button onclick="moveFile('${f.name.replace(/'/g,"\\'")}')" title="Move to folder">📂</button>
-        <button onclick="toggleFileVisibility('${f.name.replace(/'/g,"\\'")}')" title="${isHidden ? 'Show' : 'Hide'}">${visIcon}</button>
-        <button onclick="renameDisplayName('${f.name.replace(/'/g,"\\'")}')" title="Rename">✏️</button>
-        <button class="del-btn" onclick="deleteFileFromRepo('${f.name.replace(/'/g,"\\'")}')" title="Delete">🗑️</button>
+        <button onclick="setSerialNumber('${p}')" title="Set #">🔢</button>
+        <button onclick="moveFile('${p}')" title="Move to folder">📂</button>
+        <button onclick="toggleFileVisibility('${p}')" title="${isHidden ? 'Show' : 'Hide'}">${visIcon}</button>
+        <button onclick="renameDisplayName('${p}')" title="Rename">✏️</button>
+        <button class="del-btn" onclick="deleteFileFromRepo('${p}')" title="Delete">🗑️</button>
       </div>
     </div>`;
   }).join('');
@@ -1003,11 +1160,12 @@ function renderUploadView() {
 
 function renderVisibilityView() {
   let rows = allFiles.map(f => {
-    const isVisible = !hiddenFiles.includes(f.name);
+    const isVisible = !hiddenFiles.includes(f.path);
+    const p = f.path.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
     return `<div class="toggle-row">
-      <span>${getFileIcon(f.name)} ${escapeHtml(getDisplayName(f.name))}</span>
+      <span>${getFileIcon(f.name)} ${escapeHtml(getDisplayName(f.path))}</span>
       <label class="toggle-switch">
-        <input type="checkbox" ${isVisible ? 'checked' : ''} onchange="toggleFileVisibility('${f.name.replace(/'/g,"\\'")}')">
+        <input type="checkbox" ${isVisible ? 'checked' : ''} onchange="toggleFileVisibility('${p}')">
         <span class="toggle-slider"></span>
       </label>
     </div>`;
@@ -1084,7 +1242,7 @@ function saveSiteSettings() {
 
 function exportConfig() {
   const configData = {
-    folders, fileAssignments, displayNames, hiddenFiles, fileOrder,
+    folders, displayNames, hiddenFiles, fileOrder,
     telegramLink: settings.telegramLink, siteName: settings.siteName, siteSubtitle: settings.siteSubtitle,
     lastUpdated: new Date().toISOString().split('T')[0]
   };
@@ -1103,7 +1261,6 @@ function importConfig(file) {
     try {
       const data = JSON.parse(e.target.result);
       if (data.folders) folders = data.folders;
-      if (data.fileAssignments) fileAssignments = data.fileAssignments;
       if (data.displayNames) displayNames = data.displayNames;
       if (data.fileOrder) fileOrder = data.fileOrder;
       if (data.hiddenFiles) hiddenFiles = data.hiddenFiles;
@@ -1121,14 +1278,14 @@ function importConfig(file) {
 function resetAllData() {
   confirm('Reset All Data', 'This will clear all local data (folders, assignments, settings). Are you sure?', () => {
     localStorage.removeItem('mgr_folders');
-    localStorage.removeItem('mgr_assignments');
     localStorage.removeItem('mgr_hidden');
     localStorage.removeItem('mgr_displayNames');
+    localStorage.removeItem('mgr_fileOrder');
     localStorage.removeItem('mgr_settings');
     folders = [];
-    fileAssignments = {};
     hiddenFiles = [];
     displayNames = {};
+    fileOrder = {};
     settings = { siteName: 'Parmar Railway Notes', siteSubtitle: 'Hand-Written Notes Library', telegramLink: TELEGRAM_LINK };
     toast('All data reset', 'success');
     render();
@@ -1143,7 +1300,7 @@ function showAllFiles() {
 }
 
 function hideAllFiles() {
-  hiddenFiles = allFiles.map(f => f.name);
+  hiddenFiles = allFiles.map(f => f.path);
   saveAndPublish();
   toast('All files hidden', 'success');
   render();
