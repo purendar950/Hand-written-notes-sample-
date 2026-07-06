@@ -971,7 +971,10 @@ function renderCurrentView() {
 
 function renderHomeView() {
   let folderCards = '';
-  folders.forEach(folder => {
+  // Sort by `order` so the admin panel shows folders in the same sequence as
+  // the public site (index.html sorts by `order` too).
+  const sortedFolders = [...folders].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  sortedFolders.forEach(folder => {
     const count = getFilesInFolder(folder.id).length;
     folderCards += `<div class="folder-card" style="--folder-color:${folder.color || '#ffd54f'}" onclick="openFolder('${folder.id}')">
       <div class="folder-actions">
@@ -1011,7 +1014,12 @@ function renderHomeView() {
 function renderFolderView() {
   if (!currentFolder) return renderHomeView();
   let files = currentFolder.id === '__unassigned__' ? getUnassignedFiles() : getFilesInFolder(currentFolder.id);
-  files.sort((a, b) => { const oA = fileOrder[a.name] !== undefined ? fileOrder[a.name] : 9999; const oB = fileOrder[b.name] !== undefined ? fileOrder[b.name] : 9999; return oA - oB; });
+  files.sort((a, b) => {
+    const oA = fileOrder[a.path] !== undefined ? fileOrder[a.path] : Number.MAX_SAFE_INTEGER;
+    const oB = fileOrder[b.path] !== undefined ? fileOrder[b.path] : Number.MAX_SAFE_INTEGER;
+    if (oA !== oB) return oA - oB;
+    return getDisplayName(a.path).localeCompare(getDisplayName(b.path));
+  });
   const hasSelected = selectedFiles.size > 0;
 
   let bulkBar = '';

@@ -5,28 +5,32 @@
       "name": "Current Affairs",
       "icon": "📰",
       "desc": "Monthly current affairs & GK notes",
-      "path": "current-affairs"
+      "path": "current-affairs",
+      "order": 0
     },
     {
       "id": "sample",
       "name": "Sample Notes",
       "icon": "✍️",
       "desc": "Hand-written sample formats",
-      "path": "sample-notes"
+      "path": "sample-notes",
+      "order": 1
     },
     {
       "id": "f_1782105578544",
       "name": "Statics Gk",
       "icon": "📁",
       "desc": "",
-      "path": "statics-gk"
+      "path": "statics-gk",
+      "order": 2
     },
     {
       "id": "f_1782105643158",
       "name": "BLITZ SERIES",
       "icon": "📁",
       "desc": "",
-      "path": "blitz-series"
+      "path": "blitz-series",
+      "order": 3
     },
     {
       "id": "f_1782127991061",
@@ -35,7 +39,7 @@
       "color": "#ffd54f",
       "desc": "",
       "parent": null,
-      "order": 6,
+      "order": 4,
       "path": "ssc-gd-2026"
     },
     {
@@ -45,7 +49,7 @@
       "color": "#ffd54f",
       "desc": "",
       "parent": null,
-      "order": 7,
+      "order": 5,
       "path": "railway-pyqs-series"
     },
     {

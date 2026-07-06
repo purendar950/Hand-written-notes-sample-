@@ -409,7 +409,7 @@ function renderTopBar() {
 }
 
 function renderHomeView() {
-  const sortedFolders = [...folders].sort((a,b) => (a.order||99) - (b.order||99));
+  const sortedFolders = [...folders].sort((a,b) => (a.order ?? 99) - (b.order ?? 99));
   const unassigned = getUnassignedFiles();
   let folderCards = sortedFolders.map(folder => {
     const count = getFilesInFolder(folder.id).length;
@@ -437,7 +437,10 @@ function renderFolderView() {
   files = files.slice().sort((a, b) => {
     const oA = fileOrder[a.path] !== undefined ? fileOrder[a.path] : Number.MAX_SAFE_INTEGER;
     const oB = fileOrder[b.path] !== undefined ? fileOrder[b.path] : Number.MAX_SAFE_INTEGER;
-    return oA - oB;
+    if (oA !== oB) return oA - oB;
+    // Same (or both-unset) serial: fall back to display name so the order is
+    // deterministic instead of depending on listing order.
+    return getDisplayName(a.path).localeCompare(getDisplayName(b.path));
   });
   const fileItems = files.map(f => {
     const icon = getFileIcon(f.name);
