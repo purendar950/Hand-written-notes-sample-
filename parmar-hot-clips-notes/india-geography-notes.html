@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>India — Location, Extent &amp; Boundaries — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:360px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">SSC<br>EXAM</div>
+    <div class="tag">Indian Geography</div>
+    <h1>India — Location, Extent<br>&amp; Boundaries</h1>
+    <h2>Size • Hemisphere • Standard Time • Neighbours • Coastline</h2>
+    <div class="sub">World share → Extent &amp; latitude/longitude → Tropic of Cancer &amp; IST → Land borders → Coastal boundary</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🌍 World &amp; Extent</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">☀️ Cancer &amp; IST</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🗺️ Land Borders</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🏔️ NE &amp; Himalayan Neighbours</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🌊 Coastal Boundary</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><circle cx="20" cy="20" r="15"/><ellipse cx="20" cy="20" rx="15" ry="6"/><line x1="5" y1="20" x2="35" y2="20"/><line x1="20" y1="5" x2="20" y2="35"/></g></svg>
+    <svg class="doodle" style="top:260px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:520px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="15" stroke-dasharray="1 3"/><path d="M20 8 L23 17 L32 17 L25 23 L28 32 L20 26 L12 32 L15 23 L8 17 L17 17 Z" fill="#eadfc4"/></g></svg>
+    <svg class="doodle" style="top:800px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 32 L20 8 L32 32 Z" fill="#e8d9b0"/><path d="M14 32 L20 20 L26 32"/></g></svg>
+    <svg class="doodle" style="top:1060px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">India's Place in the World</h3>
+
+    <ul>
+      <li>India occupies about <span class="hl">2.4%</span> of the world's total area</li>
+      <li>India is home to about <span class="hl ring">17.7%</span> of the world's population</li>
+      <li>India is the <strong>7th largest country</strong> in the world by area</li>
+      <li><strong>Australia</strong> is the 6th largest country in the world by area</li>
+    </ul>
+
+    <h4 class="subsec">Location — Hemisphere</h4>
+    <p>The <strong>Equator</strong> divides the Earth into the Northern and Southern Hemispheres, while the <strong>Prime Meridian</strong> divides it into the Eastern and Western Hemispheres. India lies entirely in the <strong class="scribble">North-Eastern Hemisphere</strong> — north of the Equator and east of the Prime Meridian.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🌐 Fig 1: India's Position — Hemispheres</div>
+      <svg class="diagram-svg" viewBox="0 0 260 220">
+        <circle cx="130" cy="110" r="90" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <line x1="40" y1="110" x2="220" y2="110" stroke="#c31f1f" stroke-width="2" stroke-dasharray="5 3"/>
+        <text x="225" y="114" class="dtxt-xs">Equator</text>
+        <line x1="130" y1="20" x2="130" y2="200" stroke="#c31f1f" stroke-width="2" stroke-dasharray="5 3"/>
+        <text x="105" y="16" class="dtxt-xs">Prime Meridian</text>
+        <ellipse cx="175" cy="75" rx="30" ry="22" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2" transform="rotate(-8 175 75)"/>
+        <text x="175" y="72" text-anchor="middle" class="dtxt-sm-red">INDIA</text>
+        <text x="175" y="84" text-anchor="middle" class="dtxt-xs">(NE hemisphere)</text>
+        <text x="70" y="65" text-anchor="middle" class="dtxt-xs">NW</text>
+        <text x="70" y="160" text-anchor="middle" class="dtxt-xs">SW</text>
+        <text x="190" y="160" text-anchor="middle" class="dtxt-xs">SE</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">India's Extent</h4>
+    <table>
+      <tr><th>Measurement</th><th>Value</th></tr>
+      <tr><td>North–South extension</td><td class="imp">3,214 km</td></tr>
+      <tr><td>East–West extension</td><td class="imp">2,933 km</td></tr>
+      <tr><td>Latitudinal extent</td><td class="imp">8°4' N to 37°6' N</td></tr>
+      <tr><td>Longitudinal extent</td><td class="imp">68° E to 97° E</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      North–South (3214) is <strong>bigger</strong> than East–West (2933) — India is "taller" than it is "wide." Just remember 3214 &gt; 2933.
+    </div>
+
+    <h4 class="subsec">Territorial Waters</h4>
+    <p>India's maritime/territorial limit extends up to <span class="hl ring">12 nautical miles</span> into the sea — roughly equal to <strong>22 km</strong>.</p>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Latitude range (8°–37°) spans about 29°, and longitude range (68°–97°) spans about 29° too — both are used directly to calculate India's Standard Time on the next page!
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#c99400" stroke-width="2"><circle cx="20" cy="20" r="10" fill="#ffe08a"/><line x1="20" y1="2" x2="20" y2="8"/><line x1="20" y1="32" x2="20" y2="38"/><line x1="2" y1="20" x2="8" y2="20"/><line x1="32" y1="20" x2="38" y2="20"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><path d="M20 12 L20 20 L26 24"/></g></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:860px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><circle cx="20" cy="20" r="15"/><ellipse cx="20" cy="20" rx="15" ry="6"/><line x1="5" y1="20" x2="35" y2="20"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">The Tropic of Cancer &amp; Indian Standard Time</h3>
+
+    <h4 class="subsec">Tropic of Cancer (23½° N)</h4>
+    <p>The Tropic of Cancer passes right through the middle of India, crossing through <span class="hl ring">8 states</span>, from west to east:</p>
+
+    <div class="chain">
+      <span class="chip">Gujarat</span><span class="arrow">→</span>
+      <span class="chip">Rajasthan</span><span class="arrow">→</span>
+      <span class="chip">MP</span><span class="arrow">→</span>
+      <span class="chip">Chhattisgarh</span><span class="arrow">→</span>
+      <span class="chip">Jharkhand</span><span class="arrow">→</span>
+      <span class="chip">West Bengal</span><span class="arrow">→</span>
+      <span class="chip">Tripura</span><span class="arrow">→</span>
+      <span class="chip">Mizoram</span>
+    </div>
+
+    <div class="sticky yellow"><b>🧠 Memory Trick</b>"Gujarati Raja became Chief Justice in the meeting" → Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram.</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Of these 8 states, only <strong>3 have their capital above</strong> the Tropic of Cancer: <strong>Rajasthan (Jaipur), Tripura (Agartala), and Mizoram (Aizawl)</strong>. The rest — Gandhinagar, Bhopal, Raipur, Ranchi, Kolkata — lie below it.
+    </div>
+
+    <h4 class="subsec">Indian Standard Time (IST)</h4>
+    <p>India's longitude spans roughly <strong>30°</strong> (68° E to 97° E) — and 30° of longitude equals about a <strong>2-hour</strong> time difference. To avoid using two separate time zones, India adopted a single standard meridian at <span class="hl ring">82°30' E</span>, right in the middle.</p>
+    <p>Indian Standard Time is <strong class="scribble">5½ hours ahead of GMT</strong> (Greenwich Mean Time / Prime Meridian).</p>
+
+    <div class="diagram-card">
+      <div class="cap">🕐 Fig 2: Tropic of Cancer × 82°30' E — Where They Meet</div>
+      <svg class="diagram-svg" viewBox="0 0 260 200">
+        <path d="M20 60 Q80 55 140 60 Q200 65 250 55" fill="none" stroke="#c31f1f" stroke-width="2.4" stroke-dasharray="6 3"/>
+        <text x="30" y="45" class="dtxt-sm-red">Tropic of Cancer (23½° N)</text>
+        <line x1="150" y1="10" x2="150" y2="190" stroke="#1d3f7a" stroke-width="2.4" stroke-dasharray="6 3"/>
+        <text x="155" y="20" class="dtxt-sm">82°30' E (IST meridian)</text>
+        <circle cx="150" cy="60" r="6" fill="#ffd23f" stroke="#8a5a0a" stroke-width="1.5"/>
+        <text x="150" y="90" text-anchor="middle" class="dtxt-sm-red">Meeting point:</text>
+        <text x="150" y="102" text-anchor="middle" class="dtxt-sm-red">Baikunthpur division,</text>
+        <text x="150" y="114" text-anchor="middle" class="dtxt-sm-red">Korea district, Chhattisgarh</text>
+        <text x="150" y="145" text-anchor="middle" class="dtxt-xs">82°30' E line also passes through:</text>
+        <text x="150" y="158" text-anchor="middle" class="dtxt-xs">MP, Odisha, UP, Chhattisgarh, Andhra Pradesh</text>
+      </svg>
+    </div>
+
+    <ul>
+      <li>The 82°30' E meridian passes through <strong>5 states</strong>: <strong>Madhya Pradesh, Odisha, Uttar Pradesh, Chhattisgarh, Andhra Pradesh</strong> (memory trick: "Mauka")</li>
+      <li>It meets the Tropic of Cancer in <strong>Chhattisgarh</strong>, in the <strong>Korea district's Baikunthpur division</strong></li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Not every country has just one time zone — countries with a large longitudinal spread have many. <strong>France has 13 time zones</strong> and the <strong>US has 6</strong>, mainly because of their vast east–west (longitudinal) spread, including overseas territories.
+    </div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M6 30 Q4 20 12 16 L14 8 L18 14 Q26 12 32 20 Q34 26 28 30 Z" fill="#e8d9b0"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><rect x="6" y="14" width="28" height="18" rx="2" fill="#eaf2fb"/><line x1="6" y1="20" x2="34" y2="20"/><line x1="20" y1="14" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:880px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 32 L20 8 L32 32 Z" fill="#e8d9b0"/></g></svg>
+    <svg class="doodle" style="top:1160px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">India's International Land Boundaries</h3>
+
+    <p>India shares a land border with <span class="hl ring">7 countries</span>, totalling <span class="hl">15,106 km</span>. The list is remembered in <strong class="scribble">decreasing order of border length</strong> — Bangladesh has the longest shared border, and Afghanistan the shortest.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🗺️ Fig 3: India's 7 Land Neighbours (longest → shortest)</div>
+      <svg class="diagram-svg" viewBox="0 0 260 230">
+        <defs><marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a2b1c"/></marker></defs>
+        <rect x="60" y="6" width="140" height="26" rx="6" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/><text x="130" y="23" text-anchor="middle" class="dtxt-sm-red">Bangladesh (longest)</text>
+        <line x1="130" y1="32" x2="130" y2="46" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="60" y="48" width="140" height="26" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="65" text-anchor="middle" class="dtxt-sm">China</text>
+        <line x1="130" y1="74" x2="130" y2="88" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="60" y="90" width="140" height="26" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="107" text-anchor="middle" class="dtxt-sm">Pakistan</text>
+        <line x1="130" y1="116" x2="130" y2="130" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="60" y="132" width="140" height="26" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="149" text-anchor="middle" class="dtxt-sm">Nepal</text>
+        <line x1="130" y1="158" x2="130" y2="172" stroke="#3a2b1c" stroke-width="1.6" marker-end="url(#arrB)"/>
+        <rect x="60" y="174" width="140" height="26" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="191" text-anchor="middle" class="dtxt-sm">Myanmar → Bhutan → Afghanistan</text>
+        <text x="130" y="216" text-anchor="middle" class="dtxt-xs">Total: 15,106 km across 7 countries</text>
+      </svg>
+    </div>
+
+    <div class="sticky blue"><b>🧠 Memory Trick</b>Childhood mnemonic: remember <strong>Bangladesh, China, Pakistan, Nepal, Myanmar, Bhutan, Afghanistan</strong> — 7 countries, already in decreasing order of border length.</div>
+
+    <h4 class="subsec">Uttar Pradesh's Record</h4>
+    <p>Uttar Pradesh shares its boundary with the most states/UTs of any Indian state — <span class="hl ring">9 states and 1 Union Territory (Delhi)</span>.</p>
+
+    <h4 class="subsec">Named International Boundary Lines</h4>
+    <table>
+      <tr><th>Line</th><th>Between</th></tr>
+      <tr><td class="imp">Radcliffe Line</td><td>India–Pakistan &amp; India–Bangladesh</td></tr>
+      <tr><td class="imp">McMahon Line</td><td>India–China boundary (divided into Western, Middle &amp; Eastern sectors)</td></tr>
+      <tr><td class="imp">49th Parallel</td><td>USA–Canada (longest international boundary in the world)</td></tr>
+      <tr><td class="imp">Maginot Line</td><td>France–Germany</td></tr>
+      <tr><td class="imp">Hindenburg Line</td><td>Belgium–France</td></tr>
+      <tr><td class="imp">Durand Line</td><td>India/Pakistan–Afghanistan</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      The <strong>Radcliffe Line</strong> was drawn by <strong>Sir Cyril Radcliffe</strong> after Partition — it separates India from both Pakistan and Bangladesh, since Bangladesh was originally <strong>East Pakistan</strong> before becoming independent in <strong>1971</strong>.
+    </div>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the <strong>49th Parallel</strong> (world's longest international boundary, USA–Canada) with the <strong>McMahon Line</strong> (India–China) — very different boundaries with very different records!
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#5a3d20" stroke-width="2" stroke-linecap="round"><path d="M8 32 L20 8 L32 32 Z" fill="#e8d9b0"/><path d="M14 32 L20 20 L26 32"/></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:560px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><rect x="6" y="14" width="28" height="18" rx="2" fill="#eaf2fb"/><line x1="6" y1="20" x2="34" y2="20"/><line x1="20" y1="14" x2="20" y2="32"/></g></svg>
+    <svg class="doodle" style="top:860px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="15" stroke-dasharray="4 3"/><path d="M20 12 L20 20 L26 24"/></g></svg>
+    <svg class="doodle" style="top:1140px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">Northeast &amp; Himalayan Neighbours</h3>
+
+    <h4 class="subsec">States Bordering Bangladesh</h4>
+    <p><strong>Meghalaya, Assam, Mizoram, Tripura, West Bengal</strong> — remembered with the trick phrase "<em>Ma'am take water</em>."</p>
+
+    <h4 class="subsec">States Bordering Myanmar (North → South)</h4>
+    <div class="chain">
+      <span class="chip">Arunachal Pradesh</span><span class="arrow">→</span>
+      <span class="chip">Nagaland</span><span class="arrow">→</span>
+      <span class="chip">Manipur</span><span class="arrow">→</span>
+      <span class="chip">Mizoram</span>
+    </div>
+    <div class="sticky green"><b>🧠 Memory Trick</b>"Arunaamami" — Aruna(chal), Naga(land), Mani(pur), Mi(zoram), read top to bottom on the map.</div>
+
+    <h4 class="subsec">States Bordering Nepal</h4>
+    <p><strong>Sikkim, Uttar Pradesh, Bihar, [West] Bengal, Uttarakhand</strong> — remembered as "<em>Subu Subu</em>" (S-U-B-B-U).</p>
+
+    <h4 class="subsec">States Bordering Bhutan</h4>
+    <p><strong>[West] Bengal, Assam, Sikkim, Arunachal [Pradesh]</strong> — remembered as "<em>Basa</em>" (B-A-S-A).</p>
+
+    <div class="diagram-card">
+      <div class="cap">🏔️ Fig 4: States Sharing Borders with 3 Countries</div>
+      <svg class="diagram-svg" viewBox="0 0 260 220">
+        <ellipse cx="130" cy="110" rx="60" ry="32" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="130" y="106" text-anchor="middle" class="dtxt-sm-red">3-country</text>
+        <text x="130" y="118" text-anchor="middle" class="dtxt-sm-red">border states</text>
+        <ellipse cx="130" cy="30" rx="65" ry="20" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="26" text-anchor="middle" class="dtxt-xs">Sikkim:</text><text x="130" y="37" text-anchor="middle" class="dtxt-xs">Nepal, Bhutan, China</text>
+        <ellipse cx="230" cy="110" rx="65" ry="24" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="230" y="106" text-anchor="middle" class="dtxt-xs">Arunachal:</text><text x="230" y="118" text-anchor="middle" class="dtxt-xs">Bhutan, China, Myanmar</text>
+        <ellipse cx="130" cy="190" rx="70" ry="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="130" y="186" text-anchor="middle" class="dtxt-xs">West Bengal:</text><text x="130" y="198" text-anchor="middle" class="dtxt-xs">Nepal, Bhutan, Bangladesh</text>
+        <ellipse cx="30" cy="110" rx="60" ry="24" fill="#ffdcab" stroke="#c31f1f" stroke-width="1.8"/><text x="30" y="106" text-anchor="middle" class="dtxt-xs">Ladakh (UT):</text><text x="30" y="118" text-anchor="middle" class="dtxt-xs">China, Pakistan, PoK-Afghanistan</text>
+        <line x1="130" y1="78" x2="130" y2="52" stroke="#c31f1f" stroke-width="1.4"/>
+        <line x1="175" y1="120" x2="200" y2="112" stroke="#c31f1f" stroke-width="1.4"/>
+        <line x1="130" y1="142" x2="130" y2="168" stroke="#c31f1f" stroke-width="1.4"/>
+        <line x1="85" y1="118" x2="60" y2="112" stroke="#c31f1f" stroke-width="1.4"/>
+      </svg>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Three <strong>states</strong> border exactly 3 countries: <strong>Sikkim</strong> (Nepal, Bhutan, China), <strong>Arunachal Pradesh</strong> (Bhutan, China, Myanmar), and <strong>West Bengal</strong> (Nepal, Bhutan, Bangladesh) — plus the <strong>UT of Ladakh</strong> (China, Pakistan, and the PoK region bordering Afghanistan).
+    </div>
+
+    <h4 class="subsec">States Bordering Pakistan</h4>
+    <p><strong>Gujarat, Rajasthan, Punjab, Jammu &amp; Kashmir, Ladakh</strong>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't forget <strong>Ladakh</strong> when listing states/UTs bordering Pakistan — it's often left out since it's a Union Territory, not a state, but it does share a Pakistan border.
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><path d="M4 26 Q12 20 20 26 Q28 32 36 26" /><path d="M4 20 Q12 14 20 20 Q28 26 36 20" /></g></svg>
+    <svg class="doodle" style="top:280px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><path d="M6 30 L12 12 L20 30 Z" fill="#eadfc4"/><rect x="18" y="10" width="2" height="20" fill="#3a2b1c" stroke="none"/><path d="M20 12 L30 16 L20 20 Z" fill="#c31f1f" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+    <svg class="doodle" style="top:880px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><circle cx="20" cy="20" r="15"/><ellipse cx="20" cy="20" rx="15" ry="6"/><line x1="5" y1="20" x2="35" y2="20"/></g></svg>
+    <svg class="doodle" style="top:1160px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#a5760f" stroke-width="2" stroke-linejoin="round"><path d="M6 26 L8 12 L15 20 L20 9 L25 20 L32 12 L34 26 Z" fill="#ffd23f"/><line x1="6" y1="26" x2="34" y2="26"/></g></svg>
+
+    <h3 class="sec">India's Coastal Boundary</h3>
+
+    <p>India's coastline length was <strong class="scribble">recently revised</strong> by the Government of India, published around late April / early May 2025.</p>
+
+    <table>
+      <tr><th>Measure</th><th>Value</th></tr>
+      <tr><td>Old coastline length</td><td class="imp">7,516 km</td></tr>
+      <tr><td>Revised coastline length (2025)</td><td class="imp">11,098 km</td></tr>
+    </table>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      If you learned the old figure of <strong>7,516 km</strong> for India's coastline, update it — the Government of India published a <strong>revised, more precise figure of 11,098 km</strong> in 2025. Don't answer with the outdated number if the question specifies "as per latest data."
+    </div>
+
+    <h4 class="subsec">Top Coastlines</h4>
+    <ul>
+      <li><strong>Andaman &amp; Nicobar Islands</strong> has the <strong>longest coastline overall</strong> (including UTs) — both before and after the revision</li>
+      <li>Among <strong>states</strong>, <span class="hl ring">Gujarat</span> has the longest coastline (approx. <strong>2,300 km</strong>) — both before and after the revision</li>
+      <li>Order among states: <strong>Gujarat → Tamil Nadu → Andhra Pradesh</strong></li>
+      <li><strong>Goa</strong> has the <strong>shortest</strong> coastline among coastal states</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🌊 Fig 5: Coastline Length — Quick Comparison</div>
+      <svg class="diagram-svg" viewBox="0 0 260 190">
+        <line x1="60" y1="10" x2="60" y2="170" stroke="#3a2b1c" stroke-width="1.6"/>
+        <rect x="65" y="20" width="170" height="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="70" y="35" class="dtxt-xs">Andaman &amp; Nicobar — longest overall (UT)</text>
+        <rect x="65" y="52" width="130" height="22" fill="#fff2a0" stroke="#c31f1f" stroke-width="1.8"/><text x="70" y="67" class="dtxt-xs">Gujarat ≈ 2,300 km (longest state)</text>
+        <rect x="65" y="84" width="95" height="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="70" y="99" class="dtxt-xs">Tamil Nadu</text>
+        <rect x="65" y="116" width="75" height="22" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="1.8"/><text x="70" y="131" class="dtxt-xs">Andhra Pradesh</text>
+        <rect x="65" y="148" width="25" height="22" fill="#cdeccb" stroke="#1f7a4d" stroke-width="1.8"/><text x="95" y="163" class="dtxt-xs">Goa — shortest</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Coastal States &amp; Union Territories</h4>
+    <p>India has <span class="hl">9 coastal states</span> and <span class="hl">4 coastal Union Territories</span>. Among the UTs:</p>
+    <ul>
+      <li><strong>Andaman &amp; Nicobar Islands</strong></li>
+      <li><strong>Dadra &amp; Nagar Haveli and Daman &amp; Diu</strong></li>
+      <li><strong>Puducherry</strong> — itself spread across enclaves in <strong class="scribble">three different states</strong>: the main Puducherry region and Karaikal (in Tamil Nadu), Mahe (in Kerala), and Yanam (in Andhra Pradesh)</li>
+    </ul>
+
+    <div class="quotebox">🗺️ Puducherry isn't one single block on the map — it's four separate enclaves (Puducherry, Karaikal, Mahe, Yanam) sitting inside three different states!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Always double-check whether a coastline question is asking for the <strong>old (7,516 km)</strong> or <strong>revised (11,098 km)</strong> figure — recently revised data is a favourite trap in current-affairs-linked geography questions.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Area/Population share:</strong> 2.4% area, 17.7% population, 7th largest country</li>
+      <li><strong>Extent:</strong> N–S 3,214 km, E–W 2,933 km; 8°4'–37°6' N, 68°–97° E</li>
+      <li><strong>Standard meridian:</strong> 82°30' E → IST = GMT + 5:30</li>
+      <li><strong>Land neighbours:</strong> 7 countries, 15,106 km total</li>
+      <li><strong>Coastline:</strong> 11,098 km (revised 2025); Gujarat longest state, Goa shortest, Andaman &amp; Nicobar longest overall</li>
+    </ul>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Geography • SSC / UPSSSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+  const TOTAL_PAGES = 5;
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=TOTAL_PAGES;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=TOTAL_PAGES;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
