@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Peninsular Plateau — Handwritten Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf6e7;
+    --paper2:#f5efd9;
+    --line:#cfe0ee;
+    --margin:#e0847c;
+    --ink-navy:#1d3f7a;
+    --ink-blue:#1b3ca4;
+    --ink-black:#242119;
+    --ink-red:#c31f1f;
+    --ink-red-deep:#8f1616;
+    --ink-green:#1f7a4d;
+    --ink-purple:#5a3e96;
+    --sticky-yellow:#fff2a0;
+    --sticky-pink:#ffd0d3;
+    --sticky-blue:#bfe3f5;
+    --sticky-green:#cdeccb;
+    --sticky-orange:#ffdcab;
+    --graph-line:#dce7f0;
+    --wood-dark:#241b13;
+    --wood-mid:#3a2b1c;
+    --wood-light:#4d3a26;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, var(--wood-light), var(--wood-mid) 55%, var(--wood-dark) 100%);
+    min-height:100vh;
+    font-family:'Kalam',cursive;
+    color:var(--ink-black);
+    padding:14px 0 40px;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 12px;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:var(--paper);
+    border-radius:8px;
+    padding:22px 18px 16px;
+    text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    margin-bottom:12px;
+    position:relative;
+    border:2px solid #2a2118;
+  }
+  .cover .tag{
+    font-family:'Kalam',cursive;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    color:var(--ink-red);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .cover h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:2.1rem;
+    color:var(--ink-navy);
+    margin:8px 0 0;
+    line-height:1.2;
+    transform:rotate(-0.6deg);
+  }
+  .cover h2{
+    font-family:'Caveat',cursive;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    margin:4px 0 8px;
+  }
+  .cover .sub{
+    font-size:0.92rem;
+    color:#4a4234;
+  }
+  .cover .stamp{
+    position:absolute;
+    top:10px; right:10px;
+    border:3px solid var(--ink-red);
+    color:var(--ink-red);
+    border-radius:50%;
+    width:64px;height:64px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:0.72rem;
+    text-align:center;
+    line-height:1.05;
+    transform:rotate(-14deg);
+    opacity:0.85;
+  }
+  .cover .legend{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1.5px dashed #c9bb96;
+    font-size:0.74rem;
+    color:#5a4f3c;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 12px;
+    justify-content:center;
+    font-family:'Kalam',cursive;
+  }
+  .cover .legend b{font-weight:700;}
+
+  /* ---------- TELEGRAM BADGE ---------- */
+  .telegram-badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 14px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    line-height:1.2;
+  }
+  .telegram-badge .tg-study{color:#ffffff;}
+  .telegram-badge .tg-planner{color:#3ddc84;}
+  .footer-tg{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:5px;
+    background:#1c8fc4;
+    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    line-height:1.2;
+  }
+  .footer-tg .tg-study{color:#ffffff;}
+  .footer-tg .tg-planner{color:#3ddc84;}
+
+  /* ---------- VIEW MODE TOGGLE ---------- */
+  .viewmode-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 10px;
+  }
+  .vm-label{color:#d8cbb0; font-size:1rem; font-weight:700; font-family:'Caveat',cursive;}
+  .vm-btn{
+    font-family:'Caveat',cursive; font-weight:700; font-size:1.05rem;
+    padding:6px 15px 5px; border-radius:16px; border:2px solid #2a2118;
+    background:#d8c8a4; color:#3a2f22; cursor:pointer;
+    box-shadow:1px 2px 4px rgba(0,0,0,0.3);
+  }
+  .vm-btn.active{background:var(--ink-navy); color:#fff; border-color:var(--ink-navy);}
+  .vm-btn.print-btn{background:var(--ink-red); color:#fff; border-color:var(--ink-red-deep);}
+
+  /* ---------- TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    padding:0 2px;
+    margin-bottom:0;
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+    padding:9px 14px 8px;
+    border:2px solid #2a2118;
+    border-bottom:none;
+    border-radius:10px 10px 0 0;
+    background:#d8c8a4;
+    color:#3a2f22;
+    cursor:pointer;
+    white-space:nowrap;
+    transform:translateY(3px);
+    transition:transform .15s, background .15s;
+  }
+  .tab-btn.active{
+    background:var(--paper);
+    color:var(--ink-navy);
+    transform:translateY(0);
+  }
+  .continuous-mode .tabbar{
+    position:sticky; top:0; z-index:6;
+    background:var(--wood-mid);
+    padding-top:6px;
+    border-radius:8px 8px 0 0;
+  }
+
+  /* ---------- PAGE ---------- */
+  .page{
+    display:none;
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0, transparent 30px, var(--line) 31px),
+      radial-gradient(circle at 15% 10%, rgba(0,0,0,0.035), transparent 38%),
+      radial-gradient(circle at 90% 92%, rgba(0,0,0,0.035), transparent 42%);
+    border-radius:0 6px 6px 6px;
+    padding:26px 18px 26px 54px;
+    position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(36,25,15,0.08);
+    border:2px solid #2a2118;
+    min-height:420px;
+    line-height:30px;
+    overflow:hidden;
+  }
+  .page.active{display:block;}
+  .continuous-mode .page{display:block !important; margin-bottom:22px;}
+  .continuous-mode .page:not(:first-of-type)::before{content:'✂️ – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –';
+    position:static; display:block; width:auto; height:auto; background:none;
+    text-align:center; color:#c9bb96; font-size:0.8rem; margin:-14px 0 12px -20px; opacity:0.6;}
+  #page1{transform:rotate(-0.35deg);}
+  #page2{transform:rotate(0.3deg);}
+  #page3{transform:rotate(-0.25deg);}
+  #page4{transform:rotate(0.3deg);}
+  #page5{transform:rotate(-0.3deg);}
+  .continuous-mode .page{transform:none !important;}
+
+  .page::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;left:36px;
+    width:2px;
+    background:var(--margin);
+    opacity:0.75;
+  }
+  .page::after{
+    content:'';
+    position:absolute;
+    top:14px;bottom:14px;left:-9px;
+    width:16px;
+    background-image:radial-gradient(circle, var(--wood-dark) 0 5px, transparent 6px);
+    background-size:16px 42px;
+    background-repeat:repeat-y;
+    opacity:0.55;
+  }
+
+  h3.sec{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:1.5rem;
+    color:var(--ink-red);
+    margin:6px 0 10px;
+    line-height:1.3;
+    display:inline-block;
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 42%;
+    background-position:0 78%;
+    padding:0 4px;
+    transform:rotate(-0.7deg);
+  }
+  h4.subsec{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--ink-red);
+    margin:16px 0 3px;
+    line-height:1.15;
+    display:inline-block;
+    transform:rotate(0.4deg);
+  }
+  p{margin:2px 0 8px; font-size:1.02rem; line-height:30px; color:var(--ink-blue);}
+  strong{color:var(--ink-navy);}
+  em{color:var(--ink-blue);}
+  .red{color:var(--ink-red); font-weight:700;}
+  .green{color:var(--ink-green); font-weight:700;}
+  .navy{color:var(--ink-navy); font-weight:700;}
+
+  ul{list-style:none; margin:6px 0 14px; padding-left:6px;}
+  ul>li{position:relative; padding-left:24px; margin-bottom:8px; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ul>li::before{
+    content:'';
+    position:absolute; left:2px; top:10px;
+    width:9px; height:9px;
+    background:var(--ink-blue);
+    border-radius:60% 40% 55% 45%/45% 55% 40% 60%;
+    transform:rotate(-8deg);
+  }
+  ol{list-style:none; counter-reset:nb; margin:6px 0 14px; padding-left:4px;}
+  ol>li{position:relative; padding-left:30px; margin-bottom:9px; counter-increment:nb; font-size:1.02rem; line-height:27px; color:var(--ink-blue);}
+  ol>li::before{
+    content:counter(nb) '.';
+    position:absolute; left:0; top:-1px;
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red);
+    font-size:1.2rem;
+  }
+  li ul, li ol{margin-top:6px;}
+
+  .hl{
+    background-image:linear-gradient(120deg, var(--sticky-yellow) 0%, var(--sticky-yellow) 100%);
+    background-repeat:no-repeat;
+    background-size:100% 58%;
+    background-position:0 86%;
+    padding:0 2px;
+  }
+
+  /* rough hand-drawn circle around key facts */
+  .ring{
+    display:inline-block;
+    padding:0 7px 2px;
+    border:2.4px solid var(--ink-red);
+    border-radius:48% 52% 45% 55%/58% 48% 55% 42%;
+    transform:rotate(-2deg);
+  }
+  .ring.v2{border-color:var(--ink-blue); border-radius:55% 45% 58% 42%/45% 55% 40% 60%; transform:rotate(2.2deg);}
+  .ring.v3{border-color:var(--ink-red); border-radius:42% 58% 48% 52%/55% 45% 58% 42%; transform:rotate(-1deg);}
+
+  /* rough underline for moderately important phrases */
+  .scribble{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'><path d='M2 8 Q20 2 40 8 T80 7 T120 9 T160 6 T198 8' fill='none' stroke='%23c31f1f' stroke-width='3' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:0 92%;
+    background-size:100% 10px;
+    padding-bottom:4px;
+  }
+
+  /* ---------- STICKY NOTES ---------- */
+  .sticky{
+    display:block;
+    padding:12px 14px;
+    margin:14px auto;
+    border-radius:2px;
+    box-shadow:3px 5px 10px rgba(0,0,0,0.28);
+    font-size:0.96rem;
+    line-height:24px;
+    position:relative;
+    max-width:96%;
+    color:#242119;
+  }
+  .sticky b{display:block; font-family:'Caveat',cursive; font-size:1.15rem; margin-bottom:2px;}
+  .sticky.yellow{background:var(--sticky-yellow); transform:rotate(-1.3deg);}
+  .sticky.pink{background:var(--sticky-pink); transform:rotate(1.1deg);}
+  .sticky.blue{background:var(--sticky-blue); transform:rotate(-0.9deg);}
+  .sticky.green{background:var(--sticky-green); transform:rotate(1.3deg);}
+  .sticky.orange{background:var(--sticky-orange); transform:rotate(-1deg);}
+  .sticky::before{
+    content:'📌';
+    position:absolute;
+    top:-12px; left:14px;
+    font-size:1.1rem;
+  }
+
+  /* ---------- EXAM TIP / MISTAKE / TRICK BOXES ---------- */
+  .notebox{
+    position:relative;
+    margin:14px 2px 18px 4px;
+    padding:10px 14px;
+    border:2.4px dashed;
+    border-radius:16px 5px 16px 5px/6px 16px 6px 16px;
+    font-family:'Kalam',cursive;
+    font-size:0.95rem;
+    line-height:23px;
+    background:rgba(255,255,255,0.45);
+    max-width:97%;
+  }
+  .notebox .nb-label{
+    display:block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:2px;
+  }
+  .notebox.tip{border-color:var(--ink-green); color:#184a30; transform:rotate(-0.5deg);}
+  .notebox.tip .nb-label{color:var(--ink-green);}
+  .notebox.mistake{border-color:var(--ink-red); color:#6e1414; transform:rotate(0.6deg);}
+  .notebox.mistake .nb-label{color:var(--ink-red);}
+  .notebox.trick{border-color:var(--ink-purple); color:#402a6b; transform:rotate(-0.4deg);}
+  .notebox.trick .nb-label{color:var(--ink-purple);}
+
+  .quotebox{
+    border:2px dashed var(--ink-red);
+    border-radius:10px;
+    padding:10px 14px;
+    margin:12px 0;
+    font-family:'Caveat',cursive;
+    font-size:1.25rem;
+    color:var(--ink-red);
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 16px;
+    background:rgba(255,255,255,0.45);
+    font-size:0.98rem;
+  }
+  th,td{
+    border:2px dashed #8a7757;
+    padding:7px 8px;
+    text-align:left;
+    line-height:22px;
+    color:var(--ink-blue);
+  }
+  th{
+    background:#ffe08a;
+    color:#241f13;
+    font-family:'Caveat',cursive;
+    font-size:1.15rem;
+    font-weight:700;
+  }
+  td.imp{color:var(--ink-red); font-weight:700;}
+
+  .chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:4px;
+    margin:10px 0 16px;
+    font-size:0.92rem;
+  }
+  .chain .chip{
+    background:#fff;
+    border:2px solid var(--ink-navy);
+    border-radius:16px;
+    padding:5px 10px;
+    font-weight:700;
+    color:var(--ink-navy);
+    white-space:nowrap;
+  }
+  .chain .arrow{color:var(--ink-red); font-weight:700;}
+
+  .toggle-btn{
+    display:inline-block;
+    margin:4px 0 10px;
+    color:var(--ink-navy);
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    border-bottom:2px dotted var(--ink-navy);
+    background:none;
+    border-top:none; border-left:none; border-right:none;
+    padding:0;
+  }
+  .toggle-content{
+    display:none;
+    background:rgba(255,255,255,0.5);
+    border-left:4px solid var(--ink-navy);
+    padding:8px 12px;
+    margin:0 0 12px;
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+    line-height:24px;
+    color:var(--ink-blue);
+  }
+  .toggle-box.open .toggle-content{display:block;}
+  .toggle-box.open .toggle-btn::after{content:' ▲';}
+  .toggle-btn::after{content:' ▼';}
+
+  .timeline{margin:10px 0 16px; position:relative; padding-left:18px; border-left:3px dashed var(--ink-navy);}
+  .tl-item{position:relative; margin-bottom:14px; padding-left:14px; color:var(--ink-blue);}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-25px; top:4px;
+    width:12px;height:12px;
+    background:var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    border:2px solid var(--paper);
+  }
+  .tl-date{font-family:'Caveat',cursive; font-weight:700; color:var(--ink-red); font-size:1.15rem;}
+  .tl-big{
+    background:var(--sticky-yellow);
+    border:2px solid var(--ink-red);
+    border-radius:8px;
+    padding:8px 12px;
+    display:inline-block;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink-red);
+    transform:rotate(-1deg);
+    margin:10px 0 18px;
+    position:relative;
+  }
+  .tl-big::after{
+    content:'';
+    position:absolute; inset:-9px;
+    border:2.5px dashed var(--ink-red);
+    border-radius:50% 45% 55% 48%/58% 42% 55% 45%;
+    transform:rotate(-2deg);
+    pointer-events:none;
+    opacity:0.85;
+  }
+
+  /* ---------- DIAGRAM CARDS ---------- */
+  .diagram-card{
+    background:
+      repeating-linear-gradient(to right, transparent 0 19px, var(--graph-line) 19px 20px),
+      repeating-linear-gradient(to bottom, transparent 0 19px, var(--graph-line) 19px 20px),
+      var(--paper2);
+    border:2px solid #2a2118;
+    border-radius:3px;
+    padding:12px 10px 8px;
+    margin:16px auto 22px;
+    max-width:390px;
+    box-shadow:2px 5px 12px rgba(0,0,0,0.28);
+    position:relative;
+    transform:rotate(-0.6deg);
+  }
+  .diagram-card::before,.diagram-card::after{
+    content:'';
+    position:absolute;
+    width:56px;height:20px;
+    background:rgba(255,208,90,0.55);
+    border:1px solid rgba(150,110,20,0.35);
+  }
+  .diagram-card::before{top:-11px; left:-16px; transform:rotate(-16deg);}
+  .diagram-card::after{top:-11px; right:-16px; transform:rotate(14deg);}
+  .diagram-card .cap{
+    font-family:'Caveat',cursive; font-weight:700; color:var(--ink-navy);
+    font-size:1.1rem; text-align:center; margin:0 0 6px;
+  }
+  .diagram-svg{width:100%; height:auto; display:block;}
+  .diagram-svg text{font-family:'Kalam',cursive;}
+  .diagram-svg .dtxt{font-size:11px; fill:var(--ink-navy); font-weight:700;}
+  .diagram-svg .dtxt-sm{font-size:9.5px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-xs{font-size:8.2px; fill:var(--ink-black);}
+  .diagram-svg .dtxt-big{font-size:15px; fill:var(--ink-red); font-weight:700;}
+  .diagram-svg .dtxt-sm-red{font-size:10.5px; fill:var(--ink-red); font-weight:700;}
+
+  /* ---------- MARGIN DOODLES ---------- */
+  .doodle{
+    position:absolute;
+    width:25px; height:25px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.92;
+  }
+
+  .navbtns{display:flex; justify-content:space-between; margin-top:16px;}
+  .navbtns button{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:1.05rem;
+    background:var(--ink-navy);
+    color:var(--paper);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:2px 3px 6px rgba(0,0,0,0.3);
+  }
+  .navbtns button:disabled{opacity:0.35; cursor:default;}
+  .pagecount{
+    text-align:center;
+    color:#8a7c60;
+    font-family:'Kalam',cursive;
+    font-size:0.85rem;
+    margin:8px 0 2px;
+  }
+  .footer-credit{
+    text-align:center;
+    color:#a99a7e;
+    font-size:0.75rem;
+    margin-top:14px;
+    font-family:'Kalam',cursive;
+  }
+
+  @media(max-width:480px){
+    .cover h1{font-size:1.65rem;}
+    .cover .stamp{width:52px;height:52px; font-size:0.6rem;}
+    .cover .legend{font-size:0.66rem;}
+    .page{padding:22px 12px 22px 42px; line-height:27px;}
+    .page::before{left:27px;}
+    h3.sec{font-size:1.2rem;}
+    h4.subsec{font-size:1.2rem;}
+    p,ul>li,ol>li{font-size:0.96rem; line-height:25px;}
+    .tab-btn{font-size:1rem; padding:8px 10px 7px;}
+    .doodle{width:17px; height:17px;}
+    .diagram-card{max-width:100%;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .viewmode-bar, .tabbar, .navbtns, .cover .stamp{display:none;}
+    .wrap{max-width:100%; padding:0;}
+    .page{display:block !important; box-shadow:none; border:1px solid #ccc; page-break-after:always; transform:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="stamp">INDIAN<br>GEO</div>
+    <div class="tag">Indian Physical Geography</div>
+    <h1>The Peninsular Plateau</h1>
+    <h2>Central Highlands • Deccan Plateau • Ghats • Eastern Extension</h2>
+    <div class="sub">Physiographic Divisions of India — Landform Notes for SSC / UPSSSC / UPPSC / Railways</div>
+    <div class="legend">
+      <span>🔴 <b>Headings &amp; Definitions</b></span>
+      <span>🔵 <b>Explanations</b></span>
+      <span>🟡 <b>Highlighter = Key Facts</b></span>
+      <span>🎯 <b>Exam Tip</b></span>
+      <span>❌ <b>Common Mistake</b></span>
+      <span>🧠 <b>Memory Trick</b></span>
+    </div>
+    <a class="telegram-badge" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+
+  <div class="viewmode-bar">
+    <span class="vm-label">📔 View:</span>
+    <button class="vm-btn" id="vmPaged" onclick="setViewMode('paged')">📑 Page-by-Page</button>
+    <button class="vm-btn active" id="vmContinuous" onclick="setViewMode('continuous')">📜 Continuous Scroll</button>
+    <button class="vm-btn print-btn" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab-btn active" id="tab1" onclick="showPage(1)">🏔️ Overview &amp; Central Highlands</button>
+    <button class="tab-btn" id="tab2" onclick="showPage(2)">⛰️ Vindhya, Satpura &amp; Deccan</button>
+    <button class="tab-btn" id="tab3" onclick="showPage(3)">🏞️ Western vs Eastern Ghats</button>
+    <button class="tab-btn" id="tab4" onclick="showPage(4)">🚪 Passes &amp; Gaps</button>
+    <button class="tab-btn" id="tab5" onclick="showPage(5)">🗺️ Eastern Extension</button>
+  </div>
+
+  <!-- ============ PAGE 1 ============ -->
+  <div class="page active" id="page1">
+
+    <svg class="doodle" style="top:6px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M4 32 L14 12 L20 22 L26 8 L36 32 Z" fill="#e8dcc8"/></g></svg>
+    <svg class="doodle" style="top:290px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><path d="M4 20 Q12 12 20 20 T36 20"/></g></svg>
+    <svg class="doodle" style="top:580px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="15" fill="none"/><line x1="20" y1="9" x2="20" y2="15"/><line x1="20" y1="25" x2="20" y2="31"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="25" y1="20" x2="31" y2="20"/></g></svg>
+    <svg class="doodle" style="top:900px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">The Peninsular Plateau — Overview</h3>
+    <p>The <strong>Peninsular Plateau</strong> is the <span class="hl ring">largest landform</span> of India. We divide it into two parts using the <strong>Narmada River</strong> as the dividing line:</p>
+    <ul>
+      <li>The part <strong>above</strong> the Narmada Valley → the <strong>Central Highlands</strong></li>
+      <li>The part <strong>below</strong> the Narmada Valley → the <strong>Deccan Plateau</strong></li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 1: Peninsular Plateau — Split by the Narmada</div>
+      <svg class="diagram-svg" viewBox="0 0 300 200">
+        <rect x="30" y="20" width="240" height="70" rx="10" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="50" text-anchor="middle" class="dtxt">Central Highlands</text>
+        <text x="150" y="68" text-anchor="middle" class="dtxt-sm">(above Narmada)</text>
+        <path d="M20 100 Q150 90 280 100" fill="none" stroke="#1a3fb0" stroke-width="4" stroke-linecap="round"/>
+        <text x="150" y="118" text-anchor="middle" class="dtxt-sm-red">Narmada River</text>
+        <rect x="30" y="130" width="240" height="60" rx="10" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="150" y="158" text-anchor="middle" class="dtxt">Deccan Plateau</text>
+        <text x="150" y="176" text-anchor="middle" class="dtxt-sm">(below Narmada)</text>
+      </svg>
+    </div>
+
+    <h4 class="subsec">Central Highlands — Smaller Plateaus (in order)</h4>
+    <ol>
+      <li>Mewar (also called Marwar) Plateau</li>
+      <li>Malwa Plateau</li>
+      <li>Bundelkhand</li>
+      <li>Baghelkhand</li>
+      <li>Chota Nagpur Plateau</li>
+    </ol>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Just memorise the order: <strong>Mewar → Malwa → Bundelkhand → Baghelkhand → Chota Nagpur</strong>. No need to go deeper into Bundelkhand or Baghelkhand for exams.
+    </div>
+
+    <h4 class="subsec">Aravalli Range — Northwest Extension</h4>
+    <ul>
+      <li>The Aravalli is a <strong>fold mountain</strong> — specifically an <span class="hl red ring">old fold mountain</span> (fold mountains are of two types: <em>young</em> fold mountains and <em>old</em> fold mountains)</li>
+      <li>Also known as <strong>residual mountains</strong></li>
+      <li>Extends across: <strong>Gujarat → Rajasthan → Haryana → Delhi</strong></li>
+      <li>Highest peak: <strong>Guru Shikhar</strong>, height <span class="hl">1722 metres</span>, located on <strong>Mount Abu Hills</strong></li>
+    </ul>
+
+    <div class="chain">
+      <span class="chip">Gujarat</span><span class="arrow">→</span>
+      <span class="chip">Rajasthan</span><span class="arrow">→</span>
+      <span class="chip">Haryana</span><span class="arrow">→</span>
+      <span class="chip">Delhi</span>
+    </div>
+
+    <p>The <strong>Chota Nagpur Plateau</strong> is known as the <span class="hl">"Ruhr of India"</span> because it's an extremely mineral-rich region.</p>
+
+    <div class="sticky yellow"><b>🧠 Quick Recap</b>Old fold + residual = Aravalli. Highest point = Guru Shikhar (1722 m) on Mount Abu. Mineral-rich = Chota Nagpur = "Ruhr of India"!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      A frequently asked question: which states does the Aravalli Range extend across? Remember the full chain — <strong>Gujarat, Rajasthan, Haryana, and Delhi</strong>.
+    </div>
+
+    <div class="pagecount">Page 1 of 5</div>
+    <div class="navbtns"><button disabled>← Previous</button><button onclick="showPage(2)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 2 ============ -->
+  <div class="page" id="page2">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><rect x="6" y="18" width="28" height="12" fill="#e8dcc8"/><path d="M6 18 L20 6 L34 18 Z" fill="#c9c2b8"/></g></svg>
+    <svg class="doodle" style="top:320px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><path d="M4 20 Q12 12 20 20 T36 20"/></g></svg>
+    <svg class="doodle" style="top:640px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1f7a4d" stroke-width="2"><path d="M10 32 C8 22 12 10 20 8 C18 16 20 24 26 30 C18 32 14 34 10 32 Z" fill="#cdeccb"/></g></svg>
+    <svg class="doodle" style="top:960px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Vindhya, Satpura &amp; the Deccan Plateau</h3>
+
+    <h4 class="subsec">Vindhya &amp; Satpura Ranges</h4>
+    <p>Within the Central Highlands, we also see the <strong class="scribble">Vindhya Range</strong> (lying above/north) and the <strong class="scribble">Satpura Range</strong> (lying below/south). Both are types of <span class="hl ring">Block Mountains</span>.</p>
+    <ul>
+      <li><strong>Satpura</strong> range includes the <strong>Mahadev</strong> and <strong>Maikal</strong> hills</li>
+      <li><strong>Vindhya</strong> range includes the <strong>Kaimur</strong> hills</li>
+      <li>In Maharashtra, we also find the <strong>Satmala Hills, Harishchandra Range,</strong> and <strong>Balaghat Range</strong></li>
+      <li>The <strong>Narmada River</strong> flows in the valley between the Vindhya and Satpura ranges</li>
+    </ul>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 2: Vindhya &amp; Satpura — Block Mountains</div>
+      <svg class="diagram-svg" viewBox="0 0 300 180">
+        <rect x="40" y="20" width="220" height="45" rx="6" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="150" y="42" text-anchor="middle" class="dtxt">VINDHYA RANGE</text>
+        <text x="150" y="58" text-anchor="middle" class="dtxt-sm">(includes Kaimur)</text>
+        <path d="M20 90 Q150 80 280 90" fill="none" stroke="#1a3fb0" stroke-width="4" stroke-linecap="round"/>
+        <text x="150" y="108" text-anchor="middle" class="dtxt-sm-red">Narmada River (in between)</text>
+        <rect x="40" y="120" width="220" height="45" rx="6" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2.2"/>
+        <text x="150" y="142" text-anchor="middle" class="dtxt">SATPURA RANGE</text>
+        <text x="150" y="158" text-anchor="middle" class="dtxt-sm">(includes Mahadev, Maikal)</text>
+      </svg>
+    </div>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      Vindhya = North (above); Satpura = South (below) — and the <strong>Narmada</strong> flows right through the valley between the two Block Mountain ranges.
+    </div>
+
+    <h4 class="subsec">The Deccan Plateau</h4>
+    <p>The part of the Peninsular Plateau <strong>below the Narmada</strong> is the Deccan Plateau.</p>
+    <ul>
+      <li>Western boundary: the <strong>Western Ghats</strong></li>
+      <li>Eastern boundary: the <strong>Eastern Ghats</strong></li>
+      <li>Overall <strong>tilt</strong>: from <span class="hl">west to east</span></li>
+      <li>Height <strong>increases from north to south</strong></li>
+    </ul>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Don't mix up the tilt direction with the height trend — the Deccan Plateau <strong>tilts west→east</strong>, but its <strong>height rises north→south</strong>. These are two separate facts!
+    </div>
+
+    <div class="sticky blue"><b>💡 Understand it like this...</b>Picture the Deccan Plateau as a tilted tabletop: one edge (west) is propped up higher than the other (east) — that's the tilt. Separately, walking from the top (north) to the bottom (south) of that tabletop, the ground itself gets higher.</div>
+
+    <div class="pagecount">Page 2 of 5</div>
+    <div class="navbtns"><button onclick="showPage(1)">← Previous</button><button onclick="showPage(3)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 3 ============ -->
+  <div class="page" id="page3">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M4 32 L12 14 L18 24 L24 8 L36 32 Z" fill="#e8dcc8"/></g></svg>
+    <svg class="doodle" style="top:340px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linejoin="round"><path d="M4 32 L12 10 L20 26 L28 6 L36 32 Z" fill="#ffd0d3"/></g></svg>
+    <svg class="doodle" style="top:660px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><circle cx="20" cy="20" r="15" fill="none" stroke-dasharray="3 3"/><circle cx="20" cy="20" r="4" fill="#1a3fb0" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:980px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Western Ghats vs Eastern Ghats</h3>
+
+    <h4 class="subsec">Hills of the Eastern Ghats</h4>
+    <p>Nallamala Hills, Venukonda Hills <em>(Andhra Pradesh)</em>, Palakonda, Nagari, Javadi, Shevaroy, Panchamalai, Shirumalai, Palani, and Vaishnava Hills.</p>
+
+    <h4 class="subsec">Hills of the Western Ghats</h4>
+    <p>Nilgiri Hills, Anamalai Hills, and Cardamom Hills.</p>
+
+    <h4 class="subsec">Western Ghats vs Eastern Ghats — Comparison</h4>
+    <table>
+      <tr><th>Feature</th><th>Western Ghats</th><th>Eastern Ghats</th></tr>
+      <tr><td>Average height</td><td class="imp">1,200 m (higher)</td><td class="imp">600 m (lower)</td></tr>
+      <tr><td>Continuity</td><td class="imp">Continuous</td><td class="imp">Discontinuous</td></tr>
+      <tr><td>Highest peak</td><td class="imp">Anaimudi — 2695 m</td><td class="imp">Mahendragiri — 1501 m</td></tr>
+    </table>
+
+    <p>The Eastern Ghats are <strong>discontinuous</strong> because most rivers flow <strong>towards the east</strong> (following the west-to-east tilt of the Deccan Plateau) and cut through them as they go.</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 3: Height Comparison</div>
+      <svg class="diagram-svg" viewBox="0 0 300 190">
+        <line x1="30" y1="170" x2="280" y2="170" stroke="#3a2b1c" stroke-width="2"/>
+        <rect x="60" y="40" width="60" height="130" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="90" y="30" text-anchor="middle" class="dtxt-sm-red">1200 m</text>
+        <text x="90" y="184" text-anchor="middle" class="dtxt-sm">Western Ghats</text>
+        <rect x="180" y="105" width="60" height="65" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="210" y="95" text-anchor="middle" class="dtxt-sm-red">600 m</text>
+        <text x="210" y="184" text-anchor="middle" class="dtxt-sm">Eastern Ghats</text>
+      </svg>
+    </div>
+
+    <p>Because the Western Ghats are higher, they also hold the <strong>highest peak in all of South India</strong>: <span class="hl red ring">Anaimudi</span>, height <strong>2695 metres</strong>, part of the <strong>Anamalai Hills</strong> (in Kerala).</p>
+    <p>For the Eastern Ghats, the highest peak as given in <strong>NCERT</strong> is <strong>Mahendragiri</strong> (1501 m) — even though peaks like Jindagada or Arma Konda are sometimes mentioned elsewhere, NCERT's answer is Mahendragiri, so memorise that for exams.</p>
+    <p>The <strong>second-highest peak</strong> overall (after Anaimudi) is <span class="hl">Dodabetta</span>, located in the <strong>Nilgiri Hills</strong>, in <strong>Tamil Nadu</strong>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      Anaimudi is in <strong>Kerala</strong>; Dodabetta is in <strong>Tamil Nadu</strong> — don't swap the states for these two peaks.
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      For Eastern Ghats' highest peak, always go with the <strong>NCERT</strong> answer — <strong>Mahendragiri (1501 m)</strong> — even if other sources mention different peaks.
+    </div>
+
+    <div class="pagecount">Page 3 of 5</div>
+    <div class="navbtns"><button onclick="showPage(2)">← Previous</button><button onclick="showPage(4)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 4 ============ -->
+  <div class="page" id="page4">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><rect x="14" y="6" width="12" height="28" rx="2" fill="#e8dcc8"/><rect x="10" y="30" width="20" height="6" rx="2" fill="#c9c2b8"/></g></svg>
+    <svg class="doodle" style="top:330px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2" stroke-linecap="round"><path d="M4 20 Q12 12 20 20 T36 20"/></g></svg>
+    <svg class="doodle" style="top:650px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c99400" stroke-width="2"><circle cx="20" cy="20" r="9" fill="#ffd23f"/><line x1="20" y1="2" x2="20" y2="8"/><line x1="20" y1="32" x2="20" y2="38"/><line x1="2" y1="20" x2="8" y2="20"/><line x1="32" y1="20" x2="38" y2="20"/></g></svg>
+    <svg class="doodle" style="top:970px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Passes &amp; Gaps Connecting the Ghats</h3>
+
+    <p>The <strong>Anamalai Hills</strong> connect to the <strong>Nilgiri Hills</strong> through a pass called <span class="hl red ring">Palghat (Palakkad) Gap</span>.</p>
+    <p>There are two more important passes, similar to Palghat but found further north (both connecting Mumbai to other cities):</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 4: Ghats &amp; Passes of Peninsular India</div>
+      <svg class="diagram-svg" viewBox="0 0 300 200">
+        <text x="150" y="20" text-anchor="middle" class="dtxt-sm-red">Passes Connecting Cities</text>
+        <circle cx="60" cy="60" r="18" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="60" y="64" text-anchor="middle" class="dtxt-sm">Mumbai</text>
+        <circle cx="150" cy="40" r="16" fill="#fff2a0" stroke="#c31f1f" stroke-width="2"/>
+        <text x="150" y="44" text-anchor="middle" class="dtxt-sm">Pune</text>
+        <circle cx="230" cy="60" r="16" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="230" y="64" text-anchor="middle" class="dtxt-sm">Nashik</text>
+        <line x1="75" y1="55" x2="135" y2="45" stroke="#3a2b1c" stroke-width="2"/>
+        <text x="100" y="38" text-anchor="middle" class="dtxt-xs">Bhor Ghat</text>
+        <line x1="75" y1="65" x2="215" y2="62" stroke="#3a2b1c" stroke-width="2"/>
+        <text x="150" y="80" text-anchor="middle" class="dtxt-xs">Thal Ghat</text>
+        <circle cx="120" cy="150" r="16" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2"/>
+        <text x="120" y="154" text-anchor="middle" class="dtxt-sm">Nilgiris</text>
+        <circle cx="200" cy="150" r="16" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2"/>
+        <text x="200" y="154" text-anchor="middle" class="dtxt-sm">Anamalai</text>
+        <line x1="136" y1="150" x2="184" y2="150" stroke="#3a2b1c" stroke-width="2"/>
+        <text x="160" y="140" text-anchor="middle" class="dtxt-xs">Palghat Gap</text>
+      </svg>
+    </div>
+
+    <table>
+      <tr><th>Pass</th><th>Connects</th></tr>
+      <tr><td>Palghat (Palakkad) Gap</td><td class="imp">Nilgiri Hills ↔ Anamalai Hills</td></tr>
+      <tr><td>Thal Ghat</td><td class="imp">Mumbai ↔ Nashik</td></tr>
+      <tr><td>Bhor Ghat</td><td class="imp">Mumbai ↔ Pune</td></tr>
+    </table>
+
+    <div class="notebox trick">
+      <span class="nb-label">🧠 Memory Trick</span>
+      "Bhor" means <em>dawn/morning</em> in Hindi — you head out early in the morning for work, to <strong>Pune</strong> → <strong>Bhor Ghat = Mumbai–Pune</strong>. By evening you might be enjoying Nashik's wines → <strong>Thal Ghat = Mumbai–Nashik</strong>.
+    </div>
+
+    <div class="sticky orange"><b>📌 Fun fact</b>Nashik is often called India's "wine capital" — that's the link this mnemonic uses to remember the Thal Ghat connection!</div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      All three passes are important connectors within the Peninsular Plateau's Ghats — remember them as a set: <strong>Palghat, Thal Ghat, Bhor Ghat</strong>.
+    </div>
+
+    <div class="pagecount">Page 4 of 5</div>
+    <div class="navbtns"><button onclick="showPage(3)">← Previous</button><button onclick="showPage(5)">Next →</button></div>
+  </div>
+
+  <!-- ============ PAGE 5 ============ -->
+  <div class="page" id="page5">
+
+    <svg class="doodle" style="top:8px; left:5px;" viewBox="0 0 40 40"><g fill="none" stroke="#3a2b1c" stroke-width="2" stroke-linejoin="round"><path d="M4 32 L14 12 L20 22 L26 8 L36 32 Z" fill="#e8dcc8"/></g></svg>
+    <svg class="doodle" style="top:330px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#1a3fb0" stroke-width="2"><circle cx="20" cy="20" r="15" fill="none" stroke-dasharray="3 3"/><circle cx="20" cy="20" r="4" fill="#1a3fb0" stroke="none"/></g></svg>
+    <svg class="doodle" style="top:650px; left:4px;" viewBox="0 0 40 40"><g fill="none" stroke="#c31f1f" stroke-width="2" stroke-linecap="round"><path d="M8 30 L18 12 L28 30 Z" fill="#ffd0d3"/><line x1="18" y1="12" x2="18" y2="6"/></g></svg>
+    <svg class="doodle" style="top:970px; left:5px;" viewBox="0 0 40 40"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3 Z" fill="#ffd23f" stroke="#c99400" stroke-width="1.5"/></svg>
+
+    <h3 class="sec">Eastern Extension — Rajmahal Hills &amp; Karbi Anglong</h3>
+
+    <p>At the <strong>easternmost edge</strong> of the entire Peninsular Plateau, we find the <span class="hl red ring">Rajmahal Hills</span> (in Jharkhand) and the <strong>Garhjat Hills</strong> (in Odisha).</p>
+
+    <p>The extension of the Rajmahal Hills continues further as the <strong>Garo, Khasi,</strong> and <strong>Jaintia Hills</strong> (also called the <strong>Mikir Hills</strong>) — these are collectively known as the <span class="hl">Karbi Anglong Plateau</span>.</p>
+
+    <div class="notebox mistake">
+      <span class="nb-label">❌ Common Mistake</span>
+      The Garo-Khasi-Jaintia (Karbi Anglong) hills are part of the <strong>Peninsular Plateau</strong> — NOT part of the Himalayas, even though they lie in the northeast!
+    </div>
+
+    <p>The gap between the Rajmahal Hills and the Karbi Anglong Plateau is known as the <span class="hl red ring">Malda Fault</span> (or <strong>Malda Gap</strong>).</p>
+
+    <div class="diagram-card">
+      <div class="cap">🧠 Fig 5: Eastern Extension of the Peninsular Plateau</div>
+      <svg class="diagram-svg" viewBox="0 0 300 180">
+        <ellipse cx="80" cy="60" rx="55" ry="30" fill="#eaf2fb" stroke="#1d3f7a" stroke-width="2.2"/>
+        <text x="80" y="56" text-anchor="middle" class="dtxt-sm">Rajmahal Hills</text>
+        <text x="80" y="70" text-anchor="middle" class="dtxt-xs">(Jharkhand)</text>
+        <path d="M135 65 Q170 75 205 70" fill="none" stroke="#c31f1f" stroke-width="2.4" stroke-dasharray="4 3"/>
+        <text x="170" y="55" text-anchor="middle" class="dtxt-sm-red">Malda Fault/Gap</text>
+        <ellipse cx="230" cy="70" rx="60" ry="32" fill="#cdeccb" stroke="#1f7a4d" stroke-width="2.2"/>
+        <text x="230" y="65" text-anchor="middle" class="dtxt-sm">Karbi Anglong Plateau</text>
+        <text x="230" y="80" text-anchor="middle" class="dtxt-xs">Garo, Khasi, Jaintia (Mikir) Hills</text>
+        <ellipse cx="140" cy="135" rx="55" ry="26" fill="#fff2a0" stroke="#c31f1f" stroke-width="2.2"/>
+        <text x="140" y="130" text-anchor="middle" class="dtxt-sm">Garhjat Hills</text>
+        <text x="140" y="144" text-anchor="middle" class="dtxt-xs">(Odisha)</text>
+      </svg>
+    </div>
+
+    <div class="notebox tip">
+      <span class="nb-label">🎯 Exam Tip</span>
+      Remember the eastern chain: <strong>Rajmahal Hills → Malda Fault/Gap → Karbi Anglong Plateau (Garo-Khasi-Jaintia/Mikir Hills)</strong> — all part of the Peninsular Plateau, not the Himalayas.
+    </div>
+
+    <h4 class="subsec">⭐ Exam-Ready Summary</h4>
+    <ul>
+      <li><strong>Largest landform of India:</strong> Peninsular Plateau — split by the Narmada into Central Highlands (above) and Deccan Plateau (below)</li>
+      <li><strong>Aravalli:</strong> old fold/residual mountain; Gujarat→Rajasthan→Haryana→Delhi; highest peak Guru Shikhar (1722 m, Mount Abu)</li>
+      <li><strong>Chota Nagpur Plateau:</strong> "Ruhr of India" — mineral rich</li>
+      <li><strong>Vindhya (north) &amp; Satpura (south):</strong> Block Mountains, with the Narmada flowing between them</li>
+      <li><strong>Deccan Plateau:</strong> tilts west→east; height rises north→south; bounded by Western &amp; Eastern Ghats</li>
+      <li><strong>Western Ghats:</strong> higher (1200 m avg), continuous; highest peak Anaimudi (2695 m, Kerala)</li>
+      <li><strong>Eastern Ghats:</strong> lower (600 m avg), discontinuous; highest peak Mahendragiri (1501 m, per NCERT)</li>
+      <li><strong>2nd highest peak overall:</strong> Dodabetta (Nilgiri Hills, Tamil Nadu)</li>
+      <li><strong>Passes:</strong> Palghat Gap (Nilgiri↔Anamalai), Thal Ghat (Mumbai↔Nashik), Bhor Ghat (Mumbai↔Pune)</li>
+      <li><strong>Eastern extension:</strong> Rajmahal Hills → Malda Fault/Gap → Karbi Anglong Plateau (Garo-Khasi-Jaintia/Mikir Hills)</li>
+    </ul>
+
+    <div class="pagecount">Page 5 of 5</div>
+    <div class="navbtns"><button onclick="showPage(4)">← Previous</button><button onclick="window.print()">🖨️ Print Notes</button></div>
+  </div>
+
+  <div class="footer-credit">Indian Physical Geography • SSC / UPSSSC / UPPSC / Railways / Banking Exam Notes<br>
+    <a class="footer-tg" href="https://t.me/StudyPlannerSSC" target="_blank" rel="noopener noreferrer">
+      <span class="tg-study">Study</span><span class="tg-planner">Planner</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+  let mode = 'continuous';
+
+  function applyPagedDisplay(){
+    for(let i=1;i<=5;i++){
+      document.getElementById('page'+i).classList.remove('active');
+      document.getElementById('tab'+i).classList.remove('active');
+    }
+    document.getElementById('page'+currentPage).classList.add('active');
+    document.getElementById('tab'+currentPage).classList.add('active');
+  }
+
+  function showPage(n){
+    currentPage = n;
+    if(mode === 'continuous'){
+      for(let i=1;i<=5;i++){ document.getElementById('tab'+i).classList.remove('active'); }
+      document.getElementById('tab'+n).classList.add('active');
+      document.getElementById('page'+n).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    applyPagedDisplay();
+    document.querySelector('.wrap').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function setViewMode(m){
+    mode = m;
+    document.getElementById('vmPaged').classList.toggle('active', m === 'paged');
+    document.getElementById('vmContinuous').classList.toggle('active', m === 'continuous');
+    document.body.classList.toggle('continuous-mode', m === 'continuous');
+    if(m === 'paged'){
+      applyPagedDisplay();
+    }
+  }
+
+  function toggleBox(id){
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  setViewMode('continuous');
+</script>
+</body>
+</html>
