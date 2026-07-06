@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>File Manager - Admin Panel</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Chart.js for the dashboard analytics section (loaded async, dashboard degrades gracefully if unavailable) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:radial-gradient(1200px 620px at 8% -8%,rgba(99,102,241,.20),transparent 58%),radial-gradient(1000px 520px at 112% 2%,rgba(34,211,238,.14),transparent 55%),var(--bg);background-attachment:fixed;color:var(--text);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
@@ -177,6 +181,142 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){.top-bar{padding:10px 16px}.main-content{padding:16px}.folder-grid{grid-template-columns:repeat(2,1fr);gap:12px}.folder-icon{font-size:36px}.folder-card{padding:16px 10px}.file-admin-actions{opacity:1}.folder-actions{opacity:1}.quick-actions{flex-direction:column}}
 @media(max-width:480px){.folder-grid{grid-template-columns:repeat(2,1fr);gap:10px}.folder-icon{font-size:32px}.folder-name{font-size:12px}.top-bar{flex-direction:column;align-items:flex-start}.bulk-bar{flex-direction:column;align-items:flex-start}}
+
+/* ============================================================
+   PREMIUM DASHBOARD REDESIGN (home screen only)
+   Uses the requested palette: Indigo #6366F1, Violet #8B5CF6,
+   Cyan #06B6D4, Success #10B981, Warning #F59E0B, Danger #EF4444.
+   All existing view CSS above is untouched.
+   ============================================================ */
+:root{
+  --violet:#8b5cf6;--cyan:#06b6d4;--warn:#f59e0b;
+  --grad-primary:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);
+  --grad-cyan:linear-gradient(135deg,#06b6d4 0%,#22d3ee 100%);
+  --grad-success:linear-gradient(135deg,#10b981 0%,#34d399 100%);
+  --grad-warn:linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%);
+  --grad-danger:linear-gradient(135deg,#ef4444 0%,#f87171 100%);
+  --grad-violet:linear-gradient(135deg,#8b5cf6 0%,#6366f1 100%);
+  --grad-hero:linear-gradient(120deg,#4338ca 0%,#6366f1 42%,#8b5cf6 72%,#06b6d4 120%);
+}
+/* ---------- Light theme (toggleable via body.light) ---------- */
+body.light{
+  --bg:#f4f6ff;--surface:#ffffff;--surface-2:#f6f8ff;--card:#eef2ff;
+  --text:#0f172a;--muted:#64748b;--border:#e2e8f0;--border-soft:rgba(15,23,42,.08);
+  --glass:rgba(255,255,255,.78);--shadow-md:0 10px 30px -14px rgba(31,41,80,.28);
+  --shadow-lg:0 26px 60px -22px rgba(31,41,80,.34);--ring:rgba(99,102,241,.28);
+  background:radial-gradient(1200px 620px at 8% -8%,rgba(99,102,241,.14),transparent 58%),radial-gradient(1000px 520px at 112% 2%,rgba(6,182,212,.12),transparent 55%),linear-gradient(180deg,#eef2ff 0%,#ffffff 42%,#f8fafc 100%);
+}
+body.light .site-title{color:#4f46e5}
+body.light .badge-html{color:#059669}
+body.light .badge-pdf{color:#dc2626}
+
+/* Poppins for the dashboard surface */
+.home-view{font-family:'Poppins','Inter',sans-serif}
+
+/* ---------- Header enhancements ---------- */
+.top-bar-right{align-items:center}
+.header-search{position:relative;display:flex;align-items:center}
+.header-search input{background:rgba(255,255,255,.05);border:1px solid var(--border-soft);border-radius:12px;padding:9px 14px 9px 36px;color:var(--text);font-size:13px;font-family:inherit;width:210px;transition:all .25s}
+body.light .header-search input{background:#f1f5f9}
+.header-search input::placeholder{color:var(--muted)}
+.header-search input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--ring);width:250px}
+.header-search .search-ico{position:absolute;left:12px;font-size:13px;opacity:.7;pointer-events:none}
+.header-bell{position:relative}
+.header-bell .bell-badge{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:9px;background:var(--grad-danger);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(239,68,68,.5)}
+.header-avatar{width:38px;height:38px;border-radius:12px;background:var(--grad-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;cursor:default;box-shadow:0 6px 16px -6px var(--ring);flex-shrink:0}
+@media(max-width:600px){.header-search{display:none}}
+
+/* ---------- Hero / welcome banner ---------- */
+.dash-hero{position:relative;overflow:hidden;border-radius:26px;padding:30px 32px;margin-bottom:26px;background:var(--grad-hero);box-shadow:0 30px 70px -30px rgba(79,70,229,.65);isolation:isolate}
+.dash-hero::before,.dash-hero::after{content:'';position:absolute;border-radius:50%;filter:blur(4px);z-index:-1}
+.dash-hero::before{width:260px;height:260px;background:radial-gradient(circle,rgba(255,255,255,.28),transparent 70%);top:-120px;right:-40px;animation:heroFloat 8s ease-in-out infinite}
+.dash-hero::after{width:200px;height:200px;background:radial-gradient(circle,rgba(6,182,212,.5),transparent 70%);bottom:-110px;left:20%;animation:heroFloat 10s ease-in-out infinite reverse}
+.hero-blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.12);z-index:-1;animation:heroFloat 7s ease-in-out infinite}
+.hero-blob.b1{width:90px;height:90px;top:20px;right:26%}
+.hero-blob.b2{width:54px;height:54px;bottom:30px;right:12%;animation-duration:9s}
+.dash-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative}
+.hero-greeting{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.hero-title{font-family:'Poppins',sans-serif;font-size:30px;font-weight:800;color:#fff;line-height:1.15;margin:6px 0 4px;letter-spacing:-.02em}
+.hero-date{font-size:13px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px}
+.hero-sub{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.9);max-width:460px;line-height:1.5}
+.hero-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hero-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);border-radius:14px;padding:8px 14px;color:#fff;display:flex;flex-direction:column;min-width:78px}
+.hero-chip b{font-size:18px;font-weight:800;line-height:1}
+.hero-chip span{font-size:10.5px;opacity:.85;margin-top:3px;letter-spacing:.03em}
+.hero-illustration{font-size:96px;line-height:1;filter:drop-shadow(0 14px 30px rgba(0,0,0,.35));animation:heroFloat 5s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* ---------- Section titles ---------- */
+.dash-section{margin-bottom:26px}
+.dash-section-title{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;margin-bottom:16px;letter-spacing:-.01em}
+.dash-section-title .st-ico{width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--grad-primary);color:#fff;box-shadow:0 8px 18px -8px var(--ring)}
+.dash-section-title .st-count{font-size:12px;font-weight:500;color:var(--muted);margin-left:auto}
+
+/* ---------- Stat cards ---------- */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.stat-card{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border-soft);border-radius:20px;padding:20px;box-shadow:var(--shadow-md);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;cursor:default}
+.stat-card::after{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:var(--sc-grad,var(--grad-primary));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.35;transition:opacity .3s;pointer-events:none}
+.stat-card:hover{transform:translateY(-6px)}
+.stat-card:hover::after{opacity:.9}
+.stat-card:hover{box-shadow:0 26px 48px -22px var(--sc-glow,rgba(99,102,241,.6))}
+.stat-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.stat-ico{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:23px;background:var(--sc-grad,var(--grad-primary));color:#fff;box-shadow:0 10px 22px -8px var(--sc-glow,rgba(99,102,241,.6));transition:transform .35s}
+.stat-card:hover .stat-ico{transform:rotate(-8deg) scale(1.06)}
+.stat-trend{font-size:11px;font-weight:600;padding:4px 8px;border-radius:8px;background:rgba(16,185,129,.14);color:#10b981;display:inline-flex;align-items:center;gap:3px}
+.stat-value{font-family:'Poppins',sans-serif;font-size:32px;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--text)}
+.stat-label{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:500}
+
+/* ---------- Quick actions ---------- */
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.qa-btn{position:relative;overflow:hidden;border:none;cursor:pointer;font-family:'Poppins',sans-serif;border-radius:18px;padding:20px 14px;color:#fff;background:var(--qa-grad,var(--grad-primary));display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13px;font-weight:600;box-shadow:0 14px 30px -16px var(--qa-glow,rgba(99,102,241,.7));transition:transform .25s,box-shadow .25s;text-align:center}
+.qa-btn:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 22px 40px -16px var(--qa-glow,rgba(99,102,241,.85));filter:brightness(1.05)}
+.qa-btn:active{transform:translateY(-1px) scale(.99)}
+.qa-btn .qa-ico{font-size:26px;transition:transform .3s}
+.qa-btn:hover .qa-ico{transform:scale(1.15) rotate(6deg)}
+.qa-btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* ---------- Charts ---------- */
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.chart-card{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border-soft);border-radius:20px;padding:20px;box-shadow:var(--shadow-md)}
+.chart-card h4{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px}
+.chart-card .chart-sub{font-size:11.5px;color:var(--muted);margin-bottom:14px}
+.chart-canvas-wrap{position:relative;height:230px}
+
+/* ---------- Activity timeline / recent notes ---------- */
+.dash-columns{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+@media(max-width:900px){.dash-columns{grid-template-columns:1fr}}
+.panel-card{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border-soft);border-radius:20px;padding:20px;box-shadow:var(--shadow-md)}
+.timeline{position:relative;padding-left:8px}
+.tl-item{position:relative;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border-soft);opacity:0;animation:tlIn .5s forwards}
+.tl-item:last-child{border-bottom:none}
+.tl-icon{width:40px;height:40px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:19px;background:rgba(99,102,241,.14);border:1px solid var(--border-soft)}
+.tl-body{flex:1;min-width:0}
+.tl-title{font-size:13.5px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-meta{font-size:11.5px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tl-serial{font-size:11px;font-weight:700;color:var(--primary);background:rgba(99,102,241,.12);border-radius:7px;padding:2px 8px;align-self:center}
+@keyframes tlIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+
+/* ---------- Announcement card ---------- */
+.announce{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:16px;background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(6,182,212,.08));border:1px solid var(--border-soft);margin-bottom:14px}
+.announce .an-ico{font-size:22px}
+.announce b{font-family:'Poppins',sans-serif;font-size:13.5px}
+.announce p{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+/* ---------- Dashboard folder grid tweak ---------- */
+.home-view .folder-card{animation:fadeIn .4s both}
+
+/* ---------- Entrance animations for dashboard blocks ---------- */
+.dash-reveal{opacity:0;transform:translateY(18px);animation:dashUp .55s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes dashUp{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .dash-hero{padding:24px 20px;border-radius:22px}
+  .hero-title{font-size:23px}
+  .hero-illustration{font-size:64px}
+  .stat-value{font-size:26px}
+  .chart-canvas-wrap{height:210px}
+}
 </style>
 </head>
 <body>
@@ -239,6 +379,7 @@ let fileOrder = {};
 
 // ==================== INIT ====================
 async function init() {
+  applyStoredTheme();
   await loadState();
   await loadFiles();
   await fetchTrafficStats();
@@ -1002,14 +1143,24 @@ function renderTopBar() {
   } else if (currentView === 'visibility') {
     breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">👁️ Visibility</span>';
   }
+  const isLight = document.body.classList.contains('light');
+  const hiddenCount = allFiles.filter(f => hiddenFiles.includes(f.path)).length;
+  const initials = (settings.siteName || 'Manager').replace(/[^A-Za-z0-9 ]/g,'').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase() || 'PM';
   return `<header class="top-bar">
     <div class="top-bar-left">
       <div class="site-title">📋 File Manager</div>
       <div class="breadcrumb">${breadcrumb}</div>
     </div>
     <div class="top-bar-right">
+      <div class="header-search">
+        <span class="search-ico">🔍</span>
+        <input type="text" id="dash-search-input" placeholder="Search notes & folders..." oninput="dashSearch(this.value)" onkeydown="if(event.key==='Escape'){this.value='';dashSearch('')}">
+      </div>
       <span class="publish-status" id="publish-status">${publishStatus || '—'}</span>
+      <button class="icon-btn header-bell" onclick="currentView='visibility';render();" title="${hiddenCount} hidden file(s)">🔔${hiddenCount>0?`<span class="bell-badge">${hiddenCount>99?'99+':hiddenCount}</span>`:''}</button>
+      <button class="icon-btn" onclick="toggleTheme()" title="Toggle light/dark mode">${isLight?'🌙':'☀️'}</button>
       <button class="icon-btn" onclick="currentView='settings';render();" title="Settings">⚙️</button>
+      <div class="header-avatar" title="${escapeHtml(settings.siteName)}">${escapeHtml(initials)}</div>
     </div>
   </header>`;
 }
@@ -1025,14 +1176,42 @@ function renderCurrentView() {
   }
 }
 
+// Compute real statistics from the current in-memory state (no fabricated data).
+function getDashStats() {
+  const total = allFiles.length;
+  const hidden = allFiles.filter(f => hiddenFiles.includes(f.path)).length;
+  const published = total - hidden;
+  const pdf = allFiles.filter(f => getFileType(f.name) === 'PDF').length;
+  const html = allFiles.filter(f => getFileType(f.name) === 'HTML').length;
+  return { total, hidden, published, pdf, html, foldersCount: folders.length, visits: trafficData.visits };
+}
+
+// Recent notes proxy: files with the highest serial numbers were added most
+// recently (uploads append the next serial), so this surfaces latest additions.
+function getRecentNotes(n) {
+  const withOrder = allFiles.filter(f => fileOrder[f.path] !== undefined)
+    .sort((a, b) => (fileOrder[b.path] || 0) - (fileOrder[a.path] || 0));
+  const list = withOrder.length ? withOrder : allFiles.slice();
+  return list.slice(0, n);
+}
+
+// The folder name that contains a given file path (for activity meta labels).
+function folderNameForPath(p) {
+  const d = dirName(p);
+  if (d === '') return 'Other Files';
+  const f = folders.find(x => x.path === d);
+  return f ? f.name : (d || 'Other Files');
+}
+
 function renderHomeView() {
+  const stats = getDashStats();
+
+  // ---------- Folder cards (unchanged behaviour, adds data-search for filtering) ----------
   let folderCards = '';
-  // Sort by `order` so the admin panel shows folders in the same sequence as
-  // the public site (index.html sorts by `order` too).
   const sortedFolders = [...folders].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   sortedFolders.forEach(folder => {
     const count = getFilesInFolder(folder.id).length;
-    folderCards += `<div class="folder-card" style="--folder-color:${folder.color || '#ffd54f'}" onclick="openFolder('${folder.id}')">
+    folderCards += `<div class="folder-card" data-search="${escapeHtml(folder.name)}" style="--folder-color:${folder.color || '#ffd54f'}" onclick="openFolder('${folder.id}')">
       <div class="folder-actions">
         <button onclick="event.stopPropagation();renameFolder('${folder.id}')" title="Rename">✏️</button>
         <button class="del-btn" onclick="event.stopPropagation();deleteFolder('${folder.id}')" title="Delete">🗑️</button>
@@ -1042,28 +1221,144 @@ function renderHomeView() {
       <div class="folder-count">${count} file${count !== 1 ? 's' : ''}</div>
     </div>`;
   });
-  // Unassigned folder
   const unassigned = getUnassignedFiles();
   if (unassigned.length > 0) {
-    folderCards += `<div class="folder-card" style="--folder-color:#8b949e" onclick="openFolder('__unassigned__')">
+    folderCards += `<div class="folder-card" data-search="Unassigned Other Files" style="--folder-color:#8b949e" onclick="openFolder('__unassigned__')">
       <div class="folder-icon">📂</div>
       <div class="folder-name">Unassigned</div>
       <div class="folder-count">${unassigned.length} file${unassigned.length !== 1 ? 's' : ''}</div>
     </div>`;
   }
-  return `<div class="home-view" style="animation:fadeIn .3s">
-    ${renderTrafficStats()}
-    <div class="section-header">
-      <h2>📂 Folders</h2>
-      <span class="section-count">${folders.length} folder${folders.length !== 1 ? 's' : ''}</span>
-      <button class="btn btn-primary" onclick="createFolder()" style="margin-left:auto">+ New Folder</button>
+
+  // ---------- Hero / welcome banner ----------
+  const hour = new Date().getHours();
+  const greet = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : 'Good Evening';
+  const dateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const visitsChip = stats.visits != null ? stats.visits.toLocaleString() : '—';
+  const hero = `<div class="dash-hero dash-reveal">
+    <span class="hero-blob b1"></span><span class="hero-blob b2"></span>
+    <div class="dash-hero-inner">
+      <div>
+        <div class="hero-greeting">${greet} 👋</div>
+        <h1 class="hero-title">${escapeHtml(settings.siteName || 'Manager')}</h1>
+        <div class="hero-date">📅 ${dateStr}</div>
+        <p class="hero-sub">Here's what's happening across your notes library today. Manage folders, upload notes, and track engagement — all in one place.</p>
+        <div class="hero-chips">
+          <div class="hero-chip"><b>${stats.total}</b><span>Total Notes</span></div>
+          <div class="hero-chip"><b>${stats.foldersCount}</b><span>Folders</span></div>
+          <div class="hero-chip"><b>${visitsChip}</b><span>Site Visits</span></div>
+        </div>
+      </div>
+      <div class="hero-illustration">📚</div>
+    </div>
+  </div>`;
+
+  // ---------- Stat cards (real data) ----------
+  const statCard = (grad, glow, ico, value, label, isNum = true) => `
+    <div class="stat-card" style="--sc-grad:${grad};--sc-glow:${glow}">
+      <div class="stat-top">
+        <div class="stat-ico">${ico}</div>
+      </div>
+      <div class="stat-value" ${isNum ? `data-count="${value}"` : ''}>${isNum ? '0' : value}</div>
+      <div class="stat-label">${label}</div>
+    </div>`;
+  const statsSection = `<div class="dash-section dash-reveal" style="animation-delay:.05s">
+    <div class="dash-section-title"><span class="st-ico">📊</span> Overview</div>
+    <div class="stat-grid">
+      ${statCard('var(--grad-primary)', 'rgba(99,102,241,.6)', '📚', stats.total, 'Total Notes')}
+      ${statCard('var(--grad-success)', 'rgba(16,185,129,.6)', '🌐', stats.published, 'Published Notes')}
+      ${statCard('var(--grad-warn)', 'rgba(245,158,11,.6)', '🙈', stats.hidden, 'Hidden Notes')}
+      ${statCard('var(--grad-cyan)', 'rgba(6,182,212,.6)', '📂', stats.foldersCount, 'Folders')}
+      ${statCard('var(--grad-danger)', 'rgba(239,68,68,.6)', '📕', stats.pdf, 'PDF Files')}
+      ${statCard('var(--grad-violet)', 'rgba(139,92,246,.6)', '👁️', stats.visits != null ? stats.visits : '—', 'Site Visits', stats.visits != null)}
+    </div>
+  </div>`;
+
+  // ---------- Quick actions ----------
+  const qa = (grad, glow, ico, label, onclick) =>
+    `<button class="qa-btn" style="--qa-grad:${grad};--qa-glow:${glow}" onclick="qaRipple(event);${onclick}">
+      <span class="qa-ico">${ico}</span><span>${label}</span>
+    </button>`;
+  const quickActions = `<div class="dash-section dash-reveal" style="animation-delay:.1s">
+    <div class="dash-section-title"><span class="st-ico">⚡</span> Quick Actions</div>
+    <div class="qa-grid">
+      ${qa('var(--grad-primary)', 'rgba(99,102,241,.7)', '⬆️', 'Upload Notes', "currentView='upload';render()")}
+      ${qa('var(--grad-cyan)', 'rgba(6,182,212,.7)', '➕', 'New Folder', 'createFolder()')}
+      ${qa('var(--grad-violet)', 'rgba(139,92,246,.7)', '📂', 'Manage Notes', "document.getElementById('dash-folders').scrollIntoView({behavior:'smooth'})")}
+      ${qa('var(--grad-success)', 'rgba(16,185,129,.7)', '📊', 'Analytics', "document.getElementById('dash-charts').scrollIntoView({behavior:'smooth'})")}
+      ${qa('var(--grad-warn)', 'rgba(245,158,11,.7)', '👁️', 'Show / Hide', "currentView='visibility';render()")}
+      ${qa('linear-gradient(135deg,#64748b,#475569)', 'rgba(100,116,139,.7)', '⚙️', 'Settings', "currentView='settings';render()")}
+      ${qa('linear-gradient(135deg,#0ea5e9,#22d3ee)', 'rgba(14,165,233,.7)', '📨', 'Feedback', `window.open('${settings.telegramLink}','_blank')`)}
+    </div>
+  </div>`;
+
+  // ---------- Charts ----------
+  const chartsSection = `<div class="dash-section dash-reveal" id="dash-charts" style="animation-delay:.15s">
+    <div class="dash-section-title"><span class="st-ico">📈</span> Analytics</div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h4>Notes per Folder</h4>
+        <div class="chart-sub">Distribution of notes across your folders</div>
+        <div class="chart-canvas-wrap"><canvas id="dashBarChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>File Types</h4>
+        <div class="chart-sub">PDF vs HTML breakdown</div>
+        <div class="chart-canvas-wrap"><canvas id="dashDoughnutChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h4>Library Growth</h4>
+        <div class="chart-sub">Cumulative notes by folder order</div>
+        <div class="chart-canvas-wrap"><canvas id="dashLineChart"></canvas></div>
+      </div>
+    </div>
+  </div>`;
+
+  // ---------- Recent notes + announcements ----------
+  const recent = getRecentNotes(6);
+  let recentRows = recent.map((f, i) => {
+    const serial = fileOrder[f.path] !== undefined ? fileOrder[f.path] : '';
+    const type = getFileType(f.name);
+    return `<div class="tl-item" data-search="${escapeHtml(getDisplayName(f.path))} ${escapeHtml(folderNameForPath(f.path))}" style="animation-delay:${0.05 * i + 0.2}s">
+      <div class="tl-icon">${getFileIcon(f.name)}</div>
+      <div class="tl-body">
+        <div class="tl-title">${escapeHtml(getDisplayName(f.path))}</div>
+        <div class="tl-meta"><span>📂 ${escapeHtml(folderNameForPath(f.path))}</span><span class="type-badge ${type === 'PDF' ? 'badge-pdf' : 'badge-html'}">${type}</span></div>
+      </div>
+      ${serial !== '' ? `<span class="tl-serial">#${serial}</span>` : ''}
+    </div>`;
+  }).join('');
+  if (recent.length === 0) recentRows = '<div class="empty-state" style="padding:24px">No notes yet — upload your first one!</div>';
+
+  const activitySection = `<div class="dash-columns dash-reveal" style="animation-delay:.2s">
+    <div class="panel-card">
+      <div class="dash-section-title" style="margin-bottom:12px"><span class="st-ico" style="background:var(--grad-cyan)">🕒</span> Recent Notes</div>
+      <div class="timeline">${recentRows}</div>
+    </div>
+    <div class="panel-card">
+      <div class="dash-section-title" style="margin-bottom:12px"><span class="st-ico" style="background:var(--grad-warn)">📢</span> Highlights</div>
+      <div class="announce"><div class="an-ico">🌐</div><div><b>${stats.published} notes published</b><p>Live and visible to students on your public library.</p></div></div>
+      <div class="announce"><div class="an-ico">📱</div><div><b>Telegram community</b><p>Share updates and new notes with your audience directly.</p></div></div>
+      <div class="announce" style="margin-bottom:0"><div class="an-ico">💾</div><div><b>Auto-published to GitHub</b><p>Every change is committed and synced to your live site.</p></div></div>
+    </div>
+  </div>`;
+
+  // ---------- Folders section (management) ----------
+  const foldersSection = `<div class="dash-section dash-reveal" id="dash-folders" style="animation-delay:.25s">
+    <div class="dash-section-title"><span class="st-ico" style="background:var(--grad-violet)">📁</span> Folders
+      <span class="st-count">${folders.length} folder${folders.length !== 1 ? 's' : ''}</span>
+      <button class="btn btn-primary" onclick="createFolder()" style="margin-left:12px">+ New Folder</button>
     </div>
     <div class="folder-grid">${folderCards || '<div class="empty-state">No folders yet. Create one!</div>'}</div>
-    <div class="quick-actions">
-      <button class="btn" onclick="currentView='upload';render()">⬆️ Upload Files</button>
-      <button class="btn" onclick="currentView='settings';render()">⚙️ Settings</button>
-      <button class="btn" onclick="currentView='visibility';render()">👁️ Show/Hide Files</button>
-    </div>
+  </div>`;
+
+  return `<div class="home-view">
+    ${hero}
+    ${statsSection}
+    ${quickActions}
+    ${chartsSection}
+    ${activitySection}
+    ${foldersSection}
   </div>`;
 }
 
@@ -1370,8 +1665,148 @@ function hideAllFiles() {
   render();
 }
 
+// ==================== DASHBOARD UI (home screen only) ====================
+// Light/dark theme toggle — persisted, applied to <body> so it survives re-renders.
+function applyStoredTheme() {
+  if (localStorage.getItem('mgr_theme') === 'light') document.body.classList.add('light');
+}
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  localStorage.setItem('mgr_theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  render();
+}
+
+// Live filter of folder cards + recent notes on the dashboard (visual only).
+function dashSearch(q) {
+  q = (q || '').toLowerCase().trim();
+  document.querySelectorAll('.home-view [data-search]').forEach(el => {
+    const hay = (el.getAttribute('data-search') || '').toLowerCase();
+    el.style.display = (!q || hay.includes(q)) ? '' : 'none';
+  });
+}
+
+// Material-style ripple for quick action buttons.
+function qaRipple(e) {
+  const btn = e.currentTarget;
+  const circle = document.createElement('span');
+  const d = Math.max(btn.clientWidth, btn.clientHeight);
+  const r = btn.getBoundingClientRect();
+  circle.className = 'ripple';
+  circle.style.width = circle.style.height = d + 'px';
+  circle.style.left = (e.clientX - r.left - d / 2) + 'px';
+  circle.style.top = (e.clientY - r.top - d / 2) + 'px';
+  btn.appendChild(circle);
+  setTimeout(() => circle.remove(), 600);
+}
+
+// Count-up animation for stat values (respects reduced-motion).
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count) || 0;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || target === 0) {
+    el.textContent = target.toLocaleString(); return;
+  }
+  const dur = 1100, start = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (p < 1) requestAnimationFrame(tick); else el.textContent = target.toLocaleString();
+  })(performance.now());
+}
+
+let dashCharts = {};
+function initHomeDashboard() {
+  // Count-up animations
+  document.querySelectorAll('.stat-value[data-count]').forEach(animateCount);
+
+  // Charts (gracefully skip if Chart.js hasn't loaded)
+  if (typeof Chart === 'undefined') return;
+  Object.values(dashCharts).forEach(c => { try { c.destroy(); } catch (e) {} });
+  dashCharts = {};
+
+  const cs = getComputedStyle(document.body);
+  const textColor = (cs.getPropertyValue('--muted') || '#93a0b8').trim();
+  const gridColor = (cs.getPropertyValue('--border-soft') || 'rgba(255,255,255,.07)').trim();
+  Chart.defaults.font.family = "'Poppins','Inter',sans-serif";
+  Chart.defaults.color = textColor;
+  const palette = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#22d3ee', '#a78bfa', '#34d399', '#fbbf24'];
+
+  // Notes per folder
+  const folderData = [...folders].sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+    .map(f => ({ name: f.name, count: getFilesInFolder(f.id).length }));
+  const unassignedCount = getUnassignedFiles().length;
+  if (unassignedCount > 0) folderData.push({ name: 'Unassigned', count: unassignedCount });
+
+  const barEl = document.getElementById('dashBarChart');
+  if (barEl && folderData.length) {
+    dashCharts.bar = new Chart(barEl, {
+      type: 'bar',
+      data: {
+        labels: folderData.map(d => d.name),
+        datasets: [{ label: 'Notes', data: folderData.map(d => d.count), backgroundColor: folderData.map((_, i) => palette[i % palette.length]), borderRadius: 8, maxBarThickness: 42 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: { duration: 900, easing: 'easeOutQuart' },
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { autoSkip: false, maxRotation: 40, minRotation: 0, font: { size: 10 } } },
+          y: { beginAtZero: true, grid: { color: gridColor }, ticks: { precision: 0 } }
+        }
+      }
+    });
+  }
+
+  // File type doughnut
+  const st = getDashStats();
+  const other = st.total - st.pdf - st.html;
+  const doughEl = document.getElementById('dashDoughnutChart');
+  if (doughEl) {
+    dashCharts.dough = new Chart(doughEl, {
+      type: 'doughnut',
+      data: {
+        labels: ['PDF', 'HTML', ...(other > 0 ? ['Other'] : [])],
+        datasets: [{ data: [st.pdf, st.html, ...(other > 0 ? [other] : [])], backgroundColor: ['#ef4444', '#10b981', '#8b5cf6'], borderWidth: 0, hoverOffset: 8 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '62%',
+        animation: { animateScale: true, duration: 900 },
+        plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 14, font: { size: 11 } } } }
+      }
+    });
+  }
+
+  // Cumulative growth line/area
+  let cumulative = 0;
+  const lineData = folderData.map(d => (cumulative += d.count));
+  const lineEl = document.getElementById('dashLineChart');
+  if (lineEl && folderData.length) {
+    const ctx = lineEl.getContext('2d');
+    const grad = ctx.createLinearGradient(0, 0, 0, 230);
+    grad.addColorStop(0, 'rgba(99,102,241,.45)');
+    grad.addColorStop(1, 'rgba(99,102,241,0)');
+    dashCharts.line = new Chart(lineEl, {
+      type: 'line',
+      data: {
+        labels: folderData.map(d => d.name),
+        datasets: [{ label: 'Cumulative notes', data: lineData, borderColor: '#6366f1', backgroundColor: grad, fill: true, tension: .4, pointRadius: 4, pointBackgroundColor: '#8b5cf6', pointBorderColor: '#fff', pointBorderWidth: 1.5, borderWidth: 2.5 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: { duration: 1000, easing: 'easeOutQuart' },
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { autoSkip: false, maxRotation: 40, font: { size: 10 } } },
+          y: { beginAtZero: true, grid: { color: gridColor }, ticks: { precision: 0 } }
+        }
+      }
+    });
+  }
+}
+
 // ==================== EVENTS ====================
 function attachGlobalEvents() {
+  if (currentView === 'home') initHomeDashboard();
   // Drag & drop for upload zone
   const uploadZone = document.getElementById('upload-drop-zone');
   if (uploadZone) {
@@ -1390,6 +1825,12 @@ function attachGlobalEvents() {
 
 // ==================== START ====================
 init();
+// If Chart.js finishes loading after the first render, draw the charts once ready.
+window.addEventListener('load', () => {
+  if (currentView === 'home' && typeof Chart !== 'undefined' && Object.keys(dashCharts).length === 0) {
+    initHomeDashboard();
+  }
+});
 </script>
 </body>
 </html>
