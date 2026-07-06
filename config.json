@@ -57,6 +57,16 @@
       "parent": null,
       "order": 6,
       "path": "parmar-hot-clips-notes"
+    },
+    {
+      "id": "f_1783346068791",
+      "name": "Cgl current affairs",
+      "icon": "📁",
+      "color": "#ffd54f",
+      "desc": "",
+      "parent": null,
+      "order": 7,
+      "path": "cgl-current-affairs"
     }
   ],
   "displayNames": {
