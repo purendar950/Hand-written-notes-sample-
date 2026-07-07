@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parmar Academy — SSC GD | Medieval & Modern History | Topper Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#fffef5;--rule:#c8daf0;--ink:#1c1c2e;
+  --red:#d32f2f;--blue:#1565c0;--green:#2e7d32;
+  --orange:#e65100;--purple:#6a1b9a;--pink:#c2185b;
+  --teal:#00695c;
+  --yellow-hl:#fff176;--green-hl:#b9f6ca;--pink-hl:#fce4ec;--blue-hl:#e3f2fd;
+  --margin-line:#ef9a9a;--lh:32px;
+}
+body{
+  font-family:'Kalam',cursive;color:var(--ink);padding:20px 12px 60px;
+  position:relative;min-height:100vh;
+  background-color:#5c4a32;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(139,109,56,.15) 35px,rgba(139,109,56,.15) 70px),
+    repeating-linear-gradient(-45deg,transparent,transparent 35px,rgba(100,80,40,.1) 35px,rgba(100,80,40,.1) 70px);
+  background-color:#8B6914;opacity:.40;z-index:-1;pointer-events:none;
+}
+
+/* TOOLBAR */
+.toolbar{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.95);border-radius:10px;
+  padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,.5)}
+.toolbar-title{color:#f39c12;font-family:'Caveat Brush',cursive;font-size:1.1rem;margin-right:auto}
+.btn{border:none;border-radius:8px;padding:8px 16px;font-family:'Kalam',cursive;
+  font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn-print{background:#27ae60;color:#fff}.btn-dark{background:#8e44ad;color:#fff}
+/* PAGE */
+.page{background:var(--paper);max-width:880px;margin:0 auto;border-radius:6px;
+  box-shadow:4px 4px 25px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08);overflow:hidden;position:relative}
+.page::before{content:'';position:absolute;top:0;left:22px;bottom:0;width:2px;
+  background:var(--margin-line);z-index:10}
+.ruled{
+  background-image:repeating-linear-gradient(transparent,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-size:100% var(--lh);padding:20px 30px 40px 54px;position:relative}
+.holes{position:absolute;left:0;top:0;bottom:0;width:22px;display:flex;flex-direction:column;
+  justify-content:space-around;padding:60px 0;z-index:20}
+.hole{width:14px;height:14px;background:#d4cec4;border-radius:50%;border:1px solid #c0b8a8;margin-left:4px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+/* COVER */
+.cover{background:linear-gradient(135deg,#0d1117 0%,#1a1a2e 45%,#16213e 100%);
+  color:#fff;padding:44px 30px 38px 54px;text-align:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 20px,rgba(255,255,255,.02) 20px,rgba(255,255,255,.02) 40px);pointer-events:none}
+.cover-brand{font-family:'Kalam',cursive;font-size:.9rem;color:#80cbc4;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cover-title{font-family:'Caveat Brush',cursive;font-size:2.7rem;color:#ffd54f;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5),0 0 20px rgba(255,213,79,.3);line-height:1.2}
+.cover-sub{font-family:'Kalam',cursive;font-size:1.05rem;color:#b3e5fc;margin-top:8px}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+  border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 18px;margin-top:14px;
+  font-size:.88rem;color:#e8f5e9;font-family:'Kalam',cursive}
+.stars{font-size:1.2rem;letter-spacing:4px;color:#ffd54f;margin-top:10px}
+.cover-train{font-size:2rem;margin-top:10px}
+
+/* SECTION */
+.sec{font-family:'Caveat Brush',cursive;font-size:1.6rem;margin:34px 0 8px;display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sec.red{color:var(--red);border-bottom:3px solid var(--red)}
+.sec.blue{color:var(--blue);border-bottom:3px solid var(--blue)}
+.sec.green{color:var(--green);border-bottom:3px solid var(--green)}
+.sec.orange{color:var(--orange);border-bottom:3px solid var(--orange)}
+.sec.purple{color:var(--purple);border-bottom:3px solid var(--purple)}
+.sec.pink{color:var(--pink);border-bottom:3px solid var(--pink)}
+.sec.teal{color:var(--teal);border-bottom:3px solid var(--teal)}
+.sub{font-family:'Patrick Hand',cursive;font-size:1rem;font-weight:700;color:var(--blue);margin:16px 0 4px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'→';color:var(--orange)}
+/* TEXT */
+p.hw{font-family:'Kalam',cursive;font-size:.94rem;line-height:var(--lh);margin:2px 0}
+.hl{background:var(--yellow-hl);padding:0 3px;border-radius:2px}
+.hl-g{background:var(--green-hl);padding:0 3px;border-radius:2px}
+.hl-p{background:var(--pink-hl);padding:0 3px;border-radius:2px}
+.hl-b{background:var(--blue-hl);padding:0 3px;border-radius:2px}
+/* LISTS */
+ul.hw{list-style:none;padding:0;margin:4px 0}
+ul.hw li{font-family:'Kalam',cursive;font-size:.92rem;line-height:var(--lh);padding-left:22px;position:relative}
+ul.hw li::before{content:'★';position:absolute;left:0;color:var(--orange);font-size:.72rem;top:7px}
+ul.hw.chk li::before{content:'✔';color:var(--green);font-size:.82rem;top:4px}
+ul.hw.dot li::before{content:'●';color:var(--purple);font-size:.58rem;top:9px}
+ul.hw.key li::before{content:'🔑';font-size:.72rem;top:5px}
+/* STICKY */
+.sticky{background:#fff9c4;border-left:4px solid #f9a825;border-radius:0 8px 8px 0;padding:10px 14px;margin:12px 0;font-family:'Kalam',cursive;font-size:.93rem;box-shadow:2px 3px 8px rgba(0,0,0,.12);transform:rotate(-.3deg);line-height:1.65}
+.sticky.green{background:#e8f5e9;border-color:#2e7d32}
+.sticky.blue{background:#e3f2fd;border-color:#1565c0}
+.sticky.pink{background:#fce4ec;border-color:#c2185b}
+.sticky.red{background:#ffebee;border-color:#d32f2f}
+.sticky.purple{background:#f3e5f5;border-color:#6a1b9a}
+.sticky.teal{background:#e0f2f1;border-color:#00695c}
+.sticky.orange{background:#fff3e0;border-color:#e65100}
+.slbl{font-family:'Caveat Brush',cursive;font-size:.78rem;letter-spacing:1px;opacity:.6;margin-bottom:4px}
+
+/* TABLE */
+.hw-t{width:100%;border-collapse:collapse;margin:12px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.hw-t th{background:#283593;color:#ffd54f;padding:8px 10px;text-align:left;font-family:'Caveat',cursive;font-size:.93rem;border:2px solid #1a237e}
+.hw-t td{padding:7px 10px;border:1px solid #c5cae9;vertical-align:top;line-height:1.5}
+.hw-t tr:nth-child(even) td{background:#f3f4ff}
+.hw-t tr:hover td{background:#fffde7}
+.hw-t.alt th{background:#37474f;color:#80cbc4}
+.hw-t.grn th{background:#2e7d32;color:#f1f8e9}
+.hw-t.org th{background:#e65100;color:#fff3e0}
+.hw-t.pur th{background:#6a1b9a;color:#f3e5f5}
+.hw-t.teal-h th{background:#00695c;color:#e0f2f1}
+.hw-t.navy th{background:#1a237e;color:#e8eaf6}
+/* BOXES */
+.imp{border:2px solid var(--red);border-radius:8px;padding:10px 14px;margin:12px 0;background:#fff5f5;position:relative}
+.imp::before{content:'⚠ EXAM TRAP!';position:absolute;top:-12px;left:12px;background:#d32f2f;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px;letter-spacing:1px}
+.trick{border:2px dashed var(--purple);border-radius:8px;padding:10px 14px;margin:12px 0;background:#f3e5f5;position:relative}
+.trick::before{content:'🧠 MEMORY TRICK';position:absolute;top:-12px;left:12px;background:#6a1b9a;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.key-box{border:2px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e8f5e9;position:relative}
+.key-box::before{content:'🔑 KEY FACTS';position:absolute;top:-12px;left:12px;background:#2e7d32;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+.tip-box{border:2px solid var(--teal);border-radius:8px;padding:10px 14px;margin:12px 0;background:#e0f2f1;position:relative}
+.tip-box::before{content:'💡 EXAM TIP';position:absolute;top:-12px;left:12px;background:#00695c;color:#fff;font-family:'Caveat Brush',cursive;font-size:.76rem;padding:2px 10px;border-radius:4px}
+/* MCQ */
+.mcq{border:1px solid #90a4ae;border-radius:8px;margin:12px 0;overflow:hidden;box-shadow:1px 2px 6px rgba(0,0,0,.08)}
+.mcq-h{background:#37474f;color:#ffd54f;padding:8px 14px;font-family:'Kalam',cursive;font-size:.93rem;line-height:1.5}
+.mcq-h .qno{color:#80cbc4;margin-right:6px;font-family:'Caveat',cursive;font-size:.85rem}
+.mcq-exam{font-size:.72rem;color:#b2dfdb;float:right;font-family:'Kalam',cursive;margin-top:2px}
+.mcq-opts{padding:8px 14px}
+.mcq-opt{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-family:'Kalam',cursive;font-size:.87rem}
+.opt-c{min-width:22px;height:22px;border-radius:50%;border:2px solid #90a4ae;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;font-family:'Caveat',cursive}
+.mcq-opt.ok .opt-c{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.mcq-opt.ok{color:#1b5e20;font-weight:700}
+.mcq-opt.no .opt-c{background:#b71c1c;border-color:#b71c1c;color:#fff}
+.mcq-opt.no{color:#b71c1c;text-decoration:line-through}
+.mcq-ans{background:#e8f5e9;border-top:1px solid #a5d6a7;padding:10px 14px;font-family:'Kalam',cursive;font-size:.82rem;color:#1b5e20;line-height:1.7}
+.mcq-ans strong{color:#2e7d32}
+
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media(max-width:580px){.two-col,.three-col{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.two-col,.three-col{grid-template-columns:1fr}}
+.num-b{background:#fff;border:2px solid #3f51b5;border-radius:8px;padding:10px;text-align:center;box-shadow:2px 2px 6px rgba(0,0,0,.1)}
+.num-b .big{font-family:'Caveat Brush',cursive;font-size:1.6rem;color:var(--orange);line-height:1.1}
+.num-b .lbl{font-size:.74rem;color:#546e7a;margin-top:2px;font-family:'Kalam',cursive;line-height:1.3}
+hr.div{border:none;border-top:3px dashed #c5cae9;margin:28px 0}
+.cb{text-align:center;font-family:'Caveat Brush',cursive;font-size:.78rem;color:#90a4ae;letter-spacing:3px;margin:4px 0 24px}
+
+/* DARK MODE */
+body.dark{background-color:#1a1008}
+body.dark::before{background-color:#2c1a00;opacity:.5}
+body.dark .page{background:#16213e}
+body.dark .ruled{background-image:repeating-linear-gradient(transparent,transparent 31px,#1e3a5f 31px,#1e3a5f 32px)}
+body.dark p.hw,body.dark ul.hw li,body.dark .mcq-opt,body.dark .hw-t td{color:#d0d8e8}
+body.dark .hw-t td{border-color:#2d4a6e}
+body.dark .hw-t tr:nth-child(even) td{background:#1e2d4a}
+body.dark .sticky{background:#2d2d1a;color:#e0d8a0}
+body.dark .imp{background:#2d1515}
+body.dark .trick{background:#1e1429}
+body.dark .key-box{background:#0d2010}
+body.dark .tip-box{background:#0d2020}
+body.dark .num-b{background:#1e2d4a}
+/* PRINT */
+@media print{
+  body{background:#fff!important;padding:0}
+  body::before{display:none}
+  .toolbar{display:none!important}
+  .page{box-shadow:none;border-radius:0;max-width:100%}
+  .mcq,.sticky,.imp,.trick,.key-box,.tip-box{break-inside:avoid}
+  .hw-t th,.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hl,.hl-g,.hl-p,.hl-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <span class="toolbar-title">📚 SSC GD — Medieval & Modern History | Topper Notes</span>
+  <button class="btn btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+  <button class="btn btn-dark" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div></div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-brand">📚 Parmar Academy — SSC GD 2026 Series</div>
+    <div class="cover-title">📝 Medieval & Modern History — Topper Notes</div>
+    <div class="cover-sub">Mughal Period | Delhi Sultanate | Freedom Struggle | British India</div>
+    <div class="cover-badge">🏛️ GK | 75+ PYQs Covered | SSC GD / CGL / CHSL / MTS</div>
+    <div class="cover-train">📚📖📝✍️🎯</div>
+    <div class="stars">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="ruled">
+
+    <!-- INTRO -->
+    <div class="sub" style="margin-top:12px">Lecture Overview</div>
+    <div class="three-col">
+      <div class="num-b"><div class="big">22</div><div class="lbl">Medieval History<br>Questions</div></div>
+      <div class="num-b"><div class="big">53+</div><div class="lbl">Modern History<br>Questions</div></div>
+      <div class="num-b"><div class="big">2</div><div class="lbl">Topics<br>Medieval + Modern</div></div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PART A: MEDIEVAL HISTORY -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec red">📜 PART A — Medieval History 🏛️</div>
+
+    <!-- Q1 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q1.</span> Which mosque in the Agra Fort was constructed by Shah Jahan for the royal ladies and features three domes?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Moti Masjid</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Mina Masjid</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Nagina Masjid ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jama Masjid</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Nagina Masjid</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Built by Shah Jahan for royal women (harem)</li>
+        <li>Features 3 domes</li>
+        <li>Private mosque inside Agra Fort</li>
+        <li>Note: There are 3 Moti Masjids — Lahore (Jahangir), Agra (Shah Jahan), Delhi (Aurangzeb)</li>
+        <li>Lodi Dynasty is famous for double-dome architecture</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q2.</span> Who among the following was a noted historian of the Sultanate period?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Amir Khusro</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Abul Fazl</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alberuni</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Ziauddin Barani ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Ziauddin Barani wrote "Tarikh-e-Firozshahi"</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>He described how MBT's (Mohammad bin Tughlaq) policies failed</li>
+        <li>Alberuni = 11th century (Mahmud of Ghaznavi era), wrote Kitabul Hind</li>
+        <li>Abul Fazl = Mughal period, wrote Akbarnama (3 volumes)</li>
+        <li>Amir Khusro = Sultanate period but known as Father of Qawwali, invented Sitar &amp; Tabla, title "Tuti-e-Hind" given by Alauddin Khilji, wrote "Nuh Sipihr" &amp; "Khazain-ul-Futuh"</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q3.</span> Which Mughal-era monument is often called the "Baby Taj" and marks a stylistic shift toward white marble architecture?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Tomb of Itmad-ud-Daulah ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bibi Ka Maqbara</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Moti Masjid</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun's Tomb</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Tomb of Itmad-ud-Daulah = "Baby Taj"</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Built by Nur Jahan (Mehrunissa) for her father</li>
+        <li>First use of Pietra Dura (white marble inlaid with precious stones)</li>
+        <li>Bibi Ka Maqbara = "Taj of Deccan" (NOT Baby Taj), built by Aurangzeb/Prince Azam Shah for wife Rabia-ud-Durani in Aurangabad (now Sambhaji Nagar)</li>
+        <li>Humayun's Tomb = First Char Bagh style garden tomb, architect Mirak Mirza Ghiyas, built by Haji Begum</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q4 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q4.</span> Who mentioned the role of the Banjaras in transporting grain in his memoirs?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jahangir ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Babur</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sher Shah Suri</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Jahangir (ruled 1605–1627) mentioned Banjaras in his memoirs</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Banjaras transported grain to mandis</li>
+        <li>First seen during Alauddin Khilji's time — he established 3 markets: grain (Mandi), cloth/costly items (Sarai Adil), slaves/horses</li>
+        <li>Officers called Shahna (e.g., Shahna-e-Mandi)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q5.</span> Who built the city of Lalkot in Delhi?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Prithviraj Chauhan</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Alauddin Khilji</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Humayun</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Anangpal Tomar ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Anangpal Tomar (Tomar Dynasty) built Lalkot, the first city of Delhi</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Located near Saket (Delhi)</li>
+        <li>Prithviraj Chauhan (Chauhan Dynasty) later completed its construction</li>
+        <li>Prithviraj III fought Mohammad Ghori — 1st Battle of Tarain 1191 AD (Chauhan won), 2nd Battle of Tarain 1192 AD (Ghori won)</li>
+        <li>Alauddin Khilji (1296–1316) imposed 3 taxes: Kharaj (cultivation, 50%), Ghari (house tax), Charai (pastoral tax)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q6.</span> Why wasn't the Zabt (Zabti) system implemented in provinces like Gujarat and Bengal under the Mughal Empire?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Lack of trained officials</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>High rainfall</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Difficulty in surveying land ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Opposition from farmers</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Surveying land in Gujarat &amp; Bengal was very difficult</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Zabti/Zabt = Dahsala system introduced in 1580 by Akbar's finance minister Todar Mal</li>
+        <li>Dahsala = 10-year average-based land revenue</li>
+        <li>Land divided into 4 categories: Polaj (never fallow), Parauti (1–2 years fallow), Chachar (3–4 years fallow), Banjar (5+ years fallow)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q7.</span> In the Mansabdari system, what term referred to the cavalrymen maintained by the Mansabdar?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Zat</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Sawar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mansab</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jagir</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Sawar = cavalrymen/horsemen</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Zat = foot soldiers</li>
+        <li>Mansab = rank</li>
+        <li>Mansabdari ranged from 10 to 10,000</li>
+        <li>Higher mansabs reserved for Sultan's sons</li>
+        <li>Two types of payment: Naqdi (cash, for small mansabs) and Jagirdari (land grants, for large mansabs)</li>
+        <li>System introduced during Akbar's time</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q8 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q8.</span> Who assisted Humayun in regaining the Mughal throne after his exile?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bahadur Shah of Gujarat</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sher Shah Suri</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Safavid Dynasty of Iran (Persia) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rana Sanga</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Safavids of Iran (Persia)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Humayun fled to Iran in 1540 after defeats: Battle of Chausa (1539) &amp; Battle of Kannauj/Bilgram (1540) against Sher Shah Suri (originally Farid Khan)</li>
+        <li>Babur fought Rana Sanga at Battle of Khanwa</li>
+        <li>Babur's battles: 1st Panipat (defeated Ibrahim Lodi), Khanwa (defeated Rana Sanga), Chanderi (defeated Medini Rai), Ghaghra (defeated Afghans)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q9.</span> Who among the following was NEVER the Nawab of Bengal?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Alivardi Khan</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Sadat Ali Khan ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Mir Qasim</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Siraj-ud-Daula</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Sadat Ali Khan (Burhanul Mulk) was the 1st Nawab of AWADH, not Bengal</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1st Nawab of Bengal = Murshid Quli Khan</li>
+        <li>1st Nawab of Hyderabad = Nizam-ul-Mulk Asaf Jah</li>
+        <li>Nawabs of Bengal: Alivardi Khan → Siraj-ud-Daula (killed at Battle of Plassey 1757) → Mir Jafar → Mir Qasim</li>
+        <li>Battle of Buxar 1764: Mir Qasim + Shuja-ud-Daula + Shah Alam II vs British</li>
+        <li>Treaty of Allahabad 1765</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q10.</span> Who was the founder of the Lodi Dynasty — the last ruling house of the Delhi Sultanate?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Sikandar Lodi</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ibrahim Lodi</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Bahlol Lodi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Nasiruddin Lodi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Bahlol Lodi founded the Lodi Dynasty (last dynasty of Delhi Sultanate)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Succession: Bahlol → Sikandar → Ibrahim (last ruler of entire Delhi Sultanate)</li>
+        <li>Ibrahim Lodi defeated by Babur (1526, 1st Battle of Panipat) using Tulughma tactics &amp; gunpowder</li>
+        <li>Ibrahim Lodi also defeated by Rana Sanga at Battle of Khatoli</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q11.</span> The Mughal policy of "Sulh-i-Kul" emphasized:
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Religious tolerance and Universal Peace ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Aggressive conquest of neighboring states</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Abolition of all taxes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Promotion of only Islamic law</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Sulh-i-Kul = Religious tolerance + Universal Peace</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Introduced by Akbar</li>
+        <li>He also introduced Din-e-Ilahi (syncretic religion merging all faiths) — it failed as people didn't accept it</li>
+        <li>Birbal was the first and ONLY Hindu to adopt Din-e-Ilahi</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q12 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q12.</span> Shalimar Bagh in Jammu &amp; Kashmir was built by?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Jahangir ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Akbar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Babur</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Jahangir built Shalimar Bagh in Kashmir</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>His most beloved wife was Nur Jahan (Mehrunissa)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q13.</span> What was a Mansabdar's military responsibility under the Mughal Empire?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Maintaining a specified number of cavalrymen ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Collecting taxes</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Administering justice</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Overseeing land distribution</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Maintaining a specified number of cavalrymen (horsemen) was the primary duty</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Mansabdari system introduced in 1571 during Akbar's time</li>
+        <li>Mansabs awarded on basis of horsemen maintained</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q14.</span> In which year did Aurangzeb die?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1707 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1680</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1725</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1690</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Aurangzeb died in 1707 at Aurangabad (now Sambhaji Nagar)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>He ascended the throne in 1658 after Battles of Dharmat, Samugarh &amp; Deorai (defeating brother Dara Shikoh)</li>
+        <li>Spent 20+ years in Deccan fighting Marathas, never returned to Delhi</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q15.</span> The Iqta system under the Sultanate resembled the feudal system of Medieval Europe mainly because:
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Revenue rights in exchange for military service ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Religious control of land</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Democratic land distribution</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tax-free land grants</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Iqta system: Iqtadar appointed → given land → collected revenue (kept some, gave some to Sultan) → in return provided military service when needed</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Introduced by Iltutmish</li>
+        <li>Abolished by Alauddin Khilji</li>
+        <li>Iqtadar also known as Mukti or Wali</li>
+        <li>Iltutmish also introduced Turkan-e-Chahalgani (group of 40 slaves), which Balban abolished</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q16 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q16.</span> Who among the following was Akbar's revenue minister credited with land revenue reforms?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Abul Fazl</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Birbal</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Raja Todar Mal ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tansen</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Raja Todar Mal introduced the Dahsala (Zabti) system in 1580</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Abul Fazl wrote Akbarnama (biography of Akbar)</li>
+        <li>Birbal was mainly involved in politics</li>
+        <li>Tansen was a musician (one of Navratnas), originally Ramtanu Pandey from court of Raja Ramchandra Singh of Gwalior, Akbar gave him title "Miyan"</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q17.</span> Which traveler's account provides vivid descriptions of Muhammad bin Tughlaq and his reign?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ibn Battuta ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Marco Polo</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Alberuni</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Domingo Paes</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Ibn Battuta, a Moroccan traveler, wrote "Rihla" (in Arabic)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Described MBT's capital shift from Delhi to Daulatabad/Devagiri</li>
+        <li>Alberuni = 11th century, Mahmud of Ghaznavi</li>
+        <li>Domingo Paes &amp; Duarte Barbosa = Portuguese travelers during Krishnadeva Raya's time</li>
+        <li>Marco Polo = Italian traveler</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q18.</span> Which of the following taxes was levied on cultivation under Alauddin Khilji?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Kharaj ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Ghari</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Charai</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jizya</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Kharaj = cultivation tax (50% of produce)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Ghari = house tax</li>
+        <li>Charai = pastoral/grazing tax</li>
+        <li>Alauddin Khilji introduced all 3 taxes</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q19.</span> What did Alauddin Khilji build during the Delhi Sultanate period?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Alai Darwaza ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Qutub Minar</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Red Fort</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Humayun's Tomb</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Alai Darwaza = the entrance gateway to Qutub Minar complex, built by Alauddin Khilji</div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q20.</span> In the Delhi Sultanate, Zakat was a mandatory religious duty for all Muslims. What is Zakat?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mamluk</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Zakat ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Kismat</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Ur</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Zakat = religious alms/charity/donation among Muslims</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Mamluk = slave (Slave Dynasty = Mamluk Dynasty, 1st dynasty of Delhi Sultanate)</li>
+        <li>Ur = assembly of common people in Tamil Nadu during Chola period</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q21 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q21.</span> Which historical event is covered in William Dalrymple's book "The Last Mughal"?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Battle of Plassey</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>The Indian Rebellion of 1857 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Fall of the Mughal Empire</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Partition of India</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — "The Last Mughal" by William Dalrymple covers the Indian Rebellion of 1857</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>William Dalrymple is a famous British historian</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q22.</span> Which Mughal ruler consolidated the empire and is known for administrative reforms and religious tolerance?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Akbar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Aurangzeb</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Shah Jahan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jahangir</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Akbar introduced Sulh-i-Kul (religious tolerance) + Din-e-Ilahi + Mansabdari + Zabti system</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Known for administrative reforms and religious tolerance</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q23.</span> The third volume of Akbarnama is known as which of the following?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Ain-i-Akbari ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tuzuk-e-Babri</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Padshahnamah</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tarikh-e-Firozshahi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Ain-i-Akbari is the 3rd volume of Akbarnama (written by Abul Fazl)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Vol 1: Akbar's ancestors</li>
+        <li>Vol 2: His dynasty</li>
+        <li>Vol 3: His administration (Ain-i-Akbari)</li>
+        <li>Tuzuk-e-Babri = Babur's autobiography (written in Turkish, converted to Persian as Baburnama by Abdul Rahim Khan-e-Khana)</li>
+        <li>Padshahnamah = autobiography of Shah Jahan by Abdul Hamid Lahori</li>
+        <li>Ferdowsi wrote Shahnama (about Mahmud of Ghaznavi)</li>      </ul>
+    </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PART B: MODERN HISTORY -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="sec blue">🇮🇳 PART B — Modern History &amp; Freedom Struggle 🏛️</div>
+
+
+    <!-- Q24 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q24.</span> Who is regarded as the first woman martyr and suicide bomber in Indian history, serving as a commander under Queen Velu Nachiyar?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Matangini Hazra</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Lakshmi Sahgal</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Kuyili ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Aruna Asaf Ali</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Kuyili (Veeramangai)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Applied ghee to her body, set herself on fire &amp; destroyed British weapons/ammunition so Queen Velu Nachiyar could escape</li>
+        <li>Queen Velu Nachiyar belonged to Sivaganga state of Tamil Nadu</li>
+        <li>Matangini Hazra = "Gandhi Budi," participated in Quit India 1942, first woman statue in Bengal</li>
+        <li>Lakshmi Sahgal led women's regiment of INA (named after Rani Lakshmibai)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q25.</span> Which young revolutionary assassinated a British magistrate at the age of 14 during India's freedom struggle?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Suniti Choudhury ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Tara Rani Srivastava</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Matangini Hazra</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Aruna Asaf Ali</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Suniti Choudhury (age 14) &amp; her friend Shanti Ghosh (age 16) assassinated District Magistrate Stevens in Comilla district (then Bengal, now Bangladesh) ~1931</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Both were minors → jailed 10 years, later released</li>
+        <li>Aruna Asaf Ali participated in Quit India Movement, led Congress Working Committee</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q26.</span> Which Indian leader served as the President of India from 1992 to 1997?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>R. Venkataraman</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Shankar Dayal Sharma ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>K.R. Narayanan</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Giani Zail Singh</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Shankar Dayal Sharma (1992–97)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Giani Zail Singh exercised POCKET VETO on Indian Postal Amendment Bill (1987, Rajiv Gandhi's time)</li>
+        <li>3 types of veto: Absolute (refuses assent), Suspensive (returns bill), Pocket (no response)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q27.</span> In which year was the Mazagon Dock taken over by the Government of India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1972</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1968</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1960 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1964</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Mazagon Dock was taken over by the Government of India in 1960</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>It builds ships for the Indian Navy</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q28 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q28.</span> What were the names of the five Sikhs initiated by Guru Gobind Singh Ji to form the Khalsa?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Panj Pyare ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Panch Prayas</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Panchshiksha</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Panchdev</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Panj Pyare: Bhai Daya Singh, Bhai Dharam Singh, Bhai Himmat Singh, Bhai Mokham Singh, Bhai Sahib Singh</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>All from different regions (regional unity)</li>
+        <li>Khalsa Panth established 13 April 1699 (Baisakhi Day)</li>
+        <li>Guru Gobind Singh = 10th &amp; last Sikh Guru</li>
+        <li>9th Guru Tegh Bahadur murdered by Aurangzeb (refused to convert)</li>
+        <li>5th Guru Arjan Dev murdered by Jahangir (sheltered rebel prince Khusrau)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q29.</span> In which year did the East India Company ultimately annex Punjab?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1836</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1841</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>1849 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1856</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — 1849 (after 2nd Anglo-Sikh War 1848–49)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Treaty of Sutlej 1839 (Maharaja Ranjit Singh)</li>
+        <li>1st Anglo-Sikh War 1845–46 ended with Treaty of Lahore</li>
+        <li>2nd Anglo-Sikh War 1848–49 → complete annexation</li>
+        <li>Minor Maharaja Dilip Singh sent to London</li>
+        <li>Dalhousie was Governor General at this time</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q30.</span> "Ghare Baire" (The Home and the World), which criticizes the Swadeshi Movement, was written by which Bengali litterateur?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bankim Chandra Chattopadhyay</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Sharad Chandra Chattopadhyay</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Rabindranath Tagore ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bhavani Bhattacharya</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Rabindranath Tagore wrote "Ghare Baire" criticizing Swadeshi Movement</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Swadeshi Movement started after Partition of Bengal</li>
+        <li>Tagore also wrote "Amar Sonar Bangla" (Our Golden Bengal) = National Anthem of Bangladesh today</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q31 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q31.</span> Which act first allowed Indians to be recruited into the Indian Civil Service through open competition in London?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Charter Act of 1813</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Charter Act of 1833</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Charter Act of 1853 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indian Councils Act of 1861</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Charter Act 1853 introduced open competition for ICS</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1833 attempted it but 1853 actually implemented it</li>
+        <li>Cornwallis = Father of Indian Civil Service</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q32 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q32.</span> Where was HSRA (Hindustan Socialist Republican Association) founded?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Gokuldas Tejpal Sanskrit College, Bombay</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Feroz Shah Kotla Ground, Delhi ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Chandrashekhar Azad Park, Allahabad</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jallianwala Bagh, Amritsar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — HSRA founded at Feroz Shah Kotla, Delhi in 1928 by Chandrashekhar Azad, Bhagat Singh, Sukhdev, Rajguru</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>HRA (Hindustan Republican Association) was formed in 1924 at Kanpur by Sachin Sanyal</li>
+        <li>HRA carried out Kakori Train Robbery 1925</li>
+        <li>Chandrashekhar Azad shot himself at Alfred Park, Allahabad (now Chandrashekhar Azad Park)</li>
+        <li>INC 1st session held at Gokuldas Tejpal Sanskrit College, Bombay 1885</li>
+        <li>Jallianwala Bagh massacre: 13 April 1919, General Reginald Dyer ordered firing</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q33 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q33.</span> Which term was commonly used by the British to refer to local languages and dialects?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Vernacular ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Provincial</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Federal</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Linguist</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Vernacular</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Vernacular Press Act 1878 (Lytton's time)</li>
+        <li>Wood's Despatch 1854 promoted vernacular education</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q34 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q34.</span> In Tamil devotional literature, the Vaishnava saints are called what?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Yogi</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Alvar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Nayanar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tirthankara</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Alvars = Vaishnava saints (worshipped Vishnu)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Nayanars = Shaivite saints (worshipped Shiva)</li>
+        <li>Tirthankaras = Jainism (24 total: 1st Rishabhadeva/bull, 22nd Arishtanemi, 23rd Parshvanath/serpent, 24th Vardhamana Mahavira/lion)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q35 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q35.</span> In which year did the Court of Directors issue Wood's Despatch (the Magna Carta of Indian Education)?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1835</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1854 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1861</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1882</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 1854 (during Dalhousie's time)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Also called "Magna Carta of Indian Education"</li>
+        <li>Composed by Charles Wood</li>
+        <li>Promoted vernacular/local languages at primary level</li>
+        <li>Countered Macaulay's Minute of 1835 (William Bentinck's time) which promoted English via Downward Filtration Theory</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q36 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q36.</span> Who delivered a speech in Bombay on January 15, 1908, declaring that the purpose of national education was to awaken nationalism among students?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Rabindranath Tagore</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Aurobindo Ghosh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Lala Lajpat Rai</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mahatma Gandhi</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Sri Aurobindo Ghosh</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Initially an extremist Congress leader</li>
+        <li>Tried in Alipore Bomb Conspiracy Case (linked to Manikhtala Bomb Case: Prafulla Chaki &amp; Khudiram Bose attempted to murder Magistrate Kingsford of Muzaffarpur)</li>
+        <li>No evidence found → released</li>
+        <li>Later retired to Pondicherry (Tamil Nadu)</li>
+        <li>Approver Narendranath Goswami was murdered in jail</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q37 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q37.</span> When did the British regain control of Delhi from the rebels during the Revolt of 1857?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>June 1857</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>September 1857 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>January 1858</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>March 1858</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — September 1857</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Mangal Pandey hanged 8 April 1857</li>
+        <li>Revolt began 10 May 1857 at Meerut</li>
+        <li>Soldiers marched to Delhi, declared Bahadur Shah Zafar their ruler</li>
+        <li>Mangal Pandey belonged to 34th Native Infantry of Bengal at Barrackpore</li>
+        <li>Immediate cause: greased cartridges</li>
+        <li>Revolt during Canning's time</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q38 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q38.</span> In which year was Satara annexed under the Doctrine of Lapse?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1850</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1849</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1853</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>1848 ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Satara was the FIRST to be annexed in 1848</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Doctrine of Lapse: kingdom without natural/valid adopted heir → annexed by British</li>
+        <li>Sequence: Satara (1848) → Sambalpur &amp; Jaipur (1849) → Udaipur → Jhansi (1853)</li>
+        <li>Introduced by Dalhousie</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q39 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q39.</span> To whom did the rebel soldiers of the Meerut Regiment want to hand over the rule of the country?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bahadur Shah Zafar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Peshwa Bajirao II</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Nana Saheb</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Rani Lakshmibai</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Bahadur Shah Zafar (Bahadur Shah II)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1857 Revolt also called Sepoy Mutiny</li>
+        <li>V.D. Savarkar called it the "First War of Independence"</li>
+        <li>General Bakht Khan led the revolt from Delhi</li>
+        <li>Bahadur Shah Zafar was just a puppet ruler</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q40 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q40.</span> Which day was declared as "Direct Action Day" by the Muslim League?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>16 August 1946 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>15 August 1947</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>26 January 1930</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>8 August 1942</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 16 August 1946</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Massive killings (Noakhali, present-day Bangladesh)</li>
+        <li>Muslim League demanded separate Pakistan</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q41 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q41.</span> Who started the Young Bengal Movement?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>A.O. Hume</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Raja Rammohan Roy</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Henry Louis Vivian Derozio ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Keshav Chandra Sen</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Henry Louis Vivian Derozio, professor at Hindu College, started Young Bengal Movement in 1830</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>He was Anglo-Indian</li>
+        <li>A.O. Hume = Father of Indian Ornithology, formed INC 1885</li>
+        <li>Raja Rammohan Roy = Atmiya Sabha 1814, Brahmo Samaj 1828, wrote "Gift to Monotheists," "Precepts of Jesus," "Sambad Kaumudi," "Mirat-ul-Akhbar"</li>
+        <li>Devendranath Tagore merged his Tattvabodhini Sabha (1839); Brahmo Samaj split in 1866: Keshav Chandra Sen got "Brahmo Samaj of India," Devendranath got "Adi Brahmo Samaj"</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q42 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q42.</span> Which city became the capital of the Maratha Kingdom under the Peshwas?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Mumbai</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Nagpur</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Pune ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Aurangabad</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Pune = Peshwa's capital</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Maratha Confederacies: Gaekwad → Baroda</li>
+        <li>Holkar → Indore</li>
+        <li>Scindia → Gwalior</li>
+        <li>Bhonsle → Nagpur</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q43 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q43.</span> Henry Lawrence was the Chief Commissioner of which state during the Revolt of 1857?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Awadh ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bengal</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Punjab</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bombay</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Awadh (Lucknow)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Henry Lawrence's forces were defeated at Battle of Chinhat (1857) by Barkat Ahmed's forces</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q44 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q44.</span> The verses of Sant Kabir are mainly found in which famous collection?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Bijak ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Padavali</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Gita Govinda</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Chintamani</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Bijak contains Kabir's dohas/couplets</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Kabir's Guru = Ramanand</li>
+        <li>Gita Govinda written by Jayadeva</li>
+        <li>Padavali written by Vidyapati</li>
+        <li>Rajatarangini written by Kalhana</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q45 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q45.</span> Birsa Munda was born into a Munda family, a tribal group that lived in?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Dhar</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Jhabua</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Valsad</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Chota Nagpur ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Chota Nagpur</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Led Munda Rebellion 1899, hanged 1900</li>
+        <li>Also called Ulgulan Uprising or "The Great Tumult"</li>
+        <li>Against Dikus (outsiders) &amp; Tinkathia system</li>
+        <li>Goal: Restore Khuntkatti system</li>
+        <li>Birthday Nov 15 = Tribal Pride Day</li>
+        <li>Ho Revolt 1827, Munda Revolt 1899</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q46 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q46.</span> Shankardev's teachings are primarily based on which sacred text?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Bhagavad Gita</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Bhagavata Purana</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Both A and B ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Upanishads</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Srimanta Shankardev's teachings based on both Bhagavad Gita &amp; Bhagavata Purana</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>He is considered the father of Sattriya dance (from Assam)</li>
+        <li>Sattriya = latest classical dance added in 2000</li>
+        <li>Ambubachi Fair held at Kamakhya Devi Temple, Assam</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q47 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q47.</span> Serampore College, established by Christian missionaries, was located on the banks of which river?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Hooghly ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Yamuna</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Damodar</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mahananda</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Hooghly River</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Serampore College built 1818 by Christian missionaries (William Carey, Joshua Marshman, William Ward)</li>
+        <li>Damodar = tributary of Hooghly, "Sorrow of Bengal," flows in Chota Nagpur Plateau rift valley</li>
+        <li>Hooghly = distributary of Ganges, originates at Farakka</li>
+        <li>Farakka Barrage 1974</li>
+        <li>Farakka Agreement 1996</li>
+        <li>Mahananda = tributary of Ganges</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q48 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q48.</span> Around which year did the Santhals revolt?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1855 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1856</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1885</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1903</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 1855</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Led by Sidhu Murmu &amp; Kanhu Murmu (two brothers)</li>
+        <li>Land called "Damin-i-Koh" (demarcated for tribals)</li>
+        <li>INC formed 1885 by A.O. Hume</li>
+        <li>Eka Movement led by Madari Pasi (1921)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q49 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q49.</span> Who founded the Self-Respect Movement?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>E.V. Ramaswamy Naicker (Periyar) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Guru Ghasidas</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sri Narayana Guru</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Jyotirao Phule</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — E.V. Ramaswamy Naicker (Periyar) started Self-Respect Movement in 1925</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Guru Ghasidas = Satnami Movement 1820 in Chhattisgarh (leather community)</li>
+        <li>Sri Narayana Guru = SNDP Movement 1903, slogan "One Caste One Religion One God for All"</li>
+        <li>Jyotirao Phule = Satyashodhak Samaj 1873, wrote "Gulamgiri" &amp; "Sarvajanik Satyadharma" (Marathi), wife Savitribai Phule opened 1st girls' school in Pune, belonged to gardener (Mali) community</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q50 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q50.</span> In which year did the British officials pass the Widow Remarriage Law?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1833</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1856 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1861</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1885</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 1856</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Credit: Ishwar Chandra Vidyasagar</li>
+        <li>Widow Remarriage Association founded by Vishnu Shastri Pandit in 1856</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q51 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q51.</span> What was the name of the army founded by Subhash Chandra Bose to fight for India's independence?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Royal Indian Army</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Indian Liberation Army</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Indian National Army (Azad Hind Fauj) ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Hindustan Sena</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Indian National Army / Azad Hind Fauj</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Actual founder: Mohan Singh</li>
+        <li>If Mohan Singh not in options → Ras Bihari Bose</li>
+        <li>Ras Bihari Bose handed presidency to Subhash Chandra Bose</li>
+        <li>Bose led INA &amp; formed women's regiment (Rani of Jhansi Regiment) led by Lakshmi Sahgal</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q52 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q52.</span> The World Parliament of Religions was held in Chicago in which year?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1893 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1885</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1897</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1901</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 1893</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Swami Vivekananda's famous speech: "To all my sisters and brothers of America"</li>
+        <li>Birthday Jan 12 = National Youth Day (International Youth Day = Aug 12)</li>
+        <li>Founded Ramakrishna Mission at Belur Math on 1 May 1897</li>
+        <li>Rock Memorial in Tamil Nadu (Kanyakumari)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q53 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q53.</span> Which Act provided the legal basis for the creation of Pakistan?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Cabinet Mission Plan</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Indian Independence Act 1947 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Government of India Act 1935</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Mountbatten Plan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Indian Independence Act 1947 divided India into two dominions: India &amp; Pakistan</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Cabinet Mission Plan had NO provision for separate Pakistan (Muslim League initially accepted it for grouping provisions A, B, C but later rejected)</li>
+        <li>Mountbatten Plan was the political proposal; the Act gave it legal effect</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q54 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q54.</span> Who took an active part in organizing the 1857 Uprising from Lucknow?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Nana Saheb</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Begum Hazrat Mahal ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Rani Lakshmibai</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Bahadur Shah Zafar</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Begum Hazrat Mahal (wife of Nawab Wajid Ali Shah, last Nawab of Awadh) led from Lucknow</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Nana Saheb → Kanpur (adopted son of Bajirao II, last Peshwa, lived at Bithoor near Kanpur)</li>
+        <li>Rani Lakshmibai (original name Manikarnika Tambe / Manu) → Jhansi, samadhi in Gwalior</li>
+        <li>Who suppressed: Hugh Rose (Jhansi), Colin Campbell (Kanpur &amp; Lucknow), John Nicholson (Delhi)</li>
+        <li>General Bakht Khan led from Delhi; Kunwar Singh from Bihar; Maulvi Ahmadullah (Danka Shah) from Faizabad; Khan Bahadur from Bareilly</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q55 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q55.</span> Who among the following leaders strongly opposed the Partition of India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jinnah</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Chaudhary Rahmat Ali</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Liaquat Ali Khan</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Khan Abdul Ghaffar Khan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Khan Abdul Ghaffar Khan (Frontier Gandhi / Badshah Khan)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Led CDM from Peshawar/NWFP</li>
+        <li>Founded Khudai Khidmatgar</li>
+        <li>Started Red Shirt Movement</li>
+        <li>One of two non-Indians to receive Bharat Ratna (other: Nelson Mandela)</li>
+        <li>Chaudhary Rahmat Ali coined term "Pakistan" (P=Punjab, A=Afghanistan, K=Kashmir, S=Sindh, Tan=Balochistan)</li>
+        <li>Liaquat Ali Khan = 1st PM of Pakistan, was Finance Minister in India's interim govt (2 Sep 1946)</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q56 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q56.</span> In which year did the First Anglo-Mysore War take place?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>1767–69 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>1780–84</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1790–92</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1799</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — 1st Anglo-Mysore War 1767–69, Treaty of Madras, Hyder Ali led</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>2nd: 1780–84, Treaty of Mangalore, Hyder Ali died mid-war, Tipu Sultan took over</li>
+        <li>3rd: 1790–92, Treaty of Seringapatam, Tipu suffered humiliating defeat (₹3 crore fine, sons taken hostage)</li>
+        <li>4th: 1799, Tipu Sultan killed, British restored Wodeyar (Hindu) dynasty in Mysore</li>
+        <li>Tipu's sons later led Vellore Mutiny</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q57 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q57.</span> In which year was the historic Lucknow Pact signed between the Congress and the Muslim League?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>1919</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>1916 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>1925</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>1929</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — 1916</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Lucknow Session presided by Ambika Charan Majumdar</li>
+        <li>Extremists &amp; Moderates reunited (after Surat Split 1907, presided by Ras Bihari Ghosh)</li>
+        <li>Joint Congress-Muslim League pact with joint demands to British</li>
+        <li>1919 = Rowlatt Act ("Black Act") &amp; Jallianwala Bagh</li>
+        <li>1920 = Non-Cooperation + Khilafat merged</li>
+        <li>Khilafat started 1919 by Ali Brothers (Maulana Mohammad Ali &amp; Shaukat Ali)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q58 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q58.</span> After the Revolt of 1857, where was Bahadur Shah Zafar sent to prison?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Andaman</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Rangoon (Yangon), Myanmar ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>London</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lahore</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Yangon/Rangoon, Myanmar (then Burma)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>His wife Zeenat Mahal also taken there</li>
+        <li>He died in prison in 1862</li>
+        <li>Last Mughal Emperor — ended 300 years of Mughal rule</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q59 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q59.</span> Which Act marks the official end of East India Company rule in India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Regulating Act 1773</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Government of India Act 1858 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Charter Act 1833</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Charter Act 1853</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — GoI Act 1858 (Act of Good Governance / Queen's Proclamation)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Completely abolished EIC → Direct Crown Rule</li>
+        <li>GG became Viceroy (1st: Canning)</li>
+        <li>Secretary of State created + 15-member council</li>
+        <li>Abolished Board of Control &amp; Court of Directors</li>
+        <li>Regulating Act 1773 = 1st to regulate EIC (GG of Bengal = Warren Hastings; centralization begins)</li>
+        <li>Charter Act 1833 = GG of Bengal → GG of India (William Bentinck; centralization peaks)</li>
+        <li>1861 = Decentralization starts (Portfolio system, powers to Bombay &amp; Madras)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q60 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q60.</span> The Simon Commission faced boycott because:
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>It excluded Indian members ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>It supported partition</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>It imposed new taxes</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>It banned Congress</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — All 7 members were British, no Indian included</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Formed 1927, came to India 1928</li>
+        <li>"Simon Go Back" slogans</li>
+        <li>Lala Lajpat Rai died during protests (lathi charge ordered by James Scott)</li>
+        <li>To avenge this, Bhagat Singh, Sukhdev &amp; Rajguru attempted to kill Scott but killed John Saunders by mistake → Lahore Conspiracy Case → all three hanged 23 March 1931 (Martyrs' Day)</li>
+        <li>Another Martyrs' Day: 30 Jan (Gandhiji assassinated by Godse)</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q61 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q61.</span> Which political party performed well in the general constituencies during the 1946 provincial elections?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Indian National Congress ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Muslim League</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Communist Party</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Swaraj Party</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — INC won 90.5% of non-Muslim votes</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Swaraj Party formed 1923 (All India Khilafat Swaraj Party) by C.R. Das (President) &amp; Motilal Nehru (Secretary) after Chauri Chaura incident (4 Feb 1922) → Gandhiji withdrew NCM → Congress split into Pro-Changers (formed Swaraj Party) &amp; No-Changers (continued constructive work)</li>
+        <li>Communist Party: formed Tashkent 1920 by M.N. Roy, formalized Kanpur 1925</li>
+        <li>Justice Party: formed 1916 by C.N. Mudaliar, P. Thyagaraja Chetty, T.M. Nair</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q62 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q62.</span> Which 19th century reformer founded the Arya Samaj?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Swami Vivekananda</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Swami Dayanand Saraswati ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Raja Rammohan Roy</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Keshav Chandra Sen</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Swami Dayanand Saraswati founded Arya Samaj in 1875</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1st unit in Bombay, HQ shifted to Lahore</li>
+        <li>Slogan: "Back to the Vedas" &amp; "India for Indians"</li>
+        <li>Wrote "Satyarth Prakash"</li>
+        <li>Original name: Mool Shankar</li>
+        <li>Age of Consent Act 1891 raised girls' marriage age from 10→12 (B.M. Malabari's efforts)</li>
+        <li>Sharda Act 1929 raised it from 12→14 for girls, 14→18 for boys</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q63 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q63.</span> Which Prime Minister is the only one to have received both India's Bharat Ratna and Pakistan's Nishan-e-Pakistan?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Atal Bihari Vajpayee</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Morarji Desai ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>P.V. Narasimha Rao</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Lal Bahadur Shastri</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Morarji Desai</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Defeated Indira Gandhi in 1977 elections (after Emergency 1975)</li>
+        <li>Pakistan's 2nd highest civilian award = Hilal-e-Pakistan</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q64 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q64.</span> Khan Abdul Ghaffar Khan was also known by which name?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Baba-e-Qaum</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rajaji</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Sardar</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Badshah Khan ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — Badshah Khan / Frontier Gandhi</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Rajaji = C. Rajagopalachari</li>
+        <li>Founded Khudai Khidmatgar, led Red Shirt Movement, led CDM from NWFP/Peshawar</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q65 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q65.</span> The Charter Act of 1813 ended the East India Company's monopoly over trade with:
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Opium trade</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Trade with China</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Trade with Europe</div>
+        <div class="mcq-opt ok"><div class="opt-c">D</div>Trade with India ✔</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: D — 1813 ended monopoly on trade with India EXCEPT tea &amp; China trade</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1833 ended tea &amp; China trade too → EIC became purely administrative</li>
+        <li>1853 introduced open competition, no time limit (warning to EIC)</li>
+        <li>1858 abolished EIC entirely after 1857 revolt</li>
+        <li>Acts came every 20 years: 1813 → 1833 → 1853</li>      </ul>
+    </div>
+    </div>
+
+
+    <!-- Q66 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q66.</span> What significant event happened on Baisakhi in 1699?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Guru Gobind Singh founded the Khalsa Panth ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Battle of Panipat</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Jallianwala Bagh Massacre</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Formation of INC</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Khalsa Panth founded on 13 April 1699 (Baisakhi Day) by Guru Gobind Singh Ji with Panj Pyare</div>
+    </div>
+
+    <!-- Q67 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q67.</span> Which act was enacted to silence newspapers critical of the British government?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Vernacular Press Act 1878 ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Rowlatt Act 1919</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Regulating Act 1773</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Indian Councils Act 1861</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Vernacular Press Act 1878</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Introduced by Lytton along with Arms Act 1878</li>
+        <li>Both repealed in 1882 by Ripon</li>
+        <li>Ripon's time: Ilbert Bill Controversy 1883, First Factory Act 1881, Hunter Education Commission, Father of Local Self-Government</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q68 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q68.</span> Who was Swami Vivekananda's guru?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Ramananda</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>Ramakrishna Paramhansa ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Swami Dayanand</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Raja Rammohan Roy</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — Ramakrishna Paramhansa (original name: Gadadhar Chattopadhyay)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Priest at Kali temple in Bengal</li>
+        <li>Vivekananda's original name: Narendranath Dutta</li>
+        <li>Ramananda = Kabir's guru</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q69 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q69.</span> The Salt Law under British administration was criticized because:
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>The British monopolized salt production and imposed heavy taxes ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Salt was banned entirely</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Only foreigners could buy salt</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Salt prices were fixed by Indians</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — British monopolized salt production + heavy taxes</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Gandhiji chose salt because it affected everyone (poor to rich)</li>
+        <li>Salt Satyagraha / Dandi March: 12 March – 6 April 1930</li>
+        <li>Sabarmati Ashram (Ahmedabad) → Dandi (Navsari)</li>
+        <li>241 miles, 78 marchers</li>
+        <li>CDM started this way</li>
+        <li>Gandhi-Irwin Pact March 1931: people allowed salt for personal consumption (esp. coastal Gujarat)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q70 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q70.</span> Which tribal nationalist from Jharkhand, known as "Dharti Abba," led the Munda Rebellion?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Pir Ali Khan</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Alluri Sitarama Raju</div>
+        <div class="mcq-opt ok"><div class="opt-c">C</div>Birsa Munda ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Tipu Sultan</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: C — Birsa Munda = "Dharti Abba" (Father of Earth)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Led Munda Rebellion 1899 (Ulgulan)</li>
+        <li>Pir Ali Khan played role in 1857 revolt, hanged by British</li>
+        <li>Alluri Sitarama Raju led Rampa Rebellion 1922 (earlier one in 1879 led by Tamanna Dora)</li>
+        <li>Tipu Sultan = "Tiger of Mysore"</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q71 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q71.</span> Who was the first Indian Governor-General of independent India?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt no"><div class="opt-c">A</div>Jawaharlal Nehru</div>
+        <div class="mcq-opt ok"><div class="opt-c">B</div>C. Rajagopalachari ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Dr. Rajendra Prasad</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Sardar Patel</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: B — C. Rajagopalachari = first AND last Indian Governor General of independent India (post abolished after him)</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>1st GG of Bengal = Warren Hastings (1773)</li>
+        <li>1st GG of India = William Bentinck (1833)</li>
+        <li>Last GG before independence = Mountbatten (continued briefly after independence too)</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q72 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q72.</span> What is the Chipko Movement associated with?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Forest Conservation ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Water Conservation</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Animal Rights</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Land Reform</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Forest Conservation</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Chipko Movement 1973</li>
+        <li>Led by Sunderlal Bahuguna</li>      </ul>
+    </div>
+    </div>
+
+    <!-- Q73 -->
+    <div class="mcq">
+      <div class="mcq-h">
+        <span class="mcq-exam">SSC GD PYQ</span>
+        <span class="qno">Q73.</span> Under the Permanent Settlement (1793), what was the main responsibility assigned to the Zamindar?
+      </div>
+      <div class="mcq-opts">
+        <div class="mcq-opt ok"><div class="opt-c">A</div>Collect rent from farmers and pay revenue to the Company ✔</div>
+        <div class="mcq-opt no"><div class="opt-c">B</div>Distribute land to farmers</div>
+        <div class="mcq-opt no"><div class="opt-c">C</div>Build irrigation canals</div>
+        <div class="mcq-opt no"><div class="opt-c">D</div>Provide education to villagers</div>
+      </div>
+      <div class="mcq-ans">✅ Answer: A — Collect rent from farmers → pay revenue to Company</div>
+          <div class="key-box">
+      <ul class="hw chk">
+        <li>Introduced by Cornwallis in 1793 (Father of Indian Civil Services)</li>
+        <li>Zamindari was hereditary</li>
+        <li>Sunset clause: lose zamindari if revenue not paid by sunset of due date</li>
+        <li>Ryotwari: introduced 1820 by Munro &amp; Reed (tax directly from farmers)</li>
+        <li>Mahalwari: introduced 1822 by Holt Mackenzie &amp; William Bentinck (Mahal = group of villages)</li>      </ul>
+    </div>
+    </div>
+
+    <hr class="div"><div class="cb">✦ ✦ ✦</div>
+
+    <!-- FOOTER -->
+    <div class="sticky green" style="margin-top:24px;text-align:center">
+      <div class="slbl">📚 END OF LECTURE — SSC GD MEDIEVAL &amp; MODERN HISTORY</div>
+      <strong>Medieval History (Sultanate + Mughal) ✅ | Modern History (Freedom Struggle + British India) ✅</strong><br>
+      <span style="font-size:.85rem">73 Questions Covered | Active Recall Done | Parmar Academy App → Free Content 📲 | Regular raho, Selected bano! 🎯</span>
+    </div>
+
+  </div><!-- .ruled -->
+</div><!-- .page -->
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  document.getElementById('darkBtn').textContent =
+    document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+</script>
+</body>
+</html>
