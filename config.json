@@ -71,6 +71,16 @@
       "parent": null,
       "order": 7,
       "path": "cgl-current-affairs"
+    },
+    {
+      "id": "f_1783425282883",
+      "name": "RRB science 25 day series",
+      "icon": "📁",
+      "color": "#6366f1",
+      "desc": "",
+      "parent": null,
+      "order": 8,
+      "path": "rrb-science-25-day-series"
     }
   ],
   "displayNames": {
@@ -167,5 +177,5 @@
   "telegramLink": "https://t.me/Exam_Zen_StudySync",
   "siteName": "StudyPlanner Notes",
   "siteSubtitle": "Hand-Written Notes Library",
-  "lastUpdated": "2026-07-06"
+  "lastUpdated": "2026-07-07"
 }
