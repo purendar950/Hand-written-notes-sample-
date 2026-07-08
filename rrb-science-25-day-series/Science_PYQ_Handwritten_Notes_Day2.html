@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Science PYQ Notes - Day 1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap');
+
+:root{
+  --paper:#fbf8ee;
+  --line:#c3d3ec;
+  --marginred:#e6a3a3;
+  --ink:#173e8f;
+  --ink2:#0d2f78;
+  --marker:#cf1a2c;
+  --hl:#fff36b;
+  --tip:#1f7d3a;
+  --mistake:#c1620f;
+  --memory:#7a2fa0;
+  --gray:#8a92a0;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:30px 10px 80px;
+  background:#dfe3e9;
+  font-family:'Kalam',cursive;
+}
+.page{
+  position:relative;
+  max-width:900px;
+  margin:0 auto 45px;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(white 0px, white 32px, var(--line) 33px);
+  padding:34px 42px 46px 95px;
+  box-shadow:0 10px 28px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.18);
+  border-radius:3px;
+}
+.page:nth-child(odd){ transform:rotate(-0.35deg); }
+.page:nth-child(even){ transform:rotate(0.3deg); }
+.page::before{ /* red margin line */
+  content:''; position:absolute; left:74px; top:0; bottom:0; width:2px; background:var(--marginred); opacity:.8;
+}
+.holes{position:absolute;left:32px;top:0;bottom:0;width:20px;}
+.hole{position:absolute;left:0;width:16px;height:16px;border-radius:50%;
+  background:#dfe3e9; box-shadow:inset 0 2px 3px rgba(0,0,0,.35);}
+.pagenum{
+  position:absolute; right:18px; bottom:10px; font-family:'Kalam',cursive; font-weight:700;
+  color:var(--gray); border:2px solid var(--gray); border-radius:50%; width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center; transform:rotate(-6deg); font-size:1em;
+}
+.doodle{position:absolute; width:38px; height:38px; opacity:.9; z-index:2;}
+
+h1.title{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:2.5em;
+  text-align:center; margin:6px 0 2px; transform:rotate(-1deg);
+  border-bottom:4px solid var(--marker); display:inline-block; padding:0 10px 4px;
+}
+.titlewrap{text-align:center;}
+.subtitle{font-family:'Kalam',cursive;color:var(--ink);font-size:1.55em; text-align:center; margin-top:6px;}
+
+.heading{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.8em;
+  display:inline-block; border-bottom:3px solid var(--marker); margin:14px 0 8px; padding-bottom:2px;
+  transform:rotate(-0.4deg);
+}
+.subhead{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.4em;}
+
+p, li, .blue{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.62em; line-height:1.55; margin:5px 0;}
+ul{margin:4px 0 10px 22px; padding:0;}
+li{margin-bottom:2px;}
+
+.q{ margin:22px 0 16px; }
+.qnum{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.55em;}
+.qtext{ font-family:'Kalam',cursive; color:var(--ink2); font-size:1.68em; font-weight:700;}
+.opts{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.58em; margin:3px 0 5px 18px;}
+.ans{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.4em; margin:5px 0;}
+
+.hl{ background:var(--hl); mix-blend-mode:multiply; padding:1px 6px;
+  border-radius:4px 9px 4px 9px/9px 4px 9px 4px; font-weight:600;}
+.circle{ border:2.6px solid var(--marker); border-radius:50% 48% 52% 46%/58% 44% 56% 42%;
+  padding:1px 10px; display:inline-block; transform:rotate(-2deg);}
+.uline{ text-decoration:underline; text-decoration-style:wavy; text-decoration-color:var(--marker); text-decoration-thickness:2px;}
+.red{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.05em;}
+
+.notebox{ display:inline-block; border:2.2px dashed; border-radius:10px; padding:5px 12px;
+  margin:6px 6px 6px 0; font-family:'Kalam',cursive; font-size:1.22em; transform:rotate(-1deg); background:rgba(255,255,255,.5);}
+.tip{ border-color:var(--tip); color:var(--tip);}
+.mistake{ border-color:var(--mistake); color:var(--mistake);}
+.memory{ border-color:var(--memory); color:var(--memory);}
+
+.diagram{ border:2.2px dashed #9aa5b3; border-radius:12px; padding:10px 14px 6px;
+  background:rgba(255,255,255,.55); margin:14px auto; max-width:480px; text-align:center; transform:rotate(0.3deg);}
+.diagram svg{max-width:100%; height:auto; display:block; margin:0 auto;}
+.diagram .cap{ font-family:'Kalam',cursive; color:var(--marker); font-weight:700; font-size:1.15em; margin-top:4px;}
+.diagram.wide{max-width:640px;}
+.diagram.right{float:right; margin:6px 0 10px 16px;}
+.diagram.center{float:none;}
+
+table.note-table{ border-collapse:collapse; margin:10px auto; font-family:'Kalam',cursive; color:var(--ink); font-size:1.42em;}
+table.note-table th{ font-family:'Kalam',cursive; color:var(--marker); border:2px solid var(--ink); padding:6px 12px; background:rgba(255,255,255,.5); font-size:1.05em;}
+table.note-table td{ border:1.6px solid #7d93c2; padding:3px 10px; text-align:center;}
+
+.clearfix::after{content:"";display:table;clear:both;}
+.dnk{ font-family:'Kalam',cursive; color:var(--ink2); font-weight:700; font-size:1.1em;}
+</style>
+</head>
+<body>
+
+<!-- ============ DOODLE SYMBOL LIBRARY ============ -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="d-star" viewBox="0 0 40 40">
+  <path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z"
+    fill="#ffd23f" stroke="#c1861a" stroke-width="1.5" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-bulb" viewBox="0 0 40 40">
+  <circle cx="20" cy="16" r="11" fill="#fff7c2" stroke="#caa019" stroke-width="2"/>
+  <rect x="15" y="26" width="10" height="6" rx="1.5" fill="#b0b0b0" stroke="#7a7a7a" stroke-width="1"/>
+  <path d="M16 10 Q20 6 24 10" stroke="#caa019" stroke-width="1.4" fill="none"/>
+  <line x1="20" y1="32" x2="20" y2="35" stroke="#7a7a7a" stroke-width="2"/>
+</symbol>
+<symbol id="d-pencil" viewBox="0 0 40 40">
+  <g transform="rotate(-30 20 20)">
+    <rect x="10" y="16" width="20" height="7" fill="#ffb84d" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="30,16 36,19.5 30,23" fill="#e8c39e" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="10,16 6,19.5 10,23" fill="#4a4a4a"/>
+  </g>
+</symbol>
+<symbol id="d-smiley" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="14" fill="#fff2b8" stroke="#c1861a" stroke-width="2"/>
+  <circle cx="15" cy="17" r="1.8" fill="#3a3a3a"/>
+  <circle cx="25" cy="17" r="1.8" fill="#3a3a3a"/>
+  <path d="M13 24 Q20 30 27 24" stroke="#3a3a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="d-flower" viewBox="0 0 40 40">
+  <g>
+    <ellipse cx="20" cy="12" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="20" cy="28" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="12" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="28" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <circle cx="20" cy="20" r="5" fill="#ffd23f" stroke="#c1861a" stroke-width="1"/>
+  </g>
+</symbol>
+<symbol id="d-flask" viewBox="0 0 40 40">
+  <path d="M16 6 H24 V15 L32 33 Q33 36 29 36 H11 Q7 36 8 33 L16 15 Z" fill="#bfe9d8" stroke="#2c7a5c" stroke-width="2"/>
+  <circle cx="18" cy="28" r="1.6" fill="#2c7a5c"/>
+  <circle cx="23" cy="31" r="1.2" fill="#2c7a5c"/>
+  <line x1="14" y1="6" x2="26" y2="6" stroke="#2c7a5c" stroke-width="2"/>
+</symbol>
+<symbol id="d-arrow" viewBox="0 0 40 40">
+  <path d="M5 30 Q15 5 34 12" fill="none" stroke="#3a3a3a" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="34,12 27,10 30,17" fill="#3a3a3a"/>
+</symbol>
+<symbol id="d-check" viewBox="0 0 40 40">
+  <path d="M6 20 L16 30 L34 8" fill="none" stroke="#1f7d3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-atom" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="3" fill="#173e8f"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(60 20 20)"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(120 20 20)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:20px;left:14px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:120px;left:8px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:230px;left:12px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:340px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:450px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="titlewrap">
+    <h1 class="title">SCIENCE — RAILWAY GROUP D</h1>
+    <div class="subtitle">PYQ Marathon &nbsp;|&nbsp; <span class="hl">DAY - 2</span></div>
+  </div>
+
+  <div class="heading" style="margin-top:22px;">TODAY'S PLAN</div>
+  <ul>
+    <li>Target: <span class="hl">~40 Qs</span> today (detailed concept-building continues; pace will increase once facts start repeating).</li>
+    <li>Digital notes (English + Hindi) → <span class="red">Parmar Academy App → Courses section</span>.</li>
+    <li>Lots of <span class="red">revision</span> of Day-1 topics woven in — extra facts added wherever new angles come up.</li>
+  </ul>
+  <div class="notebox tip">📌 Exam Tip: After ~1 week of daily practice, ~50% of questions start feeling repeated — stay consistent!</div>
+  <div class="pagenum">1</div>
+</div>
+<!-- ================= PAGE 2 : Q1-Q2 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:400px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — VITAMIN B12 (Revision + New)</div>
+  <div class="q">
+    <div class="qnum">Q1.</div>
+    <div class="qtext">What is the scientific/chemical name of Vitamin B12 (contains Cobalt)?</div>
+    <div class="ans">✔ Answer: <span class="hl">Cyanocobalamin</span></div>
+    <ul>
+      <li>Recap (Day 1): Vitamin B12 metal = <span class="red">Cobalt</span> → Deficiency = Pernicious Anaemia.</li>
+      <li>Vitamins first named by <span class="red">Casimir Funk</span>; divided into Water-soluble (B,C) &amp; Fat-soluble (K,E,D,A — "KEDA").</li>
+      <li>B-Complex = 8 members total (B1,B2,B3,B5,B6,B7,B9,B12).</li>
+    </ul>
+    <div class="notebox mistake">⚠ Correction in class: <b>Neural/Renal tube defect</b> in babies is caused by deficiency of <span class="red">Vitamin B9 (Folic acid)</span> — not B7 (Biotin). Don't confuse the two!</div>
+    <table class="note-table">
+      <tr><th>Vitamin</th><th>Name</th><th>Deficiency</th></tr>
+      <tr><td>A</td><td>Retinol</td><td>Night blindness, Xerophthalmia</td></tr>
+      <tr><td>C</td><td>Ascorbic acid</td><td>Scurvy, bleeding gums</td></tr>
+      <tr><td>D</td><td>Calciferol (sunshine vitamin, acts as hormone)</td><td>Rickets/Osteomalacia</td></tr>
+      <tr><td>E</td><td>Tocopherol ("beauty vitamin")</td><td>Infertility/Anaemia</td></tr>
+      <tr><td>K</td><td>Phylloquinone</td><td>Poor blood clotting</td></tr>
+      <tr><td>B1</td><td>Thiamine</td><td>Beri-beri</td></tr>
+      <tr><td>B3</td><td>Niacin</td><td>Pellagra (3D disease)</td></tr>
+      <tr><td>B9</td><td>Folic acid</td><td>Neural tube defect (babies)</td></tr>
+      <tr><td>B12</td><td>Cyanocobalamin</td><td>Pernicious anaemia</td></tr>
+    </table>
+  </div>
+
+  <div class="heading">PHYSICS — ELECTRIC MOTOR (Magnetic Effect)</div>
+  <div class="q">
+    <div class="qnum">Q2.</div>
+    <div class="qtext">An electric motor works on which physical principle?</div>
+    <div class="opts">(a) Electromagnetic induction &nbsp; (b) Thermal effect of current &nbsp; (c) Magnetic effect of current &nbsp; (d) Conservation of energy</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Magnetic effect of electric current</span></div>
+    <ul>
+      <li>Motor: <span class="red">Electrical energy → Mechanical energy</span></li>
+      <li>Generator / Dynamo: <span class="red">Mechanical energy → Electrical energy</span> (the reverse)</li>
+    </ul>
+    <table class="note-table">
+      <tr><th>Discovery</th><th>Scientist</th><th>Year</th></tr>
+      <tr><td>Electromagnetic Induction</td><td>Michael Faraday</td><td>—</td></tr>
+      <tr><td>Heating effect of current</td><td>James P. Joule</td><td>—</td></tr>
+      <tr><td>Magnetic effect of current</td><td>Hans Christian Oersted</td><td>1820</td></tr>
+    </table>
+    <div class="diagram wide">
+      <svg viewBox="0 0 440 110" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="20" width="150" height="60" rx="8" fill="#eef4ff" stroke="#173e8f" stroke-width="1.8"/>
+        <text x="25" y="45" font-family="Kalam" font-size="15" fill="#173e8f">Electrical Energy</text>
+        <text x="45" y="65" font-family="Kalam" font-size="14">(Motor)</text>
+        <path d="M162 35 Q190 20 220 35" stroke="#cf1a2c" stroke-width="2" fill="none"/>
+        <polygon points="220,35 212,30 212,39" fill="#cf1a2c"/>
+        <path d="M220 65 Q190 80 162 65" stroke="#1f7d3a" stroke-width="2" fill="none"/>
+        <polygon points="162,65 170,60 170,69" fill="#1f7d3a"/>
+        <text x="165" y="18" font-family="Kalam" font-size="12" fill="#cf1a2c">Motor</text>
+        <text x="165" y="95" font-family="Kalam" font-size="12" fill="#1f7d3a">Generator</text>
+        <rect x="270" y="20" width="160" height="60" rx="8" fill="#e3f7e8" stroke="#1f7d3a" stroke-width="1.8"/>
+        <text x="285" y="45" font-family="Kalam" font-size="15" fill="#1f7d3a">Mechanical Energy</text>
+        <text x="320" y="65" font-family="Kalam" font-size="14">(Generator)</text>
+      </svg>
+      <div class="cap">Fig 1 — Motor ⇌ Generator (Energy Conversion)</div>
+    </div>
+    <div class="notebox memory">🧠 Memory Trick: <b>Left</b> hand runs the <b>Motor</b>; <b>Right</b> hand runs the Generator (Fleming's rules).</div>
+  </div>
+  <div class="pagenum">2</div>
+</div>
+<!-- ================= PAGE 3 : Q3-Q4 pH & Acids ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:500px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — pH OF HUMAN BLOOD</div>
+  <div class="q">
+    <div class="qnum">Q3.</div>
+    <div class="qtext">What is the normal pH of human blood?</div>
+    <div class="opts">(a) 6.4 &nbsp; (b) 7.0 &nbsp; (c) 7.4 &nbsp; (d) 8.4</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">7.4</span> (slightly basic/alkaline)</div>
+    <ul>
+      <li>Human body normally functions in pH range <span class="hl">7.3 – 7.6</span>.</li>
+      <li>Saliva pH ≈ <span class="hl">6.4</span> (slightly acidic).</li>
+      <li><span class="red">Dilution Rule</span>: Always add <b>Acid to Water</b> (slowly), NEVER Water to Acid — reaction is highly exothermic!</li>
+      <li>Tooth decay begins when mouth pH drops below <span class="hl">5.5</span>.</li>
+      <li><span class="red">Acid rain</span>: when rain pH drops below <span class="hl">5.5</span>.</li>
+      <li>Milk of Magnesia (antacid) = Sodium bicarbonate (baking soda), pH ≈ 10.</li>
+      <li>NaOH → pH = 14 (strongest base on the scale).</li>
+      <li>Stomach acid = HCl (more acidic than lemon juice).</li>
+    </ul>
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 90" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="45" x2="450" y2="45" stroke="#333" stroke-width="2"/>
+        <text x="5" y="70" font-family="Kalam" font-size="13" fill="#cf1a2c">0 Acidic</text>
+        <text x="215" y="70" font-family="Kalam" font-size="13" fill="#1f7d3a">7 Neutral</text>
+        <text x="410" y="70" font-family="Kalam" font-size="13" fill="#173e8f">14 Basic</text>
+        <circle cx="140" cy="45" r="5" fill="#cf1a2c"/><text x="110" y="30" font-family="Kalam" font-size="13">Stomach HCl</text>
+        <circle cx="210" cy="45" r="5" fill="#1f7d3a"/><text x="195" y="30" font-family="Kalam" font-size="13">Saliva 6.4</text>
+        <circle cx="230" cy="45" r="5" fill="#1a8f4a"/><text x="235" y="30" font-family="Kalam" font-size="13">Blood 7.4</text>
+        <circle cx="330" cy="45" r="5" fill="#173e8f"/><text x="300" y="30" font-family="Kalam" font-size="13">Milk of Mg 10</text>
+      </svg>
+      <div class="cap">Fig 2 — pH Scale: Body Fluids</div>
+    </div>
+  </div>
+
+  <div class="heading">CHEMISTRY — ACIDS: COMMON NAMES &amp; USES</div>
+  <div class="q">
+    <div class="qnum">Q4.</div>
+    <div class="qtext">Which acid is used in lead-acid batteries used in vehicles?</div>
+    <div class="opts">(a) HCl &nbsp; (b) HNO₃ &nbsp; (c) H₂SO₄ &nbsp; (d) Phosphoric acid</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Dilute H₂SO₄</span></div>
+    <table class="note-table">
+      <tr><th>Acid</th><th>Common name</th><th>Fact</th></tr>
+      <tr><td>HCl</td><td>Muriatic acid</td><td>Present in gastric/stomach juice</td></tr>
+      <tr><td>HNO₃</td><td>Aqua fortis</td><td>—</td></tr>
+      <tr><td><span class="hl">H₂SO₄</span></td><td>Oil of Vitriol / "King of Chemicals"</td><td>Used in lead-acid batteries; found in Venus's clouds!</td></tr>
+    </table>
+  </div>
+  <div class="pagenum">3</div>
+</div>
+<!-- ================= PAGE 4 : Q5 Speed of light/sound ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:500px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — SPEED OF LIGHT &amp; SOUND</div>
+  <div class="q">
+    <div class="qnum">Q5.</div>
+    <div class="qtext">In which medium is the speed of light the highest?</div>
+    <div class="opts">(a) Glass &nbsp; (b) Water &nbsp; (c) Diamond &nbsp; (d) Vacuum</div>
+    <div class="ans">✔ Answer: (d) <span class="hl">Vacuum</span> — speed = 3×10⁸ m/s</div>
+    <ul>
+      <li>Higher refractive index (denser) ⇒ <span class="uline">lower speed</span> of light. Diamond (n=2.42) → lowest speed among common media.</li>
+      <li>Rarer → Denser: light bends <b>toward normal</b>, speed <b>decreases</b>.</li>
+      <li>Denser → Rarer: light bends <b>away from normal</b>, speed <b>increases</b>.</li>
+    </ul>
+    <div class="subhead">Speed of Sound:</div>
+    <ul>
+      <li>Normal speed of sound = <span class="hl">343 m/s at 20°C</span> (330 m/s at 0°C) — increases with temperature.</li>
+      <li>Order: <span class="red">Solid &gt; Liquid &gt; Gas</span></li>
+    </ul>
+    <table class="note-table">
+      <tr><th>Medium</th><th>Speed of sound (m/s)</th></tr>
+      <tr><td><span class="hl">Aluminium</span></td><td><span class="hl">6420 (highest)</span></td></tr>
+      <tr><td>Nickel</td><td>6040</td></tr>
+      <tr><td>Steel</td><td>5960</td></tr>
+      <tr><td>Sea water</td><td>1531</td></tr>
+      <tr><td>Distilled water</td><td>1498</td></tr>
+      <tr><td>Ethanol</td><td>1207</td></tr>
+      <tr><td>Methanol (wood spirit)</td><td>1103</td></tr>
+      <tr><td>Air (20°C)</td><td>343</td></tr>
+    </table>
+    <div class="notebox mistake">⚠ Common Mistake: Most students think speed of sound is highest in Steel — it's actually highest in <b>Aluminium</b>!</div>
+  </div>
+  <div class="pagenum">4</div>
+</div>
+<!-- ================= PAGE 5 : Q6 Periodic table history ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:400px;left:10px;"><use href="#d-check"/></svg>
+
+  <div class="heading">CHEMISTRY — HISTORY OF PERIODIC TABLE</div>
+  <div class="q">
+    <div class="qnum">Q6.</div>
+    <div class="qtext">Who proposed the Modern Periodic Table based on increasing Atomic Number?</div>
+    <div class="opts">(a) Mendeleev &nbsp; (b) Henry Moseley &nbsp; (c) Newlands &nbsp; (d) Döbereiner</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Henry Moseley</span> — in <span class="hl">1913</span></div>
+    <ul>
+      <li>Moseley used <span class="red">X-rays</span> (discovered by <b>William Röntgen</b>) to find atomic number.</li>
+      <li>Proved: chemical properties depend on <span class="uline">Atomic Number</span>, NOT Atomic Mass (as earlier scientists believed).</li>
+    </ul>
+    <table class="note-table">
+      <tr><th>Scientist</th><th>Contribution</th><th>Year</th></tr>
+      <tr><td>Döbereiner</td><td>Law of Triads</td><td>1817 / published 1829</td></tr>
+      <tr><td>Newlands</td><td>Law of Octaves</td><td>1865</td></tr>
+      <tr><td>Mendeleev</td><td>"Father of Periodic Table" — Russian scientist; 8 Groups, 7 Periods; arranged by atomic mass</td><td>1869</td></tr>
+      <tr><td><span class="hl">Moseley</span></td><td><span class="hl">Modern Periodic Table — by Atomic Number</span></td><td><span class="hl">1913</span></td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick: Döbereiner(1829) → Newlands(1865) → Mendeleev(1869) → Moseley(1913) — all in increasing year order!</div>
+  </div>
+  <div class="pagenum">5</div>
+</div>
+<!-- ================= PAGE 6 : Q7 Light - reflection/refraction/dispersion/scattering ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">PHYSICS — LIGHT: REFLECTION, REFRACTION, DISPERSION</div>
+  <div class="q">
+    <div class="qnum">Q7.</div>
+    <div class="qtext">What is the phenomenon called when white light splits into 7 colours after passing through a prism?</div>
+    <div class="opts">(a) Reflection &nbsp; (b) Refraction &nbsp; (c) Dispersion &nbsp; (d) Scattering</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Dispersion of light</span> — first explained by <span class="red">Newton</span> using a prism</div>
+
+    <ul>
+      <li><span class="red">Laws of Reflection</span>: (1) Incident ray, reflected ray &amp; normal lie in the same plane. (2) ∠incidence = ∠reflection.</li>
+      <li><span class="red">Refraction</span>: Rarer→Denser: bends toward normal, speed↓. Denser→Rarer: bends away from normal, speed↑.</li>
+    </ul>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="60,20 100,120 20,120" fill="#eef4ff" stroke="#173e8f" stroke-width="1.6"/>
+        <line x1="10" y1="70" x2="55" y2="60" stroke="#333" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="20" stroke="#8b00ff" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="35" stroke="#0033cc" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="50" stroke="#009933" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="65" stroke="#e6c200" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="80" stroke="#ff8800" stroke-width="1.6"/>
+        <line x1="55" y1="60" x2="150" y2="95" stroke="#e60000" stroke-width="1.6"/>
+        <text x="155" y="24" font-family="Kalam" font-size="13" fill="#8b00ff">V</text>
+        <text x="155" y="99" font-family="Kalam" font-size="13" fill="#e60000">R</text>
+        <text x="10" y="140" font-family="Kalam" font-size="15" fill="#173e8f">White light → VIBGYOR (Prism)</text>
+      </svg>
+      <div class="cap">Fig 3 — Dispersion through a Prism</div>
+    </div>
+
+    <ul>
+      <li><span class="red">VIBGYOR</span>: Violet, Indigo, Blue, Green, Yellow, Orange, Red</li>
+      <li>Violet — <span class="hl">shortest wavelength</span>, max deviation/refraction.</li>
+      <li>Red — <span class="hl">longest wavelength</span>, min deviation → used for danger signals (travels far without deviating).</li>
+      <li><span class="red">Rainbow</span> forms via: 2 × Refraction + 1 × Total Internal Reflection (inside a water drop).</li>
+      <li><span class="red">Scattering</span>: Sky appears blue (blue scatters most); Sun appears red at sunrise/sunset; Sky appears black to astronauts in space (no atmosphere to scatter).</li>
+    </ul>
+
+    <div class="diagram">
+      <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 80 Q100 40 180 55 Q230 62 240 90" fill="none" stroke="#4a90e2" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="240" cy="90" r="18" fill="#f7b750" opacity=".3"/>
+        <circle cx="70" cy="60" r="14" fill="#f7b750" stroke="#8a5a12"/>
+        <path d="M70 60 Q150 20 240 90" fill="none" stroke="#7a2fa0" stroke-width="1.4" stroke-dasharray="2 2"/>
+        <text x="30" y="105" font-family="Kalam" font-size="14" fill="#173e8f">Water drop (rainbow)</text>
+      </svg>
+      <div class="cap">Fig 4 — Rainbow: Refraction + TIR + Refraction</div>
+    </div>
+  </div>
+  <div class="pagenum">6</div>
+</div>
+<!-- ================= PAGE 7 : Q8 Ammeter/Voltmeter, Q9 Mirrors ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:400px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">PHYSICS — AMMETER vs VOLTMETER</div>
+  <div class="q">
+    <div class="qnum">Q8.</div>
+    <div class="qtext">Which instrument measures electric current, and how is it connected?</div>
+    <div class="ans">✔ Answer: <span class="hl">Ammeter</span>, connected in <span class="hl">Series</span></div>
+    <ul>
+      <li><span class="red">Ammeter</span> → measures current → connected in <b>Series</b> (current same in series).</li>
+      <li><span class="red">Voltmeter</span> → measures potential difference → connected in <b>Parallel</b> (p.d. same in parallel).</li>
+      <li><span class="red">Galvanometer</span> → measures very low current, shows magnitude + direction.</li>
+      <li>Series: R = R₁+R₂+... &nbsp;|&nbsp; Parallel: 1/R = 1/R₁+1/R₂+...</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — MIRRORS (Plane / Concave / Convex)</div>
+  <div class="q">
+    <div class="qnum">Q9.</div>
+    <div class="qtext">Which mirror do dentists use to get a magnified image of a patient's teeth?</div>
+    <div class="opts">(a) Plane mirror &nbsp; (b) Convex mirror &nbsp; (c) Concave mirror &nbsp; (d) Parabolic mirror</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Concave mirror</span> (converging, gives magnified image)</div>
+    <table class="note-table">
+      <tr><th>Mirror</th><th>Nature</th><th>Equivalent to</th><th>Focal length</th><th>Uses</th></tr>
+      <tr><td>Plane</td><td>Virtual, erect, same size, laterally inverted</td><td>—</td><td>—</td><td>Everyday mirror</td></tr>
+      <tr><td>Concave</td><td>Converging</td><td>Convex lens</td><td>Negative</td><td>Dentist, shaving, torch reflector, vehicle headlight</td></tr>
+      <tr><td>Convex</td><td>Diverging</td><td>Concave lens</td><td>Positive</td><td>Rear-view mirror, blind-spot mirrors, security mirrors</td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick: <b>Convex lens/mirror = always +ve focal length; Concave lens/mirror = always −ve.</b></div>
+    <div class="notebox tip">📌 Exam Tip: Lateral inversion (left↔right swap) happens only in PLANE mirrors — that's why "AMBULANCE" is written mirrored on vehicles!</div>
+  </div>
+  <div class="pagenum">7</div>
+</div>
+<!-- ================= PAGE 8 : Q10 Periodic table blocks + Noble gases ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — PERIODIC TABLE: GROUPS &amp; BLOCKS</div>
+  <div class="q">
+    <div class="qnum">Q10.</div>
+    <div class="qtext">What are the elements of Group 18 in the modern periodic table called?</div>
+    <div class="opts">(a) Halogens &nbsp; (b) Alkali metals &nbsp; (c) Noble gases &nbsp; (d) Transition metals</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Noble gases</span> (also "Inert gases" / "Zero group")</div>
+
+    <table class="note-table">
+      <tr><th>Group</th><th>Name</th></tr>
+      <tr><td>1 (s-block)</td><td>Alkali metals</td></tr>
+      <tr><td>2 (s-block)</td><td>Alkaline earth metals</td></tr>
+      <tr><td>3–12 (d-block)</td><td>Transition metals</td></tr>
+      <tr><td>13–18 (p-block)</td><td>Metals + Non-metals + <b>Metalloids</b> (B, Si, Ge, As, Sb, Te, At)</td></tr>
+      <tr><td>15</td><td>Pnictogens (Nitrogen family)</td></tr>
+      <tr><td>16</td><td>Chalcogens (Oxygen family)</td></tr>
+      <tr><td>17</td><td>Halogens</td></tr>
+      <tr><td><span class="hl">18</span></td><td><span class="hl">Noble/Inert gases (Zero group)</span></td></tr>
+    </table>
+
+    <ul>
+      <li><span class="red">f-block</span> (Inner transition metals): Period 6, Group 3 → La(57), next 14 similar → <b>Lanthanides (58–71)</b>. Period 7, Group 3 → Ac(89), next 14 → <b>Actinides (90–103)</b>.</li>
+      <li>Elements named after scientists: <span class="hl">Mendelevium=101</span>, <span class="hl">Rutherfordium=104</span>, <span class="hl">Seaborgium=106</span>, <span class="hl">Bohrium=107</span> (after Niels Bohr).</li>
+    </ul>
+
+    <div class="subhead">Noble Gases — Discovery &amp; Use:</div>
+    <table class="note-table">
+      <tr><th>Gas</th><th>Discoverer(s)</th><th>Use</th></tr>
+      <tr><td>Helium</td><td>Pierre Janssen &amp; Norman Lockyer</td><td>Balloons</td></tr>
+      <tr><td>Neon</td><td>William Ramsay &amp; Morris Travers</td><td>Neon lighting/signs</td></tr>
+      <tr><td>Argon</td><td>William Ramsay &amp; Rayleigh</td><td>Electric bulbs, double-pane windows</td></tr>
+      <tr><td>Krypton, Xenon</td><td>William Ramsay &amp; Morris Travers</td><td>—</td></tr>
+    </table>
+    <ul>
+      <li>Noble gases are <span class="red">stable/inert</span> → valence shell has <b>8 electrons</b> (except He &amp; H, which need only <b>2</b>).</li>
+    </ul>
+    <div class="notebox memory">🧠 Memory Trick: William Ramsay's name is common in discovery of Ne, Ar, Kr, Xe (NOT Helium — that was Janssen &amp; Lockyer).</div>
+  </div>
+  <div class="pagenum">8</div>
+</div>
+<!-- ================= PAGE 9 : Q11 Blood ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:500px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — BLOOD &amp; ITS COMPONENTS</div>
+  <div class="q">
+    <div class="qnum">Q11.</div>
+    <div class="qtext">In the human body, oxygen is transported from the lungs to all body cells mainly by?</div>
+    <div class="opts">(a) WBC &nbsp; (b) RBC &nbsp; (c) Plasma &nbsp; (d) Platelets</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">RBC (Red Blood Cells)</span></div>
+    <ul>
+      <li>Blood group discovered by <span class="red">Karl Landsteiner</span>; Blood circulation discovered by <span class="red">William Harvey</span>.</li>
+      <li>Blood = <span class="hl">55% Plasma (liquid)</span> + <span class="hl">45% Blood cells (solid)</span></li>
+      <li>Plasma = 92% water + hormones, proteins etc. (yellow coloured liquid)</li>
+    </ul>
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="200" height="40" rx="8" fill="#fff3c2" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="30" y="35" font-family="Kalam" font-size="15" fill="#cf1a2c">BLOOD</text>
+        <line x1="110" y1="50" x2="60" y2="70" stroke="#333" stroke-width="1.4"/>
+        <line x1="110" y1="50" x2="180" y2="70" stroke="#333" stroke-width="1.4"/>
+        <rect x="10" y="72" width="120" height="34" rx="6" fill="#fff8d9" stroke="#c9a015" stroke-width="1.5"/>
+        <text x="20" y="93" font-family="Kalam" font-size="14" fill="#c9a015">Plasma (55%)</text>
+        <rect x="150" y="72" width="140" height="34" rx="6" fill="#ffe0e0" stroke="#cf1a2c" stroke-width="1.5"/>
+        <text x="160" y="93" font-family="Kalam" font-size="14" fill="#cf1a2c">Blood cells (45%)</text>
+        <line x1="220" y1="106" x2="150" y2="125" stroke="#333" stroke-width="1.2"/>
+        <line x1="220" y1="106" x2="230" y2="125" stroke="#333" stroke-width="1.2"/>
+        <line x1="220" y1="106" x2="320" y2="125" stroke="#333" stroke-width="1.2"/>
+        <rect x="110" y="128" width="80" height="32" rx="6" fill="#ffd6d6" stroke="#cf1a2c" stroke-width="1.4"/>
+        <text x="118" y="148" font-family="Kalam" font-size="14">RBC (O₂ transport)</text>
+        <rect x="200" y="128" width="80" height="32" rx="6" fill="#e3f7e8" stroke="#1f7d3a" stroke-width="1.4"/>
+        <text x="210" y="148" font-family="Kalam" font-size="14">WBC (defence)</text>
+        <rect x="290" y="128" width="90" height="32" rx="6" fill="#e3e3ff" stroke="#3a3a8f" stroke-width="1.4"/>
+        <text x="298" y="148" font-family="Kalam" font-size="14">Platelets (clotting)</text>
+      </svg>
+      <div class="cap">Fig 5 — Composition of Blood</div>
+    </div>
+    <table class="note-table">
+      <tr><th>Component</th><th>Function</th><th>Shape</th><th>Lifespan</th></tr>
+      <tr><td>RBC</td><td>Transports O₂ (hemoglobin has iron)</td><td>Biconcave disc</td><td>120 days</td></tr>
+      <tr><td>WBC</td><td>Fights disease (no hemoglobin → white)</td><td>Irregular</td><td>10–20 days</td></tr>
+      <tr><td>Platelets</td><td>Blood clotting</td><td>Irregular</td><td>~7 days</td></tr>
+    </table>
+    <div class="notebox tip">📌 Exam Tip: RBC most numerous → then Platelets → then WBC. <span class="red">Spleen</span> = "graveyard of RBCs".</div>
+  </div>
+  <div class="pagenum">9</div>
+</div>
+<!-- ================= PAGE 10 : Q12-Q14 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:380px;left:12px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:620px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — COMBINATION OF LENSES</div>
+  <div class="q">
+    <div class="qnum">Q12.</div>
+    <div class="qtext">Two lenses of +2D and −1.5D are placed in contact. Find focal length of the combination.</div>
+    <div class="ans">✔ Answer: <span class="hl">f = 2 m</span></div>
+    <ul>
+      <li>Net Power = P₁ + P₂ + ... = 2 + (−1.5) = <span class="circle">0.5 D</span></li>
+      <li>f = 1/P = 1/0.5 = <span class="hl">2 m</span></li>
+      <li>+ve power = convex lens (used for Hypermetropia); −ve power = concave lens (used for Myopia)</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — OHM'S LAW: RESISTIVITY</div>
+  <div class="q">
+    <div class="qnum">Q13.</div>
+    <div class="qtext">Verifying Ohm's law: V on Y-axis, I on X-axis. What does the slope represent?</div>
+    <div class="opts">(a) Conductance &nbsp; (b) Resistance &nbsp; (c) Electric power &nbsp; (d) Resistivity</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Resistance</span></div>
+    <ul>
+      <li>R = ρL/A &nbsp;→&nbsp; <span class="red">ρ (rho) = Resistivity/Specific resistance</span> — depends only on <b>material</b>, not on length/area.</li>
+      <li>SI unit: Resistance = Ohm (Ω); Resistivity = Ohm-metre (Ωm); Conductance = 1/R, unit = <b>Siemens</b>.</li>
+      <li>Copper has low resistivity → used in wires (allows current to flow easily).</li>
+      <li><span class="red">Fuse wire</span> needs: <b>High resistance + Low melting point</b> → heats up fast &amp; melts to break circuit (protects appliances) — based on Joule's Heating Effect.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — FLEMING'S LEFT-HAND RULE</div>
+  <div class="q">
+    <div class="qnum">Q14.</div>
+    <div class="qtext">In Fleming's Left Hand Rule, what does the index finger (of the 3 mutually perpendicular fingers) indicate?</div>
+    <div class="ans">✔ Answer: <span class="hl">Magnetic Field</span></div>
+    <div class="diagram">
+      <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+        <line x1="150" y1="140" x2="150" y2="40" stroke="#cf1a2c" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="150,40 143,55 157,55" fill="#cf1a2c"/>
+        <text x="155" y="35" font-family="Kalam" font-size="14" fill="#cf1a2c">Thumb = Force/Motion</text>
+
+        <line x1="150" y1="140" x2="70" y2="120" stroke="#173e8f" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="70,120 85,113 82,127" fill="#173e8f"/>
+        <text x="10" y="115" font-family="Kalam" font-size="14" fill="#173e8f">Index = Field</text>
+
+        <line x1="150" y1="140" x2="220" y2="160" stroke="#1f7d3a" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="220,160 205,155 210,167" fill="#1f7d3a"/>
+        <text x="225" y="165" font-family="Kalam" font-size="14" fill="#1f7d3a">Middle = Current</text>
+      </svg>
+      <div class="cap">Fig 6 — Fleming's Left Hand Rule</div>
+    </div>
+    <div class="notebox memory">🧠 Memory Trick: "Mother-Father-Child" → Thu<b>mb</b>=Motion(Force), Fore(<b>index</b>)finger=Field, Middle=Current.</div>
+    <ul>
+      <li><span class="red">Left Hand Rule</span> → used for <b>Motors</b> (finds Force direction on current-carrying conductor in a magnetic field).</li>
+      <li><span class="red">Right Hand Rule</span> → used for <b>Generators</b> (finds induced Current direction when conductor moves in a changing magnetic field).</li>
+    </ul>
+  </div>
+  <div class="pagenum">10</div>
+</div>
+<!-- ================= PAGE 11 : Q15 Concave mirror image formation ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — IMAGE FORMATION BY CONCAVE MIRROR</div>
+  <div class="q">
+    <div class="qnum">Q15.</div>
+    <div class="qtext">If an object is placed between Centre of curvature (C) and Focus (F) of a concave mirror, where and how is the image formed?</div>
+    <div class="ans">✔ Answer: Formed <span class="hl">beyond C</span> — Real, Inverted, <span class="hl">Enlarged (Magnified)</span></div>
+
+    <table class="note-table" style="font-size:1.05em;">
+      <tr><th>Object position</th><th>Image position</th><th>Nature</th><th>Size</th></tr>
+      <tr><td>At Infinity</td><td>At F</td><td>Real, Inverted</td><td>Highly diminished</td></tr>
+      <tr><td>Beyond C</td><td>Between C &amp; F</td><td>Real, Inverted</td><td>Diminished</td></tr>
+      <tr><td>At C</td><td>At C</td><td>Real, Inverted</td><td>Same size</td></tr>
+      <tr><td><span class="hl">Between C &amp; F</span></td><td><span class="hl">Beyond C</span></td><td><span class="hl">Real, Inverted</span></td><td><span class="hl">Enlarged</span></td></tr>
+      <tr><td>At F</td><td>At Infinity</td><td>Real, Inverted</td><td>Highly enlarged</td></tr>
+      <tr><td>Between P &amp; F</td><td>Behind mirror</td><td>Virtual, Erect</td><td>Enlarged</td></tr>
+    </table>
+
+    <div class="notebox memory">🧠 Memory Trick: As you bring the object closer to the mirror (infinity→C→F→P), the image moves FARTHER away and gets BIGGER — until object crosses F, then image flips to Virtual+Erect (behind mirror).</div>
+    <div class="notebox tip">📌 Exam Tip: <b>Real image is ALWAYS Inverted</b> and <b>Virtual image is ALWAYS Erect</b> — no exceptions in mirrors/lenses!</div>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 20 Q60 75 100 130" fill="none" stroke="#333" stroke-width="2.4"/>
+        <line x1="100" y1="75" x2="440" y2="75" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+        <circle cx="250" cy="75" r="3" fill="#cf1a2c"/><text x="240" y="65" font-family="Kalam" font-size="13" fill="#cf1a2c">C</text>
+        <circle cx="330" cy="75" r="3" fill="#173e8f"/><text x="325" y="65" font-family="Kalam" font-size="13" fill="#173e8f">F</text>
+        <line x1="180" y1="40" x2="180" y2="75" stroke="#1f7d3a" stroke-width="2"/>
+        <polygon points="180,40 175,48 185,48" fill="#1f7d3a"/>
+        <text x="160" y="35" font-family="Kalam" font-size="13" fill="#1f7d3a">Object (C-F)</text>
+        <line x1="380" y1="105" x2="380" y2="75" stroke="#cf1a2c" stroke-width="2" stroke-dasharray="2 2"/>
+        <polygon points="380,105 375,97 385,97" fill="#cf1a2c"/>
+        <text x="360" y="118" font-family="Kalam" font-size="13" fill="#cf1a2c">Image (beyond C, enlarged, inverted)</text>
+      </svg>
+      <div class="cap">Fig 7 — Concave Mirror: Object between C &amp; F</div>
+    </div>
+
+    <ul>
+      <li>Concave mirror behaves like a <b>Convex lens</b> → so image rules are identical for both.</li>
+      <li>Convex mirror &amp; Concave lens → <b>ALWAYS</b> Virtual, Erect, Diminished image — no exceptions.</li>
+    </ul>
+  </div>
+  <div class="pagenum">11</div>
+</div>
+<!-- ================= PAGE 12 : Q16-Q17 Organic chemistry ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:500px;left:12px;"><use href="#d-pencil"/></svg>
+
+  <div class="heading">CHEMISTRY — HOMOLOGOUS SERIES</div>
+  <div class="q">
+    <div class="qnum">Q16.</div>
+    <div class="qtext">What is the difference in molecular mass between any two consecutive members of a homologous series?</div>
+    <div class="ans">✔ Answer: <span class="hl">CH₂ = 14</span> (12+2×1)</div>
+    <ul>
+      <li>Homologous series = compounds with <b>same functional group</b>, similar chemical properties, each member differs by <span class="red">CH₂ (14 u)</span>.</li>
+      <li>E.g. Alkanes: Methane(CH₄)→Ethane(C₂H₆)→Propane(C₃H₈)→Butane(C₄H₁₀) — each step +CH₂.</li>
+      <li>Saturated (Alkanes): burn with <span class="hl">clean blue flame</span>.</li>
+      <li>Unsaturated (Alkenes/Alkynes): burn with <span class="hl">yellow, sooty flame</span> (incomplete combustion).</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — FUNCTIONAL GROUPS</div>
+  <div class="q">
+    <div class="qnum">Q17.</div>
+    <div class="qtext">Which functional group is present in Propanone (Acetone), CH₃COCH₃?</div>
+    <div class="opts">(a) Aldehyde &nbsp; (b) Alcohol &nbsp; (c) Ketone &nbsp; (d) Carboxylic acid</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Ketone</span> (C=O between two carbons)</div>
+    <table class="note-table">
+      <tr><th>Group</th><th>Formula</th></tr>
+      <tr><td>Alcohol</td><td>−OH</td></tr>
+      <tr><td>Aldehyde</td><td>−CHO</td></tr>
+      <tr><td><span class="hl">Ketone</span></td><td><span class="hl">C=O (mid chain)</span></td></tr>
+      <tr><td>Carboxylic acid</td><td>−COOH</td></tr>
+      <tr><td>Ether</td><td>R−O−R</td></tr>
+      <tr><td>Ester (sweet-smelling)</td><td>R−COO−R (Acid+Alcohol−Water)</td></tr>
+    </table>
+    <ul>
+      <li>Drinking Methanol/Ethanol → cytoplasm coagulates → forms <span class="red">Formaldehyde → Formic acid</span> (highly toxic, fatal); affects <b>Cerebellum</b> (balance).</li>
+      <li><span class="red">Denatured alcohol</span> = alcohol made unfit for drinking (colour/methanol added) for industrial use.</li>
+    </ul>
+  </div>
+  <div class="pagenum">12</div>
+</div>
+<!-- ================= PAGE 13 : Q18 Types of reactions ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:600px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — TYPES OF CHEMICAL REACTIONS (Revision+)</div>
+  <div class="q">
+    <div class="qnum">Q18.</div>
+    <div class="qtext">Zinc placed in Copper Sulphate — colour disappears (Displacement). Full reaction types recap:</div>
+    <table class="note-table">
+      <tr><th>Type</th><th>Example</th></tr>
+      <tr><td><span class="red">Displacement</span></td><td>Zn+CuSO₄→ZnSO₄+Cu (blue→colourless); Fe+CuSO₄→FeSO₄+Cu (brown deposit)</td></tr>
+      <tr><td><span class="red">Thermal Decomposition</span></td><td>2Pb(NO₃)₂→2PbO+4NO₂(brown)+O₂; 2AgBr→2Ag+Br₂ (used in B&amp;W photography)</td></tr>
+      <tr><td><span class="red">Double Displacement (Ion exchange)</span></td><td>Na₂SO₄+BaCl₂→BaSO₄↓(white ppt)+2NaCl</td></tr>
+      <tr><td><span class="red">Combination</span></td><td>CaO+H₂O→Ca(OH)₂+Heat (exothermic, used in whitewashing); Ca(OH)₂+CO₂→CaCO₃↓(milky, =marble/limestone/chalk)</td></tr>
+    </table>
+    <ul>
+      <li>CO₂ turns lime water <span class="hl">milky</span> (forms CaCO₃).</li>
+      <li>Reactivity series (high→low): <span class="red">K Na Ca Mg Al Zn Fe H Cu Ag Au</span> — top displaces bottom, never reverse.</li>
+      <li>K &amp; Na react violently even with cold water; Ca/Mg react with hot water; Al/Zn/Fe react with steam; Cu/Ag/Au almost unreactive.</li>
+      <li><span class="red">Gold</span> dissolves only in <b>Aqua regia</b> = HCl : HNO₃ in ratio <span class="hl">3 : 1</span>.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — EXCEPTIONAL ELECTRONIC CONFIGURATION</div>
+  <div class="q">
+    <div class="qnum">Q19.</div>
+    <div class="qtext">Chromium (Z=24) has an exceptional electronic configuration. Which one is correct?</div>
+    <div class="opts">(a) 3d⁴4s² &nbsp; (b) 3d⁵4s¹ &nbsp; (c) 3d⁶4s⁰ &nbsp; (d) 4s²4p⁴</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">3d⁵ 4s¹</span></div>
+    <ul>
+      <li>Reason: <span class="red">Half-filled &amp; fully-filled subshells are extra stable</span>.</li>
+      <li>One electron shifts from 4s to 3d → makes both 3d (half-filled, 5 electrons) and 4s (half-filled,1 electron) more stable than 3d⁴4s².</li>
+    </ul>
+    <div class="notebox tip">📌 Exam Tip: This is Class 11-12 level chemistry, but appears in Railway Group D — don't rely only on NCERT 6-10!</div>
+  </div>
+  <div class="pagenum">13</div>
+</div>
+<!-- ================= PAGE 14 : Q20 Flower/Fruit ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:550px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — FLOWER, FERTILISATION &amp; FRUIT</div>
+  <div class="q">
+    <div class="qnum">Q20.</div>
+    <div class="qtext">After fertilisation in angiosperms, the ovary of the flower develops into?</div>
+    <div class="opts">(a) Seed &nbsp; (b) Fruit &nbsp; (c) Seed coat &nbsp; (d) Endosperm</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Fruit</span> (Ovule → Seed)</div>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg">
+        <text x="30" y="20" font-family="Kalam" font-weight="700" font-size="15" fill="#cf1a2c">STAMEN (Male)</text>
+        <line x1="60" y1="30" x2="60" y2="90" stroke="#5a7d1f" stroke-width="4"/>
+        <ellipse cx="60" cy="25" rx="12" ry="8" fill="#ffd23f" stroke="#c1861a" stroke-width="1.4"/>
+        <text x="80" y="60" font-family="Kalam" font-size="13" fill="#173e8f">Anther+Filament</text>
+        <text x="80" y="28" font-family="Kalam" font-size="13" fill="#173e8f">Pollen grains</text>
+
+        <text x="270" y="20" font-family="Kalam" font-weight="700" font-size="15" fill="#cf1a2c">PISTIL (Female)</text>
+        <ellipse cx="330" cy="30" rx="10" ry="8" fill="#f8a5c2" stroke="#c05c86" stroke-width="1.3"/>
+        <text x="345" y="34" font-family="Kalam" font-size="13" fill="#173e8f">Stigma (sticky)</text>
+        <line x1="330" y1="38" x2="330" y2="80" stroke="#5a7d1f" stroke-width="4"/>
+        <text x="345" y="65" font-family="Kalam" font-size="13" fill="#173e8f">Style</text>
+        <ellipse cx="330" cy="105" rx="30" ry="22" fill="#e3f7e8" stroke="#1f7d3a" stroke-width="1.6"/>
+        <circle cx="320" cy="105" r="3" fill="#7a2fa0"/><circle cx="335" cy="112" r="3" fill="#7a2fa0"/>
+        <text x="295" y="145" font-family="Kalam" font-size="13" fill="#173e8f">Ovary (with Ovules)</text>
+
+        <path d="M75 25 Q180 -5 320 30" fill="none" stroke="#333" stroke-width="1.3" stroke-dasharray="3 2"/>
+        <polygon points="320,30 308,26 312,35" fill="#333"/>
+        <text x="140" y="12" font-family="Kalam" font-size="13" fill="#333">Pollination</text>
+
+        <text x="150" y="175" font-family="Kalam" font-size="15" fill="#cf1a2c">Ovary → FRUIT &nbsp;|&nbsp; Ovule → SEED</text>
+      </svg>
+      <div class="cap">Fig 8 — Flower Anatomy &amp; Fertilisation</div>
+    </div>
+
+    <ul>
+      <li>Pollination types: <span class="red">Anemophily</span> (by wind), <span class="red">Entomophily</span> (by insects), <span class="red">Hydrophily</span> (by water).</li>
+      <li>Recap (Day 1): Double fertilisation → 1st fertilisation makes Embryo; Triple fusion (2nd fertilisation) makes Endosperm (3n).</li>
+    </ul>
+
+    <table class="note-table">
+      <tr><th>Feature</th><th>Monocot</th><th>Dicot</th></tr>
+      <tr><td>Root</td><td>Fibrous root</td><td>Tap root</td></tr>
+      <tr><td>Venation</td><td>Parallel venation</td><td>Reticulate (net-like) venation</td></tr>
+    </table>
+  </div>
+  <div class="pagenum">14</div>
+</div>
+<!-- ================= PAGE 15 : Q21 Five Kingdom + Q22 Nephron ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — FIVE KINGDOM CLASSIFICATION (Revision)</div>
+  <div class="q">
+    <div class="qnum">Q21.</div>
+    <div class="qtext">In R.H. Whittaker's Five Kingdom classification, all prokaryotic organisms (e.g. bacteria) are placed under?</div>
+    <div class="ans">✔ Answer: <span class="hl">Kingdom Monera</span></div>
+    <table class="note-table">
+      <tr><th>Kingdom</th><th>Cell type</th><th>Cellularity</th></tr>
+      <tr><td><span class="hl">Monera</span></td><td>Prokaryotic</td><td>Unicellular</td></tr>
+      <tr><td>Protista</td><td>Eukaryotic</td><td>Unicellular</td></tr>
+      <tr><td>Fungi</td><td>Eukaryotic</td><td>Multicellular</td></tr>
+      <tr><td>Plantae</td><td>Eukaryotic</td><td>Multicellular</td></tr>
+      <tr><td>Animalia</td><td>Eukaryotic</td><td>Multicellular</td></tr>
+    </table>
+  </div>
+
+  <div class="heading">BIOLOGY — HUMAN EXCRETORY SYSTEM (NEPHRON)</div>
+  <div class="q">
+    <div class="qnum">Q22.</div>
+    <div class="qtext">Where is the Loop of Henle found in the human excretory system?</div>
+    <div class="opts">(a) Liver &nbsp; (b) Lungs &nbsp; (c) Nephron &nbsp; (d) Heart</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Nephron</span> (functional unit of Kidney)</div>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="70" cy="50" r="26" fill="#ffe0e0" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="20" y="20" font-family="Kalam" font-size="13" fill="#cf1a2c">Glomerulus</text>
+        <path d="M96 50 Q120 40 130 55" fill="none" stroke="#333" stroke-width="1.6"/>
+        <text x="95" y="90" font-family="Kalam" font-size="12" fill="#173e8f">Bowman's capsule</text>
+
+        <path d="M130 55 Q160 30 190 55" fill="none" stroke="#173e8f" stroke-width="2.2"/>
+        <text x="140" y="30" font-family="Kalam" font-size="12" fill="#173e8f">PCT</text>
+
+        <line x1="190" y1="55" x2="230" y2="140" stroke="#1f7d3a" stroke-width="2.4"/>
+        <line x1="230" y1="140" x2="270" y2="55" stroke="#1f7d3a" stroke-width="2.4"/>
+        <text x="215" y="160" font-family="Kalam" font-size="14" fill="#1f7d3a" font-weight="700">Loop of Henle</text>
+
+        <path d="M270 55 Q300 30 330 55" fill="none" stroke="#7a2fa0" stroke-width="2.2"/>
+        <text x="285" y="30" font-family="Kalam" font-size="12" fill="#7a2fa0">DCT</text>
+
+        <line x1="330" y1="55" x2="380" y2="55" stroke="#333" stroke-width="2.4"/>
+        <text x="335" y="45" font-family="Kalam" font-size="12">Collecting duct</text>
+        <line x1="380" y1="55" x2="380" y2="110" stroke="#333" stroke-width="2"/>
+        <text x="345" y="125" font-family="Kalam" font-size="12">→ Ureter → Bladder → Urethra</text>
+      </svg>
+      <div class="cap">Fig 9 — Nephron Structure</div>
+    </div>
+
+    <ul>
+      <li><span class="red">Glomerulus + Bowman's capsule</span>: Ultrafiltration of blood.</li>
+      <li><span class="red">PCT (Proximal Convoluted Tubule)</span>: Reabsorbs water, glucose, amino acids.</li>
+      <li><span class="red">Loop of Henle</span>: Reabsorbs water &amp; salts, concentrates filtrate.</li>
+      <li><span class="red">DCT (Distal Convoluted Tubule)</span>: Reabsorbs remaining ions.</li>
+      <li><span class="red">Collecting duct</span> → Ureter → Urinary bladder → Urethra.</li>
+    </ul>
+  </div>
+  <div class="pagenum">15</div>
+</div>
+<!-- ================= PAGE 16 : Q23-Q24 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:450px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — CALORIMETRY (Ice + Water)</div>
+  <div class="q">
+    <div class="qnum">Q23.</div>
+    <div class="qtext">100g ice at 0°C mixed with 100g water at 100°C. Find final temperature.</div>
+    <div class="ans">✔ Answer: <span class="hl">10°C</span></div>
+    <ul>
+      <li>Heat gained by ice = Heat lost by water</li>
+      <li>Ice: melts first (latent heat, L=80 cal/g) then warms up → <span class="circle">mL + msΔT</span></li>
+      <li>100(80) + 100(1)(Tf−0) = 100(1)(100−Tf)</li>
+      <li>8000 + 100Tf = 10000 − 100Tf ⇒ 200Tf = 2000 ⇒ <span class="hl">Tf = 10°C</span></li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — TOTAL INTERNAL REFLECTION</div>
+  <div class="q">
+    <div class="qnum">Q24.</div>
+    <div class="qtext">A diver underwater sees the world above only through a cone ("Snell's Window"). The cone's angle depends on which phenomenon?</div>
+    <div class="opts">(a) Refraction &nbsp; (b) Critical angle (TIR) &nbsp; (c) Dispersion &nbsp; (d) Polarisation</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Critical Angle → Total Internal Reflection</span></div>
+    <ul>
+      <li>Conditions for TIR: (1) Light travels <b>Denser → Rarer</b> medium. (2) Angle of incidence &gt; <span class="red">Critical angle</span>.</li>
+      <li>Applications: <span class="red">Optical fibres</span>, Diamond's sparkle, Mirage (Mriga-Trishna).</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="60" x2="250" y2="60" stroke="#4a90e2" stroke-width="1.6"/>
+        <text x="10" y="52" font-family="Kalam" font-size="13" fill="#173e8f">Water surface</text>
+        <circle cx="130" cy="110" r="10" fill="#f7b750" stroke="#8a5a12"/>
+        <path d="M130 100 L70 20 M130 100 L190 20" stroke="#7a2fa0" stroke-width="1.6" fill="none"/>
+        <path d="M70 20 A100 100 0 0 1 190 20" fill="none" stroke="#7a2fa0" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <text x="90" y="30" font-family="Kalam" font-size="13" fill="#7a2fa0">Cone of vision</text>
+      </svg>
+      <div class="cap">Fig 10 — Snell's Window (Diver's view)</div>
+    </div>
+  </div>
+  <div class="pagenum">16</div>
+</div>
+<!-- ================= PAGE 17 : Q25-Q26 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:450px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — FARADAY'S LAWS OF ELECTROLYSIS</div>
+  <div class="q">
+    <div class="qnum">Q25.</div>
+    <div class="qtext">According to Faraday's First Law of Electrolysis, mass (M) of substance deposited at an electrode is directly proportional to?</div>
+    <div class="ans">✔ Answer: <span class="hl">Total electric charge passed (Q = It)</span></div>
+    <ul>
+      <li><span class="red">1st Law</span>: M ∝ Q (Charge = Current × Time)</li>
+      <li><span class="red">2nd Law</span>: Same charge through different electrolytes → mass deposited ∝ their <b>equivalent weight</b>.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — GAS LAWS</div>
+  <div class="q">
+    <div class="qnum">Q26.</div>
+    <div class="qtext">At constant temperature, solubility of a gas in liquid is directly proportional to partial pressure — which law?</div>
+    <div class="opts">(a) Charles's Law &nbsp; (b) Henry's Law &nbsp; (c) Boyle's Law &nbsp; (d) Raoult's Law</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Henry's Law</span></div>
+    <table class="note-table">
+      <tr><th>Law</th><th>Statement</th></tr>
+      <tr><td>Boyle's Law (1662)</td><td>PV = constant (at constant T)</td></tr>
+      <tr><td>Charles's Law</td><td>V ∝ T (at constant P)</td></tr>
+      <tr><td>Gay-Lussac's Law</td><td>P ∝ T (at constant V)</td></tr>
+      <tr><td><span class="hl">Henry's Law</span></td><td><span class="hl">Solubility of gas ∝ Partial pressure (const. T)</span></td></tr>
+      <tr><td>Raoult's Law</td><td>For solutions of volatile liquids (vapour pressure vs mole fraction)</td></tr>
+    </table>
+  </div>
+  <div class="pagenum">17</div>
+</div>
+<!-- ================= PAGE 18 : Q27-Q30 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:420px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:650px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — ENDOCRINE GLANDS (Revision+)</div>
+  <div class="q">
+    <div class="qnum">Q27.</div>
+    <div class="qtext">Which gland secretes the hormone regulating Calcium &amp; Phosphorus metabolism?</div>
+    <div class="opts">(a) Thyroid &nbsp; (b) Parathyroid &nbsp; (c) Adrenal &nbsp; (d) Pancreas</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Parathyroid gland</span></div>
+    <table class="note-table">
+      <tr><th>Gland</th><th>Hormone</th><th>Function</th></tr>
+      <tr><td>Pancreas (Beta cells)</td><td>Insulin</td><td>Glucose → Glycogen</td></tr>
+      <tr><td>Pancreas (Alpha cells)</td><td>Glucagon</td><td>Glycogen → Glucose</td></tr>
+      <tr><td>Adrenal</td><td>Cortisol</td><td>Stress hormone</td></tr>
+      <tr><td>Adrenal</td><td>Adrenaline/Epinephrine</td><td>Fight-or-flight</td></tr>
+      <tr><td>Thyroid</td><td>Thyroxine (T4, needs Iodine)</td><td>Metabolism; deficiency→Goitre (treated with Iodine-131)</td></tr>
+      <tr><td><span class="hl">Parathyroid</span></td><td>Parathormone</td><td><span class="hl">Calcium &amp; Phosphorus metabolism</span></td></tr>
+    </table>
+    <div class="notebox tip">📌 Exam Tip: Pancreas = "Mixed gland" — releases BOTH hormones (insulin/glucagon) AND digestive enzymes (lipase, trypsin).</div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">Q28.</div>
+    <div class="qtext">Most vitamins of the Vitamin B-complex primarily function in the body as?</div>
+    <div class="ans">✔ Answer: <span class="hl">Coenzymes</span> (help enzymes work)</div>
+  </div>
+
+  <div class="heading">CHEMISTRY — INDUSTRIAL GASES</div>
+  <div class="q">
+    <div class="qnum">Q29.</div>
+    <div class="qtext">Water gas (industrial fuel) is a mixture of which two gases?</div>
+    <div class="ans">✔ Answer: <span class="hl">CO + H₂</span> (also called "Syngas")</div>
+    <ul><li>Producer gas = CO + N₂ (different from water gas)</li></ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — MOLE CONCEPT (Avogadro)</div>
+  <div class="q">
+    <div class="qnum">Q30.</div>
+    <div class="qtext">How many carbon atoms are present in one mole of Glucose (C₆H₁₂O₆)?</div>
+    <div class="ans">✔ Answer: <span class="hl">6 × 6.022×10²³ = 3.61×10²⁴ atoms</span></div>
+    <ul>
+      <li>Avogadro's number = <span class="circle">6.022 × 10²³</span></li>
+      <li>Moles = Given mass / Molar mass = Number of particles / Avogadro's number</li>
+    </ul>
+  </div>
+  <div class="pagenum">18</div>
+</div>
+<!-- ================= PAGE 19 : Q31 Diseases ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">BIOLOGY — DISEASES BY PATHOGEN TYPE (Full Recap)</div>
+  <div class="q">
+    <div class="qnum">Q31.</div>
+    <div class="qtext">Classify diseases: Bacterial / Viral / Protozoal / Fungal</div>
+    <table class="note-table">
+      <tr><th>Pathogen</th><th>Diseases</th></tr>
+      <tr><td><span class="red">Bacteria</span></td><td>Typhoid(<i>Salmonella typhi</i>), Cholera(<i>Vibrio cholerae</i>), TB(<i>Mycobacterium tuberculosis</i>), Tetanus(<i>Clostridium tetani</i>), Pneumonia, Plague, Whooping cough</td></tr>
+      <tr><td><span class="red">Virus</span></td><td>AIDS(HIV), Smallpox, Dengue, Polio, Flu, Rabies, Measles</td></tr>
+      <tr><td><span class="red">Protozoa</span></td><td>Malaria(<i>Plasmodium</i>), Kala-azar(<i>Leishmania</i>), Sleeping sickness(<i>Trypanosoma</i>), Amoebic dysentery/Amoebiasis</td></tr>
+      <tr><td><span class="red">Fungus</span></td><td>Ringworm, Athlete's foot, Asthma, Baldness/Dandruff</td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick "BARSA" (Fungal diseases): <b>B</b>aldness/Dandruff, <b>A</b>sthma, <b>R</b>ingworm, <b>S</b>cabies, <b>A</b>thlete's foot</div>
+    <ul>
+      <li>Malaria: carried by <span class="red">female Anopheles</span> mosquito; reproduces by <b>multiple fission</b>; World Malaria Day = <span class="hl">25 April</span>.</li>
+      <li>Dengue &amp; Chikungunya (viral): carried by <span class="red">female Aedes aegypti</span> mosquito.</li>
+      <li>Kala-azar → sandfly carrier; Sleeping sickness → tsetse fly carrier.</li>
+      <li>AIDS = Acquired Immuno-Deficiency Syndrome, caused by <b>HIV</b>; World AIDS Day = <span class="hl">1 December</span>; Test = <span class="red">ELISA</span> (Enzyme Linked Immunosorbent Assay).</li>
+      <li>Typhoid test = <span class="red">Widal test</span>.</li>
+    </ul>
+  </div>
+  <div class="pagenum">19</div>
+</div>
+<!-- ================= PAGE 20 : Q32 Periodic trends ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:500px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — PERIODIC TRENDS</div>
+  <div class="q">
+    <div class="qnum">Q32.</div>
+    <div class="qtext">Why does atomic size decrease from left to right across a period?</div>
+    <div class="ans">✔ Answer: Because <span class="hl">Nuclear charge increases</span> (more protons pull electrons closer)</div>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="20" x2="60" y2="120" stroke="#333" stroke-width="1.6"/>
+        <polygon points="60,20 55,30 65,30" fill="#333"/>
+        <text x="15" y="15" font-family="Kalam" font-size="13" fill="#173e8f">Top→Bottom (Group)</text>
+        <text x="10" y="70" font-family="Kalam" font-size="13" fill="#1f7d3a">Atomic radius ↑</text>
+        <text x="10" y="85" font-family="Kalam" font-size="13" fill="#1f7d3a">Metallic character ↑</text>
+        <text x="10" y="100" font-family="Kalam" font-size="13" fill="#cf1a2c">Ionisation energy ↓</text>
+        <text x="10" y="115" font-family="Kalam" font-size="13" fill="#cf1a2c">Electronegativity ↓</text>
+
+        <line x1="150" y1="120" x2="420" y2="120" stroke="#333" stroke-width="1.6"/>
+        <polygon points="420,120 410,115 410,125" fill="#333"/>
+        <text x="150" y="135" font-family="Kalam" font-size="13" fill="#173e8f">Left→Right (Period)</text>
+        <text x="200" y="70" font-family="Kalam" font-size="13" fill="#cf1a2c">Atomic radius ↓</text>
+        <text x="200" y="85" font-family="Kalam" font-size="13" fill="#cf1a2c">Metallic character ↓</text>
+        <text x="200" y="100" font-family="Kalam" font-size="13" fill="#1f7d3a">Ionisation energy ↑</text>
+        <text x="200" y="115" font-family="Kalam" font-size="13" fill="#1f7d3a">Electronegativity ↑</text>
+      </svg>
+      <div class="cap">Fig 11 — Periodic Trends (opposite along Group vs Period)</div>
+    </div>
+    <div class="notebox memory">🧠 Memory Trick: Whatever ↑ top→bottom, will ↓ left→right — and vice versa! Only need to memorise ONE direction.</div>
+  </div>
+
+  <div class="heading">CHEMISTRY — SOAP &amp; MICELLES</div>
+  <div class="q">
+    <div class="qnum">Q33.</div>
+    <div class="qtext">Which part of a soap molecule is hydrophilic?</div>
+    <div class="ans">✔ Answer: <span class="hl">Ionic "head" end (carboxylate group)</span> is hydrophilic; the hydrocarbon "tail" is hydrophobic</div>
+    <ul>
+      <li>Soap = Sodium/Potassium salt of a fatty (carboxylic) acid.</li>
+      <li>In water, soap forms a <span class="red">Micelle</span>: hydrophobic tail traps dirt/oil inside; hydrophilic head faces outward toward water.</li>
+    </ul>
+  </div>
+  <div class="pagenum">20</div>
+</div>
+<!-- ================= PAGE 21 : Q34-Q35 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:400px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — LENS IN A LIQUID</div>
+  <div class="q">
+    <div class="qnum">Q34.</div>
+    <div class="qtext">A convex lens is immersed in a liquid with the SAME refractive index as the lens. What happens to its focal length?</div>
+    <div class="ans">✔ Answer: Focal length becomes <span class="hl">Infinity</span> (lens effectively disappears/stops bending light)</div>
+  </div>
+
+  <div class="heading">CHEMISTRY — ISOTOPE / ISOBAR / ISOTONE / ISOELECTRONIC (Recap)</div>
+  <div class="q">
+    <div class="qnum">Q35.</div>
+    <div class="qtext">How is the number of neutrons in an atom calculated?</div>
+    <div class="ans">✔ Answer: <span class="hl">Neutrons = Mass number − Atomic number</span></div>
+    <ul><li>Number of electrons = Number of protons = Atomic number (for neutral atom)</li></ul>
+    <table class="note-table">
+      <tr><th>Term</th><th>Same quantity</th></tr>
+      <tr><td>Isotope</td><td>Atomic number</td></tr>
+      <tr><td>Isobar</td><td>Mass number</td></tr>
+      <tr><td>Isotone</td><td>Neutron number</td></tr>
+      <tr><td><span class="hl">Isoelectronic</span></td><td><span class="hl">Electron number</span></td></tr>
+    </table>
+  </div>
+  <div class="pagenum">21</div>
+</div>
+<!-- ================= PAGE 22 : Q36-Q38 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:400px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — GAS EXCHANGE IN PLANTS</div>
+  <div class="q">
+    <div class="qnum">Q36.</div>
+    <div class="qtext">Through which structure does gaseous exchange take place primarily in plants?</div>
+    <div class="opts">(a) Xylem &nbsp; (b) Stomata &nbsp; (c) Stem &nbsp; (d) Root</div>
+    <div class="ans">✔ Answer: (b) <span class="hl">Stomata</span></div>
+    <ul>
+      <li><span class="red">Xylem</span>: transports water &amp; minerals (one-way, upward).</li>
+      <li><span class="red">Phloem</span>: transports food (two-way/bidirectional).</li>
+      <li><span class="red">Stomata</span>: small pores on leaf surface; site of gas exchange (CO₂/O₂) during photosynthesis &amp; respiration; guarded by <b>kidney-shaped guard cells</b>; also site of <b>Transpiration</b> (water loss as vapour).</li>
+      <li><span class="red">Guttation</span>: water loss (liquid form) through <b>hydathodes</b> at leaf edges — different from transpiration.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — REFRACTION: FREQUENCY &amp; WAVELENGTH</div>
+  <div class="q">
+    <div class="qnum">Q37.</div>
+    <div class="qtext">A ray of light enters Glass from Air. What happens to its frequency and wavelength?</div>
+    <div class="ans">✔ Frequency: <span class="hl">unchanged</span> (depends on source) &nbsp;|&nbsp; Wavelength: <span class="hl">decreases</span></div>
+    <ul><li>Air→Glass = Rarer→Denser: bends toward normal, speed decreases, wavelength decreases.</li></ul>
+  </div>
+
+  <div class="heading">PHYSICS — ESCAPE VELOCITY</div>
+  <div class="q">
+    <div class="qnum">Q38.</div>
+    <div class="qtext">Escape velocity from Earth = 11.2 km/s. If the object's mass is doubled, what is the new escape velocity?</div>
+    <div class="ans">✔ Answer: <span class="hl">Remains same — 11.2 km/s</span> (independent of object's own mass)</div>
+    <ul>
+      <li>v_escape = √(2GM/R) — M = mass of <b>Earth</b>, R = radius of <b>Earth</b> — object's mass does NOT appear in the formula!</li>
+    </ul>
+  </div>
+  <div class="pagenum">22</div>
+</div>
+<!-- ================= PAGE 23 : Q39 HEART ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:600px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — HUMAN HEART &amp; CIRCULATION</div>
+  <div class="q">
+    <div class="qnum">Q39.</div>
+    <div class="qtext">The Tricuspid valve regulates blood flow between which two chambers of the heart?</div>
+    <div class="ans">✔ Answer: <span class="hl">Right Atrium and Right Ventricle</span></div>
+
+    <ul>
+      <li><span class="red">Arteries</span>: carry oxygenated blood (heart→body). Exception: <b>Pulmonary artery</b> carries deoxygenated blood (heart→lungs).</li>
+      <li><span class="red">Veins</span>: carry deoxygenated blood (body→heart). Exception: <b>Pulmonary vein</b> carries oxygenated blood (lungs→heart).</li>
+      <li>Human heart = <span class="hl">4 chambers</span> (2 Atria + 2 Ventricles). Birds=4; Reptiles=3 (Crocodile=4); Amphibians=3; Fish=2.</li>
+      <li><span class="red">Superior Vena Cava</span>: deoxygenated blood from upper body. <span class="red">Inferior Vena Cava</span> (largest vein): from lower body.</li>
+      <li><span class="red">Pericardium</span> = outer covering of heart (like Pleura for lungs). <span class="red">Septum</span> = wall separating left &amp; right heart.</li>
+      <li><span class="red">SA node</span> (Sino-atrial node, in right atrium) = natural <b>pacemaker</b> of the heart.</li>
+    </ul>
+
+    <div class="diagram wide">
+      <svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="150" height="30" rx="6" fill="#ffe0e0" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="15" y="30" font-family="Kalam" font-size="13" fill="#cf1a2c">Body (deoxy. blood)</text>
+        <line x1="85" y1="40" x2="85" y2="55" stroke="#333" stroke-width="1.6"/><polygon points="85,55 80,47 90,47" fill="#333"/>
+
+        <rect x="20" y="58" width="130" height="30" rx="6" fill="#ffd6d6" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="28" y="78" font-family="Kalam" font-size="13" fill="#cf1a2c">Right Atrium</text>
+        <text x="160" y="78" font-family="Kalam" font-size="12" fill="#7a2fa0">[Tricuspid valve]</text>
+        <line x1="85" y1="88" x2="85" y2="103" stroke="#333" stroke-width="1.6"/><polygon points="85,103 80,95 90,95" fill="#333"/>
+
+        <rect x="20" y="106" width="130" height="30" rx="6" fill="#ffd6d6" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="25" y="126" font-family="Kalam" font-size="13" fill="#cf1a2c">Right Ventricle</text>
+        <line x1="150" y1="121" x2="230" y2="121" stroke="#333" stroke-width="1.6"/><polygon points="230,121 222,116 222,126" fill="#333"/>
+        <text x="155" y="115" font-family="Kalam" font-size="11">[Pulmonary valve]</text>
+
+        <rect x="235" y="106" width="120" height="30" rx="6" fill="#e3f7e8" stroke="#1f7d3a" stroke-width="1.6"/>
+        <text x="245" y="126" font-family="Kalam" font-size="13" fill="#1f7d3a">LUNGS (O₂↑CO₂↓)</text>
+
+        <line x1="295" y1="106" x2="295" y2="88" stroke="#333" stroke-width="1.6"/><polygon points="295,88 290,96 300,96" fill="#333"/>
+        <rect x="235" y="58" width="120" height="30" rx="6" fill="#d6ecff" stroke="#173e8f" stroke-width="1.6"/>
+        <text x="248" y="78" font-family="Kalam" font-size="13" fill="#173e8f">Left Atrium</text>
+        <text x="360" y="78" font-family="Kalam" font-size="11" fill="#7a2fa0">[Mitral/Bicuspid]</text>
+        <line x1="295" y1="88" x2="295" y2="103" stroke="#333" stroke-width="1.6"/><polygon points="295,103 290,95 300,95" fill="#333"/>
+
+        <rect x="235" y="106" width="0" height="0"/>
+        <rect x="235" y="150" width="120" height="30" rx="6" fill="#d6ecff" stroke="#173e8f" stroke-width="1.6"/>
+        <text x="240" y="170" font-family="Kalam" font-size="13" fill="#173e8f">Left Ventricle</text>
+        <line x1="295" y1="136" x2="295" y2="150" stroke="#333" stroke-width="1.6"/><polygon points="295,150 290,142 300,142" fill="#333"/>
+        <text x="300" y="145" font-family="Kalam" font-size="11">[Aortic valve]</text>
+
+        <line x1="295" y1="180" x2="295" y2="200" stroke="#333" stroke-width="1.6"/><polygon points="295,200 290,192 300,192" fill="#333"/>
+        <rect x="215" y="203" width="160" height="30" rx="6" fill="#ffe0e0" stroke="#cf1a2c" stroke-width="1.6"/>
+        <text x="230" y="223" font-family="Kalam" font-size="13" fill="#cf1a2c">AORTA → Whole Body</text>
+      </svg>
+      <div class="cap">Fig 12 — Blood Circulation through the Heart</div>
+    </div>
+
+    <div class="notebox memory">🧠 Memory Trick: Valve order = <b>Tri</b>cuspid(Right Atrium→Ventricle) → <b>Pulmonary</b>(→Lungs) → <b>Mitral/Bicuspid</b>(Left Atrium→Ventricle) → <b>Aortic</b>(→Body)</div>
+  </div>
+  <div class="pagenum">23</div>
+</div>
+<!-- ================= PAGE 24 : QUICK ANSWER KEY ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:330px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:600px;left:10px;"><use href="#d-smiley"/></svg>
+
+  <div class="titlewrap"><h1 class="title" style="font-size:1.8em;">QUICK ANSWER KEY — DAY 2 (Q1–Q39)</h1></div>
+  <div class="subtitle">⚡ For last-minute revision ⚡</div>
+
+  <table class="note-table" style="width:100%;">
+    <tr><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th></tr>
+    <tr><td>1</td><td>Cyanocobalamin</td><td>21</td><td>Monera</td></tr>
+    <tr><td>2</td><td>Magnetic effect</td><td>22</td><td>Nephron</td></tr>
+    <tr><td>3</td><td>pH 7.4</td><td>23</td><td>10°C</td></tr>
+    <tr><td>4</td><td>H₂SO₄</td><td>24</td><td>Critical angle/TIR</td></tr>
+    <tr><td>5</td><td>Vacuum</td><td>25</td><td>Charge (Q=It)</td></tr>
+    <tr><td>6</td><td>Moseley, 1913</td><td>26</td><td>Henry's Law</td></tr>
+    <tr><td>7</td><td>Dispersion</td><td>27</td><td>Parathyroid</td></tr>
+    <tr><td>8</td><td>Ammeter, Series</td><td>28</td><td>Coenzymes</td></tr>
+    <tr><td>9</td><td>Concave mirror</td><td>29</td><td>CO+H₂</td></tr>
+    <tr><td>10</td><td>Noble gases</td><td>30</td><td>6×6.022×10²³</td></tr>
+    <tr><td>11</td><td>RBC</td><td>31</td><td>(disease table)</td></tr>
+    <tr><td>12</td><td>f = 2m</td><td>32</td><td>Nuclear charge ↑</td></tr>
+    <tr><td>13</td><td>Resistance</td><td>33</td><td>Ionic head</td></tr>
+    <tr><td>14</td><td>Magnetic field</td><td>34</td><td>Infinity</td></tr>
+    <tr><td>15</td><td>Beyond C, Real+Enlarged</td><td>35</td><td>Mass−Atomic no.</td></tr>
+    <tr><td>16</td><td>CH₂ = 14</td><td>36</td><td>Stomata</td></tr>
+    <tr><td>17</td><td>Ketone</td><td>37</td><td>λ decreases</td></tr>
+    <tr><td>18</td><td>(reaction types)</td><td>38</td><td>11.2 km/s (same)</td></tr>
+    <tr><td>19</td><td>3d⁵4s¹</td><td>39</td><td>Right Atrium-Ventricle</td></tr>
+    <tr><td>20</td><td>Fruit</td><td></td><td></td></tr>
+  </table>
+
+  <div class="notebox tip" style="margin-top:16px;">📌 Exam Tip: Re-read every RED heading + YELLOW highlight before the exam — that's 80% of the marks in 20% of the time!</div>
+  <div class="notebox memory">🧠 Memory Trick: Group Day-1 + Day-2 answer keys together and test yourself blind (cover the answer column) before Day-3!</div>
+
+  <div class="pagenum">24</div>
+</div>
+
+</body>
+</html>
