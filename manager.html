@@ -2653,9 +2653,36 @@ function anMount(){
     <div class="annot-scroll" id="annot-scroll">
       <div class="annot-loading" id="annot-loading"><div class="spinner"></div><div>Opening ${escapeHtml(annot.name)}…</div></div>
     </div>
-    <div class="an-hint" id="an-hint">Pick a tool, then draw on the page. Active page = the one you last drew on.</div>`;
+    <div class="an-hint" id="an-hint">✍️ One finger draws • ✌️ two fingers scroll • or tap 🖐️ to pan.</div>`;
   document.body.appendChild(root);
+  anAttachTouchScroll(root.querySelector('#annot-scroll'));
   if (!annotPointerBound){ window.addEventListener('pointerup', anGlobalPointerUp); window.addEventListener('pointercancel', anGlobalPointerUp); annotPointerBound = true; }
+}
+
+// Two-finger scrolling: one finger draws, two fingers pan the page (like
+// GoodNotes/Notein). We keep touch-action:none on the ink layer so a single
+// finger writes, and manually scroll the container when a second finger lands —
+// aborting any in-progress single-finger stroke so no stray mark is left behind.
+function anAttachTouchScroll(scroll){
+  if (!scroll) return;
+  let tf = null;
+  const avg = (ts, key) => { let s=0; for (let i=0;i<ts.length;i++) s += ts[i][key]; return s/ts.length; };
+  scroll.addEventListener('touchstart', (e) => {
+    if (e.touches.length >= 2){
+      if (annotDraw.drawing){ const pg = annotDraw.page; annotDraw.drawing=false; annotDraw.stroke=null; annotDraw.page=null; if (pg){ pg._cache=null; anRedraw(pg); } }
+      tf = { y: avg(e.touches,'clientY'), x: avg(e.touches,'clientX'), top: scroll.scrollTop, left: scroll.scrollLeft };
+    }
+  }, { passive:false });
+  scroll.addEventListener('touchmove', (e) => {
+    if (tf && e.touches.length >= 2){
+      e.preventDefault();
+      scroll.scrollTop  = tf.top  - (avg(e.touches,'clientY') - tf.y);
+      scroll.scrollLeft = tf.left - (avg(e.touches,'clientX') - tf.x);
+    }
+  }, { passive:false });
+  const end = (e) => { if (!e.touches || e.touches.length < 2) tf = null; };
+  scroll.addEventListener('touchend', end);
+  scroll.addEventListener('touchcancel', end);
 }
 
 function anLoadingDone(){ const l = document.getElementById('annot-loading'); if (l) l.remove(); }
@@ -2740,7 +2767,7 @@ function anSetTool(t){
   if (hint) hint.textContent = (t==='pan') ? 'Pan mode: drag or swipe to scroll the page. Pick a pen to write again.'
     : (t==='text') ? 'Click anywhere on the page to add a text box, type, then press Enter.'
     : (t==='eraser') ? 'Drag over your marks to erase them.'
-    : 'Draw on the page to ' + (t==='highlighter'?'highlight':'write') + '. Tip: use 🖐️ (or the finger-scroll toggle) to scroll.';
+    : 'One finger to ' + (t==='highlighter'?'highlight':'write') + ' • two fingers to scroll • 🖐️ to pan.';
 }
 // Toggle whether a single finger scrolls (on) or draws (off) on touch devices.
 function anToggleFingerScroll(){
