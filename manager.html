@@ -421,6 +421,69 @@ body.light .header-search input{background:#f1f5f9}
 .settings-panel .toggle-slider::before{height:18px;width:18px}
 .settings-panel .toggle-switch input:checked+.toggle-slider::before{transform:translateX(20px)}
 @media(max-width:640px){.page-hero{padding:20px}.page-hero .ph-title{font-size:19px}.page-hero .ph-badge{display:none}.upload-panel .drop-zone{padding:38px 20px}}
+
+/* ============================================================
+   NOTE STUDIO — built-in note maker (multi-page A4 editor)
+   Rich text + handwriting canvas + templates + image insert.
+   ============================================================ */
+.note-studio{font-family:'Poppins','Inter',sans-serif;animation:fadeIn .3s}
+.note-studio>.back-btn{margin-bottom:14px}
+.ns-titlebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ns-title-input{flex:1;min-width:220px;background:rgba(0,0,0,.25);border:1px solid var(--border-soft);border-radius:12px;padding:12px 16px;color:var(--text);font-size:18px;font-weight:700;font-family:'Poppins',sans-serif}
+.ns-title-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--ring)}
+.ns-folder-select{background:rgba(0,0,0,.25);border:1px solid var(--border-soft);border-radius:12px;padding:12px 14px;color:var(--text);font-size:14px;font-family:inherit;max-width:230px}
+.ns-folder-select:focus{outline:none;border-color:var(--primary)}
+
+/* Sticky toolbar */
+.ns-toolbar{position:sticky;top:64px;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px 12px;margin-bottom:16px;background:var(--glass);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border:1px solid var(--border-soft);border-radius:14px;box-shadow:var(--shadow-md)}
+.ns-tgroup{display:flex;align-items:center;gap:4px;padding:0 6px;border-right:1px solid var(--border-soft)}
+.ns-tgroup:last-child{border-right:none}
+.ns-btn{background:rgba(255,255,255,.05);border:1px solid var(--border-soft);border-radius:9px;min-width:34px;height:34px;padding:0 9px;display:inline-flex;align-items:center;justify-content:center;gap:5px;cursor:pointer;color:var(--text);font-size:14px;font-family:inherit;font-weight:600;transition:all .18s}
+.ns-btn:hover{border-color:var(--primary);background:rgba(99,102,241,.16);transform:translateY(-1px)}
+.ns-btn.active{background:var(--grad-primary);border-color:transparent;color:#fff;box-shadow:0 6px 14px -6px var(--ring)}
+.ns-btn.danger:hover{border-color:var(--danger);background:rgba(247,112,102,.18);color:var(--danger)}
+.ns-select{background:rgba(0,0,0,.25);border:1px solid var(--border-soft);border-radius:9px;height:34px;padding:0 8px;color:var(--text);font-size:13px;font-family:inherit;cursor:pointer}
+.ns-select:focus{outline:none;border-color:var(--primary)}
+.ns-color{width:34px;height:34px;padding:0;border:1px solid var(--border-soft);border-radius:9px;background:none;cursor:pointer}
+.ns-color::-webkit-color-swatch-wrapper{padding:3px}
+.ns-color::-webkit-color-swatch{border:none;border-radius:6px}
+.ns-swatches{display:flex;gap:4px}
+.ns-sw{width:22px;height:22px;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:transform .15s}
+.ns-sw:hover{transform:scale(1.15)}
+.ns-sw.active{border-color:var(--text);transform:scale(1.12)}
+.ns-mode-pill{display:flex;background:rgba(0,0,0,.25);border:1px solid var(--border-soft);border-radius:10px;padding:3px;gap:3px}
+.ns-mode-pill .ns-btn{border:none;background:transparent;height:28px}
+.ns-mode-pill .ns-btn.active{background:var(--grad-primary);color:#fff}
+.ns-range{width:96px;accent-color:var(--primary)}
+.ns-tlabel{font-size:11.5px;color:var(--muted);font-weight:600;margin-right:2px}
+
+/* Pages canvas area */
+.ns-stage{display:flex;flex-direction:column;align-items:center;gap:26px;padding:6px 0 20px}
+.ns-page-wrap{position:relative}
+.ns-page-num{position:absolute;top:-22px;left:0;font-size:11.5px;color:var(--muted);font-weight:600}
+.ns-page-del{position:absolute;top:-26px;right:0;background:rgba(247,112,102,.12);border:1px solid rgba(247,112,102,.45);color:var(--danger);border-radius:8px;width:26px;height:24px;cursor:pointer;font-size:12px;display:none;align-items:center;justify-content:center}
+.ns-page-wrap:hover .ns-page-del{display:inline-flex}
+.ns-page{position:relative;width:794px;max-width:100%;height:1123px;background:#fff;color:#111;border-radius:6px;box-shadow:0 20px 50px -18px rgba(0,0,0,.6);overflow:hidden}
+.ns-page-text{position:absolute;inset:0;padding:64px 60px;font-family:'Inter',sans-serif;font-size:17px;line-height:1.8;color:#1a1a1a;overflow:hidden;outline:none;z-index:1}
+.ns-page-text:empty::before{content:attr(data-ph);color:#9aa3b2}
+.ns-page-canvas{position:absolute;inset:0;z-index:2;touch-action:none}
+.ns-page.mode-type .ns-page-canvas{pointer-events:none}
+.ns-page.mode-draw .ns-page-text{pointer-events:none}
+.ns-page.mode-draw .ns-page-canvas{cursor:crosshair}
+
+/* Templates (shared with generated notes via .npg-* mirror below) */
+.tpl-blank{background:#fff}
+.tpl-ruled{background:linear-gradient(#fff 0 0);background-image:repeating-linear-gradient(#fff,#fff 33px,#cfe0f5 33px,#cfe0f5 34px);background-position:0 40px}
+.tpl-grid{background-color:#fff;background-image:linear-gradient(#e6eef7 1px,transparent 1px),linear-gradient(90deg,#e6eef7 1px,transparent 1px);background-size:28px 28px}
+.tpl-dotted{background-color:#fff;background-image:radial-gradient(#c7d3e3 1.4px,transparent 1.4px);background-size:26px 26px}
+.tpl-cornell{background:#fff;background-image:repeating-linear-gradient(#fff,#fff 33px,#e3ecf7 33px,#e3ecf7 34px),linear-gradient(90deg,transparent 150px,#f4a3a3 150px,#f4a3a3 152px,transparent 152px);background-position:0 40px,0 0}
+
+.ns-add-page{background:rgba(255,255,255,.04);border:2px dashed color-mix(in srgb,var(--primary) 40%,var(--border));color:var(--muted);border-radius:14px;padding:16px 24px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;transition:all .2s;width:794px;max-width:100%}
+.ns-add-page:hover{border-color:var(--primary);color:var(--primary);background:rgba(99,102,241,.08)}
+
+.ns-actionbar{position:sticky;bottom:0;z-index:40;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px;padding:12px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--border-soft);border-radius:14px;box-shadow:var(--shadow-lg)}
+.ns-draft-status{font-size:12px;color:var(--muted);margin-left:auto}
+@media(max-width:900px){.ns-toolbar{top:0}.ns-page,.ns-add-page{width:100%}.ns-page-text{padding:40px 28px;font-size:16px}}
 </style>
 </head>
 <body>
@@ -1253,6 +1316,8 @@ function renderTopBar() {
     breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">⬆️ Upload</span>';
   } else if (currentView === 'visibility') {
     breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">👁️ Visibility</span>';
+  } else if (currentView === 'notestudio') {
+    breadcrumb += '<span class="bc-sep">›</span><span class="bc-current">✍️ Note Studio</span>';
   }
   const isLight = document.body.classList.contains('light');
   const hiddenCount = allFiles.filter(f => hiddenFiles.includes(f.path)).length;
@@ -1283,6 +1348,7 @@ function renderCurrentView() {
     case 'settings': return renderSettingsView();
     case 'upload': return renderUploadView();
     case 'visibility': return renderVisibilityView();
+    case 'notestudio': return renderNoteStudioView();
     default: return renderHomeView();
   }
 }
@@ -1393,6 +1459,7 @@ function renderHomeView() {
   const quickActions = `<div class="dash-section dash-reveal" style="animation-delay:.1s">
     <div class="dash-section-title"><span class="st-ico">⚡</span> Quick Actions</div>
     <div class="qa-grid">
+      ${qa('var(--grad-violet)', 'rgba(139,92,246,.7)', '✍️', 'Create Note', 'openNoteStudio()')}
       ${qa('var(--grad-primary)', 'rgba(99,102,241,.7)', '⬆️', 'Upload Notes', "currentView='upload';render()")}
       ${qa('var(--grad-cyan)', 'rgba(6,182,212,.7)', '➕', 'New Folder', 'createFolder()')}
       ${qa('var(--grad-violet)', 'rgba(139,92,246,.7)', '📂', 'Manage Notes', "document.getElementById('dash-folders').scrollIntoView({behavior:'smooth'})")}
@@ -1572,6 +1639,9 @@ function renderFolderView() {
     </div>
     ${bulkBar}
     ${selectAll}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+      <button class="btn btn-primary" onclick="openNoteStudio('${currentFolder.id}')">✍️ Write a note in this folder</button>
+    </div>
     <div class="file-list">${fileRows}</div>
     <div class="drop-zone" id="folder-drop-zone" onclick="document.getElementById('folder-file-input').click()">
       <p style="font-size:24px;margin-bottom:8px">📁</p>
@@ -1960,6 +2030,7 @@ function initHomeDashboard() {
 // ==================== EVENTS ====================
 function attachGlobalEvents() {
   if (currentView === 'home') initHomeDashboard();
+  if (currentView === 'notestudio') initNoteStudio();
   // Drag & drop for upload zone
   const uploadZone = document.getElementById('upload-drop-zone');
   if (uploadZone) {
@@ -1974,6 +2045,490 @@ function attachGlobalEvents() {
     folderZone.addEventListener('dragleave', () => { folderZone.classList.remove('dragover'); });
     folderZone.addEventListener('drop', (e) => { e.preventDefault(); folderZone.classList.remove('dragover'); uploadFiles(e.dataTransfer.files); });
   }
+}
+
+// ==================== NOTE STUDIO (built-in note maker) ====================
+// A multi-page A4 editor that produces a self-contained, printable .html note
+// and publishes it into a folder using the SAME GitHub token + config flow as
+// uploads. Each page carries: a template background, a rich-text layer
+// (contenteditable) and a handwriting layer (canvas strokes). Drawings are
+// baked into <img> data-URLs when the note is generated.
+
+const NS_PAGE_W = 794;   // A4 width  @96dpi (px)
+const NS_PAGE_H = 1123;  // A4 height @96dpi (px)
+const NS_DRAFT_KEY = 'mgr_noteStudio_draft';
+const NS_PEN_SWATCHES = ['#111827','#ef4444','#2563eb','#059669','#d97706','#7c3aed','#db2777','#0891b2'];
+const NS_HL_SWATCHES  = ['#fff59d','#a7f3d0','#bfdbfe','#fecaca','#e9d5ff','#fed7aa'];
+
+let noteStudio = null;   // active editor state (null when closed)
+let nsDraw = { drawing: false, stroke: null, idx: 0, cv: null };
+let nsPointerUpBound = false;
+
+function nsNewPage(template) {
+  return { id: 'p_' + Date.now() + '_' + Math.random().toString(36).slice(2,6), template: template || 'ruled', textHTML: '', strokes: [], redo: [] };
+}
+
+function nsFreshState(folderId) {
+  return {
+    title: '',
+    folderId: (folderId && folderId !== '__unassigned__') ? folderId : '',
+    mode: 'type',
+    tool: 'pen',
+    penColor: '#111827',
+    hlColor: '#fff59d',
+    penSize: 3,
+    activePage: 0,
+    pages: [ nsNewPage('ruled') ]
+  };
+}
+
+// Open the editor. Restores an autosaved draft if one exists (and the user
+// confirms); otherwise starts fresh (optionally pre-selecting a folder).
+function openNoteStudio(folderId) {
+  const draft = localStorage.getItem(NS_DRAFT_KEY);
+  if (draft) {
+    try {
+      const d = JSON.parse(draft);
+      const hasContent = d && d.pages && d.pages.some(p => (p.textHTML && p.textHTML.trim()) || (p.strokes && p.strokes.length));
+      if (hasContent && window.confirm('Resume your unsaved draft note? Click Cancel to start a new blank note.')) {
+        noteStudio = d;
+        if (folderId && folderId !== '__unassigned__') noteStudio.folderId = folderId;
+      } else {
+        localStorage.removeItem(NS_DRAFT_KEY);
+        noteStudio = nsFreshState(folderId);
+      }
+    } catch(e) { noteStudio = nsFreshState(folderId); }
+  } else {
+    noteStudio = nsFreshState(folderId);
+  }
+  currentView = 'notestudio';
+  render();
+}
+
+function nsExit() {
+  nsSyncText();
+  const hasContent = noteStudio && noteStudio.pages.some(p => (p.textHTML && p.textHTML.trim()) || (p.strokes && p.strokes.length));
+  if (hasContent) nsSaveDraft(); // keep the draft so nothing is lost
+  noteStudio = null;
+  goHome();
+}
+
+function renderNoteStudioView() {
+  if (!noteStudio) noteStudio = nsFreshState();
+  let folderOpts = '<option value="">📂 Other Files (root)</option>';
+  folders.forEach(f => {
+    folderOpts += `<option value="${f.id}" ${noteStudio.folderId === f.id ? 'selected' : ''}>${(f.icon||'📁')} ${escapeHtml(f.name)}</option>`;
+  });
+  const isType = noteStudio.mode === 'type';
+
+  const penSw = NS_PEN_SWATCHES.map(c => `<span class="ns-sw ${(!isType && noteStudio.tool==='pen' && noteStudio.penColor===c)?'active':''}" style="background:${c}" onclick="nsPickColor('${c}')"></span>`).join('');
+
+  return `<div class="note-studio">
+    <button class="back-btn" onclick="nsExit()">← Back to Dashboard</button>
+    <div class="ns-titlebar">
+      <input class="ns-title-input" id="ns-title" type="text" placeholder="Untitled note — give it a title…" value="${escapeHtml(noteStudio.title||'')}" oninput="noteStudio.title=this.value;nsScheduleSave()">
+      <select class="ns-folder-select" id="ns-folder" onchange="noteStudio.folderId=this.value">${folderOpts}</select>
+    </div>
+
+    <div class="ns-toolbar">
+      <div class="ns-tgroup">
+        <div class="ns-mode-pill">
+          <button class="ns-btn ${isType?'active':''}" onclick="nsSetMode('type')" title="Type text">⌨️ Type</button>
+          <button class="ns-btn ${!isType?'active':''}" onclick="nsSetMode('draw')" title="Handwrite / draw">✏️ Draw</button>
+        </div>
+      </div>
+
+      <div class="ns-tgroup" id="ns-texttools" style="${isType?'':'display:none'}">
+        <select class="ns-select" onchange="nsFormatBlock(this.value);this.selectedIndex=0" title="Text style">
+          <option value="">Style</option>
+          <option value="h1">Heading 1</option>
+          <option value="h2">Heading 2</option>
+          <option value="h3">Heading 3</option>
+          <option value="p">Normal</option>
+          <option value="blockquote">Quote</option>
+        </select>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('bold')" title="Bold"><b>B</b></button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('italic')" title="Italic"><i>I</i></button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('underline')" title="Underline"><u>U</u></button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsHiliteText()" title="Highlight">🖍️</button>
+        <input class="ns-color" type="color" value="#111827" onchange="nsFormat('foreColor', this.value)" title="Text colour">
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('insertUnorderedList')" title="Bullet list">•≡</button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('insertOrderedList')" title="Numbered list">1.≡</button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('justifyLeft')" title="Align left">⬅</button>
+        <button class="ns-btn" onmousedown="event.preventDefault()" onclick="nsFormat('justifyCenter')" title="Align center">↔</button>
+        <button class="ns-btn" onclick="nsInsertImage()" title="Insert image">🖼️</button>
+      </div>
+
+      <div class="ns-tgroup" id="ns-drawtools" style="${isType?'display:none':''}">
+        <button class="ns-btn ${noteStudio.tool==='pen'?'active':''}" onclick="nsSetTool('pen')" title="Pen">🖊️</button>
+        <button class="ns-btn ${noteStudio.tool==='highlighter'?'active':''}" onclick="nsSetTool('highlighter')" title="Highlighter">🖍️</button>
+        <button class="ns-btn ${noteStudio.tool==='eraser'?'active':''}" onclick="nsSetTool('eraser')" title="Eraser">🧽</button>
+        <span class="ns-swatches" id="ns-pen-swatches">${penSw}</span>
+        <input class="ns-color" type="color" value="${noteStudio.penColor}" onchange="nsPickColor(this.value)" title="Custom colour">
+        <span class="ns-tlabel">Size</span>
+        <input class="ns-range" type="range" min="1" max="24" value="${noteStudio.penSize}" oninput="noteStudio.penSize=+this.value">
+        <button class="ns-btn" onclick="nsUndo()" title="Undo stroke">↶</button>
+        <button class="ns-btn" onclick="nsRedo()" title="Redo stroke">↷</button>
+        <button class="ns-btn danger" onclick="nsClearDrawing()" title="Clear drawing on this page">✕ Clear</button>
+      </div>
+
+      <div class="ns-tgroup">
+        <span class="ns-tlabel">Template</span>
+        <select class="ns-select" id="ns-template" onchange="nsSetTemplate(this.value)" title="Page template">
+          <option value="blank">Blank</option>
+          <option value="ruled">Ruled</option>
+          <option value="grid">Grid</option>
+          <option value="dotted">Dotted</option>
+          <option value="cornell">Cornell</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="ns-stage" id="ns-stage"></div>
+
+    <div class="ns-actionbar">
+      <button class="btn btn-primary" onclick="nsPublish()">🚀 Publish Note</button>
+      <button class="btn" onclick="nsPreview()">👁️ Preview</button>
+      <button class="btn btn-danger" onclick="nsDiscard()">🗑️ Discard Draft</button>
+      <span class="ns-draft-status" id="ns-draft-status">Draft autosaves as you write</span>
+    </div>
+  </div>`;
+}
+
+// Build the pages into the stage and wire up canvas + text listeners. Called on
+// entry and whenever pages are added/removed (NOT on every keystroke, so the
+// contenteditable caret and canvas bitmaps survive).
+function initNoteStudio() {
+  const tplSel = document.getElementById('ns-template');
+  if (tplSel && noteStudio.pages[noteStudio.activePage]) tplSel.value = noteStudio.pages[noteStudio.activePage].template;
+  const fSel = document.getElementById('ns-folder');
+  if (fSel) fSel.value = noteStudio.folderId || '';
+  nsRenderPages();
+}
+
+function nsRenderPages() {
+  const stage = document.getElementById('ns-stage');
+  if (!stage) return;
+  let html = '';
+  noteStudio.pages.forEach((pg, idx) => {
+    html += `<div class="ns-page-wrap">
+      <span class="ns-page-num">Page ${idx+1} of ${noteStudio.pages.length}</span>
+      ${noteStudio.pages.length > 1 ? `<button class="ns-page-del" title="Delete page" onclick="nsDeletePage(${idx})">🗑️</button>` : ''}
+      <div class="ns-page tpl-${pg.template} mode-${noteStudio.mode}" data-idx="${idx}">
+        <div class="ns-page-text" contenteditable="true" data-idx="${idx}" data-ph="${idx===0?'Start typing your note…':'Continue writing…'}">${pg.textHTML||''}</div>
+        <canvas class="ns-page-canvas" data-idx="${idx}" width="${NS_PAGE_W}" height="${NS_PAGE_H}"></canvas>
+      </div>
+    </div>`;
+  });
+  html += `<button class="ns-add-page" onclick="nsAddPage()">＋ Add page</button>`;
+  stage.innerHTML = html;
+
+  // Wire each page's text + canvas.
+  stage.querySelectorAll('.ns-page-text').forEach(div => {
+    div.addEventListener('input', () => { const i = +div.dataset.idx; noteStudio.pages[i].textHTML = div.innerHTML; nsScheduleSave(); });
+    div.addEventListener('focus', () => { noteStudio.activePage = +div.dataset.idx; const t=document.getElementById('ns-template'); if(t) t.value=noteStudio.pages[noteStudio.activePage].template; });
+  });
+  stage.querySelectorAll('.ns-page-canvas').forEach(cv => {
+    const i = +cv.dataset.idx;
+    nsRedrawCanvas(cv, noteStudio.pages[i]);
+    nsAttachCanvas(cv, i);
+  });
+}
+
+// Save all live contenteditable HTML back into state (call before re-rendering
+// pages or generating the note).
+function nsSyncText() {
+  if (!noteStudio) return;
+  document.querySelectorAll('.ns-page-text').forEach(div => {
+    const i = +div.dataset.idx;
+    if (noteStudio.pages[i]) noteStudio.pages[i].textHTML = div.innerHTML;
+  });
+}
+
+// ---------- Rich text ----------
+function nsFormat(cmd, val) { document.execCommand(cmd, false, val || null); const d = nsActiveTextEl(); if (d) { noteStudio.pages[+d.dataset.idx].textHTML = d.innerHTML; nsScheduleSave(); } }
+function nsFormatBlock(tag) { if (!tag) return; document.execCommand('formatBlock', false, tag); nsFormat('_noop'); }
+function nsHiliteText() { document.execCommand('hiliteColor', false, noteStudio.hlColor); nsFormat('_noop'); }
+function nsActiveTextEl() {
+  const sel = window.getSelection();
+  if (sel && sel.anchorNode) { let n = sel.anchorNode; while (n && n !== document.body) { if (n.classList && n.classList.contains('ns-page-text')) return n; n = n.parentNode; } }
+  return document.querySelector('.ns-page-text[data-idx="'+noteStudio.activePage+'"]');
+}
+function nsInsertImage() {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = () => {
+    const file = inp.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const el = nsActiveTextEl(); if (el) el.focus();
+      document.execCommand('insertHTML', false, `<img src="${reader.result}" style="max-width:100%;border-radius:6px;margin:6px 0">`);
+      nsSyncText(); nsScheduleSave();
+    };
+    reader.readAsDataURL(file);
+  };
+  inp.click();
+}
+
+// ---------- Mode / tools ----------
+function nsSetMode(m) {
+  nsSyncText();
+  noteStudio.mode = m;
+  render();
+}
+function nsSetTool(t) { noteStudio.tool = t; document.querySelectorAll('#ns-drawtools .ns-btn').forEach(b=>b.classList.remove('active')); render(); }
+function nsPickColor(c) {
+  if (noteStudio.tool === 'highlighter') noteStudio.hlColor = c; else { noteStudio.penColor = c; if (noteStudio.tool === 'eraser') noteStudio.tool = 'pen'; }
+  render();
+}
+function nsSetTemplate(tpl) {
+  const pg = noteStudio.pages[noteStudio.activePage];
+  if (!pg) return;
+  pg.template = tpl;
+  const pageEl = document.querySelector('.ns-page[data-idx="'+noteStudio.activePage+'"]');
+  if (pageEl) pageEl.className = 'ns-page tpl-' + tpl + ' mode-' + noteStudio.mode;
+  nsScheduleSave();
+}
+
+// ---------- Pages ----------
+function nsAddPage() {
+  nsSyncText();
+  const last = noteStudio.pages[noteStudio.pages.length-1];
+  noteStudio.pages.push(nsNewPage(last ? last.template : 'ruled'));
+  noteStudio.activePage = noteStudio.pages.length - 1;
+  nsRenderPages();
+  nsScheduleSave();
+  const stage = document.getElementById('ns-stage');
+  if (stage) stage.lastElementChild.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+function nsDeletePage(idx) {
+  if (noteStudio.pages.length <= 1) return;
+  confirm('Delete Page', 'Delete page ' + (idx+1) + '? Its text and drawing will be removed.', () => {
+    nsSyncText();
+    noteStudio.pages.splice(idx, 1);
+    if (noteStudio.activePage >= noteStudio.pages.length) noteStudio.activePage = noteStudio.pages.length - 1;
+    nsRenderPages();
+    nsScheduleSave();
+  });
+}
+
+// ---------- Drawing engine ----------
+// A single global pointerup handler commits the in-progress stroke to the page
+// it was started on (tracked in nsDraw), so it stays correct no matter how many
+// times the pages are re-rendered.
+function nsGlobalPointerUp() {
+  if (!nsDraw.drawing) return;
+  nsDraw.drawing = false;
+  const pg = noteStudio && noteStudio.pages[nsDraw.idx];
+  if (pg && nsDraw.stroke && nsDraw.stroke.points.length) { pg.strokes.push(nsDraw.stroke); nsScheduleSave(); }
+  const cv = nsDraw.cv;
+  nsDraw.stroke = null; nsDraw.cv = null;
+  if (cv && pg) nsRedrawCanvas(cv, pg);
+}
+function nsAttachCanvas(cv, idx) {
+  const getPos = (e) => {
+    const r = cv.getBoundingClientRect();
+    const cx = (e.touches ? e.touches[0].clientX : e.clientX);
+    const cy = (e.touches ? e.touches[0].clientY : e.clientY);
+    return { x: (cx - r.left) * (NS_PAGE_W / r.width), y: (cy - r.top) * (NS_PAGE_H / r.height), p: (e.pressure && e.pressure > 0 ? e.pressure : 1) };
+  };
+  cv.addEventListener('pointerdown', (e) => {
+    if (noteStudio.mode !== 'draw') return;
+    e.preventDefault();
+    noteStudio.activePage = idx;
+    nsDraw.drawing = true; nsDraw.idx = idx; nsDraw.cv = cv;
+    noteStudio.pages[idx].redo = [];
+    nsDraw.stroke = { tool: noteStudio.tool, color: noteStudio.tool==='highlighter'?noteStudio.hlColor:noteStudio.penColor, size: noteStudio.penSize, points: [getPos(e)] };
+    try { cv.setPointerCapture(e.pointerId); } catch(_) {}
+  });
+  cv.addEventListener('pointermove', (e) => {
+    if (!nsDraw.drawing || nsDraw.idx !== idx || noteStudio.mode !== 'draw') return;
+    e.preventDefault();
+    nsDraw.stroke.points.push(getPos(e));
+    nsRedrawCanvas(cv, noteStudio.pages[idx], nsDraw.stroke);
+  });
+  // Bind the global pointerup exactly once.
+  if (!nsPointerUpBound) { window.addEventListener('pointerup', nsGlobalPointerUp); window.addEventListener('pointercancel', nsGlobalPointerUp); nsPointerUpBound = true; }
+}
+
+// Draw a single stroke onto a 2d context.
+function nsPaintStroke(ctx, s) {
+  if (!s.points.length) return;
+  ctx.save();
+  ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+  if (s.tool === 'eraser') { ctx.globalCompositeOperation = 'destination-out'; ctx.strokeStyle = 'rgba(0,0,0,1)'; ctx.lineWidth = s.size * 4; }
+  else if (s.tool === 'highlighter') { ctx.globalCompositeOperation = 'source-over'; ctx.strokeStyle = s.color; ctx.globalAlpha = 0.35; ctx.lineWidth = s.size * 4; }
+  else { ctx.globalCompositeOperation = 'source-over'; ctx.strokeStyle = s.color; ctx.lineWidth = s.size; }
+  ctx.beginPath();
+  s.points.forEach((pt, i) => { const lw = (s.tool==='pen') ? Math.max(0.6, s.size * pt.p) : ctx.lineWidth; ctx.lineWidth = lw; if (i===0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+  ctx.stroke();
+  ctx.restore();
+}
+// Repaint a canvas from its committed strokes (+ an optional in-progress one).
+function nsRedrawCanvas(cv, pg, live) {
+  const ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, NS_PAGE_W, NS_PAGE_H);
+  pg.strokes.forEach(s => nsPaintStroke(ctx, s));
+  if (live) nsPaintStroke(ctx, live);
+}
+function nsCurrentCanvas() { return document.querySelector('.ns-page-canvas[data-idx="'+noteStudio.activePage+'"]'); }
+function nsUndo() {
+  const pg = noteStudio.pages[noteStudio.activePage];
+  if (!pg.strokes.length) return;
+  pg.redo.push(pg.strokes.pop());
+  const cv = nsCurrentCanvas(); if (cv) nsRedrawCanvas(cv, pg);
+  nsScheduleSave();
+}
+function nsRedo() {
+  const pg = noteStudio.pages[noteStudio.activePage];
+  if (!pg.redo || !pg.redo.length) return;
+  pg.strokes.push(pg.redo.pop());
+  const cv = nsCurrentCanvas(); if (cv) nsRedrawCanvas(cv, pg);
+  nsScheduleSave();
+}
+function nsClearDrawing() {
+  const pg = noteStudio.pages[noteStudio.activePage];
+  if (!pg.strokes.length) return;
+  confirm('Clear Drawing', 'Erase all handwriting/drawing on this page? (Typed text is kept.)', () => {
+    pg.strokes = []; pg.redo = [];
+    const cv = nsCurrentCanvas(); if (cv) nsRedrawCanvas(cv, pg);
+    nsScheduleSave();
+  });
+}
+
+// ---------- Draft autosave ----------
+let nsSaveTimer = null;
+function nsScheduleSave() { clearTimeout(nsSaveTimer); nsSaveTimer = setTimeout(nsSaveDraft, 700); const el = document.getElementById('ns-draft-status'); if (el) el.textContent = 'Saving…'; }
+function nsSaveDraft() {
+  if (!noteStudio) return;
+  nsSyncText();
+  try { localStorage.setItem(NS_DRAFT_KEY, JSON.stringify(noteStudio)); const el = document.getElementById('ns-draft-status'); if (el) el.textContent = '✅ Draft saved ' + new Date().toLocaleTimeString(); }
+  catch(e) { const el = document.getElementById('ns-draft-status'); if (el) el.textContent = '⚠️ Draft too large to autosave'; }
+}
+function nsDiscard() {
+  confirm('Discard Draft', 'Discard this note and clear the saved draft? This cannot be undone.', () => {
+    localStorage.removeItem(NS_DRAFT_KEY);
+    noteStudio = null;
+    goHome();
+  });
+}
+
+// ---------- Generate standalone note HTML ----------
+function nsBakeDrawing(pg) {
+  if (!pg.strokes.length) return '';
+  const cv = document.createElement('canvas');
+  cv.width = NS_PAGE_W; cv.height = NS_PAGE_H;
+  nsRedrawCanvas(cv, pg);
+  return cv.toDataURL('image/png');
+}
+function nsBuildNoteHtml() {
+  nsSyncText();
+  const title = (noteStudio.title || 'Untitled Note').trim();
+  const dateStr = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  let pagesHtml = '';
+  noteStudio.pages.forEach(pg => {
+    const img = nsBakeDrawing(pg);
+    pagesHtml += `<section class="npg npg-${pg.template}">
+      <div class="npg-text">${pg.textHTML || ''}</div>
+      ${img ? `<img class="npg-ink" src="${img}" alt="handwriting">` : ''}
+    </section>`;
+  });
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(title)}</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#334155;color:#111;padding:24px 12px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.note-head{width:794px;max-width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.note-head h1{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.note-head .meta{font-size:12px;color:#cbd5e1}
+.note-print-btn{background:#6366f1;color:#fff;border:none;border-radius:10px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.note-print-btn:hover{filter:brightness(1.08)}
+.npg{position:relative;width:794px;max-width:100%;height:1123px;background:#fff;border-radius:6px;box-shadow:0 20px 50px -18px rgba(0,0,0,.55);overflow:hidden}
+.npg-text{position:absolute;inset:0;padding:64px 60px;font-size:17px;line-height:1.8;color:#1a1a1a;z-index:1;overflow:hidden}
+.npg-text h1{font-size:26px;margin:.4em 0}
+.npg-text h2{font-size:22px;margin:.4em 0}
+.npg-text h3{font-size:19px;margin:.4em 0}
+.npg-text ul,.npg-text ol{margin:.3em 0 .3em 1.4em}
+.npg-text blockquote{border-left:3px solid #94a3b8;padding-left:12px;color:#475569;margin:.4em 0}
+.npg-text img{max-width:100%}
+.npg-ink{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.npg-blank{background:#fff}
+.npg-ruled{background-image:repeating-linear-gradient(#fff,#fff 33px,#cfe0f5 33px,#cfe0f5 34px);background-position:0 40px}
+.npg-grid{background-image:linear-gradient(#e6eef7 1px,transparent 1px),linear-gradient(90deg,#e6eef7 1px,transparent 1px);background-size:28px 28px}
+.npg-dotted{background-image:radial-gradient(#c7d3e3 1.4px,transparent 1.4px);background-size:26px 26px}
+.npg-cornell{background-image:repeating-linear-gradient(#fff,#fff 33px,#e3ecf7 33px,#e3ecf7 34px),linear-gradient(90deg,transparent 150px,#f4a3a3 150px,#f4a3a3 152px,transparent 152px);background-position:0 40px,0 0}
+@media(max-width:820px){.npg,.note-head{width:100%}.npg{height:auto;min-height:60vh}.npg-text{position:relative;padding:28px 22px}.npg-ink{position:absolute}}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fff;padding:0;gap:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .no-print{display:none!important}
+  .npg{width:210mm;height:297mm;max-width:none;box-shadow:none;border-radius:0;page-break-after:always;break-after:page}
+  .npg:last-child{page-break-after:auto}
+  .npg-text{padding:18mm 16mm}
+}
+</style>
+</head>
+<body>
+<div class="note-head no-print">
+  <div><h1>${escapeHtml(title)}</h1><div class="meta">📝 ${dateStr}</div></div>
+  <button class="note-print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+${pagesHtml}
+</body>
+</html>`;
+}
+
+function nsPreview() {
+  const html = nsBuildNoteHtml();
+  const w = window.open('', '_blank');
+  if (!w) { toast('Allow pop-ups to preview', 'error'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
+}
+
+// Publish the generated note as a real .html file in the chosen folder, using
+// the same GitHub Contents API + config publish flow as uploads.
+async function nsPublish() {
+  const token = localStorage.getItem('mgr_github_token');
+  if (!token) { toast('Set your GitHub token in Settings first', 'error'); return; }
+  nsSyncText();
+  const title = (noteStudio.title || '').trim();
+  if (!title) { toast('Please add a title for your note', 'error'); return; }
+  const hasContent = noteStudio.pages.some(p => (p.textHTML && p.textHTML.replace(/<[^>]*>/g,'').trim()) || (p.strokes && p.strokes.length));
+  if (!hasContent) { toast('Write or draw something first', 'error'); return; }
+
+  const html = nsBuildNoteHtml();
+  const fileName = (slugify(title) || 'note') + '-' + Date.now() + '.html';
+  const folderId = noteStudio.folderId || null;
+  const targetPath = pathForFolder(folderId, fileName);
+
+  setStatus('⏳ Publishing note...');
+  toast('Publishing note…');
+  try {
+    const content = btoa(unescape(encodeURIComponent(html)));
+    const res = await fetch(API_URL + encodePath(targetPath), {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: `Create note ${targetPath}`, content, branch: 'main' })
+    });
+    if (!res.ok) { const err = await res.json().catch(()=>({})); toast('Publish failed: ' + (err.message || res.status), 'error'); setStatus('❌ Failed'); return; }
+    const d = await res.json();
+    // Register the new file so it shows up immediately (mirrors uploadFiles).
+    allFiles.push({ name: fileName, path: targetPath, size: html.length, type: 'file', sha: d.content.sha });
+    displayNames[targetPath] = title;
+    const existingSerials = Object.values(fileOrder).filter(n => typeof n === 'number' && !isNaN(n));
+    fileOrder[targetPath] = (existingSerials.length ? Math.max(...existingSerials) : 0) + 1;
+    saveAndPublish();
+    localStorage.removeItem(NS_DRAFT_KEY);
+    noteStudio = null;
+    toast('✅ Note published!', 'success');
+    // Jump to the folder it landed in so the user sees it.
+    openFolder(folderId || '__unassigned__');
+  } catch(e) { toast('Error: ' + e.message, 'error'); setStatus('❌ Error'); console.error(e); }
 }
 
 // ==================== START ====================
