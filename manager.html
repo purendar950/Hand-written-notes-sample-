@@ -520,10 +520,11 @@ body.light .annot-root{background:#e5e9f5}
 .an-color::-webkit-color-swatch{border:none;border-radius:6px}
 .an-range{width:90px;accent-color:var(--primary)}
 .an-lbl{font-size:11.5px;color:var(--muted);font-weight:600}
-.annot-scroll{flex:1;overflow:auto;padding:22px 12px 60px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.annot-scroll{flex:1;overflow:auto;padding:22px 12px 60px}
+.annot-stage{display:flex;flex-direction:column;align-items:center;gap:22px;width:max-content;min-width:100%;margin:0 auto}
 .annot-page{position:relative;background:#fff;box-shadow:0 20px 50px -18px rgba(0,0,0,.6);border-radius:4px;line-height:0}
 .annot-page canvas.an-base{display:block;border-radius:4px}
-.annot-page iframe.an-frame{display:block;border:none;background:#fff;border-radius:4px}
+.annot-page iframe.an-frame{display:block;border:none;background:#fff;border-radius:4px;pointer-events:none}
 .annot-ink{position:absolute;inset:0;z-index:2;touch-action:none;cursor:crosshair}
 .annot-ink.pan{cursor:default;pointer-events:none}
 .an-text-input{position:absolute;z-index:4;background:rgba(255,255,255,.9);border:1px dashed var(--primary);border-radius:4px;padding:2px 4px;font-family:'Inter',sans-serif;color:#111;outline:none;min-width:40px}
@@ -531,7 +532,14 @@ body.light .annot-root{background:#e5e9f5}
 .annot-loading .spinner{width:44px;height:44px;border:4px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .an-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--border-soft);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--muted);z-index:6;box-shadow:var(--shadow-md)}
-@media(max-width:768px){.annot-file{max-width:120px}.an-btn{min-width:34px;height:34px;padding:0 7px;font-size:14px}.annot-scroll{padding:14px 4px 60px}}
+@media(max-width:768px){.annot-file{max-width:100px}.an-btn{min-width:34px;height:34px;padding:0 7px;font-size:14px}.annot-scroll{padding:14px 4px 60px}
+  /* Keep the toolbar to ONE swipeable row on phones instead of stacking tall */
+  .annot-topbar{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .annot-tools{flex-wrap:nowrap}
+  .annot-grp{flex:0 0 auto}
+  .annot-file{flex:0 0 auto}
+  .an-btn.close{margin-left:6px}
+}
 </style>
 </head>
 <body>
@@ -2601,7 +2609,7 @@ function dataURLToUint8(dataURL){ const b = atob(dataURL.split(',')[1]); const u
 function openAnnotator(filePath){
   const type = anTypeOf(filePath);
   if (type === 'other'){ toast('Only PDF and HTML notes can be annotated', 'error'); return; }
-  annot = { filePath, type, name: getDisplayName(filePath), mode:'pen', tool:'pen', penColor:'#e11d48', hlColor:'#fff176', size:3, textSize:20, pages:[], pdfSaveBytes:null, htmlHead:'', htmlBody:'', docW:0 };
+  annot = { filePath, type, name: getDisplayName(filePath), mode:'pen', tool:'pen', penColor:'#e11d48', hlColor:'#fff176', size:3, textSize:20, fingerScroll:false, zoom:1, pages:[], pdfSaveBytes:null, htmlHead:'', htmlBody:'', docW:0 };
   anMount();
   if (type === 'pdf') anLoadPdf(); else anLoadHtml();
 }
@@ -2628,6 +2636,8 @@ function anMount(){
           <button class="an-btn" id="an-tool-highlighter" onclick="anSetTool('highlighter')" title="Highlighter">🖍️</button>
           <button class="an-btn" id="an-tool-eraser" onclick="anSetTool('eraser')" title="Eraser">🧽</button>
           <button class="an-btn" id="an-tool-text" onclick="anSetTool('text')" title="Add text (then click on the page)">🆃</button>
+          <button class="an-btn" id="an-tool-pan" onclick="anSetTool('pan')" title="Pan / scroll the page">🖐️</button>
+          <button class="an-btn" id="an-finger" onclick="anToggleFingerScroll()" title="Finger draws (tap to let finger scroll)">✋</button>
         </div>
         <div class="annot-grp" id="an-swatches">${penSw}
           <input class="an-color" type="color" value="${annot.penColor}" onchange="anPickColor(this.value)" title="Custom colour">
@@ -2642,6 +2652,12 @@ function anMount(){
           <button class="an-btn danger" onclick="anClearPage()" title="Clear all marks on current page">✕ Clear</button>
         </div>
         <div class="annot-grp">
+          <button class="an-btn" onclick="anZoom(1/1.25)" title="Zoom out">➖</button>
+          <span class="an-lbl" id="an-zoom-lbl">100%</span>
+          <button class="an-btn" onclick="anZoom(1.25)" title="Zoom in">➕</button>
+          <button class="an-btn" onclick="anZoomReset()" title="Reset zoom">⤢</button>
+        </div>
+        <div class="annot-grp">
           <button class="an-btn primary" onclick="anSaveToRepo()" title="Save an annotated copy to your library">💾 Save copy</button>
           <button class="an-btn" onclick="anDownload()" title="Download to this device">⬇️ Download</button>
         </div>
@@ -2649,14 +2665,54 @@ function anMount(){
       </div>
     </div>
     <div class="annot-scroll" id="annot-scroll">
+      <div class="annot-stage" id="annot-stage"></div>
       <div class="annot-loading" id="annot-loading"><div class="spinner"></div><div>Opening ${escapeHtml(annot.name)}…</div></div>
     </div>
-    <div class="an-hint" id="an-hint">Pick a tool, then draw on the page. Active page = the one you last drew on.</div>`;
+    <div class="an-hint" id="an-hint">✍️ One finger draws • ✌️ two fingers scroll • or tap 🖐️ to pan.</div>`;
   document.body.appendChild(root);
+  anAttachTouchScroll(root.querySelector('#annot-scroll'));
   if (!annotPointerBound){ window.addEventListener('pointerup', anGlobalPointerUp); window.addEventListener('pointercancel', anGlobalPointerUp); annotPointerBound = true; }
 }
 
+// Two-finger scrolling: one finger draws, two fingers pan the page (like
+// GoodNotes/Notein). We keep touch-action:none on the ink layer so a single
+// finger writes, and manually scroll the container when a second finger lands —
+// aborting any in-progress single-finger stroke so no stray mark is left behind.
+function anAttachTouchScroll(scroll){
+  if (!scroll) return;
+  let tf = null;
+  const avg = (ts, key) => { let s=0; for (let i=0;i<ts.length;i++) s += ts[i][key]; return s/ts.length; };
+  scroll.addEventListener('touchstart', (e) => {
+    if (e.touches.length >= 2){
+      if (annotDraw.drawing){ const pg = annotDraw.page; annotDraw.drawing=false; annotDraw.stroke=null; annotDraw.page=null; if (pg){ pg._cache=null; anRedraw(pg); } }
+      tf = { y: avg(e.touches,'clientY'), x: avg(e.touches,'clientX'), top: scroll.scrollTop, left: scroll.scrollLeft };
+    }
+  }, { passive:false });
+  scroll.addEventListener('touchmove', (e) => {
+    if (tf && e.touches.length >= 2){
+      e.preventDefault();
+      scroll.scrollTop  = tf.top  - (avg(e.touches,'clientY') - tf.y);
+      scroll.scrollLeft = tf.left - (avg(e.touches,'clientX') - tf.x);
+    }
+  }, { passive:false });
+  const end = (e) => { if (!e.touches || e.touches.length < 2) tf = null; };
+  scroll.addEventListener('touchend', end);
+  scroll.addEventListener('touchcancel', end);
+}
+
 function anLoadingDone(){ const l = document.getElementById('annot-loading'); if (l) l.remove(); }
+// Zoom the page stage so finger annotation can be precise. Uses the CSS `zoom`
+// property (scales layout, so the scroll area grows and two-finger pan reaches
+// everything) and getBoundingClientRect stays zoom-aware, so drawing
+// coordinates remain accurate at any zoom level.
+function anApplyZoom(){
+  const stage = document.getElementById('annot-stage');
+  if (stage) stage.style.zoom = annot.zoom;
+  const lbl = document.getElementById('an-zoom-lbl');
+  if (lbl) lbl.textContent = Math.round(annot.zoom * 100) + '%';
+}
+function anZoom(mult){ annot.zoom = Math.min(3, Math.max(0.5, (annot.zoom || 1) * mult)); anApplyZoom(); }
+function anZoomReset(){ annot.zoom = 1; anApplyZoom(); }
 function anError(msg){ const s = document.getElementById('annot-scroll'); if (s) s.innerHTML = `<div style="color:var(--text);text-align:center;padding:40px;max-width:520px">⚠️ ${escapeHtml(msg)}</div>`; }
 
 // ---------- Load & render a PDF ----------
@@ -2670,7 +2726,7 @@ async function anLoadPdf(){
     annot.pdfSaveBytes = original.slice(0);                 // untouched copy for saving
     const renderData = new Uint8Array(original.slice(0));   // separate copy for pdf.js
     const doc = await pdfjsLib.getDocument({ data: renderData }).promise;
-    const scroll = document.getElementById('annot-scroll');
+    const scroll = document.getElementById('annot-stage');
     const targetW = Math.min(920, (window.innerWidth || 900) - 32);
     anLoadingDone();
     for (let i = 1; i <= doc.numPages; i++){
@@ -2704,7 +2760,7 @@ async function anLoadHtml(){
     const parsed = new DOMParser().parseFromString(text, 'text/html');
     annot.htmlHead = parsed.head ? parsed.head.innerHTML : '';
     annot.htmlBody = parsed.body ? parsed.body.innerHTML : text;
-    const scroll = document.getElementById('annot-scroll');
+    const scroll = document.getElementById('annot-stage');
     const docW = Math.min(900, (window.innerWidth || 900) - 32);
     annot.docW = docW;
     const wrap = document.createElement('div'); wrap.className = 'annot-page'; wrap.style.width = docW + 'px';
@@ -2729,11 +2785,25 @@ async function anLoadHtml(){
 
 // ---------- Tools ----------
 function anSetTool(t){
-  annot.tool = t; annot.mode = (t === 'text') ? 'text' : 'draw';
-  ['pen','highlighter','eraser','text'].forEach(k => { const b = document.getElementById('an-tool-'+k); if (b) b.classList.toggle('active', k===t); });
+  annot.tool = t; annot.mode = (t === 'text') ? 'text' : (t === 'pan' ? 'pan' : 'draw');
+  ['pen','highlighter','eraser','text','pan'].forEach(k => { const b = document.getElementById('an-tool-'+k); if (b) b.classList.toggle('active', k===t); });
+  // In pan mode the ink layers ignore pointers so the page scrolls freely.
+  document.querySelectorAll('.annot-ink').forEach(cv => cv.classList.toggle('pan', t === 'pan'));
   anRefreshSwatches();
   const hint = document.getElementById('an-hint');
-  if (hint) hint.textContent = (t==='text') ? 'Click anywhere on the page to add a text box, type, then press Enter.' : (t==='eraser' ? 'Drag over your marks to erase them.' : 'Draw on the page to ' + (t==='highlighter'?'highlight':'write') + '.');
+  if (hint) hint.textContent = (t==='pan') ? 'Pan mode: drag or swipe to scroll the page. Pick a pen to write again.'
+    : (t==='text') ? 'Click anywhere on the page to add a text box, type, then press Enter.'
+    : (t==='eraser') ? 'Drag over your marks to erase them.'
+    : 'One finger to ' + (t==='highlighter'?'highlight':'write') + ' • two fingers to scroll • 🖐️ to pan.';
+}
+// Toggle whether a single finger scrolls (on) or draws (off) on touch devices.
+function anToggleFingerScroll(){
+  annot.fingerScroll = !annot.fingerScroll;
+  const b = document.getElementById('an-finger');
+  if (b){ b.classList.toggle('active', annot.fingerScroll); b.title = annot.fingerScroll ? 'Finger scrolls (tap to let finger draw)' : 'Finger draws (tap to let finger scroll)'; }
+  document.querySelectorAll('.annot-ink').forEach(cv => cv.style.touchAction = annot.fingerScroll ? 'pan-y' : 'none');
+  const hint = document.getElementById('an-hint');
+  if (hint) hint.textContent = annot.fingerScroll ? 'Finger now SCROLLS. Use a stylus/mouse to draw, or tap ✋ again to draw with finger.' : 'Finger now DRAWS. Tap ✋ to switch it back to scrolling.';
 }
 function anRefreshSwatches(){
   const cur = annot.tool === 'highlighter' ? annot.hlColor : annot.penColor;
@@ -2756,24 +2826,47 @@ function anGlobalPointerUp(){
   if (!annotDraw.drawing) return;
   annotDraw.drawing = false;
   const pg = annotDraw.page;
-  if (pg && annotDraw.stroke && annotDraw.stroke.points.length){ pg.strokes.push(annotDraw.stroke); pg.redo = []; }
-  annotDraw.stroke = null; annotDraw.page = null;
+  if (pg){
+    anCompositeLive(pg);                 // make sure the final segment is painted
+    if (annotDraw.stroke && annotDraw.stroke.points.length){ pg.strokes.push(annotDraw.stroke); pg.redo = []; }
+    pg._cache = null;                    // release the snapshot
+  }
+  annotDraw.stroke = null; annotDraw.page = null; annotDraw.pending = false;
+}
+// Fast live rendering: when a stroke starts we snapshot the already-committed
+// marks into an offscreen canvas once, then each animation frame we just blit
+// that snapshot and paint ONLY the current stroke. This is O(current stroke)
+// per frame instead of repainting every stroke every move, so writing stays
+// smooth no matter how much is already on the page.
+function anCompositeLive(pg){
+  if (!pg._cache) return;
+  pg.ctx.clearRect(0,0,pg.w,pg.h);
+  pg.ctx.drawImage(pg._cache, 0, 0);
+  if (annotDraw.stroke) anPaintStroke(pg.ctx, annotDraw.stroke);
 }
 function anAttachCanvas(pg){
   const cv = pg.canvas;
-  const pos = (e) => { const r = cv.getBoundingClientRect(); const sx = cv.width / r.width, sy = cv.height / r.height; return { x:(e.clientX-r.left)*sx, y:(e.clientY-r.top)*sy, p:(e.pressure && e.pressure>0 ? e.pressure : 1) }; };
+  const rectPos = (r, cx, cy, pr) => ({ x:(cx-r.left)*(cv.width/r.width), y:(cy-r.top)*(cv.height/r.height), p:(pr && pr>0 ? pr : 1) });
   cv.addEventListener('pointerdown', (e) => {
+    if (annot.mode === 'pan') return;                          // Pan tool: let the page scroll
     if (annot.mode === 'text'){ anPlaceText(pg, e.clientX, e.clientY); return; }
+    if (e.pointerType === 'touch' && annot.fingerScroll){ return; } // finger scrolls when enabled
     e.preventDefault();
-    annotDraw.drawing = true; annotDraw.page = pg;
-    annotDraw.stroke = { tool: annot.tool, color: annot.tool==='highlighter'?annot.hlColor:annot.penColor, size: annot.size, points:[pos(e)] };
+    annotDraw.drawing = true; annotDraw.page = pg; annotDraw.pending = false;
+    const r = cv.getBoundingClientRect();
+    annotDraw.stroke = { tool: annot.tool, color: annot.tool==='highlighter'?annot.hlColor:annot.penColor, size: annot.size, points:[rectPos(r, e.clientX, e.clientY, e.pressure)] };
+    // Snapshot committed marks once — fast blit source for every subsequent frame.
+    if (!pg._cache){ pg._cache = document.createElement('canvas'); pg._cache.width = pg.w; pg._cache.height = pg.h; }
+    const cctx = pg._cache.getContext('2d'); cctx.clearRect(0,0,pg.w,pg.h); cctx.drawImage(cv, 0, 0);
     try { cv.setPointerCapture(e.pointerId); } catch(_){}
   });
   cv.addEventListener('pointermove', (e) => {
     if (!annotDraw.drawing || annotDraw.page !== pg) return;
     e.preventDefault();
-    annotDraw.stroke.points.push(pos(e));
-    anRedraw(pg, annotDraw.stroke);
+    const r = cv.getBoundingClientRect();
+    const evs = (e.getCoalescedEvents && e.getCoalescedEvents().length) ? e.getCoalescedEvents() : [e];
+    evs.forEach(ev => annotDraw.stroke.points.push(rectPos(r, ev.clientX, ev.clientY, ev.pressure)));
+    if (!annotDraw.pending){ annotDraw.pending = true; requestAnimationFrame(() => { annotDraw.pending = false; if (annotDraw.drawing && annotDraw.page === pg) anCompositeLive(pg); }); }
   });
 }
 function anPaintStroke(ctx, s){
