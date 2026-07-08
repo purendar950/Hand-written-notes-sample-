@@ -2826,24 +2826,23 @@ function anGlobalPointerUp(){
   if (!annotDraw.drawing) return;
   annotDraw.drawing = false;
   const pg = annotDraw.page;
-  if (pg){
-    anCompositeLive(pg);                 // make sure the final segment is painted
-    if (annotDraw.stroke && annotDraw.stroke.points.length){ pg.strokes.push(annotDraw.stroke); pg.redo = []; }
-    pg._cache = null;                    // release the snapshot
-  }
-  annotDraw.stroke = null; annotDraw.page = null; annotDraw.pending = false;
+  if (pg && annotDraw.stroke && annotDraw.stroke.points.length){ pg.strokes.push(annotDraw.stroke); pg.redo = []; }
+  annotDraw.stroke = null; annotDraw.page = null; annotDraw.rect = null;
 }
-// Fast live rendering: when a stroke starts we snapshot the already-committed
-// marks into an offscreen canvas once, then each animation frame we just blit
-// that snapshot and paint ONLY the current stroke. This is O(current stroke)
-// per frame instead of repainting every stroke every move, so writing stays
-// smooth no matter how much is already on the page.
-function anCompositeLive(pg){
-  if (!pg._cache) return;
-  pg.ctx.clearRect(0,0,pg.w,pg.h);
-  pg.ctx.drawImage(pg._cache, 0, 0);
-  if (annotDraw.stroke) anPaintStroke(pg.ctx, annotDraw.stroke);
+// Incremental live rendering: each pointer move draws ONLY the new line segment
+// straight onto the canvas — it never clears or re-blits the whole page. This is
+// O(1) per point no matter how tall the note/PDF page is or how many strokes
+// already exist, so writing stays fast even on very long pages. The full stroke
+// is kept in memory so undo / redo / clear can repaint via anRedraw.
+function anStrokeStyle(ctx, s){
+  ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+  if (s.tool === 'eraser'){ ctx.globalCompositeOperation = 'destination-out'; ctx.globalAlpha = 1; ctx.strokeStyle = '#000'; ctx.fillStyle = '#000'; }
+  else if (s.tool === 'highlighter'){ ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 0.3; ctx.strokeStyle = s.color; ctx.fillStyle = s.color; }
+  else { ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1; ctx.strokeStyle = s.color; ctx.fillStyle = s.color; }
 }
+function anSegWidth(s, pt){ return s.tool === 'pen' ? Math.max(0.6, s.size * (pt.p || 1)) : s.size * 5; }
+function anDrawDot(ctx, s, p){ ctx.save(); anStrokeStyle(ctx, s); ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0.5, anSegWidth(s, p)/2), 0, 6.2832); ctx.fill(); ctx.restore(); }
+function anDrawSeg(ctx, s, a, b){ ctx.save(); anStrokeStyle(ctx, s); ctx.lineWidth = anSegWidth(s, b); ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); ctx.restore(); }
 function anAttachCanvas(pg){
   const cv = pg.canvas;
   const rectPos = (r, cx, cy, pr) => ({ x:(cx-r.left)*(cv.width/r.width), y:(cy-r.top)*(cv.height/r.height), p:(pr && pr>0 ? pr : 1) });
@@ -2852,21 +2851,25 @@ function anAttachCanvas(pg){
     if (annot.mode === 'text'){ anPlaceText(pg, e.clientX, e.clientY); return; }
     if (e.pointerType === 'touch' && annot.fingerScroll){ return; } // finger scrolls when enabled
     e.preventDefault();
-    annotDraw.drawing = true; annotDraw.page = pg; annotDraw.pending = false;
-    const r = cv.getBoundingClientRect();
-    annotDraw.stroke = { tool: annot.tool, color: annot.tool==='highlighter'?annot.hlColor:annot.penColor, size: annot.size, points:[rectPos(r, e.clientX, e.clientY, e.pressure)] };
-    // Snapshot committed marks once — fast blit source for every subsequent frame.
-    if (!pg._cache){ pg._cache = document.createElement('canvas'); pg._cache.width = pg.w; pg._cache.height = pg.h; }
-    const cctx = pg._cache.getContext('2d'); cctx.clearRect(0,0,pg.w,pg.h); cctx.drawImage(cv, 0, 0);
+    annotDraw.drawing = true; annotDraw.page = pg;
+    annotDraw.rect = cv.getBoundingClientRect();               // cache rect for the whole stroke (no layout thrash per move)
+    const p0 = rectPos(annotDraw.rect, e.clientX, e.clientY, e.pressure);
+    annotDraw.stroke = { tool: annot.tool, color: annot.tool==='highlighter'?annot.hlColor:annot.penColor, size: annot.size, points:[p0] };
+    anDrawDot(pg.ctx, annotDraw.stroke, p0);                   // paint the starting dot
     try { cv.setPointerCapture(e.pointerId); } catch(_){}
   });
   cv.addEventListener('pointermove', (e) => {
     if (!annotDraw.drawing || annotDraw.page !== pg) return;
     e.preventDefault();
-    const r = cv.getBoundingClientRect();
+    const r = annotDraw.rect || cv.getBoundingClientRect();
+    const s = annotDraw.stroke;
     const evs = (e.getCoalescedEvents && e.getCoalescedEvents().length) ? e.getCoalescedEvents() : [e];
-    evs.forEach(ev => annotDraw.stroke.points.push(rectPos(r, ev.clientX, ev.clientY, ev.pressure)));
-    if (!annotDraw.pending){ annotDraw.pending = true; requestAnimationFrame(() => { annotDraw.pending = false; if (annotDraw.drawing && annotDraw.page === pg) anCompositeLive(pg); }); }
+    for (const ev of evs){
+      const prev = s.points[s.points.length - 1];
+      const pt = rectPos(r, ev.clientX, ev.clientY, ev.pressure);
+      s.points.push(pt);
+      anDrawSeg(pg.ctx, s, prev, pt);                          // paint ONLY the new segment
+    }
   });
 }
 function anPaintStroke(ctx, s){
