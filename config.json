@@ -81,6 +81,16 @@
       "parent": null,
       "order": 8,
       "path": "rrb-science-25-day-series"
+    },
+    {
+      "id": "f_1783595241167",
+      "name": "RRB Railway current affairs",
+      "icon": "📁",
+      "color": "#ec4899",
+      "desc": "",
+      "parent": null,
+      "order": 9,
+      "path": "rrb-railway-current-affairs"
     }
   ],
   "displayNames": {
@@ -181,5 +191,5 @@
   "telegramLink": "https://t.me/Exam_Zen_StudySync",
   "siteName": "StudyPlanner Notes",
   "siteSubtitle": "Hand-Written Notes Library",
-  "lastUpdated": "2026-07-08"
+  "lastUpdated": "2026-07-09"
 }
