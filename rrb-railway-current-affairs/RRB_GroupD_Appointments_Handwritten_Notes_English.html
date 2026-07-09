@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Appointments - Handwritten Notes | RRB Group D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fdfaf1;
+    --paper2:#fbf7ec;
+    --line:#b9d3e8;
+    --margin-red:#e2857a;
+    --ink-blue:#1c3fae;
+    --ink-blue-dark:#132a7a;
+    --marker-red:#d21f1f;
+    --marker-red2:#b3151c;
+    --highlight:#fff176;
+    --highlight2:#ffe36e;
+    --purple:#5b2a86;
+    --green:#1f7a3d;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#3d3a35;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.03), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03), transparent 40%);
+    font-family:'Kalam', cursive;
+    padding:28px 10px 80px;
+  }
+  .notebook{
+    max-width:900px;
+    margin:0 auto;
+  }
+  /* ---------- PAGE (ruled paper) ---------- */
+  .page{
+    position:relative;
+    background:
+      repeating-linear-gradient(
+        var(--paper) 0px, var(--paper) 33px,
+        var(--line) 34px, var(--paper) 35px
+      );
+    background-color:var(--paper);
+    border-radius:3px;
+    padding:34px 34px 34px 74px;
+    margin-bottom:26px;
+    box-shadow:
+      0 2px 0 rgba(0,0,0,0.06),
+      0 18px 34px rgba(0,0,0,0.35),
+      0 2px 6px rgba(0,0,0,0.25);
+    background-attachment:local;
+    line-height:34px;
+  }
+  .page::before{ /* red margin line */
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:52px;
+    width:2px;
+    background:var(--margin-red);
+    opacity:0.55;
+  }
+  .page::after{ /* punch holes */
+    content:"";
+    position:absolute;
+    left:18px; top:26px;
+    width:12px; height:calc(100% - 52px);
+    background-image:radial-gradient(circle, #d8d2c0 5px, transparent 5.5px);
+    background-size:12px 90px;
+    background-repeat:repeat-y;
+    opacity:0.7;
+  }
+  .page.tilt1{transform:rotate(-0.45deg);}
+  .page.tilt2{transform:rotate(0.35deg);}
+  .page.tilt3{transform:rotate(-0.25deg);}
+  .page.tilt4{transform:rotate(0.5deg);}
+
+  /* torn top edge */
+  .torn{
+    height:14px;
+    background:linear-gradient(115deg, transparent 49%, #3d3a35 49%, #3d3a35 51%, transparent 51%),
+               linear-gradient(245deg, transparent 49%, #3d3a35 49%, #3d3a35 51%, transparent 51%);
+    background-size:22px 100%;
+    background-repeat:repeat-x;
+    margin:-34px -34px 10px -74px;
+    opacity:0.5;
+  }
+
+  /* ---------- COVER PAGE ---------- */
+  .cover{
+    text-align:center;
+    padding:40px 30px 34px;
+  }
+  .cover .stamp{
+    display:inline-block;
+    border:3px solid var(--marker-red);
+    color:var(--marker-red);
+    font-weight:700;
+    font-size:15px;
+    padding:4px 14px;
+    border-radius:50%/40%;
+    transform:rotate(-6deg);
+    letter-spacing:1px;
+  }
+  .cover h1{
+    font-family:'Kalam',cursive;
+    font-weight:700;
+    color:var(--marker-red2);
+    font-size:44px;
+    margin:14px 0 4px;
+    text-shadow:1px 1px 0 rgba(0,0,0,0.08);
+    line-height:1.15;
+  }
+  .cover h2{
+    color:var(--ink-blue-dark);
+    font-size:24px;
+    font-weight:700;
+    margin:6px 0 2px;
+  }
+  .cover .sub{
+    color:var(--purple);
+    font-size:19px;
+    margin-top:4px;
+  }
+  .scribble-underline{
+    width:260px;height:14px;margin:6px auto 18px;
+    border-bottom:4px solid var(--marker-red);
+    border-radius:50%;
+    opacity:0.75;
+  }
+  .cover .date{
+    font-size:16px;color:#555;margin-top:10px;
+  }
+
+  /* topic index box */
+  .index-box{
+    border:2.5px dashed var(--ink-blue);
+    border-radius:14px;
+    padding:14px 18px;
+    margin-top:20px;
+    text-align:left;
+    background:rgba(255,255,255,0.4);
+  }
+  .index-box .idx-title{
+    color:var(--marker-red2);font-weight:700;font-size:19px;
+    text-align:center;margin-bottom:8px;
+  }
+  .idx-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:2px 18px;font-size:15px;color:var(--ink-blue-dark);
+    line-height:26px;
+  }
+  .idx-grid span.num{color:var(--marker-red);font-weight:700;margin-right:4px;}
+  .idx-grid .today{
+    background:var(--highlight);
+    border-radius:4px;padding:0 4px;
+    font-weight:700;
+  }
+
+  /* ---------- SECTION HEADER ---------- */
+  .section-head{
+    text-align:center;
+    margin:6px 0 14px;
+  }
+  .section-head .banner{
+    display:inline-block;
+    background:var(--marker-red2);
+    color:#fff8e7;
+    font-weight:700;
+    font-size:26px;
+    padding:6px 26px;
+    border-radius:6px;
+    transform:rotate(-1.2deg);
+    box-shadow:3px 3px 0 rgba(0,0,0,0.18);
+    letter-spacing:1px;
+  }
+  .section-head .doodle-row{
+    margin-top:8px;font-size:22px;letter-spacing:14px;opacity:0.8;
+  }
+
+  /* ---------- QUESTION BLOCK ---------- */
+  .qblock{
+    margin-bottom:8px;
+    padding-bottom:10px;
+    border-bottom:1.5px dotted #c9c2ac;
+  }
+  .qblock:last-child{border-bottom:none;}
+  .flexwrap{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .qtext-col{flex:1 1 380px; min-width:260px;}
+  .diagram-col{flex:0 0 240px; max-width:260px; margin-top:4px;}
+
+  .qnum{
+    display:inline-block;
+    color:#fff;
+    background:var(--marker-red2);
+    font-weight:700;
+    border-radius:50%;
+    width:34px;height:34px;
+    line-height:34px;
+    text-align:center;
+    transform:rotate(-4deg);
+    margin-right:8px;
+    font-size:17px;
+    box-shadow:2px 2px 0 rgba(0,0,0,0.15);
+  }
+  .qhead{
+    color:var(--ink-blue-dark);
+    font-size:19px;
+    font-weight:400;
+  }
+  .qhead b{color:var(--marker-red2);font-weight:700;}
+
+  ul.options{
+    list-style:none;
+    margin:6px 0 4px 0;
+    padding-left:44px;
+  }
+  ul.options li{
+    color:var(--ink-blue);
+    font-size:18px;
+    margin:3px 0;
+    position:relative;
+    width:fit-content;
+  }
+  ul.options li.correct{
+    font-weight:700;
+    color:var(--marker-red2);
+    background:linear-gradient(100deg, transparent 0%, var(--highlight) 8%, var(--highlight2) 92%, transparent 100%);
+    padding:1px 10px;
+    border:2.5px solid var(--marker-red);
+    border-radius:50% 20% 50% 20% / 20% 50% 20% 50%;
+    transform:rotate(-1.4deg);
+    box-shadow:1px 1px 0 rgba(0,0,0,0.05);
+  }
+  ul.options li.correct::before{
+    content:"✔";
+    position:absolute;
+    left:-30px;
+    color:var(--green);
+    font-weight:700;
+  }
+  .note-nomatch{
+    display:inline-block;
+    margin:4px 0 4px 44px;
+    background:#ffe9e9;
+    border:2px dashed var(--marker-red);
+    border-radius:8px;
+    padding:4px 10px;
+    color:var(--marker-red2);
+    font-size:15.5px;
+    transform:rotate(-1deg);
+  }
+
+  .ans-line{
+    margin:4px 0 2px 44px;
+    color:var(--green);
+    font-weight:700;
+    font-size:16.5px;
+  }
+  .ans-line .hl{background:var(--highlight);padding:0 6px;border-radius:3px;}
+
+  .exp-label{
+    color:var(--marker-red2);
+    font-weight:700;
+    font-size:17px;
+    margin:6px 0 2px 44px;
+    text-decoration:underline wavy var(--marker-red2) 1.5px;
+  }
+  ul.exp-list{
+    margin:2px 0 6px 0;
+    padding-left:64px;
+    color:var(--ink-blue);
+    font-size:17.5px;
+  }
+  ul.exp-list li{
+    margin:3px 0;
+    list-style-type:"— ";
+  }
+  .red-term{
+    color:var(--marker-red2);
+    font-weight:700;
+  }
+  .hl{
+    background:linear-gradient(100deg, var(--highlight) 0%, var(--highlight2) 100%);
+    padding:0 4px;
+    border-radius:3px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  .circle-word{
+    border:2px solid var(--marker-red);
+    border-radius:50% 40% 50% 40%/40% 50% 40% 50%;
+    padding:0 6px;
+  }
+
+  /* tip / memory boxes */
+  .tip-box{
+    margin:8px 0 6px 44px;
+    max-width:520px;
+    background:#fff3c4;
+    border:2px solid #e0b400;
+    border-left:6px solid var(--marker-red2);
+    border-radius:4px 12px 4px 12px;
+    padding:7px 12px;
+    font-size:16.5px;
+    color:#4a3b00;
+    transform:rotate(-0.6deg);
+    box-shadow:2px 3px 6px rgba(0,0,0,0.12);
+  }
+  .tip-box b{color:var(--marker-red2);}
+  .tip-box.mistake{background:#ffe0e0;border-color:#c94b4b;}
+  .tip-box.trick{background:#e2f4e2;border-color:#3f9142;}
+
+  /* doodles */
+  .doodle{
+    position:absolute;
+    font-size:22px;
+    opacity:0.75;
+    pointer-events:none;
+    user-select:none;
+  }
+  .page{overflow:hidden;}
+
+  /* ---------- SVG DIAGRAM STYLING ---------- */
+  .diagram-title{
+    text-align:center;font-size:15px;color:var(--purple);font-weight:700;
+    margin-bottom:2px;text-decoration:underline;
+  }
+  .diagram-box{
+    border:2px dashed var(--purple);
+    border-radius:10px;
+    padding:6px;
+    background:rgba(255,255,255,0.5);
+    transform:rotate(0.8deg);
+  }
+  .diagram-box svg{width:100%;height:auto;display:block;}
+
+  /* final summary page */
+  .summary-title{
+    text-align:center;color:var(--marker-red2);font-weight:700;font-size:25px;
+    margin-bottom:6px;
+  }
+  .summary-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;
+    font-size:16.5px;color:var(--ink-blue);
+  }
+  .summary-grid .item{
+    background:rgba(255,241,118,0.35);
+    border-left:4px solid var(--marker-red2);
+    padding:4px 8px;border-radius:3px;
+  }
+  .footer-note{
+    text-align:center;color:#7a7360;font-size:14px;margin:18px 0 4px;
+  }
+
+  @media(max-width:600px){
+    .page{padding:26px 16px 26px 46px;}
+    .page::before{left:30px;}
+    .page::after{display:none;}
+    .cover h1{font-size:32px;}
+    ul.exp-list, .exp-label, .ans-line, ul.options, .note-nomatch, .tip-box{padding-left:22px;margin-left:0;}
+    .qnum{width:28px;height:28px;line-height:28px;font-size:14px;}
+  }
+</style>
+</head>
+<body>
+<div class="notebook" id="notebook"></div>
+
+<script>
+/* ============================================================
+   DATA — Full content extracted from PDF + video transcript
+   (English version)
+   ============================================================ */
+
+const nationalQ = [
+{
+  q:"Who was appointed as the new **Chief of the Indian Navy** on 31 May 2026?",
+  options:["Krishna Swaminathan","Dheeraj Seth","N. S. Raja Subramani","Ajay Kochar"],
+  correct:0,
+  exp:[
+    "==31 May 2026==: Admiral **Krishna Swaminathan** took charge as the country's **27th Navy Chief**.",
+    "June 2026: **Dheeraj Seth** took charge as the **31st Chief of the Army Staff**.",
+    "31 May 2026: **N. S. Raja Subramani** became the country's **3rd Chief of Defence Staff (CDS)**.",
+    "29 May 2026: Vice Admiral **Ajay Kochar** took charge as the **48th Vice Chief** of the Navy."
+  ],
+  tip:{type:"trick",text:"<b>Memory Trick:</b> Remember the CDS order — 1st = Bipin Rawat &rarr; 2nd = Anil Chauhan &rarr; 3rd = N.S. Raja Subramani"},
+  diagram:"cds"
+},
+{
+  q:"Who has recently been appointed as the **Vice Chairman of NITI Aayog**, India's premier public policy think tank?",
+  options:["Ashok Kumar Lahiri","Nidhi Chhibber","Arvind Panagariya","Govardhan Das"],
+  correct:0,
+  exp:[
+    "April 2026: **Ashok Kumar Lahiri** appointed as new Vice Chairman of NITI Aayog (replaced ==Suman K. Bery==).",
+    "Full-time member: Scientist **Govardhan Das** appointed as a full-time member of NITI Aayog.",
+    "New CEO (additional charge): **Nidhi Chhibber** took additional charge as Chief Executive Officer (CEO).",
+    "First Vice Chairman & Finance Commission: **Arvind Panagariya** was the first Vice Chairman of NITI Aayog; the ==16th Finance Commission== was constituted under his chairmanship.",
+    "Chairman: The **Prime Minister** of India is the ex-officio Chairman of NITI Aayog.",
+    "Established: In ==2015== in place of the Planning Commission."
+  ]
+},
+{
+  q:"Who assumed charge as the **CEO of UIDAI** (Unique Identification Authority of India) in May 2026?",
+  options:["R. Mukundan","Rathindra Bose","Saurabh Vijay","Sanjay Jamuar"],
+  correct:2,
+  exp:[
+    "**UIDAI CEO**: ==Saurabh Vijay== assumed charge as Chief Executive Officer (CEO) in May 2026.",
+    "**CII President**: R. Mukundan became President of the Confederation of Indian Industry (CII) for 2026-27.",
+    "West Bengal Assembly: Rathindra Bose was elected unopposed as Speaker in May 2026.",
+    "Delhi Metro International: Sanjay Jamuar became its first Chief Executive Officer."
+  ]
+},
+{
+  q:"Who was appointed as the new Chairperson of the **Central Board of Film Certification (CBFC)** by the Central Government on 6 May 2026?",
+  options:["Piyush Anand","Ashutosh Gowariker","Prasoon Joshi","Shashi Shekhar Vempati"],
+  correct:3,
+  exp:[
+    "6 May 2026: ==Shashi Shekhar Vempati== appointed as Chairperson of CBFC.",
+    "2 May 2026: **Prasoon Joshi** appointed as the new chairperson of ==Prasar Bharati==.",
+    "March 2026: Piyush Anand appointed Director General (DG) of the **National Disaster Response Force (NDRF)**.",
+    "57th IFFI Goa: Filmmaker Ashutosh Gowariker appointed as the Festival Director of the ==International Film Festival of India==."
+  ]
+},
+{
+  q:"Who has been appointed as the **Brand Ambassador for Census 2027**?",
+  options:["Pankaj Tripathi","Sudarsan Pattnaik","Keerthy Suresh","Shah Rukh Khan"],
+  correct:1,
+  exp:[
+    "Census 2027: Sand artist ==Sudarsan Pattnaik== appointed as Brand Ambassador. He also won Russia's Grand Sand Master Cup 2026 (first Indian to do so).",
+    "Mascots (Census 2027): '**Pragati**' (female) and '**Vikas**' (male) are the mascots of Census 2027.",
+    "March 2026: Actor Pankaj Tripathi made brand ambassador of SBI General Insurance.",
+    "16 November 2025: Actress Keerthy Suresh appointed as Celebrity Advocate of UNICEF India."
+  ]
+},
+{
+  q:"Who assumed office as the new Chairman of the **Atomic Energy Regulatory Board (AERB)** in January 2026?",
+  options:["Rakesh Agrawal","R. Venkataramani","A. K. Balasubramanyam","Dr. Urjit Patel"],
+  correct:2,
+  exp:[
+    "**AERB Chairman**: ==A. K. Balasubramanyam== became Chairman of AERB in January 2026.",
+    "**NIA Director General**: Rakesh Agrawal appointed Director General of the ==National Investigation Agency (NIA)==.",
+    "**Attorney General**: R. Venkataramani is currently the Attorney General of India and chief legal advisor.",
+    "**IMF Executive Director**: Dr. Urjit Patel appointed India's Executive Director at the International Monetary Fund."
+  ]
+},
+{
+  q:"Who took oath as the **Governor of West Bengal** in March 2026?",
+  options:["Jishnu Dev Varma","R. N. Ravi","Kavinder Gupta","Taranjit Singh Sandhu"],
+  correct:1,
+  exp:[
+    "==R. N. Ravi== has been appointed Governor of West Bengal.",
+    "Jishnu Dev Varma appointed Governor of **Maharashtra**.",
+    "Kavinder Gupta appointed the new Governor of **Himachal Pradesh**.",
+    "Taranjit Singh Sandhu appointed the new Lieutenant Governor of **Delhi**."
+  ],
+  tip:{type:"tip",text:"<b>Exam Tip:</b> R.N. Ravi was earlier Governor of Tamil Nadu, now sent to West Bengal — ahead of elections."}
+},
+{
+  q:"Who was appointed as the new Chairman and Managing Director (CMD) of the **Food Corporation of India (FCI)** in December 2025?",
+  options:["Manoj Kumar Singh","Vikram Nath","Ravindra Kumar Agrawal","Vivek Menon"],
+  correct:2,
+  exp:[
+    "Chairman & Managing Director (CMD): ==Ravindra Kumar Agrawal== appointed the new Chairman & MD of FCI.",
+    "Establishment & HQ: FCI was established on **14 January 1965** under the Food Corporations Act, 1964; HQ — New Delhi.",
+    "Ministry: A Public Sector Undertaking (PSU) under the Ministry of Consumer Affairs, Food and Public Distribution.",
+    "Main objective: Procuring foodgrains from farmers at MSP, scientific storage, and ensuring distribution under PDS & NFSA."
+  ]
+},
+{
+  q:"Who was appointed as the Chairperson of the **National Commission for Backward Classes (NCBC)** in March 2026?",
+  options:["Sangeeta Barooah Pisharoty","Sadhvi Niranjan Jyoti","A. Rajarajan","Sonali Mishra"],
+  correct:1,
+  exp:[
+    "March 2026: ==Sadhvi Niranjan Jyoti== appointed Chairperson of NCBC.",
+    "NCBC (nature & purpose): A constitutional body protecting the social, educational & economic interests of **OBCs**.",
+    "Constitutional status: Initially (1993) it was a statutory commission; later given constitutional status under **Article 338B** via the **102nd Constitutional Amendment Act, 2018**.",
+    "Press Club of India: Sangeeta Barooah Pisharoty elected its first woman President.",
+    "VSSC Director: A. Rajarajan is currently Director of the Vikram Sarabhai Space Centre (VSSC) in Thiruvananthapuram.",
+    "RPF's first woman DG: Sonali Mishra appointed the first woman Director General of the Railway Protection Force (RPF)."
+  ],
+  tip:{type:"trick",text:"<b>Memory Trick:</b> Article 338 &rarr; SC Commission | 338A &rarr; ST Commission | 338B &rarr; OBC Commission (NCBC)"},
+  diagram:"ncbc"
+},
+{
+  q:"**Praveen Kumar** was appointed as the new Director General of which organization in January 2026?",
+  options:["Central Industrial Security Force (CISF)","Indo-Tibetan Border Police (ITBP)","National Investigation Agency (NIA)","Border Security Force (BSF)"],
+  correct:3,
+  exp:[
+    "January 2026: **Praveen Kumar** appointed by the Central Government as the new Director General of ==Border Security Force (BSF)==.",
+    "**Shatrujeet Singh Kapoor** appointed the new Director General of ==Indo-Tibetan Border Police (ITBP)== in January 2026."
+  ]
+},
+{
+  q:"Who took oath as the new **Chief Information Commissioner (CIC)** in December 2025?",
+  options:["Rajkumar Goyal","Anu Garg","Vivek Chaturvedi","Prem Kumar"],
+  correct:0,
+  exp:[
+    "==Rajkumar Goyal== appointed by the Central Government as the new Chief Information Commissioner in the Central Information Commission.",
+    "Senior IAS officer Anu Garg appointed **Odisha's first woman Chief Secretary**.",
+    "Vivek Chaturvedi appointed Chairman of the **Central Board of Indirect Taxes and Customs**.",
+    "Prem Kumar appointed **Speaker of the Bihar Legislative Assembly**."
+  ],
+  tip:{type:"tip",text:"<b>Exam Tip:</b> CIC is a statutory body linked to the RTI Act, 2005 — it is not mentioned in the Constitution."}
+},
+{
+  q:"Who has been appointed as the **Chief Minister of Kerala**?",
+  options:["N. Rangasamy","Suvendu Adhikari","Joseph Vijay","V. D. Satheesan"],
+  correct:3,
+  exp:[
+    "==V. D. Satheesan== appointed Chief Minister of Kerala — Kerala's ==13th== Chief Minister.",
+    "N. Rangaswamy appointed Chief Minister of **Puducherry**.",
+    "Suvendu Adhikari appointed Chief Minister of **West Bengal** (BJP's first full-majority government there).",
+    "Joseph Vijay appointed Chief Minister of **Tamil Nadu** — Tamil Nadu's ==9th== Chief Minister (after M.K. Stalin)."
+  ]
+},
+{
+  q:"**Vinai Kumar Saxena** took oath as the Lieutenant Governor of which State/Union Territory in March 2026?",
+  options:["Puducherry","Ladakh","Lakshadweep","Chandigarh"],
+  correct:1,
+  exp:[
+    "Vinai Kumar Saxena appointed the fourth Lieutenant Governor of the Union Territory of ==Ladakh== in March 2026.",
+    "Ladakh is a Union Territory formed on **31 October 2019** under the Jammu & Kashmir Reorganisation Act.",
+    "Headquarters: Leh and Kargil — administrative functions run from both places.",
+    "Ladakh now has ==7 districts== (earlier only Leh & Kargil — 2 districts; 5 more added later).",
+    "Pangong Tso, Tso Moriri Lake, Khardung La, Nubra Valley, and **Hemis National Park** are key attractions here; Hemis Park is world-famous for **Snow Leopard** conservation."
+  ]
+},
+{
+  q:"Who was appointed as the Secretary General of the **Federation of Indian Chambers of Commerce and Industry (FICCI)** in April 2026?",
+  options:["Sanjay Tiwari","Anugrah Narayan Das","Anant Swarup","Nirmal Kumar"],
+  correct:2,
+  exp:[
+    "==Anant Swarup== appointed Secretary General of FICCI in April 2026.",
+    "FICCI was established in ==1927==.",
+    "Sanjay Tiwari appointed by the Central Government as the first chairman of the **National Dental Commission**.",
+    "Anugrah Narayan Das appointed **Controller General of Defence Accounts (CGDA)**."
+  ]
+},
+{
+  q:"Who was appointed as the new Chairperson of **NASSCOM** for the year 2026–27 in April 2026?",
+  options:["Srikanth Velamakanni","Vikram Nath","Pratibha Singh","Brijbhushan Agrawal"],
+  correct:0,
+  exp:[
+    "April 2026: ==Srikanth Velamakanni== appointed the new Chairperson of NASSCOM for 2026-27.",
+    "NASSCOM (National Association of Software and Services Companies) was established in ==1988==; headquarters — ==Noida==.",
+    "Vikram Nath appointed the new Executive Chairman of the **National Legal Services Authority (NALSA)** (NALSA Act, 1987).",
+    "Justice Pratibha Singh appointed Chairperson of the Advisory Board of Judges of the **World Intellectual Property Organization (WIPO)**.",
+    "Brijbhushan Agrawal is currently President of the **Indian Chamber of Commerce**."
+  ]
+},
+{
+  q:"Who has recently been appointed as the **25th Chief Minister of Karnataka**?",
+  options:["Dr. G. Parameshwara","Mallikarjun Kharge","D. K. Shivakumar","Thaawarchand Gehlot"],
+  correct:2,
+  exp:[
+    "**Karnataka Chief Minister**: ==D.K. Shivakumar== took oath as the ==25th== Chief Minister of Karnataka (after Siddaramaiah). Governor Thaawarchand Gehlot administered the oath.",
+    "**Deputy Chief Minister**: Dr. G. Parameshwara is currently the Deputy Chief Minister of Karnataka.",
+    "**Leader of Opposition**: Mallikarjun Kharge is currently the Leader of Opposition in the Rajya Sabha."
+  ]
+},
+{
+  q:"Who has been appointed as the new Chairperson of the **Central Board of Secondary Education (CBSE)**?",
+  options:["Rahul Singh","Lokhande Prashant Sitaram","Varun Bhardwaj","Himanshu Gupta"],
+  correct:1,
+  exp:[
+    "**CBSE Chairperson**: Senior IAS officer ==Lokhande Prashant Sitaram== (former Additional Secretary, Home Ministry) appointed the new chairperson in place of Rahul Singh.",
+    "**CBSE Secretary**: Varun Bhardwaj appointed the new Secretary in place of Himanshu Gupta."
+  ]
+},
+{
+  q:"Which senior officer has been given the additional charge of Chairman of the **Defence Research and Development Organisation (DRDO)**?",
+  options:["Piyush Singla","Sanjay Vatsyayan","Sameer V. Kamat","Rajesh Kumar Singh"],
+  correct:3,
+  exp:[
+    "Senior IAS officer ==Rajesh Kumar Singh== given the additional charge of Chairman of DRDO — after the tenure of former Chairman **Sameer V. Kamat** ended.",
+    "Sanjay Vatsyayan appointed Flag Officer Commanding-in-Chief of the ==Western Naval Command==.",
+    "IAS officer Piyush Singla appointed Director of the **Ayushman Bharat Digital Mission**."
+  ]
+},
+{
+  q:"Who was appointed as India's High Commissioner to the **United Kingdom (UK)** in March 2026?",
+  options:["P. Kumaran","Ravi Shankar","Medha Kulkarni","Harvansh Chawla"],
+  correct:0,
+  exp:[
+    "==P. Kumaran== appointed India's High Commissioner to the United Kingdom in March 2026.",
+    "Ravi Shankar promoted as Executive Director of the **Reserve Bank of India (RBI)**.",
+    "BJP MP Medha Kulkarni appointed Chairperson of the Parliamentary Standing Committee on **Science & Technology, Environment, Forest and Climate Change**.",
+    "Harvansh Chawla appointed the new President of the **BRICS Chamber of Commerce and Industry**."
+  ],
+  tip:{type:"tip",text:"<b>Exam Tip:</b> The 2026 BRICS Summit is going to be held in India — remember this."}
+},
+{
+  q:"Who has been appointed as the new Chairman and Managing Director (CMD) of the **Steel Authority of India Limited (SAIL)**?",
+  options:["Joram Aniya","R. Balasubramanyam","Ashok Kumar Panda","Manoj Nagpal"],
+  correct:2,
+  exp:[
+    "**New CMD of SAIL**: ==Ashok Kumar Panda== appointed the new Chairman and Managing Director of SAIL.",
+    "**NITI Aayog (full-time members)**: Joram Aniya and R. Balasubramanyam appointed full-time members of NITI Aayog."
+  ]
+},
+{
+  q:"Who took oath as the **Chief Minister of Bihar** in May 2026?",
+  options:["Vijay Kumar Chaudhary","Samrat Chaudhary","Bijendra Prasad Yadav","Syed Ata Hasnain"],
+  correct:1,
+  exp:[
+    "**New Chief Minister of Bihar**: ==Samrat Chaudhary== took oath as Chief Minister of Bihar (replacing Nitish Kumar) — Bihar's ==24th== Chief Minister.",
+    "**Deputy Chief Ministers**: Vijay Kumar Chaudhary and Bijendra Prasad Yadav appointed Deputy Chief Ministers of Bihar.",
+    "**Governor of Bihar**: Syed Ata Hasnain is currently the Governor of Bihar."
+  ]
+},
+{
+  q:"Who has been reappointed as the Chairperson of the **Public Accounts Committee (PAC)** for 2026–27?",
+  options:["K. C. Venugopal","Baijayant Panda","Faggan Singh Kulaste","Om Birla"],
+  correct:0,
+  exp:[
+    "==K.C. Venugopal== reappointed Chairman of the Public Accounts Committee for 2026-27.",
+    "Baijayant Panda appointed Chairman of the **Committee on Public Undertakings**.",
+    "Faggan Singh Kulaste appointed Chairman of the **Committee on Welfare of SC/ST**.",
+    "Om Birla is currently the **Speaker of the Lok Sabha**."
+  ]
+},
+{
+  q:"Who has been appointed as the new Managing Director and Chief Executive Officer (MD & CEO) of the **Open Network for Digital Commerce (ONDC)**?",
+  options:["T. Koshy","Vivek Gupta","Srinivas Reddy","Abhishek Singh"],
+  correct:-1,
+  exp:[
+    "**New MD & CEO of ONDC**: ==Vibhor Jain== appointed the new Managing Director and CEO of ONDC.",
+    "**New CMD of BPCL**: Sanjay Khanna appointed the new Chairman and Managing Director of Bharat Petroleum Corporation Limited (BPCL).",
+    "**Indian Digital Payments Intelligence Corporation**: K.S. Raju appointed its MD and CEO.",
+    "**Mumbai's first woman Municipal Commissioner**: Ashwini Bhide made Mumbai's first woman Municipal Commissioner."
+  ],
+  notematch:"⚠️ Note: The correct answer is 'Vibhor Jain', which is NOT among the given options (A–D) — this is an error in the source material. So remember separately: Answer = Vibhor Jain."
+},
+{
+  q:"Who is the first Indian woman to head an operational **nuclear power plant** in India?",
+  options:["Saba Shaul","R. M. Natchammai","Nivedita Dubey","Nandini Chakravarti"],
+  correct:1,
+  exp:[
+    "==R. M. Natchammai== became the first Indian woman to head an operational nuclear power plant (**Kaiga, Karnataka**) in India.",
+    "Saba Shaul is the first Kashmiri woman officer to head Srinagar Central Jail.",
+    "Nivedita Dubey took charge as the first woman Director (Human Resources) of the ==Airports Authority of India (AAI)==.",
+    "Nandini Chakravarti recently appointed **West Bengal's** first woman Chief Secretary."
+  ]
+},
+{
+  q:"Who has been appointed as the Director General of **Doordarshan News (DD News)**?",
+  options:["Mamta Verma","Aastha Poonia","Kamini Kaushal","Bharat Thammineni"],
+  correct:0,
+  exp:[
+    "==Mamta Verma== appointed Director General of Doordarshan News (DD News).",
+    "Aastha Poonia officially became the first woman to join the fighter stream of **Naval Aviation** in July 2025."
+  ]
+},
+{
+  q:"In April 2026, former Union Minister **Dinesh Trivedi** was appointed as India's High Commissioner to which country?",
+  options:["Nepal","Bhutan","Bangladesh","China"],
+  correct:2,
+  exp:[
+    "In April 2026, former Union Minister Dinesh Trivedi appointed India's High Commissioner to ==Bangladesh==.",
+    "Vikram K. Doraiswami appointed India's new Ambassador to **China**."
+  ]
+},
+{
+  q:"Who was appointed as the Global Brand Ambassador of **Infosys** in April 2026?",
+  options:["A. R. Rahman","Mahendra Singh Dhoni","Novak Djokovic","Carlos Alcaraz"],
+  correct:3,
+  exp:[
+    "**Infosys Brand Ambassador**: ==Carlos Alcaraz== appointed Global Brand Ambassador of Infosys — a 7-time Grand Slam champion.",
+    "Yamaha Music India: Oscar-winner A.R. Rahman appointed its new brand ambassador.",
+    "BHIM Payment App: Former Indian cricket captain Mahendra Singh Dhoni appointed its new brand ambassador."
+  ]
+},
+{
+  q:"Who has been unanimously elected as the President of the **South Asian Weightlifting Federation**?",
+  options:["Amol Muzumdar","Sahdev Yadav","Karnam Malleswari","Gopinath Singh"],
+  correct:1,
+  exp:[
+    "South Asian Weightlifting Federation: ==Sahdev Yadav== unanimously elected President.",
+    "Indian Women's Cricket Team: Amol Muzumdar is currently the head coach.",
+    "Karnam Malleswari: India's great weightlifter, who won a bronze medal at the ==2000 Sydney Olympics==, becoming the first Indian woman to win an Olympic medal."
+  ]
+},
+{
+  q:"Who assumed charge as the Secretary of the **Ministry of Information and Broadcasting** on 1 April 2026?",
+  options:["Sanjay Jaju","Sajja Praveen Chowdary","Chanchal Kumar","Sanjay Khanna"],
+  correct:2,
+  exp:[
+    "Ministry of Information and Broadcasting: ==Chanchal Kumar== took charge as Secretary.",
+    "Ministry of Development of North Eastern Region: Sanjay Jaju appointed the new Secretary.",
+    "PolicyBazaar (CEO): Sajja Praveen Chowdary became the new Chief Executive Officer (CEO) of PolicyBazaar Insurance Brokers.",
+    "CMD of BPCL: Sanjay Khanna is the current Chairman & Managing Director of Bharat Petroleum Corporation Limited."
+  ]
+},
+{
+  q:"Who has assumed charge as the **Director General of Naval Armament** at the Naval Headquarters?",
+  options:["Vinay Muralidhar Tonse","Mukul Roy","P. Upadhyay","Divakar Jayant"],
+  correct:3,
+  exp:[
+    "In February 2026, ==Divakar Jayant== assumed charge as Director General of Naval Armament at Naval Headquarters, replacing P. Upadhyay.",
+    "Vinay Muralidhar Tonse appointed Managing Director and CEO of **Yes Bank** by the Reserve Bank of India.",
+    "Mukul Roy, former Railway Minister of India, recently passed away at the age of ==71==."
+  ]
+},
+{
+  q:"Who has been appointed as the **Vigilance Commissioner** in the Central Vigilance Commission (CVC)?",
+  options:["Aritra Roy","Praveen Vashistha","Praveen Kumar","Anoop Kumar Saha"],
+  correct:1,
+  exp:[
+    "==Praveen Vashistha== appointed Vigilance Commissioner of the Central Vigilance Commission by the President of India.",
+    "Praveen Kumar appointed Director General of the **Border Security Force**.",
+    "Anoop Kumar Saha appointed a full-time Director of **Kotak Mahindra Bank**."
+  ],
+  tip:{type:"tip",text:"<b>Exam Tip:</b> The CVC is not mentioned in any Article of the Constitution — it was created under the CVC Act, 2003 (a statutory body)."}
+},
+{
+  q:"Who has been elected as the Chairperson of the **International Institute for Democracy and Electoral Assistance (International IDEA)** for 2026?",
+  options:["Gyanesh Kumar","Rajiv Kumar","Vivek Joshi","Arun Goyal"],
+  correct:0,
+  exp:[
+    "India's Chief Election Commissioner ==Gyanesh Kumar== elected Chairperson of International IDEA for 2026.",
+    "This organization works worldwide to strengthen democracy and promote free & fair elections."
+  ]
+}
+];
+
+const internationalQ = [
+{
+  q:"**Rumen Radev** was appointed as the Prime Minister of which country in May 2026?",
+  options:["Nepal","Myanmar","Denmark","Bulgaria"],
+  correct:3,
+  exp:[
+    "Bulgaria: In May 2026, ==Rumen Radev== was appointed Prime Minister here.",
+    "Denmark: Mette Frederiksen took charge as Prime Minister for a ==third== consecutive term.",
+    "Myanmar: In April 2026, military chief Min Aung Hlaing appointed President of Myanmar.",
+    "Nepal: Balendra Shah appointed Prime Minister of Nepal — the ==youngest== Prime Minister in its history."
+  ]
+},
+{
+  q:"**Roman Gofman** has been appointed as the head of the intelligence agency of which country?",
+  options:["France","Israel","United States of America","United Kingdom"],
+  correct:1,
+  exp:[
+    "**Mossad Chief**: Prime Minister of ==Israel== Benjamin Netanyahu appointed military secretary Major General Roman Gofman as head of Israel's intelligence agency 'Mossad' (replacing David Barnea)."
+  ]
+},
+{
+  q:"Who has become the first South Asian and the first Muslim to lead **New York**?",
+  options:["Javed Ashraf","Khaled El-Enany","Zohran Mamdani","Anand Varadarajan"],
+  correct:2,
+  exp:[
+    "New York Mayor: ==34-year-old== Indian-origin ==Zohran Mamdani== became New York's ==112th== Mayor — the first South Asian and first Muslim to lead New York (Democratic Party).",
+    "UNESCO Director-General: Khaled El-Enany appointed Director-General of ==UNESCO== in November 2025 (headquarters: Paris).",
+    "Starbucks CTO: Indian-origin Anand Varadarajan appointed Chief Technology Officer (CTO) of Starbucks."
+  ]
+},
+{
+  q:"Who has been appointed as the President of the 81st Session of the **United Nations General Assembly (UNGA)**?",
+  options:["Mia Amor Mottley","Jan Ternus","Ghazala Hashmi","Khalilur Rahman"],
+  correct:3,
+  exp:[
+    "**UNGA 81st Session President**: Bangladesh Foreign Minister ==Khalilur Rahman== appointed President of the 81st session of UNGA.",
+    "Barbados: Mia Amor Mottley appointed Prime Minister of Barbados for a ==third== consecutive term.",
+    "Apple Inc: Jan Ternus appointed the new Chief Executive Officer (CEO) of Apple.",
+    "Virginia Lieutenant Governor: Indian-origin American politician Ghazala Hashmi became Lieutenant Governor of Virginia."
+  ]
+},
+{
+  q:"Who was elected as the Prime Minister of **Hungary** in May 2026?",
+  options:["Peter Magyar","Yoweri Museveni","Janez Jansa","Lara Fernandez"],
+  correct:0,
+  exp:[
+    "Hungary: ==Peter Magyar== elected the new Prime Minister of Hungary in May 2026. (Capital — Budapest)",
+    "Uganda: Yoweri Museveni appointed President of Uganda for the ==seventh== consecutive time in May 2026.",
+    "Slovenia: Janez Jansa appointed the new Prime Minister of Slovenia in May 2026.",
+    "Costa Rica: Lara Fernandez appointed President of Costa Rica."
+  ]
+},
+{
+  q:"Who was elected as the President of **Djibouti** for the sixth consecutive term in April 2026?",
+  options:["Nizar Amedi","Ismail Omar Guelleh","Romuald Wadagni","Mamady Doumbouya"],
+  correct:1,
+  exp:[
+    "Djibouti: ==Ismail Omar Guelleh== elected President of Djibouti for the ==sixth== consecutive time, holding this post since ==1999==.",
+    "Iraq: Nizar Amedi appointed the new President of Iraq.",
+    "Benin: Romuald Wadagni elected President of the African country Benin.",
+    "Guinea: Mamady Doumbouya appointed President of the African country Guinea."
+  ]
+},
+{
+  q:"Who took oath as the Prime Minister of **Bangladesh** on 17 February 2026?",
+  options:["Sheikh Hasina","Muhammad Yunus","Tarique Rahman","Obaidul Quader"],
+  correct:2,
+  exp:[
+    "Bangladesh Prime Minister: On 17 February 2026, ==Tarique Rahman== (Bangladesh Nationalist Party - BNP) took oath as the new Prime Minister of Bangladesh — a major shift in Bangladesh's politics.",
+    "**Muhammad Yunus** was earlier the head of the interim government — known as the 'Father of Microfinance', a ==Nobel Peace Prize== laureate, and founder of the Bangladesh Grameen Bank."
+  ]
+},
+{
+  q:"Who became **Japan's first woman Prime Minister** in October 2025?",
+  options:["Yoko Kamikawa","Yuriko Koike","Fumio Kishida","Sanae Takaichi"],
+  correct:3,
+  exp:[
+    "In October 2025, ==Sanae Takaichi== took charge as Japan's first woman Prime Minister.",
+    "She has long been active in Japanese politics and is counted among the country's leading women leaders.",
+    "Her becoming Prime Minister is considered a ==historic achievement== in Japan's political history, as a woman held this top executive post for the first time."
+  ]
+}
+];
+
+/* ============================================================
+   SVG hand-drawn diagrams
+   ============================================================ */
+const diagrams = {
+cds:`
+<div class="diagram-box">
+<div class="diagram-title">✦ CDS Timeline ✦</div>
+<svg viewBox="0 0 230 210" fill="none">
+ <circle cx="40" cy="30" r="26" stroke="#5b2a86" stroke-width="2.4" fill="#fff3c4"/>
+ <text x="40" y="26" font-family="Kalam" font-size="10" fill="#132a7a" text-anchor="middle">1st CDS</text>
+ <text x="40" y="40" font-family="Kalam" font-size="9.5" fill="#d21f1f" text-anchor="middle" font-weight="700">Bipin Rawat</text>
+ <path d="M60 55 Q75 80 60 100" stroke="#1c3fae" stroke-width="2" fill="none" marker-end="url(#arw)"/>
+ <circle cx="40" cy="115" r="26" stroke="#5b2a86" stroke-width="2.4" fill="#fff3c4"/>
+ <text x="40" y="111" font-family="Kalam" font-size="10" fill="#132a7a" text-anchor="middle">2nd CDS</text>
+ <text x="40" y="125" font-family="Kalam" font-size="9.5" fill="#d21f1f" text-anchor="middle" font-weight="700">Anil Chauhan</text>
+ <path d="M60 140 Q75 165 60 185" stroke="#1c3fae" stroke-width="2" fill="none" marker-end="url(#arw)"/>
+ <circle cx="40" cy="185" r="30" stroke="#1f7a3d" stroke-width="3" fill="#e2f4e2"/>
+ <text x="40" y="180" font-family="Kalam" font-size="9.5" fill="#132a7a" text-anchor="middle">3rd CDS (NEW)</text>
+ <text x="40" y="194" font-family="Kalam" font-size="8.6" fill="#d21f1f" text-anchor="middle" font-weight="700">N.S. Raja</text>
+ <text x="40" y="203" font-family="Kalam" font-size="8.6" fill="#d21f1f" text-anchor="middle" font-weight="700">Subramani</text>
+ <text x="150" y="35" font-family="Kalam" font-size="10" fill="#5b2a86">31 May 2026:</text>
+ <text x="150" y="50" font-family="Kalam" font-size="10" fill="#5b2a86">Navy Chief =</text>
+ <text x="150" y="65" font-family="Kalam" font-size="10" fill="#d21f1f" font-weight="700">Krishna</text>
+ <text x="150" y="80" font-family="Kalam" font-size="10" fill="#d21f1f" font-weight="700">Swaminathan</text>
+ <text x="150" y="105" font-family="Kalam" font-size="10" fill="#5b2a86">(27th Navy</text>
+ <text x="150" y="120" font-family="Kalam" font-size="10" fill="#5b2a86">Chief)</text>
+ <defs><marker id="arw" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c3fae"/></marker></defs>
+</svg>
+</div>`,
+ncbc:`
+<div class="diagram-box">
+<div class="diagram-title">✦ NCBC Status Timeline ✦</div>
+<svg viewBox="0 0 230 150" fill="none">
+ <line x1="20" y1="75" x2="210" y2="75" stroke="#1c3fae" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round"/>
+ <circle cx="30" cy="75" r="9" fill="#fff3c4" stroke="#d21f1f" stroke-width="2.2"/>
+ <text x="30" y="45" font-family="Kalam" font-size="10.5" fill="#d21f1f" text-anchor="middle" font-weight="700">1993</text>
+ <text x="30" y="60" font-family="Kalam" font-size="9" fill="#132a7a" text-anchor="middle">Statutory</text>
+ <text x="30" y="98" font-family="Kalam" font-size="9" fill="#132a7a" text-anchor="middle">Body</text>
+ <path d="M55 75 L165 75" stroke="#1c3fae" stroke-width="2" marker-end="url(#arw2)"/>
+ <circle cx="185" cy="75" r="12" fill="#e2f4e2" stroke="#1f7a3d" stroke-width="2.6"/>
+ <text x="185" y="42" font-family="Kalam" font-size="10.5" fill="#d21f1f" text-anchor="middle" font-weight="700">2018</text>
+ <text x="185" y="57" font-family="Kalam" font-size="9" fill="#132a7a" text-anchor="middle">102nd Amdt.</text>
+ <text x="185" y="100" font-family="Kalam" font-size="9" fill="#132a7a" text-anchor="middle">Art. 338B</text>
+ <text x="185" y="113" font-family="Kalam" font-size="9" fill="#132a7a" text-anchor="middle">Constitutional</text>
+ <text x="115" y="140" font-family="Kalam" font-size="9.5" fill="#5b2a86" text-anchor="middle">338=SC | 338A=ST | 338B=OBC</text>
+ <defs><marker id="arw2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c3fae"/></marker></defs>
+</svg>
+</div>`
+};
+
+/* ============================================================
+   Helper functions
+   ============================================================ */
+function fmt(t){
+  return t.replace(/\*\*(.*?)\*\*/g,'<span class="red-term">$1</span>')
+          .replace(/==(.*?)==/g,'<span class="hl">$1</span>');
+}
+const letters=["A","B","C","D"];
+
+function renderQuestion(item, idx){
+  let optsHTML = item.options.map((o,i)=>{
+    if(i===item.correct){
+      return `<li class="correct">${letters[i]}) ${o}</li>`;
+    }
+    return `<li>${letters[i]}) ${o}</li>`;
+  }).join("");
+
+  let notematchHTML = item.notematch ? `<div class="note-nomatch">${item.notematch}</div>` : "";
+  let ansHTML = item.correct>=0 ? `<div class="ans-line">✔ Answer &rarr; <span class="hl">Option ${letters[item.correct]}</span></div>` : "";
+
+  let expHTML = item.exp.map(e=>`<li>${fmt(e)}</li>`).join("");
+
+  let tipHTML="";
+  if(item.tip){
+    let cls = item.tip.type==="mistake" ? "mistake" : item.tip.type==="trick" ? "trick" : "";
+    tipHTML = `<div class="tip-box ${cls}">${item.tip.text}</div>`;
+  }
+
+  let diagHTML="";
+  if(item.diagram && diagrams[item.diagram]){
+    diagHTML = `<div class="diagram-col">${diagrams[item.diagram]}</div>`;
+  }
+
+  return `
+  <div class="qblock">
+    <div class="flexwrap">
+      <div class="qtext-col">
+        <div class="qhead"><span class="qnum">${idx}</span>${fmt(item.q)}</div>
+        <ul class="options">${optsHTML}</ul>
+        ${notematchHTML}
+        ${ansHTML}
+        <div class="exp-label">📘 Explanation :</div>
+        <ul class="exp-list">${expHTML}</ul>
+        ${tipHTML}
+      </div>
+      ${diagHTML}
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   PAGE BUILDING — group questions into notebook pages
+   ============================================================ */
+function chunk(arr,size){
+  let out=[];
+  for(let i=0;i<arr.length;i+=size) out.push(arr.slice(i,i+size));
+  return out;
+}
+
+const doodleSet = ["★","✦","☆","➤","✎","♥","🔖","📌","✔","🧠"];
+function randomDoodles(n){
+  let html="";
+  for(let i=0;i<n;i++){
+    let d = doodleSet[Math.floor(Math.random()*doodleSet.length)];
+    let top = 10 + Math.random()*85;
+    let left = Math.random()<0.5 ? (2+Math.random()*4) : (92+Math.random()*5);
+    let rot = (Math.random()*40-20).toFixed(1);
+    let color = ["#d21f1f","#1c3fae","#5b2a86","#1f7a3d"][Math.floor(Math.random()*4)];
+    html += `<span class="doodle" style="top:${top}%; left:${left}%; transform:rotate(${rot}deg); color:${color};">${d}</span>`;
+  }
+  return html;
+}
+
+let pageTiltClasses=["tilt1","tilt2","tilt3","tilt4"];
+function buildPages(dataArr, startIndex, offsetForNum){
+  const groups = chunk(dataArr, 3);
+  let html="";
+  groups.forEach((g, gi)=>{
+    let tilt = pageTiltClasses[(startIndex+gi)%4];
+    let inner = g.map((item,ii)=> renderQuestion(item, offsetForNum + gi*3 + ii + 1)).join("");
+    html += `<div class="page ${tilt}">${randomDoodles(2)}<div class="torn"></div>${inner}</div>`;
+  });
+  return html;
+}
+
+/* ============================================================
+   ASSEMBLE FULL NOTEBOOK
+   ============================================================ */
+let out = "";
+
+/* Cover page */
+out += `
+<div class="page tilt1">
+  ${randomDoodles(3)}
+  <div class="torn"></div>
+  <div class="cover">
+    <span class="stamp">PARMAR RAILWAY</span>
+    <h1>21 Days ★ 21 Topics</h1>
+    <h2>Current Affairs Series — RRB Group D 2026</h2>
+    <div class="scribble-underline"></div>
+    <div class="sub">📌 Day 1 Topic : Appointments</div>
+    <div class="date">🗓️ Regular study &bull; Right strategy &bull; Consistent practice = Success</div>
+
+    <div class="index-box">
+      <div class="idx-title">★ Complete 21 Important Topics in 21 Days ★</div>
+      <div class="idx-grid">
+        <div><span class="num today">1.</span> <span class="today">Appointments</span></div>
+        <div><span class="num">12.</span> National Parks, Tiger Reserves & Ramsar Sites</div>
+        <div><span class="num">2.</span> Major Awards & Honours (India &amp; World)</div>
+        <div><span class="num">13.</span> Important Reports &amp; Indices</div>
+        <div><span class="num">3.</span> Sports &amp; Sporting Events</div>
+        <div><span class="num">14.</span> States &amp; Their New Schemes</div>
+        <div><span class="num">4.</span> Important Days &amp; Themes</div>
+        <div><span class="num">15.</span> Major Conferences &amp; Summits</div>
+        <div><span class="num">5.</span> Government Schemes &amp; Campaigns</div>
+        <div><span class="num">16.</span> GI Tags</div>
+        <div><span class="num">6.</span> Union Budget &amp; Economic Survey</div>
+        <div><span class="num">17.</span> Padma Awards &amp; National Awards</div>
+        <div><span class="num">7.</span> Appointments &amp; Resignations</div>
+        <div><span class="num">18.</span> Notable Personalities &amp; Obituaries</div>
+        <div><span class="num">8.</span> Books &amp; Authors</div>
+        <div><span class="num">19.</span> Digital India &amp; AI Initiatives</div>
+        <div><span class="num">9.</span> Science &amp; Technology</div>
+        <div><span class="num">20.</span> Important Apps &amp; Portals</div>
+        <div><span class="num">10.</span> Space Missions (ISRO, NASA)</div>
+        <div><span class="num">21.</span> Miscellaneous Facts</div>
+        <div><span class="num">11.</span> Defence Exercises &amp; Military News</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+/* National Appointments Section header */
+out += `
+<div class="page tilt2">
+  ${randomDoodles(3)}
+  <div class="torn"></div>
+  <div class="section-head">
+    <div class="banner">🇮🇳 National Appointments</div>
+    <div class="doodle-row">✎ ✦ 📌 ✦ ✎</div>
+  </div>
+</div>`;
+
+out += buildPages(nationalQ, 0, 0);
+
+/* International section header */
+out += `
+<div class="page tilt3">
+  ${randomDoodles(3)}
+  <div class="torn"></div>
+  <div class="section-head">
+    <div class="banner">🌍 International Appointments</div>
+    <div class="doodle-row">✎ ✦ 📌 ✦ ✎</div>
+  </div>
+</div>`;
+
+out += buildPages(internationalQ, 4, 32);
+
+/* Final revision summary page */
+out += `
+<div class="page tilt4">
+  ${randomDoodles(3)}
+  <div class="torn"></div>
+  <div class="summary-title">🧠 Quick Revision Summary</div>
+  <div class="summary-grid">
+    <div class="item">CDS order: Bipin Rawat &rarr; Anil Chauhan &rarr; <b>N.S. Raja Subramani</b></div>
+    <div class="item">27th Navy Chief: Krishna Swaminathan</div>
+    <div class="item">31st Chief of Army Staff: Dheeraj Seth</div>
+    <div class="item">Article 338=SC, 338A=ST, 338B=OBC (NCBC)</div>
+    <div class="item">Kerala's 13th CM: V.D. Satheesan</div>
+    <div class="item">Tamil Nadu's 9th CM: Joseph Vijay</div>
+    <div class="item">Karnataka's 25th CM: D.K. Shivakumar</div>
+    <div class="item">Bihar's 24th CM: Samrat Chaudhary</div>
+    <div class="item">FCI established: 14 January 1965</div>
+    <div class="item">FICCI established: 1927</div>
+    <div class="item">NASSCOM established: 1988, HQ Noida</div>
+    <div class="item">Ladakh UT formed: 31 October 2019, now 7 districts</div>
+    <div class="item">Mossad Chief (Israel): Roman Gofman</div>
+    <div class="item">New York's 112th Mayor: Zohran Mamdani</div>
+    <div class="item">Japan's first woman PM: Sanae Takaichi</div>
+    <div class="item">Bangladesh's new PM: Tarique Rahman (BNP)</div>
+  </div>
+  <div class="footer-note">✎ Note: For Question 23 (ONDC MD & CEO), the correct answer "Vibhor Jain" is not among the given options — remember it separately.</div>
+  <div class="footer-note">📅 Next Topic (Day 2): Major Awards &amp; Honours — tomorrow 11:30 AM</div>
+  <div class="footer-note">✨ All the Best for your Exam! Keep Revising! ✨</div>
+</div>`;
+
+document.getElementById('notebook').innerHTML = out;
+</script>
+</body>
+</html>
