@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Science PYQ Notes - Day 4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+:root{
+  --paper:#fbf8ee;
+  --line:#c3d3ec;
+  --marginred:#e6a3a3;
+  --ink:#173e8f;
+  --ink2:#0d2f78;
+  --marker:#cf1a2c;
+  --hl:#fff36b;
+  --tip:#1f7d3a;
+  --mistake:#c1620f;
+  --memory:#7a2fa0;
+  --gray:#8a92a0;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:30px 10px 80px;
+  background:#dfe3e9;
+  font-family:'Kalam',cursive;
+}
+.page{
+  position:relative;
+  max-width:900px;
+  margin:0 auto 45px;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(white 0px, white 32px, var(--line) 33px);
+  padding:34px 42px 46px 95px;
+  box-shadow:0 10px 28px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.18);
+  border-radius:3px;
+}
+.page:nth-child(odd){ transform:rotate(-0.35deg); }
+.page:nth-child(even){ transform:rotate(0.3deg); }
+.page::before{
+  content:''; position:absolute; left:74px; top:0; bottom:0; width:2px; background:var(--marginred); opacity:.8;
+}
+.holes{position:absolute;left:32px;top:0;bottom:0;width:20px;}
+.hole{position:absolute;left:0;width:16px;height:16px;border-radius:50%;
+  background:#dfe3e9; box-shadow:inset 0 2px 3px rgba(0,0,0,.35);}
+.pagenum{
+  position:absolute; right:18px; bottom:10px; font-family:'Kalam',cursive; font-weight:700;
+  color:var(--gray); border:2px solid var(--gray); border-radius:50%; width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center; transform:rotate(-6deg); font-size:1em;
+}
+.doodle{position:absolute; width:38px; height:38px; opacity:.9; z-index:2;}
+
+h1.title{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:2.3em;
+  text-align:center; margin:6px 0 2px; transform:rotate(-1deg);
+  border-bottom:4px solid var(--marker); display:inline-block; padding:0 10px 4px;
+}
+.titlewrap{text-align:center;}
+.subtitle{font-family:'Kalam',cursive;color:var(--ink);font-size:1.4em; text-align:center; margin-top:6px;}
+
+.heading{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.55em;
+  display:inline-block; border-bottom:3px solid var(--marker); margin:14px 0 8px; padding-bottom:2px;
+  transform:rotate(-0.4deg);
+}
+.subhead{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.2em;}
+
+p, li, .blue{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.18em; line-height:1.5; margin:4px 0;}
+ul{margin:4px 0 10px 22px; padding:0;}
+li{margin-bottom:2px;}
+
+.q{ margin:22px 0 16px; }
+.qnum{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.35em;}
+.qtext{ font-family:'Kalam',cursive; color:var(--ink2); font-size:1.25em; font-weight:700;}
+.opts{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.15em; margin:2px 0 4px 18px;}
+.ans{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.15em; margin:4px 0;}
+
+.hl{ background:var(--hl); mix-blend-mode:multiply; padding:1px 6px;
+  border-radius:4px 9px 4px 9px/9px 4px 9px 4px; font-weight:700;}
+.circle{ border:2.6px solid var(--marker); border-radius:50% 48% 52% 46%/58% 44% 56% 42%;
+  padding:1px 10px; display:inline-block; transform:rotate(-2deg);}
+.uline{ text-decoration:underline; text-decoration-style:wavy; text-decoration-color:var(--marker); text-decoration-thickness:2px;}
+.red{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker);}
+
+.notebox{ display:inline-block; border:2.2px dashed; border-radius:10px; padding:5px 12px;
+  margin:6px 6px 6px 0; font-family:'Kalam',cursive; font-size:1.03em; transform:rotate(-1deg); background:rgba(255,255,255,.5);}
+.tip{ border-color:var(--tip); color:var(--tip);}
+.mistake{ border-color:var(--mistake); color:var(--mistake);}
+.memory{ border-color:var(--memory); color:var(--memory);}
+
+.diagram{ border:2.2px dashed #9aa5b3; border-radius:12px; padding:10px 14px 6px;
+  background:rgba(255,255,255,.55); margin:14px auto; max-width:480px; text-align:center; transform:rotate(0.3deg);}
+.diagram svg{max-width:100%; height:auto; display:block; margin:0 auto;}
+.diagram .cap{ font-family:'Kalam',cursive; color:var(--marker); font-weight:700; font-size:1em; margin-top:4px;}
+.diagram.wide{max-width:640px;}
+
+table.note-table{ border-collapse:collapse; margin:10px auto; font-family:'Kalam',cursive; color:var(--ink); font-size:1.05em;}
+table.note-table th{ font-family:'Kalam',cursive; color:var(--marker); border:2px solid var(--ink); padding:4px 10px; background:rgba(255,255,255,.5);}
+table.note-table td{ border:1.6px solid #7d93c2; padding:3px 10px; text-align:center;}
+
+.clearfix::after{content:"";display:table;clear:both;}
+.dnk{ font-family:'Kalam',cursive; color:var(--ink2); font-weight:700;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="d-star" viewBox="0 0 40 40">
+  <path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z"
+    fill="#ffd23f" stroke="#c1861a" stroke-width="1.5" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-bulb" viewBox="0 0 40 40">
+  <circle cx="20" cy="16" r="11" fill="#fff7c2" stroke="#caa019" stroke-width="2"/>
+  <rect x="15" y="26" width="10" height="6" rx="1.5" fill="#b0b0b0" stroke="#7a7a7a" stroke-width="1"/>
+  <path d="M16 10 Q20 6 24 10" stroke="#caa019" stroke-width="1.4" fill="none"/>
+  <line x1="20" y1="32" x2="20" y2="35" stroke="#7a7a7a" stroke-width="2"/>
+</symbol>
+<symbol id="d-pencil" viewBox="0 0 40 40">
+  <g transform="rotate(-30 20 20)">
+    <rect x="10" y="16" width="20" height="7" fill="#ffb84d" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="30,16 36,19.5 30,23" fill="#e8c39e" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="10,16 6,19.5 10,23" fill="#4a4a4a"/>
+  </g>
+</symbol>
+<symbol id="d-smiley" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="14" fill="#fff2b8" stroke="#c1861a" stroke-width="2"/>
+  <circle cx="15" cy="17" r="1.8" fill="#3a3a3a"/>
+  <circle cx="25" cy="17" r="1.8" fill="#3a3a3a"/>
+  <path d="M13 24 Q20 30 27 24" stroke="#3a3a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="d-flower" viewBox="0 0 40 40">
+  <g>
+    <ellipse cx="20" cy="12" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="20" cy="28" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="12" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="28" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <circle cx="20" cy="20" r="5" fill="#ffd23f" stroke="#c1861a" stroke-width="1"/>
+  </g>
+</symbol>
+<symbol id="d-flask" viewBox="0 0 40 40">
+  <path d="M16 6 H24 V15 L32 33 Q33 36 29 36 H11 Q7 36 8 33 L16 15 Z" fill="#bfe9d8" stroke="#2c7a5c" stroke-width="2"/>
+  <circle cx="18" cy="28" r="1.6" fill="#2c7a5c"/>
+  <circle cx="23" cy="31" r="1.2" fill="#2c7a5c"/>
+  <line x1="14" y1="6" x2="26" y2="6" stroke="#2c7a5c" stroke-width="2"/>
+</symbol>
+<symbol id="d-arrow" viewBox="0 0 40 40">
+  <path d="M5 30 Q15 5 34 12" fill="none" stroke="#3a3a3a" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="34,12 27,10 30,17" fill="#3a3a3a"/>
+</symbol>
+<symbol id="d-check" viewBox="0 0 40 40">
+  <path d="M6 20 L16 30 L34 8" fill="none" stroke="#1f7d3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-atom" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="3" fill="#173e8f"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(60 20 20)"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(120 20 20)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="titlewrap">
+    <h1 class="title">SCIENCE — RAILWAY GROUP D</h1>
+    <div class="subtitle">PYQ Marathon &nbsp;|&nbsp; <span class="hl">DAY - 4</span></div>
+  </div>
+
+  <div class="heading" style="margin-top:22px;">ABOUT TODAY'S CLASS</div>
+  <ul>
+    <li>Target: <span class="red">7-day plan</span> — today is Day 4, <span class="hl">10 more MCQs</span> added, running total crosses <span class="hl">150 PYQs</span>.</li>
+    <li>Digital notes (English + Hindi) → Parmar Academy app/website → Courses section. Free PDFs + daily quiz → Free Content section.</li>
+    <li>Today's Current Affairs class (Railway Group D) → 11:30 AM, same app/website.</li>
+    <li>From tomorrow onward, daily question count increases further (70–80 Qs/day).</li>
+  </ul>
+
+  <div class="notebox tip">📌 Exam Tip: This was an "easy shift" — questions repeat across shifts, so the SAME concepts (hormones, tissues, Ohm's law, reactivity series) keep returning. Master the concept once, not the wording.</div>
+  <div class="notebox memory">🧠 Reminder: Attempt these as a timed quiz on the app before revising — then use these notes only to fix your mistakes.</div>
+
+  <div class="pagenum">1</div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">BIOLOGY — PHOTOSYNTHESIS</div>
+  <div class="q">
+    <div class="qnum">Q1.</div>
+    <div class="qtext">Which gas is released during photosynthesis in plants?</div>
+    <div class="ans">✔ Answer: <span class="hl">Oxygen</span></div>
+    <ul>
+      <li>Occurs in the <b>chloroplast</b> of the plastid. Two stages: <b>Light reaction</b> (in the <span class="red">grana/thylakoids</span>) and <b>Dark reaction</b> (in the <span class="red">stroma</span> — the Calvin Cycle).</li>
+      <li>Thylakoid stacks = grana. Dark reaction does NOT need light directly, but depends on products of the light reaction.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 340 110" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="35" font-family="Kalam" font-weight="700" font-size="15" fill="#173e8f">6CO&#8322; + 6H&#8322;O</text>
+        <text x="140" y="30" font-family="Kalam" font-size="12" fill="#1f7d3a">sunlight, chlorophyll</text>
+        <path d="M135 38 H185" stroke="#333" stroke-width="1.6" marker-end="url(#ah)"/>
+        <text x="140" y="50" font-family="Kalam" font-size="11" fill="#8a92a0">(in chloroplast)</text>
+        <text x="195" y="35" font-family="Kalam" font-weight="700" font-size="15" fill="#cf1a2c">C&#8326;H&#8321;&#8322;O&#8326; + 6O&#8322;</text>
+        <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#333"/></marker></defs>
+        <text x="10" y="80" font-family="Kalam" font-size="12" fill="#173e8f">Light reaction → Grana (Thylakoid)</text>
+        <text x="10" y="98" font-family="Kalam" font-size="12" fill="#173e8f">Dark reaction → Stroma (Calvin Cycle)</text>
+      </svg>
+      <div class="cap">Fig 1 — Overall photosynthesis equation</div>
+    </div>
+  </div>
+
+  <div class="heading">PHYSICS — WORK DONE (SIGN CONVENTION)</div>
+  <div class="q">
+    <div class="qnum">Q2.</div>
+    <div class="qtext">If a force F is applied to an object in the direction of its motion, the work done will be:</div>
+    <div class="ans">✔ Answer: <span class="hl">Positive</span></div>
+    <ul>
+      <li><span class="circle">W = Fs cosθ</span> — θ is the angle between force and displacement.</li>
+      <li>Displacement <b>same direction</b> as force (θ=0°, cos0=1) → Work <b>positive</b>.</li>
+      <li>Displacement <b>opposite</b> to force (θ=180°) → Work <b>negative</b>.</li>
+      <li>No displacement, or θ=90° (force ⊥ displacement, cos90=0) → Work <b>zero</b>.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">2</div>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-arrow"/></svg>
+
+  <div class="heading">CHEMISTRY — FUNCTIONAL GROUPS</div>
+  <div class="q">
+    <div class="qnum">Q3.</div>
+    <div class="qtext">Which of the following is a functional group in organic compounds — options included the alcohol group?</div>
+    <div class="ans">✔ Answer: <span class="hl">-OH (Alcohol group)</span></div>
+    <table class="note-table">
+      <tr><th>Functional group</th><th>Formula</th><th>Compound class</th></tr>
+      <tr><td>Alcohol</td><td>-OH</td><td>R-OH</td></tr>
+      <tr><td>Ether</td><td>-O-</td><td>R-O-R</td></tr>
+      <tr><td>Ester</td><td>-COOR</td><td>sweet-smelling compounds</td></tr>
+      <tr><td>Aldehyde</td><td>-CHO</td><td>R-CHO</td></tr>
+      <tr><td>Ketone</td><td>&gt;C=O</td><td>R-CO-R</td></tr>
+      <tr><td>Carboxylic acid</td><td>-COOH</td><td>R-COOH</td></tr>
+      <tr><td>Amine</td><td>-NH&#8322;</td><td>R-NH&#8322;</td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick: Esters give fruity/sweet smells — used in perfumes &amp; flavourings.</div>
+  </div>
+
+  <div class="pagenum">3</div>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">BIOLOGY — GLANDS OF THE BODY</div>
+  <div class="q">
+    <div class="qnum">Q4.</div>
+    <div class="qtext">Which of the following glands is the largest in the human body?</div>
+    <div class="ans">✔ Answer: <span class="hl">Liver</span> — largest gland overall (largest <i>endocrine</i> gland = Thyroid)</div>
+    <ul>
+      <li><b>Endocrine glands</b> → ductless, secrete <span class="red">hormones</span> directly into blood.</li>
+      <li><b>Exocrine glands</b> → secrete enzymes through a <span class="red">duct</span>.</li>
+      <li><b>Pancreas</b> = mixed gland (both endocrine + exocrine).</li>
+      <li><b>Liver</b> — largest gland, exocrine, reddish-brown, can <b>regenerate</b> (has special <span class="red">Kupffer cells</span>); releases <b>bile juice</b> (stored in gallbladder) into the small intestine — makes medium basic + emulsifies fat. NOT part of the alimentary canal (food never enters it).</li>
+      <li><b>Hepatitis</b> — viral disease affecting the liver.</li>
+      <li><b>Thyroid</b> — largest <i>endocrine</i> gland; secretes <b>Thyroxine (T4)</b> — regulates body metabolism.</li>
+    </ul>
+    <div class="notebox mistake">⚠ Don't confuse "largest gland" (Liver) with "largest endocrine gland" (Thyroid) — read the question carefully!</div>
+  </div>
+
+  <div class="pagenum">4</div>
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — PITUITARY GLAND ("MASTER GLAND")</div>
+  <div class="q">
+    <div class="qnum">Q4 contd.</div>
+    <div class="qtext">The pituitary gland is called the master gland. Which hormones come from its anterior and posterior lobes?</div>
+    <table class="note-table">
+      <tr><th>Lobe</th><th>Hormones released</th><th>Function</th></tr>
+      <tr><td>Anterior lobe</td><td>Growth Hormone (Somatotropin), Prolactin</td><td>Growth; milk formation in females</td></tr>
+      <tr><td>Posterior lobe</td><td>ADH / Vasopressin, Oxytocin</td><td>Water balance; released at childbirth</td></tr>
+    </table>
+    <ul>
+      <li>Excess Growth Hormone → <b>gigantism/acromegaly</b>. Deficiency → <b>dwarfism</b>.</li>
+      <li><b>Oxytocin</b> = "love hormone" — also given as injections to cows/buffaloes to induce milk let-down.</li>
+      <li>The <b>hypothalamus</b> (sits above the pituitary) controls/signals it — hence pituitary hormone release is triggered by hypothalamic signals.</li>
+      <li>Sex hormones (recap): <b>Ovary</b> → Estrogen &amp; Progesterone (female). <b>Testes</b> → Testosterone (male).</li>
+    </ul>
+    <div class="notebox mistake">⚠ Common Mistake: Coaching shortcuts sometimes swap anterior/posterior hormones under time pressure. Fix in memory: "GP-A, VO-P" → <b>G</b>rowth hormone + <b>P</b>rolactin = <b>A</b>nterior; <b>V</b>asopressin(ADH) + <b>O</b>xytocin = <b>P</b>osterior.</div>
+  </div>
+
+  <div class="pagenum">5</div>
+</div>
+
+<!-- ================= PAGE 6 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">PHYSICS — FORCE = MASS × ACCELERATION</div>
+  <div class="q">
+    <div class="qnum">Q5.</div>
+    <div class="qtext">An object has mass 10 kg and acceleration 2 m/s². What is the force acting on it?</div>
+    <div class="ans">✔ Answer: <span class="hl">20 N</span></div>
+    <ul>
+      <li><span class="circle">F = m × a</span> = 10 × 2 = 20 Newton. Simple direct substitution.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — NONMETALS (PHYSICAL STATE)</div>
+  <div class="q">
+    <div class="qnum">Q6.</div>
+    <div class="qtext">Which nonmetal exists in the liquid state at room temperature?</div>
+    <div class="ans">✔ Answer: <span class="hl">Bromine (Br₂)</span></div>
+    <ul>
+      <li><b>Mercury</b> = only <i>metal</i> liquid at room temperature (Francium, Cesium also have very low melting points).</li>
+      <li>Chlorine has two isotopes: <sup>35</sup>Cl and <sup>37</sup>Cl in a <b>3:1</b> ratio → average atomic mass = <b>35.5</b>.</li>
+      <li>Chlorine gas has a <b>pungent smell</b>. <b>Iodine</b> isotopes are used in <b>goitre</b> treatment.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">6</div>
+</div>
+
+<!-- ================= PAGE 7 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">BIOLOGY — PLANT TISSUES (OVERVIEW)</div>
+  <div class="q">
+    <div class="qnum">Q7.</div>
+    <div class="qtext">Which tissue transports food in plants? (Plant tissue types — overview)</div>
+    <div class="ans">✔ Answer for Q7: <span class="hl">Phloem</span></div>
+    <ul>
+      <li><b>Meristematic tissue</b> (dividing/growing cells): Apical (at root/shoot <span class="uline">tips</span> → height), Intercalary (at <span class="uline">nodes</span> → height), Lateral (in stem <span class="uline">girth</span> → width).</li>
+      <li>Meristematic cells: dense cytoplasm, prominent nucleus, <b>no vacuole</b>; divide continuously, then <b>differentiate</b> into permanent tissue.</li>
+      <li><b>Permanent tissue → Simple:</b> Parenchyma (food storage), Collenchyma (flexibility — irregular thickening at corners), Sclerenchyma (rigidity/toughness, e.g. coconut husk).</li>
+      <li><b>Permanent tissue → Complex:</b> Xylem (water) and Phloem (food) — see next page.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">7</div>
+</div>
+
+<!-- ================= PAGE 8 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-check"/></svg>
+
+  <div class="heading">BIOLOGY — XYLEM &amp; PHLOEM / EPIDERMIS</div>
+  <div class="q">
+    <div class="qnum">Q7 contd.</div>
+    <div class="qtext">Complex permanent tissue and outer covering — key differences.</div>
+    <table class="note-table">
+      <tr><th>Feature</th><th>Xylem</th><th>Phloem</th></tr>
+      <tr><td>Transports</td><td>Water (transpiration pull)</td><td>Food</td></tr>
+      <tr><td>Conduction</td><td>One-way</td><td>Two-way</td></tr>
+      <tr><td>Living cells</td><td>Only xylem parenchyma</td><td>All EXCEPT phloem fibers</td></tr>
+    </table>
+    <ul>
+      <li><b>Epidermis</b> = outer covering of the whole plant. In leaves it has pores called <b>stomata</b>; in roots it forms hair-like <b>root hairs</b> that increase surface area for water absorption.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">8</div>
+</div>
+
+<!-- ================= PAGE 9 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — ELECTRICAL MEASURING INSTRUMENTS</div>
+  <div class="q">
+    <div class="qnum">Q8.</div>
+    <div class="qtext">Which instrument is used to measure electric current?</div>
+    <div class="ans">✔ Answer: <span class="hl">Ammeter</span> (connected in series)</div>
+    <ul>
+      <li><b>Voltmeter</b> → measures potential difference, connected in <b>parallel</b> (same PD, different current in each branch).</li>
+      <li><b>Ohmmeter</b> → measures resistance. <b>Resistivity (ρ)</b> = specific resistance, depends on the nature of the material.</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — TRANSPIRATION</div>
+  <div class="q">
+    <div class="qnum">Q9.</div>
+    <div class="qtext">Transpiration in plants mainly takes place through which structure?</div>
+    <div class="ans">✔ Answer: <span class="hl">Stomata</span> (tiny pores in leaf epidermis, guarded by kidney-shaped guard cells)</div>
+    <ul>
+      <li><b>Transpiration</b> = water loss through stomata, occurs <b>during the day</b>.</li>
+      <li><b>Guttation</b> = water loss at night, through <b>hydathodes</b> at leaf edges.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">9</div>
+</div>
+
+<!-- ================= PAGE 10 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-check"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-pencil"/></svg>
+
+  <div class="heading">PHYSICS — ELECTRIC FUSE</div>
+  <div class="q">
+    <div class="qnum">Q10.</div>
+    <div class="qtext">What is the primary function of a fuse in an electrical circuit?</div>
+    <div class="ans">✔ Answer: <span class="hl">To prevent circuits/appliances from excess current</span> (by melting/breaking the circuit)</div>
+    <ul>
+      <li>Fuse wire needs: <b>low melting point</b> + <b>high resistance</b> — melts quickly on current overflow.</li>
+      <li>Contrast — bulb <b>filament</b> (tungsten) needs a <b>high</b> melting point, so it can glow without melting.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — ACIDS &amp; BASES (RECAP)</div>
+  <div class="q">
+    <div class="qnum">Q11.</div>
+    <div class="qtext">Which of the following substances is acidic in nature? (options included NaOH, Ca(OH)₂, HCl, NH₄OH)</div>
+    <div class="ans">✔ Answer: <span class="hl">HCl</span> (also present in gastric juice)</div>
+    <ul>
+      <li>NaOH &amp; Ca(OH)₂ → strong bases. NH₄OH → <b>weak</b> base.</li>
+      <li>Ca(OH)₂ (slaked lime) forms from quicklime (CaO) + water — <b>exothermic</b> combination reaction.</li>
+      <li>Used in whitewashing: reacts with CO₂ to form <b>CaCO₃</b> — known as limestone, marble, or chalk.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">10</div>
+</div>
+
+<!-- ================= PAGE 11 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">PHYSICS — UNIFORM SPEED &amp; CIRCULAR MOTION</div>
+  <div class="q">
+    <div class="qnum">Q12.</div>
+    <div class="qtext">If an object moves with uniform speed, what is its acceleration?</div>
+    <div class="ans">✔ Answer: <span class="hl">Zero</span> (velocity is not changing)</div>
+    <ul>
+      <li>In <b>Uniform Circular Motion (UCM)</b>, speed is constant, but <i>direction</i> keeps changing → velocity changes at every point → acceleration exists.</li>
+      <li>This is <b>centripetal acceleration</b>, directed towards the centre: <span class="circle">a = v²/r</span>. Corresponding <b>centripetal force</b> = mv²/r.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="75" r="55" fill="none" stroke="#173e8f" stroke-width="2" stroke-dasharray="5 4"/>
+        <circle cx="110" cy="75" r="3" fill="#cf1a2c"/>
+        <circle cx="110" cy="20" r="4" fill="#1f7d3a"/>
+        <line x1="110" y1="20" x2="110" y2="60" stroke="#cf1a2c" stroke-width="1.6" marker-end="url(#ah2)"/>
+        <defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#cf1a2c"/></marker></defs>
+        <text x="118" y="40" font-family="Kalam" font-size="11" fill="#cf1a2c">a → centre</text>
+        <text x="30" y="140" font-family="Kalam" font-size="11" fill="#173e8f">Speed constant, direction changes</text>
+      </svg>
+      <div class="cap">Fig 2 — Centripetal acceleration in UCM</div>
+    </div>
+  </div>
+
+  <div class="pagenum">11</div>
+</div>
+
+<!-- ================= PAGE 12 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-arrow"/></svg>
+
+  <div class="heading">BIOLOGY — VITAMINS</div>
+  <div class="q">
+    <div class="qnum">Q13.</div>
+    <div class="qtext">Which vitamin is synthesized in the human body with the help of sunlight?</div>
+    <div class="ans">✔ Answer: <span class="hl">Vitamin D</span> — the "sunshine vitamin" (also acts as a hormone)</div>
+    <table class="note-table">
+      <tr><th>Vitamin</th><th>Chemical name</th><th>Deficiency disease</th></tr>
+      <tr><td>A</td><td>Retinol</td><td>Night blindness, Xerophthalmia</td></tr>
+      <tr><td>B12</td><td>Cyanocobalamin (contains Cobalt)</td><td>Pernicious anaemia</td></tr>
+      <tr><td>C</td><td>Ascorbic acid</td><td>Scurvy, bleeding gums</td></tr>
+      <tr><td>D</td><td>Calciferol</td><td>Rickets (children), Osteoporosis (adults)</td></tr>
+    </table>
+  </div>
+
+  <div class="pagenum">12</div>
+</div>
+
+<!-- ================= PAGE 13 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">PHYSICS — GRAVITY ON THE MOON</div>
+  <div class="q">
+    <div class="qnum">Q14.</div>
+    <div class="qtext">Approximately how much does an object weigh on the Moon compared to Earth?</div>
+    <div class="ans">✔ Answer: <span class="hl">1/6th</span> of its weight on Earth</div>
+    <ul><li>Moon's gravity ≈ 1/6th of Earth's gravity → weight (= mg) also becomes 1/6th. Mass stays the same everywhere.</li></ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — ORGANIC vs INORGANIC COMPOUNDS</div>
+  <div class="q">
+    <div class="qnum">Q15.</div>
+    <div class="qtext">Which of the following is NOT an organic compound? (options included ethanol, acetic acid, sodium carbonate)</div>
+    <div class="ans">✔ Answer: <span class="hl">Sodium carbonate</span> (Na₂CO₃) — inorganic</div>
+    <ul>
+      <li>Organic compounds have a <b>C–H bond</b> — present in ethanol &amp; acetic acid, absent in Na₂CO₃.</li>
+      <li>Na₂CO₃·10H₂O = <b>washing soda</b> — removes <i>permanent</i> hardness of water; used in glass factories.</li>
+      <li><b>Baking soda</b> (NaHCO₃) — antacid, fire extinguisher, baking industry; reacts with mild edible acid (tartaric acid) → releases CO₂.</li>
+      <li><b>Acetic acid</b> (CH₃COOH) — used as preservative; also called <b>glacial acetic acid</b> (freezes just below room temp). Sodium benzoate = another common preservative.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">13</div>
+</div>
+
+<!-- ================= PAGE 14 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — PARENCHYMA VARIANTS</div>
+  <div class="q">
+    <div class="qnum">Q16.</div>
+    <div class="qtext">Which tissue is responsible for the transport of water in plants?</div>
+    <div class="ans">✔ Answer: <span class="hl">Xylem</span></div>
+    <ul>
+      <li><b>Aerenchyma</b> &amp; <b>Chlorenchyma</b> are both types of <span class="red">Parenchyma</span>.</li>
+      <li><b>Aerenchyma</b> → provides air spaces → buoyancy (e.g. lotus floats on water).</li>
+      <li><b>Chlorenchyma</b> → contains chlorophyll → photosynthesis/food-making.</li>
+      <li><b>Collenchyma</b> → irregularly thick at the corners → gives <b>flexibility</b>.</li>
+      <li><b>Sclerenchyma</b> → gives <b>rigidity &amp; toughness</b> (e.g. coconut husk).</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">14</div>
+</div>
+
+<!-- ================= PAGE 15 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">PHYSICS — OHM'S LAW</div>
+  <div class="q">
+    <div class="qnum">Q17.</div>
+    <div class="qtext">If the resistance of a conductor is 5Ω and current flowing is 2A, what is the potential difference across it?</div>
+    <div class="ans">✔ Answer: <span class="hl">10 V</span></div>
+    <ul><li><span class="circle">V = IR</span> = 2 × 5 = 10 Volt.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — BLOOD &amp; CLOTTING</div>
+  <div class="q">
+    <div class="qnum">Q18.</div>
+    <div class="qtext">Which of the following helps in blood clotting?</div>
+    <div class="ans">✔ Answer: <span class="hl">Platelets</span> (Thrombocytes)</div>
+    <table class="note-table">
+      <tr><th>Component</th><th>Also called</th><th>Function</th><th>Lifespan</th></tr>
+      <tr><td>Plasma</td><td>—</td><td>92% water + hormones/proteins (liquid, yellow)</td><td>—</td></tr>
+      <tr><td>RBC</td><td>Erythrocytes</td><td>Carry O₂ (hemoglobin has iron)</td><td>120 days</td></tr>
+      <tr><td>WBC</td><td>Leukocytes</td><td>Defense — kill foreign particles</td><td>10–20 days</td></tr>
+      <tr><td>Platelets</td><td>Thrombocytes</td><td>Blood clotting</td><td>~1 week</td></tr>
+    </table>
+    <div class="notebox tip">📌 Exam Tip: Spleen = "graveyard of RBCs." RBCs are biconcave discs; WBCs &amp; platelets are irregular in shape. Number order: RBC &gt; Platelets &gt; WBC.</div>
+  </div>
+
+  <div class="pagenum">15</div>
+</div>
+
+<!-- ================= PAGE 16 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">CHEMISTRY — METAL &amp; NON-METAL OXIDES</div>
+  <div class="q">
+    <div class="qnum">Q19.</div>
+    <div class="qtext">What is the general nature of metal oxides?</div>
+    <div class="ans">✔ Answer: <span class="hl">Basic</span> (non-metal oxides are generally acidic)</div>
+    <ul>
+      <li><b>Alkali metals</b> (Group 1: Li, Na, K, Rb, Cs) — their oxides are basic AND dissolve in water → called <b>alkalis</b>. (All alkalis are bases, but not all bases are alkalis.)</li>
+      <li>Metal oxide + Acid → Salt + Water. Non-metal oxide + Base → Salt + Water.</li>
+      <li><b>Amphoteric oxides</b> (react with BOTH acids &amp; bases): <b>ZnO, Al₂O₃, SnO, BeO</b>.</li>
+    </ul>
+    <div class="notebox memory">🧠 Memory Trick: "Sn-Be-Zn-Al" (Tin, Beryllium, Zinc, Aluminium oxides) → all amphoteric.</div>
+  </div>
+
+  <div class="pagenum">16</div>
+</div>
+
+<!-- ================= PAGE 17 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-check"/></svg>
+
+  <div class="heading">BIOLOGY — HORMONES (RECAP TABLE)</div>
+  <div class="q">
+    <div class="qnum">Q20.</div>
+    <div class="qtext">Which of the following hormones is secreted by the thyroid gland?</div>
+    <div class="ans">✔ Answer: <span class="hl">Thyroxine</span></div>
+    <table class="note-table">
+      <tr><th>Hormone</th><th>Source</th><th>Function</th></tr>
+      <tr><td>Insulin</td><td>Pancreas (beta cells, Islets of Langerhans)</td><td>Glucose → Glycogen</td></tr>
+      <tr><td>Adrenaline</td><td>Adrenal gland</td><td>"Fight or flight" — stress hormone</td></tr>
+      <tr><td>Thyroxine</td><td>Thyroid gland</td><td>Regulates metabolism</td></tr>
+      <tr><td>Testosterone</td><td>Testes</td><td>Male sex hormone</td></tr>
+    </table>
+    <ul>
+      <li>Dopamine = <b>happy</b> hormone &nbsp;|&nbsp; Oxytocin = <b>love</b> hormone &nbsp;|&nbsp; Melatonin = <b>sleep</b> hormone</li>
+      <li>Ghrelin = <b>hunger</b> hormone &nbsp;|&nbsp; Leptin = <b>satiety</b> hormone (no hunger) &nbsp;|&nbsp; Growth hormone = <b>Somatotropin</b></li>
+    </ul>
+  </div>
+
+  <div class="pagenum">17</div>
+</div>
+
+<!-- ================= PAGE 18 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — UNIFORMLY CHANGING VELOCITY</div>
+  <div class="q">
+    <div class="qnum">Q21.</div>
+    <div class="qtext">If the velocity of an object increases uniformly with time, what will be its acceleration?</div>
+    <div class="ans">✔ Answer: <span class="hl">Constant</span></div>
+    <ul><li>Velocity changes by the same amount in equal time intervals → rate of change of velocity (acceleration) stays constant.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — ASEXUAL REPRODUCTION</div>
+  <div class="q">
+    <div class="qnum">Q22.</div>
+    <div class="qtext">Which of the following organisms reproduces only by cell division? (options: Amoeba, Hydra, Yeast, Plasmodium)</div>
+    <div class="ans">✔ Answer: <span class="hl">Amoeba</span> — Binary fission</div>
+    <table class="note-table">
+      <tr><th>Organism</th><th>Mode</th></tr>
+      <tr><td>Amoeba</td><td>Binary fission (1 cell → 2 cells)</td></tr>
+      <tr><td>Plasmodium</td><td>Multiple fission (schizont wall ruptures → many parasites; causes malaria)</td></tr>
+      <tr><td>Hydra, Yeast</td><td>Budding</td></tr>
+    </table>
+    <ul>
+      <li><b>Asexual</b> = single parent, more genetic similarity → less diversity → lower survival chances. <b>Sexual</b> = male + female gametes → zygote → embryo → fetus; more diversity → better survival chances.</li>
+      <li>Amoeba moves via <b>pseudopodia</b> (false feet), Paramecium via <b>cilia</b>, Euglena via <b>flagellum</b>.</li>
+      <li>Malaria carrier = <b>female Anopheles</b> mosquito.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">18</div>
+</div>
+
+<!-- ================= PAGE 19 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-check"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-pencil"/></svg>
+
+  <div class="heading">PHYSICS — OHM'S LAW (RESISTANCE ↑)</div>
+  <div class="q">
+    <div class="qnum">Q23.</div>
+    <div class="qtext">If resistance in a circuit increases while potential difference stays constant, what happens to the current?</div>
+    <div class="ans">✔ Answer: <span class="hl">Current decreases</span></div>
+    <ul><li>I = V/R. V constant, R↑ ⇒ I↓ (inverse relation).</li></ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — SOLUBILITY &amp; ATOMICITY</div>
+  <div class="q">
+    <div class="qnum">Q24.</div>
+    <div class="qtext">Which of the following substances is most soluble in water? (options: sand, common salt, chalk, sulfur)</div>
+    <div class="ans">✔ Answer: <span class="hl">Common salt</span> (NaCl, also called rock salt)</div>
+    <ul>
+      <li><b>Atomicity</b> = number of atoms combining to form one molecule.</li>
+      <li>Sulfur (S₈) = octatomic &nbsp;|&nbsp; Phosphorus (P₄) = tetraatomic &nbsp;|&nbsp; H₂O = triatomic &nbsp;|&nbsp; Noble gases (Group 18) = monoatomic.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">19</div>
+</div>
+
+<!-- ================= PAGE 20 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">BIOLOGY — OXYGEN TRANSPORT</div>
+  <div class="q">
+    <div class="qnum">Q25.</div>
+    <div class="qtext">What transports oxygen in the human body?</div>
+    <div class="ans">✔ Answer: <span class="hl">Hemoglobin</span> (in RBCs)</div>
+    <ul><li><b>Lymph</b> — colourless fluid (no hemoglobin); contains WBCs → provides defense, not O₂ transport.</li></ul>
+  </div>
+
+  <div class="heading">PHYSICS — LENS POWER</div>
+  <div class="q">
+    <div class="qnum">Q26.</div>
+    <div class="qtext">If the focal length of a convex lens decreases, what happens to its power?</div>
+    <div class="ans">✔ Answer: <span class="hl">Power increases</span></div>
+    <ul>
+      <li>P = 1/f (f in metres) → unit = <b>Diopter (D)</b>. Power ∝ 1/f — inverse relation.</li>
+      <li>Convex lens/mirror → focal length always <b>positive</b>. Concave lens/mirror → <b>negative</b>.</li>
+      <li>Convex lens → treats <b>hypermetropia</b>. Concave lens → treats <b>myopia</b>. Plane mirror → f = ∞ → Power = 0.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">20</div>
+</div>
+
+<!-- ================= PAGE 21 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-arrow"/></svg>
+
+  <div class="heading">PHYSICS — CONDUCTORS</div>
+  <div class="q">
+    <div class="qnum">Q27.</div>
+    <div class="qtext">Which of the following is a good conductor of electricity? (options: rubber, plastic, copper, wood)</div>
+    <div class="ans">✔ Answer: <span class="hl">Copper</span> (rubber, plastic, wood are insulators)</div>
+    <ul><li><b>Silver</b> has the highest electrical conductivity of all metals.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — PHOTOSYNTHESIS PIGMENTS</div>
+  <div class="q">
+    <div class="qnum">Q28.</div>
+    <div class="qtext">What is the source of energy required for photosynthesis in plants?</div>
+    <div class="ans">✔ Answer: <span class="hl">Sunlight</span></div>
+    <ul>
+      <li><b>Chlorophyll a</b> = primary pigment — absorbs red &amp; blue light, <b>reflects green</b> (why plants look green).</li>
+      <li><b>Chlorophyll b</b> = accessory pigment — helps chlorophyll a.</li>
+      <li>Light energy → converted into <b>chemical energy</b>.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">21</div>
+</div>
+
+<!-- ================= PAGE 22 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">BIOLOGY — FOOD TRANSPORT</div>
+  <div class="q">
+    <div class="qnum">Q29.</div>
+    <div class="qtext">Which tissue transports the food made during photosynthesis to other parts of the plant?</div>
+    <div class="ans">✔ Answer: <span class="hl">Phloem</span></div>
+  </div>
+
+  <div class="heading">PHYSICS — KINETIC ENERGY</div>
+  <div class="q">
+    <div class="qnum">Q30.</div>
+    <div class="qtext">What does kinetic energy depend on?</div>
+    <div class="ans">✔ Answer: <span class="hl">Both mass and velocity</span></div>
+    <ul><li><span class="circle">KE = ½mv²</span> — depends on mass (direct) and velocity squared.</li></ul>
+  </div>
+
+  <div class="pagenum">22</div>
+</div>
+
+<!-- ================= PAGE 23 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">CHEMISTRY — CARBON ALLOTROPES &amp; CONDUCTIVITY</div>
+  <div class="q">
+    <div class="qnum">Q31.</div>
+    <div class="qtext">Which of the following non-metals is a good conductor of electricity? (options: sulfur, phosphorus, graphite, iodine)</div>
+    <div class="ans">✔ Answer: <span class="hl">Graphite</span></div>
+    <ul>
+      <li>Carbon allotropes: Diamond, Graphite, Graphene, Buckminsterfullerene. <b>Graphite &amp; Graphene</b> conduct electricity.</li>
+      <li>In graphite, 1 carbon bonds to <b>3</b> carbons → hybridization <b>sp²</b>. In diamond, 1 carbon bonds to <b>4</b> carbons → hybridization <b>sp³</b>.</li>
+      <li>Carbon's property of forming long chains with itself = <b>Catenation</b>.</li>
+      <li><b>Iodine</b> — a non-metal, yet has a lustre (exception to the rule that only metals shine).</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — BLOOD COLOUR</div>
+  <div class="q">
+    <div class="qnum">Q32.</div>
+    <div class="qtext">The red colour of human blood is due to?</div>
+    <div class="ans">✔ Answer: <span class="hl">Hemoglobin</span></div>
+  </div>
+
+  <div class="pagenum">23</div>
+</div>
+
+<!-- ================= PAGE 24 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">CHEMISTRY — COMMON ACIDS &amp; BASES</div>
+  <div class="q">
+    <div class="qnum">Q33.</div>
+    <div class="qtext">What acid is present in vinegar?</div>
+    <div class="ans">✔ Answer: <span class="hl">Acetic acid</span></div>
+    <table class="note-table">
+      <tr><th>Acid</th><th>Found in / used for</th></tr>
+      <tr><td>Sulfuric acid</td><td>"King of chemicals", car (lead-acid) batteries, oil of vitriol</td></tr>
+      <tr><td>Hydrochloric acid</td><td>Muriatic acid; digestion (gastric juice)</td></tr>
+      <tr><td>Carbonic acid</td><td>Aerated/soft drinks</td></tr>
+      <tr><td>Tartaric acid</td><td>Mild edible acid — added to baking soda to make baking powder</td></tr>
+      <tr><td>Nitric acid</td><td>Fertilizers</td></tr>
+      <tr><td>Salicylic acid</td><td>Aspirin (pain reliever)</td></tr>
+      <tr><td>Citric acid</td><td>Citrus fruits</td></tr>
+      <tr><td>Acetic acid</td><td>Vinegar; preservative (glacial acetic acid = low freezing point)</td></tr>
+    </table>
+    <ul>
+      <li>Bases: NaOH → soap; Na₂CO₃ → detergents; NaHCO₃ → baking soda/antacid; Ca(OH)₂ → cement; NH₃ → fertilizers; Mg(OH)₂ → antacid.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">24</div>
+</div>
+
+<!-- ================= PAGE 25 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">PHYSICS — MOMENTUM</div>
+  <div class="q">
+    <div class="qnum">Q34.</div>
+    <div class="qtext">What is needed to double the momentum of an object if its mass remains constant?</div>
+    <div class="ans">✔ Answer: <span class="hl">Velocity must be doubled</span></div>
+    <ul><li>Momentum p = mv. Mass constant ⇒ p ∝ v directly. Also, KE = p²/2m.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — BLOOD VESSELS</div>
+  <div class="q">
+    <div class="qnum">Q35.</div>
+    <div class="qtext">Which blood vessels carry blood from the heart to different parts of the body?</div>
+    <div class="ans">✔ Answer: <span class="hl">Arteries</span> (carry oxygenated blood, away from heart)</div>
+    <ul><li><b>Veins</b> → carry <b>deoxygenated</b> blood back from body parts to the heart (CO₂ removed, O₂ added at lungs).</li></ul>
+  </div>
+
+  <div class="pagenum">25</div>
+</div>
+
+<!-- ================= PAGE 26 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-check"/></svg>
+
+  <div class="heading">PHYSICS — SI UNITS (ELECTRICITY)</div>
+  <div class="q">
+    <div class="qnum">Q36.</div>
+    <div class="qtext">What is the SI unit of electric current?</div>
+    <div class="ans">✔ Answer: <span class="hl">Ampere</span></div>
+    <ul><li>Volt → Potential difference &nbsp;|&nbsp; Watt → Power &nbsp;|&nbsp; Ohm → Resistance.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — WATER ABSORPTION IN PLANTS</div>
+  <div class="q">
+    <div class="qnum">Q37.</div>
+    <div class="qtext">Water is mainly absorbed in plants through which structure?</div>
+    <div class="ans">✔ Answer: <span class="hl">Root hairs</span> (in the root epidermis — increase surface area)</div>
+  </div>
+
+  <div class="pagenum">26</div>
+</div>
+
+<!-- ================= PAGE 27 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — NEWTON'S FIRST LAW</div>
+  <div class="q">
+    <div class="qnum">Q38.</div>
+    <div class="qtext">According to Newton's First Law, if net force on an object is zero, what happens to the object?</div>
+    <div class="ans">✔ Answer: <span class="hl">It remains in its existing state</span> — stays at rest, or continues with uniform velocity</div>
+    <ul><li>Net force zero = forces are balanced (e.g. two equal &amp; opposite 10N forces cancel out).</li></ul>
+  </div>
+
+  <div class="pagenum">27</div>
+</div>
+
+<!-- ================= PAGE 28 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-check"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-pencil"/></svg>
+
+  <div class="heading">BIOLOGY — VIRAL vs BACTERIAL DISEASES</div>
+  <div class="q">
+    <div class="qnum">Q39.</div>
+    <div class="qtext">Which of the following diseases is caused by a virus? (options: Typhoid, Tuberculosis, Polio, Cholera)</div>
+    <div class="ans">✔ Answer: <span class="hl">Polio</span> (Poliovirus)</div>
+    <ul>
+      <li>Typhoid → <i>Salmonella typhi</i> (bacteria; detected by the <b>Widal test</b>).</li>
+      <li>Tuberculosis → <i>Mycobacterium tuberculosis</i> (bacteria).</li>
+      <li>Cholera → <i>Vibrio cholerae</i> (bacteria).</li>
+    </ul>
+    <table class="note-table">
+      <tr><th>Viral disease</th><th>Key fact</th></tr>
+      <tr><td>Dengue, Chikungunya</td><td>Carrier = female <i>Aedes aegypti</i> mosquito</td></tr>
+      <tr><td>Measles, Mumps, Smallpox</td><td>Classic childhood viral diseases</td></tr>
+      <tr><td>Swine flu</td><td>Caused by H1N1 virus</td></tr>
+      <tr><td>Bird flu</td><td>Caused by H5N1 virus</td></tr>
+      <tr><td>Rabies</td><td>Spread via bite of infected animal</td></tr>
+      <tr><td>AIDS</td><td>Caused by HIV; detected via <b>ELISA test</b></td></tr>
+      <tr><td>Hepatitis</td><td>Affects the liver</td></tr>
+      <tr><td>Encephalitis, Polio</td><td>Affect the nervous system</td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick: Malaria's carrier (female <i>Anopheles</i>) is a <b>protozoan</b> disease, NOT viral — don't mix it up with the mosquito-borne viral diseases above.</div>
+  </div>
+
+  <div class="pagenum">28</div>
+</div>
+
+<!-- ================= PAGE 29 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">CHEMISTRY — REACTIVITY SERIES</div>
+  <div class="q">
+    <div class="qnum">Q40.</div>
+    <div class="qtext">Which of the following metals is the most reactive?</div>
+    <div class="ans">✔ Answer: <span class="hl">Potassium (K)</span></div>
+    <ul>
+      <li>Order (most → least reactive): <b>K &gt; Na &gt; Ca &gt; Mg &gt; Al &gt; Zn &gt; Fe &gt; Pb &gt; Cu &gt; Hg &gt; Ag &gt; Au</b>.</li>
+      <li>In a displacement reaction, a metal higher in the series can displace one below it.</li>
+      <li>K and Na are so reactive they react with <b>cold water</b> itself (exothermically). Metals lower down need hot water, then steam, to react.</li>
+      <li>Gold/Silver are least reactive → don't tarnish easily → used in jewellery.</li>
+    </ul>
+    <div class="notebox memory">🧠 Memory Trick (as taught in class): "Katrina Alto-Zen-Ferrari" → K-Na-Ca-Mg-Al-Zn-Fe (top half, most reactive), then Pb-Cu-Hg-Ag-Au (bottom half, least reactive).</div>
+  </div>
+
+  <div class="pagenum">29</div>
+</div>
+
+<!-- ================= PAGE 30 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-arrow"/></svg>
+
+  <div class="heading">BIOLOGY — CARBOHYDRATES &amp; CELL WALLS</div>
+  <div class="q">
+    <div class="qnum">Q41.</div>
+    <div class="qtext">What is the primary carbohydrate produced during photosynthesis in plants?</div>
+    <div class="ans">✔ Answer: <span class="hl">Glucose</span> (stored later in the form of Starch)</div>
+    <table class="note-table">
+      <tr><th>Organism</th><th>Cell wall made of</th></tr>
+      <tr><td>Plants</td><td>Cellulose</td></tr>
+      <tr><td>Bacteria</td><td>Peptidoglycan (peptin)</td></tr>
+      <tr><td>Fungi</td><td>Chitin</td></tr>
+    </table>
+    <ul><li>Animal cells have <b>no cell wall</b>. Study of fungi = <span class="red">Mycology</span>.</li></ul>
+  </div>
+
+  <div class="pagenum">30</div>
+</div>
+
+<!-- ================= PAGE 31 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">BIOLOGY — BACTERIA (CELL TYPE)</div>
+  <div class="q">
+    <div class="qnum">Q42.</div>
+    <div class="qtext">What type of cell are all bacteria?</div>
+    <div class="ans">✔ Answer: <span class="hl">Prokaryotic</span></div>
+    <ul><li>No true nucleus — genetic material lies in a <b>nucleoid</b> region; most membrane-bound organelles are absent.</li></ul>
+  </div>
+
+  <div class="heading">PHYSICS — KE vs SPEED</div>
+  <div class="q">
+    <div class="qnum">Q43.</div>
+    <div class="qtext">If the speed of an object is doubled, what happens to its kinetic energy?</div>
+    <div class="ans">✔ Answer: <span class="hl">Becomes 4× (quadruples)</span></div>
+    <ul><li>KE = ½mv² ⇒ KE ∝ v² ⇒ doubling v ⇒ KE × 2² = 4×.</li></ul>
+  </div>
+
+  <div class="pagenum">31</div>
+</div>
+
+<!-- ================= PAGE 32 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">ENVIRONMENT — GREENHOUSE GASES</div>
+  <div class="q">
+    <div class="qnum">Q44.</div>
+    <div class="qtext">Which of the following is a greenhouse gas? (options: oxygen, nitrogen, CO₂, hydrogen)</div>
+    <div class="ans">✔ Answer: <span class="hl">CO₂</span></div>
+    <ul>
+      <li>Greenhouse gases let short-wavelength solar radiation IN but trap the long-wavelength terrestrial (reflected) radiation.</li>
+      <li>Most abundant/potent GHG = <b>water vapour</b>, followed by <b>CO₂</b>, then <b>methane</b>.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">32</div>
+</div>
+
+<!-- ================= PAGE 33 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">BIOLOGY — KIDNEY &amp; NEPHRON</div>
+  <div class="q">
+    <div class="qnum">Q45.</div>
+    <div class="qtext">Which organ purifies the blood in the human body?</div>
+    <div class="ans">✔ Answer: <span class="hl">Kidney</span></div>
+    <ul>
+      <li>Heart = pumping organ. Lungs = convert deoxygenated blood → oxygenated blood.</li>
+      <li>Each kidney has millions of <b>nephrons</b> — the functional unit.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="45" font-family="Kalam" font-size="12" fill="#173e8f">Glomerulus (Bowman's capsule) → PCT → Loop of Henle → DCT → Collecting duct → Ureter</text>
+        <text x="5" y="70" font-family="Kalam" font-size="11" fill="#cf1a2c">Ultrafiltration happens at the Glomerulus</text>
+      </svg>
+      <div class="cap">Fig 3 — Nephron pathway (simplified)</div>
+    </div>
+    <ul><li>Study of liver = <b>Hepatology</b> &nbsp;|&nbsp; lungs = <b>Pulmonology</b> &nbsp;|&nbsp; kidney = <b>Nephrology</b>.</li></ul>
+  </div>
+
+  <div class="pagenum">33</div>
+</div>
+
+<!-- ================= PAGE 34 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">PHYSICS — OHM'S LAW (RESISTANCE ↓)</div>
+  <div class="q">
+    <div class="qnum">Q46.</div>
+    <div class="qtext">If the resistance of a conductor is reduced to half while potential difference stays constant, what happens to current?</div>
+    <div class="ans">✔ Answer: <span class="hl">Current doubles</span></div>
+    <ul><li>I = V/R. V constant, R → R/2 ⇒ I → 2I.</li></ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — ORES &amp; GYPSUM</div>
+  <div class="q">
+    <div class="qnum">Q47.</div>
+    <div class="qtext">Bauxite is an ore of which metal?</div>
+    <div class="ans">✔ Answer: <span class="hl">Aluminium</span></div>
+    <ul>
+      <li><b>Gypsum</b> = CaSO₄·2H₂O — used to treat alkaline/basic soil.</li>
+      <li>Heating gypsum at 373K removes half its water → forms <b>Plaster of Paris (POP)</b>.</li>
+      <li><b>Marble &amp; Limestone</b> = both CaCO₃.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">34</div>
+</div>
+
+<!-- ================= PAGE 35 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-check"/></svg>
+
+  <div class="heading">BIOLOGY — BONES OF THE HUMAN BODY</div>
+  <div class="q">
+    <div class="qnum">Q48.</div>
+    <div class="qtext">Which is the largest bone in the human body? (options: Humerus, Femur, Tibia, Radius)</div>
+    <div class="ans">✔ Answer: <span class="hl">Femur</span> (thigh bone) — also the strongest</div>
+    <ul>
+      <li>Smallest bone = <b>Stapes</b> (one of the 3 ear ossicles: malleus, incus, stapes).</li>
+      <li>Total bones in an adult = <b>206</b> (infants have ~300; many fuse with age).</li>
+      <li><b>Rib cage</b> = 24 ribs (12 pairs): 7 pairs <b>true ribs</b> (directly to sternum) + 3 pairs <b>false ribs</b> (8,9,10 — connect via 7th) + 2 pairs <b>floating ribs</b> (11,12 — not connected to sternum at all).</li>
+      <li>Arm: Humerus (upper arm) + Radius &amp; Ulna (forearm). Leg: Femur + Tibia &amp; Fibula + tarsals + metatarsals.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">35</div>
+</div>
+
+<!-- ================= PAGE 36 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — ENERGY METER</div>
+  <div class="q">
+    <div class="qnum">Q49.</div>
+    <div class="qtext">Which instrument measures the consumption of electrical energy?</div>
+    <div class="ans">✔ Answer: <span class="hl">Energy meter</span></div>
+    <ul><li>Ammeter → current. Voltmeter → PD. Galvanometer → small current + its direction.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — BLOOD CELL FORMATION</div>
+  <div class="q">
+    <div class="qnum">Q50.</div>
+    <div class="qtext">Which organ produces blood cells in the human body? (options: Liver, Bone marrow, Spleen, Pancreas)</div>
+    <div class="ans">✔ Answer: <span class="hl">Bone marrow</span></div>
+    <ul><li>Recall: RBCs are destroyed/end up in the <b>spleen</b> ("graveyard of RBCs"), but they are <b>produced</b> in bone marrow.</li></ul>
+  </div>
+
+  <div class="pagenum">36</div>
+</div>
+
+<!-- ================= PAGE 37 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-check"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-pencil"/></svg>
+
+  <div class="heading">ENVIRONMENT — RENEWABLE ENERGY</div>
+  <div class="q">
+    <div class="qnum">Q51.</div>
+    <div class="qtext">Which of the following is a renewable energy source?</div>
+    <div class="ans">✔ Answer: <span class="hl">Solar energy</span></div>
+    <ul><li>Coal = <b>fossil fuel</b>, non-renewable — takes millions of years to form, gets depleted with use.</li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — XYLEM &amp; PHLOEM (CELL TYPES)</div>
+  <div class="q">
+    <div class="qnum">Q52.</div>
+    <div class="qtext">Which tissue transports water AND minerals in plants?</div>
+    <div class="ans">✔ Answer: <span class="hl">Xylem</span></div>
+    <ul>
+      <li>Xylem components: Tracheids, Vessels, Xylem fibers, Xylem parenchyma — only <b>xylem parenchyma is living</b>.</li>
+      <li>Phloem components: Sieve tubes, Companion cells, Phloem fibers, Phloem parenchyma — all living <b>except phloem fibers</b>.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">37</div>
+</div>
+
+<!-- ================= PAGE 38 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">PHYSICS — MIRRORS</div>
+  <div class="q">
+    <div class="qnum">Q53.</div>
+    <div class="qtext">What is the nature of the image formed by a convex mirror?</div>
+    <div class="ans">✔ Answer: <span class="hl">Virtual, erect, diminished</span> — always, for any object position</div>
+    <ul><li>Convex mirror behaves optically like a concave lens (same type of image).</li></ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — NATURAL INDICATORS</div>
+  <div class="q">
+    <div class="qnum">Q54.</div>
+    <div class="qtext">Which of the following is a natural pH indicator? (options included phenolphthalein, methyl orange, litmus, turmeric)</div>
+    <div class="ans">✔ Answer: <span class="hl">Turmeric</span> — colourless in acid, turns orange/red in base</div>
+    <table class="note-table">
+      <tr><th>Indicator</th><th>Type</th><th>In acid</th><th>In base</th></tr>
+      <tr><td>Turmeric</td><td>Natural</td><td>Colourless</td><td>Red/Orange</td></tr>
+      <tr><td>Litmus</td><td>Natural (from lichen)</td><td>Red</td><td>Blue</td></tr>
+      <tr><td>Phenolphthalein</td><td>Synthetic</td><td>Colourless</td><td>Pink</td></tr>
+      <tr><td>Methyl orange</td><td>Synthetic</td><td>Red</td><td>Yellow</td></tr>
+    </table>
+    <ul>
+      <li><b>Lichen</b> = symbiotic association of algae (provides food) + fungus (provides water/minerals); classified under <span class="red">Thallophyta</span> (no well-differentiated plant body).</li>
+      <li><b>Olfactory/factor indicators</b> — smell tells acid vs base, e.g. onion, clove.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">38</div>
+</div>
+
+<!-- ================= PAGE 39 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-arrow"/></svg>
+
+  <div class="heading">PHYSICS — IMPULSE</div>
+  <div class="q">
+    <div class="qnum">Q55.</div>
+    <div class="qtext">What is impulse?</div>
+    <div class="ans">✔ Answer: <span class="hl">Force applied for a very short time</span></div>
+    <ul><li><span class="circle">Impulse = F × Δt</span></li></ul>
+  </div>
+
+  <div class="heading">BIOLOGY — INSULIN &amp; DIABETES</div>
+  <div class="q">
+    <div class="qnum">Q56.</div>
+    <div class="qtext">Which hormone lowers the level of glucose in the blood?</div>
+    <div class="ans">✔ Answer: <span class="hl">Insulin</span></div>
+    <ul>
+      <li>Improper insulin release → <b>Diabetes mellitus</b> (needs insulin injections).</li>
+      <li>Improper ADH (antidiuretic hormone) release → <b>Diabetes insipidus</b>.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">39</div>
+</div>
+
+<!-- ================= PAGE 40 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">ENVIRONMENT — ACID RAIN</div>
+  <div class="q">
+    <div class="qnum">Q57.</div>
+    <div class="qtext">Which of the following gases is primarily responsible for acid rain?</div>
+    <div class="ans">✔ Answer: <span class="hl">NOx &amp; SOx</span> (oxides of nitrogen and sulfur)</div>
+    <ul><li>Rain is called "acid rain" when its pH drops <b>below 5.6</b>.</li></ul>
+  </div>
+
+  <div class="heading">PHYSICS — ZERO ACCELERATION</div>
+  <div class="q">
+    <div class="qnum">Q58.</div>
+    <div class="qtext">If the acceleration of an object is zero, what would be its velocity?</div>
+    <div class="ans">✔ Answer: <span class="hl">Constant</span> (no change in velocity — could be zero, or any steady non-zero value)</div>
+  </div>
+
+  <div class="pagenum">40</div>
+</div>
+
+<!-- ================= PAGE 41 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-arrow"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — DIGESTION</div>
+  <div class="q">
+    <div class="qnum">Q59.</div>
+    <div class="qtext">Where is the process of digestion mainly completed?</div>
+    <div class="ans">✔ Answer: <span class="hl">Small intestine</span></div>
+    <ul>
+      <li><b>Liver's bile juice</b> → makes medium basic + emulsifies fat.</li>
+      <li><b>Pancreatic juice</b> → contains <b>trypsin</b> (protein → amino acids) + <b>lipase</b> (fat → fatty acids).</li>
+      <li>Inner wall of small intestine has finger-like <b>villi</b> → increase surface area for absorption. Food stored as <b>glycogen</b>.</li>
+      <li><b>Large intestine</b>: Cecum + Colon (colon absorbs water).</li>
+      <li><b>Mouth</b>: Salivary amylase — complex carbs → simple carbs. <b>Stomach</b>: Gastric juice (acidic) + pepsin (protein → amino acids); protected by a <b>mucus membrane</b>.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="30" font-family="Kalam" font-size="12" fill="#173e8f">Mouth (amylase) → Stomach (pepsin, acidic) → Small intestine (bile + pancreatic juice) → Large intestine (water absorption)</text>
+      </svg>
+      <div class="cap">Fig 4 — Path of digestion</div>
+    </div>
+  </div>
+
+  <div class="pagenum">41</div>
+</div>
+
+<!-- ================= PAGE 42 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">BIOLOGY — BACTERIAL DISEASE</div>
+  <div class="q">
+    <div class="qnum">Q60.</div>
+    <div class="qtext">Which of the following is a bacterial disease? (options included Dengue, Typhoid, Chickenpox, Malaria)</div>
+    <div class="ans">✔ Answer: <span class="hl">Typhoid</span></div>
+    <ul><li>Dengue &amp; Chickenpox → viral. Malaria → protozoan.</li></ul>
+  </div>
+
+  <div class="heading">PHYSICS — SI UNIT OF ELECTRIC POWER</div>
+  <div class="q">
+    <div class="qnum">Q61.</div>
+    <div class="qtext">What is the SI unit of electric power?</div>
+    <div class="ans">✔ Answer: <span class="hl">Watt</span></div>
+    <ul>
+      <li>Joule → work/energy. Volt → potential difference. Ampere → current.</li>
+      <li><b>1 Horsepower (HP) = 0.746 kW</b> (746 Watts).</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">42</div>
+</div>
+
+<!-- ================= PAGE 43 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="titlewrap"><h1 class="title" style="font-size:1.8em;">QUICK ANSWER KEY (Q1–Q61)</h1></div>
+  <div class="subtitle">⚡ For last-minute revision — Day 4 ⚡</div>
+
+  <table class="note-table" style="width:100%;">
+    <tr><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th></tr>
+    <tr><td>1</td><td>Oxygen</td><td>32</td><td>Hemoglobin</td></tr>
+    <tr><td>2</td><td>Positive</td><td>33</td><td>Acetic acid</td></tr>
+    <tr><td>3</td><td>-OH (Alcohol)</td><td>34</td><td>Velocity doubled</td></tr>
+    <tr><td>4</td><td>Liver (Thyroid = largest endocrine)</td><td>35</td><td>Artery</td></tr>
+    <tr><td>5</td><td>20 N</td><td>36</td><td>Ampere</td></tr>
+    <tr><td>6</td><td>Bromine</td><td>37</td><td>Root hairs</td></tr>
+    <tr><td>7</td><td>Phloem</td><td>38</td><td>Stays in same state</td></tr>
+    <tr><td>8</td><td>Ammeter</td><td>39</td><td>Polio</td></tr>
+    <tr><td>9</td><td>Stomata</td><td>40</td><td>Potassium</td></tr>
+    <tr><td>10</td><td>Prevent excess current</td><td>41</td><td>Glucose</td></tr>
+    <tr><td>11</td><td>HCl</td><td>42</td><td>Prokaryotic</td></tr>
+    <tr><td>12</td><td>Zero</td><td>43</td><td>4× (quadruples)</td></tr>
+    <tr><td>13</td><td>Vitamin D</td><td>44</td><td>CO₂</td></tr>
+    <tr><td>14</td><td>1/6th</td><td>45</td><td>Kidney</td></tr>
+    <tr><td>15</td><td>Sodium carbonate</td><td>46</td><td>Current doubles</td></tr>
+    <tr><td>16</td><td>Xylem</td><td>47</td><td>Aluminium</td></tr>
+    <tr><td>17</td><td>10 V</td><td>48</td><td>Femur</td></tr>
+    <tr><td>18</td><td>Platelets</td><td>49</td><td>Energy meter</td></tr>
+    <tr><td>19</td><td>Basic</td><td>50</td><td>Bone marrow</td></tr>
+    <tr><td>20</td><td>Thyroxine</td><td>51</td><td>Solar energy</td></tr>
+    <tr><td>21</td><td>Constant</td><td>52</td><td>Xylem</td></tr>
+    <tr><td>22</td><td>Amoeba</td><td>53</td><td>Virtual, erect, diminished</td></tr>
+    <tr><td>23</td><td>Current decreases</td><td>54</td><td>Turmeric</td></tr>
+    <tr><td>24</td><td>Common salt</td><td>55</td><td>F × Δt</td></tr>
+    <tr><td>25</td><td>Hemoglobin</td><td>56</td><td>Insulin</td></tr>
+    <tr><td>26</td><td>Power increases</td><td>57</td><td>NOx &amp; SOx</td></tr>
+    <tr><td>27</td><td>Copper</td><td>58</td><td>Constant</td></tr>
+    <tr><td>28</td><td>Sunlight</td><td>59</td><td>Small intestine</td></tr>
+    <tr><td>29</td><td>Phloem</td><td>60</td><td>Typhoid</td></tr>
+    <tr><td>30</td><td>Mass &amp; velocity</td><td>61</td><td>Watt</td></tr>
+    <tr><td>31</td><td>Graphite</td><td></td><td></td></tr>
+  </table>
+
+  <div class="notebox tip" style="margin-top:16px;">📌 Exam Tip: Revise the RED headings first — laws/definitions/formulas repeat most often as PYQs!</div>
+  <div class="notebox memory">🧠 Memory Trick: Highlighted (yellow) = keywords/formulas/final answers → flip through only these the night before exam!</div>
+
+  <div class="pagenum">43</div>
+</div>
+
+
+</body>
+</html>
