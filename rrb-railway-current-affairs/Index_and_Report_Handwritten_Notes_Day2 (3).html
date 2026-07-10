@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Index & Report - Handwritten Notes (Day 2)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+:root{
+  --paper:#fbf8ee;
+  --line:#c3d3ec;
+  --marginred:#e6a3a3;
+  --ink:#173e8f;
+  --ink2:#0d2f78;
+  --marker:#cf1a2c;
+  --hl:#fff36b;
+  --tip:#1f7d3a;
+  --mistake:#c1620f;
+  --memory:#7a2fa0;
+  --gray:#8a92a0;
+}
+*{box-sizing:border-box;}
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+body{
+  margin:0; padding:30px 10px 80px;
+  background:#dfe3e9;
+  font-family:'Kalam',cursive;
+  line-height:1.22;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact;
+}
+/* A4 page sizing: width fixed to 210mm (matches printed sheet width). Height is NOT forced —
+   each page hugs its own content, so short topics don't leave a big blank ruled-paper gap at the bottom. */
+.page{
+  position:relative;
+  width:210mm;
+  max-width:210mm;
+  margin:0 auto 30px;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(white 0px, white 32px, var(--line) 33px);
+  padding:16mm 16mm 14mm 26mm;
+  box-shadow:0 10px 28px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.18);
+  border-radius:3px;
+}
+.page:nth-child(odd){ transform:rotate(-0.35deg); }
+.page:nth-child(even){ transform:rotate(0.3deg); }
+
+/* ---------- PRINT-FRIENDLY OVERRIDES ---------- */
+@page{ size:A4; margin:0; }
+@media print{
+  body{ background:#fff !important; padding:0; margin:0; }
+  .page{
+    width:210mm; max-width:210mm;
+    margin:0; box-shadow:none !important; transform:none !important;
+    border-radius:0; page-break-after:always; break-after:page;
+  }
+  .page:last-child{ page-break-after:auto; break-after:auto; }
+  .doodle{ opacity:.75; }
+}
+.page::before{
+  content:''; position:absolute; left:74px; top:0; bottom:0; width:2px; background:var(--marginred); opacity:.8;
+}
+.holes{position:absolute;left:32px;top:0;bottom:0;width:20px;}
+.hole{position:absolute;left:0;width:16px;height:16px;border-radius:50%;
+  background:#dfe3e9; box-shadow:inset 0 2px 3px rgba(0,0,0,.35);}
+.pagenum{
+  position:absolute; right:18px; bottom:10px; font-family:'Kalam',cursive; font-weight:700;
+  color:var(--gray); border:2px solid var(--gray); border-radius:50%; width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center; transform:rotate(-6deg); font-size:1em;
+}
+.doodle{position:absolute; width:26px; height:26px; opacity:.85; z-index:2;}
+
+h1.title{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:2.2em;
+  text-align:center; margin:4px 0 2px; transform:rotate(-1deg);
+  border-bottom:4px solid var(--marker); display:inline-block; padding:0 10px 3px; line-height:1.15;
+}
+.titlewrap{text-align:center;}
+.subtitle{font-family:'Kalam',cursive;color:var(--ink);font-size:1.4em; text-align:center; margin-top:4px; line-height:1.2;}
+
+.heading{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.5em;
+  display:inline-block; border-bottom:3px solid var(--marker); margin:8px 0 5px; padding-bottom:1px;
+  transform:rotate(-0.4deg); line-height:1.2;
+}
+.subhead{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.2em; line-height:1.2;}
+
+p, li, .blue{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.28em; line-height:1.2; margin:2px 0;}
+ul{margin:2px 0 6px 20px; padding:0;}
+li{margin-bottom:0px; line-height:1.22;}
+
+.q{ margin:8px 0 6px; }
+.qnum{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.3em;}
+.qtext{ font-family:'Kalam',cursive; color:var(--ink2); font-size:1.35em; font-weight:600; line-height:1.2;}
+.ans{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.13em; margin:2px 0; line-height:1.2;}
+
+.hl{ background:var(--hl); mix-blend-mode:multiply; padding:1px 6px;
+  border-radius:4px 9px 4px 9px/9px 4px 9px 4px; font-weight:600;}
+.circle{ border:2.6px solid var(--marker); border-radius:50% 48% 52% 46%/58% 44% 56% 42%;
+  padding:1px 10px; display:inline-block; transform:rotate(-2deg);}
+.uline{ text-decoration:underline; text-decoration-style:wavy; text-decoration-color:var(--marker); text-decoration-thickness:2px;}
+.red{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker);}
+
+.notebox{ display:inline-block; border:2.2px dashed; border-radius:10px; padding:3px 10px;
+  margin:3px 6px 3px 0; font-family:'Kalam',cursive; font-size:1.0em; line-height:1.22; transform:rotate(-1deg); background:rgba(255,255,255,.5);}
+.tip{ border-color:var(--tip); color:var(--tip);}
+.mistake{ border-color:var(--mistake); color:var(--mistake);}
+.memory{ border-color:var(--memory); color:var(--memory);}
+
+table.note-table{ border-collapse:collapse; margin:6px auto; font-family:'Kalam',cursive; color:var(--ink); font-size:1.12em; line-height:1.2;}
+table.note-table th{ font-family:'Kalam',cursive; color:var(--marker); border:2px solid var(--ink); padding:3px 8px; background:rgba(255,255,255,.5);}
+table.note-table td{ border:1.6px solid #7d93c2; padding:2px 8px; text-align:center;}
+table.note-table.small{ font-size:0.98em; }
+
+.clearfix::after{content:"";display:table;clear:both;}
+.dnk{ font-family:'Kalam',cursive; color:var(--ink2); font-weight:700;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="d-star" viewBox="0 0 40 40">
+  <path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z"
+    fill="#ffd23f" stroke="#c1861a" stroke-width="1.5" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-bulb" viewBox="0 0 40 40">
+  <circle cx="20" cy="16" r="11" fill="#fff7c2" stroke="#caa019" stroke-width="2"/>
+  <rect x="15" y="26" width="10" height="6" rx="1.5" fill="#b0b0b0" stroke="#7a7a7a" stroke-width="1"/>
+  <path d="M16 10 Q20 6 24 10" stroke="#caa019" stroke-width="1.4" fill="none"/>
+  <line x1="20" y1="32" x2="20" y2="35" stroke="#7a7a7a" stroke-width="2"/>
+</symbol>
+<symbol id="d-pencil" viewBox="0 0 40 40">
+  <g transform="rotate(-30 20 20)">
+    <rect x="10" y="16" width="20" height="7" fill="#ffb84d" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="30,16 36,19.5 30,23" fill="#e8c39e" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="10,16 6,19.5 10,23" fill="#4a4a4a"/>
+  </g>
+</symbol>
+<symbol id="d-smiley" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="14" fill="#fff2b8" stroke="#c1861a" stroke-width="2"/>
+  <circle cx="15" cy="17" r="1.8" fill="#3a3a3a"/>
+  <circle cx="25" cy="17" r="1.8" fill="#3a3a3a"/>
+  <path d="M13 24 Q20 30 27 24" stroke="#3a3a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="d-flower" viewBox="0 0 40 40">
+  <g>
+    <ellipse cx="20" cy="12" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="20" cy="28" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="12" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="28" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <circle cx="20" cy="20" r="5" fill="#ffd23f" stroke="#c1861a" stroke-width="1"/>
+  </g>
+</symbol>
+<symbol id="d-flask" viewBox="0 0 40 40">
+  <path d="M16 6 H24 V15 L32 33 Q33 36 29 36 H11 Q7 36 8 33 L16 15 Z" fill="#bfe9d8" stroke="#2c7a5c" stroke-width="2"/>
+  <circle cx="18" cy="28" r="1.6" fill="#2c7a5c"/>
+  <circle cx="23" cy="31" r="1.2" fill="#2c7a5c"/>
+  <line x1="14" y1="6" x2="26" y2="6" stroke="#2c7a5c" stroke-width="2"/>
+</symbol>
+<symbol id="d-arrow" viewBox="0 0 40 40">
+  <path d="M5 30 Q15 5 34 12" fill="none" stroke="#3a3a3a" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="34,12 27,10 30,17" fill="#3a3a3a"/>
+</symbol>
+<symbol id="d-check" viewBox="0 0 40 40">
+  <path d="M6 20 L16 30 L34 8" fill="none" stroke="#1f7d3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-atom" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="3" fill="#173e8f"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(60 20 20)"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(120 20 20)"/>
+</symbol>
+<symbol id="d-globe" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="15" fill="#cfeaf8" stroke="#1f6f9c" stroke-width="2"/>
+  <ellipse cx="20" cy="20" rx="7" ry="15" fill="none" stroke="#1f6f9c" stroke-width="1.3"/>
+  <line x1="5" y1="20" x2="35" y2="20" stroke="#1f6f9c" stroke-width="1.3"/>
+  <line x1="7" y1="12" x2="33" y2="12" stroke="#1f6f9c" stroke-width="1"/>
+  <line x1="7" y1="28" x2="33" y2="28" stroke="#1f6f9c" stroke-width="1"/>
+</symbol>
+<symbol id="d-trophy" viewBox="0 0 40 40">
+  <path d="M12 6 H28 V16 Q28 24 20 24 Q12 24 12 16 Z" fill="#ffd23f" stroke="#c1861a" stroke-width="1.6"/>
+  <rect x="16" y="24" width="8" height="6" fill="#c1861a"/>
+  <rect x="12" y="30" width="16" height="4" rx="1" fill="#8a5a12"/>
+  <path d="M12 9 Q4 9 6 17 Q8 21 12 19" fill="none" stroke="#c1861a" stroke-width="1.6"/>
+  <path d="M28 9 Q36 9 34 17 Q32 21 28 19" fill="none" stroke="#c1861a" stroke-width="1.6"/>
+</symbol>
+</defs>
+</svg>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-globe"/></svg>
+  <svg class="doodle" style="top:420px;left:12px;"><use href="#d-trophy"/></svg>
+  <svg class="doodle" style="top:700px;left:8px;"><use href="#d-star"/></svg>
+  <div class="titlewrap">
+    <h1 class="title">INDEX &amp; REPORT</h1>
+  </div>
+  <div class="subtitle">21 Days, 21 Topics — Day 2 | RRB Group D Current Affairs</div>
+  <p style="text-align:center; margin-top:14px;">📘 Parmar Railway — Handwritten Revision Notes</p>
+  <div class="notebox tip" style="display:block; margin:22px auto; max-width:640px;">
+    📌 Golden Rule: For every Index/Report remember 3 things only —<br>
+    1) Who releases it? &nbsp; 2) Who topped it? &nbsp; 3) What is India's rank?<br>
+    2nd/3rd rank of other countries — skip unless it's a very famous index (like GPI, Press Freedom).
+  </div>
+  <table class="note-table" style="width:100%; margin-top:20px;">
+    <tr><th>Category</th><th>Examples covered in this class</th></tr>
+    <tr><td>Peace / Security</td><td>GPI, Terrorism Index, WPS Index</td></tr>
+    <tr><td>Democracy / Governance</td><td>Democracy Index, Rule of Law, CPI, Press Freedom</td></tr>
+    <tr><td>Economy / Innovation</td><td>IP Index, GII, NRI, Economic Freedom, Asia Power</td></tr>
+    <tr><td>Climate</td><td>Climate Risk Index, Climate Change Performance Index, Energy Transition Index</td></tr>
+    <tr><td>India-specific (NITI Aayog)</td><td>Export Preparedness Index, Fiscal Health Index</td></tr>
+    <tr><td>Rich Lists / Brands</td><td>Hurun Rich List, Forbes List, Brand Finance 500</td></tr>
+  </table>
+  <div class="pagenum">1</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:430px;left:12px;"><use href="#d-check"/></svg>
+  <div class="heading">PEACE — GLOBAL PEACE INDEX (GPI) 2026</div>
+  <div class="q">
+    <div class="qnum">Q1.</div>
+    <div class="qtext">Which country ranked 1st in the Global Peace Index 2026?</div>
+    <div class="ans">✔ Answer: <span class="hl">Iceland 🥇 (2nd New Zealand, 3rd Switzerland)</span></div>
+    <ul>
+      <li>Released by: Institute for Economics and Peace (IEP), Sydney, Australia.</li>
+      <li>2026 = 20th edition; 163 countries/territories evaluated (~99.7% of world population).</li>
+      <li><b>India rank = 127th.</b></li>
+      <li>Memory trick: <i>Ice</i> is cold → cold = cool = peace!</li>
+    </ul>
+    <div class="notebox tip">📌 Don't confuse with HDR (130), Gender Gap (131) &amp; Economic Freedom Index (132) — all similar-looking India ranks!</div>
+  </div>
+  <div class="heading">PEACE — GLOBAL TERRORISM INDEX</div>
+  <div class="q">
+    <div class="qnum">Q2.</div>
+    <div class="qtext">Which country topped the Global Terrorism Index?</div>
+    <div class="ans">✔ Answer: <span class="hl">Pakistan 🥇 (2nd Burkina Faso, 3rd Niger)</span></div>
+    <ul>
+      <li>Also released by IEP (same body as GPI).</li>
+      <li>India rank = 13th, score 6.428.</li>
+      <li>Niger: 3rd in terrorism but LAST in Global Innovation Index — funny contrast!</li>
+    </ul>
+  </div>
+  <div class="pagenum">2</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-arrow"/></svg>
+  <div class="heading">MEDIA — WORLD PRESS FREEDOM INDEX</div>
+  <div class="q">
+    <div class="qnum">Q3.</div>
+    <div class="qtext">Which country topped World Press Freedom Index for the 10th year in a row?</div>
+    <div class="ans">✔ Answer: <span class="hl">Norway 🥇 (Netherlands, Estonia, Denmark, Sweden follow)</span></div>
+    <ul>
+      <li>Released by: Reporters Without Borders (RSF), Paris.</li>
+      <li>World Press Freedom <b>Day</b> = 3rd May.</li>
+      <li>India rank = 157th (Very Serious category); Eritrea = last.</li>
+      <li>Theme 2026: <i>'Shaping a Future at Peace: Promoting Press Freedom for Human Rights.'</i></li>
+    </ul>
+  </div>
+  <div class="heading">DEMOCRACY — GLOBAL DEMOCRACY INDEX 2025</div>
+  <div class="q">
+    <div class="qnum">Q4.</div>
+    <div class="qtext">What is India's rank in the Global Democracy Index 2025?</div>
+    <div class="ans">✔ Answer: <span class="hl">47th — 'Flawed Democracy'</span></div>
+    <ul>
+      <li>Released by: Economist Intelligence Unit (EIU) / Economist Group.</li>
+      <li>Tests quality of democracy across nations.</li>
+    </ul>
+  </div>
+  <div class="heading">GOVERNANCE — RULE OF LAW INDEX 2025</div>
+  <div class="q">
+    <div class="qnum">Q5.</div>
+    <div class="qtext">Which country ranked first in the Rule of Law Index 2025?</div>
+    <div class="ans">✔ Answer: <span class="hl">Denmark 🥇 (Norway 2nd, Finland 3rd)</span></div>
+    <ul>
+      <li>Released by: World Justice Project.</li>
+      <li>India rank = 86th.</li>
+    </ul>
+  </div>
+  <div class="pagenum">3</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-star"/></svg>
+  <div class="heading">IP / INNOVATION — INTERNATIONAL IP INDEX 2026</div>
+  <div class="q">
+    <div class="qnum">Q6.</div>
+    <div class="qtext">Which country ranks first in the International IP Index 2026?</div>
+    <div class="ans">✔ Answer: <span class="hl">USA 🥇 (score 95.15%) — UK 2nd, France 3rd, Germany 4th</span></div>
+    <ul>
+      <li>Released by: US Chamber of Commerce (Global Innovation Policy Center).</li>
+      <li>India rank = 42nd out of 55 countries.</li>
+    </ul>
+  </div>
+  <div class="heading">IP / INNOVATION — GLOBAL INNOVATION INDEX (GII) 2025</div>
+  <div class="q">
+    <div class="qnum">Q7.</div>
+    <div class="qtext">What is India's rank in GII 2025, and who releases it?</div>
+    <div class="ans">✔ Answer: <span class="hl">India = 38th — released by WIPO</span></div>
+    <ul>
+      <li>WIPO = World Intellectual Property Organization; HQ: Geneva, Switzerland.</li>
+      <li>Switzerland tops GII; Niger ranks last.</li>
+    </ul>
+  </div>
+  <div class="heading">TECH — NETWORK READINESS INDEX (NRI) 2025</div>
+  <div class="q">
+    <div class="qnum">Q8.</div>
+    <div class="qtext">What is India's rank in the Network Readiness Index 2025?</div>
+    <div class="ans">✔ Answer: <span class="hl">45th out of 127 countries (score 54.43, up 4 places)</span></div>
+    <ul>
+      <li>Released by: Portulans Institute.</li>
+      <li>USA ranked 1st.</li>
+    </ul>
+  </div>
+  <div class="pagenum">4</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-check"/></svg>
+  <div class="heading">HAPPINESS — WORLD HAPPINESS REPORT 2026</div>
+  <div class="q">
+    <div class="qnum">Q9.</div>
+    <div class="qtext">Which country is the happiest for the 9th year running?</div>
+    <div class="ans">✔ Answer: <span class="hl">Finland 🥇 (Iceland 2nd, Denmark 3rd) — remember as 'FID'</span></div>
+    <ul>
+      <li>Released by: Wellbeing Research Centre, Univ. of Oxford + Gallup + UN SDSN (jointly).</li>
+      <li>India rank = 116th.</li>
+      <li>Neighbours: Pakistan = 104th, China = 65th, Russia = 79th (all ahead of India!).</li>
+      <li>Bhutan not officially ranked this year.</li>
+    </ul>
+  </div>
+  <div class="heading">GENDER — GLOBAL GENDER GAP REPORT</div>
+  <div class="q">
+    <div class="qnum">Q10.</div>
+    <div class="qtext">Which country has the smallest gender gap for the 16th year, and what is India's rank?</div>
+    <div class="ans">✔ Answer: <span class="hl">Iceland (smallest gap) — India = 131st out of 148 countries</span></div>
+    <ul>
+      <li>Released by: World Economic Forum (WEF); HQ Geneva, Switzerland.</li>
+      <li>World has closed ~68.8% of the overall gender gap so far.</li>
+    </ul>
+  </div>
+  <div class="pagenum">5</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-globe"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-pencil"/></svg>
+  <div class="heading">POWER — ASIA POWER INDEX 2025</div>
+  <div class="q">
+    <div class="qnum">Q11.</div>
+    <div class="qtext">What is India's rank in the Asia Power Index 2025?</div>
+    <div class="ans">✔ Answer: <span class="hl">3rd (USA 1st, China 2nd) — India achieved 'Major Power' status for the first time!</span></div>
+    <ul>
+      <li>Released by: Lowy Institute.</li>
+      <li>Measures power of countries specifically in the Asia-Pacific region.</li>
+    </ul>
+  </div>
+  <div class="heading">WOMEN — WOMEN, PEACE & SECURITY (WPS) INDEX 2025-26</div>
+  <div class="q">
+    <div class="qnum">Q12.</div>
+    <div class="qtext">Which country ranked first, and what is India's rank?</div>
+    <div class="ans">✔ Answer: <span class="hl">Denmark 🥇 (3rd year running) — India = 131st (score 0.607)</span></div>
+    <ul>
+      <li>Iceland 2nd; Norway &amp; Sweden jointly 3rd; Afghanistan = last.</li>
+      <li>Released jointly by: Georgetown Institute for WPS + Peace Research Institute Oslo (PRIO).</li>
+    </ul>
+  </div>
+  <div class="pagenum">6</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-trophy"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-star"/></svg>
+  <div class="heading">NITI AAYOG — EXPORT PREPAREDNESS INDEX (EPI) 2024</div>
+  <div class="q">
+    <div class="qnum">Q13.</div>
+    <div class="qtext">Which state ranked 1st in the Export Preparedness Index?</div>
+    <div class="ans">✔ Answer: <span class="hl">Maharashtra 🥇 (score 68.01) — Tamil Nadu 2nd, Gujarat 3rd, UP 4th</span></div>
+    <ul>
+      <li>Released by: NITI Aayog.</li>
+      <li>This was the 4th edition of EPI.</li>
+    </ul>
+  </div>
+  <div class="heading">NITI AAYOG — FISCAL HEALTH INDEX 2026</div>
+  <div class="q">
+    <div class="qnum">Q14.</div>
+    <div class="qtext">Which state ranked 1st (Achiever category)?</div>
+    <div class="ans">✔ Answer: <span class="hl">Odisha 🥇 (2nd consecutive time) — Goa 2nd, Jharkhand 3rd</span></div>
+    <ul>
+      <li>Released by: NITI Aayog.</li>
+      <li>4 categories: <b>Achiever, Front Runner, Performer, Aspirational.</b></li>
+      <li>'Aspirational' (weakest) category: Punjab, West Bengal, Kerala (high debt/poor fiscal health).</li>
+      <li>2026 = first time a separate NE &amp; Himalayan States category created → topped by Arunachal Pradesh, then Uttarakhand.</li>
+    </ul>
+    <div class="notebox tip">📌 Remember: Odisha (Fiscal Health) ≠ Maharashtra (Export Preparedness) — both by NITI Aayog but different toppers!</div>
+  </div>
+  <div class="pagenum">7</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-arrow"/></svg>
+  <div class="heading">CLIMATE — CLIMATE RISK INDEX</div>
+  <div class="q">
+    <div class="qnum">Q15.</div>
+    <div class="qtext">Which country has the highest climate risk (ranked 1st), and India's rank?</div>
+    <div class="ans">✔ Answer: <span class="hl">Dominica (Caribbean nation) 🥇 — India = 9th</span></div>
+    <ul>
+      <li>Released by: German Watch.</li>
+      <li>Higher rank here = MORE risk from cyclones/floods/heatwaves/droughts.</li>
+    </ul>
+  </div>
+  <div class="heading">CLIMATE — CLIMATE CHANGE PERFORMANCE INDEX</div>
+  <div class="q">
+    <div class="qnum">Q16.</div>
+    <div class="qtext">Which country ranked first, and what is India's rank?</div>
+    <div class="ans">✔ Answer: <span class="hl">Denmark (shown as 4th — top 3 positions left vacant!) — India = 23rd; Saudi Arabia = last</span></div>
+    <ul>
+      <li>Also released by: German Watch (same body as Climate Risk Index).</li>
+      <li>No country judged good enough to occupy ranks 1–3 this year.</li>
+    </ul>
+  </div>
+  <div class="heading">CLIMATE — ENERGY TRANSITION INDEX</div>
+  <div class="q">
+    <div class="qnum">Q17.</div>
+    <div class="qtext">Which country ranked first?</div>
+    <div class="ans">✔ Answer: <span class="hl">Sweden 🥇 (Finland 2nd, Denmark 3rd)</span></div>
+    <ul>
+      <li>Released by: World Economic Forum (WEF).</li>
+      <li>India rank = 70th; DRC (Congo) = lowest.</li>
+    </ul>
+  </div>
+  <div class="pagenum">8</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-check"/></svg>
+  <div class="heading">EDUCATION — QS WORLD UNIVERSITY RANKINGS 2027</div>
+  <div class="q">
+    <div class="qnum">Q18.</div>
+    <div class="qtext">Which is the top Indian institute, and top global institute?</div>
+    <div class="ans">✔ Answer: <span class="hl">IIT Delhi = top Indian (118th globally) | MIT (USA) = top global (15th year in a row!)</span></div>
+    <ul>
+      <li>Order in India: IIT Delhi (118) → IIT Bombay (134) → IIT Madras (180).</li>
+      <li>Released by: Quacquarelli Symonds (QS).</li>
+    </ul>
+  </div>
+  <div class="heading">PHILANTHROPY — WORLD GIVING REPORT 2026</div>
+  <div class="q">
+    <div class="qnum">Q19.</div>
+    <div class="qtext">Which is the most generous country in the world?</div>
+    <div class="ans">✔ Answer: <span class="hl">Nigeria 🥇 (donates ~2.8% of income) — India ranks 5th</span></div>
+    <ul>
+      <li>Released by: Charities Aid Foundation (CAF).</li>
+      <li>Note: several African nations feature in the top ranks despite lower incomes.</li>
+    </ul>
+  </div>
+  <div class="heading">DEFENCE — TRENDS IN WORLD MILITARY EXPENDITURE 2025</div>
+  <div class="q">
+    <div class="qnum">Q20.</div>
+    <div class="qtext">Which country spends most on its military?</div>
+    <div class="ans">✔ Answer: <span class="hl">USA 🥇 (~US$954 billion) — China 2nd, Russia 3rd, Germany 4th, India 5th</span></div>
+    <ul>
+      <li>Released by: SIPRI (Stockholm International Peace Research Institute).</li>
+    </ul>
+  </div>
+  <div class="pagenum">9</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-star"/></svg>
+  <div class="heading">ECONOMY — INDEX OF ECONOMIC FREEDOM 2026</div>
+  <div class="q">
+    <div class="qnum">Q21.</div>
+    <div class="qtext">Which is the world's freest economy?</div>
+    <div class="ans">✔ Answer: <span class="hl">Singapore 🥇 (Switzerland 2nd, Ireland 3rd) — India = 132nd; North Korea = last</span></div>
+    <ul>
+      <li>Released by: Heritage Foundation.</li>
+    </ul>
+  </div>
+  <div class="heading">ECONOMY — CORRUPTION PERCEPTION INDEX (CPI)</div>
+  <div class="q">
+    <div class="qnum">Q22.</div>
+    <div class="qtext">What is India's rank in CPI, and who tops it?</div>
+    <div class="ans">✔ Answer: <span class="hl">India = 91st (score 39/100) — Denmark tops it (Finland 2nd, Singapore 3rd)</span></div>
+    <ul>
+      <li>Released by: Transparency International.</li>
+      <li>South Sudan ranked last.</li>
+    </ul>
+  </div>
+  <div class="heading">ECONOMY — GLOBAL RISKS REPORT</div>
+  <div class="q">
+    <div class="qnum">Q23.</div>
+    <div class="qtext">Who publishes the Global Risks Report every year?</div>
+    <div class="ans">✔ Answer: <span class="hl">World Economic Forum (WEF)</span></div>
+    <ul>
+      <li>Key theme: World moving away from cooperation → towards competition.</li>
+      <li>Same WEF also publishes Energy Transition Index and Global Gender Gap Report.</li>
+    </ul>
+  </div>
+  <div class="pagenum">10</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-globe"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-check"/></svg>
+  <div class="heading">DEVELOPMENT — HUMAN DEVELOPMENT REPORT (HDR) 2025</div>
+  <div class="q">
+    <div class="qnum">Q24.</div>
+    <div class="qtext">What is India's rank &amp; score in HDR 2025?</div>
+    <div class="ans">✔ Answer: <span class="hl">India = 130th, score 0.685 (Medium Human Development category)</span></div>
+    <ul>
+      <li>Released by: UNDP (United Nations Development Programme).</li>
+      <li>Iceland 1st, Norway 2nd, Switzerland 3rd.</li>
+      <li>Tests: Standard of living + Health + Education.</li>
+    </ul>
+  </div>
+  <div class="heading">TRADE — WORLD INVESTMENT REPORT</div>
+  <div class="q">
+    <div class="qnum">Q25.</div>
+    <div class="qtext">What is India's rank for receiving FDI, and who releases the report?</div>
+    <div class="ans">✔ Answer: <span class="hl">India = 15th — USA ranks 1st</span></div>
+    <ul>
+      <li>Released by: UNCTAD (United Nations Conference on Trade and Development).</li>
+    </ul>
+  </div>
+  <div class="heading">ETHICS — RESPONSIBLE NATIONS INDEX</div>
+  <div class="q">
+    <div class="qnum">Q26.</div>
+    <div class="qtext">Which country ranked first?</div>
+    <div class="ans">✔ Answer: <span class="hl">Singapore 🥇 (Switzerland 2nd, Denmark 3rd) — India = 16th</span></div>
+    <ul>
+      <li>Released jointly by: World Intellectual Foundation + JNU (Jawaharlal Nehru University).</li>
+    </ul>
+  </div>
+  <div class="pagenum">11</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-trophy"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-star"/></svg>
+  <div class="heading">ECONOMY — GLOBAL ECONOMIC PROSPECTS REPORT</div>
+  <div class="q">
+    <div class="qnum">Q27.</div>
+    <div class="qtext">Who releases it, and what growth rate is projected for India (2025-26)?</div>
+    <div class="ans">✔ Answer: <span class="hl">World Bank — 7.7% (June 2026 report)</span></div>
+    <ul>
+      <li>Compare: World Economic Outlook → IMF | Global Risks Report → WEF | Global Economic Prospects → World Bank.</li>
+    </ul>
+  </div>
+  <div class="heading">BRANDS — BRAND FINANCE GLOBAL 500 (2026)</div>
+  <div class="q">
+    <div class="qnum">Q28.</div>
+    <div class="qtext">Which is the world's most valuable brand?</div>
+    <div class="ans">✔ Answer: <span class="hl">Apple 🥇 (Microsoft 2nd, Google 3rd)</span></div>
+    <ul>
+      <li>Released by: Brand Finance.</li>
+    </ul>
+  </div>
+  <div class="heading">WEALTH — HURUN GLOBAL RICH LIST 2026</div>
+  <div class="q">
+    <div class="qnum">Q29.</div>
+    <div class="qtext">India ranks 3rd in the world with how many billionaires?</div>
+    <div class="ans">✔ Answer: <span class="hl">308 billionaires</span></div>
+    <ul>
+      <li>China = 1st (most billionaires); USA = 2nd.</li>
+      <li>1 billion USD ≈ ₹9,000 crore (approx.).</li>
+    </ul>
+  </div>
+  <div class="pagenum">12</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-arrow"/></svg>
+  <div class="heading">WEALTH — FORBES WORLD'S BILLIONAIRES LIST (10 Mar 2026)</div>
+  <div class="q">
+    <div class="qnum">Q30.</div>
+    <div class="qtext">Who topped the Forbes list?</div>
+    <div class="ans">✔ Answer: <span class="hl">Elon Musk 🥇 ($839 billion) — Larry Page 2nd, Sergey Brin 3rd</span></div>
+  </div>
+  <div class="heading">LIFESTYLE — GLOBAL DIGITAL NOMAD REPORT 2026</div>
+  <div class="q">
+    <div class="qnum">Q31.</div>
+    <div class="qtext">What is India's rank, and who topped the list?</div>
+    <div class="ans">✔ Answer: <span class="hl">India = 38th — Spain 🥇 (Netherlands 2nd)</span></div>
+  </div>
+  <div class="heading">URBAN — WORLD'S TOP TECH CITIES (by Savills)</div>
+  <div class="q">
+    <div class="qnum">Q32.</div>
+    <div class="qtext">Which is India's top-ranked tech city?</div>
+    <div class="ans">✔ Answer: <span class="hl">Bengaluru 🥇 — 'Silicon Valley of India' (16th globally)</span></div>
+    <ul>
+      <li>San Francisco (USA) = 1st globally.</li>
+      <li>Hyderabad &amp; Mumbai also feature among top Indian tech cities.</li>
+    </ul>
+  </div>
+  <div class="heading">HUNGER — GLOBAL HUNGER INDEX</div>
+  <div class="q">
+    <div class="qnum">Q33.</div>
+    <div class="qtext">Who releases the Global Hunger Index, and what is India's rank?</div>
+    <div class="ans">✔ Answer: <span class="hl">Concern Worldwide &amp; Welthungerhilfe — India = 102nd out of 123 (Serious category)</span></div>
+    <ul>
+      <li>World score = 18.3 (Moderate category).</li>
+    </ul>
+  </div>
+  <div class="pagenum">13</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:330px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:600px;left:10px;"><use href="#d-smiley"/></svg>
+  <div class="titlewrap"><h1 class="title" style="font-size:1.8em;">QUICK ANSWER KEY (Q1–Q33)</h1></div>
+  <div class="subtitle">⚡ Index &amp; Report — Day 2 Revision ⚡</div>
+
+  <table class="note-table small" style="width:100%;">
+    <tr><th>Q</th><th>Topper / Answer</th><th>Q</th><th>Topper / Answer</th></tr>
+    <tr><td>1</td><td>Iceland (GPI)</td><td>18</td><td>IIT Delhi / MIT</td></tr>
+    <tr><td>2</td><td>Pakistan (Terror)</td><td>19</td><td>Nigeria (Giving)</td></tr>
+    <tr><td>3</td><td>Norway (Press Free.)</td><td>20</td><td>USA (Mil. Exp.)</td></tr>
+    <tr><td>4</td><td>India 47th (Democracy)</td><td>21</td><td>Singapore (Eco. Free.)</td></tr>
+    <tr><td>5</td><td>Denmark (Rule of Law)</td><td>22</td><td>Denmark / India 91st (CPI)</td></tr>
+    <tr><td>6</td><td>USA (IP Index)</td><td>23</td><td>WEF (Global Risks)</td></tr>
+    <tr><td>7</td><td>India 38th (GII/WIPO)</td><td>24</td><td>India 130th (HDR/UNDP)</td></tr>
+    <tr><td>8</td><td>India 45th (NRI)</td><td>25</td><td>India 15th (World Inv./UNCTAD)</td></tr>
+    <tr><td>9</td><td>Finland (Happiness)</td><td>26</td><td>Singapore (Resp. Nations)</td></tr>
+    <tr><td>10</td><td>Iceland / India 131st (Gender)</td><td>27</td><td>World Bank, 7.7% (GEP)</td></tr>
+    <tr><td>11</td><td>India 3rd (Asia Power)</td><td>28</td><td>Apple (Brand Finance)</td></tr>
+    <tr><td>12</td><td>Denmark / India 131st (WPS)</td><td>29</td><td>India: 308 billionaires (Hurun)</td></tr>
+    <tr><td>13</td><td>Maharashtra (EPI)</td><td>30</td><td>Elon Musk (Forbes)</td></tr>
+    <tr><td>14</td><td>Odisha (Fiscal Health)</td><td>31</td><td>Spain / India 38th (Digital Nomad)</td></tr>
+    <tr><td>15</td><td>Dominica / India 9th (Climate Risk)</td><td>32</td><td>Bengaluru (Tech Cities)</td></tr>
+    <tr><td>16</td><td>Denmark / India 23rd (CCPI)</td><td>33</td><td>Concern Worldwide &amp; WHH / India 102nd (Hunger)</td></tr>
+    <tr><td>17</td><td>Sweden (Energy Transition)</td><td></td><td></td></tr>
+  </table>
+
+  <div class="notebox tip" style="margin-top:16px; display:block;">📌 Exam Tip: For every index remember only 3 things — Publisher, Topper, India's rank. Don't waste time memorising 2nd/3rd rank unless it's GPI, Press Freedom, or Happiness Report.</div>
+  <div class="notebox memory" style="display:block; margin-top:8px;">🧠 Memory Trick: Group by publisher — IEP → GPI + Terrorism Index. WEF → Gender Gap + Energy Transition + Global Risks. German Watch → Climate Risk + CCPI. NITI Aayog → EPI + Fiscal Health.</div>
+  <div class="pagenum">14</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-trophy"/></svg>
+  <svg class="doodle" style="top:520px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:900px;left:10px;"><use href="#d-check"/></svg>
+
+  <div class="titlewrap"><h1 class="title" style="font-size:1.7em;">BONUS TOPIC ★</h1></div>
+  <div class="subtitle">National Appointments — Defence Chiefs (May–June 2026)</div>
+
+  <div class="heading">DEFENCE — NEW CHIEF OF THE NAVAL STAFF</div>
+  <div class="q">
+    <div class="qnum">Q34.</div>
+    <div class="qtext">Who was appointed as the new Chief of the Indian Navy, effective 31 May 2026?</div>
+    <div class="ans">✔ Answer: <span class="hl">Admiral Krishna Swaminathan — Option A</span></div>
+
+    <table class="note-table small" style="width:100%;">
+      <tr><th>Option</th><th>Name</th><th>What they actually became</th></tr>
+      <tr><td>A ✔</td><td>Krishna Swaminathan</td><td>27th Chief of the Naval Staff</td></tr>
+      <tr><td>B</td><td>Dhiraj Seth</td><td>31st Chief of the Army Staff</td></tr>
+      <tr><td>C</td><td>N. S. Raja Subramani</td><td>3rd Chief of Defence Staff (CDS)</td></tr>
+      <tr><td>D</td><td>Ajay Kochhar</td><td>48th Vice Chief of the Naval Staff</td></tr>
+    </table>
+
+    <div class="notebox mistake" style="display:block; margin-top:10px;">
+      ✍️ Correction to my rough notes: Option D — Vice Admiral Ajay Kochhar took over as the <b>48th</b> VCNS, not the 40th. Also the official spellings are <b>Dhiraj Seth</b> (not "Dheeraj") and <b>Ajay Kochhar</b> (not "Kochar") — easy to mishear when copying from a video/lecture.
+    </div>
+
+    <div class="subhead" style="display:block; margin-top:14px;">Explanation:</div>
+    <ul>
+      <li><b>31 May 2026:</b> Admiral Krishna Swaminathan took charge as the country's <b>27th Chief of the Naval Staff</b>, succeeding Admiral Dinesh Kumar Tripathi. Tenure runs up to 31 Dec 2028.</li>
+      <li><b>29 May 2026:</b> Vice Admiral Ajay Kochhar took charge as the <b>48th Vice Chief of the Naval Staff</b>, after serving as C-in-C, Andaman &amp; Nicobar Command (India's only tri-service command).</li>
+      <li><b>31 May 2026:</b> General N. S. Raja Subramani became the country's <b>3rd Chief of Defence Staff (CDS)</b>, succeeding General Anil Chauhan — and also serves as Secretary, Department of Military Affairs.</li>
+      <li><b>30 June 2026:</b> General Dhiraj Seth took charge as the <b>31st Chief of the Army Staff</b>, succeeding General Upendra Dwivedi. He is the first Armoured Corps officer to lead the Army since 1997.</li>
+    </ul>
+  </div>
+
+  <div class="pagenum">15</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:700px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">MEMORY TRICK — CDS ORDER</div>
+  <div class="notebox memory" style="display:block;">
+    🧠 Remember the CDS order: <b>1st = Bipin Rawat → 2nd = Anil Chauhan → 3rd = N. S. Raja Subramani</b>
+  </div>
+
+  <table class="note-table small" style="width:100%; margin-top:12px;">
+    <tr><th colspan="3">CDS Timeline (completing the box left blank in class!)</th></tr>
+    <tr><th>Order</th><th>Chief of Defence Staff</th><th>Tenure</th></tr>
+    <tr><td>1st</td><td>General Bipin Rawat</td><td>1 Jan 2020 – 8 Dec 2021 (died in a helicopter crash, in office)</td></tr>
+    <tr><td>2nd</td><td>General Anil Chauhan</td><td>30 Sep 2022 – 30 May 2026</td></tr>
+    <tr><td>3rd</td><td>General N. S. Raja Subramani</td><td>31 May 2026 – present</td></tr>
+  </table>
+
+  <div class="pagenum">16</div>
+</div>
+
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-globe"/></svg>
+  <svg class="doodle" style="top:600px;left:10px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">FILLING THE GAPS — FULL DEFENCE LEADERSHIP SNAPSHOT</div>
+  <p>📌 The handwritten page only covered the Army, Navy &amp; CDS. For a complete "National Appointments" picture, here's the Air Force side too, plus the two Vice Chiefs — worth knowing as a set since exams often mix these up.</p>
+
+  <table class="note-table" style="width:100%;">
+    <tr><th>Post</th><th>Current holder</th><th>Number</th><th>In office since</th></tr>
+    <tr><td>Chief of Defence Staff (CDS)</td><td>Gen. N. S. Raja Subramani</td><td>3rd</td><td>31 May 2026</td></tr>
+    <tr><td>Chief of the Army Staff (COAS)</td><td>Gen. Dhiraj Seth</td><td>31st</td><td>30 Jun 2026</td></tr>
+    <tr><td>Chief of the Naval Staff (CNS)</td><td>Adm. Krishna Swaminathan</td><td>27th</td><td>31 May 2026</td></tr>
+    <tr><td>Chief of the Air Staff (CAS)</td><td>Air Chf Mshl Amar Preet Singh</td><td>28th</td><td>30 Sep 2024</td></tr>
+    <tr><td>Vice Chief of Naval Staff (VCNS)</td><td>VAdm. Ajay Kochhar</td><td>48th</td><td>29 May 2026</td></tr>
+    <tr><td>Vice Chief of Air Staff (VCAS)</td><td>Air Mshl Ashutosh Dixit</td><td>—</td><td>1 Jul 2026</td></tr>
+  </table>
+
+  <div class="notebox tip" style="display:block; margin-top:14px;">
+    📌 Exam Tip: Four service chiefs to remember together — <b>CDS, COAS, CNS, CAS</b> — plus their two Vice Chiefs (VCOAS/VCNS/VCAS). Papers often ask "who is senior/who reports to whom" — the CDS sits above all three service chiefs and heads the Department of Military Affairs.
+  </div>
+  <div class="notebox tip" style="display:block; margin-top:8px;">
+    📌 Quick fact check: this whole cluster of changes (CNS, VCNS, CDS, COAS) happened within about five weeks of each other — 9 May to 30 June 2026 — because several tenures ended around the same time. That's exactly why exams love bunching these questions together!
+  </div>
+
+  <div class="pagenum">17</div>
+</div>
+
+</body>
+</html>
