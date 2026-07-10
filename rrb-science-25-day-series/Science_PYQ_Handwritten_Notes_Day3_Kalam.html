@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Science PYQ Notes - Day 3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+:root{
+  --paper:#fbf8ee;
+  --line:#c3d3ec;
+  --marginred:#e6a3a3;
+  --ink:#173e8f;
+  --ink2:#0d2f78;
+  --marker:#cf1a2c;
+  --hl:#fff36b;
+  --tip:#1f7d3a;
+  --mistake:#c1620f;
+  --memory:#7a2fa0;
+  --gray:#8a92a0;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:30px 10px 80px;
+  background:#dfe3e9;
+  font-family:'Kalam',cursive;
+}
+.page{
+  position:relative;
+  max-width:900px;
+  margin:0 auto 45px;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(white 0px, white 32px, var(--line) 33px);
+  padding:34px 42px 46px 95px;
+  box-shadow:0 10px 28px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.18);
+  border-radius:3px;
+}
+.page:nth-child(odd){ transform:rotate(-0.35deg); }
+.page:nth-child(even){ transform:rotate(0.3deg); }
+.page::before{ /* red margin line */
+  content:''; position:absolute; left:74px; top:0; bottom:0; width:2px; background:var(--marginred); opacity:.8;
+}
+.holes{position:absolute;left:32px;top:0;bottom:0;width:20px;}
+.hole{position:absolute;left:0;width:16px;height:16px;border-radius:50%;
+  background:#dfe3e9; box-shadow:inset 0 2px 3px rgba(0,0,0,.35);}
+.pagenum{
+  position:absolute; right:18px; bottom:10px; font-family:'Kalam',cursive; font-weight:700;
+  color:var(--gray); border:2px solid var(--gray); border-radius:50%; width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center; transform:rotate(-6deg); font-size:1em;
+}
+.doodle{position:absolute; width:38px; height:38px; opacity:.9; z-index:2;}
+
+h1.title{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:2.3em;
+  text-align:center; margin:6px 0 2px; transform:rotate(-1deg);
+  border-bottom:4px solid var(--marker); display:inline-block; padding:0 10px 4px;
+}
+.titlewrap{text-align:center;}
+.subtitle{font-family:'Kalam',cursive;color:var(--ink);font-size:1.4em; text-align:center; margin-top:6px;}
+
+.heading{
+  font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.55em;
+  display:inline-block; border-bottom:3px solid var(--marker); margin:14px 0 8px; padding-bottom:2px;
+  transform:rotate(-0.4deg);
+}
+.subhead{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.2em;}
+
+p, li, .blue{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.32em; line-height:1.45; margin:4px 0;}
+ul{margin:4px 0 10px 22px; padding:0;}
+li{margin-bottom:2px;}
+
+.q{ margin:22px 0 16px; }
+.qnum{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.35em;}
+.qtext{ font-family:'Kalam',cursive; color:var(--ink2); font-size:1.4em; font-weight:600;}
+.opts{ font-family:'Kalam',cursive; color:var(--ink); font-size:1.28em; margin:2px 0 4px 18px;}
+.ans{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker); font-size:1.15em; margin:4px 0;}
+
+.hl{ background:var(--hl); mix-blend-mode:multiply; padding:1px 6px;
+  border-radius:4px 9px 4px 9px/9px 4px 9px 4px; font-weight:600;}
+.circle{ border:2.6px solid var(--marker); border-radius:50% 48% 52% 46%/58% 44% 56% 42%;
+  padding:1px 10px; display:inline-block; transform:rotate(-2deg);}
+.uline{ text-decoration:underline; text-decoration-style:wavy; text-decoration-color:var(--marker); text-decoration-thickness:2px;}
+.red{ font-family:'Kalam',cursive; font-weight:700; color:var(--marker);}
+
+.notebox{ display:inline-block; border:2.2px dashed; border-radius:10px; padding:5px 12px;
+  margin:6px 6px 6px 0; font-family:'Kalam',cursive; font-size:1.03em; transform:rotate(-1deg); background:rgba(255,255,255,.5);}
+.tip{ border-color:var(--tip); color:var(--tip);}
+.mistake{ border-color:var(--mistake); color:var(--mistake);}
+.memory{ border-color:var(--memory); color:var(--memory);}
+
+.diagram{ border:2.2px dashed #9aa5b3; border-radius:12px; padding:10px 14px 6px;
+  background:rgba(255,255,255,.55); margin:14px auto; max-width:480px; text-align:center; transform:rotate(0.3deg);}
+.diagram svg{max-width:100%; height:auto; display:block; margin:0 auto;}
+.diagram .cap{ font-family:'Kalam',cursive; color:var(--marker); font-weight:700; font-size:1em; margin-top:4px;}
+.diagram.wide{max-width:640px;}
+.diagram.right{float:right; margin:6px 0 10px 16px;}
+.diagram.center{float:none;}
+
+table.note-table{ border-collapse:collapse; margin:10px auto; font-family:'Kalam',cursive; color:var(--ink); font-size:1.2em;}
+table.note-table th{ font-family:'Kalam',cursive; color:var(--marker); border:2px solid var(--ink); padding:4px 10px; background:rgba(255,255,255,.5);}
+table.note-table td{ border:1.6px solid #7d93c2; padding:3px 10px; text-align:center;}
+
+.clearfix::after{content:"";display:table;clear:both;}
+.dnk{ font-family:'Kalam',cursive; color:var(--ink2); font-weight:700;}
+</style>
+</head>
+<body>
+
+<!-- ============ DOODLE SYMBOL LIBRARY ============ -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="d-star" viewBox="0 0 40 40">
+  <path d="M20 3 L24 15 L37 15 L26 23 L30 36 L20 28 L10 36 L14 23 L3 15 L16 15 Z"
+    fill="#ffd23f" stroke="#c1861a" stroke-width="1.5" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-bulb" viewBox="0 0 40 40">
+  <circle cx="20" cy="16" r="11" fill="#fff7c2" stroke="#caa019" stroke-width="2"/>
+  <rect x="15" y="26" width="10" height="6" rx="1.5" fill="#b0b0b0" stroke="#7a7a7a" stroke-width="1"/>
+  <path d="M16 10 Q20 6 24 10" stroke="#caa019" stroke-width="1.4" fill="none"/>
+  <line x1="20" y1="32" x2="20" y2="35" stroke="#7a7a7a" stroke-width="2"/>
+</symbol>
+<symbol id="d-pencil" viewBox="0 0 40 40">
+  <g transform="rotate(-30 20 20)">
+    <rect x="10" y="16" width="20" height="7" fill="#ffb84d" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="30,16 36,19.5 30,23" fill="#e8c39e" stroke="#8a5a12" stroke-width="1.3"/>
+    <polygon points="10,16 6,19.5 10,23" fill="#4a4a4a"/>
+  </g>
+</symbol>
+<symbol id="d-smiley" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="14" fill="#fff2b8" stroke="#c1861a" stroke-width="2"/>
+  <circle cx="15" cy="17" r="1.8" fill="#3a3a3a"/>
+  <circle cx="25" cy="17" r="1.8" fill="#3a3a3a"/>
+  <path d="M13 24 Q20 30 27 24" stroke="#3a3a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="d-flower" viewBox="0 0 40 40">
+  <g>
+    <ellipse cx="20" cy="12" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="20" cy="28" rx="5" ry="7" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="12" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <ellipse cx="28" cy="20" rx="7" ry="5" fill="#f8a5c2" stroke="#c05c86" stroke-width="1"/>
+    <circle cx="20" cy="20" r="5" fill="#ffd23f" stroke="#c1861a" stroke-width="1"/>
+  </g>
+</symbol>
+<symbol id="d-flask" viewBox="0 0 40 40">
+  <path d="M16 6 H24 V15 L32 33 Q33 36 29 36 H11 Q7 36 8 33 L16 15 Z" fill="#bfe9d8" stroke="#2c7a5c" stroke-width="2"/>
+  <circle cx="18" cy="28" r="1.6" fill="#2c7a5c"/>
+  <circle cx="23" cy="31" r="1.2" fill="#2c7a5c"/>
+  <line x1="14" y1="6" x2="26" y2="6" stroke="#2c7a5c" stroke-width="2"/>
+</symbol>
+<symbol id="d-arrow" viewBox="0 0 40 40">
+  <path d="M5 30 Q15 5 34 12" fill="none" stroke="#3a3a3a" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="34,12 27,10 30,17" fill="#3a3a3a"/>
+</symbol>
+<symbol id="d-check" viewBox="0 0 40 40">
+  <path d="M6 20 L16 30 L34 8" fill="none" stroke="#1f7d3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="d-atom" viewBox="0 0 40 40">
+  <circle cx="20" cy="20" r="3" fill="#173e8f"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(60 20 20)"/>
+  <ellipse cx="20" cy="20" rx="16" ry="6" fill="none" stroke="#173e8f" stroke-width="1.4" transform="rotate(120 20 20)"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:20px;left:14px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:120px;left:8px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:230px;left:12px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:340px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:450px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="titlewrap">
+    <h1 class="title">SCIENCE — RAILWAY GROUP D</h1>
+    <div class="subtitle">PYQ Marathon &nbsp;|&nbsp; <span class="hl">DAY - 3</span></div>
+  </div>
+
+  <div class="heading" style="margin-top:22px;">ABOUT TODAY'S CLASS</div>
+  <ul>
+    <li>Series target: <span class="red">25 days</span>, <span class="hl">2500 PYQs</span> total — Day 3 continues the mixed-subject practice.</li>
+    <li>Running total crossed <span class="hl">90 PYQs</span> so far across Day 1–3 — the count doesn't matter, the facts around each Q do.</li>
+    <li>From tomorrow, daily Q-count target goes up (fewer new/unseen Qs = repeats reduce solving time).</li>
+    <li>Digital notes (English + Hindi) → Parmar Academy app → Courses. Free mock/test practice → Free Content section.</li>
+    <li><span class="red">21 Days, 21 Topics</span> Current Affairs series starts tomorrow, 11:30 AM.</li>
+  </ul>
+
+  <div class="notebox tip">📌 Exam Tip: Attempt today's Qs in test format on the app BEFORE tomorrow's lecture — best way to auto-revise.</div>
+  <div class="notebox memory">🧠 Reminder: PYQ practice should stay MIXED (all subjects together) — not topic-wise — since that's how the real paper comes.</div>
+
+  <div class="pagenum">1</div>
+</div>
+
+<!-- ================= PAGE 2 : Q1-Q3 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:40px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:320px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:580px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — ELECTRIC POWER</div>
+  <div class="q">
+    <div class="qnum">Q1.</div>
+    <div class="qtext">A 50W bulb is connected to a 100V battery. If the resistance of the bulb is doubled, what will be the power consumed?</div>
+    <div class="ans">✔ Answer: <span class="hl">25 Watt</span> (power gets halved)</div>
+    <ul>
+      <li>Power formulas: <span class="circle">P = V²/R = VI = I²R</span> — use whichever variable is constant.</li>
+      <li>Here V is constant ⇒ use P = V²/R ⇒ <b>P ∝ 1/R</b> (inverse, single power).</li>
+      <li>Resistance doubled ⇒ Power becomes <span class="hl">half</span> ⇒ 50W → 25W.</li>
+    </ul>
+    <div class="notebox mistake">⚠ Don't confuse with KE = ½mv² (v² term, so doubling v ⇒ 4×). Here it's a single power (R¹), so relation is simple inverse, not inverse-square.</div>
+  </div>
+
+  <div class="heading">PHYSICS — HEATING &amp; MAGNETIC EFFECT OF CURRENT</div>
+  <div class="q">
+    <div class="qnum">Q2.</div>
+    <div class="qtext">Who discovered the heating effect and the magnetic effect of electric current?</div>
+    <div class="ans">✔ Heating effect: <span class="hl">James Prescott Joule</span> &nbsp; | &nbsp; Magnetic effect: <span class="hl">Hans Christian Ørsted (1820)</span></div>
+    <ul>
+      <li>Heating effect formula: <span class="circle">H = I²Rt</span> (Joule's Law of Heating).</li>
+      <li>Electric current has BOTH a heating (thermal) effect and a magnetic effect.</li>
+      <li>Ørsted's 1820 experiment (compass needle deflecting near a current-carrying wire) is the founding observation of electromagnetism.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — ACCELERATED CHARGED PARTICLES</div>
+  <div class="q">
+    <div class="qnum">Q3.</div>
+    <div class="qtext">A proton and an alpha particle are accelerated through the same potential difference. What is the ratio of their final velocities?</div>
+    <div class="ans">✔ Answer: <span class="hl">√2 : 1</span></div>
+    <ul>
+      <li>Work done = KE ⇒ qV = ½mv² ⇒ <span class="circle">v = √(2qV/m)</span></li>
+      <li>Alpha particle: charge = <b>2e</b> (double proton's charge), mass = <b>4m</b> (≈4× proton's mass).</li>
+      <li>v_p²/v_α² = (q_p/q_α) × (m_α/m_p) = (1/2) × 4 = <b>2</b> ⇒ v_p/v_α = <span class="hl">√2</span></li>
+    </ul>
+    <div class="notebox tip">📌 Exam Tip: Same potential difference + different q,m ⇒ always reduce to v ∝ √(q/m) and plug ratios directly.</div>
+  </div>
+  <div class="pagenum">2</div>
+</div>
+
+<!-- ================= PAGE 3 : Q4-Q5 (with diagrams) ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-pencil"/></svg>
+  <svg class="doodle" style="top:420px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">PHYSICS — PLANE MIRRORS (MULTIPLE IMAGES)</div>
+  <div class="q">
+    <div class="qnum">Q4.</div>
+    <div class="qtext">If two plane mirrors are inclined at 60° to each other, how many images of an object will be formed?</div>
+    <div class="ans">✔ Answer: <span class="hl">5 images</span></div>
+    <ul>
+      <li>Let n = 360°/θ. Here n = 360/60 = <b>6</b> (an integer, and even).</li>
+      <li>Rule: if n is <b>even</b> → images = <span class="circle">n − 1</span> (regardless of object position).</li>
+      <li>If n is <b>odd</b>: images = n−1 (object on the bisector / symmetric) or n (object off the bisector / asymmetric).</li>
+      <li>So here: 6 − 1 = <span class="hl">5 images</span>.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+        <line x1="150" y1="140" x2="150" y2="30" stroke="#173e8f" stroke-width="2.4"/>
+        <line x1="150" y1="140" x2="245" y2="55" stroke="#173e8f" stroke-width="2.4"/>
+        <path d="M170 130 A30 30 0 0 1 190 100" fill="none" stroke="#333" stroke-width="1.3"/>
+        <text x="172" y="118" font-family="Kalam" font-size="13">60°</text>
+        <circle cx="150" cy="140" r="4" fill="#cf1a2c"/>
+        <circle cx="185" cy="120" r="4" fill="#1f7d3a"/>
+        <text x="192" y="122" font-family="Kalam" font-size="11" fill="#1f7d3a">Object</text>
+        <text x="60" y="20" font-family="Kalam" font-weight="700" font-size="13" fill="#cf1a2c">n = 360/60 = 6 (even)</text>
+        <text x="60" y="155" font-family="Kalam" font-weight="700" font-size="13" fill="#cf1a2c">Images = n−1 = 5</text>
+      </svg>
+      <div class="cap">Fig 1 — Two mirrors at 60°, image count = n−1</div>
+    </div>
+    <div class="notebox memory">🧠 Memory Trick: 90° mirrors → n=4(even)→3 images. 60°→5. Special case: mirrors parallel (0°/360°) → infinite images!</div>
+  </div>
+  <div class="pagenum">3</div>
+</div>
+
+<!-- ================= PAGE 4 : Q5 continued + Q6 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:520px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">CHEMISTRY — CARBON ALLOTROPES (FULLERENE)</div>
+  <div class="q">
+    <div class="qnum">Q5.</div>
+    <div class="qtext">How many hexagonal and pentagonal rings are present in Buckminsterfullerene, C₆₀?</div>
+    <div class="ans">✔ Answer: <span class="hl">20 hexagons + 12 pentagons</span> = football/soccer-ball shape</div>
+    <ul>
+      <li><span class="red">Diamond</span>: each C bonded to 4 C's → sp³ → hardest natural substance; refractive index <span class="hl">2.42</span>; shows Total Internal Reflection.</li>
+      <li><span class="red">Graphite</span>: each C bonded to 3 C's → sp² → slippery (used as lubricant), good conductor of electricity; layers held by weak <b>van der Waals forces</b>.</li>
+      <li><span class="red">Graphene</span>: single 2D layer, extremely thin, flexible, stronger than steel, good conductor.</li>
+      <li><span class="red">Fullerene (C₆₀)</span>: 60 carbon atoms in a hollow ball shape — 20 hexagonal + 12 pentagonal rings.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="75" r="55" fill="none" stroke="#173e8f" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <polygon points="80,30 105,45 105,75 80,90 55,75 55,45" fill="none" stroke="#173e8f" stroke-width="1.4"/>
+        <polygon points="80,90 105,105 100,130 60,130 55,105" fill="none" stroke="#cf1a2c" stroke-width="1.4"/>
+        <text x="150" y="35" font-family="Kalam" font-weight="700" font-size="13" fill="#173e8f">20 Hexagons</text>
+        <text x="150" y="60" font-family="Kalam" font-weight="700" font-size="13" fill="#cf1a2c">12 Pentagons</text>
+        <text x="150" y="90" font-family="Kalam" font-size="13">= C₆₀ Buckyball</text>
+        <text x="150" y="115" font-family="Kalam" font-size="12">(like a football)</text>
+      </svg>
+      <div class="cap">Fig 2 — Fullerene C₆₀ structure</div>
+    </div>
+    <div class="notebox tip">📌 Property of one carbon bonding to many carbon atoms = <b>Catenation</b>.</div>
+  </div>
+
+  <div class="heading">BIOLOGY — HORMONES</div>
+  <div class="q">
+    <div class="qnum">Q6.</div>
+    <div class="qtext">Which hormone is called the "emergency hormone"?</div>
+    <div class="ans">✔ Answer: <span class="hl">Adrenaline</span> — the "fight or flight" hormone</div>
+    <table class="note-table">
+      <tr><th>Hormone</th><th>Source</th><th>Function</th></tr>
+      <tr><td>Adrenaline</td><td>Adrenal gland</td><td>Fight-or-flight, emergency response</td></tr>
+      <tr><td>Insulin</td><td>Beta cells, Islets of Langerhans (Pancreas)</td><td>Glucose → Glycogen</td></tr>
+      <tr><td>Thyroxine</td><td>Thyroid gland</td><td>Regulates metabolism</td></tr>
+      <tr><td>Estrogen/Progesterone</td><td>Ovary</td><td>Female sex hormones</td></tr>
+      <tr><td>Testosterone</td><td>Testes</td><td>Primary male sex hormone</td></tr>
+    </table>
+  </div>
+  <div class="pagenum">4</div>
+</div>
+
+<!-- ================= PAGE 5 : Q7 (ores) ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:40px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:480px;left:10px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — METALLURGY / ORES</div>
+  <div class="q">
+    <div class="qnum">Q7.</div>
+    <div class="qtext">Carnallite is an important double ore of which metals?</div>
+    <div class="ans">✔ Answer: <span class="hl">Potassium and Magnesium</span> (KMgCl₃·6H₂O)</div>
+    <table class="note-table">
+      <tr><th>Ore</th><th>Formula</th><th>Metal</th></tr>
+      <tr><td>Bauxite</td><td>Al₂O₃·2H₂O</td><td>Aluminium</td></tr>
+      <tr><td>Hematite</td><td>Fe₂O₃</td><td>Iron</td></tr>
+      <tr><td>Magnetite</td><td>Fe₃O₄</td><td>Iron (highest Fe content, ~72%)</td></tr>
+      <tr><td>Calamine</td><td>ZnCO₃</td><td>Zinc</td></tr>
+      <tr><td>Zinc blende</td><td>ZnS</td><td>Zinc</td></tr>
+      <tr><td>Galena</td><td>PbS</td><td>Lead</td></tr>
+      <tr><td>Cinnabar</td><td>HgS</td><td>Mercury</td></tr>
+    </table>
+    <ul>
+      <li><span class="red">Ore</span> = mineral from which metal can be profitably extracted (has metal + impurities/gangue).</li>
+      <li>Among iron ores, <b>Magnetite</b> has the highest iron content (~72%), followed by Hematite.</li>
+    </ul>
+    <div class="notebox tip">📌 Exam Tip: <b>Odisha</b> is India's top producer of Bauxite (and hence Aluminium).</div>
+  </div>
+
+  <div class="heading">✍ ORE PROCESSING RECAP (for next 2 Qs)</div>
+  <ul>
+    <li><span class="red">Concentration</span> → froth flotation / gravity separation / magnetic separation.</li>
+    <li><span class="red">Roasting</span> (sulfide ores) → heating in excess air. <span class="red">Calcination</span> (carbonate ores) → heating in absence of air.</li>
+    <li>Both give metal <span class="uline">oxide</span>, which is then <span class="uline">reduced</span> (using carbon/other metal) to get pure metal.</li>
+    <li>High-reactivity metals → purified by <b>Electrolytic Refining</b> instead.</li>
+  </ul>
+  <div class="pagenum">5</div>
+</div>
+
+<!-- ================= PAGE 6 : Q8-Q9 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:40px;left:10px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:400px;left:12px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">PHYSICS — OPTICS (AIR BUBBLE IN WATER)</div>
+  <div class="q">
+    <div class="qnum">Q8.</div>
+    <div class="qtext">How does an air bubble inside water behave with respect to light rays?</div>
+    <div class="ans">✔ Answer: Behaves like a <span class="hl">Concave (diverging) lens</span></div>
+    <ul>
+      <li>Air bubble = lower refractive-index medium surrounded by higher refractive-index medium (water) ⇒ diverges light rays.</li>
+      <li>Also shows <b>Total Internal Reflection</b> at some angles → bubble appears shiny, mirror-like.</li>
+    </ul>
+    <div class="notebox mistake">⚠ Common Mistake: Don't assume bubble converges light like a convex lens — the surrounding denser medium makes it behave oppositely (diverging).</div>
+  </div>
+
+  <div class="heading">CHEMISTRY — DISPLACEMENT REACTION</div>
+  <div class="q">
+    <div class="qnum">Q9.</div>
+    <div class="qtext">An iron nail is dipped in a blue aqueous solution of copper sulfate. The solution gradually turns light green. This is an example of which reaction?</div>
+    <div class="ans">✔ Answer: <span class="hl">Displacement reaction</span> (also a redox reaction)</div>
+    <ul>
+      <li>Iron is more reactive than copper (higher in reactivity series) → displaces Cu from CuSO₄.</li>
+      <li>Reaction: <span class="circle">Fe + CuSO₄ → FeSO₄ + Cu</span></li>
+      <li>Blue CuSO₄ solution turns <b>light green</b> (FeSO₄, not colourless).</li>
+      <li>Iron nail gets a <b>reddish-brown</b> deposit of copper on it.</li>
+    </ul>
+    <div class="notebox tip">📌 Related decomposition facts: Lead nitrate decomposition → brown fumes of <b>NO₂</b> gas. Silver bromide decomposition (thermal) → used in black &amp; white photography.</div>
+  </div>
+  <div class="pagenum">6</div>
+</div>
+
+<!-- ================= PAGE 7 : Q10-Q11 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:420px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">CHEMISTRY — OXIDATION STATES</div>
+  <div class="q">
+    <div class="qnum">Q10.</div>
+    <div class="qtext">What is the oxidation state of Chromium in Potassium Dichromate (K₂Cr₂O₇)?</div>
+    <div class="ans">✔ Answer: <span class="hl">+6</span></div>
+    <ul>
+      <li>K = +1 (×2 = +2), O = −2 (×7 = −14). Let Cr = x (×2).</li>
+      <li>2 + 2x − 14 = 0 ⇒ 2x = 12 ⇒ <span class="circle">x = +6</span></li>
+      <li><b>Bonus:</b> Oxidation state of Mn in KMnO₄ (Potassium Permanganate) = <span class="hl">+7</span> (1 + x − 8 = 0 ⇒ x = 7).</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — FORCE ON CURRENT-CARRYING CONDUCTOR</div>
+  <div class="q">
+    <div class="qnum">Q11.</div>
+    <div class="qtext">Under what condition is the force on a current-carrying conductor in a uniform magnetic field maximum?</div>
+    <div class="ans">✔ Answer: When conductor is <span class="hl">perpendicular</span> to the magnetic field (θ = 90°)</div>
+    <ul>
+      <li>Formula: <span class="circle">F = BIL sinθ</span> — max when sinθ = 1 i.e. θ = 90°.</li>
+      <li><b>Right-hand thumb rule</b> (or Maxwell's screw rule): thumb = current direction, curled fingers = magnetic field direction around the wire.</li>
+      <li>Field strength depends on: (1) magnitude of current, (2) distance from the conductor (inversely).</li>
+      <li><b>Fleming's Left-Hand Rule</b> → force direction on current-carrying conductor (Motor effect).</li>
+      <li><b>Fleming's Right-Hand Rule</b> → induced current direction (Generator/Dynamo effect).</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
+        <line x1="140" y1="130" x2="140" y2="20" stroke="#cf1a2c" stroke-width="2.6"/>
+        <polygon points="140,20 134,32 146,32" fill="#cf1a2c"/>
+        <text x="148" y="30" font-family="Kalam" font-size="12" fill="#cf1a2c">Current (I)</text>
+        <ellipse cx="140" cy="75" rx="45" ry="14" fill="none" stroke="#173e8f" stroke-width="1.6"/>
+        <ellipse cx="140" cy="100" rx="60" ry="18" fill="none" stroke="#173e8f" stroke-width="1.4" opacity=".7"/>
+        <text x="195" y="80" font-family="Kalam" font-size="11" fill="#173e8f">Magnetic field (B)</text>
+        <text x="30" y="145" font-family="Kalam" font-size="12">Right-hand thumb rule: thumb ↑ current, curl = field</text>
+      </svg>
+      <div class="cap">Fig 3 — Right-hand thumb rule for straight conductor</div>
+    </div>
+  </div>
+  <div class="pagenum">7</div>
+</div>
+
+<!-- ================= PAGE 8 : Q12-Q14 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:420px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — PROTOZOA NUTRITION</div>
+  <div class="q">
+    <div class="qnum">Q12.</div>
+    <div class="qtext">Which cellular structure helps Amoeba obtain its food?</div>
+    <div class="ans">✔ Answer: <span class="hl">Plasma membrane</span> — forms pseudopodia</div>
+    <ul>
+      <li><b>Pseudopodia</b> ("false feet") — plasma membrane extensions that surround food particles, forming a food vacuole.</li>
+      <li>Amoeba has no fixed shape; nutrition mode = <b>Holozoic</b> (ingest → digest → egest, same as humans).</li>
+      <li><b>Cilia</b> (hair-like) → Paramecium (slipper-shaped, uses cilia to move).</li>
+      <li><b>Flagella</b> (whip-like) → Euglena.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — CONVEX LENS</div>
+  <div class="q">
+    <div class="qnum">Q13.</div>
+    <div class="qtext">Parallel rays (parallel to principal axis) fall on a convex lens. Where do the refracted rays go?</div>
+    <div class="ans">✔ Answer: They <span class="hl">converge at the principal focus</span> on the other side</div>
+    <ul>
+      <li>Convex lens ≡ Concave mirror (same object-image position logic).</li>
+      <li>Object at infinity → image at focus: <b>real, inverted, highly diminished</b> (point-sized).</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — WAVE EQUATION</div>
+  <div class="q">
+    <div class="qnum">Q14.</div>
+    <div class="qtext">Wavelength of light = 600 nm, speed = 3×10⁸ m/s. Find its frequency.</div>
+    <div class="ans">✔ Answer: <span class="hl">5 × 10¹⁴ Hz</span></div>
+    <ul>
+      <li>v = nλ ⇒ n = v/λ = (3×10⁸) / (600×10⁻⁹) = (3×10⁸)/(6×10⁻⁷) = <span class="circle">5×10¹⁴ Hz</span></li>
+      <li>Frequency doesn't change with medium — only depends on the <b>source</b>.</li>
+      <li>Pitch of sound depends on frequency; loudness depends on amplitude. Human hearing range: <b>20 Hz – 20 kHz</b>.</li>
+    </ul>
+  </div>
+  <div class="pagenum">8</div>
+</div>
+
+<!-- ================= PAGE 9 : Q15-Q16 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:460px;left:10px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">BIOLOGY — CELL ORGANELLES (CHLOROPLAST)</div>
+  <div class="q">
+    <div class="qnum">Q15.</div>
+    <div class="qtext">Which cell organelle in a leaf contains the chlorophyll needed for photosynthesis?</div>
+    <div class="ans">✔ Answer: <span class="hl">Chloroplast</span></div>
+    <ul>
+      <li>Chlorophyll's central metal atom = <b>Magnesium</b>. Chlorophyll a/b absorb red &amp; blue light, reflect green → leaves look green.</li>
+      <li><b>Thylakoids</b> (stacked as grana) → site of <b>Light reaction</b>. <b>Stroma</b> → site of <b>Dark reaction</b> (Calvin cycle / light-independent reaction).</li>
+      <li>Plastids: Chloroplast (green, photosynthesis), Chromoplast (colour), Leucoplast (storage: Amyloplast–carbs, Aleuroplast–protein, Elaioplast–fats).</li>
+      <li><b>Vacuole</b> (not the answer here): single large vacuole in plant cells, 50–90% of cell volume, gives turgidity.</li>
+      <li><b>Mitochondria</b> (not the answer here): powerhouse of cell, produces ATP at cristae (inner membrane folds), sausage-shaped, double membrane.</li>
+      <li><b>Nucleus</b>: discovered by <span class="red">Robert Brown</span> (1831); contains chromosomes (DNA + protein).</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — CHEMICAL vs PHYSICAL CHANGE</div>
+  <div class="q">
+    <div class="qnum">Q16.</div>
+    <div class="qtext">Iron filings mixed with sulfur powder and heated form a black substance, Iron Sulfide. What kind of change is this?</div>
+    <div class="ans">✔ Answer: <span class="hl">Chemical change</span> (irreversible)</div>
+    <ul>
+      <li>New substance formed (FeS) — not a mixture/solution, hence chemical, not physical.</li>
+      <li>Physical change = only state changes, reversible (e.g. ice ↔ water); Chemical change = new substance, generally irreversible (e.g. milk → curd).</li>
+    </ul>
+  </div>
+  <div class="pagenum">9</div>
+</div>
+
+<!-- ================= PAGE 10 : Q17-Q18 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:420px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">BIOLOGY — SEED DISPERSAL (MATCH THE FOLLOWING)</div>
+  <div class="q">
+    <div class="qnum">Q17.</div>
+    <div class="qtext">Match the plants with their seed dispersal method.</div>
+    <table class="note-table">
+      <tr><th>Plant</th><th>Dispersal Method</th></tr>
+      <tr><td>Dandelion</td><td>Wind (light, feathery/hairy seeds)</td></tr>
+      <tr><td>Lotus</td><td>Water</td></tr>
+      <tr><td>Mango</td><td>Animals (eaten, seeds spread)</td></tr>
+      <tr><td>Castor</td><td>Explosive/mechanical (pods burst in sun)</td></tr>
+    </table>
+    <div class="notebox memory">🧠 Memory Trick: Dandelion = furry/hairy → carried by wind. Castor seeds burst open in May–June heat (self/mechanical dispersal).</div>
+  </div>
+
+  <div class="heading">PHYSICS — KINETIC ENERGY</div>
+  <div class="q">
+    <div class="qnum">Q18.</div>
+    <div class="qtext">KE of an object moving with velocity v is 25 J. What will be its KE when velocity is increased 3 times?</div>
+    <div class="ans">✔ Answer: <span class="hl">225 Joules</span></div>
+    <ul>
+      <li>KE = ½mv² → KE ∝ v² (square relation).</li>
+      <li>v → 3v ⇒ KE → 9× original ⇒ 25 × 9 = <span class="circle">225 J</span></li>
+    </ul>
+  </div>
+  <div class="pagenum">10</div>
+</div>
+
+<!-- ================= PAGE 11 : Q19-Q21 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:400px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">PHYSICS — OHM'S LAW</div>
+  <div class="q">
+    <div class="qnum">Q19.</div>
+    <div class="qtext">If a conductor has a potential difference of 1V across it and current of 1A flows through it, what is its resistance?</div>
+    <div class="ans">✔ Answer: <span class="hl">1 Ohm (Ω)</span></div>
+    <ul>
+      <li>Ohm's Law: <span class="circle">V = IR</span> ⇒ R = V/I = 1/1 = 1Ω</li>
+      <li>Resistance R = ρL/A — depends on: length (∝), area (∝ 1/A), <b>nature of material</b> (ρ), and temperature (∝).</li>
+      <li>ρ (specific resistance/resistivity) unit = <b>ohm-metre (Ωm)</b>.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — MOLE CONCEPT</div>
+  <div class="q">
+    <div class="qnum">Q20.</div>
+    <div class="qtext">Molecular mass of a compound is 63u. It contains 1 hydrogen atom and 3 oxygen atoms. What is the atomic mass of the remaining element?</div>
+    <div class="ans">✔ Answer: <span class="hl">14u (Nitrogen)</span></div>
+    <ul>
+      <li>63 = 1(H) + 3×16(O) + x ⇒ 63 = 1 + 48 + x ⇒ <span class="circle">x = 14</span></li>
+      <li>Compound = <b>HNO₃</b> (Nitric acid), also called Aqua Fortis.</li>
+      <li>Related: HCl = Muriatic acid; H₂SO₄ = "King of Chemicals" / Oil of Vitriol (used in lead-acid batteries).</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — PERIODIC TRENDS</div>
+  <div class="q">
+    <div class="qnum">Q21.</div>
+    <div class="qtext">Which factor primarily determines the size of an atom?</div>
+    <div class="ans">✔ Answer: <span class="hl">Number of electron shells</span></div>
+    <ul>
+      <li>Down a group: shells increase (K, L, M, N…) → size increases. This is the <b>primary</b> factor.</li>
+      <li>Across a period: nuclear charge increases → pulls electrons closer → size decreases. This is a <b>secondary</b> factor (no new shell added).</li>
+    </ul>
+  </div>
+  <div class="pagenum">11</div>
+</div>
+
+<!-- ================= PAGE 12 : Q22-Q23 (with diagram) ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:460px;left:12px;"><use href="#d-flower"/></svg>
+
+  <div class="heading">BIOLOGY — HUMAN REPRODUCTION (PUBERTY)</div>
+  <div class="q">
+    <div class="qnum">Q22.</div>
+    <div class="qtext">Which of the following is a sign of sexual maturation in human males?</div>
+    <div class="ans">✔ Answer: <span class="hl">Voice deepens</span> (larynx enlarges, vocal cords lengthen)</div>
+    <ul>
+      <li>Male-specific changes: voice deepens, facial/body hair, growth of testes &amp; penis, broadening shoulders.</li>
+      <li>Female-specific changes: hip widening (fat deposition), breast development, menstruation begins.</li>
+      <li>Height/weight increase and skin oiliness/acne occur in <b>both</b> sexes (general growth, not sex-specific).</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — ECOLOGY (BIOMAGNIFICATION)</div>
+  <div class="q">
+    <div class="qnum">Q23.</div>
+    <div class="qtext">Due to biological magnification, the maximum concentration of pesticides is found at which trophic level?</div>
+    <div class="ans">✔ Answer: <span class="hl">Tertiary consumer</span> (top of food chain)</div>
+    <ul>
+      <li><span class="red">Bioaccumulation</span>: toxin concentration increases within a <b>single</b> organism/trophic level over time.</li>
+      <li><span class="red">Biomagnification</span>: toxin transfers &amp; concentrates as it moves <b>up</b> the food chain (e.g. DDT).</li>
+      <li><span class="red">Bioremediation</span>: removal of toxins using living microorganisms (bacteria/fungi).</li>
+      <li><span class="red">Eutrophication</span>: excess nitrogen &amp; phosphorus → algal bloom → dissolved O₂ ↓ → BOD ↑ → harms aquatic life.</li>
+      <li>Many interconnected food chains = <b>Food web</b>.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="130,15 190,140 70,140" fill="none" stroke="#173e8f" stroke-width="1.8"/>
+        <line x1="90" y1="100" x2="170" y2="100" stroke="#173e8f" stroke-width="1.2"/>
+        <line x1="105" y1="65" x2="155" y2="65" stroke="#173e8f" stroke-width="1.2"/>
+        <text x="95" y="130" font-family="Kalam" font-size="12">Producer (low)</text>
+        <text x="100" y="93" font-family="Kalam" font-size="12">Primary consumer</text>
+        <text x="105" y="58" font-family="Kalam" font-size="12">Secondary</text>
+        <text x="108" y="28" font-family="Kalam" font-size="11" fill="#cf1a2c">Tertiary — MAX</text>
+      </svg>
+      <div class="cap">Fig 4 — Biomagnification: toxin conc. rises up the pyramid</div>
+    </div>
+  </div>
+  <div class="pagenum">12</div>
+</div>
+
+<!-- ================= PAGE 13 : Q24-Q25 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:430px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">CHEMISTRY — ELECTROLYTIC REFINING</div>
+  <div class="q">
+    <div class="qnum">Q24.</div>
+    <div class="qtext">What are the essential properties of the electrolyte used in electrolytic refining of metals?</div>
+    <div class="ans">✔ Answer: An <span class="hl">aqueous solution of a suitable soluble salt</span> of the metal being refined</div>
+    <ul>
+      <li><b>Anode</b> (positive terminal) = impure metal. <b>Cathode</b> (negative terminal) = thin strip, where pure metal deposits.</li>
+      <li>Impurities settle below the anode as <span class="red">anode mud/sludge</span>.</li>
+      <li>Used for metals of <b>high reactivity</b> (medium/low reactivity metals are purified by reduction of their oxide instead).</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — ARCHIMEDES' PRINCIPLE</div>
+  <div class="q">
+    <div class="qnum">Q25.</div>
+    <div class="qtext">Which of the following devices works on Archimedes' Principle?</div>
+    <div class="opts">(a) Sphygmomanometer &nbsp; (b) Altimeter &nbsp; (c) Hydrometer &nbsp; (d) Aneroid barometer</div>
+    <div class="ans">✔ Answer: (c) <span class="hl">Hydrometer</span> (measures liquid density)</div>
+    <ul>
+      <li>Archimedes' Principle: buoyant force on a submerged body = weight of fluid displaced.</li>
+      <li>Sphygmomanometer → blood pressure. Altimeter → height. Aneroid barometer → atmospheric pressure (mechanical, not buoyancy).</li>
+      <li><b>Lactometer</b> (measures milk purity) also works on Archimedes' Principle.</li>
+    </ul>
+    <div class="notebox tip">📌 Ship floats but a nail sinks: ship's shape displaces a much larger volume of water, so buoyant force balances its weight; the nail can't displace enough.</div>
+  </div>
+  <div class="pagenum">13</div>
+</div>
+
+<!-- ================= PAGE 14 : Q26-Q27 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:440px;left:12px;"><use href="#d-bulb"/></svg>
+
+  <div class="heading">GK — FISHERIES (KASHMIR REGION)</div>
+  <div class="q">
+    <div class="qnum">Q26.</div>
+    <div class="qtext">Which fish production method is practiced in the Kashmir region?</div>
+    <div class="ans">✔ Answer: <span class="hl">Aquaculture</span> (freshwater fish farming)</div>
+    <ul>
+      <li>Kashmir has freshwater lakes, not coastal/marine access → aquaculture, not brackish-water or marine fisheries.</li>
+      <li><b>Wular Lake</b> = largest freshwater lake in India, located in Kashmir.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — NEWTON'S LAWS OF MOTION</div>
+  <div class="q">
+    <div class="qnum">Q27.</div>
+    <div class="qtext">When a person stands stationary, is the gravitational force (Earth on person) and the normal force (ground on person) an action-reaction pair under Newton's Third Law?</div>
+    <div class="ans">✔ Answer: <span class="hl">No</span> — they're equal &amp; opposite, but act on the SAME body (balanced forces), not an action-reaction pair</div>
+    <ul>
+      <li>True action-reaction pairs act on <b>two different bodies</b>: (Earth pulls person down) ↔ (person pulls Earth up); (ground pushes person up) ↔ (person pushes ground down).</li>
+      <li>Gravity + Normal force here act on the same body (the person) and cancel out → net force = 0 → no motion.</li>
+      <li><b>Newton's 1st Law</b> (Inertia): body stays at rest/uniform motion unless an external unbalanced force acts (bus stopping → passenger thrown forward).</li>
+      <li><b>Newton's 2nd Law</b>: F = rate of change of momentum = ma (since p = mv, and a = dv/dt).</li>
+      <li><b>Newton's 3rd Law</b>: every action has an equal and opposite reaction, on two different bodies.</li>
+    </ul>
+    <div class="notebox mistake">⚠ Common Mistake: Don't call any pair of "equal and opposite" forces an action-reaction pair — check they act on different objects!</div>
+  </div>
+  <div class="pagenum">14</div>
+</div>
+
+<!-- ================= PAGE 15 : Q28 (with diagram) + Q29 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:500px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">BIOLOGY — HUMAN REPRODUCTIVE SYSTEM</div>
+  <div class="q">
+    <div class="qnum">Q28.</div>
+    <div class="qtext">In which part of the female reproductive system does fertilization normally occur?</div>
+    <div class="ans">✔ Answer: <span class="hl">Fallopian tube</span> (oviduct)</div>
+    <ul>
+      <li>Ovaries release the egg (ovum, female gamete) → travels toward fallopian tube.</li>
+      <li>Sperm (male gamete) enters via vagina → cervix → uterus → fallopian tube.</li>
+      <li>Egg + Sperm fuse in the fallopian tube → forms the <b>Zygote</b>.</li>
+      <li>Order of development: <span class="circle">Zygote → Embryo → Fetus</span> (fetus stage from ~end of 2nd month; all major organs visible by 9th month).</li>
+      <li>Zygote implants in uterus wall; <b>Placenta</b> transfers nutrients (mother→baby) and waste (baby→mother).</li>
+      <li>If fertilization doesn't occur, thickened uterine lining sheds as blood → <b>Menstruation</b>.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="30" rx="20" ry="14" fill="#ffe3ee" stroke="#c05c86" stroke-width="1.6"/>
+        <text x="30" y="18" font-family="Kalam" font-size="11">Ovary</text>
+        <line x1="80" y1="35" x2="140" y2="45" stroke="#173e8f" stroke-width="1.8"/>
+        <circle cx="140" cy="45" r="5" fill="#cf1a2c"/>
+        <text x="110" y="60" font-family="Kalam" font-size="11" fill="#cf1a2c">Fertilization → Zygote</text>
+        <line x1="140" y1="45" x2="180" y2="70" stroke="#173e8f" stroke-width="1.8"/>
+        <ellipse cx="220" cy="85" rx="40" ry="25" fill="#eef4ff" stroke="#173e8f" stroke-width="1.6"/>
+        <text x="195" y="90" font-family="Kalam" font-size="11">Uterus</text>
+        <line x1="220" y1="110" x2="220" y2="128" stroke="#173e8f" stroke-width="1.6"/>
+        <text x="240" y="55" font-family="Kalam" font-size="10">Sperm enters via</text>
+        <text x="240" y="68" font-family="Kalam" font-size="10">vagina → cervix</text>
+      </svg>
+      <div class="cap">Fig 5 — Egg + sperm meet in the fallopian tube</div>
+    </div>
+  </div>
+
+  <div class="heading">BIOLOGY — CELL ORGANELLES</div>
+  <div class="q">
+    <div class="qnum">Q29.</div>
+    <div class="qtext">What is common between chloroplasts and mitochondria?</div>
+    <div class="ans">✔ Answer: Both have their own <span class="hl">DNA and 70S ribosomes</span> (semi-autonomous, double-membraned organelles)</div>
+    <ul>
+      <li>Ribosome function: <b>protein synthesis</b>; found on Rough ER; discovered by <span class="red">George Palade</span>.</li>
+      <li>Ribosomes are non-membrane-bound organelles — present in both <b>prokaryotic</b> and <b>eukaryotic</b> cells.</li>
+      <li>R.H. Whittaker's Five Kingdom Classification (1969): Monera = all prokaryotes (undefined nuclear region, called a nucleoid).</li>
+    </ul>
+  </div>
+  <div class="pagenum">15</div>
+</div>
+
+<!-- ================= PAGE 16 : Q30-Q32 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:440px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">CHEMISTRY — CORROSION PREVENTION</div>
+  <div class="q">
+    <div class="qnum">Q30.</div>
+    <div class="qtext">Galvanization protects iron from rusting by coating it with which metal?</div>
+    <div class="ans">✔ Answer: <span class="hl">Zinc</span></div>
+    <ul>
+      <li>Galvanization = physical coating of zinc on iron (sacrificial protection).</li>
+      <li><b>Anodizing</b> (for Aluminium) — an electrochemical process, unlike galvanization.</li>
+      <li>Rusting (iron) → reddish-brown. Silver → black silver sulfide. Copper → green copper carbonate. All are oxidation reactions.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — ORGANIC REACTIONS</div>
+  <div class="q">
+    <div class="qnum">Q31.</div>
+    <div class="qtext">What happens in a substitution reaction?</div>
+    <div class="ans">✔ Answer: <span class="hl">One atom/group is replaced by another atom/group</span></div>
+    <ul>
+      <li>Example: <span class="circle">CH₄ + Cl₂ → CH₃Cl + HCl</span> (one H replaced by Cl).</li>
+      <li>Contrast — <b>Addition reaction</b>: atoms add across a double/triple bond, e.g. Ethene + H₂ →(Ni/Pt catalyst) Ethane.</li>
+    </ul>
+  </div>
+
+  <div class="heading">CHEMISTRY — ACID-BASE INDICATORS</div>
+  <div class="q">
+    <div class="qnum">Q32.</div>
+    <div class="qtext">Which of the following acts as an olfactory indicator in acid-base reactions?</div>
+    <div class="ans">✔ Answer: Substances like <span class="hl">Onion, Clove, Vanilla essence</span> — detected by change in smell</div>
+    <ul>
+      <li>Olfactory indicators change <b>smell</b> in acidic/basic medium (not colour).</li>
+      <li>Phenolphthalein: colourless (acid) → pink (base). Methyl orange: orange/red (acid) → yellow (base). Turmeric: yellow → reddish-brown in base.</li>
+    </ul>
+  </div>
+  <div class="pagenum">16</div>
+</div>
+
+<!-- ================= PAGE 17 : Q33 (diagram) + Q34 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:470px;left:10px;"><use href="#d-flask"/></svg>
+
+  <div class="heading">PHYSICS — CONVEX LENS (IMAGE FORMATION)</div>
+  <div class="q">
+    <div class="qnum">Q33.</div>
+    <div class="qtext">An object is placed 80 cm from a convex lens of focal length 40 cm. Where should the screen be placed to get a real, inverted, same-sized image?</div>
+    <div class="ans">✔ Answer: <span class="hl">80 cm on the other side</span> (at 2F), image real, inverted, same size</div>
+    <ul>
+      <li>Convex lens ≡ Concave mirror logic. Since f = 40cm, 2f (centre of curvature equivalent) = 80cm.</li>
+      <li>Object placed at 2F ⇒ image also forms at 2F on the other side, same size, real &amp; inverted.</li>
+    </ul>
+    <div class="diagram">
+      <svg viewBox="0 0 360 130" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="65" x2="350" y2="65" stroke="#9aa5b3" stroke-width="1" stroke-dasharray="3 2"/>
+        <line x1="180" y1="15" x2="180" y2="115" stroke="#333" stroke-width="1.6"/>
+        <line x1="90" y1="45" x2="90" y2="85" stroke="#173e8f" stroke-width="2"/>
+        <text x="75" y="40" font-family="Kalam" font-size="11" fill="#173e8f">Object (2F)</text>
+        <line x1="270" y1="45" x2="270" y2="85" stroke="#cf1a2c" stroke-width="2"/>
+        <text x="245" y="105" font-family="Kalam" font-size="11" fill="#cf1a2c">Image (2F, real, inverted)</text>
+        <line x1="90" y1="45" x2="180" y2="65" stroke="#1f7d3a" stroke-width="1.2"/>
+        <line x1="180" y1="65" x2="270" y2="85" stroke="#1f7d3a" stroke-width="1.2"/>
+      </svg>
+      <div class="cap">Fig 6 — Object at 2F → image at 2F, same size</div>
+    </div>
+    <div class="notebox memory">🧠 Sequence (object moving closer, ∞→pole): Highly diminished → Diminished → Same size (at 2F) → Enlarged → Highly enlarged → (between F &amp; pole) Virtual &amp; erect (exception).</div>
+  </div>
+
+  <div class="heading">CHEMISTRY — SALTS &amp; pH</div>
+  <div class="q">
+    <div class="qnum">Q34.</div>
+    <div class="qtext">Which salt will give a solution with pH close to 7 when dissolved in water?</div>
+    <div class="ans">✔ Answer: <span class="hl">NaCl</span> (Sodium Chloride)</div>
+    <ul>
+      <li>Strong acid + Strong base → neutral salt (pH ≈ 7): HCl + NaOH → NaCl.</li>
+      <li>Weak acid + Strong base → basic salt (e.g. CH₃COONa). Strong acid + Weak base → acidic salt (e.g. NH₄Cl).</li>
+    </ul>
+  </div>
+  <div class="pagenum">17</div>
+</div>
+
+<!-- ================= PAGE 18 : Q35-Q37 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-atom"/></svg>
+  <svg class="doodle" style="top:440px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">PHYSICS — ATMOSPHERIC REFRACTION</div>
+  <div class="q">
+    <div class="qnum">Q35.</div>
+    <div class="qtext">The wavering/shimmering appearance of objects seen through hot air rising above a fire is due to which phenomenon?</div>
+    <div class="ans">✔ Answer: <span class="hl">Atmospheric refraction</span></div>
+    <ul>
+      <li>Hot air layers have varying density → varying refractive index → light bends continuously.</li>
+      <li>Same phenomenon causes: <b>Mirage</b>, <b>Twinkling of stars</b>, and early sunrise/delayed sunset (~2 min each).</li>
+      <li><b>Scattering/Dispersion</b> (Rayleigh) → explains sky's blue colour, red sun at sunrise/sunset.</li>
+      <li><b>Tyndall effect</b>: scattering of light by colloidal particles/dust (described by John Tyndall, 1869) — shown by heterogeneous mixtures, NOT true (homogeneous) solutions.</li>
+      <li><b>Diffraction</b> = bending of light around obstacles/edges.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — MOTION GRAPHS</div>
+  <div class="q">
+    <div class="qnum">Q36.</div>
+    <div class="qtext">If the distance-time graph of an object is a straight line parallel to the time axis, what is its speed?</div>
+    <div class="ans">✔ Answer: <span class="hl">Zero</span></div>
+    <ul>
+      <li>Distance stays constant as time passes → object not moving → speed = 0.</li>
+      <li>Distance-time graph → gives <b>speed</b>. Velocity-time graph → gives <b>acceleration</b>.</li>
+      <li>Distance = scalar; Displacement = vector (shortest path, initial→final position). Displacement ≤ Distance always.</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — GRAVITATIONAL PE &amp; WORK</div>
+  <div class="q">
+    <div class="qnum">Q37.</div>
+    <div class="qtext">How is the change in gravitational potential energy related to the work done by the gravitational force?</div>
+    <div class="ans">✔ Answer: <span class="circle">Work done by gravity = − (Change in PE)</span></div>
+    <ul>
+      <li>Work done <b>against</b> gravity (lifting up) = +ΔPE (PE increases).</li>
+      <li>Work done <b>by</b> gravity (falling down) = −ΔPE (PE decreases, converts to KE).</li>
+    </ul>
+  </div>
+  <div class="pagenum">18</div>
+</div>
+
+<!-- ================= PAGE 19 : Q38-Q39 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-flask"/></svg>
+  <svg class="doodle" style="top:440px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">CHEMISTRY — CORROSION</div>
+  <div class="q">
+    <div class="qnum">Q38.</div>
+    <div class="qtext">Copper reacts with moist carbon dioxide in air and loses its shiny brown surface. What colour is the basic copper carbonate coating formed?</div>
+    <div class="ans">✔ Answer: <span class="hl">Green</span></div>
+    <ul>
+      <li>Iron rusting → reddish-brown. Silver tarnishing → black (silver sulfide). Copper corrosion → green (basic copper carbonate) — like the Statue of Liberty's patina.</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — GENETICS &amp; VARIATION</div>
+  <div class="q">
+    <div class="qnum">Q39.</div>
+    <div class="qtext">Why do children of the same parents resemble each other but are not exactly identical?</div>
+    <div class="ans">✔ Answer: They inherit <span class="hl">different combinations of genetic variations</span> from their parents</div>
+    <ul>
+      <li>Each gene has two <b>alleles</b> — <span class="red">Gregor Mendel</span> ("Father of Genetics") gave 3 laws using Pea plant (Pisum sativum): Law of Dominance, Law of Segregation, Law of Independent Assortment.</li>
+      <li>DNA molecule first discovered by <span class="red">Friedrich Miescher</span>; double-helix structure given by <span class="red">Watson &amp; Crick</span>.</li>
+      <li>Base pairing: <b>Adenine–Thymine</b>, <b>Guanine–Cytosine</b>. In RNA, <b>Uracil</b> replaces Thymine.</li>
+      <li>DNA replication is <b>semi-conservative</b> (one old strand + one new strand in each copy) — errors/mutations are rare, but are the main source of variation between siblings.</li>
+    </ul>
+  </div>
+  <div class="pagenum">19</div>
+</div>
+
+<!-- ================= PAGE 20 : Q40 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-smiley"/></svg>
+  <svg class="doodle" style="top:460px;left:12px;"><use href="#d-star"/></svg>
+
+  <div class="heading">BIOLOGY — CELL BIOLOGY (DIVISION OF LABOUR &amp; CELL THEORY)</div>
+  <div class="q">
+    <div class="qnum">Q40.</div>
+    <div class="qtext">Which best explains the division of labour in multicellular organisms?</div>
+    <div class="ans">✔ Answer: <span class="hl">Different cells are specialized to perform different functions</span></div>
+    <ul>
+      <li>Unlike unicellular organisms (one cell does everything), multicellular organisms have cells organised as: Cells → Tissues → Organs → Organ systems → Organism.</li>
+      <li>Example: Neuron (nerve cell) — structure discovered via black-ink reaction by <span class="red">Camillo Golgi</span>.</li>
+    </ul>
+    <table class="note-table">
+      <tr><th>Discovery</th><th>Scientist</th><th>Year</th></tr>
+      <tr><td>Dead cell (in cork)</td><td>Robert Hooke</td><td>1665</td></tr>
+      <tr><td>Living cell (pond water)</td><td>Antony van Leeuwenhoek</td><td>~1674</td></tr>
+      <tr><td>Cell Theory</td><td>Schleiden &amp; Schwann</td><td>1839</td></tr>
+      <tr><td>"New cells from old cells"</td><td>Rudolf Virchow</td><td>1855</td></tr>
+    </table>
+    <div class="notebox tip">📌 Exam Tip: CRISPR-Cas is a modern gene-editing tool — often confused/linked with "casein" in rushed transcripts, but it stands for Clustered Regularly Interspaced Short Palindromic Repeats.</div>
+  </div>
+  <div class="pagenum">20</div>
+</div>
+
+<!-- ================= PAGE 21 : Q41-Q43 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:420px;left:10px;"><use href="#d-atom"/></svg>
+
+  <div class="heading">PHYSICS — SIMPLE PENDULUM</div>
+  <div class="q">
+    <div class="qnum">Q41.</div>
+    <div class="qtext">If the length of a simple pendulum is increased 4 times, what happens to its time period?</div>
+    <div class="ans">✔ Answer: Time period <span class="hl">doubles</span></div>
+    <ul>
+      <li>T = 2π√(L/g) → T ∝ √L</li>
+      <li>L → 4L ⇒ T → √4 × T = <span class="circle">2T</span></li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — CURRENT ELECTRICITY (RECAP)</div>
+  <div class="q">
+    <div class="qnum">Q42.</div>
+    <div class="qtext">According to Ohm's Law, the resistance of a conductor depends on what?</div>
+    <div class="ans">✔ Answer: <span class="hl">Nature of the conductor and its physical state (e.g. temperature)</span> — NOT on current or potential difference</div>
+    <ul>
+      <li>R = ρL/A: length (direct), area (inverse), nature of material (ρ), temperature (direct — resistance ↑ with temperature).</li>
+      <li>Copper is costlier than aluminium because it has higher conductivity (lower resistivity).</li>
+    </ul>
+  </div>
+
+  <div class="heading">PHYSICS — ELECTROSTATICS</div>
+  <div class="q">
+    <div class="qnum">Q43.</div>
+    <div class="qtext">(a) What is the SI unit of capacitance? (b) In Coulomb's Law, if the distance between two charges is doubled, what happens to the force?</div>
+    <div class="ans">✔ (a) <span class="hl">Farad (F)</span> &nbsp; (b) Force becomes <span class="hl">1/4th</span></div>
+    <ul>
+      <li>SI unit of charge = <b>Coulomb</b>.</li>
+      <li>Coulomb's Law: <span class="circle">F = kq₁q₂/r²</span> — inverse-square law.</li>
+      <li>r → 2r ⇒ F → F/4 (since r² term in denominator).</li>
+    </ul>
+  </div>
+  <div class="pagenum">21</div>
+</div>
+
+<!-- ================= PAGE 22 : Q44-Q46 ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-flower"/></svg>
+  <svg class="doodle" style="top:440px;left:12px;"><use href="#d-smiley"/></svg>
+
+  <div class="heading">BIOLOGY — BOTANY (WEEDS)</div>
+  <div class="q">
+    <div class="qnum">Q44.</div>
+    <div class="qtext">Which of the following plants is a weed?</div>
+    <div class="ans">✔ Answer: <span class="hl">Cyperus rotundus</span> (Nutgrass/Nagarmotha)</div>
+    <ul>
+      <li>Crop plants for comparison: Pea = <i>Pisum sativum</i>; Rice = <i>Oryza sativa</i>; Cowpea = <i>Vigna unguiculata</i>.</li>
+      <li><i>Cyperus rotundus</i> is one of the world's most persistent agricultural weeds.</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — RESPIRATION</div>
+  <div class="q">
+    <div class="qnum">Q45.</div>
+    <div class="qtext">When oxygen availability decreases, which stage of aerobic respiration is affected first?</div>
+    <div class="ans">✔ Answer: <span class="hl">Krebs cycle / Electron Transport Chain</span> (both directly need O₂; Glycolysis does not)</div>
+    <ul>
+      <li><b>Glycolysis</b>: glucose (6C) → pyruvate (3C), in cytoplasm, doesn't directly require O₂ → 2 ATP + 2 NADH.</li>
+      <li><b>Krebs cycle (Citric acid cycle)</b>: in mitochondrial matrix.</li>
+      <li><b>Electron Transport Chain</b>: in inner mitochondrial membrane (cristae) — produces most ATP; O₂ is the final electron acceptor here, so this is hit hardest when O₂ falls.</li>
+      <li>Low O₂ in muscles → anaerobic pathway → <b>lactic acid</b> build-up → cramps/fatigue.</li>
+    </ul>
+  </div>
+
+  <div class="heading">BIOLOGY — EXCRETION</div>
+  <div class="q">
+    <div class="qnum">Q46.</div>
+    <div class="qtext">How is metabolic waste removed in unicellular organisms?</div>
+    <div class="ans">✔ Answer: By <span class="hl">simple diffusion</span> across the cell membrane</div>
+    <ul>
+      <li>High surface-area-to-volume ratio in unicellular organisms makes diffusion sufficient — no specialised excretory organs needed.</li>
+      <li>(In humans, filtration happens via the nephron: Glomerulus → PCT → Loop of Henle → DCT → Collecting duct.)</li>
+    </ul>
+  </div>
+  <div class="pagenum">22</div>
+</div>
+
+<!-- ================= PAGE 23 : QUICK ANSWER KEY ================= -->
+<div class="page">
+  <div class="holes"><div class="hole" style="top:60px"></div><div class="hole" style="top:50%"></div><div class="hole" style="bottom:60px"></div></div>
+  <svg class="doodle" style="top:30px;left:10px;"><use href="#d-star"/></svg>
+  <svg class="doodle" style="top:330px;left:12px;"><use href="#d-bulb"/></svg>
+  <svg class="doodle" style="top:600px;left:10px;"><use href="#d-smiley"/></svg>
+
+  <div class="titlewrap"><h1 class="title" style="font-size:1.8em;">QUICK ANSWER KEY (Q1–Q46)</h1></div>
+  <div class="subtitle">⚡ For last-minute revision — Day 3 ⚡</div>
+
+  <table class="note-table" style="width:100%;">
+    <tr><th>Q</th><th>Answer</th><th>Q</th><th>Answer</th></tr>
+    <tr><td>1</td><td>25 W</td><td>24</td><td>Aq. salt of same metal</td></tr>
+    <tr><td>2</td><td>Joule / Ørsted</td><td>25</td><td>Hydrometer</td></tr>
+    <tr><td>3</td><td>√2 : 1</td><td>26</td><td>Aquaculture</td></tr>
+    <tr><td>4</td><td>5 images</td><td>27</td><td>No (balanced, not pair)</td></tr>
+    <tr><td>5</td><td>20 Hex + 12 Pent</td><td>28</td><td>Fallopian tube</td></tr>
+    <tr><td>6</td><td>Adrenaline</td><td>29</td><td>Own DNA + 70S ribosomes</td></tr>
+    <tr><td>7</td><td>K &amp; Mg</td><td>30</td><td>Zinc</td></tr>
+    <tr><td>8</td><td>Concave lens</td><td>31</td><td>Atom/group replaced</td></tr>
+    <tr><td>9</td><td>Displacement rxn</td><td>32</td><td>Onion/clove (smell)</td></tr>
+    <tr><td>10</td><td>+6 (Cr), +7 (Mn)</td><td>33</td><td>80cm, same size</td></tr>
+    <tr><td>11</td><td>θ = 90°</td><td>34</td><td>NaCl</td></tr>
+    <tr><td>12</td><td>Plasma membrane</td><td>35</td><td>Atmospheric refraction</td></tr>
+    <tr><td>13</td><td>Converge at focus</td><td>36</td><td>Zero</td></tr>
+    <tr><td>14</td><td>5×10¹⁴ Hz</td><td>37</td><td>W = −ΔPE</td></tr>
+    <tr><td>15</td><td>Chloroplast</td><td>38</td><td>Green</td></tr>
+    <tr><td>16</td><td>Chemical change</td><td>39</td><td>Genetic variation combo</td></tr>
+    <tr><td>17</td><td>Wind/Water/Animal/Burst</td><td>40</td><td>Cell specialization</td></tr>
+    <tr><td>18</td><td>225 J</td><td>41</td><td>T doubles</td></tr>
+    <tr><td>19</td><td>1 Ω</td><td>42</td><td>Nature &amp; physical state</td></tr>
+    <tr><td>20</td><td>14 (N), HNO₃</td><td>43</td><td>Farad; F→1/4</td></tr>
+    <tr><td>21</td><td>Electron shells</td><td>44</td><td>Cyperus rotundus</td></tr>
+    <tr><td>22</td><td>Voice deepens</td><td>45</td><td>Krebs/ETC (needs O₂)</td></tr>
+    <tr><td>23</td><td>Tertiary consumer</td><td>46</td><td>Diffusion</td></tr>
+  </table>
+
+  <div class="notebox tip" style="margin-top:16px;">📌 Exam Tip: Revise the RED headings first — laws/definitions/formulas repeat most often as PYQs!</div>
+  <div class="notebox memory">🧠 Memory Trick: Highlighted (yellow) = keywords/formulas/final answers → flip through only these the night before exam!</div>
+
+  <div class="pagenum">23</div>
+</div>
+
+</body>
+</html>
